@@ -1,0 +1,29 @@
+-- HodgeCY template for node-scheme Hilbert-function computations in Macaulay2.
+-- This file is intentionally a commented scaffold and does not claim a computed result.
+--
+-- Expected workflow:
+-- 1. Define the projective coordinate ring of the ambient space.
+-- 2. Insert the branch or hypersurface equation for the chosen example.
+-- 3. Build the Jacobian / singularity ideal.
+-- 4. Isolate the node scheme ideal.
+-- 5. Set the critical degree relevant for the defect computation.
+-- 6. Evaluate the Hilbert function at that degree.
+--
+-- Expected output format for later parsing:
+-- example_id=<label>
+-- critical_degree=<int>
+-- hilbert_value=<int>
+-- expected_independent_conditions=<int>
+
+-- R = QQ[x0,x1,x2,x3];
+-- f = substitute(your_equation_here, R);
+-- J = ideal jacobian matrix{{f}};
+-- nodeIdeal = saturate(J + ideal(f));
+-- criticalDegree = your_critical_degree_here;
+-- hilbertValue = hilbertFunction(criticalDegree, R / nodeIdeal);
+-- expectedIndependentConditions = your_expected_independent_conditions_here;
+--
+-- print("example_id=TODO");
+-- print("critical_degree=" | toString criticalDegree);
+-- print("hilbert_value=" | toString hilbertValue);
+-- print("expected_independent_conditions=" | toString expectedIndependentConditions);

@@ -28,3 +28,20 @@ This first scaffold provides:
 - basic tests for imports, file existence, and loader return types
 
 No heavy algebraic geometry functionality is included yet.
+
+## Nodal Defect And Operator-Route Layer
+
+The repository now includes schema-level support for classical node-scheme
+defect computations. Actual Hilbert-function calculations still require
+external CAS tools such as Macaulay2 or Singular, and the bundled templates are
+deliberately scaffolds rather than claimed computations.
+
+Within the current atom-profile layer, classical defect is treated as a coarse
+numerical shadow of flexible-sector compression. This is only a first schema:
+relation/block refinements and operator-side comparison data are left as
+explicit placeholders until geometric computations are supplied.
+
+The operator-route schemas are also now present for later storage of
+Picard--Fuchs, conifold-point, and monodromy/nilpotent-profile data. No
+mathematical results are faked by these placeholder modules; unsupported values
+remain marked as `not_computed`, `not_loaded`, or `unknown`.

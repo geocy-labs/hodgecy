@@ -1,0 +1,4 @@
+arrangement,equation,h12,h11,euler,hodgecy_role,nodal_special_fibers_known,operator_data_needed,notes
+1,x*y*z*t*(x+y)*(y+z)*(z+t)*(A*x+B*t),1,69,136,family_operator_candidate,unknown,yes,These are h12=1 Cynk--Meyer one-parameter families; conifold special fibers and operator-route data must be supplied or verified before atom-level comparison.
+5,x*y*z*t*(x+y+z)*(x-y+t)*(A*z+B*t)*(A*x+B*y+A*z),1,61,120,family_operator_candidate,unknown,yes,These are h12=1 Cynk--Meyer one-parameter families; conifold special fibers and operator-route data must be supplied or verified before atom-level comparison.
+14,x*y*z*t*(x+y)*(y+z)*(A*x-A*z-B*t)*(B*x+A*z+A*t),1,61,120,family_operator_candidate,unknown,yes,These are h12=1 Cynk--Meyer one-parameter families; conifold special fibers and operator-route data must be supplied or verified before atom-level comparison.

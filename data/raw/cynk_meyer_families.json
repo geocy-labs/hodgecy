@@ -1,8 +1,20 @@
 [
   {
     "family_id": 1,
-    "label": "placeholder_family",
-    "equation": "x*y*z*w*(x+y)*(y+z)*(z+w)*(w+x)",
-    "notes": "Placeholder family equation entry for the initial repository scaffold."
+    "label": "cynk_meyer_family_1",
+    "equation": "x*y*z*t*(x+y)*(y+z)*(z+t)*(A*x+B*t)",
+    "notes": "Schema-level placeholder for a Cynk--Meyer h12=1 family equation; verify against the paper before any operator or nodal-fiber claim."
+  },
+  {
+    "family_id": 5,
+    "label": "cynk_meyer_family_5",
+    "equation": "x*y*z*t*(x+y+z)*(x-y+t)*(A*z+B*t)*(A*x+B*y+A*z)",
+    "notes": "Schema-level placeholder for a Cynk--Meyer h12=1 family equation; operator-route and special-fiber data are not yet encoded."
+  },
+  {
+    "family_id": 14,
+    "label": "cynk_meyer_family_14",
+    "equation": "x*y*z*t*(x+y)*(y+z)*(A*x-A*z-B*t)*(B*x+A*z+A*t)",
+    "notes": "Schema-level placeholder for a Cynk--Meyer h12=1 family equation; conifold-fiber status remains unknown in this repository."
   }
 ]

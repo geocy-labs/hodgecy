@@ -1,0 +1,32 @@
+// HodgeCY template for node-scheme Hilbert-function computations in Singular.
+// This file is intentionally a commented scaffold and does not claim a computed result.
+//
+// Expected workflow:
+// 1. Define the projective-coordinate ring placeholder.
+// 2. Insert the hypersurface equation.
+// 3. Build the Jacobian ideal.
+// 4. Form the node ideal / singularity scheme.
+// 5. Set the critical degree and compute the relevant Hilbert-function data.
+//
+// Expected output format for later parsing:
+// example_id=<label>
+// critical_degree=<int>
+// hilbert_value=<int>
+// expected_independent_conditions=<int>
+
+// ring R = 0,(x0,x1,x2,x3),dp;
+// poly f = your_equation_here;
+// ideal J = jacob(f);
+// ideal nodeI = J + ideal(f);
+// int criticalDegree = your_critical_degree_here;
+// ideal stdNodeI = std(nodeI);
+//
+// // Insert the preferred Hilbert-function / Hilbert-series computation here.
+// // Example placeholders:
+// // hilb(stdNodeI);
+// // degree(stdNodeI);
+//
+// print("example_id=TODO");
+// print("critical_degree=TODO");
+// print("hilbert_value=TODO");
+// print("expected_independent_conditions=TODO");
