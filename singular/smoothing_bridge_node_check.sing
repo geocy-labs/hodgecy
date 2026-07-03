@@ -1,0 +1,24 @@
+// HodgeCY Gate 2 template for smoothing-bridge node checks in Singular.
+// This is a commented placeholder and does not claim a verified node count.
+//
+// Suggested workflow:
+// 1. Define the eight planes and form A = product P_i.
+// 2. Insert a generic or explicit quartic Q.
+// 3. Form F = A + e*Q^2 for a chosen epsilon.
+// 4. Compute the singular locus.
+// 5. Check isolation and local Hessian / quadratic rank for node type.
+//
+// Expected output format for later parsing:
+// arrangement_id=<label>
+// epsilon=<value>
+// singular_point_count=<int>
+// node_check_status=<status>
+
+// ring R = 0,(e,x,y,z,t),dp;
+// poly P1 = x - t;
+// // define P2,...,P8 here
+// poly A = P1*P2*P3*P4*P5*P6*P7*P8;
+// poly Q = your_generic_quartic_here;
+// poly F = A + e*Q^2;
+// ideal singI = jacob(F), F;
+// // insert singular-locus and Hessian checks here

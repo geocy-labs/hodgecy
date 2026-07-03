@@ -1,0 +1,38 @@
+[
+  {
+    "arrangement_id": "84",
+    "perturbation_label": "generic_quartic_Q",
+    "number_of_planes": 8,
+    "number_of_double_lines": 28,
+    "triple_line_count": 0,
+    "expected_nodes_total": 112,
+    "assumptions": [
+      "Q is a generic quartic",
+      "Q avoids higher singular strata of the arrangement",
+      "Q intersects each double line transversely in four points",
+      "local analytic node verification remains to be checked"
+    ],
+    "warnings": [],
+    "expected_nodes_per_double_line": 4,
+    "status": "expected_not_verified",
+    "notes": "Combinatorial/local-model smoothing bridge only: residual node counts remain expected values until CAS and local analytic verification are completed."
+  },
+  {
+    "arrangement_id": "84a",
+    "perturbation_label": "generic_quartic_Q",
+    "number_of_planes": 8,
+    "number_of_double_lines": 28,
+    "triple_line_count": 0,
+    "expected_nodes_total": 112,
+    "assumptions": [
+      "Q is a generic quartic",
+      "Q avoids higher singular strata of the arrangement",
+      "Q intersects each double line transversely in four points",
+      "local analytic node verification remains to be checked"
+    ],
+    "warnings": [],
+    "expected_nodes_per_double_line": 4,
+    "status": "expected_not_verified",
+    "notes": "Combinatorial/local-model smoothing bridge only: residual node counts remain expected values until CAS and local analytic verification are completed."
+  }
+]

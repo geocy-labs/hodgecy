@@ -67,3 +67,19 @@ search over all `8!` plane permutations finds no subset-rank-preserving
 isomorphism. In the present repository, that means the pair is not separated by
 the coarsest fingerprint summary, yet it is separated by the full
 arrangement-incidence test currently implemented.
+
+## Gate 2: Smoothing Bridge
+
+The smoothing bridge layer records the expected nodal/conifold construction
+\(
+F_{\epsilon} = A + \epsilon Q^2,
+\)
+where \(A\) is the plane-arrangement branch octic and \(Q\) is a generic
+quartic. For arrangements with 28 double lines and no triple lines, the naive
+expected residual count is 112 nodes under genericity assumptions, with four
+expected intersection points on each double line.
+
+At present this is only an expected combinatorial/local-model profile. The
+repository records the double-line grouping, expected counts, and genericity
+assumptions explicitly, but ordinary-node verification still requires CAS and
+local analytic checks.

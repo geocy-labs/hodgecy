@@ -1,0 +1,25 @@
+-- HodgeCY Gate 2 template for smoothing-bridge node checks in Macaulay2.
+-- This is a commented placeholder and does not claim a verified node count.
+--
+-- Suggested workflow:
+-- 1. Define the eight planes P_i and form A = product P_i.
+-- 2. Insert a generic or explicit quartic Q.
+-- 3. Form F = A + e*Q^2 for a chosen rational epsilon or symbolic parameter.
+-- 4. Compute the singular locus of F.
+-- 5. Check whether singularities are isolated and count them.
+-- 6. Inspect the Hessian / quadratic rank locally to test ordinary node type.
+--
+-- Expected output format for later parsing:
+-- arrangement_id=<label>
+-- epsilon=<value>
+-- singular_point_count=<int>
+-- node_check_status=<status>
+
+-- R = QQ[e,x,y,z,t];
+-- P1 = x - t;
+-- -- define P2,...,P8 here
+-- A = P1*P2*P3*P4*P5*P6*P7*P8;
+-- Q = your_generic_quartic_here;
+-- F = A + e*Q^2;
+-- singI = ideal jacobian matrix{{F}} + ideal(F);
+-- -- insert isolation / node checks here
