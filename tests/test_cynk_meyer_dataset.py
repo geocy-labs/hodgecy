@@ -87,3 +87,25 @@ def test_modular_form_labels_match_paper_labels() -> None:
         assert frame.loc[arrangement, "modular_form"] == label
     rigid_rows = frame.loc[frame["rigid"]]
     assert set(rigid_rows.index) == set(MODULAR_LABELS)
+
+
+def test_hodgecy_role_classification_examples() -> None:
+    frame = load_table1().set_index("arrangement")
+
+    assert frame.loc["2", "hodgecy_role"] == "rigid_arithmetic_control"
+    assert frame.loc["2", "is_rigid_example"]
+    assert frame.loc["2", "has_modular_form_label"]
+    assert frame.loc["2", "has_explicit_paper_equation"]
+
+    assert frame.loc["1", "hodgecy_role"] == "family_operator_candidate"
+    assert frame.loc["1", "is_h12_one_parameter_family"]
+    assert frame.loc["1", "has_explicit_paper_equation"]
+
+    assert frame.loc["83", "hodgecy_role"] == "nodal_atom_candidate"
+    assert frame.loc["83", "is_nodal_conifold_candidate"]
+
+    assert frame.loc["84", "hodgecy_role"] == "rigid_arithmetic_control"
+    assert frame.loc["84", "is_nodal_conifold_candidate"]
+
+    assert frame.loc["3", "hodgecy_role"] == "unknown"
+    assert not frame.loc["3", "has_explicit_paper_equation"]
