@@ -1,0 +1,62 @@
+[
+  {
+    "example_id": "smoothing_bridge_84",
+    "source_arrangement": "84",
+    "construction": "F_epsilon = product(P_i) + epsilon * Q^2",
+    "plane_equations": [
+      "x - t",
+      "x + t",
+      "y - t",
+      "y + t",
+      "z - t",
+      "z + t",
+      "x + y + z + t",
+      "x + y + z - 3t"
+    ],
+    "quartic_Q": null,
+    "epsilon": null,
+    "expected_node_count": 112,
+    "expected_node_count_status": "expected_from_double_line_count_not_CAS_verified",
+    "double_line_count": 28,
+    "expected_nodes_per_double_line": 4,
+    "genericity_conditions": [
+      "Q avoids all multiple points",
+      "Q meets each double line transversely",
+      "epsilon nonzero and sufficiently small/generic"
+    ],
+    "defect_status": "not_computed",
+    "critical_degree": null,
+    "critical_degree_status": "needs_literature_verification",
+    "notes": "Smoothing-bridge defect computation queue entry for arrangement 84. Expected node count comes from the Gate 2 double-line profile and still requires CAS and local analytic verification."
+  },
+  {
+    "example_id": "smoothing_bridge_84a",
+    "source_arrangement": "84a",
+    "construction": "F_epsilon = product(P_i) + epsilon * Q^2",
+    "plane_equations": [
+      "x - t",
+      "x + t",
+      "y - t",
+      "y + t",
+      "z - t",
+      "z + t",
+      "x + y + z - t",
+      "x + y + z - 3t"
+    ],
+    "quartic_Q": null,
+    "epsilon": null,
+    "expected_node_count": 112,
+    "expected_node_count_status": "expected_from_double_line_count_not_CAS_verified",
+    "double_line_count": 28,
+    "expected_nodes_per_double_line": 4,
+    "genericity_conditions": [
+      "Q avoids all multiple points",
+      "Q meets each double line transversely",
+      "epsilon nonzero and sufficiently small/generic"
+    ],
+    "defect_status": "not_computed",
+    "critical_degree": null,
+    "critical_degree_status": "needs_literature_verification",
+    "notes": "Smoothing-bridge defect computation queue entry for arrangement 84a. Expected node count comes from the Gate 2 double-line profile and still requires CAS and local analytic verification."
+  }
+]

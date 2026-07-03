@@ -1,0 +1,45 @@
+// HodgeCY template for 112-node smoothing-bridge defect computations in Singular.
+// This file is a scaffold only; it does not contain any fake computed output.
+//
+// Intended workflow:
+// 1. Work in QQ[x,y,z,t].
+// 2. Define the 8 plane equations for a chosen arrangement.
+// 3. Choose a concrete quartic Q and a nonzero rational epsilon.
+// 4. Form F = product(planes) + epsilon * Q^2.
+// 5. Compute the singular locus ideal from the partial derivatives of F,
+//    together with F if the branch surface equation is imposed.
+// 6. Saturate / clean the node scheme.
+// 7. Check zero-dimensionality and degree.
+// 8. Evaluate the Hilbert function in CRITICAL_DEGREE after literature verification.
+// 9. Output:
+//      node_count
+//      critical_degree
+//      hilbert_value
+//      expected_conditions
+//      defect
+// 10. Add Hessian / local quadratic-rank checks for ordinary-node verification.
+
+ring R = 0,(x,y,z,t),dp;
+
+poly P1 = x - t;
+poly P2 = x + t;
+poly P3 = y - t;
+poly P4 = y + t;
+poly P5 = z - t;
+poly P6 = z + t;
+poly P7 = x + y + z + t;
+poly P8 = x + y + z - 3*t;
+
+poly Q = x4 + y4 + z4 + t4; // placeholder quartic only
+number epsilon = 1; // placeholder nonzero rational scalar only
+
+poly A = P1*P2*P3*P4*P5*P6*P7*P8;
+poly F = A + epsilon * Q^2;
+
+ideal I_sing = jacob(F);
+ideal I_branch = I_sing, F;
+ideal I_nodes = std(I_branch);
+
+// Insert saturation / zero-dimensionality / Hilbert-function logic here.
+// CRITICAL_DEGREE must be verified from the literature before use.
+// Add Hessian / local quadratic-rank checks here as well.

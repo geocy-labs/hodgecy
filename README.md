@@ -111,3 +111,23 @@ The concurrency-aware profile therefore records line/multiple-point incidence,
 multiple-point multiplicity counts, line multiplicity profiles, and p4
 collinearity structure. These are arrangement-level inputs to the smoothing
 bridge and to any later candidate atom-block interpretation.
+
+## Defect Computation Gate
+
+The next decisive computation for the smoothing-bridge program is the classical
+defect of the expected 112-node configurations associated with the `84` and
+`84a` smoothing bridges. That computation requires CAS support and depends on
+the critical degree in which the node scheme fails to impose independent
+conditions.
+
+At present the repository does not fake this degree or the resulting defect.
+Instead, it contains raw smoothing-bridge example records, CAS templates, a
+high-priority computation queue, and an empty verified-results ingestion file
+so that literature verification and subsequent Macaulay2/Singular runs can be
+tracked cleanly.
+
+The current queue state for `smoothing_bridge_84` and `smoothing_bridge_84a` is
+deliberately conservative: `critical_degree = null`,
+`critical_degree_status = needs_literature_verification`, and
+`defect_status = not_computed`. This keeps the next mathematical dependency
+explicit before any final CAS-backed defect claim is made.
