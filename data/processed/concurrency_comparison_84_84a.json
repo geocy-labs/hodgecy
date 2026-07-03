@@ -1,0 +1,8 @@
+{
+  "same_double_line_count": true,
+  "same_multiple_point_counts": true,
+  "same_line_profile_counts": false,
+  "same_p4_degree_sequence": false,
+  "colored_graph_isomorphic": false,
+  "conclusion": "separated_by_concurrency_profile"
+}

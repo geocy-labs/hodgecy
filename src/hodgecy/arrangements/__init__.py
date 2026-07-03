@@ -1,5 +1,16 @@
 """Arrangement and incidence helpers for HodgeCY."""
 
+from .concurrency import (
+    ArrangementConcurrencyProfile,
+    DoubleLine,
+    MultiplePoint,
+    build_concurrency_profile,
+    concurrency_profile_to_dict,
+    fraction_to_str,
+    rref_key_to_str,
+    vector_to_projective_str,
+)
+from .graphs import build_concurrency_graph, colored_graph_isomorphic
 from .incidence import (
     incidence_hypergraph,
     intersection_codimension,
@@ -19,6 +30,9 @@ from .isomorphism import (
 from .planes import Plane, PlaneArrangement, arrangement_83_family_symbolic, arrangement_84, arrangement_84a
 
 __all__ = [
+    "ArrangementConcurrencyProfile",
+    "DoubleLine",
+    "MultiplePoint",
     "Plane",
     "PlaneArrangement",
     "are_rank_fingerprints_equal",
@@ -26,6 +40,11 @@ __all__ = [
     "arrangement_84",
     "arrangement_84a",
     "canonical_subset_rank_fingerprint",
+    "build_concurrency_graph",
+    "build_concurrency_profile",
+    "colored_graph_isomorphic",
+    "concurrency_profile_to_dict",
+    "fraction_to_str",
     "find_incidence_isomorphisms",
     "incidence_hypergraph",
     "incidence_isomorphic",
@@ -34,6 +53,8 @@ __all__ = [
     "maximal_incidence_strata",
     "plane_matrix",
     "rank_of_planes",
+    "rref_key_to_str",
     "subset_rank_signature",
     "subset_rank_table",
+    "vector_to_projective_str",
 ]

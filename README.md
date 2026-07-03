@@ -98,3 +98,16 @@ profiles, which would make the block/profile layer a strict refinement of
 classical defect. For the current `84/84a` control pair, everything remains
 candidate-level until lattice audit, local node verification, and defect
 computation are all in place.
+
+## Concurrency-Aware Lattice Profiles
+
+For smoothing-bridge examples built from eight planes, first-order plane-node
+incidence is identical at the naive level: each double line contributes four
+expected nodes, so the coarsest plane-node counts collapse. If distinguishing
+information survives at the arrangement level, it must pass through how double
+lines meet at p3, p4, and higher multiple points.
+
+The concurrency-aware profile therefore records line/multiple-point incidence,
+multiple-point multiplicity counts, line multiplicity profiles, and p4
+collinearity structure. These are arrangement-level inputs to the smoothing
+bridge and to any later candidate atom-block interpretation.
