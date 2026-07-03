@@ -1,0 +1,32 @@
+[
+  {
+    "example_id":"smoothing_bridge_84",
+    "source_arrangement":"84",
+    "double_line_count":28,
+    "triple_line_count":0,
+    "expected_nodes_per_double_line":4,
+    "expected_node_count":112,
+    "expected_node_count_status":"expected_from_double_line_count_not_CAS_verified",
+    "block_count":28,
+    "candidate_block_profile_summary":"28 blocks of size 4",
+    "gluing_deficit":84,
+    "defect_status":"not_computed",
+    "critical_degree_status":"needs_literature_verification",
+    "notes":"Combinatorial\/local-model smoothing bridge only: residual node counts remain expected values until CAS and local analytic verification are completed."
+  },
+  {
+    "example_id":"smoothing_bridge_84a",
+    "source_arrangement":"84a",
+    "double_line_count":28,
+    "triple_line_count":0,
+    "expected_nodes_per_double_line":4,
+    "expected_node_count":112,
+    "expected_node_count_status":"expected_from_double_line_count_not_CAS_verified",
+    "block_count":28,
+    "candidate_block_profile_summary":"28 blocks of size 4",
+    "gluing_deficit":84,
+    "defect_status":"not_computed",
+    "critical_degree_status":"needs_literature_verification",
+    "notes":"Combinatorial\/local-model smoothing bridge only: residual node counts remain expected values until CAS and local analytic verification are completed."
+  }
+]

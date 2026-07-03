@@ -1,0 +1,26 @@
+[
+  {
+    "arrangement_id":"84",
+    "double_line_count":28,
+    "p3_count":16,
+    "p4_count":10,
+    "p5_count":0,
+    "p4_collinearity_edge_count":39,
+    "p3_p4_collinear_pair_count":84,
+    "line_profile_summary":"3x[3, 3, 3, 3, 4]; 18x[3, 3, 4, 4]; 7x[4, 4, 4]",
+    "colored_graph_isomorphism_status":false,
+    "conclusion":"separated_by_concurrency_profile"
+  },
+  {
+    "arrangement_id":"84a",
+    "double_line_count":28,
+    "p3_count":16,
+    "p4_count":10,
+    "p5_count":0,
+    "p4_collinearity_edge_count":42,
+    "p3_p4_collinear_pair_count":72,
+    "line_profile_summary":"6x[3, 3, 3, 3, 4]; 12x[3, 3, 4, 4]; 10x[4, 4, 4]",
+    "colored_graph_isomorphism_status":false,
+    "conclusion":"separated_by_concurrency_profile"
+  }
+]

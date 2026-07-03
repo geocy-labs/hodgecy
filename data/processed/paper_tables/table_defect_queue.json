@@ -1,0 +1,24 @@
+[
+  {
+    "example_id":"smoothing_bridge_84",
+    "source_arrangement":"84",
+    "expected_node_count":112,
+    "critical_degree":null,
+    "critical_degree_status":"needs_literature_verification",
+    "defect_status":"not_computed",
+    "required_tool":"Macaulay2_or_Singular",
+    "priority":"high",
+    "notes":"Compute classical nodal defect for the smoothing bridge example F_epsilon=A+epsilon Q^2 after choosing explicit generic Q and verifying nodes."
+  },
+  {
+    "example_id":"smoothing_bridge_84a",
+    "source_arrangement":"84a",
+    "expected_node_count":112,
+    "critical_degree":null,
+    "critical_degree_status":"needs_literature_verification",
+    "defect_status":"not_computed",
+    "required_tool":"Macaulay2_or_Singular",
+    "priority":"high",
+    "notes":"Compute classical nodal defect for the smoothing bridge example F_epsilon=A+epsilon Q^2 after choosing explicit generic Q and verifying nodes."
+  }
+]

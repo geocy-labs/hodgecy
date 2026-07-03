@@ -1,0 +1,53 @@
+[
+  {
+    "arrangement":"83",
+    "p3":16,
+    "p4_0":10,
+    "p4_1":0,
+    "p5_0":0,
+    "p5_1":0,
+    "p5_2":0,
+    "l3":0,
+    "h12":1,
+    "h11":41,
+    "euler":80,
+    "rigid":false,
+    "modular_form":null,
+    "hodgecy_role":"nodal_atom_candidate",
+    "interpretation":"Same singularity profile as 84 but different Hodge numbers; baseline that counts do not determine Hodge data."
+  },
+  {
+    "arrangement":"84",
+    "p3":16,
+    "p4_0":10,
+    "p4_1":0,
+    "p5_0":0,
+    "p5_1":0,
+    "p5_2":0,
+    "l3":0,
+    "h12":0,
+    "h11":40,
+    "euler":80,
+    "rigid":true,
+    "modular_form":"6k4A",
+    "hodgecy_role":"rigid_arithmetic_control",
+    "interpretation":"Rigid control arrangement; same numerical profile as 84a but different modular form."
+  },
+  {
+    "arrangement":"84a",
+    "p3":16,
+    "p4_0":10,
+    "p4_1":0,
+    "p5_0":0,
+    "p5_1":0,
+    "p5_2":0,
+    "l3":0,
+    "h12":0,
+    "h11":40,
+    "euler":80,
+    "rigid":true,
+    "modular_form":"12k4A",
+    "hodgecy_role":"rigid_arithmetic_control",
+    "interpretation":"Rigid arithmetic-control arrangement; same numerical and Hodge profile as 84 but modular form differs."
+  }
+]

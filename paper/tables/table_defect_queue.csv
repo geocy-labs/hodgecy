@@ -1,0 +1,3 @@
+example_id,source_arrangement,expected_node_count,critical_degree,critical_degree_status,defect_status,required_tool,priority,notes
+smoothing_bridge_84,84,112,,needs_literature_verification,not_computed,Macaulay2_or_Singular,high,Compute classical nodal defect for the smoothing bridge example F_epsilon=A+epsilon Q^2 after choosing explicit generic Q and verifying nodes.
+smoothing_bridge_84a,84a,112,,needs_literature_verification,not_computed,Macaulay2_or_Singular,high,Compute classical nodal defect for the smoothing bridge example F_epsilon=A+epsilon Q^2 after choosing explicit generic Q and verifying nodes.
