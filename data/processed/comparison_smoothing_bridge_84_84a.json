@@ -1,0 +1,17 @@
+{
+  "comparison_id": "smoothing_bridge_84_vs_smoothing_bridge_84a",
+  "example_a": "smoothing_bridge_84",
+  "example_b": "smoothing_bridge_84a",
+  "same_node_count": true,
+  "same_classical_defect": null,
+  "same_block_profile": true,
+  "same_gluing_deficit": true,
+  "same_hodge_numbers": true,
+  "same_singularity_profile": true,
+  "same_modular_form": false,
+  "conclusion": "pending_defect_computation",
+  "status": "candidate",
+  "notes": "Comparison remains candidate-level until smoothing-bridge node verification and classical defect computations are available.",
+  "source_lattice_isomorphic": false,
+  "source_lattice_audit_status": "available"
+}

@@ -83,3 +83,18 @@ At present this is only an expected combinatorial/local-model profile. The
 repository records the double-line grouping, expected counts, and genericity
 assumptions explicitly, but ordinary-node verification still requires CAS and
 local analytic checks.
+
+## Gate 3: Defect/Profile Comparison
+
+This layer prepares the comparison between classical defect and HodgeCY atom
+block profiles for smoothing-bridge examples. It does not compute classical
+defect yet; instead it records candidate smoothing-bridge block profiles,
+comparison scaffolds, and a defect-computation queue that makes the missing
+steps explicit.
+
+The longer-term test is whether two nodal examples can share the same node
+count and classical defect while still exhibiting different atom block
+profiles, which would make the block/profile layer a strict refinement of
+classical defect. For the current `84/84a` control pair, everything remains
+candidate-level until lattice audit, local node verification, and defect
+computation are all in place.

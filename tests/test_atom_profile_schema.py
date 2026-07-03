@@ -7,6 +7,8 @@ def test_atom_profile_dataclass_instantiates() -> None:
     profile = HodgeCYAtomProfile(
         example_id="cm-atom",
         source_dataset="cynk_meyer",
+        construction=None,
+        source_arrangement=None,
         node_count=8,
         classical_defect=2,
         flexible_formal_rank=8,
@@ -14,6 +16,8 @@ def test_atom_profile_dataclass_instantiates() -> None:
         relation_rank=2,
         block_count=2,
         block_profile=[3, 5],
+        block_profile_source=None,
+        gluing_deficit=None,
     )
     assert profile.example_id == "cm-atom"
     assert profile.operator_route_available is False
