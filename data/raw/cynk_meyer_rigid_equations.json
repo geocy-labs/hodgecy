@@ -1,0 +1,8 @@
+[
+  {
+    "arrangement_id": 1,
+    "label": "placeholder_rigid",
+    "equation": "x*y*z*w*(x-y)*(y-z)*(z-w)*(w-x)",
+    "notes": "Placeholder rigid equation entry for the initial repository scaffold."
+  }
+]

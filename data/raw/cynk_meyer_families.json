@@ -1,0 +1,8 @@
+[
+  {
+    "family_id": 1,
+    "label": "placeholder_family",
+    "equation": "x*y*z*w*(x+y)*(y+z)*(z+w)*(w+x)",
+    "notes": "Placeholder family equation entry for the initial repository scaffold."
+  }
+]
