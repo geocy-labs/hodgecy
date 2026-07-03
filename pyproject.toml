@@ -12,7 +12,8 @@ authors = [
   { name = "A. Rahman", email = "arahman@alum.howard.edu" }
 ]
 dependencies = [
-  "pandas>=2.0"
+  "pandas>=2.0",
+  "sympy>=1.12"
 ]
 
 [project.optional-dependencies]

@@ -45,3 +45,25 @@ The operator-route schemas are also now present for later storage of
 Picard--Fuchs, conifold-point, and monodromy/nilpotent-profile data. No
 mathematical results are faked by these placeholder modules; unsupported values
 remain marked as `not_computed`, `not_loaded`, or `unknown`.
+
+## Gate 1: Lattice Audit For 84 And 84a
+
+The pair `84/84a` is currently treated as a motivational/control pair in the
+double octic program. They share Cynk--Meyer Table 1 counts and Hodge numbers,
+but differ at the equation and modular-form level, so they are a natural first
+test for whether arrangement-incidence structure already separates examples that
+coarse numerical data collapse.
+
+This Gate 1 layer computes arrangement-level incidence information from the
+explicit eight-plane data and checks whether the incidence lattices of `84` and
+`84a` are isomorphic. It is not yet a conifold Hodge atom computation, because
+these arrangements are not being modeled here as finite-node conifold
+degenerations. The outcome instead tells us whether `84/84a` can function as a
+relation-layer witness or only as an arithmetic/Hodge-control pair.
+
+The current Gate 1 audit result is already nontrivial: `84` and `84a` have the
+same coarse subset-rank fingerprint, but the brute-force incidence-isomorphism
+search over all `8!` plane permutations finds no subset-rank-preserving
+isomorphism. In the present repository, that means the pair is not separated by
+the coarsest fingerprint summary, yet it is separated by the full
+arrangement-incidence test currently implemented.
