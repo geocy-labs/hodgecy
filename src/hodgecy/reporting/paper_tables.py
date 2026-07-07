@@ -7,10 +7,10 @@ from pathlib import Path
 
 import pandas as pd
 
+from hodgecy.arrangements import arrangement_84, arrangement_84a, build_concurrency_profile, p4_collinearity_certificate_rows
 from hodgecy.datasets.cynk_meyer import load_table1
 from hodgecy.defects import build_smoothing_bridge_defect_queue
 from hodgecy.smoothing.bridge import QuarticPerturbation, profile_to_dict, smoothing_bridge_profile
-from hodgecy.arrangements import arrangement_84, arrangement_84a
 
 
 def _repo_root() -> Path:
@@ -122,6 +122,26 @@ def _load_smoothing_verification_records() -> dict[str, dict]:
     return records
 
 
+def _verification_status_note(record: dict) -> str:
+    status = record.get("verification_status", "queued")
+    if status == "genericity_verified":
+        return (
+            "Genericity verified: explicit Q avoids all multiple points and is squarefree on all 28 double lines; "
+            "global singular-locus length/reducedness/Hessian checks remain queued."
+        )
+    if status == "finite_field_verified":
+        primes = ", ".join(str(item["prime"]) for item in record.get("finite_field_checks", []) if item.get("status") == "success")
+        return (
+            "Genericity verified over Q; finite-field node checks succeeded at primes "
+            f"p={primes}; characteristic-zero verification remains queued."
+        )
+    if status == "char0_verified":
+        return "Verified: reduced zero-dimensional singular locus of length 112; Hessian rank 3 at all singular points."
+    if status == "failed":
+        return record.get("notes", "Verification failed for the explicit Q.")
+    return "Verification queued."
+
+
 def build_smoothing_bridge_table() -> pd.DataFrame:
     paths = ensure_output_dirs()
     profiles = _load_smoothing_profiles()
@@ -138,15 +158,8 @@ def build_smoothing_bridge_table() -> pd.DataFrame:
         source_arrangement = str(profile["arrangement_id"])
         queue_row = queue_by_arrangement.get(source_arrangement)
         verification = verification_records.get(source_arrangement, {})
-        verification_status = verification.get("overall_status", "queued")
-        if verification.get("overall_status") == "partial":
-            expected_status = "partial_exact_genericity_verified_CAS_pending"
-        elif verification.get("overall_status") == "verified":
-            expected_status = "verified"
-        elif verification.get("overall_status") == "failed_genericity":
-            expected_status = "failed_genericity"
-        else:
-            expected_status = "queued"
+        verification_status = verification.get("verification_status", "queued")
+        expected_status = verification_status
         rows.append(
             {
                 "example_id": f"smoothing_bridge_{source_arrangement}",
@@ -157,8 +170,8 @@ def build_smoothing_bridge_table() -> pd.DataFrame:
                 "expected_node_count": profile.get("expected_nodes_total"),
                 "expected_node_count_status": expected_status,
                 "verification_status": verification_status,
-                "q_avoids_all_multiple_points": verification.get("q_avoids_all_multiple_points"),
-                "all_double_lines_have_four_simple_zeros": verification.get("all_double_lines_have_four_simple_zeros"),
+                "q_avoids_all_multiple_points": verification.get("G1_avoids_multiple_points"),
+                "all_double_lines_have_four_simple_zeros": verification.get("G2_squarefree_on_double_lines"),
                 "block_count": profile.get("number_of_double_lines"),
                 "candidate_block_profile_summary": (
                     f"{profile.get('number_of_double_lines')} blocks of size {profile.get('expected_nodes_per_double_line')}"
@@ -172,7 +185,7 @@ def build_smoothing_bridge_table() -> pd.DataFrame:
                 ),
                 "defect_status": queue_row["defect_status"] if queue_row is not None else "not_computed",
                 "critical_degree_status": queue_row["critical_degree_status"] if queue_row is not None else "needs_literature_verification",
-                "notes": verification.get("notes", profile.get("notes")),
+                "notes": _verification_status_note(verification) if verification else profile.get("notes"),
             }
         )
     result = pd.DataFrame(rows)
@@ -182,6 +195,31 @@ def build_smoothing_bridge_table() -> pd.DataFrame:
         paths["paper_tables"] / "table_smoothing_bridge_profiles.tex",
         paths["processed_tables"] / "table_smoothing_bridge_profiles.json",
     )
+
+
+def build_p4_collinearity_certificate_table() -> pd.DataFrame:
+    paths = ensure_output_dirs()
+    rows = []
+    for arrangement in (arrangement_84(), arrangement_84a()):
+        rows.extend(p4_collinearity_certificate_rows(build_concurrency_profile(arrangement)))
+    frame = pd.DataFrame(rows)
+    processed_csv = _repo_root() / "data" / "processed" / "p4_collinearity_certificate.csv"
+    frame.to_csv(processed_csv, index=False)
+    frame.to_csv(paths["paper_tables"] / "table_p4_collinearity_certificate.csv", index=False)
+
+    lines = [
+        r"\begin{tabularx}{\textwidth}{@{}llcX@{}}",
+        r"\toprule",
+        r"Arrangement & Vertex & Degree & Neighbors \\",
+        r"\midrule",
+    ]
+    for row in frame.itertuples(index=False):
+        lines.append(
+            f"{row.arrangement} & {row.vertex_label} & {row.degree} & {row.neighbor_labels} \\\\"
+        )
+    lines.extend([r"\bottomrule", r"\end{tabularx}", ""])
+    (paths["paper_tables"] / "table_p4_collinearity_certificate.tex").write_text("\n".join(lines), encoding="utf-8")
+    return frame
 
 
 def build_concurrency_comparison_table() -> pd.DataFrame:

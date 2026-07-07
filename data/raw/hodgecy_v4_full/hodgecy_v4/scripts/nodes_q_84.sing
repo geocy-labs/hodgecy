@@ -1,0 +1,8 @@
+LIB "modstd.lib";
+ring R = 0, (x,y,z,t), dp;
+poly A = (x-t)*(x+t)*(y-t)*(y+t)*(z-t)*(z+t)*(x+y+z+t)*(x+y+z-3t);
+poly Q = x4+2y4+3z4+5t4+x*y*z*t;
+ideal J = jacob(A + Q^2);
+ideal sJ = modStd(J);
+"84: dim ="; dim(sJ); "84: deg ="; mult(sJ);
+quit;

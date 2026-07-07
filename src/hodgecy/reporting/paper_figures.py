@@ -6,9 +6,16 @@ import json
 from pathlib import Path
 
 import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
 import pandas as pd
 
-from hodgecy.arrangements import build_p4_collinearity_graph, p4_collinearity_certificate_rows
+from hodgecy.arrangements import (
+    arrangement_84,
+    arrangement_84a,
+    build_concurrency_profile,
+    build_p4_collinearity_graph,
+    p4_collinearity_certificate_rows,
+)
 from hodgecy.datasets.cynk_meyer import load_table1
 from hodgecy.reporting.paper_tables import ensure_output_dirs
 
@@ -103,58 +110,36 @@ def plot_concurrency_graphs_84_84a() -> None:
         )
         return
 
-    profile_paths = {
-        "84": root / "data" / "processed" / "concurrency_profile_84.json",
-        "84a": root / "data" / "processed" / "concurrency_profile_84a.json",
-    }
-    if not all(path.exists() for path in profile_paths.values()):
-        (paths["processed_figures"] / "concurrency_graphs_skipped.json").write_text(
-            json.dumps({"reason": "concurrency profiles missing"}, indent=2),
-            encoding="utf-8",
-        )
-        return
-
-    from hodgecy.arrangements.concurrency import ArrangementConcurrencyProfile, DoubleLine, MultiplePoint
-
     certificate_rows = []
-    for arrangement_id, path in profile_paths.items():
-        payload = json.loads(path.read_text(encoding="utf-8"))
-        profile = ArrangementConcurrencyProfile(
-            arrangement_id=payload["arrangement_id"],
-            plane_count=payload["plane_count"],
-            double_line_count=payload["double_line_count"],
-            multiple_point_count_by_multiplicity={int(key): value for key, value in payload["multiple_point_count_by_multiplicity"].items()},
-            line_profile_counts=payload["line_profile_counts"],
-            p3_count=payload["p3_count"],
-            p4_count=payload["p4_count"],
-            p5_count=payload["p5_count"],
-            p4_collinearity_degree_sequence=payload["p4_collinearity_degree_sequence"],
-            p4_collinearity_edge_count=payload["p4_collinearity_edge_count"],
-            p3_p4_collinear_pair_count=payload["p3_p4_collinear_pair_count"],
-            status=payload["status"],
-            multiple_points=[MultiplePoint(**point) for point in payload["multiple_points"]],
-            double_lines=[DoubleLine(**line) for line in payload["double_lines"]],
-            notes=payload.get("notes"),
-        )
+    for arrangement in (arrangement_84(), arrangement_84a()):
+        arrangement_id = arrangement.arrangement_id
+        profile = build_concurrency_profile(arrangement)
         graph = build_p4_collinearity_graph(profile)
         certificate_rows.extend(p4_collinearity_certificate_rows(profile))
-        fig, ax = plt.subplots(figsize=(8.5, 7.5))
-        pos = nx.spring_layout(graph, seed=42)
+        fig, ax = plt.subplots(figsize=(8.0, 7.2))
+        pos = nx.kamada_kawai_layout(graph)
         degrees = dict(graph.degree())
         if arrangement_id == "84":
             highlight_nodes = {node for node, degree in degrees.items() if degree == 6}
             highlight_color = "#d94841"
-            subtitle = "10-vertex p4-collinearity graph; unique degree-6 vertex highlighted"
+            subtitle = "10 vertices, 39 edges; unique degree-6 vertex highlighted"
+            degree_sequence = "[6,8^9]"
         else:
             highlight_nodes = {node for node, degree in degrees.items() if degree == 9}
             highlight_color = "#7f3c8d"
-            subtitle = "10-vertex p4-collinearity graph; degree-9 vertices highlighted"
+            subtitle = "10 vertices, 42 edges; degree-9 vertices highlighted"
+            degree_sequence = "[8^6,9^4]"
         node_colors = [highlight_color if node in highlight_nodes else "#3b6ba5" for node in graph.nodes]
         node_sizes = [520 if node in highlight_nodes else 340 for node in graph.nodes]
-        nx.draw_networkx_edges(graph, pos=pos, ax=ax, edge_color="#b8b8b8", width=1.3)
+        nx.draw_networkx_edges(graph, pos=pos, ax=ax, edge_color="#b8b8b8", width=1.4)
         nx.draw_networkx_nodes(graph, pos=pos, ax=ax, node_size=node_sizes, node_color=node_colors, edgecolors="#222222", linewidths=0.8)
         nx.draw_networkx_labels(graph, pos=pos, ax=ax, font_size=8, font_color="white")
-        ax.set_title(f"Arrangement {arrangement_id} p4-collinearity graph\n{subtitle}")
+        legend_items = [
+            Line2D([0], [0], marker="o", color="w", markerfacecolor="#3b6ba5", markeredgecolor="#222222", markersize=8, label="degree-8 p4 vertex"),
+            Line2D([0], [0], marker="o", color="w", markerfacecolor=highlight_color, markeredgecolor="#222222", markersize=8, label="highlighted vertex class"),
+        ]
+        ax.legend(handles=legend_items, loc="upper center", bbox_to_anchor=(0.5, -0.03), ncol=2, frameon=False, fontsize=8)
+        ax.set_title(f"Arrangement {arrangement_id} p4-collinearity graph\n{subtitle}; degree sequence {degree_sequence}", fontsize=11)
         ax.axis("off")
         _save_figure(fig, f"fig_concurrency_graph_{arrangement_id}")
 

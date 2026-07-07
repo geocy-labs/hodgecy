@@ -90,8 +90,8 @@ checks that the chosen quartic \(Q\) avoids every arrangement multiple point
 and that the restriction of \(Q\) to each double line is a squarefree quartic,
 which is the exact genericity condition behind the expected four nodes per
 double line. The heavier projective singular-locus and Hessian-rank checks are
-kept conservative: they are recorded as partial until CAS-backed verification
-is completed, with follow-up templates under `m2/` and `singular/`.
+kept conservative: they are never run by default, and they are only promoted
+when an explicit optional workflow or external CAS certifies them.
 
 ## Gate 3: Defect/Profile Comparison
 
@@ -131,6 +131,48 @@ signal focused on the exact place where `84` and `84a` separate:
 The processed certificate `data/processed/p4_collinearity_certificate.csv`
 records the per-vertex degrees and neighbor lists used to generate those
 figures.
+
+## Paper Verification Workflow
+
+The paper-strengthening verification workflow is intentionally split into a
+fast default path and optional expensive paths.
+
+Default commands:
+
+- `python scripts/generate_paper_assets.py`
+- `python scripts/verify_smoothing_bridge_84_84a.py --force`
+- `python -m pytest -q`
+
+Optional expensive commands:
+
+- `python scripts/verify_smoothing_bridge_84_84a.py --force --finite-field-checks --max-seconds 600`
+- `python scripts/verify_smoothing_bridge_84_84a.py --force --char0-checks --max-seconds 3600`
+
+The default verification driver only does:
+
+- exact rational G1 verification: `Q` avoids all multiple points
+- exact rational G2 verification: `Q` is squarefree on every double line
+- generation of finite-field / Macaulay2 / Singular handoff artifacts
+- writing JSON / CSV outputs
+- regeneration of the p4-collinearity figures and certificate
+
+It does not attempt full characteristic-zero Groebner work unless explicitly
+asked.
+
+Verification statuses:
+
+- `queued`: no global singular-locus verification has been attempted yet
+- `genericity_verified`: exact G1 and G2 succeeded for the explicit `Q`
+- `finite_field_verified`: optional finite-field checks succeeded strongly
+  enough to promote beyond genericity
+- `char0_verified`: characteristic-zero singular-locus and node checks were
+  explicitly certified
+- `failed`: the explicit `Q` failed one of the required checks
+
+In the current repository, the paper-facing default is intentionally
+conservative: G1 and G2 are verified exactly over `Q` for the explicit quartic,
+but characteristic-zero singular-locus verification is only marked verified if
+an explicit CAS-backed workflow actually certifies it.
 
 ## Defect Computation Gate
 

@@ -1,0 +1,114 @@
+[
+  {
+    "claim_id": "char0_degree_112",
+    "arrangement_scope": "84,84a",
+    "topic": "char0 singular-locus degree",
+    "claimed_value": "112",
+    "source_files": [
+      "COMPUTATION_LOG.md",
+      "hodgecy_v4_inserts.tex",
+      "scripts/nodes_q_84.sing",
+      "scripts/nodes_q_84a.sing",
+      "outputs/out84.txt",
+      "outputs/out84a.txt"
+    ],
+    "support_level": "repo_backed",
+    "repo_backed": true,
+    "machine_readable": true,
+    "promotion_ready": false,
+    "notes": "The full package includes Singular scripts and output logs showing dim(cone)=1 and deg=112 for 84 and 84a. This backs the degree claim, but not reducedness or Hessian-rank certification."
+  },
+  {
+    "claim_id": "reduced_true",
+    "arrangement_scope": "84,84a",
+    "topic": "reducedness",
+    "claimed_value": "true",
+    "source_files": [
+      "COMPUTATION_LOG.md",
+      "hodgecy_v4_inserts.tex"
+    ],
+    "support_level": "log_only",
+    "repo_backed": false,
+    "machine_readable": false,
+    "promotion_ready": false,
+    "notes": "Reducedness is asserted in prose, but no standalone machine-readable reducedness certificate is present."
+  },
+  {
+    "claim_id": "hessian_rank_3",
+    "arrangement_scope": "84,84a",
+    "topic": "Hessian rank",
+    "claimed_value": "3 at all singular points",
+    "source_files": [
+      "COMPUTATION_LOG.md",
+      "hodgecy_v4_inserts.tex"
+    ],
+    "support_level": "log_only",
+    "repo_backed": false,
+    "machine_readable": false,
+    "promotion_ready": false,
+    "notes": "The package contains the nodality claim in prose, but no Hessian rank distribution certificate or per-point rank export."
+  },
+  {
+    "claim_id": "defect_equals_7",
+    "arrangement_scope": "84,84a",
+    "topic": "defect",
+    "claimed_value": "7",
+    "source_files": [
+      "COMPUTATION_LOG.md",
+      "hodgecy_v4_inserts.tex",
+      "rank60.py",
+      "scripts/defect_p.sing",
+      "scripts/defect_p2.sing"
+    ],
+    "support_level": "partially_backed",
+    "repo_backed": false,
+    "machine_readable": false,
+    "promotion_ready": false,
+    "notes": "The exact rank-60 lower-bound script and the finite-field Singular scripts are present, but no machine-readable finite-field outputs are bundled, so the equality claim defect=7 is not fully repo-backed."
+  },
+  {
+    "claim_id": "hilbert_degree_8_equals_105",
+    "arrangement_scope": "84,84a",
+    "topic": "Hilbert function degree 8",
+    "claimed_value": "105",
+    "source_files": [
+      "COMPUTATION_LOG.md",
+      "hodgecy_v4_inserts.tex",
+      "scripts/defect_p.sing",
+      "scripts/defect_p2.sing"
+    ],
+    "support_level": "partially_backed",
+    "repo_backed": false,
+    "machine_readable": false,
+    "promotion_ready": false,
+    "notes": "The finite-field computation scripts are present, but no raw machine-readable outputs for HF(8)=105 are bundled."
+  },
+  {
+    "claim_id": "genericity_g1_g2",
+    "arrangement_scope": "84,84a",
+    "topic": "genericity",
+    "claimed_value": "G1 and G2 pass",
+    "source_files": [
+      "genericity_check.py"
+    ],
+    "support_level": "repo_backed",
+    "repo_backed": true,
+    "machine_readable": false,
+    "promotion_ready": true,
+    "notes": "The package includes an executable exact-rational genericity script. Equivalent repo-native verification is already integrated and tested."
+  },
+  {
+    "claim_id": "rank60_lower_bound",
+    "arrangement_scope": "84,84a",
+    "topic": "degree-8 rank lower bound",
+    "claimed_value": "rank 60",
+    "source_files": [
+      "rank60.py"
+    ],
+    "support_level": "repo_backed",
+    "repo_backed": true,
+    "machine_readable": false,
+    "promotion_ready": true,
+    "notes": "The package includes the exact rational rank-60 script supporting the lower-bound half of the defect sandwich."
+  }
+]

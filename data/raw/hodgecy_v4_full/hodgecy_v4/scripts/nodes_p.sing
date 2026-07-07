@@ -1,0 +1,16 @@
+proc runarr(int p8sign) {
+  poly P7;
+  if (p8sign == 1) { P7 = x+y+z+t; }  // arrangement 84
+  else { P7 = x+y+z-t; }              // arrangement 84a
+  poly A = (x-t)*(x+t)*(y-t)*(y+t)*(z-t)*(z+t)*P7*(x+y+z-3t);
+  poly Q = x4+2y4+3z4+5t4+x*y*z*t;
+  poly F = A + Q^2;
+  ideal J = jacob(F);
+  ideal sJ = std(J);
+  "  dim ="; dim(sJ);
+  "  deg ="; mult(sJ);
+}
+ring R = 32003, (x,y,z,t), dp;
+"== p=32003, arrangement 84 =="; runarr(1);
+"== p=32003, arrangement 84a =="; runarr(0);
+quit;

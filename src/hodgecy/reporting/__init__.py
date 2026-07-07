@@ -10,6 +10,7 @@ from .paper_figures import (
 from .paper_tables import (
     build_concurrency_comparison_table,
     build_defect_queue_table,
+    build_p4_collinearity_certificate_table,
     build_same_hodge_cluster_table,
     build_smoothing_bridge_table,
     build_tier_a_control_table,
@@ -18,6 +19,7 @@ from .paper_tables import (
 __all__ = [
     "build_concurrency_comparison_table",
     "build_defect_queue_table",
+    "build_p4_collinearity_certificate_table",
     "build_same_hodge_cluster_table",
     "build_smoothing_bridge_table",
     "build_tier_a_control_table",

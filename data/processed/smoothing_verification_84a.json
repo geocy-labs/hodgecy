@@ -1,9 +1,26 @@
 {
+  "arrangement": "84a",
+  "arrangement_equation": "-3*t**8 + 4*t**7*x + 4*t**7*y + 4*t**7*z + 2*t**6*x**2 - 2*t**6*x*y - 2*t**6*x*z + 2*t**6*y**2 - 2*t**6*y*z + 2*t**6*z**2 - 4*t**5*x**3 - 4*t**5*x**2*y - 4*t**5*x**2*z - 4*t**5*x*y**2 - 4*t**5*x*z**2 - 4*t**5*y**3 - 4*t**5*y**2*z - 4*t**5*y*z**2 - 4*t**5*z**3 + t**4*x**4 + 2*t**4*x**3*y + 2*t**4*x**3*z - t**4*x**2*y**2 + 2*t**4*x**2*y*z - t**4*x**2*z**2 + 2*t**4*x*y**3 + 2*t**4*x*y**2*z + 2*t**4*x*y*z**2 + 2*t**4*x*z**3 + t**4*y**4 + 2*t**4*y**3*z - t**4*y**2*z**2 + 2*t**4*y*z**3 + t**4*z**4 + 4*t**3*x**3*y**2 + 4*t**3*x**3*z**2 + 4*t**3*x**2*y**3 + 4*t**3*x**2*y**2*z + 4*t**3*x**2*y*z**2 + 4*t**3*x**2*z**3 + 4*t**3*x*y**2*z**2 + 4*t**3*y**3*z**2 + 4*t**3*y**2*z**3 - t**2*x**4*y**2 - t**2*x**4*z**2 - 2*t**2*x**3*y**3 - 2*t**2*x**3*y**2*z - 2*t**2*x**3*y*z**2 - 2*t**2*x**3*z**3 - t**2*x**2*y**4 - 2*t**2*x**2*y**3*z - 2*t**2*x**2*y*z**3 - t**2*x**2*z**4 - 2*t**2*x*y**3*z**2 - 2*t**2*x*y**2*z**3 - t**2*y**4*z**2 - 2*t**2*y**3*z**3 - t**2*y**2*z**4 - 4*t*x**3*y**2*z**2 - 4*t*x**2*y**3*z**2 - 4*t*x**2*y**2*z**3 + x**4*y**2*z**2 + 2*x**3*y**3*z**2 + 2*x**3*y**2*z**3 + x**2*y**4*z**2 + 2*x**2*y**3*z**3 + x**2*y**2*z**4",
+  "quartic_Q": "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t",
+  "epsilon": "1",
+  "verification_status": "genericity_verified",
+  "G1_avoids_multiple_points": true,
+  "G2_squarefree_on_double_lines": true,
+  "G3_global_singular_locus_checked": false,
+  "singular_locus_dimension": null,
+  "singular_locus_length": null,
+  "reduced": null,
+  "ordinary_nodes": null,
+  "hessian_rank_distribution": {},
+  "finite_field_checks": [],
+  "cas_scripts": {
+    "macaulay2": "m2/verify_smoothing_bridge_genericity.m2",
+    "singular": "singular/verify_smoothing_bridge_genericity.sing"
+  },
+  "notes": "Genericity verified: explicit Q avoids all multiple points and is squarefree on all 28 double lines; global singular-locus length/reducedness/Hessian checks remain queued.",
   "example_id": "smoothing_bridge_84a",
   "source_arrangement": "84a",
   "arrangement_polynomial": "-3*t**8 + 4*t**7*x + 4*t**7*y + 4*t**7*z + 2*t**6*x**2 - 2*t**6*x*y - 2*t**6*x*z + 2*t**6*y**2 - 2*t**6*y*z + 2*t**6*z**2 - 4*t**5*x**3 - 4*t**5*x**2*y - 4*t**5*x**2*z - 4*t**5*x*y**2 - 4*t**5*x*z**2 - 4*t**5*y**3 - 4*t**5*y**2*z - 4*t**5*y*z**2 - 4*t**5*z**3 + t**4*x**4 + 2*t**4*x**3*y + 2*t**4*x**3*z - t**4*x**2*y**2 + 2*t**4*x**2*y*z - t**4*x**2*z**2 + 2*t**4*x*y**3 + 2*t**4*x*y**2*z + 2*t**4*x*y*z**2 + 2*t**4*x*z**3 + t**4*y**4 + 2*t**4*y**3*z - t**4*y**2*z**2 + 2*t**4*y*z**3 + t**4*z**4 + 4*t**3*x**3*y**2 + 4*t**3*x**3*z**2 + 4*t**3*x**2*y**3 + 4*t**3*x**2*y**2*z + 4*t**3*x**2*y*z**2 + 4*t**3*x**2*z**3 + 4*t**3*x*y**2*z**2 + 4*t**3*y**3*z**2 + 4*t**3*y**2*z**3 - t**2*x**4*y**2 - t**2*x**4*z**2 - 2*t**2*x**3*y**3 - 2*t**2*x**3*y**2*z - 2*t**2*x**3*y*z**2 - 2*t**2*x**3*z**3 - t**2*x**2*y**4 - 2*t**2*x**2*y**3*z - 2*t**2*x**2*y*z**3 - t**2*x**2*z**4 - 2*t**2*x*y**3*z**2 - 2*t**2*x*y**2*z**3 - t**2*y**4*z**2 - 2*t**2*y**3*z**3 - t**2*y**2*z**4 - 4*t*x**3*y**2*z**2 - 4*t*x**2*y**3*z**2 - 4*t*x**2*y**2*z**3 + x**4*y**2*z**2 + 2*x**3*y**3*z**2 + 2*x**3*y**2*z**3 + x**2*y**4*z**2 + 2*x**2*y**3*z**3 + x**2*y**2*z**4",
-  "quartic_Q": "5*t**4 + t*x*y*z + x**4 + 2*y**4 + 3*z**4",
-  "epsilon": 1,
   "smoothing_polynomial": "22*t**8 + 4*t**7*x + 4*t**7*y + 4*t**7*z + 2*t**6*x**2 - 2*t**6*x*y - 2*t**6*x*z + 2*t**6*y**2 - 2*t**6*y*z + 2*t**6*z**2 - 4*t**5*x**3 - 4*t**5*x**2*y - 4*t**5*x**2*z - 4*t**5*x*y**2 + 10*t**5*x*y*z - 4*t**5*x*z**2 - 4*t**5*y**3 - 4*t**5*y**2*z - 4*t**5*y*z**2 - 4*t**5*z**3 + 11*t**4*x**4 + 2*t**4*x**3*y + 2*t**4*x**3*z - t**4*x**2*y**2 + 2*t**4*x**2*y*z - t**4*x**2*z**2 + 2*t**4*x*y**3 + 2*t**4*x*y**2*z + 2*t**4*x*y*z**2 + 2*t**4*x*z**3 + 21*t**4*y**4 + 2*t**4*y**3*z - t**4*y**2*z**2 + 2*t**4*y*z**3 + 31*t**4*z**4 + 4*t**3*x**3*y**2 + 4*t**3*x**3*z**2 + 4*t**3*x**2*y**3 + 4*t**3*x**2*y**2*z + 4*t**3*x**2*y*z**2 + 4*t**3*x**2*z**3 + 4*t**3*x*y**2*z**2 + 4*t**3*y**3*z**2 + 4*t**3*y**2*z**3 - t**2*x**4*y**2 - t**2*x**4*z**2 - 2*t**2*x**3*y**3 - 2*t**2*x**3*y**2*z - 2*t**2*x**3*y*z**2 - 2*t**2*x**3*z**3 - t**2*x**2*y**4 - 2*t**2*x**2*y**3*z + t**2*x**2*y**2*z**2 - 2*t**2*x**2*y*z**3 - t**2*x**2*z**4 - 2*t**2*x*y**3*z**2 - 2*t**2*x*y**2*z**3 - t**2*y**4*z**2 - 2*t**2*y**3*z**3 - t**2*y**2*z**4 + 2*t*x**5*y*z - 4*t*x**3*y**2*z**2 - 4*t*x**2*y**3*z**2 - 4*t*x**2*y**2*z**3 + 4*t*x*y**5*z + 6*t*x*y*z**5 + x**8 + 4*x**4*y**4 + x**4*y**2*z**2 + 6*x**4*z**4 + 2*x**3*y**3*z**2 + 2*x**3*y**2*z**3 + x**2*y**4*z**2 + 2*x**2*y**3*z**3 + x**2*y**2*z**4 + 4*y**8 + 12*y**4*z**4 + 9*z**8",
   "singular_locus_generators": {
     "F": "22*t**8 + 4*t**7*x + 4*t**7*y + 4*t**7*z + 2*t**6*x**2 - 2*t**6*x*y - 2*t**6*x*z + 2*t**6*y**2 - 2*t**6*y*z + 2*t**6*z**2 - 4*t**5*x**3 - 4*t**5*x**2*y - 4*t**5*x**2*z - 4*t**5*x*y**2 + 10*t**5*x*y*z - 4*t**5*x*z**2 - 4*t**5*y**3 - 4*t**5*y**2*z - 4*t**5*y*z**2 - 4*t**5*z**3 + 11*t**4*x**4 + 2*t**4*x**3*y + 2*t**4*x**3*z - t**4*x**2*y**2 + 2*t**4*x**2*y*z - t**4*x**2*z**2 + 2*t**4*x*y**3 + 2*t**4*x*y**2*z + 2*t**4*x*y*z**2 + 2*t**4*x*z**3 + 21*t**4*y**4 + 2*t**4*y**3*z - t**4*y**2*z**2 + 2*t**4*y*z**3 + 31*t**4*z**4 + 4*t**3*x**3*y**2 + 4*t**3*x**3*z**2 + 4*t**3*x**2*y**3 + 4*t**3*x**2*y**2*z + 4*t**3*x**2*y*z**2 + 4*t**3*x**2*z**3 + 4*t**3*x*y**2*z**2 + 4*t**3*y**3*z**2 + 4*t**3*y**2*z**3 - t**2*x**4*y**2 - t**2*x**4*z**2 - 2*t**2*x**3*y**3 - 2*t**2*x**3*y**2*z - 2*t**2*x**3*y*z**2 - 2*t**2*x**3*z**3 - t**2*x**2*y**4 - 2*t**2*x**2*y**3*z + t**2*x**2*y**2*z**2 - 2*t**2*x**2*y*z**3 - t**2*x**2*z**4 - 2*t**2*x*y**3*z**2 - 2*t**2*x*y**2*z**3 - t**2*y**4*z**2 - 2*t**2*y**3*z**3 - t**2*y**2*z**4 + 2*t*x**5*y*z - 4*t*x**3*y**2*z**2 - 4*t*x**2*y**3*z**2 - 4*t*x**2*y**2*z**3 + 4*t*x*y**5*z + 6*t*x*y*z**5 + x**8 + 4*x**4*y**4 + x**4*y**2*z**2 + 6*x**4*z**4 + 2*x**3*y**3*z**2 + 2*x**3*y**2*z**3 + x**2*y**4*z**2 + 2*x**2*y**3*z**3 + x**2*y**2*z**4 + 4*y**8 + 12*y**4*z**4 + 9*z**8",
@@ -673,14 +690,8 @@
       "reason": null
     }
   ],
-  "singular_locus_status": "partial",
-  "singular_locus_reason": "Exact rational F and gradient generators are recorded, but the characteristic-zero projective scheme-length/reducedness verification is deferred to dedicated CAS scripts.",
-  "hessian_status": "partial",
-  "hessian_reason": "Full Hessian rank-3 verification at every singular point remains queued until the singular-point set is certified by CAS.",
-  "overall_status": "partial",
-  "notes": "Python-side verification establishes exact rational genericity for Q at the arrangement multiple points and along every double line. Zero-dimensionality, reducedness, and node-type verification remain partial.",
-  "cas_followup": {
-    "macaulay2_script": "m2/verify_smoothing_bridge_genericity.m2",
-    "singular_script": "singular/verify_smoothing_bridge_genericity.sing"
-  }
+  "singular_locus_status": "queued",
+  "singular_locus_reason": "Global singular-locus verification is not attempted in the default workflow.",
+  "hessian_status": "queued",
+  "hessian_reason": "Global Hessian-rank verification is not attempted in the default workflow."
 }

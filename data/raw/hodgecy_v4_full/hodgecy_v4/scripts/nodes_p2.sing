@@ -1,0 +1,26 @@
+LIB "elim.lib";
+proc runarr(int p8sign) {
+  poly P7;
+  if (p8sign == 1) { P7 = x+y+z+t; } else { P7 = x+y+z-t; }
+  list L = x-t, x+t, y-t, y+t, z-t, z+t, P7, x+y+z-3t;
+  poly A = L[1]*L[2]*L[3]*L[4]*L[5]*L[6]*L[7]*L[8];
+  poly Q = x4+2y4+3z4+5t4+x*y*z*t;
+  poly F = A + Q^2;
+  ideal J = jacob(F);
+  ideal I112 = 1; int i,j;
+  for (i=1; i<=7; i++) { for (j=i+1; j<=8; j++) {
+    I112 = intersect(I112, ideal(L[i], L[j], Q));
+  } }
+  ideal sI = std(I112);
+  "  deg(I112) ="; mult(sI); "  dim(I112) ="; dim(sI);
+  "  J subset I112 (0=yes):"; size(reduce(J, sI));
+  ideal Jsat = sat(J, ideal(x,y,z,t))[1];
+  ideal sJs = std(Jsat);
+  "  deg(satJ) ="; mult(sJs);
+  "  I112 subset satJ (0=yes):"; size(reduce(I112, sJs));
+  "  satJ subset I112 (0=yes):"; size(reduce(Jsat, sI));
+}
+ring R = 32003, (x,y,z,t), dp;
+"== 84 =="; runarr(1);
+"== 84a =="; runarr(0);
+quit;

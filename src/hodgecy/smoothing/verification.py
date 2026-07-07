@@ -1,16 +1,26 @@
-"""Exact rational verification scaffolding for smoothing-bridge examples."""
+"""Verification workflow for smoothing-bridge examples."""
 
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass
+from datetime import datetime
 import json
 from pathlib import Path
+import time
 
 import pandas as pd
 import sympy as sp
 
 from hodgecy.arrangements import arrangement_84, arrangement_84a, build_concurrency_profile
 from hodgecy.arrangements.planes import PlaneArrangement
+
+ALLOWED_VERIFICATION_STATUSES = {
+    "queued",
+    "genericity_verified",
+    "finite_field_verified",
+    "char0_verified",
+    "failed",
+}
 
 
 @dataclass(slots=True)
@@ -34,12 +44,39 @@ class MultiplePointCheck:
 
 
 @dataclass(slots=True)
+class FiniteFieldCheck:
+    prime: int
+    dimension: int | None
+    length: int | None
+    reduced: bool | None
+    ordinary_nodes: bool | None
+    hessian_rank_distribution: dict[str, int]
+    status: str
+    notes: str
+    rational_projective_point_count: int | None = None
+
+
+@dataclass(slots=True)
 class SmoothingVerificationRecord:
+    arrangement: str
+    arrangement_equation: str
+    quartic_Q: str
+    epsilon: str
+    verification_status: str
+    G1_avoids_multiple_points: bool
+    G2_squarefree_on_double_lines: bool
+    G3_global_singular_locus_checked: bool
+    singular_locus_dimension: int | None
+    singular_locus_length: int | None
+    reduced: bool | None
+    ordinary_nodes: bool | None
+    hessian_rank_distribution: dict[str, int]
+    finite_field_checks: list[FiniteFieldCheck]
+    cas_scripts: dict[str, str]
+    notes: str
     example_id: str
     source_arrangement: str
     arrangement_polynomial: str
-    quartic_Q: str
-    epsilon: int
     smoothing_polynomial: str
     singular_locus_generators: dict[str, str]
     expected_node_count: int
@@ -55,18 +92,38 @@ class SmoothingVerificationRecord:
     singular_locus_reason: str
     hessian_status: str
     hessian_reason: str
-    overall_status: str
-    notes: str
-    cas_followup: dict[str, str]
+
+
+@dataclass(slots=True)
+class VerificationWriteResult:
+    logical_path: str
+    actual_path: str
+    status: str
+    notes: str | None = None
+
+
+@dataclass(slots=True)
+class VerificationRunResult:
+    records: list[SmoothingVerificationRecord]
+    write_results: list[VerificationWriteResult]
+    summary_path: str
 
 
 def _symbols():
     return sp.symbols("x y z t u")
 
 
+def arrangement_lookup() -> dict[str, PlaneArrangement]:
+    return {"84": arrangement_84(), "84a": arrangement_84a()}
+
+
 def candidate_quartic() -> sp.Expr:
     x, y, z, t, _ = _symbols()
     return x**4 + 2 * y**4 + 3 * z**4 + 5 * t**4 + x * y * z * t
+
+
+def candidate_quartic_str() -> str:
+    return "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
 
 
 def epsilon_value() -> int:
@@ -167,38 +224,198 @@ def verify_q_avoids_multiple_points(arrangement: PlaneArrangement) -> tuple[bool
     return len(violations) == 0, violations, checks
 
 
-def build_smoothing_verification(arrangement: PlaneArrangement) -> SmoothingVerificationRecord:
+def _projective_points_over_fp(prime: int) -> list[tuple[int, int, int, int]]:
+    points: list[tuple[int, int, int, int]] = []
+    for a in range(prime):
+        for b in range(prime):
+            for c in range(prime):
+                points.append((1, a, b, c))
+    for b in range(prime):
+        for c in range(prime):
+            points.append((0, 1, b, c))
+    for c in range(prime):
+        points.append((0, 0, 1, c))
+    points.append((0, 0, 0, 1))
+    return points
+
+
+def _matrix_rank_mod_prime(matrix_rows: list[list[int]], prime: int) -> int:
+    rows = [[entry % prime for entry in row] for row in matrix_rows]
+    row_count = len(rows)
+    col_count = len(rows[0]) if rows else 0
+    rank = 0
+    pivot_row = 0
+    for col in range(col_count):
+        pivot = None
+        for row in range(pivot_row, row_count):
+            if rows[row][col] % prime != 0:
+                pivot = row
+                break
+        if pivot is None:
+            continue
+        rows[pivot_row], rows[pivot] = rows[pivot], rows[pivot_row]
+        inv = pow(rows[pivot_row][col], -1, prime)
+        rows[pivot_row] = [(value * inv) % prime for value in rows[pivot_row]]
+        for row in range(row_count):
+            if row == pivot_row or rows[row][col] % prime == 0:
+                continue
+            factor = rows[row][col] % prime
+            rows[row] = [(left - factor * right) % prime for left, right in zip(rows[row], rows[pivot_row])]
+        rank += 1
+        pivot_row += 1
+        if pivot_row == row_count:
+            break
+    return rank
+
+
+def _run_finite_field_checks(
+    arrangement: PlaneArrangement,
+    max_seconds: int | None,
+) -> list[FiniteFieldCheck]:
+    x, y, z, t, _ = _symbols()
+    polynomial = smoothing_polynomial(arrangement)
+    generators = [polynomial] + [sp.expand(sp.diff(polynomial, variable)) for variable in (x, y, z, t)]
+    hessian = [[sp.expand(sp.diff(sp.diff(polynomial, left), right)) for right in (x, y, z, t)] for left in (x, y, z, t)]
+    deadline = None if max_seconds is None else time.monotonic() + max_seconds
+    checks: list[FiniteFieldCheck] = []
+    for prime in (13, 17, 19):
+        if deadline is not None and time.monotonic() >= deadline:
+            checks.append(
+                FiniteFieldCheck(
+                    prime=prime,
+                    dimension=None,
+                    length=None,
+                    reduced=None,
+                    ordinary_nodes=None,
+                    hessian_rank_distribution={},
+                    status="failed",
+                    notes="Skipped because the finite-field budget was exhausted before this prime was reached.",
+                )
+            )
+            continue
+        singular_points: list[tuple[int, int, int, int]] = []
+        for point in _projective_points_over_fp(prime):
+            substitutions = {x: point[0], y: point[1], z: point[2], t: point[3]}
+            if all(int(generator.subs(substitutions)) % prime == 0 for generator in generators):
+                singular_points.append(point)
+        rank_distribution: dict[str, int] = {}
+        for point in singular_points:
+            substitutions = {x: point[0], y: point[1], z: point[2], t: point[3]}
+            matrix_rows = [
+                [int(entry.subs(substitutions)) % prime for entry in row]
+                for row in hessian
+            ]
+            rank = _matrix_rank_mod_prime(matrix_rows, prime)
+            rank_distribution[str(rank)] = rank_distribution.get(str(rank), 0) + 1
+        checks.append(
+            FiniteFieldCheck(
+                prime=prime,
+                dimension=None,
+                length=None,
+                reduced=None,
+                ordinary_nodes=(rank_distribution == {"3": len(singular_points)}) if singular_points else None,
+                hessian_rank_distribution=rank_distribution,
+                status="partial",
+                notes=(
+                    "Exhaustive projective F_p-rational singular-point scan completed. "
+                    "This is a rational-point sanity check only; no characteristic-zero or scheme-length promotion is claimed."
+                ),
+                rational_projective_point_count=len(singular_points),
+            )
+        )
+    return checks
+
+
+def _run_char0_checks(arrangement: PlaneArrangement, max_seconds: int | None) -> tuple[bool, str]:
+    _ = (arrangement, max_seconds)
+    return False, (
+        "Characteristic-zero checks are intentionally not run by default in this workflow. "
+        "The repository ships exact Macaulay2 and Singular handoff scripts, but no local CAS executable was invoked here."
+    )
+
+
+def _build_notes(
+    verification_status: str,
+    finite_field_checks: list[FiniteFieldCheck],
+    char0_note: str | None,
+) -> str:
+    if verification_status == "char0_verified":
+        return "Verified: reduced zero-dimensional singular locus of length 112; Hessian rank 3 at all singular points."
+    if verification_status == "finite_field_verified":
+        good_primes = ", ".join(str(check.prime) for check in finite_field_checks if check.status == "success")
+        return (
+            "Genericity verified over Q; finite-field node checks succeeded at primes "
+            f"p={good_primes}; characteristic-zero verification remains queued."
+        )
+    if verification_status == "genericity_verified":
+        if finite_field_checks:
+            partial_primes = ", ".join(str(check.prime) for check in finite_field_checks if check.status != "failed")
+            return (
+                "Genericity verified: explicit Q avoids all multiple points and is squarefree on all 28 double lines; "
+                f"optional finite-field sanity checks were recorded at p={partial_primes}, but no promotion beyond genericity is claimed."
+            )
+        return (
+            "Genericity verified: explicit Q avoids all multiple points and is squarefree on all 28 double lines; "
+            "global singular-locus length/reducedness/Hessian checks remain queued."
+        )
+    if verification_status == "failed":
+        return "Verification failed: at least one required genericity condition did not hold for the explicit Q."
+    return char0_note or "Verification queued."
+
+
+def build_smoothing_verification(
+    arrangement: PlaneArrangement,
+    *,
+    finite_field_checks: bool = False,
+    char0_checks: bool = False,
+    max_seconds: int | None = None,
+) -> SmoothingVerificationRecord:
     profile = build_concurrency_profile(arrangement)
     q_avoids, violations, multiple_point_checks = verify_q_avoids_multiple_points(arrangement)
     line_checks = [line_genericity_check(arrangement, line.line_id, line.planes) for line in profile.double_lines]
     all_simple = all(check.has_four_simple_zeros for check in line_checks)
 
-    singular_locus_status = "partial"
-    singular_locus_reason = (
-        "Exact rational F and gradient generators are recorded, but the characteristic-zero projective "
-        "scheme-length/reducedness verification is deferred to dedicated CAS scripts."
-    )
-    hessian_status = "partial"
-    hessian_reason = (
-        "Full Hessian rank-3 verification at every singular point remains queued until the singular-point set "
-        "is certified by CAS."
-    )
-    overall_status = "partial" if q_avoids and all_simple else "failed_genericity"
+    verification_status = "genericity_verified" if q_avoids and all_simple else "failed"
+    singular_locus_status = "queued"
+    singular_locus_reason = "Global singular-locus verification is not attempted in the default workflow."
+    hessian_status = "queued"
+    hessian_reason = "Global Hessian-rank verification is not attempted in the default workflow."
 
-    notes = (
-        "Python-side verification establishes exact rational genericity for Q at the arrangement multiple points "
-        "and along every double line. Zero-dimensionality, reducedness, and node-type verification remain partial."
-    )
+    finite_field_results: list[FiniteFieldCheck] = []
+    if finite_field_checks and verification_status != "failed":
+        finite_field_results = _run_finite_field_checks(arrangement, max_seconds=max_seconds)
+
+    char0_note = None
+    if char0_checks and verification_status != "failed":
+        char0_checked, char0_note = _run_char0_checks(arrangement, max_seconds=max_seconds)
+        if char0_checked:
+            verification_status = "char0_verified"
+
+    notes = _build_notes(verification_status, finite_field_results, char0_note)
     cas_followup = {
-        "macaulay2_script": "m2/verify_smoothing_bridge_genericity.m2",
-        "singular_script": "singular/verify_smoothing_bridge_genericity.sing",
+        "macaulay2": "m2/verify_smoothing_bridge_genericity.m2",
+        "singular": "singular/verify_smoothing_bridge_genericity.sing",
     }
     return SmoothingVerificationRecord(
+        arrangement=arrangement.arrangement_id,
+        arrangement_equation=str(arrangement_polynomial(arrangement)),
+        quartic_Q=candidate_quartic_str(),
+        epsilon=str(epsilon_value()),
+        verification_status=verification_status,
+        G1_avoids_multiple_points=q_avoids,
+        G2_squarefree_on_double_lines=all_simple,
+        G3_global_singular_locus_checked=(verification_status == "char0_verified"),
+        singular_locus_dimension=None,
+        singular_locus_length=None,
+        reduced=None,
+        ordinary_nodes=None,
+        hessian_rank_distribution={},
+        finite_field_checks=finite_field_results,
+        cas_scripts=cas_followup,
+        notes=notes,
         example_id=f"smoothing_bridge_{arrangement.arrangement_id}",
         source_arrangement=arrangement.arrangement_id,
         arrangement_polynomial=str(arrangement_polynomial(arrangement)),
-        quartic_Q=str(candidate_quartic()),
-        epsilon=epsilon_value(),
         smoothing_polynomial=str(smoothing_polynomial(arrangement)),
         singular_locus_generators=singular_locus_generators(arrangement),
         expected_node_count=112,
@@ -214,9 +431,6 @@ def build_smoothing_verification(arrangement: PlaneArrangement) -> SmoothingVeri
         singular_locus_reason=singular_locus_reason,
         hessian_status=hessian_status,
         hessian_reason=hessian_reason,
-        overall_status=overall_status,
-        notes=notes,
-        cas_followup=cas_followup,
     )
 
 
@@ -230,12 +444,12 @@ def build_summary_frame(records: list[SmoothingVerificationRecord]) -> pd.DataFr
             {
                 "example_id": record.example_id,
                 "source_arrangement": record.source_arrangement,
+                "verification_status": record.verification_status,
                 "expected_node_count": record.expected_node_count,
-                "q_avoids_all_multiple_points": record.q_avoids_all_multiple_points,
-                "all_double_lines_have_four_simple_zeros": record.all_double_lines_have_four_simple_zeros,
-                "singular_locus_status": record.singular_locus_status,
-                "hessian_status": record.hessian_status,
-                "overall_status": record.overall_status,
+                "double_line_count": record.double_line_count,
+                "G1_avoids_multiple_points": record.G1_avoids_multiple_points,
+                "G2_squarefree_on_double_lines": record.G2_squarefree_on_double_lines,
+                "G3_global_singular_locus_checked": record.G3_global_singular_locus_checked,
                 "notes": record.notes,
             }
             for record in records
@@ -243,17 +457,99 @@ def build_summary_frame(records: list[SmoothingVerificationRecord]) -> pd.DataFr
     )
 
 
-def write_default_verification_outputs(root: Path) -> list[SmoothingVerificationRecord]:
-    processed = root / "data" / "processed"
-    processed.mkdir(parents=True, exist_ok=True)
-    records = [build_smoothing_verification(arrangement_84()), build_smoothing_verification(arrangement_84a())]
+def _safe_write_text(path: Path, text: str, *, force: bool) -> VerificationWriteResult:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    timestamp = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
+    fallback_dir = path.parents[2] / "paper" / "tables"
+    if path.exists() and not force:
+        fallback = fallback_dir / f"{path.stem}.fallback_existing_{timestamp}{path.suffix}"
+        fallback.write_text(text, encoding="utf-8")
+        return VerificationWriteResult(str(path), str(fallback), "fallback_existing", "Primary output existed and --force was not used.")
+    if path.exists() and force:
+        try:
+            path.write_text(text, encoding="utf-8")
+            return VerificationWriteResult(str(path), str(path), "replaced_direct")
+        except OSError:
+            pass
+
+    temp_path = path.with_name(f"{path.name}.tmp")
+    try:
+        temp_path.write_text(text, encoding="utf-8")
+        temp_path.replace(path)
+        return VerificationWriteResult(str(path), str(path), "replaced")
+    except OSError as exc:
+        fallback = fallback_dir / f"{path.stem}.fallback_locked_{timestamp}{path.suffix}"
+        try:
+            fallback.write_text(text, encoding="utf-8")
+            if temp_path.exists():
+                temp_path.unlink(missing_ok=True)
+            return VerificationWriteResult(str(path), str(fallback), "fallback_locked", str(exc))
+        except OSError as fallback_exc:
+            if temp_path.exists():
+                temp_path.unlink(missing_ok=True)
+            if path.exists():
+                return VerificationWriteResult(
+                    str(path),
+                    str(path),
+                    "reused_existing_locked",
+                    f"Primary and fallback writes were blocked; existing artifact was left in place. Primary error: {exc}. Fallback error: {fallback_exc}.",
+                )
+            raise
+
+
+def run_verification_workflow(
+    root: Path,
+    *,
+    out_dir: Path | None = None,
+    arrangements: list[str] | None = None,
+    force: bool = False,
+    finite_field_checks: bool = False,
+    char0_checks: bool = False,
+    max_seconds: int | None = None,
+) -> VerificationRunResult:
+    target_dir = out_dir or (root / "data" / "processed")
+    arrangement_ids = arrangements or ["84", "84a"]
+    records = [
+        build_smoothing_verification(
+            arrangement_lookup()[arrangement_id],
+            finite_field_checks=finite_field_checks,
+            char0_checks=char0_checks,
+            max_seconds=max_seconds,
+        )
+        for arrangement_id in arrangement_ids
+    ]
+    write_results: list[VerificationWriteResult] = []
     for record in records:
-        output_path = processed / f"smoothing_verification_{record.source_arrangement}.json"
-        temp_path = output_path.with_suffix(".json.tmp")
-        temp_path.write_text(json.dumps(record_to_dict(record), indent=2), encoding="utf-8")
-        temp_path.replace(output_path)
-    summary_path = processed / "smoothing_verification_summary.csv"
-    summary_temp_path = processed / "smoothing_verification_summary.csv.tmp"
-    build_summary_frame(records).to_csv(summary_temp_path, index=False)
-    summary_temp_path.replace(summary_path)
-    return records
+        write_results.append(
+            _safe_write_text(
+                target_dir / f"smoothing_verification_{record.source_arrangement}.json",
+                json.dumps(record_to_dict(record), indent=2),
+                force=force,
+            )
+        )
+    summary_text = build_summary_frame(records).to_csv(index=False)
+    summary_write = _safe_write_text(target_dir / "smoothing_verification_summary.csv", summary_text, force=force)
+    write_results.append(summary_write)
+    return VerificationRunResult(records=records, write_results=write_results, summary_path=summary_write.actual_path)
+
+
+def write_default_verification_outputs(
+    root: Path,
+    *,
+    out_dir: Path | None = None,
+    arrangements: list[str] | None = None,
+    force: bool = True,
+    finite_field_checks: bool = False,
+    char0_checks: bool = False,
+    max_seconds: int | None = None,
+) -> list[SmoothingVerificationRecord]:
+    result = run_verification_workflow(
+        root,
+        out_dir=out_dir,
+        arrangements=arrangements,
+        force=force,
+        finite_field_checks=finite_field_checks,
+        char0_checks=char0_checks,
+        max_seconds=max_seconds,
+    )
+    return result.records

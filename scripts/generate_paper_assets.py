@@ -14,6 +14,7 @@ if str(SRC_ROOT) not in sys.path:
 from hodgecy.reporting import (  # noqa: E402
     build_concurrency_comparison_table,
     build_defect_queue_table,
+    build_p4_collinearity_certificate_table,
     build_same_hodge_cluster_table,
     build_smoothing_bridge_table,
     build_tier_a_control_table,
@@ -25,6 +26,7 @@ from hodgecy.reporting import (  # noqa: E402
 )
 from hodgecy.reporting.paper_tables import ensure_output_dirs  # noqa: E402
 from hodgecy.smoothing import write_default_verification_outputs  # noqa: E402
+from hodgecy.smoothing import write_reviewer_v4_audit  # noqa: E402
 
 
 def main() -> None:
@@ -33,6 +35,8 @@ def main() -> None:
 
     write_default_verification_outputs(REPO_ROOT)
     generated.append("smoothing_verification_outputs")
+    write_reviewer_v4_audit(REPO_ROOT)
+    generated.append("reviewer_v4_audit")
 
     build_tier_a_control_table()
     generated.append("table_tier_a_controls")
@@ -42,6 +46,8 @@ def main() -> None:
     generated.append("table_smoothing_bridge_profiles")
     build_concurrency_comparison_table()
     generated.append("table_concurrency_comparison_84_84a")
+    build_p4_collinearity_certificate_table()
+    generated.append("table_p4_collinearity_certificate")
     build_defect_queue_table()
     generated.append("table_defect_queue")
 

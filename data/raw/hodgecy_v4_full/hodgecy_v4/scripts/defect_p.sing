@@ -1,0 +1,21 @@
+proc defarr(int p8sign) {
+  poly P7;
+  if (p8sign == 1) { P7 = x+y+z+t; } else { P7 = x+y+z-t; }
+  list L = x-t, x+t, y-t, y+t, z-t, z+t, P7, x+y+z-3t;
+  poly Q = x4+2y4+3z4+5t4+x*y*z*t;
+  ideal I112 = 1; int i,j;
+  for (i=1; i<=7; i++) { for (j=i+1; j<=8; j++) {
+    I112 = intersect(I112, ideal(L[i], L[j], Q));
+  } }
+  ideal sI = std(I112);
+  "  deg ="; mult(sI); "  dim ="; dim(sI);
+  // Hilbert function of R/I112 in degrees 5..10 via kbase in each degree
+  int d;
+  for (d = 5; d <= 10; d++) {
+    "  HF(R/I,", d, ") ="; size(kbase(sI, d));
+  }
+}
+ring R = 32003, (x,y,z,t), dp;
+"== p=32003, 84 =="; defarr(1);
+"== p=32003, 84a =="; defarr(0);
+quit;
