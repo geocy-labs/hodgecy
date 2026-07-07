@@ -84,6 +84,15 @@ repository records the double-line grouping, expected counts, and genericity
 assumptions explicitly, but ordinary-node verification still requires CAS and
 local analytic checks.
 
+The repository now also includes exact rational verification scaffolding for
+the `84` and `84a` smoothing-bridge candidates. On the Python side, HodgeCY
+checks that the chosen quartic \(Q\) avoids every arrangement multiple point
+and that the restriction of \(Q\) to each double line is a squarefree quartic,
+which is the exact genericity condition behind the expected four nodes per
+double line. The heavier projective singular-locus and Hessian-rank checks are
+kept conservative: they are recorded as partial until CAS-backed verification
+is completed, with follow-up templates under `m2/` and `singular/`.
+
 ## Gate 3: Defect/Profile Comparison
 
 This layer prepares the comparison between classical defect and HodgeCY atom
@@ -111,6 +120,17 @@ The concurrency-aware profile therefore records line/multiple-point incidence,
 multiple-point multiplicity counts, line multiplicity profiles, and p4
 collinearity structure. These are arrangement-level inputs to the smoothing
 bridge and to any later candidate atom-block interpretation.
+
+For the current paper assets, the repository now emphasizes the p4-collinearity
+graphs rather than the full mixed concurrency graph. This keeps the visual
+signal focused on the exact place where `84` and `84a` separate:
+
+- `84`: 10 p4 vertices, 39 edges, degree sequence `[6, 8^9]`
+- `84a`: 10 p4 vertices, 42 edges, degree sequence `[8^6, 9^4]`
+
+The processed certificate `data/processed/p4_collinearity_certificate.csv`
+records the per-vertex degrees and neighbor lists used to generate those
+figures.
 
 ## Defect Computation Gate
 
@@ -140,7 +160,8 @@ machine-readable companion files under `data/processed/paper_tables` and
 `data/processed/paper_figures`.
 
 Some figures depend on optional processed data or optional plotting support,
-most notably the concurrency graph figure. When those dependencies are missing,
-the asset generator records a clear skip reason rather than failing. Defect
-values and operator-route validations are never fabricated: queued computations
-remain explicitly marked `not_computed` until verified results are ingested.
+most notably the p4-collinearity graph figure. When those dependencies are
+missing, the asset generator records a clear skip reason rather than failing.
+Defect values, singular-locus cardinalities, and operator-route validations are
+never fabricated: queued or partial computations remain explicitly marked
+`not_computed`, `queued`, or `partial` until verified results are ingested.

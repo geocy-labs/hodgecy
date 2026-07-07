@@ -6,13 +6,16 @@
     "triple_line_count":0,
     "expected_nodes_per_double_line":4,
     "expected_node_count":112,
-    "expected_node_count_status":"expected_from_double_line_count_not_CAS_verified",
+    "expected_node_count_status":"partial_exact_genericity_verified_CAS_pending",
+    "verification_status":"partial",
+    "q_avoids_all_multiple_points":true,
+    "all_double_lines_have_four_simple_zeros":true,
     "block_count":28,
     "candidate_block_profile_summary":"28 blocks of size 4",
     "gluing_deficit":84,
     "defect_status":"not_computed",
     "critical_degree_status":"needs_literature_verification",
-    "notes":"Combinatorial\/local-model smoothing bridge only: residual node counts remain expected values until CAS and local analytic verification are completed."
+    "notes":"Python-side verification establishes exact rational genericity for Q at the arrangement multiple points and along every double line. Zero-dimensionality, reducedness, and node-type verification remain partial."
   },
   {
     "example_id":"smoothing_bridge_84a",
@@ -21,12 +24,15 @@
     "triple_line_count":0,
     "expected_nodes_per_double_line":4,
     "expected_node_count":112,
-    "expected_node_count_status":"expected_from_double_line_count_not_CAS_verified",
+    "expected_node_count_status":"partial_exact_genericity_verified_CAS_pending",
+    "verification_status":"partial",
+    "q_avoids_all_multiple_points":true,
+    "all_double_lines_have_four_simple_zeros":true,
     "block_count":28,
     "candidate_block_profile_summary":"28 blocks of size 4",
     "gluing_deficit":84,
     "defect_status":"not_computed",
     "critical_degree_status":"needs_literature_verification",
-    "notes":"Combinatorial\/local-model smoothing bridge only: residual node counts remain expected values until CAS and local analytic verification are completed."
+    "notes":"Python-side verification establishes exact rational genericity for Q at the arrangement multiple points and along every double line. Zero-dimensionality, reducedness, and node-type verification remain partial."
   }
 ]

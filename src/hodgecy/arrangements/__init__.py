@@ -10,7 +10,12 @@ from .concurrency import (
     rref_key_to_str,
     vector_to_projective_str,
 )
-from .graphs import build_concurrency_graph, colored_graph_isomorphic
+from .graphs import (
+    build_concurrency_graph,
+    build_p4_collinearity_graph,
+    colored_graph_isomorphic,
+    p4_collinearity_certificate_rows,
+)
 from .incidence import (
     incidence_hypergraph,
     intersection_codimension,
@@ -41,6 +46,7 @@ __all__ = [
     "arrangement_84a",
     "canonical_subset_rank_fingerprint",
     "build_concurrency_graph",
+    "build_p4_collinearity_graph",
     "build_concurrency_profile",
     "colored_graph_isomorphic",
     "concurrency_profile_to_dict",
@@ -52,6 +58,7 @@ __all__ = [
     "intersection_rank",
     "maximal_incidence_strata",
     "plane_matrix",
+    "p4_collinearity_certificate_rows",
     "rank_of_planes",
     "rref_key_to_str",
     "subset_rank_signature",

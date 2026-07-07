@@ -24,11 +24,15 @@ from hodgecy.reporting import (  # noqa: E402
     plot_smoothing_bridge_schematic,
 )
 from hodgecy.reporting.paper_tables import ensure_output_dirs  # noqa: E402
+from hodgecy.smoothing import write_default_verification_outputs  # noqa: E402
 
 
 def main() -> None:
     ensure_output_dirs()
     generated = []
+
+    write_default_verification_outputs(REPO_ROOT)
+    generated.append("smoothing_verification_outputs")
 
     build_tier_a_control_table()
     generated.append("table_tier_a_controls")

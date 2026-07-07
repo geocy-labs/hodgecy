@@ -112,9 +112,20 @@ def _load_smoothing_profiles() -> list[dict]:
     ]
 
 
+def _load_smoothing_verification_records() -> dict[str, dict]:
+    root = _repo_root()
+    records: dict[str, dict] = {}
+    for arrangement_id in ("84", "84a"):
+        path = root / "data" / "processed" / f"smoothing_verification_{arrangement_id}.json"
+        if path.exists():
+            records[arrangement_id] = json.loads(path.read_text(encoding="utf-8"))
+    return records
+
+
 def build_smoothing_bridge_table() -> pd.DataFrame:
     paths = ensure_output_dirs()
     profiles = _load_smoothing_profiles()
+    verification_records = _load_smoothing_verification_records()
     queue_path = _repo_root() / "data" / "processed" / "defect_computation_queue.csv"
     if queue_path.exists():
         queue = pd.read_csv(queue_path, dtype={"example_id": str, "source_arrangement": str})
@@ -126,6 +137,16 @@ def build_smoothing_bridge_table() -> pd.DataFrame:
     for profile in profiles:
         source_arrangement = str(profile["arrangement_id"])
         queue_row = queue_by_arrangement.get(source_arrangement)
+        verification = verification_records.get(source_arrangement, {})
+        verification_status = verification.get("overall_status", "queued")
+        if verification.get("overall_status") == "partial":
+            expected_status = "partial_exact_genericity_verified_CAS_pending"
+        elif verification.get("overall_status") == "verified":
+            expected_status = "verified"
+        elif verification.get("overall_status") == "failed_genericity":
+            expected_status = "failed_genericity"
+        else:
+            expected_status = "queued"
         rows.append(
             {
                 "example_id": f"smoothing_bridge_{source_arrangement}",
@@ -134,7 +155,10 @@ def build_smoothing_bridge_table() -> pd.DataFrame:
                 "triple_line_count": profile.get("triple_line_count"),
                 "expected_nodes_per_double_line": profile.get("expected_nodes_per_double_line"),
                 "expected_node_count": profile.get("expected_nodes_total"),
-                "expected_node_count_status": "expected_from_double_line_count_not_CAS_verified",
+                "expected_node_count_status": expected_status,
+                "verification_status": verification_status,
+                "q_avoids_all_multiple_points": verification.get("q_avoids_all_multiple_points"),
+                "all_double_lines_have_four_simple_zeros": verification.get("all_double_lines_have_four_simple_zeros"),
                 "block_count": profile.get("number_of_double_lines"),
                 "candidate_block_profile_summary": (
                     f"{profile.get('number_of_double_lines')} blocks of size {profile.get('expected_nodes_per_double_line')}"
@@ -148,7 +172,7 @@ def build_smoothing_bridge_table() -> pd.DataFrame:
                 ),
                 "defect_status": queue_row["defect_status"] if queue_row is not None else "not_computed",
                 "critical_degree_status": queue_row["critical_degree_status"] if queue_row is not None else "needs_literature_verification",
-                "notes": profile.get("notes"),
+                "notes": verification.get("notes", profile.get("notes")),
             }
         )
     result = pd.DataFrame(rows)

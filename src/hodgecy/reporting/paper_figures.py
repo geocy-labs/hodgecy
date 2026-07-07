@@ -8,7 +8,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import pandas as pd
 
-from hodgecy.arrangements import build_concurrency_graph
+from hodgecy.arrangements import build_p4_collinearity_graph, p4_collinearity_certificate_rows
 from hodgecy.datasets.cynk_meyer import load_table1
 from hodgecy.reporting.paper_tables import ensure_output_dirs
 
@@ -116,7 +116,7 @@ def plot_concurrency_graphs_84_84a() -> None:
 
     from hodgecy.arrangements.concurrency import ArrangementConcurrencyProfile, DoubleLine, MultiplePoint
 
-    colors = {"plane": "#3b6ba5", "double_line": "#d17c28", "p3": "#4c9a5f", "p4": "#a73d5c", "p5": "#6a4c93"}
+    certificate_rows = []
     for arrangement_id, path in profile_paths.items():
         payload = json.loads(path.read_text(encoding="utf-8"))
         profile = ArrangementConcurrencyProfile(
@@ -136,14 +136,29 @@ def plot_concurrency_graphs_84_84a() -> None:
             double_lines=[DoubleLine(**line) for line in payload["double_lines"]],
             notes=payload.get("notes"),
         )
-        graph = build_concurrency_graph(profile)
-        fig, ax = plt.subplots(figsize=(10, 8))
+        graph = build_p4_collinearity_graph(profile)
+        certificate_rows.extend(p4_collinearity_certificate_rows(profile))
+        fig, ax = plt.subplots(figsize=(8.5, 7.5))
         pos = nx.spring_layout(graph, seed=42)
-        node_colors = [colors.get(graph.nodes[node]["type"], "#999999") for node in graph.nodes]
-        nx.draw_networkx(graph, pos=pos, ax=ax, node_size=120, font_size=6, with_labels=False, node_color=node_colors, edge_color="#bbbbbb")
-        ax.set_title(f"Concurrency graph for arrangement {arrangement_id}")
+        degrees = dict(graph.degree())
+        if arrangement_id == "84":
+            highlight_nodes = {node for node, degree in degrees.items() if degree == 6}
+            highlight_color = "#d94841"
+            subtitle = "10-vertex p4-collinearity graph; unique degree-6 vertex highlighted"
+        else:
+            highlight_nodes = {node for node, degree in degrees.items() if degree == 9}
+            highlight_color = "#7f3c8d"
+            subtitle = "10-vertex p4-collinearity graph; degree-9 vertices highlighted"
+        node_colors = [highlight_color if node in highlight_nodes else "#3b6ba5" for node in graph.nodes]
+        node_sizes = [520 if node in highlight_nodes else 340 for node in graph.nodes]
+        nx.draw_networkx_edges(graph, pos=pos, ax=ax, edge_color="#b8b8b8", width=1.3)
+        nx.draw_networkx_nodes(graph, pos=pos, ax=ax, node_size=node_sizes, node_color=node_colors, edgecolors="#222222", linewidths=0.8)
+        nx.draw_networkx_labels(graph, pos=pos, ax=ax, font_size=8, font_color="white")
+        ax.set_title(f"Arrangement {arrangement_id} p4-collinearity graph\n{subtitle}")
         ax.axis("off")
         _save_figure(fig, f"fig_concurrency_graph_{arrangement_id}")
+
+    pd.DataFrame(certificate_rows).to_csv(root / "data" / "processed" / "p4_collinearity_certificate.csv", index=False)
 
 
 def plot_hodgecy_pipeline() -> None:

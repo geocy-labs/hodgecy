@@ -1,0 +1,686 @@
+{
+  "example_id": "smoothing_bridge_84a",
+  "source_arrangement": "84a",
+  "arrangement_polynomial": "-3*t**8 + 4*t**7*x + 4*t**7*y + 4*t**7*z + 2*t**6*x**2 - 2*t**6*x*y - 2*t**6*x*z + 2*t**6*y**2 - 2*t**6*y*z + 2*t**6*z**2 - 4*t**5*x**3 - 4*t**5*x**2*y - 4*t**5*x**2*z - 4*t**5*x*y**2 - 4*t**5*x*z**2 - 4*t**5*y**3 - 4*t**5*y**2*z - 4*t**5*y*z**2 - 4*t**5*z**3 + t**4*x**4 + 2*t**4*x**3*y + 2*t**4*x**3*z - t**4*x**2*y**2 + 2*t**4*x**2*y*z - t**4*x**2*z**2 + 2*t**4*x*y**3 + 2*t**4*x*y**2*z + 2*t**4*x*y*z**2 + 2*t**4*x*z**3 + t**4*y**4 + 2*t**4*y**3*z - t**4*y**2*z**2 + 2*t**4*y*z**3 + t**4*z**4 + 4*t**3*x**3*y**2 + 4*t**3*x**3*z**2 + 4*t**3*x**2*y**3 + 4*t**3*x**2*y**2*z + 4*t**3*x**2*y*z**2 + 4*t**3*x**2*z**3 + 4*t**3*x*y**2*z**2 + 4*t**3*y**3*z**2 + 4*t**3*y**2*z**3 - t**2*x**4*y**2 - t**2*x**4*z**2 - 2*t**2*x**3*y**3 - 2*t**2*x**3*y**2*z - 2*t**2*x**3*y*z**2 - 2*t**2*x**3*z**3 - t**2*x**2*y**4 - 2*t**2*x**2*y**3*z - 2*t**2*x**2*y*z**3 - t**2*x**2*z**4 - 2*t**2*x*y**3*z**2 - 2*t**2*x*y**2*z**3 - t**2*y**4*z**2 - 2*t**2*y**3*z**3 - t**2*y**2*z**4 - 4*t*x**3*y**2*z**2 - 4*t*x**2*y**3*z**2 - 4*t*x**2*y**2*z**3 + x**4*y**2*z**2 + 2*x**3*y**3*z**2 + 2*x**3*y**2*z**3 + x**2*y**4*z**2 + 2*x**2*y**3*z**3 + x**2*y**2*z**4",
+  "quartic_Q": "5*t**4 + t*x*y*z + x**4 + 2*y**4 + 3*z**4",
+  "epsilon": 1,
+  "smoothing_polynomial": "22*t**8 + 4*t**7*x + 4*t**7*y + 4*t**7*z + 2*t**6*x**2 - 2*t**6*x*y - 2*t**6*x*z + 2*t**6*y**2 - 2*t**6*y*z + 2*t**6*z**2 - 4*t**5*x**3 - 4*t**5*x**2*y - 4*t**5*x**2*z - 4*t**5*x*y**2 + 10*t**5*x*y*z - 4*t**5*x*z**2 - 4*t**5*y**3 - 4*t**5*y**2*z - 4*t**5*y*z**2 - 4*t**5*z**3 + 11*t**4*x**4 + 2*t**4*x**3*y + 2*t**4*x**3*z - t**4*x**2*y**2 + 2*t**4*x**2*y*z - t**4*x**2*z**2 + 2*t**4*x*y**3 + 2*t**4*x*y**2*z + 2*t**4*x*y*z**2 + 2*t**4*x*z**3 + 21*t**4*y**4 + 2*t**4*y**3*z - t**4*y**2*z**2 + 2*t**4*y*z**3 + 31*t**4*z**4 + 4*t**3*x**3*y**2 + 4*t**3*x**3*z**2 + 4*t**3*x**2*y**3 + 4*t**3*x**2*y**2*z + 4*t**3*x**2*y*z**2 + 4*t**3*x**2*z**3 + 4*t**3*x*y**2*z**2 + 4*t**3*y**3*z**2 + 4*t**3*y**2*z**3 - t**2*x**4*y**2 - t**2*x**4*z**2 - 2*t**2*x**3*y**3 - 2*t**2*x**3*y**2*z - 2*t**2*x**3*y*z**2 - 2*t**2*x**3*z**3 - t**2*x**2*y**4 - 2*t**2*x**2*y**3*z + t**2*x**2*y**2*z**2 - 2*t**2*x**2*y*z**3 - t**2*x**2*z**4 - 2*t**2*x*y**3*z**2 - 2*t**2*x*y**2*z**3 - t**2*y**4*z**2 - 2*t**2*y**3*z**3 - t**2*y**2*z**4 + 2*t*x**5*y*z - 4*t*x**3*y**2*z**2 - 4*t*x**2*y**3*z**2 - 4*t*x**2*y**2*z**3 + 4*t*x*y**5*z + 6*t*x*y*z**5 + x**8 + 4*x**4*y**4 + x**4*y**2*z**2 + 6*x**4*z**4 + 2*x**3*y**3*z**2 + 2*x**3*y**2*z**3 + x**2*y**4*z**2 + 2*x**2*y**3*z**3 + x**2*y**2*z**4 + 4*y**8 + 12*y**4*z**4 + 9*z**8",
+  "singular_locus_generators": {
+    "F": "22*t**8 + 4*t**7*x + 4*t**7*y + 4*t**7*z + 2*t**6*x**2 - 2*t**6*x*y - 2*t**6*x*z + 2*t**6*y**2 - 2*t**6*y*z + 2*t**6*z**2 - 4*t**5*x**3 - 4*t**5*x**2*y - 4*t**5*x**2*z - 4*t**5*x*y**2 + 10*t**5*x*y*z - 4*t**5*x*z**2 - 4*t**5*y**3 - 4*t**5*y**2*z - 4*t**5*y*z**2 - 4*t**5*z**3 + 11*t**4*x**4 + 2*t**4*x**3*y + 2*t**4*x**3*z - t**4*x**2*y**2 + 2*t**4*x**2*y*z - t**4*x**2*z**2 + 2*t**4*x*y**3 + 2*t**4*x*y**2*z + 2*t**4*x*y*z**2 + 2*t**4*x*z**3 + 21*t**4*y**4 + 2*t**4*y**3*z - t**4*y**2*z**2 + 2*t**4*y*z**3 + 31*t**4*z**4 + 4*t**3*x**3*y**2 + 4*t**3*x**3*z**2 + 4*t**3*x**2*y**3 + 4*t**3*x**2*y**2*z + 4*t**3*x**2*y*z**2 + 4*t**3*x**2*z**3 + 4*t**3*x*y**2*z**2 + 4*t**3*y**3*z**2 + 4*t**3*y**2*z**3 - t**2*x**4*y**2 - t**2*x**4*z**2 - 2*t**2*x**3*y**3 - 2*t**2*x**3*y**2*z - 2*t**2*x**3*y*z**2 - 2*t**2*x**3*z**3 - t**2*x**2*y**4 - 2*t**2*x**2*y**3*z + t**2*x**2*y**2*z**2 - 2*t**2*x**2*y*z**3 - t**2*x**2*z**4 - 2*t**2*x*y**3*z**2 - 2*t**2*x*y**2*z**3 - t**2*y**4*z**2 - 2*t**2*y**3*z**3 - t**2*y**2*z**4 + 2*t*x**5*y*z - 4*t*x**3*y**2*z**2 - 4*t*x**2*y**3*z**2 - 4*t*x**2*y**2*z**3 + 4*t*x*y**5*z + 6*t*x*y*z**5 + x**8 + 4*x**4*y**4 + x**4*y**2*z**2 + 6*x**4*z**4 + 2*x**3*y**3*z**2 + 2*x**3*y**2*z**3 + x**2*y**4*z**2 + 2*x**2*y**3*z**3 + x**2*y**2*z**4 + 4*y**8 + 12*y**4*z**4 + 9*z**8",
+    "dF_dx": "4*t**7 + 4*t**6*x - 2*t**6*y - 2*t**6*z - 12*t**5*x**2 - 8*t**5*x*y - 8*t**5*x*z - 4*t**5*y**2 + 10*t**5*y*z - 4*t**5*z**2 + 44*t**4*x**3 + 6*t**4*x**2*y + 6*t**4*x**2*z - 2*t**4*x*y**2 + 4*t**4*x*y*z - 2*t**4*x*z**2 + 2*t**4*y**3 + 2*t**4*y**2*z + 2*t**4*y*z**2 + 2*t**4*z**3 + 12*t**3*x**2*y**2 + 12*t**3*x**2*z**2 + 8*t**3*x*y**3 + 8*t**3*x*y**2*z + 8*t**3*x*y*z**2 + 8*t**3*x*z**3 + 4*t**3*y**2*z**2 - 4*t**2*x**3*y**2 - 4*t**2*x**3*z**2 - 6*t**2*x**2*y**3 - 6*t**2*x**2*y**2*z - 6*t**2*x**2*y*z**2 - 6*t**2*x**2*z**3 - 2*t**2*x*y**4 - 4*t**2*x*y**3*z + 2*t**2*x*y**2*z**2 - 4*t**2*x*y*z**3 - 2*t**2*x*z**4 - 2*t**2*y**3*z**2 - 2*t**2*y**2*z**3 + 10*t*x**4*y*z - 12*t*x**2*y**2*z**2 - 8*t*x*y**3*z**2 - 8*t*x*y**2*z**3 + 4*t*y**5*z + 6*t*y*z**5 + 8*x**7 + 16*x**3*y**4 + 4*x**3*y**2*z**2 + 24*x**3*z**4 + 6*x**2*y**3*z**2 + 6*x**2*y**2*z**3 + 2*x*y**4*z**2 + 4*x*y**3*z**3 + 2*x*y**2*z**4",
+    "dF_dy": "4*t**7 - 2*t**6*x + 4*t**6*y - 2*t**6*z - 4*t**5*x**2 - 8*t**5*x*y + 10*t**5*x*z - 12*t**5*y**2 - 8*t**5*y*z - 4*t**5*z**2 + 2*t**4*x**3 - 2*t**4*x**2*y + 2*t**4*x**2*z + 6*t**4*x*y**2 + 4*t**4*x*y*z + 2*t**4*x*z**2 + 84*t**4*y**3 + 6*t**4*y**2*z - 2*t**4*y*z**2 + 2*t**4*z**3 + 8*t**3*x**3*y + 12*t**3*x**2*y**2 + 8*t**3*x**2*y*z + 4*t**3*x**2*z**2 + 8*t**3*x*y*z**2 + 12*t**3*y**2*z**2 + 8*t**3*y*z**3 - 2*t**2*x**4*y - 6*t**2*x**3*y**2 - 4*t**2*x**3*y*z - 2*t**2*x**3*z**2 - 4*t**2*x**2*y**3 - 6*t**2*x**2*y**2*z + 2*t**2*x**2*y*z**2 - 2*t**2*x**2*z**3 - 6*t**2*x*y**2*z**2 - 4*t**2*x*y*z**3 - 4*t**2*y**3*z**2 - 6*t**2*y**2*z**3 - 2*t**2*y*z**4 + 2*t*x**5*z - 8*t*x**3*y*z**2 - 12*t*x**2*y**2*z**2 - 8*t*x**2*y*z**3 + 20*t*x*y**4*z + 6*t*x*z**5 + 16*x**4*y**3 + 2*x**4*y*z**2 + 6*x**3*y**2*z**2 + 4*x**3*y*z**3 + 4*x**2*y**3*z**2 + 6*x**2*y**2*z**3 + 2*x**2*y*z**4 + 32*y**7 + 48*y**3*z**4",
+    "dF_dz": "4*t**7 - 2*t**6*x - 2*t**6*y + 4*t**6*z - 4*t**5*x**2 + 10*t**5*x*y - 8*t**5*x*z - 4*t**5*y**2 - 8*t**5*y*z - 12*t**5*z**2 + 2*t**4*x**3 + 2*t**4*x**2*y - 2*t**4*x**2*z + 2*t**4*x*y**2 + 4*t**4*x*y*z + 6*t**4*x*z**2 + 2*t**4*y**3 - 2*t**4*y**2*z + 6*t**4*y*z**2 + 124*t**4*z**3 + 8*t**3*x**3*z + 4*t**3*x**2*y**2 + 8*t**3*x**2*y*z + 12*t**3*x**2*z**2 + 8*t**3*x*y**2*z + 8*t**3*y**3*z + 12*t**3*y**2*z**2 - 2*t**2*x**4*z - 2*t**2*x**3*y**2 - 4*t**2*x**3*y*z - 6*t**2*x**3*z**2 - 2*t**2*x**2*y**3 + 2*t**2*x**2*y**2*z - 6*t**2*x**2*y*z**2 - 4*t**2*x**2*z**3 - 4*t**2*x*y**3*z - 6*t**2*x*y**2*z**2 - 2*t**2*y**4*z - 6*t**2*y**3*z**2 - 4*t**2*y**2*z**3 + 2*t*x**5*y - 8*t*x**3*y**2*z - 8*t*x**2*y**3*z - 12*t*x**2*y**2*z**2 + 4*t*x*y**5 + 30*t*x*y*z**4 + 2*x**4*y**2*z + 24*x**4*z**3 + 4*x**3*y**3*z + 6*x**3*y**2*z**2 + 2*x**2*y**4*z + 6*x**2*y**3*z**2 + 4*x**2*y**2*z**3 + 48*y**4*z**3 + 72*z**7",
+    "dF_dt": "176*t**7 + 28*t**6*x + 28*t**6*y + 28*t**6*z + 12*t**5*x**2 - 12*t**5*x*y - 12*t**5*x*z + 12*t**5*y**2 - 12*t**5*y*z + 12*t**5*z**2 - 20*t**4*x**3 - 20*t**4*x**2*y - 20*t**4*x**2*z - 20*t**4*x*y**2 + 50*t**4*x*y*z - 20*t**4*x*z**2 - 20*t**4*y**3 - 20*t**4*y**2*z - 20*t**4*y*z**2 - 20*t**4*z**3 + 44*t**3*x**4 + 8*t**3*x**3*y + 8*t**3*x**3*z - 4*t**3*x**2*y**2 + 8*t**3*x**2*y*z - 4*t**3*x**2*z**2 + 8*t**3*x*y**3 + 8*t**3*x*y**2*z + 8*t**3*x*y*z**2 + 8*t**3*x*z**3 + 84*t**3*y**4 + 8*t**3*y**3*z - 4*t**3*y**2*z**2 + 8*t**3*y*z**3 + 124*t**3*z**4 + 12*t**2*x**3*y**2 + 12*t**2*x**3*z**2 + 12*t**2*x**2*y**3 + 12*t**2*x**2*y**2*z + 12*t**2*x**2*y*z**2 + 12*t**2*x**2*z**3 + 12*t**2*x*y**2*z**2 + 12*t**2*y**3*z**2 + 12*t**2*y**2*z**3 - 2*t*x**4*y**2 - 2*t*x**4*z**2 - 4*t*x**3*y**3 - 4*t*x**3*y**2*z - 4*t*x**3*y*z**2 - 4*t*x**3*z**3 - 2*t*x**2*y**4 - 4*t*x**2*y**3*z + 2*t*x**2*y**2*z**2 - 4*t*x**2*y*z**3 - 2*t*x**2*z**4 - 4*t*x*y**3*z**2 - 4*t*x*y**2*z**3 - 2*t*y**4*z**2 - 4*t*y**3*z**3 - 2*t*y**2*z**4 + 2*x**5*y*z - 4*x**3*y**2*z**2 - 4*x**2*y**3*z**2 - 4*x**2*y**2*z**3 + 4*x*y**5*z + 6*x*y*z**5"
+  },
+  "expected_node_count": 112,
+  "plane_count": 8,
+  "double_line_count": 28,
+  "multiple_point_count": 26,
+  "q_avoids_all_multiple_points": true,
+  "q_multiple_point_violations": [],
+  "multiple_point_checks": [
+    {
+      "point_id": "pt01",
+      "coordinates": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "q_value": "3",
+      "status": "verified"
+    },
+    {
+      "point_id": "pt02",
+      "coordinates": [
+        0,
+        1,
+        -1,
+        0
+      ],
+      "q_value": "5",
+      "status": "verified"
+    },
+    {
+      "point_id": "pt03",
+      "coordinates": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "q_value": "2",
+      "status": "verified"
+    },
+    {
+      "point_id": "pt04",
+      "coordinates": [
+        1,
+        -5,
+        1,
+        -1
+      ],
+      "q_value": "1264",
+      "status": "verified"
+    },
+    {
+      "point_id": "pt05",
+      "coordinates": [
+        1,
+        -3,
+        -1,
+        -1
+      ],
+      "q_value": "168",
+      "status": "verified"
+    },
+    {
+      "point_id": "pt06",
+      "coordinates": [
+        1,
+        -3,
+        1,
+        -1
+      ],
+      "q_value": "174",
+      "status": "verified"
+    },
+    {
+      "point_id": "pt07",
+      "coordinates": [
+        1,
+        -1,
+        -3,
+        -1
+      ],
+      "q_value": "248",
+      "status": "verified"
+    },
+    {
+      "point_id": "pt08",
+      "coordinates": [
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "q_value": "10",
+      "status": "verified"
+    },
+    {
+      "point_id": "pt09",
+      "coordinates": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "q_value": "12",
+      "status": "verified"
+    },
+    {
+      "point_id": "pt10",
+      "coordinates": [
+        1,
+        -1,
+        0,
+        0
+      ],
+      "q_value": "3",
+      "status": "verified"
+    },
+    {
+      "point_id": "pt11",
+      "coordinates": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "q_value": "12",
+      "status": "verified"
+    },
+    {
+      "point_id": "pt12",
+      "coordinates": [
+        1,
+        -1,
+        1,
+        1
+      ],
+      "q_value": "10",
+      "status": "verified"
+    },
+    {
+      "point_id": "pt13",
+      "coordinates": [
+        1,
+        -1,
+        3,
+        1
+      ],
+      "q_value": "248",
+      "status": "verified"
+    },
+    {
+      "point_id": "pt14",
+      "coordinates": [
+        1,
+        0,
+        -1,
+        0
+      ],
+      "q_value": "4",
+      "status": "verified"
+    },
+    {
+      "point_id": "pt15",
+      "coordinates": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "q_value": "1",
+      "status": "verified"
+    },
+    {
+      "point_id": "pt16",
+      "coordinates": [
+        1,
+        1,
+        -5,
+        -1
+      ],
+      "q_value": "1888",
+      "status": "verified"
+    },
+    {
+      "point_id": "pt17",
+      "coordinates": [
+        1,
+        1,
+        -3,
+        -1
+      ],
+      "q_value": "254",
+      "status": "verified"
+    },
+    {
+      "point_id": "pt18",
+      "coordinates": [
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "q_value": "12",
+      "status": "verified"
+    },
+    {
+      "point_id": "pt19",
+      "coordinates": [
+        1,
+        1,
+        -1,
+        1
+      ],
+      "q_value": "10",
+      "status": "verified"
+    },
+    {
+      "point_id": "pt20",
+      "coordinates": [
+        1,
+        1,
+        1,
+        -1
+      ],
+      "q_value": "10",
+      "status": "verified"
+    },
+    {
+      "point_id": "pt21",
+      "coordinates": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "q_value": "12",
+      "status": "verified"
+    },
+    {
+      "point_id": "pt22",
+      "coordinates": [
+        1,
+        3,
+        -1,
+        1
+      ],
+      "q_value": "168",
+      "status": "verified"
+    },
+    {
+      "point_id": "pt23",
+      "coordinates": [
+        3,
+        -1,
+        -1,
+        1
+      ],
+      "q_value": "94",
+      "status": "verified"
+    },
+    {
+      "point_id": "pt24",
+      "coordinates": [
+        3,
+        -1,
+        1,
+        1
+      ],
+      "q_value": "88",
+      "status": "verified"
+    },
+    {
+      "point_id": "pt25",
+      "coordinates": [
+        3,
+        1,
+        -1,
+        1
+      ],
+      "q_value": "88",
+      "status": "verified"
+    },
+    {
+      "point_id": "pt26",
+      "coordinates": [
+        5,
+        -1,
+        -1,
+        1
+      ],
+      "q_value": "640",
+      "status": "verified"
+    }
+  ],
+  "all_double_lines_have_four_simple_zeros": true,
+  "line_checks": [
+    {
+      "line_id": "L01",
+      "planes": [
+        "p1",
+        "p2"
+      ],
+      "parameter_polynomial": "3*u**4 + 2",
+      "degree": 4,
+      "discriminant": "55296",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L02",
+      "planes": [
+        "p1",
+        "p3"
+      ],
+      "parameter_polynomial": "8*u**4 + u**3 + 3",
+      "degree": 4,
+      "discriminant": "3538701",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L03",
+      "planes": [
+        "p1",
+        "p4"
+      ],
+      "parameter_polynomial": "8*u**4 - u**3 + 3",
+      "degree": 4,
+      "discriminant": "3538701",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L04",
+      "planes": [
+        "p1",
+        "p5"
+      ],
+      "parameter_polynomial": "9*u**4 + u**3 + 2",
+      "degree": 4,
+      "discriminant": "1492884",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L05",
+      "planes": [
+        "p1",
+        "p6"
+      ],
+      "parameter_polynomial": "9*u**4 - u**3 + 2",
+      "degree": 4,
+      "discriminant": "1492884",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L06",
+      "planes": [
+        "p1",
+        "p7"
+      ],
+      "parameter_polynomial": "6*u**4 - u**2 + 5",
+      "degree": 4,
+      "discriminant": "6797280",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L07",
+      "planes": [
+        "p1",
+        "p8"
+      ],
+      "parameter_polynomial": "38*u**4 - 62*u**3 + 47*u**2 - 16*u + 5",
+      "degree": 4,
+      "discriminant": "313932416",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L08",
+      "planes": [
+        "p2",
+        "p3"
+      ],
+      "parameter_polynomial": "8*u**4 - u**3 + 3",
+      "degree": 4,
+      "discriminant": "3538701",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L09",
+      "planes": [
+        "p2",
+        "p4"
+      ],
+      "parameter_polynomial": "8*u**4 + u**3 + 3",
+      "degree": 4,
+      "discriminant": "3538701",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L10",
+      "planes": [
+        "p2",
+        "p5"
+      ],
+      "parameter_polynomial": "9*u**4 - u**3 + 2",
+      "degree": 4,
+      "discriminant": "1492884",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L11",
+      "planes": [
+        "p2",
+        "p6"
+      ],
+      "parameter_polynomial": "9*u**4 + u**3 + 2",
+      "degree": 4,
+      "discriminant": "1492884",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L12",
+      "planes": [
+        "p2",
+        "p7"
+      ],
+      "parameter_polynomial": "38*u**4 - 66*u**3 + 49*u**2 - 16*u + 5",
+      "degree": 4,
+      "discriminant": "420512992",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L13",
+      "planes": [
+        "p2",
+        "p8"
+      ],
+      "parameter_polynomial": "518*u**4 - 516*u**3 + 193*u**2 - 32*u + 5",
+      "degree": 4,
+      "discriminant": "983268362656",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L14",
+      "planes": [
+        "p3",
+        "p4"
+      ],
+      "parameter_polynomial": "3*u**4 + 1",
+      "degree": 4,
+      "discriminant": "6912",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L15",
+      "planes": [
+        "p3",
+        "p5"
+      ],
+      "parameter_polynomial": "10*u**4 + u**3 + 1",
+      "degree": 4,
+      "discriminant": "255973",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L16",
+      "planes": [
+        "p3",
+        "p6"
+      ],
+      "parameter_polynomial": "10*u**4 - u**3 + 1",
+      "degree": 4,
+      "discriminant": "255973",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L17",
+      "planes": [
+        "p3",
+        "p7"
+      ],
+      "parameter_polynomial": "7*u**4 - u**2 + 4",
+      "degree": 4,
+      "discriminant": "5519808",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L18",
+      "planes": [
+        "p3",
+        "p8"
+      ],
+      "parameter_polynomial": "23*u**4 - 30*u**3 + 23*u**2 - 8*u + 4",
+      "degree": 4,
+      "discriminant": "51233536",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L19",
+      "planes": [
+        "p4",
+        "p5"
+      ],
+      "parameter_polynomial": "10*u**4 - u**3 + 1",
+      "degree": 4,
+      "discriminant": "255973",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L20",
+      "planes": [
+        "p4",
+        "p6"
+      ],
+      "parameter_polynomial": "10*u**4 + u**3 + 1",
+      "degree": 4,
+      "discriminant": "255973",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L21",
+      "planes": [
+        "p4",
+        "p7"
+      ],
+      "parameter_polynomial": "23*u**4 - 34*u**3 + 25*u**2 - 8*u + 4",
+      "degree": 4,
+      "discriminant": "77251712",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L22",
+      "planes": [
+        "p4",
+        "p8"
+      ],
+      "parameter_polynomial": "263*u**4 - 260*u**3 + 97*u**2 - 16*u + 4",
+      "degree": 4,
+      "discriminant": "129111317696",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L23",
+      "planes": [
+        "p5",
+        "p6"
+      ],
+      "parameter_polynomial": "2*u**4 + 1",
+      "degree": 4,
+      "discriminant": "2048",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L24",
+      "planes": [
+        "p5",
+        "p7"
+      ],
+      "parameter_polynomial": "8*u**4 - u**2 + 3",
+      "degree": 4,
+      "discriminant": "3465600",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L25",
+      "planes": [
+        "p5",
+        "p8"
+      ],
+      "parameter_polynomial": "24*u**4 - 30*u**3 + 23*u**2 - 8*u + 3",
+      "degree": 4,
+      "discriminant": "11366016",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L26",
+      "planes": [
+        "p6",
+        "p7"
+      ],
+      "parameter_polynomial": "24*u**4 - 34*u**3 + 25*u**2 - 8*u + 3",
+      "degree": 4,
+      "discriminant": "23032352",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L27",
+      "planes": [
+        "p6",
+        "p8"
+      ],
+      "parameter_polynomial": "264*u**4 - 260*u**3 + 97*u**2 - 16*u + 3",
+      "degree": 4,
+      "discriminant": "39388485056",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    },
+    {
+      "line_id": "L28",
+      "planes": [
+        "p7",
+        "p8"
+      ],
+      "parameter_polynomial": "4*u**4 + 4*u**3 + 6*u**2 + 4*u + 3",
+      "degree": 4,
+      "discriminant": "91904",
+      "has_four_simple_zeros": true,
+      "status": "verified",
+      "reason": null
+    }
+  ],
+  "singular_locus_status": "partial",
+  "singular_locus_reason": "Exact rational F and gradient generators are recorded, but the characteristic-zero projective scheme-length/reducedness verification is deferred to dedicated CAS scripts.",
+  "hessian_status": "partial",
+  "hessian_reason": "Full Hessian rank-3 verification at every singular point remains queued until the singular-point set is certified by CAS.",
+  "overall_status": "partial",
+  "notes": "Python-side verification establishes exact rational genericity for Q at the arrangement multiple points and along every double line. Zero-dimensionality, reducedness, and node-type verification remain partial.",
+  "cas_followup": {
+    "macaulay2_script": "m2/verify_smoothing_bridge_genericity.m2",
+    "singular_script": "singular/verify_smoothing_bridge_genericity.sing"
+  }
+}

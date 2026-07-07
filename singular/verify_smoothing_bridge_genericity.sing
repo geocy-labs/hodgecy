@@ -1,0 +1,21 @@
+// Exact-rational smoothing verification template for arrangements 84 and 84a.
+// This template prepares the singular-locus ideals in characteristic zero.
+// A local CAS run should export final machine-readable verification results
+// after zero-dimensionality, reducedness, and Hessian-rank checks are completed.
+
+ring R = 0,(x,y,z,t),dp;
+
+poly A84 = (x-t)*(x+t)*(y-t)*(y+t)*(z-t)*(z+t)*(x+y+z+t)*(x+y+z-3*t);
+poly A84a = (x-t)*(x+t)*(y-t)*(y+t)*(z-t)*(z+t)*(x+y+z-t)*(x+y+z-3*t);
+poly Q = x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t;
+
+proc verifyExample(poly A, string id)
+{
+  poly F = A + Q^2;
+  ideal I = F, diff(F,x), diff(F,y), diff(F,z), diff(F,t);
+  print("Prepared singular-locus ideal for arrangement " + id + ".");
+  print("Run local zero-dimensionality / reducedness / Hessian-rank checks before promoting status beyond partial.");
+}
+
+verifyExample(A84, "84");
+verifyExample(A84a, "84a");
