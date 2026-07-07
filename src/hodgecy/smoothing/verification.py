@@ -5,6 +5,7 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass
 from datetime import datetime
 import json
+from functools import lru_cache
 from pathlib import Path
 import time
 
@@ -13,12 +14,14 @@ import sympy as sp
 
 from hodgecy.arrangements import arrangement_84, arrangement_84a, build_concurrency_profile
 from hodgecy.arrangements.planes import PlaneArrangement
+from hodgecy.smoothing.reviewer_v4_audit import build_reviewer_v4_audit
 
 ALLOWED_VERIFICATION_STATUSES = {
     "queued",
     "genericity_verified",
-    "finite_field_verified",
-    "char0_verified",
+    "degree112_certified",
+    "ordinary_node_verified",
+    "defect_verified",
     "failed",
 }
 
@@ -115,6 +118,16 @@ def _symbols():
 
 def arrangement_lookup() -> dict[str, PlaneArrangement]:
     return {"84": arrangement_84(), "84a": arrangement_84a()}
+
+
+def _repo_root() -> Path:
+    return Path(__file__).resolve().parents[3]
+
+
+@lru_cache(maxsize=4)
+def _reviewer_v4_claim_support(root: str) -> dict[str, bool]:
+    audit = build_reviewer_v4_audit(Path(root))
+    return {claim.claim_id: claim.repo_backed for claim in audit.claims}
 
 
 def candidate_quartic() -> sp.Expr:
@@ -334,26 +347,50 @@ def _run_char0_checks(arrangement: PlaneArrangement, max_seconds: int | None) ->
     )
 
 
+def _derive_verified_status(base_status: str, repo_root: Path) -> str:
+    if base_status != "genericity_verified":
+        return base_status
+    claim_support = _reviewer_v4_claim_support(str(repo_root))
+    degree112 = claim_support.get("char0_degree_112", False)
+    reduced = claim_support.get("reduced_true", False)
+    hessian = claim_support.get("hessian_rank_3", False)
+    defect = claim_support.get("defect_equals_7", False)
+    hilbert = claim_support.get("hilbert_degree_8_equals_105", False)
+
+    if degree112 and reduced and hessian and defect and hilbert:
+        return "defect_verified"
+    if degree112 and reduced and hessian:
+        return "ordinary_node_verified"
+    if degree112:
+        return "degree112_certified"
+    return "genericity_verified"
+
+
 def _build_notes(
     verification_status: str,
     finite_field_checks: list[FiniteFieldCheck],
     char0_note: str | None,
 ) -> str:
-    if verification_status == "char0_verified":
-        return "Verified: reduced zero-dimensional singular locus of length 112; Hessian rank 3 at all singular points."
-    if verification_status == "finite_field_verified":
-        good_primes = ", ".join(str(check.prime) for check in finite_field_checks if check.status == "success")
+    if verification_status == "defect_verified":
         return (
-            "Genericity verified over Q; finite-field node checks succeeded at primes "
-            f"p={good_primes}; characteristic-zero verification remains queued."
+            "Ordinary-node certification is in place and the defect certificate is also repo-backed: "
+            "the singular locus has certified degree 112, reducedness and Hessian rank-3 certificates exist, "
+            "and the defect/Hilbert-function claims are machine-backed."
+        )
+    if verification_status == "ordinary_node_verified":
+        return "Verified: reduced zero-dimensional singular locus of length 112; Hessian rank 3 at all singular points."
+    if verification_status == "degree112_certified":
+        return (
+            "Genericity verified and char-0 degree 112 is certificate-backed for the explicit Q, "
+            "but reducedness, Hessian rank-3, and defect certificates are not yet machine-backed."
+        )
+    if verification_status == "genericity_verified" and finite_field_checks:
+        partial_primes = ", ".join(str(check.prime) for check in finite_field_checks if check.status != "failed")
+        return (
+            "Genericity verified: explicit Q avoids all multiple points and is squarefree on all 28 double lines; "
+            f"optional finite-field sanity checks were recorded at p={partial_primes}, but no promotion beyond genericity is claimed."
         )
     if verification_status == "genericity_verified":
-        if finite_field_checks:
-            partial_primes = ", ".join(str(check.prime) for check in finite_field_checks if check.status != "failed")
-            return (
-                "Genericity verified: explicit Q avoids all multiple points and is squarefree on all 28 double lines; "
-                f"optional finite-field sanity checks were recorded at p={partial_primes}, but no promotion beyond genericity is claimed."
-            )
         return (
             "Genericity verified: explicit Q avoids all multiple points and is squarefree on all 28 double lines; "
             "global singular-locus length/reducedness/Hessian checks remain queued."
@@ -366,10 +403,12 @@ def _build_notes(
 def build_smoothing_verification(
     arrangement: PlaneArrangement,
     *,
+    repo_root: Path | None = None,
     finite_field_checks: bool = False,
     char0_checks: bool = False,
     max_seconds: int | None = None,
 ) -> SmoothingVerificationRecord:
+    root = repo_root or _repo_root()
     profile = build_concurrency_profile(arrangement)
     q_avoids, violations, multiple_point_checks = verify_q_avoids_multiple_points(arrangement)
     line_checks = [line_genericity_check(arrangement, line.line_id, line.planes) for line in profile.double_lines]
@@ -389,7 +428,9 @@ def build_smoothing_verification(
     if char0_checks and verification_status != "failed":
         char0_checked, char0_note = _run_char0_checks(arrangement, max_seconds=max_seconds)
         if char0_checked:
-            verification_status = "char0_verified"
+            verification_status = "ordinary_node_verified"
+
+    verification_status = _derive_verified_status(verification_status, root)
 
     notes = _build_notes(verification_status, finite_field_results, char0_note)
     cas_followup = {
@@ -404,7 +445,7 @@ def build_smoothing_verification(
         verification_status=verification_status,
         G1_avoids_multiple_points=q_avoids,
         G2_squarefree_on_double_lines=all_simple,
-        G3_global_singular_locus_checked=(verification_status == "char0_verified"),
+        G3_global_singular_locus_checked=(verification_status in {"ordinary_node_verified", "defect_verified"}),
         singular_locus_dimension=None,
         singular_locus_length=None,
         reduced=None,
@@ -512,6 +553,7 @@ def run_verification_workflow(
     records = [
         build_smoothing_verification(
             arrangement_lookup()[arrangement_id],
+            repo_root=root,
             finite_field_checks=finite_field_checks,
             char0_checks=char0_checks,
             max_seconds=max_seconds,

@@ -124,19 +124,23 @@ def _load_smoothing_verification_records() -> dict[str, dict]:
 
 def _verification_status_note(record: dict) -> str:
     status = record.get("verification_status", "queued")
+    if status == "defect_verified":
+        return (
+            "Ordinary-node certification and the defect certificate are both repo-backed: "
+            "degree 112, reducedness, Hessian rank 3, and the defect/Hilbert-function claims are all certified."
+        )
+    if status == "ordinary_node_verified":
+        return "Verified: reduced zero-dimensional singular locus of length 112; Hessian rank 3 at all singular points."
+    if status == "degree112_certified":
+        return (
+            "Genericity verified and char-0 degree 112 is certificate-backed for the explicit Q, "
+            "but reducedness, Hessian rank-3, and defect certificates are not yet machine-backed."
+        )
     if status == "genericity_verified":
         return (
             "Genericity verified: explicit Q avoids all multiple points and is squarefree on all 28 double lines; "
             "global singular-locus length/reducedness/Hessian checks remain queued."
         )
-    if status == "finite_field_verified":
-        primes = ", ".join(str(item["prime"]) for item in record.get("finite_field_checks", []) if item.get("status") == "success")
-        return (
-            "Genericity verified over Q; finite-field node checks succeeded at primes "
-            f"p={primes}; characteristic-zero verification remains queued."
-        )
-    if status == "char0_verified":
-        return "Verified: reduced zero-dimensional singular locus of length 112; Hessian rank 3 at all singular points."
     if status == "failed":
         return record.get("notes", "Verification failed for the explicit Q.")
     return "Verification queued."

@@ -3,7 +3,7 @@
   "arrangement_equation": "3*t**8 + 2*t**7*x + 2*t**7*y + 2*t**7*z - 4*t**6*x**2 - 2*t**6*x*y - 2*t**6*x*z - 4*t**6*y**2 - 2*t**6*y*z - 4*t**6*z**2 - 2*t**5*x**3 - 2*t**5*x**2*y - 2*t**5*x**2*z - 2*t**5*x*y**2 - 2*t**5*x*z**2 - 2*t**5*y**3 - 2*t**5*y**2*z - 2*t**5*y*z**2 - 2*t**5*z**3 + t**4*x**4 + 2*t**4*x**3*y + 2*t**4*x**3*z + 5*t**4*x**2*y**2 + 2*t**4*x**2*y*z + 5*t**4*x**2*z**2 + 2*t**4*x*y**3 + 2*t**4*x*y**2*z + 2*t**4*x*y*z**2 + 2*t**4*x*z**3 + t**4*y**4 + 2*t**4*y**3*z + 5*t**4*y**2*z**2 + 2*t**4*y*z**3 + t**4*z**4 + 2*t**3*x**3*y**2 + 2*t**3*x**3*z**2 + 2*t**3*x**2*y**3 + 2*t**3*x**2*y**2*z + 2*t**3*x**2*y*z**2 + 2*t**3*x**2*z**3 + 2*t**3*x*y**2*z**2 + 2*t**3*y**3*z**2 + 2*t**3*y**2*z**3 - t**2*x**4*y**2 - t**2*x**4*z**2 - 2*t**2*x**3*y**3 - 2*t**2*x**3*y**2*z - 2*t**2*x**3*y*z**2 - 2*t**2*x**3*z**3 - t**2*x**2*y**4 - 2*t**2*x**2*y**3*z - 6*t**2*x**2*y**2*z**2 - 2*t**2*x**2*y*z**3 - t**2*x**2*z**4 - 2*t**2*x*y**3*z**2 - 2*t**2*x*y**2*z**3 - t**2*y**4*z**2 - 2*t**2*y**3*z**3 - t**2*y**2*z**4 - 2*t*x**3*y**2*z**2 - 2*t*x**2*y**3*z**2 - 2*t*x**2*y**2*z**3 + x**4*y**2*z**2 + 2*x**3*y**3*z**2 + 2*x**3*y**2*z**3 + x**2*y**4*z**2 + 2*x**2*y**3*z**3 + x**2*y**2*z**4",
   "quartic_Q": "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t",
   "epsilon": "1",
-  "verification_status": "genericity_verified",
+  "verification_status": "degree112_certified",
   "G1_avoids_multiple_points": true,
   "G2_squarefree_on_double_lines": true,
   "G3_global_singular_locus_checked": false,
@@ -17,7 +17,7 @@
     "macaulay2": "m2/verify_smoothing_bridge_genericity.m2",
     "singular": "singular/verify_smoothing_bridge_genericity.sing"
   },
-  "notes": "Genericity verified: explicit Q avoids all multiple points and is squarefree on all 28 double lines; global singular-locus length/reducedness/Hessian checks remain queued.",
+  "notes": "Genericity verified and char-0 degree 112 is certificate-backed for the explicit Q, but reducedness, Hessian rank-3, and defect certificates are not yet machine-backed.",
   "example_id": "smoothing_bridge_84",
   "source_arrangement": "84",
   "arrangement_polynomial": "3*t**8 + 2*t**7*x + 2*t**7*y + 2*t**7*z - 4*t**6*x**2 - 2*t**6*x*y - 2*t**6*x*z - 4*t**6*y**2 - 2*t**6*y*z - 4*t**6*z**2 - 2*t**5*x**3 - 2*t**5*x**2*y - 2*t**5*x**2*z - 2*t**5*x*y**2 - 2*t**5*x*z**2 - 2*t**5*y**3 - 2*t**5*y**2*z - 2*t**5*y*z**2 - 2*t**5*z**3 + t**4*x**4 + 2*t**4*x**3*y + 2*t**4*x**3*z + 5*t**4*x**2*y**2 + 2*t**4*x**2*y*z + 5*t**4*x**2*z**2 + 2*t**4*x*y**3 + 2*t**4*x*y**2*z + 2*t**4*x*y*z**2 + 2*t**4*x*z**3 + t**4*y**4 + 2*t**4*y**3*z + 5*t**4*y**2*z**2 + 2*t**4*y*z**3 + t**4*z**4 + 2*t**3*x**3*y**2 + 2*t**3*x**3*z**2 + 2*t**3*x**2*y**3 + 2*t**3*x**2*y**2*z + 2*t**3*x**2*y*z**2 + 2*t**3*x**2*z**3 + 2*t**3*x*y**2*z**2 + 2*t**3*y**3*z**2 + 2*t**3*y**2*z**3 - t**2*x**4*y**2 - t**2*x**4*z**2 - 2*t**2*x**3*y**3 - 2*t**2*x**3*y**2*z - 2*t**2*x**3*y*z**2 - 2*t**2*x**3*z**3 - t**2*x**2*y**4 - 2*t**2*x**2*y**3*z - 6*t**2*x**2*y**2*z**2 - 2*t**2*x**2*y*z**3 - t**2*x**2*z**4 - 2*t**2*x*y**3*z**2 - 2*t**2*x*y**2*z**3 - t**2*y**4*z**2 - 2*t**2*y**3*z**3 - t**2*y**2*z**4 - 2*t*x**3*y**2*z**2 - 2*t*x**2*y**3*z**2 - 2*t*x**2*y**2*z**3 + x**4*y**2*z**2 + 2*x**3*y**3*z**2 + 2*x**3*y**2*z**3 + x**2*y**4*z**2 + 2*x**2*y**3*z**3 + x**2*y**2*z**4",

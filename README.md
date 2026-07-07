@@ -163,16 +163,21 @@ Verification statuses:
 
 - `queued`: no global singular-locus verification has been attempted yet
 - `genericity_verified`: exact G1 and G2 succeeded for the explicit `Q`
-- `finite_field_verified`: optional finite-field checks succeeded strongly
-  enough to promote beyond genericity
-- `char0_verified`: characteristic-zero singular-locus and node checks were
-  explicitly certified
+- `degree112_certified`: exact G1 and G2 succeeded, and a repo-backed
+  characteristic-zero degree-112 certificate exists for the singular locus,
+  but reducedness, Hessian rank-3, and defect certificates are still missing
+- `ordinary_node_verified`: reducedness and Hessian rank-3 certificates exist,
+  so the singular locus is certified as 112 ordinary nodes
+- `defect_verified`: the ordinary-node certificate is in place and the
+  defect/Hilbert-function claims are also repo-backed
 - `failed`: the explicit `Q` failed one of the required checks
 
 In the current repository, the paper-facing default is intentionally
 conservative: G1 and G2 are verified exactly over `Q` for the explicit quartic,
-but characteristic-zero singular-locus verification is only marked verified if
-an explicit CAS-backed workflow actually certifies it.
+and the reviewer-V4 package is strong enough to justify `degree112_certified`.
+The repository still does not promote to `ordinary_node_verified` or
+`defect_verified` unless reducedness, Hessian rank-3, and defect certificates
+are actually present in machine-readable form.
 
 ## Defect Computation Gate
 

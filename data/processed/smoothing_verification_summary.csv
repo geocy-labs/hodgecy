@@ -1,3 +1,3 @@
 example_id,source_arrangement,verification_status,expected_node_count,double_line_count,G1_avoids_multiple_points,G2_squarefree_on_double_lines,G3_global_singular_locus_checked,notes
-smoothing_bridge_84,84,genericity_verified,112,28,True,True,False,Genericity verified: explicit Q avoids all multiple points and is squarefree on all 28 double lines; global singular-locus length/reducedness/Hessian checks remain queued.
-smoothing_bridge_84a,84a,genericity_verified,112,28,True,True,False,Genericity verified: explicit Q avoids all multiple points and is squarefree on all 28 double lines; global singular-locus length/reducedness/Hessian checks remain queued.
+smoothing_bridge_84,84,degree112_certified,112,28,True,True,False,"Genericity verified and char-0 degree 112 is certificate-backed for the explicit Q, but reducedness, Hessian rank-3, and defect certificates are not yet machine-backed."
+smoothing_bridge_84a,84a,degree112_certified,112,28,True,True,False,"Genericity verified and char-0 degree 112 is certificate-backed for the explicit Q, but reducedness, Hessian rank-3, and defect certificates are not yet machine-backed."

@@ -18,5 +18,5 @@ def test_standalone_driver_completes_with_force() -> None:
         text=True,
     )
     assert "Verification workflow summary:" in completed.stdout
-    assert "84: genericity_verified" in completed.stdout
-    assert "84a: genericity_verified" in completed.stdout
+    assert "84: degree112_certified" in completed.stdout
+    assert "84a: degree112_certified" in completed.stdout

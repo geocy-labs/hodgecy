@@ -22,6 +22,7 @@ def test_verification_json_schema_fields_exist() -> None:
         assert payload["quartic_Q"] == "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
         assert payload["epsilon"] == "1"
         assert payload["verification_status"] in ALLOWED_VERIFICATION_STATUSES
+        assert payload["verification_status"] == "degree112_certified"
         assert payload["G1_avoids_multiple_points"] is True
         assert payload["G2_squarefree_on_double_lines"] is True
         assert payload["double_line_count"] == 28

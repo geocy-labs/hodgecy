@@ -20,10 +20,12 @@ def test_smoothing_genericity_checks_pass_for_84_and_84a() -> None:
         assert record.G2_squarefree_on_double_lines is True
         assert record.double_line_count == 28
         assert record.expected_node_count == 112
-        assert record.verification_status == "genericity_verified"
+        assert record.verification_status == "degree112_certified"
         assert record.verification_status in ALLOWED_VERIFICATION_STATUSES
         assert record.singular_locus_status == "queued"
         assert record.hessian_status == "queued"
+        assert record.reduced is None
+        assert record.ordinary_nodes is None
 
 
 def test_smoothing_verification_script_writes_expected_outputs() -> None:
@@ -38,4 +40,5 @@ def test_smoothing_verification_script_writes_expected_outputs() -> None:
         assert payload["double_line_count"] == 28
         assert payload["expected_node_count"] == 112
         assert payload["verification_status"] in ALLOWED_VERIFICATION_STATUSES
+        assert payload["verification_status"] == "degree112_certified"
     assert (repo_root() / "data" / "processed" / "smoothing_verification_summary.csv").exists()
