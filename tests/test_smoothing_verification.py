@@ -27,3 +27,9 @@ def test_verification_json_schema_fields_exist() -> None:
         assert payload["G2_squarefree_on_double_lines"] is True
         assert payload["double_line_count"] == 28
         assert payload["expected_node_count"] == 112
+        assert payload["verification_status"] != "ordinary_node_verified"
+        assert payload["verification_status"] != "defect_verified"
+        assert payload["notes"] == (
+            "degree112_certified: (G1), (G2) verified over Q; saturated Jacobian degree 112 certified; "
+            "reducedness and Hessian-rank checks pending."
+        )

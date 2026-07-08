@@ -4,8 +4,8 @@
     "source_arrangement":"84",
     "double_line_count":28,
     "triple_line_count":0,
-    "expected_nodes_per_double_line":4,
-    "expected_node_count":112,
+    "Predicted points per line":4,
+    "Predicted singular points":112,
     "expected_node_count_status":"degree112_certified",
     "verification_status":"degree112_certified",
     "q_avoids_all_multiple_points":true,
@@ -15,15 +15,15 @@
     "gluing_deficit":84,
     "defect_status":"not_computed",
     "critical_degree_status":"needs_literature_verification",
-    "notes":"Genericity verified and char-0 degree 112 is certificate-backed for the explicit Q, but reducedness, Hessian rank-3, and defect certificates are not yet machine-backed."
+    "notes":"degree112_certified: (G1), (G2) verified over Q; saturated Jacobian degree 112 certified; reducedness and Hessian-rank checks pending."
   },
   {
     "example_id":"smoothing_bridge_84a",
     "source_arrangement":"84a",
     "double_line_count":28,
     "triple_line_count":0,
-    "expected_nodes_per_double_line":4,
-    "expected_node_count":112,
+    "Predicted points per line":4,
+    "Predicted singular points":112,
     "expected_node_count_status":"degree112_certified",
     "verification_status":"degree112_certified",
     "q_avoids_all_multiple_points":true,
@@ -33,6 +33,6 @@
     "gluing_deficit":84,
     "defect_status":"not_computed",
     "critical_degree_status":"needs_literature_verification",
-    "notes":"Genericity verified and char-0 degree 112 is certificate-backed for the explicit Q, but reducedness, Hessian rank-3, and defect certificates are not yet machine-backed."
+    "notes":"degree112_certified: (G1), (G2) verified over Q; saturated Jacobian degree 112 certified; reducedness and Hessian-rank checks pending."
   }
 ]

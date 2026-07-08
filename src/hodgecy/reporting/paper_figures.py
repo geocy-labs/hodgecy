@@ -81,21 +81,36 @@ def plot_same_hodge_cluster_sizes() -> None:
 
 
 def plot_smoothing_bridge_schematic() -> None:
+    paths = ensure_output_dirs()
     fig, ax = plt.subplots(figsize=(10, 4))
     ax.axis("off")
     boxes = [
         (0.08, 0.5, "Eight-plane\narrangement source"),
         (0.42, 0.5, "28 double lines"),
-        (0.76, 0.5, "4 nodes per line\n= 112 expected nodes"),
+        (0.76, 0.5, "4 predicted points per line\n= 112 predicted singular points"),
     ]
     for x, y, text in boxes:
         ax.text(x, y, text, ha="center", va="center", fontsize=11, bbox=dict(boxstyle="round,pad=0.5", fc="#f4f1ea", ec="#444"))
     ax.annotate("", xy=(0.32, 0.5), xytext=(0.18, 0.5), arrowprops=dict(arrowstyle="->", lw=1.5))
     ax.annotate("", xy=(0.66, 0.5), xytext=(0.52, 0.5), arrowprops=dict(arrowstyle="->", lw=1.5))
-    ax.text(0.5, 0.86, r"$F_{\epsilon} = \prod(P_i) + \epsilon Q^2$", ha="center", fontsize=13)
+    ax.text(0.5, 0.9, r"$F_{\epsilon} = \prod(P_i) + \epsilon Q^2$", ha="center", fontsize=13)
+    ax.text(0.5, 0.82, "degree112_certified for arrangements 84 and 84a", ha="center", fontsize=10)
     ax.text(0.5, 0.18, "Generic Q avoids multiple points and meets double lines transversely", ha="center", fontsize=9)
-    ax.text(0.5, 0.09, "Node verification and defect computation remain queued", ha="center", fontsize=9)
+    ax.text(0.5, 0.11, "Ordinary-node verification pending", ha="center", fontsize=9)
+    ax.text(0.5, 0.05, "Ordinary-node verification and defect computation remain queued", ha="center", fontsize=9)
     _save_figure(fig, "fig_smoothing_bridge_schematic")
+    metadata = {
+        "status": "degree112_certified",
+        "boxes": [text for _, _, text in boxes],
+        "top_text": r"$F_{\epsilon} = \prod(P_i) + \epsilon Q^2$",
+        "status_text": "degree112_certified for arrangements 84 and 84a",
+        "pending_text": "Ordinary-node verification pending",
+        "queue_text": "Ordinary-node verification and defect computation remain queued",
+    }
+    (paths["processed_figures"] / "fig_smoothing_bridge_schematic_metadata.json").write_text(
+        json.dumps(metadata, indent=2),
+        encoding="utf-8",
+    )
 
 
 def plot_concurrency_graphs_84_84a() -> None:
@@ -142,6 +157,18 @@ def plot_concurrency_graphs_84_84a() -> None:
         ax.set_title(f"Arrangement {arrangement_id} p4-collinearity graph\n{subtitle}; degree sequence {degree_sequence}", fontsize=11)
         ax.axis("off")
         _save_figure(fig, f"fig_concurrency_graph_{arrangement_id}")
+        metadata = {
+            "title": f"Arrangement {arrangement_id} p4-collinearity graph",
+            "subtitle": subtitle,
+            "degree_sequence": degree_sequence,
+            "highlighted_nodes": sorted(highlight_nodes),
+            "vertex_count": graph.number_of_nodes(),
+            "edge_count": graph.number_of_edges(),
+        }
+        (paths["processed_figures"] / f"fig_concurrency_graph_{arrangement_id}_metadata.json").write_text(
+            json.dumps(metadata, indent=2),
+            encoding="utf-8",
+        )
 
     pd.DataFrame(certificate_rows).to_csv(root / "data" / "processed" / "p4_collinearity_certificate.csv", index=False)
 
@@ -153,7 +180,8 @@ def plot_hodgecy_pipeline() -> None:
         "Cynk--Meyer dataset",
         "Arrangement / Hodge / arithmetic controls",
         r"Smoothing bridge $F_{\epsilon} = A + \epsilon Q^2$",
-        "Expected nodal double octic conifold",
+        "degree112_certified predicted singular points",
+        "Ordinary-node verification pending",
         "Node scheme defect computation",
         "HodgeCY atom profile",
         "Operator / Picard--Fuchs route comparison",

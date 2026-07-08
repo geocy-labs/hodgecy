@@ -381,8 +381,8 @@ def _build_notes(
         return "Verified: reduced zero-dimensional singular locus of length 112; Hessian rank 3 at all singular points."
     if verification_status == "degree112_certified":
         return (
-            "Genericity verified and char-0 degree 112 is certificate-backed for the explicit Q, "
-            "but reducedness, Hessian rank-3, and defect certificates are not yet machine-backed."
+            "degree112_certified: (G1), (G2) verified over Q; saturated Jacobian degree 112 certified; "
+            "reducedness and Hessian-rank checks pending."
         )
     if verification_status == "genericity_verified" and finite_field_checks:
         partial_primes = ", ".join(str(check.prime) for check in finite_field_checks if check.status != "failed")

@@ -133,8 +133,8 @@ def _verification_status_note(record: dict) -> str:
         return "Verified: reduced zero-dimensional singular locus of length 112; Hessian rank 3 at all singular points."
     if status == "degree112_certified":
         return (
-            "Genericity verified and char-0 degree 112 is certificate-backed for the explicit Q, "
-            "but reducedness, Hessian rank-3, and defect certificates are not yet machine-backed."
+            "degree112_certified: (G1), (G2) verified over Q; saturated Jacobian degree 112 certified; "
+            "reducedness and Hessian-rank checks pending."
         )
     if status == "genericity_verified":
         return (
@@ -193,6 +193,12 @@ def build_smoothing_bridge_table() -> pd.DataFrame:
             }
         )
     result = pd.DataFrame(rows)
+    result = result.rename(
+        columns={
+            "expected_nodes_per_double_line": "Predicted points per line",
+            "expected_node_count": "Predicted singular points",
+        }
+    )
     return _write_table_bundle(
         result,
         paths["paper_tables"] / "table_smoothing_bridge_profiles.csv",

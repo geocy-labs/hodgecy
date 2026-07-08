@@ -1,0 +1,12 @@
+{
+  "status": "degree112_certified",
+  "boxes": [
+    "Eight-plane\narrangement source",
+    "28 double lines",
+    "4 predicted points per line\n= 112 predicted singular points"
+  ],
+  "top_text": "$F_{\\epsilon} = \\prod(P_i) + \\epsilon Q^2$",
+  "status_text": "degree112_certified for arrangements 84 and 84a",
+  "pending_text": "Ordinary-node verification pending",
+  "queue_text": "Ordinary-node verification and defect computation remain queued"
+}

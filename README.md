@@ -179,6 +179,13 @@ The repository still does not promote to `ordinary_node_verified` or
 `defect_verified` unless reducedness, Hessian rank-3, and defect certificates
 are actually present in machine-readable form.
 
+For arrangements `84` and `84a`, the current smoothing status is
+`degree112_certified`. Exact G1/G2 genericity verification and a
+characteristic-zero degree-112 saturated Jacobian certificate are repo-backed.
+The repository does not currently promote either arrangement to
+`ordinary_node_verified` or `defect_verified`; reducedness, Hessian-rank,
+critical-degree, Hilbert-function, and defect certificates remain pending.
+
 ## Defect Computation Gate
 
 The next decisive computation for the smoothing-bridge program is the classical

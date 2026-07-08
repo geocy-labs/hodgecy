@@ -1,0 +1,13 @@
+{
+  "title": "Arrangement 84a p4-collinearity graph",
+  "subtitle": "10 vertices, 42 edges; degree-9 vertices highlighted",
+  "degree_sequence": "[8^6,9^4]",
+  "highlighted_nodes": [
+    "pt08",
+    "pt12",
+    "pt19",
+    "pt21"
+  ],
+  "vertex_count": 10,
+  "edge_count": 42
+}
