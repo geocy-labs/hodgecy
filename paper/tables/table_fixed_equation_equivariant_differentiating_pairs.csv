@@ -1,0 +1,2 @@
+left_arrangement,right_arrangement,shared_hodge,left_automorphism_group_order,right_automorphism_group_order,left_rank_Q,right_rank_Q,left_rank_F2,right_rank_F2,differences
+84,84a,h12=0;h11=40;euler=80,6,24,26,26,23,21,automorphism_group_order; rank_F2; smith_normal_form; plane_orbits; double_line_orbits; multiple_point_orbits; character_C1; character_C0

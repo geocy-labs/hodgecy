@@ -256,3 +256,30 @@ Commands:
 - `python scripts/search_arrangement_83_representative.py`
 - `python scripts/compute_equivariant_spectrum_control_triple.py`
 - `python -m pytest -q tests/test_equivariant_incidence.py tests/test_equivariant_gluing_complex.py tests/test_equivariant_spectrum_control_triple.py`
+
+### Fixed-equation equivariant clustering
+
+The fixed-equation clustering pass computes equivariant incidence-gluing
+spectra only for currently ingested CKC records that are validated,
+non-parameterized, and fixed. In the current repository this includes `84` and
+`84a`; the provisional parameterized `83` representative is explicitly skipped
+and recorded in the coverage metadata.
+
+The generated cluster tables identify examples with identical local
+singularity inventory and Hodge numbers but different equivariant
+incidence-gluing data. The first current witness is `84/84a`: they share the
+same local inventory and Hodge numbers, but differ in automorphism group order,
+rank over `F2`, Smith normal form, orbit decompositions, and permutation
+characters.
+
+Machine-readable outputs are written under
+`data/processed/equivariant_spectra/`, including
+`fixed_equation_equivariant_spectrum_summary.csv`,
+`fixed_equation_equivariant_clusters.json`, and
+`fixed_equation_equivariant_differentiating_pairs.csv`. Paper-facing tables are
+written to `paper/tables/table_fixed_equation_equivariant_clusters.*` and
+`paper/tables/table_fixed_equation_equivariant_differentiating_pairs.*`.
+
+Command:
+
+- `python scripts/cluster_equivariant_spectra_fixed_equations.py`
