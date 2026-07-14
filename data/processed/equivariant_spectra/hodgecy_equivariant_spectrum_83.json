@@ -1,0 +1,901 @@
+{
+  "arrangement_id": "83",
+  "source": "Cynk--Kocel--Cynk Section 6.1 parameterized form, rational specialization",
+  "representative_status": "provisional",
+  "parameter_choice": {
+    "A0": "1",
+    "A1": "2",
+    "A2": "3",
+    "A3": "5"
+  },
+  "source_equation": "x(A0x + A1y)y z(A0x + A2y + A2z)(A0x + A3y + A3t)t(x + y + z + t)",
+  "source_reference": "Cynk--Kocel--Cynk, Classification of Double Octic Calabi--Yau Threefolds Defined by an Arrangement of Eight Planes II, arXiv:2602.19413, Section 6.1",
+  "linear_forms": [
+    {
+      "label": "p1",
+      "coefficients": [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      "equation": "x"
+    },
+    {
+      "label": "p2",
+      "coefficients": [
+        "1",
+        "2",
+        "0",
+        "0"
+      ],
+      "equation": "x + 2y"
+    },
+    {
+      "label": "p3",
+      "coefficients": [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "equation": "y"
+    },
+    {
+      "label": "p4",
+      "coefficients": [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      "equation": "z"
+    },
+    {
+      "label": "p5",
+      "coefficients": [
+        "1",
+        "3",
+        "3",
+        "0"
+      ],
+      "equation": "x + 3y + 3z"
+    },
+    {
+      "label": "p6",
+      "coefficients": [
+        "1",
+        "5",
+        "0",
+        "5"
+      ],
+      "equation": "x + 5y + 5t"
+    },
+    {
+      "label": "p7",
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "equation": "t"
+    },
+    {
+      "label": "p8",
+      "coefficients": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "equation": "x + y + z + t"
+    }
+  ],
+  "incidence_table": [
+    [
+      0,
+      1,
+      2,
+      3
+    ],
+    [
+      0,
+      1,
+      2,
+      4
+    ],
+    [
+      0,
+      1,
+      2,
+      5
+    ],
+    [
+      0,
+      1,
+      2,
+      6
+    ],
+    [
+      0,
+      1,
+      2,
+      7
+    ],
+    [
+      0,
+      1,
+      3,
+      4
+    ],
+    [
+      0,
+      1,
+      5,
+      6
+    ],
+    [
+      0,
+      2,
+      3,
+      4
+    ],
+    [
+      0,
+      2,
+      5,
+      6
+    ],
+    [
+      0,
+      3,
+      5,
+      7
+    ],
+    [
+      0,
+      4,
+      6,
+      7
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      1,
+      2,
+      5,
+      6
+    ]
+  ],
+  "singularity_inventory": {
+    "p3": 26,
+    "p4_0": 3,
+    "p4_1": 0,
+    "p5_0": 2,
+    "p5_1": 0,
+    "p5_2": 0,
+    "double_lines": 25,
+    "triple_lines": 1
+  },
+  "expected_cynk_inventory": {
+    "p3": 16,
+    "p4_0": 10,
+    "p4_1": 0,
+    "p5_0": 0,
+    "p5_1": 0,
+    "p5_2": 0,
+    "l3": 0
+  },
+  "computed_inventory": {
+    "p3": 26,
+    "p4_0": 3,
+    "p4_1": 0,
+    "p5_0": 2,
+    "p5_1": 0,
+    "p5_2": 0,
+    "l3": 1
+  },
+  "inventory_matches_expected": false,
+  "hodge_data_if_known": {
+    "h12": 1,
+    "h11": 41,
+    "euler": 80
+  },
+  "arithmetic_label_if_known": null,
+  "automorphism_group_order": 8,
+  "invariant_permutations": [
+    [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    [
+      0,
+      1,
+      2,
+      4,
+      3,
+      6,
+      5,
+      7
+    ],
+    [
+      0,
+      1,
+      2,
+      5,
+      6,
+      3,
+      4,
+      7
+    ],
+    [
+      0,
+      1,
+      2,
+      6,
+      5,
+      4,
+      3,
+      7
+    ],
+    [
+      0,
+      2,
+      1,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    [
+      0,
+      2,
+      1,
+      4,
+      3,
+      6,
+      5,
+      7
+    ],
+    [
+      0,
+      2,
+      1,
+      5,
+      6,
+      3,
+      4,
+      7
+    ],
+    [
+      0,
+      2,
+      1,
+      6,
+      5,
+      4,
+      3,
+      7
+    ]
+  ],
+  "plane_orbits": [
+    [
+      0
+    ],
+    [
+      7
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      3,
+      4,
+      5,
+      6
+    ]
+  ],
+  "double_line_orbits": [
+    [
+      [
+        0,
+        7
+      ]
+    ],
+    [
+      [
+        1,
+        7
+      ],
+      [
+        2,
+        7
+      ]
+    ],
+    [
+      [
+        3,
+        4
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    [
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        6
+      ]
+    ],
+    [
+      [
+        3,
+        6
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    [
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        0,
+        6
+      ]
+    ],
+    [
+      [
+        3,
+        7
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        6,
+        7
+      ]
+    ],
+    [
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        6
+      ]
+    ]
+  ],
+  "multiple_point_orbits": [
+    [
+      [
+        0,
+        1,
+        2,
+        7
+      ]
+    ],
+    [
+      [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      [
+        0,
+        1,
+        2,
+        5,
+        6
+      ]
+    ],
+    [
+      [
+        0,
+        3,
+        5,
+        7
+      ],
+      [
+        0,
+        4,
+        6,
+        7
+      ]
+    ],
+    [
+      [
+        0,
+        3,
+        6
+      ],
+      [
+        0,
+        4,
+        5
+      ]
+    ],
+    [
+      [
+        3,
+        4,
+        7
+      ],
+      [
+        5,
+        6,
+        7
+      ]
+    ],
+    [
+      [
+        3,
+        6,
+        7
+      ],
+      [
+        4,
+        5,
+        7
+      ]
+    ],
+    [
+      [
+        1,
+        3,
+        5
+      ],
+      [
+        1,
+        4,
+        6
+      ],
+      [
+        2,
+        3,
+        5
+      ],
+      [
+        2,
+        4,
+        6
+      ]
+    ],
+    [
+      [
+        1,
+        3,
+        6
+      ],
+      [
+        1,
+        4,
+        5
+      ],
+      [
+        2,
+        3,
+        6
+      ],
+      [
+        2,
+        4,
+        5
+      ]
+    ],
+    [
+      [
+        3,
+        4,
+        5
+      ],
+      [
+        3,
+        4,
+        6
+      ],
+      [
+        3,
+        5,
+        6
+      ],
+      [
+        4,
+        5,
+        6
+      ]
+    ],
+    [
+      [
+        1,
+        3,
+        7
+      ],
+      [
+        1,
+        4,
+        7
+      ],
+      [
+        1,
+        5,
+        7
+      ],
+      [
+        1,
+        6,
+        7
+      ],
+      [
+        2,
+        3,
+        7
+      ],
+      [
+        2,
+        4,
+        7
+      ],
+      [
+        2,
+        5,
+        7
+      ],
+      [
+        2,
+        6,
+        7
+      ]
+    ]
+  ],
+  "gluing_matrix_shape": [
+    31,
+    25
+  ],
+  "rank_Q": 25,
+  "rank_F2": 20,
+  "kernel_dim_Q": 0,
+  "cokernel_dim_Q": 6,
+  "smith_normal_form": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    4
+  ],
+  "row_degree_distribution": {
+    "3": 27,
+    "6": 2,
+    "7": 2
+  },
+  "column_degree_distribution": {
+    "3": 5,
+    "4": 10,
+    "5": 8,
+    "6": 2
+  },
+  "character_C1": {
+    "values": [
+      {
+        "permutation": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "fixed_count": 25
+      },
+      {
+        "permutation": [
+          0,
+          1,
+          2,
+          4,
+          3,
+          6,
+          5,
+          7
+        ],
+        "fixed_count": 5
+      },
+      {
+        "permutation": [
+          0,
+          1,
+          2,
+          5,
+          6,
+          3,
+          4,
+          7
+        ],
+        "fixed_count": 5
+      },
+      {
+        "permutation": [
+          0,
+          1,
+          2,
+          6,
+          5,
+          4,
+          3,
+          7
+        ],
+        "fixed_count": 5
+      },
+      {
+        "permutation": [
+          0,
+          2,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "fixed_count": 15
+      },
+      {
+        "permutation": [
+          0,
+          2,
+          1,
+          4,
+          3,
+          6,
+          5,
+          7
+        ],
+        "fixed_count": 3
+      },
+      {
+        "permutation": [
+          0,
+          2,
+          1,
+          5,
+          6,
+          3,
+          4,
+          7
+        ],
+        "fixed_count": 3
+      },
+      {
+        "permutation": [
+          0,
+          2,
+          1,
+          6,
+          5,
+          4,
+          3,
+          7
+        ],
+        "fixed_count": 3
+      }
+    ],
+    "value_distribution": {
+      "3": 3,
+      "5": 3,
+      "15": 1,
+      "25": 1
+    }
+  },
+  "character_C0": {
+    "values": [
+      {
+        "permutation": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "fixed_count": 31
+      },
+      {
+        "permutation": [
+          0,
+          1,
+          2,
+          4,
+          3,
+          6,
+          5,
+          7
+        ],
+        "fixed_count": 5
+      },
+      {
+        "permutation": [
+          0,
+          1,
+          2,
+          5,
+          6,
+          3,
+          4,
+          7
+        ],
+        "fixed_count": 7
+      },
+      {
+        "permutation": [
+          0,
+          1,
+          2,
+          6,
+          5,
+          4,
+          3,
+          7
+        ],
+        "fixed_count": 9
+      },
+      {
+        "permutation": [
+          0,
+          2,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "fixed_count": 15
+      },
+      {
+        "permutation": [
+          0,
+          2,
+          1,
+          4,
+          3,
+          6,
+          5,
+          7
+        ],
+        "fixed_count": 5
+      },
+      {
+        "permutation": [
+          0,
+          2,
+          1,
+          5,
+          6,
+          3,
+          4,
+          7
+        ],
+        "fixed_count": 3
+      },
+      {
+        "permutation": [
+          0,
+          2,
+          1,
+          6,
+          5,
+          4,
+          3,
+          7
+        ],
+        "fixed_count": 5
+      }
+    ],
+    "value_distribution": {
+      "3": 1,
+      "5": 3,
+      "7": 1,
+      "9": 1,
+      "15": 1,
+      "31": 1
+    }
+  },
+  "character_kernel_cokernel": {
+    "status": "not_computed",
+    "permutation_count": 8,
+    "matrix_shape": [
+      31,
+      25
+    ],
+    "todo": "Compute induced actions on kernel and cokernel, then decompose characters into irreducibles."
+  },
+  "p4_graph_summary_if_available": null,
+  "perturbation_status_if_available": null,
+  "notes": "Specialization of x(A0x + A1y)y z(A0x + A2y + A2z)(A0x + A3y + A3t)t(x + y + z + t). This representative is provisional because the current specialization does not match the expected arrangement-83 inventory."
+}

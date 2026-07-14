@@ -1,0 +1,344 @@
+{
+  "source": "Cynk--Kocel--Cynk 2026 control-triple ingestion; 84/84a use existing HodgeCY representatives.",
+  "notes": "Arrangement 83 is encoded as a rational specialization of the Section 6.1 parameterized form with A0=1, A1=2, A2=3, A3=5. Treat 83 numerical invariants as provisional until parameter-specialization checks are reviewed.",
+  "records": [
+    {
+      "arrangement_id": "83",
+      "source": "Cynk--Kocel--Cynk Section 6.1 parameterized form, rational specialization",
+      "representative_status": "provisional",
+      "parameter_status": "parameterized_specialization",
+      "parameter_choice": {
+        "A0": "1",
+        "A1": "2",
+        "A2": "3",
+        "A3": "5"
+      },
+      "parameters": {
+        "A0": "1",
+        "A1": "2",
+        "A2": "3",
+        "A3": "5"
+      },
+      "source_equation": "x(A0x + A1y)y z(A0x + A2y + A2z)(A0x + A3y + A3t)t(x + y + z + t)",
+      "source_reference": "Cynk--Kocel--Cynk, Classification of Double Octic Calabi--Yau Threefolds Defined by an Arrangement of Eight Planes II, arXiv:2602.19413, Section 6.1",
+      "expected_cynk_inventory": {
+        "p3": 16,
+        "p4_0": 10,
+        "p4_1": 0,
+        "p5_0": 0,
+        "p5_1": 0,
+        "p5_2": 0,
+        "l3": 0
+      },
+      "hodge_data_if_known": {
+        "h12": 1,
+        "h11": 41,
+        "euler": 80
+      },
+      "arithmetic_label_if_known": null,
+      "notes": "Specialization of x(A0x + A1y)y z(A0x + A2y + A2z)(A0x + A3y + A3t)t(x + y + z + t). This representative is provisional because the current specialization does not match the expected arrangement-83 inventory.",
+      "linear_forms": [
+        {
+          "label": "p1",
+          "coefficients": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "equation": "x"
+        },
+        {
+          "label": "p2",
+          "coefficients": [
+            1,
+            2,
+            0,
+            0
+          ],
+          "equation": "x + 2y"
+        },
+        {
+          "label": "p3",
+          "coefficients": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "equation": "y"
+        },
+        {
+          "label": "p4",
+          "coefficients": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "equation": "z"
+        },
+        {
+          "label": "p5",
+          "coefficients": [
+            1,
+            3,
+            3,
+            0
+          ],
+          "equation": "x + 3y + 3z"
+        },
+        {
+          "label": "p6",
+          "coefficients": [
+            1,
+            5,
+            0,
+            5
+          ],
+          "equation": "x + 5y + 5t"
+        },
+        {
+          "label": "p7",
+          "coefficients": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "equation": "t"
+        },
+        {
+          "label": "p8",
+          "coefficients": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "equation": "x + y + z + t"
+        }
+      ],
+      "search_attempt": {
+        "status": "not_found",
+        "parameter_bound": 5,
+        "candidate_count": 4856,
+        "report_path": "data/processed/equivariant_spectra/arrangement_83_search_report.json"
+      }
+    },
+    {
+      "arrangement_id": "84",
+      "source": "Existing HodgeCY arrangement_84 representative",
+      "representative_status": "validated",
+      "parameter_status": "fixed_representative",
+      "parameter_choice": null,
+      "source_equation": "(x-t)(x+t)(y-t)(y+t)(z-t)(z+t)(x+y+z+t)(x+y+z-3t)",
+      "source_reference": "Existing HodgeCY arrangement_84 representative; Cynk--Meyer/Cynk--Kocel--Cynk control data",
+      "expected_cynk_inventory": {
+        "p3": 16,
+        "p4_0": 10,
+        "p4_1": 0,
+        "p5_0": 0,
+        "p5_1": 0,
+        "p5_2": 0,
+        "l3": 0
+      },
+      "hodge_data_if_known": {
+        "h12": 0,
+        "h11": 40,
+        "euler": 80
+      },
+      "arithmetic_label_if_known": "6k4A",
+      "notes": "Validated HodgeCY representative used by the degree112_certified smoothing workflow.",
+      "linear_forms": [
+        {
+          "label": "p1",
+          "coefficients": [
+            1,
+            0,
+            0,
+            -1
+          ],
+          "equation": "x - t"
+        },
+        {
+          "label": "p2",
+          "coefficients": [
+            1,
+            0,
+            0,
+            1
+          ],
+          "equation": "x + t"
+        },
+        {
+          "label": "p3",
+          "coefficients": [
+            0,
+            1,
+            0,
+            -1
+          ],
+          "equation": "y - t"
+        },
+        {
+          "label": "p4",
+          "coefficients": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "equation": "y + t"
+        },
+        {
+          "label": "p5",
+          "coefficients": [
+            0,
+            0,
+            1,
+            -1
+          ],
+          "equation": "z - t"
+        },
+        {
+          "label": "p6",
+          "coefficients": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "equation": "z + t"
+        },
+        {
+          "label": "p7",
+          "coefficients": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "equation": "x + y + z + t"
+        },
+        {
+          "label": "p8",
+          "coefficients": [
+            1,
+            1,
+            1,
+            -3
+          ],
+          "equation": "x + y + z - 3t"
+        }
+      ]
+    },
+    {
+      "arrangement_id": "84a",
+      "source": "Existing HodgeCY arrangement_84a representative",
+      "representative_status": "validated",
+      "parameter_status": "fixed_representative",
+      "parameter_choice": null,
+      "source_equation": "(x-t)(x+t)(y-t)(y+t)(z-t)(z+t)(x+y+z-t)(x+y+z-3t)",
+      "source_reference": "Existing HodgeCY arrangement_84a representative; Cynk--Meyer/Cynk--Kocel--Cynk control data",
+      "expected_cynk_inventory": {
+        "p3": 16,
+        "p4_0": 10,
+        "p4_1": 0,
+        "p5_0": 0,
+        "p5_1": 0,
+        "p5_2": 0,
+        "l3": 0
+      },
+      "hodge_data_if_known": {
+        "h12": 0,
+        "h11": 40,
+        "euler": 80
+      },
+      "arithmetic_label_if_known": "12k4A",
+      "notes": "Validated HodgeCY representative used by the degree112_certified smoothing workflow.",
+      "linear_forms": [
+        {
+          "label": "p1",
+          "coefficients": [
+            1,
+            0,
+            0,
+            -1
+          ],
+          "equation": "x - t"
+        },
+        {
+          "label": "p2",
+          "coefficients": [
+            1,
+            0,
+            0,
+            1
+          ],
+          "equation": "x + t"
+        },
+        {
+          "label": "p3",
+          "coefficients": [
+            0,
+            1,
+            0,
+            -1
+          ],
+          "equation": "y - t"
+        },
+        {
+          "label": "p4",
+          "coefficients": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "equation": "y + t"
+        },
+        {
+          "label": "p5",
+          "coefficients": [
+            0,
+            0,
+            1,
+            -1
+          ],
+          "equation": "z - t"
+        },
+        {
+          "label": "p6",
+          "coefficients": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "equation": "z + t"
+        },
+        {
+          "label": "p7",
+          "coefficients": [
+            1,
+            1,
+            1,
+            -1
+          ],
+          "equation": "x + y + z - t"
+        },
+        {
+          "label": "p8",
+          "coefficients": [
+            1,
+            1,
+            1,
+            -3
+          ],
+          "equation": "x + y + z - 3t"
+        }
+      ]
+    }
+  ]
+}

@@ -219,3 +219,40 @@ missing, the asset generator records a clear skip reason rather than failing.
 Defect values, singular-locus cardinalities, and operator-route validations are
 never fabricated: queued or partial computations remain explicitly marked
 `not_computed`, `queued`, or `partial` until verified results are ingested.
+
+## Equivariant HodgeCY Spectra
+
+The equivariant spectrum layer is experimental and additive. It computes
+incidence-preserving automorphism groups, stratified gluing complexes, orbit
+decompositions, and permutation characters for selected double-octic
+arrangements.
+
+This layer is motivated by the Cynk--Kocel--Cynk automorphism classification
+for double octic arrangements. It is designed to sit beside the existing
+HodgeCY smoothing and atom-profile code rather than replace it.
+
+The current control-triple computation covers arrangements `83`, `84`, and
+`84a`. The `84` and `84a` records use the existing HodgeCY representatives.
+The `83` record is a rational specialization of a parameterized
+Cynk--Kocel--Cynk equation and should be treated as provisional until the
+parameter choice is reviewed.
+
+An explicit search helper,
+`scripts/search_arrangement_83_representative.py`, searches normalized
+integer parameter choices for the arrangement-83 parameterized equation. In the
+current run, no valid representative was found for the normalized range
+induced by raw tuples `A0,A1,A2,A3 in {-5,...,5} \ {0}`, up to common scaling
+with `A0=1`. The current 83 specialization remains `provisional`, with
+expected and computed inventories recorded separately in the generated
+equivariant-spectrum JSON and a search report written to
+`data/processed/equivariant_spectra/arrangement_83_search_report.json`.
+
+This new layer does not change the v0.1.0 smoothing verification claims. It
+does not promote `ordinary_node_verified` or `defect_verified`; arrangements
+`84` and `84a` remain `degree112_certified`.
+
+Commands:
+
+- `python scripts/search_arrangement_83_representative.py`
+- `python scripts/compute_equivariant_spectrum_control_triple.py`
+- `python -m pytest -q tests/test_equivariant_incidence.py tests/test_equivariant_gluing_complex.py tests/test_equivariant_spectrum_control_triple.py`

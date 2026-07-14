@@ -1,0 +1,4 @@
+arrangement_id,representative_status,inventory_matches_expected,incidence_table_size,automorphism_group_order,gluing_matrix_shape,rank_Q,rank_F2,kernel_dim_Q,cokernel_dim_Q,smith_normal_form,perturbation_status_if_available,notes
+83,provisional,False,13,8,31x25,25,20,0,6,"1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,4",,Specialization of x(A0x + A1y)y z(A0x + A2y + A2z)(A0x + A3y + A3t)t(x + y + z + t). This representative is provisional because the current specialization does not match the expected arrangement-83 inventory.
+84,validated,True,10,6,26x28,26,23,2,0,"1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,6,12",degree112_certified,Validated HodgeCY representative used by the degree112_certified smoothing workflow.
+84a,validated,True,10,24,26x28,26,21,2,0,"1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,4,4,4,12",degree112_certified,Validated HodgeCY representative used by the degree112_certified smoothing workflow.

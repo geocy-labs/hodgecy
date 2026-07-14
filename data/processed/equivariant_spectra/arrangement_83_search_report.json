@@ -1,0 +1,15 @@
+{
+  "status": "not_found",
+  "parameter_bound": 5,
+  "candidate_count": 4856,
+  "expected_inventory": {
+    "p3": 16,
+    "p4_0": 10,
+    "p4_1": 0,
+    "p5_0": 0,
+    "p5_1": 0,
+    "p5_2": 0,
+    "l3": 0
+  },
+  "near_misses": []
+}
