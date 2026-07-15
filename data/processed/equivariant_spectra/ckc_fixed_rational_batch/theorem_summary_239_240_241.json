@@ -1,0 +1,49 @@
+{
+  "arrangement_ids": [
+    "239",
+    "240",
+    "241"
+  ],
+  "same_inventory": true,
+  "shared_inventory": "p3=16,p4_0=10,p4_1=0,p5_0=0,p5_1=0,p5_2=0,l3=0",
+  "pairwise_equivariant_signatures_all_equal": false,
+  "differentiating_fields": {
+    "239_vs_240": [
+      "automorphism_group_order",
+      "rank_F2",
+      "smith_normal_form",
+      "plane_orbits",
+      "double_line_orbits",
+      "multiple_point_orbits",
+      "character_C1",
+      "character_C0"
+    ],
+    "239_vs_241": [
+      "automorphism_group_order",
+      "rank_Q",
+      "rank_F2",
+      "kernel_dim_Q",
+      "cokernel_dim_Q",
+      "smith_normal_form",
+      "plane_orbits",
+      "double_line_orbits",
+      "multiple_point_orbits",
+      "character_C1",
+      "character_C0"
+    ],
+    "240_vs_241": [
+      "automorphism_group_order",
+      "rank_Q",
+      "rank_F2",
+      "kernel_dim_Q",
+      "cokernel_dim_Q",
+      "smith_normal_form",
+      "plane_orbits",
+      "double_line_orbits",
+      "multiple_point_orbits",
+      "character_C1",
+      "character_C0"
+    ]
+  },
+  "theorem_statement_ready": true
+}

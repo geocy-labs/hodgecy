@@ -283,3 +283,83 @@ written to `paper/tables/table_fixed_equation_equivariant_clusters.*` and
 Command:
 
 - `python scripts/cluster_equivariant_spectra_fixed_equations.py`
+
+### Fixed-equation batch 001
+
+The first fixed-equation CKC batch is written separately under
+`data/processed/equivariant_spectra/fixed_equation_batch_001/`. It is scoped to
+the currently repo-backed validated, fixed, non-parameterized CKC entries:
+`84` and `84a`. The batch explicitly excludes the provisional parameterized
+`83` specialization and records that exclusion in `batch_manifest.json`.
+
+Batch 001 emits per-arrangement spectrum JSON, a spectrum summary, clusters by
+shared local inventory and Hodge data, and a differentiating-pairs table for
+examples with identical local/Hodge data but different equivariant
+incidence-gluing spectra.
+
+Command:
+
+- `python scripts/compute_fixed_equation_batch_001.py`
+
+## CKC PDF Equation Extraction
+
+The raw CKC equation index is extracted directly from the source PDF Section
+6.1. This extraction is separate from the validated HodgeCY control-pair
+records: a record being extracted from the PDF does not mean its incidence
+data, Hodge data, or fixed-equation status have been independently validated.
+
+The extraction script reads
+`data/raw/cynk_kocel_cynk_2026/2602.19413v1-cynk-kocel-cynk.pdf` and writes
+`data/raw/cynk_kocel_cynk_2026/ckc_equation_index_001_455.json`, plus coverage
+and audit outputs under `data/processed/equivariant_spectra/`.
+
+Commands:
+
+- `python scripts/extract_ckc_equation_index_from_pdf.py`
+- `python -m pytest -q tests/test_ckc_pdf_extraction.py`
+
+## CKC Fixed Rational Batch Validation
+
+The fixed rational validation pass consumes the raw Section 6.1 extraction and
+attempts exact combinatorial/incidence validation for the fixed rational
+equation candidates:
+
+`1, 3, 19, 32, 69, 93, 238, 239, 240, 241, 245`.
+
+Here, validation means that the equation parses into eight rational linear
+factors and supports exact incidence-table, singularity-inventory,
+automorphism, gluing-complex, orbit, and permutation-character computations.
+It does not validate smoothing behavior and does not newly prove Hodge
+numbers. Any Hodge data shown in the generated tables are table lookups from
+the existing Cynk--Meyer data.
+
+The algebraic fixed candidates `452` and `453` are recorded in the validation
+report as `skipped_algebraic_coefficients` until an exact quadratic-field
+coefficient pipeline is added.
+
+Command:
+
+- `python scripts/validate_ckc_fixed_rational_batch.py`
+
+### CKC 239/240/241 Theorem Values
+
+The fixed rational batch contains a theorem-ready differentiating cluster:
+arrangements `239`, `240`, and `241` have the same local singularity inventory
+
+`p3=16, p4_0=10, p4_1=0, p5_0=0, p5_1=0, p5_2=0, l3=0`,
+
+but different equivariant incidence-gluing signatures. The compact theorem
+table records the automorphism group order, gluing rank data, Smith normal
+form, orbit decompositions, and permutation-character distributions for the
+three arrangements.
+
+Generated outputs:
+
+- `paper/tables/table_ckc_239_240_241_equivariant_signature.csv`
+- `paper/tables/table_ckc_239_240_241_equivariant_signature.tex`
+- `data/processed/equivariant_spectra/ckc_fixed_rational_batch/ckc_239_240_241_theorem_values.json`
+- `data/processed/equivariant_spectra/ckc_fixed_rational_batch/theorem_summary_239_240_241.json`
+
+Command:
+
+- `python scripts/build_ckc_239_240_241_theorem_values.py`

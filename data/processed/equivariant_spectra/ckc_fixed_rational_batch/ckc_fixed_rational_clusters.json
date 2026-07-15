@@ -1,0 +1,112 @@
+{
+  "clusters": [
+    {
+      "cluster_id": "ckc_fixed_rational_inventory_cluster_001",
+      "cluster_type": "singularity_inventory",
+      "member_count": 1,
+      "members": "93",
+      "inventory_signature": "p3=13;p4_0=9;p4_1=0;p5_0=1;p5_1=0;p5_2=0;l3=1",
+      "hodge_signatures": "h12=None;h11=None;euler=None",
+      "equivariant_data_varies": false,
+      "automorphism_group_orders": "4",
+      "rank_Q_values": "23",
+      "rank_F2_values": "21"
+    },
+    {
+      "cluster_id": "ckc_fixed_rational_inventory_cluster_002",
+      "cluster_type": "singularity_inventory",
+      "member_count": 1,
+      "members": "69",
+      "inventory_signature": "p3=14;p4_0=6;p4_1=0;p5_0=2;p5_1=0;p5_2=0;l3=1",
+      "hodge_signatures": "h12=4;h11=38;euler=68",
+      "equivariant_data_varies": false,
+      "automorphism_group_orders": "4",
+      "rank_Q_values": "21",
+      "rank_F2_values": "20"
+    },
+    {
+      "cluster_id": "ckc_fixed_rational_inventory_cluster_003",
+      "cluster_type": "singularity_inventory",
+      "member_count": 3,
+      "members": "239,240,241",
+      "inventory_signature": "p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0",
+      "hodge_signatures": "h12=None;h11=None;euler=None",
+      "equivariant_data_varies": true,
+      "automorphism_group_orders": "24,6,32",
+      "rank_Q_values": "26,26,24",
+      "rank_F2_values": "21,23,24"
+    },
+    {
+      "cluster_id": "ckc_fixed_rational_inventory_cluster_004",
+      "cluster_type": "singularity_inventory",
+      "member_count": 1,
+      "members": "245",
+      "inventory_signature": "p3=20;p4_0=9;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0",
+      "hodge_signatures": "h12=None;h11=None;euler=None",
+      "equivariant_data_varies": false,
+      "automorphism_group_orders": "2",
+      "rank_Q_values": "27",
+      "rank_F2_values": "24"
+    },
+    {
+      "cluster_id": "ckc_fixed_rational_inventory_cluster_005",
+      "cluster_type": "singularity_inventory",
+      "member_count": 1,
+      "members": "1",
+      "inventory_signature": "p3=4;p4_0=5;p4_1=0;p5_0=4;p5_1=0;p5_2=0;l3=4",
+      "hodge_signatures": "h12=1;h11=69;euler=136",
+      "equivariant_data_varies": false,
+      "automorphism_group_orders": "8",
+      "rank_Q_values": "13",
+      "rank_F2_values": "11"
+    },
+    {
+      "cluster_id": "ckc_fixed_rational_inventory_cluster_006",
+      "cluster_type": "singularity_inventory",
+      "member_count": 1,
+      "members": "32",
+      "inventory_signature": "p3=8;p4_0=11;p4_1=0;p5_0=1;p5_1=0;p5_2=0;l3=2",
+      "hodge_signatures": "h12=4;h11=46;euler=84",
+      "equivariant_data_varies": false,
+      "automorphism_group_orders": "4",
+      "rank_Q_values": "20",
+      "rank_F2_values": "18"
+    },
+    {
+      "cluster_id": "ckc_fixed_rational_inventory_cluster_007",
+      "cluster_type": "singularity_inventory",
+      "member_count": 1,
+      "members": "238",
+      "inventory_signature": "p3=8;p4_0=12;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0",
+      "hodge_signatures": "h12=None;h11=None;euler=None",
+      "equivariant_data_varies": false,
+      "automorphism_group_orders": "192",
+      "rank_Q_values": "20",
+      "rank_F2_values": "16"
+    },
+    {
+      "cluster_id": "ckc_fixed_rational_inventory_cluster_008",
+      "cluster_type": "singularity_inventory",
+      "member_count": 1,
+      "members": "3",
+      "inventory_signature": "p3=8;p4_0=6;p4_1=0;p5_0=3;p5_1=0;p5_2=0;l3=3",
+      "hodge_signatures": "h12=3;h11=59;euler=112",
+      "equivariant_data_varies": false,
+      "automorphism_group_orders": "6",
+      "rank_Q_values": "16",
+      "rank_F2_values": "13"
+    },
+    {
+      "cluster_id": "ckc_fixed_rational_inventory_cluster_009",
+      "cluster_type": "singularity_inventory",
+      "member_count": 1,
+      "members": "19",
+      "inventory_signature": "p3=9;p4_0=8;p4_1=0;p5_0=2;p5_1=0;p5_2=0;l3=2",
+      "hodge_signatures": "h12=4;h11=50;euler=92",
+      "equivariant_data_varies": false,
+      "automorphism_group_orders": "4",
+      "rank_Q_values": "18",
+      "rank_F2_values": "16"
+    }
+  ]
+}

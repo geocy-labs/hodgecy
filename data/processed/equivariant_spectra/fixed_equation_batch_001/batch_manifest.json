@@ -1,0 +1,24 @@
+{
+  "batch_id": "fixed_equation_batch_001",
+  "selected_count": 2,
+  "selected_arrangement_ids": [
+    "84",
+    "84a"
+  ],
+  "skipped_records": [
+    {
+      "arrangement_id": "83",
+      "reason": "not_in_batch_metadata; representative_status=provisional; parameter_status=parameterized_specialization; parameter_choice_present"
+    }
+  ],
+  "cluster_count": 1,
+  "differentiating_pair_count": 1,
+  "outputs": {
+    "summary_csv": "spectrum_summary.csv",
+    "summary_md": "spectrum_summary.md",
+    "clusters_csv": "clusters_by_inventory_hodge.csv",
+    "clusters_json": "clusters_by_inventory_hodge.json",
+    "differentiating_pairs_csv": "differentiating_pairs_same_inventory_hodge.csv",
+    "differentiating_pairs_md": "differentiating_pairs_same_inventory_hodge.md"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "batch_id": "fixed_equation_batch_001",
+  "source": "Cynk--Kocel--Cynk 2026 equation-list ingestion from currently repo-backed fixed representatives.",
+  "source_reference": "Cynk--Kocel--Cynk, Classification of Double Octic Calabi--Yau Threefolds Defined by an Arrangement of Eight Planes II, arXiv:2602.19413, Section 6 equation list.",
+  "selection_rule": "Validated records with parameter_status=fixed_representative and no parameter_choice from the currently ingested CKC control data.",
+  "coverage_note": "The repository does not yet contain a full machine-readable CKC 455-type equation list. Batch 001 therefore contains the validated fixed, non-parameterized representatives currently ingested: 84 and 84a. Parameterized/provisional 83 is excluded.",
+  "record_source": "data/raw/cynk_kocel_cynk_2026/control_triple_83_84_84a.json",
+  "arrangement_ids": [
+    "84",
+    "84a"
+  ],
+  "excluded_records": [
+    {
+      "arrangement_id": "83",
+      "reason": "parameterized_specialization and representative_status=provisional"
+    }
+  ]
+}

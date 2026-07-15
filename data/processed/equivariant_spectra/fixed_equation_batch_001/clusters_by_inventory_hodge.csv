@@ -1,0 +1,2 @@
+cluster_id,member_count,members,local_inventory_signature,hodge_signature,equivariant_data_varies,automorphism_group_orders,rank_Q_values,rank_F2_values,smith_normal_forms,plane_orbit_sizes,double_line_orbit_sizes,multiple_point_orbit_sizes
+fixed_equation_batch_001_cluster_001,2,"84,84a",p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0,h12=0;h11=40;euler=80,True,"6,24","26,26","23,21","1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,6,12 | 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,4,4,4,12","1,1,3,3 | 4,4","1,3,3,3,3,3,3,3,6 | 4,6,6,12","1,1,3,3,3,3,3,3,6 | 4,4,6,12"

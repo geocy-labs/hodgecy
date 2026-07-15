@@ -1,0 +1,107 @@
+{
+  "rational_fixed_candidates_attempted": [
+    "1",
+    "3",
+    "19",
+    "32",
+    "69",
+    "93",
+    "238",
+    "239",
+    "240",
+    "241",
+    "245"
+  ],
+  "algebraic_fixed_candidates": [
+    "452",
+    "453"
+  ],
+  "validation_records": [
+    {
+      "arrangement_id": "1",
+      "validation_status": "validated_combinatorial",
+      "notes": ""
+    },
+    {
+      "arrangement_id": "3",
+      "validation_status": "validated_combinatorial",
+      "notes": ""
+    },
+    {
+      "arrangement_id": "19",
+      "validation_status": "validated_combinatorial",
+      "notes": ""
+    },
+    {
+      "arrangement_id": "32",
+      "validation_status": "validated_combinatorial",
+      "notes": ""
+    },
+    {
+      "arrangement_id": "69",
+      "validation_status": "validated_combinatorial",
+      "notes": ""
+    },
+    {
+      "arrangement_id": "93",
+      "validation_status": "validated_combinatorial",
+      "notes": ""
+    },
+    {
+      "arrangement_id": "238",
+      "validation_status": "validated_combinatorial",
+      "notes": ""
+    },
+    {
+      "arrangement_id": "239",
+      "validation_status": "validated_combinatorial",
+      "notes": ""
+    },
+    {
+      "arrangement_id": "240",
+      "validation_status": "validated_combinatorial",
+      "notes": ""
+    },
+    {
+      "arrangement_id": "241",
+      "validation_status": "validated_combinatorial",
+      "notes": ""
+    },
+    {
+      "arrangement_id": "245",
+      "validation_status": "validated_combinatorial",
+      "notes": ""
+    },
+    {
+      "arrangement_id": "452",
+      "validation_status": "skipped_algebraic_coefficients",
+      "notes": "Requires exact quadratic-field coefficient support."
+    },
+    {
+      "arrangement_id": "453",
+      "validation_status": "skipped_algebraic_coefficients",
+      "notes": "Requires exact quadratic-field coefficient support."
+    }
+  ],
+  "validated_combinatorial": [
+    "1",
+    "3",
+    "19",
+    "32",
+    "69",
+    "93",
+    "238",
+    "239",
+    "240",
+    "241",
+    "245"
+  ],
+  "failed": [],
+  "skipped_algebraic": [
+    "452",
+    "453"
+  ],
+  "cluster_count": 9,
+  "differentiating_pair_count": 3,
+  "notes": "Combinatorial/incidence validation only. The full CKC dataset is not marked validated."
+}

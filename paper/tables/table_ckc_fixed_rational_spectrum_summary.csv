@@ -1,0 +1,12 @@
+arrangement_id,validation_status,inventory_signature,hodge_signature,automorphism_group_order,gluing_matrix_shape,rank_Q,rank_F2,kernel_dim_Q,cokernel_dim_Q
+1,validated_combinatorial,p3=4;p4_0=5;p4_1=0;p5_0=4;p5_1=0;p5_2=0;l3=4,h12=1;h11=69;euler=136,8,13x16,13,11,3,0
+3,validated_combinatorial,p3=8;p4_0=6;p4_1=0;p5_0=3;p5_1=0;p5_2=0;l3=3,h12=3;h11=59;euler=112,6,17x19,16,13,3,1
+19,validated_combinatorial,p3=9;p4_0=8;p4_1=0;p5_0=2;p5_1=0;p5_2=0;l3=2,h12=4;h11=50;euler=92,4,19x22,18,16,4,1
+32,validated_combinatorial,p3=8;p4_0=11;p4_1=0;p5_0=1;p5_1=0;p5_2=0;l3=2,h12=4;h11=46;euler=84,4,20x22,20,18,2,0
+69,validated_combinatorial,p3=14;p4_0=6;p4_1=0;p5_0=2;p5_1=0;p5_2=0;l3=1,h12=4;h11=38;euler=68,4,22x25,21,20,4,1
+93,validated_combinatorial,p3=13;p4_0=9;p4_1=0;p5_0=1;p5_1=0;p5_2=0;l3=1,h12=None;h11=None;euler=None,4,23x25,23,21,2,0
+238,validated_combinatorial,p3=8;p4_0=12;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0,h12=None;h11=None;euler=None,192,20x28,20,16,8,0
+239,validated_combinatorial,p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0,h12=None;h11=None;euler=None,24,26x28,26,21,2,0
+240,validated_combinatorial,p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0,h12=None;h11=None;euler=None,6,26x28,26,23,2,0
+241,validated_combinatorial,p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0,h12=None;h11=None;euler=None,32,26x28,24,24,4,2
+245,validated_combinatorial,p3=20;p4_0=9;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0,h12=None;h11=None;euler=None,2,29x28,27,24,1,2
