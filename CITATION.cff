@@ -18,4 +18,5 @@ preferred-citation:
       given-names: Abdul
   version: "0.2.0"
   year: 2026
-  notes: "Zenodo DOI placeholder: replace after DOI minting. Generation source commit c5bf38455f3ee4989efa2eeb02fcbac3bae3a0bb; tagged release commit is resolved from v0.2.0."
+  doi: "10.5281/zenodo.21429481"
+  notes: "HodgeCY v0.2.0 Zenodo DOI: 10.5281/zenodo.21429481. Generation source commit c5bf38455f3ee4989efa2eeb02fcbac3bae3a0bb; tagged release commit is resolved from v0.2.0."

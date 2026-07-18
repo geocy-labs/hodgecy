@@ -375,7 +375,7 @@ python scripts/build_v0_2_0_release.py
 python scripts/verify_v0_2_0_release.py
 ```
 
-Zenodo DOI placeholder: `ZENODO_DOI_PLACEHOLDER`. The 84/84a smoothing status
+Zenodo DOI: `10.5281/zenodo.21429481`. The 84/84a smoothing status
 remains `degree112_certified`; this release does not promote
 `ordinary_node_verified` or `defect_verified`.
 

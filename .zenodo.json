@@ -18,7 +18,7 @@
     "computational algebraic geometry"
   ],
   "license": "MIT",
-  "notes": "Prepared from generation source commit c5bf38455f3ee4989efa2eeb02fcbac3bae3a0bb. Tagged release commit is resolved from v0.2.0. Replace Zenodo DOI placeholder after minting.",
+  "notes": "HodgeCY v0.2.0 Zenodo DOI: 10.5281/zenodo.21429481. Prepared from generation source commit c5bf38455f3ee4989efa2eeb02fcbac3bae3a0bb. Tagged release commit is resolved from v0.2.0.",
   "publication_date": "2026-07-18",
   "related_identifiers": [
     {
@@ -27,7 +27,7 @@
       "scheme": "url"
     },
     {
-      "identifier": "ZENODO_DOI_PLACEHOLDER",
+      "identifier": "10.5281/zenodo.21429481",
       "relation": "isVersionOf",
       "scheme": "doi"
     }

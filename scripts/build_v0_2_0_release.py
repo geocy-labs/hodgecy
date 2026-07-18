@@ -672,7 +672,8 @@ preferred-citation:
       given-names: Abdul
   version: "{version}"
   year: 2026
-  notes: "Zenodo DOI placeholder: replace after DOI minting. Generation source commit {commit}; tagged release commit is resolved from {RELEASE_VERSION}."
+  doi: "10.5281/zenodo.21429481"
+  notes: "HodgeCY v0.2.0 Zenodo DOI: 10.5281/zenodo.21429481. Generation source commit {commit}; tagged release commit is resolved from {RELEASE_VERSION}."
 """
     (REPO_ROOT / "CITATION.cff").write_text(citation, encoding="utf-8")
     zenodo = {
@@ -696,9 +697,9 @@ preferred-citation:
         ],
         "related_identifiers": [
             {"identifier": "https://github.com/geocy-labs/hodgecy", "relation": "isSupplementTo", "scheme": "url"},
-            {"identifier": "ZENODO_DOI_PLACEHOLDER", "relation": "isVersionOf", "scheme": "doi"},
+            {"identifier": "10.5281/zenodo.21429481", "relation": "isVersionOf", "scheme": "doi"},
         ],
-        "notes": f"Prepared from generation source commit {commit}. Tagged release commit is resolved from {RELEASE_VERSION}. Replace Zenodo DOI placeholder after minting.",
+        "notes": f"HodgeCY v0.2.0 Zenodo DOI: 10.5281/zenodo.21429481. Prepared from generation source commit {commit}. Tagged release commit is resolved from {RELEASE_VERSION}.",
     }
     _write_json(REPO_ROOT / ".zenodo.json", zenodo)
 
@@ -720,7 +721,7 @@ python scripts/build_v0_2_0_release.py
 python scripts/verify_v0_2_0_release.py
 ```
 
-Zenodo DOI placeholder: `ZENODO_DOI_PLACEHOLDER`. The 84/84a smoothing status
+Zenodo DOI: `10.5281/zenodo.21429481`. The 84/84a smoothing status
 remains `degree112_certified`; this release does not promote
 `ordinary_node_verified` or `defect_verified`.
 """
