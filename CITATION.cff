@@ -18,4 +18,4 @@ preferred-citation:
       given-names: Abdul
   version: "0.2.0"
   year: 2026
-  notes: "Zenodo DOI placeholder: replace after DOI minting. Commit 83750c6bc49d12b78863ad5b2c7ac7a52e05fa61."
+  notes: "Zenodo DOI placeholder: replace after DOI minting. Generation source commit c5bf38455f3ee4989efa2eeb02fcbac3bae3a0bb; tagged release commit is resolved from v0.2.0."

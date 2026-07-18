@@ -1,1 +1,3 @@
-83750c6bc49d12b78863ad5b2c7ac7a52e05fa61
+release_tag: v0.2.0
+generation_source_commit: c5bf38455f3ee4989efa2eeb02fcbac3bae3a0bb
+tag_target_commit: Resolve the tagged release commit with: git rev-parse v0.2.0^{}

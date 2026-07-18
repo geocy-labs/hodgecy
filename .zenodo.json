@@ -18,7 +18,7 @@
     "computational algebraic geometry"
   ],
   "license": "MIT",
-  "notes": "Prepared from commit 83750c6bc49d12b78863ad5b2c7ac7a52e05fa61. Replace Zenodo DOI placeholder after minting.",
+  "notes": "Prepared from generation source commit c5bf38455f3ee4989efa2eeb02fcbac3bae3a0bb. Tagged release commit is resolved from v0.2.0. Replace Zenodo DOI placeholder after minting.",
   "publication_date": "2026-07-18",
   "related_identifiers": [
     {

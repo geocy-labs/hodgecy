@@ -1,10 +1,2 @@
-D release/hodgecy-v0.2.0/MANIFEST.json
- D release/hodgecy-v0.2.0/README.md
- D release/hodgecy-v0.2.0/RELEASE_NOTES.md
- D release/hodgecy-v0.2.0/REPRODUCIBILITY.md
- D release/hodgecy-v0.2.0/SHA256SUMS
- D release/hodgecy-v0.2.0/archive_checksums.json
- D release/hodgecy-v0.2.0/environment/git-commit.txt
- D release/hodgecy-v0.2.0/environment/git-describe.txt
- D release/hodgecy-v0.2.0/environment/git-status.txt
- D release/hodgecy-v0.2.0/environment/test-summary.txt
+Release certificates are generated before the final release commit is tagged.
+Run git status --short after checkout to inspect the live tree.

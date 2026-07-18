@@ -3,7 +3,7 @@
     {
       "bytes": 219,
       "path": "archive_checksums.json",
-      "sha256": "1f0f8e5fc760ed0aa141bb608da318665e4c8a80270e0401400b502aa05433a0"
+      "sha256": "eb58fb097a660c32b1c597ad8f48e6baf7a9c663984b09eaf9441a13a39ee407"
     },
     {
       "bytes": 9827,
@@ -346,19 +346,19 @@
       "sha256": "83b1f477737e8fad54ebdeb342ce16afa939d55b21ee081806eb207aa03bd12a"
     },
     {
-      "bytes": 42,
+      "bytes": 173,
       "path": "environment/git-commit.txt",
-      "sha256": "b483540539c0ff91c01cf49bb1805f38ba3c152b5fcbea5e6806cb3334b23a05"
+      "sha256": "bba1e4604224dc9b80b647232de0cbd06da02cfe9dfa7acb39554d20bae089d2"
     },
     {
-      "bytes": 25,
+      "bytes": 126,
       "path": "environment/git-describe.txt",
-      "sha256": "354bc8f1072f22caa0651a7f2785fa31d8b05358cca1f81a03005689675ac953"
+      "sha256": "32c4a6cb13d079ae0f4b20555b064eab16ce1f0112509cefea1b06d5a79f2807"
     },
     {
-      "bytes": 475,
+      "bytes": 144,
       "path": "environment/git-status.txt",
-      "sha256": "e60b4dfd36daf37e16ebfbd236e9e2a1fabf9acd5c6c495a05dbfe90cc2c1b01"
+      "sha256": "d3717a8993eb72114ac8ca9f53cdd0aad1c15c75a2f6ea140c544b3c302a3fdc"
     },
     {
       "bytes": 34,
@@ -383,7 +383,7 @@
     {
       "bytes": 12705,
       "path": "manuscript_assets/paper__figures__fig_smoothing_bridge_schematic.pdf",
-      "sha256": "fd6e728ad1e79691261f351dfd01fa6a6b7884aabfaca0dd868d8db6ab00f4ec"
+      "sha256": "1a3441c0d11ca9aa070f5d75714e1f73bbf9d2f6493f2fc8eebf1c4050ba8081"
     },
     {
       "bytes": 36437,
@@ -416,9 +416,9 @@
       "sha256": "1e2f3dc72a9227f32c304ea71bd25afe541c01f848601456dba28d39bd979ffe"
     },
     {
-      "bytes": 999,
+      "bytes": 1117,
       "path": "RELEASE_NOTES.md",
-      "sha256": "129e2063f891c66e02044718269bce18920861610ea0d7521f409202174e0edd"
+      "sha256": "2d230216e28c3549d8928636a01f4433658178ddc02a8023e77260736fb46359"
     },
     {
       "bytes": 811,
@@ -431,9 +431,9 @@
       "sha256": "e7319955b91a6d70e7105963c95edc1633cfcae764ac42fd18307552be25fc50"
     },
     {
-      "bytes": 33587,
+      "bytes": 34503,
       "path": "scripts/build_v0_2_0_release.py",
-      "sha256": "4cf11d66ebb25a9ac3cb02b9e7ab81c8056f921d13149f22352b26f0d14f475a"
+      "sha256": "669dcce9f345b552da9b7ffc1878141e56d12b9bddc56bff591204fa80cc406d"
     },
     {
       "bytes": 2528,
@@ -466,10 +466,12 @@
       "sha256": "40f5c98196df38984ccc97051fbe64c4e30d4d108638be8898b2a8f8034b8935"
     }
   ],
-  "generated_utc": "2026-07-18T13:55:41.994074+00:00",
-  "git_commit": "83750c6bc49d12b78863ad5b2c7ac7a52e05fa61",
+  "generated_utc": "2026-07-18T14:07:28.921555+00:00",
+  "generation_source_commit": "c5bf38455f3ee4989efa2eeb02fcbac3bae3a0bb",
   "package_version": "0.2.0",
+  "release_tag": "v0.2.0",
   "release_version": "v0.2.0",
+  "tag_target_commit": "Resolve the tagged release commit with: git rev-parse v0.2.0^{}",
   "theorem_arrangements": [
     "84",
     "84a",

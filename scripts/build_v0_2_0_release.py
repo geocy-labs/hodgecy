@@ -61,6 +61,7 @@ RELEASE_NAME = f"hodgecy-{RELEASE_VERSION}"
 RELEASE_DIR = REPO_ROOT / "release" / RELEASE_NAME
 ARCHIVE_PATH = REPO_ROOT / "release" / f"{RELEASE_NAME}-theorem-certificates.zip"
 SOURCE_ARCHIVE_PATH = REPO_ROOT / "release" / f"{RELEASE_NAME}-source.zip"
+TAG_TARGET_NOTE = "Resolve the tagged release commit with: git rev-parse v0.2.0^{}"
 
 EXPECTED: dict[str, dict[str, Any]] = {
     "239": {
@@ -557,9 +558,23 @@ def _write_environment() -> None:
             dependency_lines.append(f"{name} not installed")
     (env / "dependencies.txt").write_text("\n".join(dependency_lines) + "\n", encoding="utf-8")
     shutil.copy2(env / "dependencies.txt", env / "requirements-lock.txt")
-    (env / "git-status.txt").write_text(_git_output(["status", "--short"]) + "\n", encoding="utf-8")
-    (env / "git-commit.txt").write_text(_git_output(["rev-parse", "HEAD"]) + "\n", encoding="utf-8")
-    (env / "git-describe.txt").write_text(_git_output(["describe", "--tags", "--always", "--dirty"]) + "\n", encoding="utf-8")
+    (env / "git-status.txt").write_text(
+        "Release certificates are generated before the final release commit is tagged.\n"
+        "Run git status --short after checkout to inspect the live tree.\n",
+        encoding="utf-8",
+    )
+    (env / "git-commit.txt").write_text(
+        f"release_tag: {RELEASE_VERSION}\n"
+        f"generation_source_commit: {_git_output(['rev-parse', 'HEAD'])}\n"
+        f"tag_target_commit: {TAG_TARGET_NOTE}\n",
+        encoding="utf-8",
+    )
+    (env / "git-describe.txt").write_text(
+        f"release_tag: {RELEASE_VERSION}\n"
+        f"generation_source_describe: {_git_output(['describe', '--tags', '--always', '--dirty'])}\n"
+        f"tag_target_describe: resolve from the checked-out release tag\n",
+        encoding="utf-8",
+    )
     captured_summary = REPO_ROOT / "data" / "processed" / "release_test_summary_v0_2_0.txt"
     if captured_summary.exists():
         (env / "test-summary.txt").write_text(captured_summary.read_text(encoding="utf-8"), encoding="utf-8")
@@ -578,7 +593,10 @@ def _write_release_docs() -> None:
 
 Release date: {date}
 
-Git commit recorded during preparation: `{commit}`
+Generation source commit recorded during preparation: `{commit}`
+
+Tagged release commit: resolve with `git rev-parse {RELEASE_VERSION}^{{}}` after
+checking out the published tag.
 
 ## Scientific scope
 
@@ -654,7 +672,7 @@ preferred-citation:
       given-names: Abdul
   version: "{version}"
   year: 2026
-  notes: "Zenodo DOI placeholder: replace after DOI minting. Commit {commit}."
+  notes: "Zenodo DOI placeholder: replace after DOI minting. Generation source commit {commit}; tagged release commit is resolved from {RELEASE_VERSION}."
 """
     (REPO_ROOT / "CITATION.cff").write_text(citation, encoding="utf-8")
     zenodo = {
@@ -680,7 +698,7 @@ preferred-citation:
             {"identifier": "https://github.com/geocy-labs/hodgecy", "relation": "isSupplementTo", "scheme": "url"},
             {"identifier": "ZENODO_DOI_PLACEHOLDER", "relation": "isVersionOf", "scheme": "doi"},
         ],
-        "notes": f"Prepared from commit {commit}. Replace Zenodo DOI placeholder after minting.",
+        "notes": f"Prepared from generation source commit {commit}. Tagged release commit is resolved from {RELEASE_VERSION}. Replace Zenodo DOI placeholder after minting.",
     }
     _write_json(REPO_ROOT / ".zenodo.json", zenodo)
 
@@ -721,7 +739,9 @@ def _manifest_and_checksums() -> None:
     manifest = {
         "release_version": RELEASE_VERSION,
         "package_version": PACKAGE_VERSION,
-        "git_commit": _git_output(["rev-parse", "HEAD"]),
+        "release_tag": RELEASE_VERSION,
+        "generation_source_commit": _git_output(["rev-parse", "HEAD"]),
+        "tag_target_commit": TAG_TARGET_NOTE,
         "generated_utc": datetime.now(timezone.utc).isoformat(),
         "theorem_arrangements": list(TARGETS),
         "files": files,

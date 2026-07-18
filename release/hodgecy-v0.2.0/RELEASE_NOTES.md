@@ -2,7 +2,10 @@
 
 Release date: 2026-07-18
 
-Git commit recorded during preparation: `83750c6bc49d12b78863ad5b2c7ac7a52e05fa61`
+Generation source commit recorded during preparation: `c5bf38455f3ee4989efa2eeb02fcbac3bae3a0bb`
+
+Tagged release commit: resolve with `git rev-parse v0.2.0^{}` after
+checking out the published tag.
 
 ## Scientific scope
 

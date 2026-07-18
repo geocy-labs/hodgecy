@@ -1,1 +1,3 @@
-v0.1.0-5-g83750c6-dirty
+release_tag: v0.2.0
+generation_source_describe: v0.2.0-dirty
+tag_target_describe: resolve from the checked-out release tag
