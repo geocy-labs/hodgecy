@@ -2,7 +2,7 @@
 
 Release date: 2026-07-18
 
-Git commit recorded during preparation: `dd70dee29a484a9207be8f8580167abf0485ce3e`
+Git commit recorded during preparation: `83750c6bc49d12b78863ad5b2c7ac7a52e05fa61`
 
 ## Scientific scope
 

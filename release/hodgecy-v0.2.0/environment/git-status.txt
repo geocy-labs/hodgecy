@@ -1,21 +1,10 @@
-M README.md
- M data/processed/equivariant_spectra/ckc_ingestion_coverage.json
- M data/raw/cynk_kocel_cynk_2026/ckc_equation_index_001_455.json
- M paper/figures/fig_concurrency_graph_84.pdf
- M paper/figures/fig_concurrency_graph_84a.pdf
- M paper/figures/fig_hodge_scatter.pdf
- M paper/figures/fig_hodgecy_pipeline.pdf
- M paper/figures/fig_same_hodge_cluster_sizes.pdf
- M paper/figures/fig_smoothing_bridge_schematic.pdf
- M pyproject.toml
-?? .zenodo.json
-?? CITATION.cff
-?? RELEASE_NOTES.md
-?? REPRODUCIBILITY.md
-?? data/processed/release_test_summary_v0_2_0.txt
-?? release/
-?? scripts/build_v0_2_0_release.py
-?? scripts/reproduce_release.sh
-?? scripts/verify_release.sh
-?? scripts/verify_v0_2_0_release.py
-?? tests/test_v0_2_0_release.py
+D release/hodgecy-v0.2.0/MANIFEST.json
+ D release/hodgecy-v0.2.0/README.md
+ D release/hodgecy-v0.2.0/RELEASE_NOTES.md
+ D release/hodgecy-v0.2.0/REPRODUCIBILITY.md
+ D release/hodgecy-v0.2.0/SHA256SUMS
+ D release/hodgecy-v0.2.0/archive_checksums.json
+ D release/hodgecy-v0.2.0/environment/git-commit.txt
+ D release/hodgecy-v0.2.0/environment/git-describe.txt
+ D release/hodgecy-v0.2.0/environment/git-status.txt
+ D release/hodgecy-v0.2.0/environment/test-summary.txt

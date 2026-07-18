@@ -3,7 +3,7 @@
     {
       "bytes": 219,
       "path": "archive_checksums.json",
-      "sha256": "c1cbf4e0180d298f584588d025fc5fd998cd9a709c29fa96ff8e7acab32b4403"
+      "sha256": "1f0f8e5fc760ed0aa141bb608da318665e4c8a80270e0401400b502aa05433a0"
     },
     {
       "bytes": 9827,
@@ -348,17 +348,17 @@
     {
       "bytes": 42,
       "path": "environment/git-commit.txt",
-      "sha256": "9f912c41d70ebd3d54f1dbf63e99d58d3dbfe1ecebef4f9dc63d4af882507f6b"
+      "sha256": "b483540539c0ff91c01cf49bb1805f38ba3c152b5fcbea5e6806cb3334b23a05"
     },
     {
       "bytes": 25,
       "path": "environment/git-describe.txt",
-      "sha256": "d7214b0da0e8fc82c5bc299649887a6675ac8ec3faa5b4607471fccba42571a5"
+      "sha256": "354bc8f1072f22caa0651a7f2785fa31d8b05358cca1f81a03005689675ac953"
     },
     {
-      "bytes": 758,
+      "bytes": 475,
       "path": "environment/git-status.txt",
-      "sha256": "1acc6ca968b1e58d2286f31fe86e1514e04775abf9dfe2d6b88243955d549d37"
+      "sha256": "e60b4dfd36daf37e16ebfbd236e9e2a1fabf9acd5c6c495a05dbfe90cc2c1b01"
     },
     {
       "bytes": 34,
@@ -418,7 +418,7 @@
     {
       "bytes": 999,
       "path": "RELEASE_NOTES.md",
-      "sha256": "60fb8f0841b6758bac4b1262dcd04c60f25bf718db9207fe18a923963b7590fd"
+      "sha256": "129e2063f891c66e02044718269bce18920861610ea0d7521f409202174e0edd"
     },
     {
       "bytes": 811,
@@ -466,8 +466,8 @@
       "sha256": "40f5c98196df38984ccc97051fbe64c4e30d4d108638be8898b2a8f8034b8935"
     }
   ],
-  "generated_utc": "2026-07-18T13:53:57.134912+00:00",
-  "git_commit": "dd70dee29a484a9207be8f8580167abf0485ce3e",
+  "generated_utc": "2026-07-18T13:55:41.994074+00:00",
+  "git_commit": "83750c6bc49d12b78863ad5b2c7ac7a52e05fa61",
   "package_version": "0.2.0",
   "release_version": "v0.2.0",
   "theorem_arrangements": [
