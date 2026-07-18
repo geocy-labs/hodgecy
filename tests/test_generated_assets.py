@@ -44,9 +44,17 @@ def test_generated_assets_include_partial_verification_and_p4_figures() -> None:
         (repo_root() / "data" / "processed" / "paper_figures" / "fig_smoothing_bridge_schematic_metadata.json").read_text(encoding="utf-8")
     )
     assert schematic_meta["status"] == "degree112_certified"
-    assert "predicted singular points" in " ".join(schematic_meta["boxes"]).lower()
-    assert schematic_meta["pending_text"] == "Ordinary-node verification pending"
-    assert "Ordinary-node verification and defect computation remain queued" == schematic_meta["queue_text"]
+    assert schematic_meta["boxes"] == [
+        "Eight-plane\narrangement",
+        "28 double lines",
+        "28 four-point blocks",
+        "$\\deg \\Sigma = 112$",
+    ]
+    assert schematic_meta["status_text"] == "Degree 112 certified; global support, reducedness, and pointwise node certificates pending."
+    assert "pending_text" not in schematic_meta
+    assert "queue_text" not in schematic_meta
+    assert "Ordinary-node verification pending" not in json.dumps(schematic_meta)
+    assert "Ordinary-node verification and defect computation remain queued" not in json.dumps(schematic_meta)
     assert "verified 112-node conifold" not in json.dumps(schematic_meta)
 
     graph84_meta = json.loads(

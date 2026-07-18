@@ -7,6 +7,7 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
+from matplotlib.patches import FancyBboxPatch
 import pandas as pd
 
 from hodgecy.arrangements import (
@@ -82,30 +83,51 @@ def plot_same_hodge_cluster_sizes() -> None:
 
 def plot_smoothing_bridge_schematic() -> None:
     paths = ensure_output_dirs()
-    fig, ax = plt.subplots(figsize=(10, 4))
+    fig, ax = plt.subplots(figsize=(10.8, 2.7))
     ax.axis("off")
+    fig.patch.set_facecolor("white")
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0, 1)
     boxes = [
-        (0.08, 0.5, "Eight-plane\narrangement source"),
-        (0.42, 0.5, "28 double lines"),
-        (0.76, 0.5, "4 predicted points per line\n= 112 predicted singular points"),
+        (0.12, "Eight-plane\narrangement"),
+        (0.37, "28 double lines"),
+        (0.62, "28 four-point blocks"),
+        (0.87, r"$\deg \Sigma = 112$"),
     ]
-    for x, y, text in boxes:
-        ax.text(x, y, text, ha="center", va="center", fontsize=11, bbox=dict(boxstyle="round,pad=0.5", fc="#f4f1ea", ec="#444"))
-    ax.annotate("", xy=(0.32, 0.5), xytext=(0.18, 0.5), arrowprops=dict(arrowstyle="->", lw=1.5))
-    ax.annotate("", xy=(0.66, 0.5), xytext=(0.52, 0.5), arrowprops=dict(arrowstyle="->", lw=1.5))
-    ax.text(0.5, 0.9, r"$F_{\epsilon} = \prod(P_i) + \epsilon Q^2$", ha="center", fontsize=13)
-    ax.text(0.5, 0.82, "degree112_certified for arrangements 84 and 84a", ha="center", fontsize=10)
-    ax.text(0.5, 0.18, "Generic Q avoids multiple points and meets double lines transversely", ha="center", fontsize=9)
-    ax.text(0.5, 0.11, "Ordinary-node verification pending", ha="center", fontsize=9)
-    ax.text(0.5, 0.05, "Ordinary-node verification and defect computation remain queued", ha="center", fontsize=9)
+    box_width = 0.18
+    box_height = 0.25
+    box_y = 0.57
+    for center_x, text in boxes:
+        left = center_x - box_width / 2
+        bottom = box_y - box_height / 2
+        patch = FancyBboxPatch(
+            (left, bottom),
+            box_width,
+            box_height,
+            boxstyle="round,pad=0.02,rounding_size=0.025",
+            linewidth=1.0,
+            edgecolor="#333333",
+            facecolor="white",
+        )
+        ax.add_patch(patch)
+        ax.text(center_x, box_y, text, ha="center", va="center", fontsize=10.5, color="#111111")
+
+    for (left_x, _), (right_x, _) in zip(boxes, boxes[1:]):
+        ax.annotate(
+            "",
+            xy=(right_x - box_width / 2 - 0.006, box_y),
+            xytext=(left_x + box_width / 2 + 0.006, box_y),
+            arrowprops=dict(arrowstyle="->", lw=1.2, color="#333333"),
+        )
+
+    status = "Degree 112 certified; global support, reducedness, and pointwise node\ncertificates pending."
+    ax.text(0.5, 0.22, status, ha="center", va="center", fontsize=9.5, color="#222222", linespacing=1.3)
     _save_figure(fig, "fig_smoothing_bridge_schematic")
     metadata = {
         "status": "degree112_certified",
-        "boxes": [text for _, _, text in boxes],
-        "top_text": r"$F_{\epsilon} = \prod(P_i) + \epsilon Q^2$",
-        "status_text": "degree112_certified for arrangements 84 and 84a",
-        "pending_text": "Ordinary-node verification pending",
-        "queue_text": "Ordinary-node verification and defect computation remain queued",
+        "boxes": [text for _, text in boxes],
+        "status_text": "Degree 112 certified; global support, reducedness, and pointwise node certificates pending.",
+        "style": "four-stage left-to-right chain",
     }
     (paths["processed_figures"] / "fig_smoothing_bridge_schematic_metadata.json").write_text(
         json.dumps(metadata, indent=2),

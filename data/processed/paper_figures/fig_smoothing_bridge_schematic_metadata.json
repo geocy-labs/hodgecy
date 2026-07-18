@@ -1,12 +1,11 @@
 {
   "status": "degree112_certified",
   "boxes": [
-    "Eight-plane\narrangement source",
+    "Eight-plane\narrangement",
     "28 double lines",
-    "4 predicted points per line\n= 112 predicted singular points"
+    "28 four-point blocks",
+    "$\\deg \\Sigma = 112$"
   ],
-  "top_text": "$F_{\\epsilon} = \\prod(P_i) + \\epsilon Q^2$",
-  "status_text": "degree112_certified for arrangements 84 and 84a",
-  "pending_text": "Ordinary-node verification pending",
-  "queue_text": "Ordinary-node verification and defect computation remain queued"
+  "status_text": "Degree 112 certified; global support, reducedness, and pointwise node certificates pending.",
+  "style": "four-stage left-to-right chain"
 }
