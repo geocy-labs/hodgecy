@@ -363,3 +363,19 @@ Generated outputs:
 Command:
 
 - `python scripts/build_ckc_239_240_241_theorem_values.py`
+
+## HodgeCY v0.2.0 theorem-certificate release
+
+The v0.2.0 release-preparation layer generates theorem-bearing source assembly
+certificates for arrangements 84, 84a, 239, 240, and 241. The certificates live
+under `release/hodgecy-v0.2.0/` after running:
+
+```bash
+python scripts/build_v0_2_0_release.py
+python scripts/verify_v0_2_0_release.py
+```
+
+Zenodo DOI placeholder: `ZENODO_DOI_PLACEHOLDER`. The 84/84a smoothing status
+remains `degree112_certified`; this release does not promote
+`ordinary_node_verified` or `defect_verified`.
+

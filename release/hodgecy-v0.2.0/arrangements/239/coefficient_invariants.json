@@ -1,0 +1,49 @@
+{
+  "cokernel_dim_Q": 0,
+  "integral_cokernel_decomposition": {
+    "canonical": "Z/2Z + (Z/4Z)^3 + Z/12Z",
+    "free_rank": 0,
+    "torsion_factors": [
+      2,
+      4,
+      4,
+      4,
+      12
+    ]
+  },
+  "integral_kernel_rank": 2,
+  "kernel_dim_Q": 2,
+  "rank_Q": 26,
+  "smith_normal_form": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    4,
+    4,
+    4,
+    12
+  ],
+  "tested_finite_field_ranks": {
+    "2": 21,
+    "3": 25
+  }
+}

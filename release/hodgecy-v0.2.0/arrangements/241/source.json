@@ -1,0 +1,91 @@
+{
+  "arrangement_id": "241",
+  "hodge_data_if_known": null,
+  "ordered_factor_list": [
+    {
+      "coefficients": [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      "equation": "x",
+      "label": "p1"
+    },
+    {
+      "coefficients": [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "equation": "y",
+      "label": "p2"
+    },
+    {
+      "coefficients": [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      "equation": "z",
+      "label": "p3"
+    },
+    {
+      "coefficients": [
+        "1",
+        "-1",
+        "-1",
+        "0"
+      ],
+      "equation": "(x-y-z)",
+      "label": "p4"
+    },
+    {
+      "coefficients": [
+        "1",
+        "-1",
+        "0",
+        "1"
+      ],
+      "equation": "(x-y+t)",
+      "label": "p5"
+    },
+    {
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "equation": "t",
+      "label": "p6"
+    },
+    {
+      "coefficients": [
+        "1",
+        "1",
+        "-1",
+        "-1"
+      ],
+      "equation": "(x+y-z-t)",
+      "label": "p7"
+    },
+    {
+      "coefficients": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "equation": "(x+y+z+t)",
+      "label": "p8"
+    }
+  ],
+  "representative_status": null,
+  "source": "CKC Section 6.1 raw PDF extraction, rational fixed candidate",
+  "source_equation": "xyz(x\u2212y\u2212z)(x\u2212y+t)t(x+y\u2212z\u2212t)(x+y+z+t)",
+  "source_reference": "Cynk--Kocel--Cynk 2026, Section 6.1",
+  "validation_status": "validated_combinatorial"
+}

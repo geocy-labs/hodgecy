@@ -470,7 +470,7 @@
   "validated_records": 0,
   "provisional_records": 0,
   "unvalidated_records": 455,
-  "extraction_timestamp": "2026-07-15T00:27:27.150492+00:00",
+  "extraction_timestamp": "2026-07-18T13:45:00.909784+00:00",
   "parser_coverage_complete": true,
   "full_validated_dataset_loaded": false,
   "notes": "Raw PDF extraction only. Parser coverage is distinct from validated CKC/HodgeCY ingestion; extracted records are not validated HodgeCY records."

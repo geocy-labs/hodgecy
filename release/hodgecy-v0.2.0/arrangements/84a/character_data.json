@@ -1,0 +1,660 @@
+{
+  "character_C0": {
+    "value_distribution": {
+      "0": 6,
+      "2": 11,
+      "8": 6,
+      "26": 1
+    },
+    "values": [
+      {
+        "fixed_count": 26,
+        "permutation": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "fixed_count": 8,
+        "permutation": [
+          0,
+          1,
+          2,
+          3,
+          6,
+          7,
+          4,
+          5
+        ]
+      },
+      {
+        "fixed_count": 8,
+        "permutation": [
+          0,
+          1,
+          4,
+          5,
+          2,
+          3,
+          6,
+          7
+        ]
+      },
+      {
+        "fixed_count": 2,
+        "permutation": [
+          0,
+          1,
+          4,
+          5,
+          6,
+          7,
+          2,
+          3
+        ]
+      },
+      {
+        "fixed_count": 2,
+        "permutation": [
+          0,
+          1,
+          6,
+          7,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "fixed_count": 8,
+        "permutation": [
+          0,
+          1,
+          6,
+          7,
+          4,
+          5,
+          2,
+          3
+        ]
+      },
+      {
+        "fixed_count": 8,
+        "permutation": [
+          2,
+          3,
+          0,
+          1,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "fixed_count": 2,
+        "permutation": [
+          2,
+          3,
+          0,
+          1,
+          6,
+          7,
+          4,
+          5
+        ]
+      },
+      {
+        "fixed_count": 2,
+        "permutation": [
+          2,
+          3,
+          4,
+          5,
+          0,
+          1,
+          6,
+          7
+        ]
+      },
+      {
+        "fixed_count": 0,
+        "permutation": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          0,
+          1
+        ]
+      },
+      {
+        "fixed_count": 0,
+        "permutation": [
+          2,
+          3,
+          6,
+          7,
+          0,
+          1,
+          4,
+          5
+        ]
+      },
+      {
+        "fixed_count": 2,
+        "permutation": [
+          2,
+          3,
+          6,
+          7,
+          4,
+          5,
+          0,
+          1
+        ]
+      },
+      {
+        "fixed_count": 2,
+        "permutation": [
+          4,
+          5,
+          0,
+          1,
+          2,
+          3,
+          6,
+          7
+        ]
+      },
+      {
+        "fixed_count": 0,
+        "permutation": [
+          4,
+          5,
+          0,
+          1,
+          6,
+          7,
+          2,
+          3
+        ]
+      },
+      {
+        "fixed_count": 8,
+        "permutation": [
+          4,
+          5,
+          2,
+          3,
+          0,
+          1,
+          6,
+          7
+        ]
+      },
+      {
+        "fixed_count": 2,
+        "permutation": [
+          4,
+          5,
+          2,
+          3,
+          6,
+          7,
+          0,
+          1
+        ]
+      },
+      {
+        "fixed_count": 2,
+        "permutation": [
+          4,
+          5,
+          6,
+          7,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "fixed_count": 0,
+        "permutation": [
+          4,
+          5,
+          6,
+          7,
+          2,
+          3,
+          0,
+          1
+        ]
+      },
+      {
+        "fixed_count": 0,
+        "permutation": [
+          6,
+          7,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "fixed_count": 2,
+        "permutation": [
+          6,
+          7,
+          0,
+          1,
+          4,
+          5,
+          2,
+          3
+        ]
+      },
+      {
+        "fixed_count": 2,
+        "permutation": [
+          6,
+          7,
+          2,
+          3,
+          0,
+          1,
+          4,
+          5
+        ]
+      },
+      {
+        "fixed_count": 8,
+        "permutation": [
+          6,
+          7,
+          2,
+          3,
+          4,
+          5,
+          0,
+          1
+        ]
+      },
+      {
+        "fixed_count": 0,
+        "permutation": [
+          6,
+          7,
+          4,
+          5,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "fixed_count": 2,
+        "permutation": [
+          6,
+          7,
+          4,
+          5,
+          2,
+          3,
+          0,
+          1
+        ]
+      }
+    ]
+  },
+  "character_C0_distribution": {
+    "0": 6,
+    "2": 11,
+    "26": 1,
+    "8": 6
+  },
+  "character_C1": {
+    "value_distribution": {
+      "0": 6,
+      "1": 8,
+      "4": 3,
+      "8": 6,
+      "28": 1
+    },
+    "values": [
+      {
+        "fixed_count": 28,
+        "permutation": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "fixed_count": 8,
+        "permutation": [
+          0,
+          1,
+          2,
+          3,
+          6,
+          7,
+          4,
+          5
+        ]
+      },
+      {
+        "fixed_count": 8,
+        "permutation": [
+          0,
+          1,
+          4,
+          5,
+          2,
+          3,
+          6,
+          7
+        ]
+      },
+      {
+        "fixed_count": 1,
+        "permutation": [
+          0,
+          1,
+          4,
+          5,
+          6,
+          7,
+          2,
+          3
+        ]
+      },
+      {
+        "fixed_count": 1,
+        "permutation": [
+          0,
+          1,
+          6,
+          7,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "fixed_count": 8,
+        "permutation": [
+          0,
+          1,
+          6,
+          7,
+          4,
+          5,
+          2,
+          3
+        ]
+      },
+      {
+        "fixed_count": 8,
+        "permutation": [
+          2,
+          3,
+          0,
+          1,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "fixed_count": 4,
+        "permutation": [
+          2,
+          3,
+          0,
+          1,
+          6,
+          7,
+          4,
+          5
+        ]
+      },
+      {
+        "fixed_count": 1,
+        "permutation": [
+          2,
+          3,
+          4,
+          5,
+          0,
+          1,
+          6,
+          7
+        ]
+      },
+      {
+        "fixed_count": 0,
+        "permutation": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          0,
+          1
+        ]
+      },
+      {
+        "fixed_count": 0,
+        "permutation": [
+          2,
+          3,
+          6,
+          7,
+          0,
+          1,
+          4,
+          5
+        ]
+      },
+      {
+        "fixed_count": 1,
+        "permutation": [
+          2,
+          3,
+          6,
+          7,
+          4,
+          5,
+          0,
+          1
+        ]
+      },
+      {
+        "fixed_count": 1,
+        "permutation": [
+          4,
+          5,
+          0,
+          1,
+          2,
+          3,
+          6,
+          7
+        ]
+      },
+      {
+        "fixed_count": 0,
+        "permutation": [
+          4,
+          5,
+          0,
+          1,
+          6,
+          7,
+          2,
+          3
+        ]
+      },
+      {
+        "fixed_count": 8,
+        "permutation": [
+          4,
+          5,
+          2,
+          3,
+          0,
+          1,
+          6,
+          7
+        ]
+      },
+      {
+        "fixed_count": 1,
+        "permutation": [
+          4,
+          5,
+          2,
+          3,
+          6,
+          7,
+          0,
+          1
+        ]
+      },
+      {
+        "fixed_count": 4,
+        "permutation": [
+          4,
+          5,
+          6,
+          7,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "fixed_count": 0,
+        "permutation": [
+          4,
+          5,
+          6,
+          7,
+          2,
+          3,
+          0,
+          1
+        ]
+      },
+      {
+        "fixed_count": 0,
+        "permutation": [
+          6,
+          7,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "fixed_count": 1,
+        "permutation": [
+          6,
+          7,
+          0,
+          1,
+          4,
+          5,
+          2,
+          3
+        ]
+      },
+      {
+        "fixed_count": 1,
+        "permutation": [
+          6,
+          7,
+          2,
+          3,
+          0,
+          1,
+          4,
+          5
+        ]
+      },
+      {
+        "fixed_count": 8,
+        "permutation": [
+          6,
+          7,
+          2,
+          3,
+          4,
+          5,
+          0,
+          1
+        ]
+      },
+      {
+        "fixed_count": 0,
+        "permutation": [
+          6,
+          7,
+          4,
+          5,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "fixed_count": 4,
+        "permutation": [
+          6,
+          7,
+          4,
+          5,
+          2,
+          3,
+          0,
+          1
+        ]
+      }
+    ]
+  },
+  "character_C1_distribution": {
+    "0": 6,
+    "1": 8,
+    "28": 1,
+    "4": 3,
+    "8": 6
+  }
+}

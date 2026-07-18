@@ -1,0 +1,38 @@
+{
+  "access_right": "open",
+  "creators": [
+    {
+      "affiliation": "GeoCY Labs",
+      "name": "Rahman, Abdul"
+    }
+  ],
+  "description": "Theorem-bearing source assembly certificates for selected double-octic arrangements in the HodgeCY I manuscript.",
+  "keywords": [
+    "Calabi--Yau threefolds",
+    "double octics",
+    "Hodge atom profiles",
+    "source assembly complexes",
+    "Smith normal form",
+    "hyperplane arrangements",
+    "automorphism groups",
+    "computational algebraic geometry"
+  ],
+  "license": "MIT",
+  "notes": "Prepared from commit dd70dee29a484a9207be8f8580167abf0485ce3e. Replace Zenodo DOI placeholder after minting.",
+  "publication_date": "2026-07-18",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/geocy-labs/hodgecy",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "ZENODO_DOI_PLACEHOLDER",
+      "relation": "isVersionOf",
+      "scheme": "doi"
+    }
+  ],
+  "title": "HodgeCY: Computational Hodge Atom Profiles and Source Assembly Spectra for Double-Octic Calabi--Yau Threefolds",
+  "upload_type": "software",
+  "version": "v0.2.0"
+}

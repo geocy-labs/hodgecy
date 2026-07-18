@@ -5,7 +5,7 @@
   "total_expected_records": 455,
   "records_loaded": 455,
   "missing_ids": [],
-  "extraction_timestamp": "2026-07-15T00:27:27.150492+00:00",
+  "extraction_timestamp": "2026-07-18T13:45:00.909784+00:00",
   "validation_status": "unvalidated",
   "parser_coverage_complete": true,
   "full_validated_dataset_loaded": false,

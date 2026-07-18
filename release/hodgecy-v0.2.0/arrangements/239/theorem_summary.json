@@ -1,0 +1,96 @@
+{
+  "arrangement_id": "239",
+  "automorphism_group_order": 24,
+  "character_C0_distribution": {
+    "0": 6,
+    "2": 11,
+    "26": 1,
+    "8": 6
+  },
+  "character_C1_distribution": {
+    "0": 6,
+    "1": 8,
+    "28": 1,
+    "4": 3,
+    "8": 6
+  },
+  "cokernel_dim_Q": 0,
+  "defect_verified": false,
+  "double_line_orbit_sizes": [
+    4,
+    6,
+    6,
+    12
+  ],
+  "hodge_data": null,
+  "integral_cokernel_decomposition": {
+    "canonical": "Z/2Z + (Z/4Z)^3 + Z/12Z",
+    "free_rank": 0,
+    "torsion_factors": [
+      2,
+      4,
+      4,
+      4,
+      12
+    ]
+  },
+  "integral_kernel_rank": 2,
+  "kernel_dim_Q": 2,
+  "local_inventory": [
+    16,
+    10,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "matrix_shape": [
+    26,
+    28
+  ],
+  "multiple_point_orbit_sizes": [
+    4,
+    4,
+    6,
+    12
+  ],
+  "ordinary_node_verified": false,
+  "plane_orbit_sizes": [
+    4,
+    4
+  ],
+  "quartic_perturbation": null,
+  "rank_Q": 26,
+  "rank_mod_2": 21,
+  "rank_mod_3": 25,
+  "release_version": "v0.2.0",
+  "smith_normal_form": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    4,
+    4,
+    4,
+    12
+  ]
+}

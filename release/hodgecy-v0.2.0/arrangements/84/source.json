@@ -1,0 +1,105 @@
+{
+  "arrangement_id": "84",
+  "hodge_data_if_known": {
+    "euler": 80,
+    "h11": 40,
+    "h12": 0
+  },
+  "ordered_factor_list": [
+    {
+      "coefficients": [
+        "1",
+        "0",
+        "0",
+        "-1"
+      ],
+      "equation": "x - t",
+      "label": "p1"
+    },
+    {
+      "coefficients": [
+        "1",
+        "0",
+        "0",
+        "1"
+      ],
+      "equation": "x + t",
+      "label": "p2"
+    },
+    {
+      "coefficients": [
+        "0",
+        "1",
+        "0",
+        "-1"
+      ],
+      "equation": "y - t",
+      "label": "p3"
+    },
+    {
+      "coefficients": [
+        "0",
+        "1",
+        "0",
+        "1"
+      ],
+      "equation": "y + t",
+      "label": "p4"
+    },
+    {
+      "coefficients": [
+        "0",
+        "0",
+        "1",
+        "-1"
+      ],
+      "equation": "z - t",
+      "label": "p5"
+    },
+    {
+      "coefficients": [
+        "0",
+        "0",
+        "1",
+        "1"
+      ],
+      "equation": "z + t",
+      "label": "p6"
+    },
+    {
+      "coefficients": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "equation": "x + y + z + t",
+      "label": "p7"
+    },
+    {
+      "coefficients": [
+        "1",
+        "1",
+        "1",
+        "-3"
+      ],
+      "equation": "x + y + z - 3t",
+      "label": "p8"
+    }
+  ],
+  "quartic_perturbation": {
+    "defect_verified": false,
+    "epsilon": "1",
+    "ordinary_node_verified": false,
+    "quartic_Q": "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t",
+    "saturated_jacobian_cone_dimension": 1,
+    "saturated_jacobian_scheme_degree": 112,
+    "saturated_jacobian_scheme_dimension": 0,
+    "status": "degree112_certified"
+  },
+  "representative_status": "validated",
+  "source": "Existing HodgeCY arrangement_84 representative",
+  "source_equation": "(x-t)(x+t)(y-t)(y+t)(z-t)(z+t)(x+y+z+t)(x+y+z-3t)",
+  "source_reference": "Existing HodgeCY arrangement_84 representative; Cynk--Meyer/Cynk--Kocel--Cynk control data",
+  "validation_status": "validated"
+}

@@ -1,0 +1,22 @@
+{
+  "arrangements": [
+    "84",
+    "84a"
+  ],
+  "different_equivariant_source_assembly": true,
+  "differentiating_fields": [
+    "rank_mod_2",
+    "rank_mod_3",
+    "smith_normal_form",
+    "integral_cokernel_decomposition",
+    "automorphism_group_order",
+    "plane_orbit_sizes",
+    "double_line_orbit_sizes",
+    "multiple_point_orbit_sizes",
+    "character_C1_distribution",
+    "character_C0_distribution"
+  ],
+  "release_version": "v0.2.0",
+  "same_hodge_data": true,
+  "same_local_inventory": true
+}

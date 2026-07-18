@@ -1,0 +1,8 @@
+hodgecy==0.2.0 (pyproject.toml)
+pandas==3.0.2
+sympy==1.14.0
+pytest==9.0.2
+networkx==3.6.1
+matplotlib==3.10.8
+setuptools==81.0.0
+pip==26.1.2

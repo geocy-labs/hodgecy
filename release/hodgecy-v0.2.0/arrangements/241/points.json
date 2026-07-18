@@ -1,0 +1,409 @@
+{
+  "arrangement_id": "241",
+  "multiple_points": [
+    {
+      "incident_double_lines": [
+        "L01",
+        "L02",
+        "L03",
+        "L08",
+        "L09",
+        "L14"
+      ],
+      "multiplicity": 4,
+      "planes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "point_id": "q01"
+    },
+    {
+      "incident_double_lines": [
+        "L01",
+        "L04",
+        "L05",
+        "L10",
+        "L11",
+        "L23"
+      ],
+      "multiplicity": 4,
+      "planes": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "point_id": "q02"
+    },
+    {
+      "incident_double_lines": [
+        "L01",
+        "L06",
+        "L07",
+        "L12",
+        "L13",
+        "L28"
+      ],
+      "multiplicity": 4,
+      "planes": [
+        0,
+        1,
+        6,
+        7
+      ],
+      "point_id": "q03"
+    },
+    {
+      "incident_double_lines": [
+        "L02",
+        "L04",
+        "L06",
+        "L15",
+        "L17",
+        "L24"
+      ],
+      "multiplicity": 4,
+      "planes": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "point_id": "q04"
+    },
+    {
+      "incident_double_lines": [
+        "L02",
+        "L05",
+        "L16"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        0,
+        2,
+        5
+      ],
+      "point_id": "q05"
+    },
+    {
+      "incident_double_lines": [
+        "L02",
+        "L07",
+        "L18"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        0,
+        2,
+        7
+      ],
+      "point_id": "q06"
+    },
+    {
+      "incident_double_lines": [
+        "L03",
+        "L04",
+        "L19"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        0,
+        3,
+        4
+      ],
+      "point_id": "q07"
+    },
+    {
+      "incident_double_lines": [
+        "L03",
+        "L05",
+        "L07",
+        "L20",
+        "L22",
+        "L27"
+      ],
+      "multiplicity": 4,
+      "planes": [
+        0,
+        3,
+        5,
+        7
+      ],
+      "point_id": "q08"
+    },
+    {
+      "incident_double_lines": [
+        "L03",
+        "L06",
+        "L21"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        0,
+        3,
+        6
+      ],
+      "point_id": "q09"
+    },
+    {
+      "incident_double_lines": [
+        "L04",
+        "L07",
+        "L25"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        0,
+        4,
+        7
+      ],
+      "point_id": "q10"
+    },
+    {
+      "incident_double_lines": [
+        "L05",
+        "L06",
+        "L26"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        0,
+        5,
+        6
+      ],
+      "point_id": "q11"
+    },
+    {
+      "incident_double_lines": [
+        "L08",
+        "L10",
+        "L13",
+        "L15",
+        "L18",
+        "L25"
+      ],
+      "multiplicity": 4,
+      "planes": [
+        1,
+        2,
+        4,
+        7
+      ],
+      "point_id": "q12"
+    },
+    {
+      "incident_double_lines": [
+        "L08",
+        "L11",
+        "L16"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        1,
+        2,
+        5
+      ],
+      "point_id": "q13"
+    },
+    {
+      "incident_double_lines": [
+        "L08",
+        "L12",
+        "L17"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        1,
+        2,
+        6
+      ],
+      "point_id": "q14"
+    },
+    {
+      "incident_double_lines": [
+        "L09",
+        "L10",
+        "L19"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        1,
+        3,
+        4
+      ],
+      "point_id": "q15"
+    },
+    {
+      "incident_double_lines": [
+        "L09",
+        "L11",
+        "L12",
+        "L20",
+        "L21",
+        "L26"
+      ],
+      "multiplicity": 4,
+      "planes": [
+        1,
+        3,
+        5,
+        6
+      ],
+      "point_id": "q16"
+    },
+    {
+      "incident_double_lines": [
+        "L09",
+        "L13",
+        "L22"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        1,
+        3,
+        7
+      ],
+      "point_id": "q17"
+    },
+    {
+      "incident_double_lines": [
+        "L10",
+        "L12",
+        "L24"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        1,
+        4,
+        6
+      ],
+      "point_id": "q18"
+    },
+    {
+      "incident_double_lines": [
+        "L11",
+        "L13",
+        "L27"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        1,
+        5,
+        7
+      ],
+      "point_id": "q19"
+    },
+    {
+      "incident_double_lines": [
+        "L14",
+        "L15",
+        "L16",
+        "L19",
+        "L20",
+        "L23"
+      ],
+      "multiplicity": 4,
+      "planes": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "point_id": "q20"
+    },
+    {
+      "incident_double_lines": [
+        "L14",
+        "L17",
+        "L21"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        2,
+        3,
+        6
+      ],
+      "point_id": "q21"
+    },
+    {
+      "incident_double_lines": [
+        "L14",
+        "L18",
+        "L22"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        2,
+        3,
+        7
+      ],
+      "point_id": "q22"
+    },
+    {
+      "incident_double_lines": [
+        "L16",
+        "L17",
+        "L18",
+        "L26",
+        "L27",
+        "L28"
+      ],
+      "multiplicity": 4,
+      "planes": [
+        2,
+        5,
+        6,
+        7
+      ],
+      "point_id": "q23"
+    },
+    {
+      "incident_double_lines": [
+        "L19",
+        "L21",
+        "L22",
+        "L24",
+        "L25",
+        "L28"
+      ],
+      "multiplicity": 4,
+      "planes": [
+        3,
+        4,
+        6,
+        7
+      ],
+      "point_id": "q24"
+    },
+    {
+      "incident_double_lines": [
+        "L23",
+        "L24",
+        "L26"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        4,
+        5,
+        6
+      ],
+      "point_id": "q25"
+    },
+    {
+      "incident_double_lines": [
+        "L23",
+        "L25",
+        "L27"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        4,
+        5,
+        7
+      ],
+      "point_id": "q26"
+    }
+  ]
+}

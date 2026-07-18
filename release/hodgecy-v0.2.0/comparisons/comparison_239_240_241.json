@@ -1,0 +1,54 @@
+{
+  "arrangements": [
+    "239",
+    "240",
+    "241"
+  ],
+  "differentiating_fields": {
+    "239_vs_240": [
+      "rank_mod_2",
+      "rank_mod_3",
+      "smith_normal_form",
+      "integral_cokernel_decomposition",
+      "automorphism_group_order",
+      "plane_orbit_sizes",
+      "double_line_orbit_sizes",
+      "multiple_point_orbit_sizes",
+      "character_C1_distribution",
+      "character_C0_distribution"
+    ],
+    "239_vs_241": [
+      "rank_Q",
+      "rank_mod_2",
+      "rank_mod_3",
+      "kernel_dim_Q",
+      "cokernel_dim_Q",
+      "smith_normal_form",
+      "integral_cokernel_decomposition",
+      "automorphism_group_order",
+      "plane_orbit_sizes",
+      "double_line_orbit_sizes",
+      "multiple_point_orbit_sizes",
+      "character_C1_distribution",
+      "character_C0_distribution"
+    ],
+    "240_vs_241": [
+      "rank_Q",
+      "rank_mod_2",
+      "rank_mod_3",
+      "kernel_dim_Q",
+      "cokernel_dim_Q",
+      "smith_normal_form",
+      "integral_cokernel_decomposition",
+      "automorphism_group_order",
+      "plane_orbit_sizes",
+      "double_line_orbit_sizes",
+      "multiple_point_orbit_sizes",
+      "character_C1_distribution",
+      "character_C0_distribution"
+    ]
+  },
+  "pairwise_equivariant_signatures_all_equal": false,
+  "release_version": "v0.2.0",
+  "same_local_inventory": true
+}

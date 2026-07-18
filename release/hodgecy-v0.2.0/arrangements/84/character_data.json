@@ -1,0 +1,186 @@
+{
+  "character_C0": {
+    "value_distribution": {
+      "2": 2,
+      "8": 3,
+      "26": 1
+    },
+    "values": [
+      {
+        "fixed_count": 26,
+        "permutation": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "fixed_count": 8,
+        "permutation": [
+          0,
+          1,
+          4,
+          5,
+          2,
+          3,
+          6,
+          7
+        ]
+      },
+      {
+        "fixed_count": 8,
+        "permutation": [
+          2,
+          3,
+          0,
+          1,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "fixed_count": 2,
+        "permutation": [
+          2,
+          3,
+          4,
+          5,
+          0,
+          1,
+          6,
+          7
+        ]
+      },
+      {
+        "fixed_count": 2,
+        "permutation": [
+          4,
+          5,
+          0,
+          1,
+          2,
+          3,
+          6,
+          7
+        ]
+      },
+      {
+        "fixed_count": 8,
+        "permutation": [
+          4,
+          5,
+          2,
+          3,
+          0,
+          1,
+          6,
+          7
+        ]
+      }
+    ]
+  },
+  "character_C0_distribution": {
+    "2": 2,
+    "26": 1,
+    "8": 3
+  },
+  "character_C1": {
+    "value_distribution": {
+      "1": 2,
+      "8": 3,
+      "28": 1
+    },
+    "values": [
+      {
+        "fixed_count": 28,
+        "permutation": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "fixed_count": 8,
+        "permutation": [
+          0,
+          1,
+          4,
+          5,
+          2,
+          3,
+          6,
+          7
+        ]
+      },
+      {
+        "fixed_count": 8,
+        "permutation": [
+          2,
+          3,
+          0,
+          1,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "fixed_count": 1,
+        "permutation": [
+          2,
+          3,
+          4,
+          5,
+          0,
+          1,
+          6,
+          7
+        ]
+      },
+      {
+        "fixed_count": 1,
+        "permutation": [
+          4,
+          5,
+          0,
+          1,
+          2,
+          3,
+          6,
+          7
+        ]
+      },
+      {
+        "fixed_count": 8,
+        "permutation": [
+          4,
+          5,
+          2,
+          3,
+          0,
+          1,
+          6,
+          7
+        ]
+      }
+    ]
+  },
+  "character_C1_distribution": {
+    "1": 2,
+    "28": 1,
+    "8": 3
+  }
+}
