@@ -31,6 +31,15 @@ def test_blob5_parser_adapter_imports() -> None:
     assert hodgecy.datasets.FixtureDatasetAdapter is not None
 
 
+def test_blob8_exact_algebra_imports() -> None:
+    import hodgecy.algebra
+    import hodgecy.assemblies
+    import hodgecy.math
+
+    assert hodgecy.algebra.ExactAlgebraOperation.RANK_Q.value == "rank_Q"
+    assert hodgecy.assemblies.GluingComplexAssembly is not None
+    assert hodgecy.math.BasisArray is not None
+
 def test_blob7_relationship_and_geometry_imports() -> None:
     import hodgecy.geometry
     import hodgecy.relationships
