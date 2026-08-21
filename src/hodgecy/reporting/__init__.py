@@ -1,5 +1,5 @@
 """Paper-facing reporting utilities for HodgeCY."""
-
+from .certificates import certificate_status_report, certificate_status_rows, legacy_release_status_row
 from .paper_figures import (
     plot_concurrency_graphs_84_84a,
     plot_hodge_scatter,
@@ -20,6 +20,9 @@ __all__ = [
     "build_concurrency_comparison_table",
     "build_defect_queue_table",
     "build_p4_collinearity_certificate_table",
+    "certificate_status_report",
+    "certificate_status_rows",
+    "legacy_release_status_row",
     "build_same_hodge_cluster_table",
     "build_smoothing_bridge_table",
     "build_tier_a_control_table",

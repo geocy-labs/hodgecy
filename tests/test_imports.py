@@ -31,6 +31,13 @@ def test_blob5_parser_adapter_imports() -> None:
     assert hodgecy.datasets.FixtureDatasetAdapter is not None
 
 
+def test_blob10_certificate_imports() -> None:
+    import hodgecy.certificates
+    import hodgecy.reporting
+
+    assert hodgecy.certificates.CertificatePurpose.SOURCE_INGEST.value == "source_ingest"
+    assert hodgecy.reporting.certificate_status_report is not None
+
 def test_blob8_exact_algebra_imports() -> None:
     import hodgecy.algebra
     import hodgecy.assemblies
