@@ -249,8 +249,52 @@ def _register_ks(catalog: Any, root: HodgeCYDataRoot) -> DatasetBuildSummary | N
             field_metadata=ks_field_metadata(),
             metadata={"dataset_profile": "kreuzer_skarke_4d_parquet", "source_revision": KS_PARQUET_SOURCE_REVISION},
         )
+    _refresh_ks_integrity_provenance(catalog, root, paths)
     row_count = catalog.payload["columnar_sources"].get("kreuzer_skarke_parquet", {}).get("row_count")
     return DatasetBuildSummary("kreuzer_skarke", "native_lazy_parquet", int(row_count or 473800776), None, queryable=True, materializable=False, validation_status="metadata_verified", output_relative_path="raw/kreuzer_skarke/parquet", adapter="kreuzer_skarke_parquet_lazy", adapter_version="1.1.0", source_revision=KS_PARQUET_SOURCE_REVISION, elapsed_seconds=time.perf_counter() - started, notes="Registered in-place; vertices remain lazy/heavy.")
+
+def _refresh_ks_integrity_provenance(catalog: Any, root: HodgeCYDataRoot, relative_paths: tuple[str, ...]) -> None:
+    manifest = root.manifests / "kreuzer_skarke" / "parquet_files.json"
+    if not manifest.exists():
+        return
+    try:
+        rows = json.loads(manifest.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return
+    by_name = {str(row.get("filename") or row.get("repository_path")): row for row in rows}
+    changed = False
+    for index, relative in enumerate(relative_paths):
+        source_id = f"ks_parquet_{index:03d}"
+        source = catalog.payload["physical_sources"].get(source_id)
+        record = by_name.get(Path(relative).name)
+        if not source or not record:
+            continue
+        size = _first_int(record.get("size_bytes"))
+        actual = root.root / relative
+        size_matches = bool(actual.exists() and size == actual.stat().st_size) if size is not None else False
+        checksum = record.get("local_sha256") or record.get("etag_or_source_checksum")
+        updated = dict(source)
+        updated["sha256"] = str(checksum) if checksum else updated.get("sha256")
+        if size is not None:
+            updated["byte_size"] = size
+        metadata = dict(updated.get("metadata") or {})
+        metadata.update({
+            "checksum_source": "manifests/kreuzer_skarke/parquet_files.json",
+            "checksum_verification_state": "REFERENCED_VERIFIED" if checksum and size_matches else "SOURCE_SUPPLIED",
+            "checksum_reference_field": "local_sha256" if record.get("local_sha256") else "etag_or_source_checksum",
+            "source_url": record.get("source_url"),
+            "source_revision": record.get("revision") or KS_PARQUET_SOURCE_REVISION,
+            "size_reference_state": "MATCHED" if size_matches else "NOT_CHECKED",
+            "download_status": record.get("download_status"),
+        })
+        updated["metadata"] = metadata
+        if updated != source:
+            catalog.payload["physical_sources"][source_id] = updated
+            changed = True
+    if changed:
+        catalog._touch()
+        catalog._write()
+
 
 def _register_native_large(catalog: Any, root: HodgeCYDataRoot) -> list[DatasetBuildSummary]:
     rows: list[DatasetBuildSummary] = []
@@ -272,7 +316,14 @@ def _normalization_specs() -> list[NormalizationSpec]:
         NormalizationSpec("cicy3_favorable", "staged/cicy3_favorable/favourcicylist.neutral.jsonl", "current_cicy3_favorable", _favorable_row, 7890, ("source_record_id", "parent_cicy_id", "favour", "kahler_pos", "is_product", "h11", "h21")),
         NormalizationSpec("cicy3_fibrations", "staged/cicy3_fibrations/fibrationslist-3.neutral.jsonl", "current_cicy3_fibrations", _fibration_row, 139597, ("source_record_id", "parent_cicy_id", "fibration_id", "fibration_type"), TableKind.FIBRATION, "parent_cicy_id", "source_record_id"),
         NormalizationSpec("cicy3_quotients", "staged/cicy3_quotients/free_actions.jsonl", "current_cicy3_free_actions", _free_action_row, 1695, ("source_record_id", "parent_cicy_id", "action_index", "group_name", "group_order", "h11", "h21")),
+        NormalizationSpec("cicy3_quotients", "staged/cicy3_quotients/parent_cicy_blocks.jsonl", "current_cicy3_quotient_parent_blocks", _quotient_parent_block_row, 195, ("source_record_id", "parent_cicy_id", "free_action_count", "h11", "h21")),
         NormalizationSpec("cicy3_quotient_fibrations", "staged/cicy3_quotient_fibrations/quotientfibrationdata.neutral.jsonl", "current_cicy3_quotient_fibrations", _quotient_fibration_row, 20700, ("source_record_id", "parent_cicy_id", "fibnum", "symnum", "quotient_action_id"), TableKind.FIBRATION, "quotient_action_id", "source_record_id"),
+        NormalizationSpec("cicy3_divisor_configs_orientifold", "staged/cicy3_symmetries/DivisorConfigs.zip_manifest.neutral.jsonl", "current_cicy3_divisor_config_manifest", _archive_manifest_row, None, ("source_record_id", "archive_member", "compressed_size", "uncompressed_size", "validation_status"), TableKind.SOURCE),
+        NormalizationSpec("cicy3_orientifolds_favourable", "staged/cicy3_symmetries/favourable_orientifolds.zip_manifest.neutral.jsonl", "current_cicy3_orientifold_manifest", _archive_manifest_row, None, ("source_record_id", "archive_member", "compressed_size", "uncompressed_size", "validation_status"), TableKind.SOURCE),
+        NormalizationSpec("cicy3_thraxion_candidates", "staged/conifold/thraxion_candidates.zip_manifest.neutral.jsonl", "current_cicy3_thraxion_candidate_manifest", _archive_manifest_row, 1, ("source_record_id", "archive_member", "compressed_size", "uncompressed_size", "validation_status"), TableKind.SOURCE),
+        NormalizationSpec("cicy3_thraxion_transitions", "staged/transitions/thraxion_transitions.zip_manifest.neutral.jsonl", "current_cicy3_thraxion_transition_manifest", _archive_manifest_row, 1, ("source_record_id", "archive_member", "compressed_size", "uncompressed_size", "validation_status"), TableKind.SOURCE),
+        NormalizationSpec("cicy4_core", "staged/cicy4/cicy4folds.topology.neutral.jsonl", "current_cicy4_core", _cicy4_core_row, 921497, ("source_record_id", "cicy4_id", "h11", "h21", "h22", "h31", "euler", "source_file")),
+        NormalizationSpec("cicy4_fibrations", "staged/cicy4_fibrations/cicy4fib.member_ranges.neutral.jsonl.gz", "current_cicy4_fibration_member_ranges", _cicy4_fibration_member_range_row, 297, ("source_record_id", "range_start", "range_end", "parent_record_count", "archive_member"), TableKind.SOURCE),
         NormalizationSpec("weighted_p4", "staged/weighted_p4/weighted_p4.res4_res5.neutral.jsonl", "current_weighted_p4", _weighted_row, 7555, ("source_record_id", "weights_key", "degree", "h11", "h21", "euler")),
         NormalizationSpec("ip_weight_systems_4d", "staged/ip_weight_systems/tuwien_4d_ip_weights_hodge_k3.neutral.jsonl", "current_ip_weight_systems_4d", _ip_row, 184026, ("source_record_id", "weights_key", "degree", "h11", "h12", "source_flag")),
         NormalizationSpec("gcicy_fake_weighted", "staged/gcicy/cyci_fake_weighted.neutral.jsonl", "current_gcicy_fake_weighted", _payload_row, 1752, ("source_record_id", "source_dataset", "source_file", "validation_status")),
@@ -551,6 +602,64 @@ def _free_action_row(p: dict[str, Any]) -> dict[str, Any] | None:
 
 def _quotient_fibration_row(p: dict[str, Any]) -> dict[str, Any] | None:
     return _base(p, str(p.get("source_record_index")), {"parent_cicy_id": str(p.get("Cicynum")), "fibnum": str(p.get("Fibnum")), "symnum": str(p.get("Symnum")), "quotient_action_id": f"{p.get('Cicynum')}:{p.get('Symnum')}", "basename": p.get("Basename"), "basesymname": p.get("Basesymname"), "symname": p.get("Symname"), "fibpres": bool(p.get("Fibpres")), "source_payload_sha256": p.get("source_payload_sha256")})
+
+
+def _quotient_parent_block_row(p: dict[str, Any]) -> dict[str, Any] | None:
+    h = p.get("parent_hodge") or {}
+    return _base(p, str(p.get("parent_cicy_id")), {
+        "parent_cicy_id": str(p.get("parent_cicy_id")),
+        "free_action_count": p.get("free_action_count"),
+        "h11": h.get("h11"),
+        "h21": h.get("h21"),
+        "configuration_matrix_raw": p.get("configuration_matrix_raw"),
+        "source_payload_sha256": p.get("source_payload_sha256"),
+    })
+
+
+def _archive_manifest_row(p: dict[str, Any]) -> dict[str, Any] | None:
+    fields = p.get("source_fields") or {}
+    return _base(p, str(p.get("source_record_id") or fields.get("filename")), {
+        "archive_member": str(fields.get("filename") or p.get("raw_payload_or_reference") or p.get("source_record_id")),
+        "compressed_size": fields.get("compress_size"),
+        "uncompressed_size": fields.get("file_size"),
+        "raw_payload_or_reference": p.get("raw_payload_or_reference"),
+        "parse_notes_json": _json(p.get("parse_notes") or []),
+    })
+
+
+def _cicy4_core_row(p: dict[str, Any]) -> dict[str, Any] | None:
+    h = p.get("hodge") or {}
+    return _base(p, str(p.get("cicy4_id") or p.get("source_record_id")), {
+        "cicy4_id": p.get("cicy4_id") or p.get("source_record_id"),
+        "h11": h.get("h11"),
+        "h21": h.get("h21"),
+        "h22": h.get("h22"),
+        "h31": h.get("h31"),
+        "euler": p.get("euler"),
+        "num_projective_spaces": p.get("num_projective_spaces"),
+        "num_polynomials": p.get("num_polynomials"),
+        "matrix_json": _json(p.get("configuration_matrix")),
+        "source_archive": str(p.get("source_archive") or "").replace("\\", "/"),
+        "source_member": p.get("source_member"),
+        "source_flag_11": bool(p.get("source_flag_11")),
+        "source_flag_6": bool(p.get("source_flag_6")),
+    })
+
+
+def _cicy4_fibration_member_range_row(p: dict[str, Any]) -> dict[str, Any] | None:
+    member = str(p.get("member"))
+    return _base({"source_dataset": "cicy4_fibrations", "source_file": p.get("source_archive"), "source_location": member, "parse_status": "MANIFEST_ONLY"}, member, {
+        "archive_member": member,
+        "range_start": p.get("range_start"),
+        "range_end": p.get("range_end"),
+        "parent_record_count": p.get("parent_record_count_inferred_from_member_name"),
+        "compressed_size": p.get("compressed_size"),
+        "uncompressed_size": p.get("uncompressed_size"),
+        "flattening_state": p.get("flattening_state"),
+        "native_payload_state": p.get("native_payload_state"),
+        "architecture_use": p.get("architecture_use"),
+        "payload_json": _json(p),
+    }, include_payload=False)
 
 
 def _weighted_row(p: dict[str, Any]) -> dict[str, Any] | None:
