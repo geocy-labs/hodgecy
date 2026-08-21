@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 from dataclasses import dataclass, field, replace
 from typing import Any
@@ -12,13 +12,36 @@ from .predicates import Predicate
 class MaterializationPolicy:
     row_limit: int = 100_000
     allow_over_limit: bool = False
+    estimated_byte_limit: int | None = None
+    heavy_row_limit: int = 1
+    allow_heavy_over_limit: bool = False
+
+    def __post_init__(self) -> None:
+        if self.row_limit < 0:
+            raise ValueError("row_limit must be non-negative")
+        if self.estimated_byte_limit is not None and self.estimated_byte_limit < 0:
+            raise ValueError("estimated_byte_limit must be non-negative")
+        if self.heavy_row_limit < 0:
+            raise ValueError("heavy_row_limit must be non-negative")
 
     def to_dict(self) -> dict[str, Any]:
-        return {"row_limit": self.row_limit, "allow_over_limit": self.allow_over_limit}
+        return {
+            "row_limit": self.row_limit,
+            "allow_over_limit": self.allow_over_limit,
+            "estimated_byte_limit": self.estimated_byte_limit,
+            "heavy_row_limit": self.heavy_row_limit,
+            "allow_heavy_over_limit": self.allow_heavy_over_limit,
+        }
 
     @classmethod
     def from_dict(cls, payload: dict[str, Any]) -> "MaterializationPolicy":
-        return cls(int(payload.get("row_limit", 100_000)), bool(payload.get("allow_over_limit", False)))
+        return cls(
+            row_limit=int(payload.get("row_limit", 100_000)),
+            allow_over_limit=bool(payload.get("allow_over_limit", False)),
+            estimated_byte_limit=payload.get("estimated_byte_limit"),
+            heavy_row_limit=int(payload.get("heavy_row_limit", 1)),
+            allow_heavy_over_limit=bool(payload.get("allow_heavy_over_limit", False)),
+        )
 
 
 @dataclass(frozen=True, slots=True)
@@ -81,6 +104,12 @@ class QuerySpec:
 
     def limit(self, n: int) -> "QuerySpec":
         return replace(self, limit_value=n)
+
+    def with_materialization_policy(self, policy: MaterializationPolicy) -> "QuerySpec":
+        return replace(self, materialization_policy=policy)
+
+    def with_heavy_columns(self, include: bool = True) -> "QuerySpec":
+        return replace(self, include_heavy=include)
 
     def order_by(self, field: str, *, descending: bool = False) -> "QuerySpec":
         return replace(self, order_by_fields=self.order_by_fields + (OrderBy(field, descending),))

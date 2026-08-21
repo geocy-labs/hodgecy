@@ -4,6 +4,7 @@ from dataclasses import dataclass, field
 from typing import Any, Iterable
 
 from hodgecy.storage.errors import MaterializationLimitError, MissingCapabilityError
+from hodgecy.storage.planning import EstimateKind, QueryEstimate, QueryPlanSummary
 
 
 @dataclass(slots=True)
@@ -17,6 +18,7 @@ class LazyResultSet:
     estimated_rows: int | None = None
     row_limit: int = 100_000
     provenance: dict[str, Any] = field(default_factory=dict)
+    plan: QueryPlanSummary | None = None
 
     def schema(self) -> dict[str, str]:
         return {field: field for field in self.projected_fields}
@@ -24,20 +26,38 @@ class LazyResultSet:
     def estimated_count(self) -> int | None:
         return self.estimated_rows
 
+    @property
+    def heavy_projected_fields(self) -> tuple[str, ...]:
+        heavy = set(getattr(self.registry, "heavy_fields", ()))
+        return tuple(field for field in self.projected_fields if field in heavy)
+
+    def explain(self) -> dict[str, Any]:
+        if self.plan is not None:
+            return self.plan.to_dict()
+        return {
+            "backend": self.provenance.get("backend", "unknown"),
+            "projected_columns": list(self.projected_fields),
+            "heavy_columns": list(self.heavy_projected_fields),
+            "heavy_columns_requested": bool(self.heavy_projected_fields),
+            "predicate_pushdown": self.predicate is not None,
+            "estimated_rows": {"kind": "known" if self.estimated_rows is not None else "unknown", "rows": self.estimated_rows},
+        }
+
     def count(self) -> int:
         dataset = self.dataset_factory()
         return int(dataset.count_rows(filter=self.predicate))
 
     def iter_batches(self, *, batch_size: int = 65_536) -> Iterable[Any]:
+        if batch_size <= 0:
+            raise MaterializationLimitError("iter_batches(batch_size=...) requires a positive batch size")
         dataset = self.dataset_factory()
         scanner = dataset.scanner(columns=list(self.projected_fields), filter=self.predicate, batch_size=batch_size)
         yield from scanner.to_batches()
 
-    def take(self, n: int) -> Any:
+    def take(self, n: int, *, allow_over_limit: bool = False) -> Any:
         if n < 0:
             raise MaterializationLimitError("take(n) requires n >= 0")
-        if n > self.row_limit:
-            raise MaterializationLimitError(f"Requested {n} rows exceeds materialization limit {self.row_limit}")
+        self._check_materialization_limits(n, allow_over_limit=allow_over_limit)
         scanner = self.dataset_factory().scanner(columns=list(self.projected_fields), filter=self.predicate, batch_size=max(1, min(n or 1, 65_536)))
         return scanner.head(n)
 
@@ -45,10 +65,8 @@ class LazyResultSet:
         return self.take(n)
 
     def to_arrow(self, *, allow_over_limit: bool = False) -> Any:
-        count = self.count()
-        requested = self.query_spec.limit_value if self.query_spec.limit_value is not None else count
-        if requested > self.row_limit and not allow_over_limit:
-            raise MaterializationLimitError(f"Query would materialize {requested} rows; limit is {self.row_limit}")
+        requested = self._requested_rows_for_collect()
+        self._check_materialization_limits(requested, allow_over_limit=allow_over_limit)
         table = self.dataset_factory().to_table(columns=list(self.projected_fields), filter=self.predicate)
         if self.query_spec.order_by_fields:
             order = []
@@ -79,6 +97,7 @@ class LazyResultSet:
                 physical = self.registry.resolve(item.field)
                 if physical not in columns:
                     columns.append(physical)
+        self._check_materialization_limits(self._requested_rows_for_collect(), allow_over_limit=allow_over_limit)
         table = self.dataset_factory().to_table(columns=columns, filter=self.predicate)
         groups = [self.registry.resolve(field) for field in self.query_spec.group_by_fields]
         aggregations = []
@@ -101,6 +120,39 @@ class LazyResultSet:
             raise MissingCapabilityError("PyArrow is required for result materialization") from exc
         pq.write_table(self.to_arrow(allow_over_limit=allow_over_limit), path)
         return path
+
+    def _requested_rows_for_collect(self) -> int:
+        if self.query_spec.limit_value is not None:
+            return int(self.query_spec.limit_value)
+        if self.estimated_rows is not None:
+            return int(self.estimated_rows)
+        return self.count()
+
+    def _estimated_projected_bytes(self) -> int | None:
+        if self.plan is None:
+            return None
+        estimate = self.plan.estimated_bytes
+        if estimate.kind is EstimateKind.UNKNOWN:
+            return None
+        return estimate.bytes
+
+    def _check_materialization_limits(self, requested_rows: int, *, allow_over_limit: bool = False) -> None:
+        policy = self.query_spec.materialization_policy
+        override = allow_over_limit or policy.allow_over_limit
+        if requested_rows > self.row_limit and not override:
+            raise MaterializationLimitError(f"Query would materialize {requested_rows} rows; limit is {self.row_limit}")
+        heavy_rows = requested_rows if self.heavy_projected_fields else 0
+        heavy_override = override or policy.allow_heavy_over_limit
+        if heavy_rows > policy.heavy_row_limit and not heavy_override:
+            raise MaterializationLimitError(
+                f"Query would materialize {heavy_rows} rows with heavy columns {self.heavy_projected_fields}; "
+                f"heavy-row limit is {policy.heavy_row_limit}"
+            )
+        estimated_bytes = self._estimated_projected_bytes()
+        if policy.estimated_byte_limit is not None and estimated_bytes is not None and estimated_bytes > policy.estimated_byte_limit and not override:
+            raise MaterializationLimitError(
+                f"Query would materialize an estimated {estimated_bytes} bytes; limit is {policy.estimated_byte_limit}"
+            )
 
     def __iter__(self) -> Iterable[Any]:
         raise MaterializationLimitError("Iterating a LazyResultSet directly is disabled; use iter_batches(), head(), or take(n)")

@@ -26,7 +26,7 @@ from .models import (
     payload_from_dict,
     utc_now_iso,
 )
-from .parquet import inspect_parquet_source
+from .parquet import ParquetInspection, inspect_parquet_source
 
 
 class HodgeCYCatalog:
@@ -181,35 +181,66 @@ class HodgeCYCatalog:
         return source
 
     def register_parquet_source(self, *, columnar_id: str, instance_id: str, source_id: str, relative_path: str, table_name: str, common_field_mapping: dict[str, str] | None = None, heavy_columns: Iterable[str] = (), query_safe_columns: Iterable[str] = (), table_kind: TableKind = TableKind.SOURCE, metadata: dict[str, Any] | None = None, parent_key: str | None = None, child_key: str | None = None) -> ColumnarSourceRef:
-        if self.data_root is None:
-            raise StorageError("register_parquet_source requires a configured data_root")
-        inspection = inspect_parquet_source([self.data_root.root / relative_path])
-        physical = self.register_physical_source(PhysicalSourceRef(
-            source_id=source_id,
+        return self.register_parquet_sources(
+            columnar_id=columnar_id,
             instance_id=instance_id,
-            relative_path=relative_path,
-            byte_size=inspection.byte_size,
-            source_format=SourceFormat.PARQUET,
-            metadata={"parquet_row_count": inspection.row_count},
-        ))
+            source_ids=(source_id,),
+            relative_paths=(relative_path,),
+            table_name=table_name,
+            common_field_mapping=common_field_mapping,
+            heavy_columns=heavy_columns,
+            query_safe_columns=query_safe_columns,
+            table_kind=table_kind,
+            metadata=metadata,
+            parent_key=parent_key,
+            child_key=child_key,
+        )
+
+    def register_parquet_sources(self, *, columnar_id: str, instance_id: str, source_ids: Iterable[str], relative_paths: Iterable[str], table_name: str, common_field_mapping: dict[str, str] | None = None, heavy_columns: Iterable[str] = (), query_safe_columns: Iterable[str] = (), table_kind: TableKind = TableKind.SOURCE, metadata: dict[str, Any] | None = None, parent_key: str | None = None, child_key: str | None = None, source_revision: str | None = None, field_metadata: dict[str, Any] | None = None) -> ColumnarSourceRef:
+        if self.data_root is None:
+            raise StorageError("register_parquet_sources requires a configured data_root")
+        relative_tuple = tuple(relative_paths)
+        source_id_tuple = tuple(source_ids)
+        if len(relative_tuple) != len(source_id_tuple):
+            raise StorageError("source_ids and relative_paths must have the same length")
+        inspection = inspect_parquet_source((self.data_root.root / path for path in relative_tuple), data_root=self.data_root.root, source_revision=source_revision)
+        physical_ids: list[str] = []
+        for index, (source_id, relative_path) in enumerate(zip(source_id_tuple, relative_tuple)):
+            file_info = inspection.files[index]
+            physical = self.register_physical_source(PhysicalSourceRef(
+                source_id=source_id,
+                instance_id=instance_id,
+                relative_path=relative_path,
+                byte_size=file_info.byte_size,
+                source_format=SourceFormat.PARQUET,
+                partition=str(index),
+                metadata={
+                    "parquet_row_count": file_info.row_count,
+                    "parquet_row_group_count": file_info.row_group_count,
+                    "source_revision": source_revision,
+                },
+            ))
+            physical_ids.append(physical.source_id)
+        heavy_tuple = tuple(heavy_columns)
         return self.register_columnar_source(ColumnarSourceRef(
             columnar_id=columnar_id,
             instance_id=instance_id,
-            source_ids=(physical.source_id,),
+            source_ids=tuple(physical_ids),
             table_name=table_name,
             schema=inspection.schema,
             row_count=inspection.row_count,
+            partition_metadata=_partition_metadata_from_inspection(inspection),
             common_field_mapping=common_field_mapping or {},
-            heavy_columns=tuple(heavy_columns),
-            query_safe_columns=tuple(query_safe_columns) or tuple(inspection.schema.keys()),
+            heavy_columns=heavy_tuple,
+            query_safe_columns=tuple(query_safe_columns) or tuple(field for field in inspection.schema.keys() if field not in heavy_tuple),
             metadata={
                 **(metadata or {}),
                 "table_kind": table_kind.value,
                 "parent_key": parent_key,
                 "child_key": child_key,
+                "field_metadata": field_metadata or {},
             },
         ))
-
     def register_table(self, table: RegisteredTable) -> RegisteredTable:
         self._upsert("tables", table.table_id, table.to_dict())
         return table
@@ -300,6 +331,25 @@ def open_catalog(root: str | Path | HodgeCYDataRoot | None = None, *, name: str 
     return HodgeCYCatalog.from_path(path, data_root=data_root, read_only=read_only, backend=backend)
 
 
+def _partition_metadata_from_inspection(inspection: ParquetInspection) -> dict[str, Any]:
+    return {
+        "schema_version": "partition_metadata.v1",
+        "file_count": len(inspection.files),
+        "row_group_count": inspection.row_group_count,
+        "row_count": inspection.row_count,
+        "byte_size": inspection.byte_size,
+        "source_revision": inspection.source_revision,
+        "files": [
+            {
+                "relative_path": item.relative_path,
+                "row_count": item.row_count,
+                "row_group_count": item.row_group_count,
+                "byte_size": item.byte_size,
+                "row_groups": [row_group.to_dict() for row_group in item.row_groups],
+            }
+            for item in inspection.files
+        ],
+    }
 def _backend_version(backend: str) -> str | None:
     if backend == "json":
         return "1"
