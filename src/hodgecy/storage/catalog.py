@@ -162,18 +162,25 @@ class HodgeCYCatalog:
                 raise StorageError(f"Physical source must be registered before columnar source: {source_id}")
         self._upsert("columnar_sources", source.columnar_id, source.to_dict())
         if source.table_name not in {row["table_name"] for row in self.payload["tables"].values()}:
+            metadata = dict(source.metadata)
+            table_kind = TableKind(metadata.pop("table_kind", TableKind.SOURCE.value))
+            parent_key = metadata.pop("parent_key", None)
+            child_key = metadata.pop("child_key", None)
             self.register_table(RegisteredTable(
                 table_id=source.table_name,
                 table_name=source.table_name,
-                table_kind=TableKind.SOURCE,
+                table_kind=table_kind,
                 instance_id=source.instance_id,
                 columnar_id=source.columnar_id,
                 row_count=source.row_count,
                 columns=tuple(source.schema.keys()),
+                parent_key=parent_key,
+                child_key=child_key,
+                metadata=metadata,
             ))
         return source
 
-    def register_parquet_source(self, *, columnar_id: str, instance_id: str, source_id: str, relative_path: str, table_name: str, common_field_mapping: dict[str, str] | None = None, heavy_columns: Iterable[str] = (), query_safe_columns: Iterable[str] = ()) -> ColumnarSourceRef:
+    def register_parquet_source(self, *, columnar_id: str, instance_id: str, source_id: str, relative_path: str, table_name: str, common_field_mapping: dict[str, str] | None = None, heavy_columns: Iterable[str] = (), query_safe_columns: Iterable[str] = (), table_kind: TableKind = TableKind.SOURCE, metadata: dict[str, Any] | None = None, parent_key: str | None = None, child_key: str | None = None) -> ColumnarSourceRef:
         if self.data_root is None:
             raise StorageError("register_parquet_source requires a configured data_root")
         inspection = inspect_parquet_source([self.data_root.root / relative_path])
@@ -195,6 +202,12 @@ class HodgeCYCatalog:
             common_field_mapping=common_field_mapping or {},
             heavy_columns=tuple(heavy_columns),
             query_safe_columns=tuple(query_safe_columns) or tuple(inspection.schema.keys()),
+            metadata={
+                **(metadata or {}),
+                "table_kind": table_kind.value,
+                "parent_key": parent_key,
+                "child_key": child_key,
+            },
         ))
 
     def register_table(self, table: RegisteredTable) -> RegisteredTable:

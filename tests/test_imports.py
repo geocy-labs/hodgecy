@@ -31,6 +31,14 @@ def test_blob5_parser_adapter_imports() -> None:
     assert hodgecy.datasets.FixtureDatasetAdapter is not None
 
 
+def test_blob7_relationship_and_geometry_imports() -> None:
+    import hodgecy.geometry
+    import hodgecy.relationships
+
+    assert hodgecy.relationships.RelationshipType.FIBRATION_OF.value == "fibration_of"
+    assert hodgecy.geometry.FibrationPayload is not None
+
+
 def test_blob6_construction_adapter_imports() -> None:
     from hodgecy.datasets import (
         cicy3_adapter,
