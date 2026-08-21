@@ -24,6 +24,14 @@ class ParseStatus(str, Enum):
     REJECTED = "rejected"
     FAILED = "failed"
 
+class SourceIntegrityStatus(str, Enum):
+    SOURCE_VALID = "source_valid"
+    SOURCE_CORRUPT = "source_corrupt"
+    SOURCE_UNREADABLE = "source_unreadable"
+    SOURCE_INCOMPLETE = "source_incomplete"
+    SOURCE_ACCESS_BLOCKED = "source_access_blocked"
+    SOURCE_REMOTE_INDEXED = "source_remote_indexed"
+
 class RedistributionStatus(str, Enum):
     REDISTRIBUTABLE = "redistributable"
     ACQUIRED_LOCALLY_BY_USER = "acquired_locally_by_user"
