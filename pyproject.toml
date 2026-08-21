@@ -20,6 +20,10 @@ dependencies = [
 dev = [
   "pytest>=8.0"
 ]
+storage = [
+  "duckdb>=1.0",
+  "pyarrow>=15.0"
+]
 
 [tool.setuptools]
 package-dir = {"" = "src"}
