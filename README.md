@@ -1,381 +1,254 @@
 # HodgeCY
 
-HodgeCY is the computational research repository for Hodge-theoretic and
-related arithmetic experiments under the GeoCY organization.
+HodgeCY is a computational Hodge/Calabi--Yau data system and reproducibility framework for assembling, querying, relating, and validating large heterogeneous Calabi--Yau and Hodge-theoretic datasets.
 
-The first target in this repository is the Cynk--Meyer double octic dataset
-from arXiv:`math/0304121`.
+The repository contains the HodgeCY Python package, data adapters, query/catalog infrastructure, tests, small fixtures, documentation, and HodgeCY I reproducibility assets. The production research corpus is intentionally kept outside Git and is addressed through a local data root.
+
+HodgeCY does **not** claim to be a complete database of all Calabi--Yau manifolds. It is a source-aware corpus and infrastructure layer: source records, presentations, abstract geometry claims, derived relationships, and theorem certificates are kept distinct.
+
+## Current Corpus At A Glance
+
+| Measure | Audited value |
+| --- | --- |
+| Headline source/data records | 574,616,978 |
+| Logical datasets | 53 |
+| Dataset/source instances | 80 |
+| Physical sources | 187 |
+| Query tables | 32 |
+| Relationship edges | 241,798 |
+| CICY divisor enrichment rows | 57,885 |
+| ToricCY top-level assets | 7 |
+| Acquisition waves complete | 4 |
+| Comprehensive initial corpus | Yes |
+| Wave 5 required | No |
+
+**Counting convention.** The headline source/data record count counts one primary source, normalized, or native record according to the final corpus census. Relationship edges, nested divisor rows, archive member counts, remote asset counts, and source-registry entries are reported separately because they are different kinds of objects.
+
+The small public metadata summary is in [`docs/corpus`](docs/corpus/README.md). It contains no production data rows.
+
+## Major Datasets
+
+| Data family | Dataset/source | Record count | Representation | Notes |
+| --- | --- | --- | --- | --- |
+| Toric/KS | Kreuzer--Skarke 4D reflexive polytopes | 473,800,776 | COMPLETE_COLUMNAR / native-lazy query table | Large Parquet-backed corpus; heavy columns stay lazy. |
+| Enumerative | DESY CICY GV invariants | 99,515,615 | COMPLETE_COLUMNAR | h11=1..8 represented; h11=9 source-corrupt exception tracked. |
+| CICY4 | Complete CICY fourfold configurations/topology | 921,497 | COMPLETE_LOCAL / normalized | CICY4 fibration archive remains native-lazy where appropriate. |
+| Toric weights | 4D IP weight systems | 184,026 | COMPLETE_LOCAL / normalized | Weight-system and Hodge/K3 metadata. |
+| CICY fibrations | Obvious CICY3 fibrations | 139,597 | COMPLETE_LOCAL / normalized | Exact source-backed fibration edges. |
+| CICY quotients | CICY3 quotient fibrations | 20,700 | COMPLETE_LOCAL / normalized | Quotient fibration records. |
+| CICY3 | Complete CICY threefold configurations | 7,890 | COMPLETE_LOCAL / normalized | Standard CICY3 presentations. |
+| CICY3 | Favorable CICY data | 7,890 | COMPLETE_LOCAL / normalized | Favorable presentations and topology fields. |
+| Weighted hypersurfaces | Weighted-P4 CY hypersurfaces | 7,555 | COMPLETE_LOCAL / normalized | Weighted P4 source rows. |
+| CICY quotient/free action | CICY free actions and quotients | 1,695 | COMPLETE_LOCAL / normalized | Free-action source records. |
+| Divisors | Springer/JHEP CICY divisor topology | 7,820 parent records; 57,885 divisor rows | COMPLETE_NORMALIZED | Nested divisor Hodge tuples are enrichment rows, not headline records. |
+| gCICY | APS g21N5.mx / g21N6.mx genuine gCICY source | 2 native source files | COMPLETE_NATIVE_SOURCE | Wolfram export needed before normalized row count is claimed. |
+| ToricCY | ToricCY POLY/GEOM/TRIANG/INVOL assets | 7 top-level assets; 4,434,624,498 advertised bytes | COMPLETE_REMOTE_NATIVE_LAZY | Remote/native-lazy registry, not an eager mirror. |
+| Operators | Picard--Fuchs/operator records | 613 operators; 584 topological rows | COMPLETE_LOCAL / normalized | Operator and topological enrichment layers. |
+| Double octics | HodgeCY I double-octic sources and certificates | partial public corpus | PARTIAL_PUBLIC_CORPUS | Theorem-bearing examples remain explicitly scoped. |
+| Grassmannian | PartialFlagVarieties / Grassmannian CY3 records | 31 | COMPLETE_COLUMNAR | Source-derived records plus code resource. |
+| K3-fibered | TwoParameterK3 source models | 39 | COMPLETE_COLUMNAR | Source model/operator headers. |
+
+See [`docs/corpus/DATASETS.md`](docs/corpus/DATASETS.md) for the complete logical dataset census.
+
+## What HodgeCY Represents
+
+HodgeCY represents multiple orthogonal layers:
+
+- construction and presentation records;
+- source-reported Hodge and topological invariants;
+- weight systems and toric data;
+- CICY and CICY4 configuration data;
+- fibrations and quotient/fibration relationships;
+- group actions, quotients, involutions, and orientifold-related source data;
+- divisors, intersection-ring expressions, and divisor topology;
+- basis-aware vectors, matrices, tensors, and exact algebra infrastructure;
+- Picard--Fuchs operators, periods, and topological operator enrichments;
+- enumerative invariant sources;
+- source-backed relationships and crosswalks;
+- provenance, validation, and source-integrity states;
+- native-lazy and remote/native-lazy large-data representations.
+
+Depth is not uniform across all categories. [`docs/corpus/COVERAGE.md`](docs/corpus/COVERAGE.md) gives the conservative final coverage matrix.
+
+## Data Architecture
+
+HodgeCY uses a source-preserving architecture:
+
+```text
+raw/native source
+  -> source instance + provenance
+  -> normalized typed records OR native/lazy representation
+  -> relationship/enrichment layer
+  -> query interface
+  -> certificates/reproducibility where applicable
+```
+
+A source record is not the same thing as a presentation; a presentation is not automatically an abstract geometry; a derived relationship is not a theorem unless it has the required validation or certificate. This distinction is central to HodgeCY.
+
+## External Data Model
+
+The hundreds of millions of records are not committed to Git. The Git repository contains code, adapters, schemas, tests, small fixtures, documentation, and reproducibility logic. The large research corpus lives in an external data root with raw, staged, normalized, catalog, manifest, checksum, report, cache, rejected, and log areas.
+
+Configure a corpus root with `HODGECY_DATA_ROOT` or pass a root explicitly:
+
+```bash
+export HODGECY_DATA_ROOT=/path/to/hodgecy-data
+```
+
+```powershell
+$env:HODGECY_DATA_ROOT="D:\data\hodgecy-data"
+```
+
+The package reads this environment variable through `hodgecy.config.HodgeCYConfig`.
+
+## Installation
+
+HodgeCY requires Python 3.10 or newer.
+
+```bash
+git clone https://github.com/geocy-labs/hodgecy.git
+cd hodgecy
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -U pip
+python -m pip install -e ".[dev,storage]"
+```
+
+On PowerShell:
+
+```powershell
+git clone https://github.com/geocy-labs/hodgecy.git
+cd hodgecy
+py -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -U pip
+python -m pip install -e ".[dev,storage]"
+```
+
+Core dependencies are `pandas` and `sympy`. The `dev` extra installs `pytest`; the `storage` extra installs `duckdb` and `pyarrow` for catalog/query work.
+
+## Quick Start
+
+Open the current external corpus catalog:
+
+```python
+from hodgecy.config import open_data_root
+from hodgecy.storage import open_catalog
+
+root = open_data_root(require_exists=True)
+catalog = open_catalog(root, name="current_corpus", read_only=True)
+
+print(len(catalog.payload["datasets"]))
+print(len(catalog.payload["tables"]))
+```
+
+Query a bounded projection from a registered table:
+
+```python
+from hodgecy.query import QuerySpec
+
+spec = QuerySpec(
+    table="current_cicy3_standard",
+    fields=("source_record_id", "h11", "h21"),
+).limit(5)
+
+rows = catalog.query(spec).to_arrow()
+print(rows)
+```
+
+Inspect large-data planning before materialization:
+
+```python
+from hodgecy.query import QuerySpec
+
+spec = QuerySpec(
+    table="kreuzer_skarke",
+    fields=("h11", "h12", "euler_characteristic"),
+).limit(10)
+
+result = catalog.query(spec)
+print(result.plan)
+```
+
+Large tables are lazy by default; use explicit projections and limits.
+
+## HodgeCY I
+
+HodgeCY I is the theorem-bearing double-octic/reproducibility layer in this repository. It is narrower than the full corpus: it concerns computational Hodge atom profiles, source assembly spectra, and selected double-octic Calabi--Yau threefold arrangements.
+
+Public references:
+
+- HodgeCY I manuscript/preprint: https://www.preprints.org/manuscript/202607.0967
+- HodgeCY v0.2.0 Zenodo software DOI: https://doi.org/10.5281/zenodo.21429481
+
+The broader corpus documentation does not upgrade source-reported fields into HodgeCY I theorem claims. Theorem-bearing outputs remain limited to the certified/reproducibility assets tracked for HodgeCY I.
+
+## Known Limitations
+
+HodgeCY documents limitations explicitly:
+
+- DESY CICY GV `h11=9` is represented as `SOURCE_CORRUPT`.
+- APS genuine gCICY files `g21N5.mx` and `g21N6.mx` are verified native Wolfram sources, but normalized row export requires a Wolfram-compatible runtime.
+- ToricCY is represented as remote/native-lazy metadata and asset indexing, not as a fully normalized local mirror.
+- Pfaffian/determinantal Calabi--Yau coverage is source-registry-only.
+- Integral topology/torsion coverage is source-registry-only.
+
+See [`docs/corpus/KNOWN_LIMITATIONS.md`](docs/corpus/KNOWN_LIMITATIONS.md).
+
+## Provenance And Validation
+
+Every permanent corpus disposition records source identity, source instance, source revision, physical source or locator, checksum/integrity state where applicable, adapter/schema, validation state, and citation or URL. Data licenses remain attached to their original sources.
+
+See [`docs/corpus/PROVENANCE.md`](docs/corpus/PROVENANCE.md).
 
 ## Repository Layout
 
-- `src/hodgecy/`: Python package source
-- `data/raw/`: raw source data files and hand-entered transcription stubs
-- `data/processed/`: processed research-ready tables
-- `notebooks/`: exploratory notebooks
-- `scripts/`: utility scripts for dataset preparation and checks
-- `m2/`: Macaulay2 experiments
-- `tests/`: package and data integrity tests
-- `paper/tables/`: paper-facing table outputs
-- `paper/figures/`: paper-facing figure outputs
-
-## Current Status
-
-This first scaffold provides:
-
-- a `src`-layout Python package named `hodgecy`
-- loader stubs for the Cynk--Meyer dataset
-- placeholder raw CSV/JSON source files
-- basic tests for imports, file existence, and loader return types
-
-No heavy algebraic geometry functionality is included yet.
-
-## Nodal Defect And Operator-Route Layer
-
-The repository now includes schema-level support for classical node-scheme
-defect computations. Actual Hilbert-function calculations still require
-external CAS tools such as Macaulay2 or Singular, and the bundled templates are
-deliberately scaffolds rather than claimed computations.
-
-Within the current atom-profile layer, classical defect is treated as a coarse
-numerical shadow of flexible-sector compression. This is only a first schema:
-relation/block refinements and operator-side comparison data are left as
-explicit placeholders until geometric computations are supplied.
-
-The operator-route schemas are also now present for later storage of
-Picard--Fuchs, conifold-point, and monodromy/nilpotent-profile data. No
-mathematical results are faked by these placeholder modules; unsupported values
-remain marked as `not_computed`, `not_loaded`, or `unknown`.
-
-## Gate 1: Lattice Audit For 84 And 84a
-
-The pair `84/84a` is currently treated as a motivational/control pair in the
-double octic program. They share Cynk--Meyer Table 1 counts and Hodge numbers,
-but differ at the equation and modular-form level, so they are a natural first
-test for whether arrangement-incidence structure already separates examples that
-coarse numerical data collapse.
-
-This Gate 1 layer computes arrangement-level incidence information from the
-explicit eight-plane data and checks whether the incidence lattices of `84` and
-`84a` are isomorphic. It is not yet a conifold Hodge atom computation, because
-these arrangements are not being modeled here as finite-node conifold
-degenerations. The outcome instead tells us whether `84/84a` can function as a
-relation-layer witness or only as an arithmetic/Hodge-control pair.
-
-The current Gate 1 audit result is already nontrivial: `84` and `84a` have the
-same coarse subset-rank fingerprint, but the brute-force incidence-isomorphism
-search over all `8!` plane permutations finds no subset-rank-preserving
-isomorphism. In the present repository, that means the pair is not separated by
-the coarsest fingerprint summary, yet it is separated by the full
-arrangement-incidence test currently implemented.
-
-## Gate 2: Smoothing Bridge
-
-The smoothing bridge layer records the expected nodal/conifold construction
-\(
-F_{\epsilon} = A + \epsilon Q^2,
-\)
-where \(A\) is the plane-arrangement branch octic and \(Q\) is a generic
-quartic. For arrangements with 28 double lines and no triple lines, the naive
-expected residual count is 112 nodes under genericity assumptions, with four
-expected intersection points on each double line.
-
-At present this is only an expected combinatorial/local-model profile. The
-repository records the double-line grouping, expected counts, and genericity
-assumptions explicitly, but ordinary-node verification still requires CAS and
-local analytic checks.
-
-The repository now also includes exact rational verification scaffolding for
-the `84` and `84a` smoothing-bridge candidates. On the Python side, HodgeCY
-checks that the chosen quartic \(Q\) avoids every arrangement multiple point
-and that the restriction of \(Q\) to each double line is a squarefree quartic,
-which is the exact genericity condition behind the expected four nodes per
-double line. The heavier projective singular-locus and Hessian-rank checks are
-kept conservative: they are never run by default, and they are only promoted
-when an explicit optional workflow or external CAS certifies them.
-
-## Gate 3: Defect/Profile Comparison
-
-This layer prepares the comparison between classical defect and HodgeCY atom
-block profiles for smoothing-bridge examples. It does not compute classical
-defect yet; instead it records candidate smoothing-bridge block profiles,
-comparison scaffolds, and a defect-computation queue that makes the missing
-steps explicit.
-
-The longer-term test is whether two nodal examples can share the same node
-count and classical defect while still exhibiting different atom block
-profiles, which would make the block/profile layer a strict refinement of
-classical defect. For the current `84/84a` control pair, everything remains
-candidate-level until lattice audit, local node verification, and defect
-computation are all in place.
-
-## Concurrency-Aware Lattice Profiles
-
-For smoothing-bridge examples built from eight planes, first-order plane-node
-incidence is identical at the naive level: each double line contributes four
-expected nodes, so the coarsest plane-node counts collapse. If distinguishing
-information survives at the arrangement level, it must pass through how double
-lines meet at p3, p4, and higher multiple points.
-
-The concurrency-aware profile therefore records line/multiple-point incidence,
-multiple-point multiplicity counts, line multiplicity profiles, and p4
-collinearity structure. These are arrangement-level inputs to the smoothing
-bridge and to any later candidate atom-block interpretation.
-
-For the current paper assets, the repository now emphasizes the p4-collinearity
-graphs rather than the full mixed concurrency graph. This keeps the visual
-signal focused on the exact place where `84` and `84a` separate:
-
-- `84`: 10 p4 vertices, 39 edges, degree sequence `[6, 8^9]`
-- `84a`: 10 p4 vertices, 42 edges, degree sequence `[8^6, 9^4]`
-
-The processed certificate `data/processed/p4_collinearity_certificate.csv`
-records the per-vertex degrees and neighbor lists used to generate those
-figures.
-
-## Paper Verification Workflow
-
-The paper-strengthening verification workflow is intentionally split into a
-fast default path and optional expensive paths.
-
-Default commands:
-
-- `python scripts/generate_paper_assets.py`
-- `python scripts/verify_smoothing_bridge_84_84a.py --force`
-- `python -m pytest -q`
-
-Optional expensive commands:
-
-- `python scripts/verify_smoothing_bridge_84_84a.py --force --finite-field-checks --max-seconds 600`
-- `python scripts/verify_smoothing_bridge_84_84a.py --force --char0-checks --max-seconds 3600`
-
-The default verification driver only does:
-
-- exact rational G1 verification: `Q` avoids all multiple points
-- exact rational G2 verification: `Q` is squarefree on every double line
-- generation of finite-field / Macaulay2 / Singular handoff artifacts
-- writing JSON / CSV outputs
-- regeneration of the p4-collinearity figures and certificate
-
-It does not attempt full characteristic-zero Groebner work unless explicitly
-asked.
-
-Verification statuses:
-
-- `queued`: no global singular-locus verification has been attempted yet
-- `genericity_verified`: exact G1 and G2 succeeded for the explicit `Q`
-- `degree112_certified`: exact G1 and G2 succeeded, and a repo-backed
-  characteristic-zero degree-112 certificate exists for the singular locus,
-  but reducedness, Hessian rank-3, and defect certificates are still missing
-- `ordinary_node_verified`: reducedness and Hessian rank-3 certificates exist,
-  so the singular locus is certified as 112 ordinary nodes
-- `defect_verified`: the ordinary-node certificate is in place and the
-  defect/Hilbert-function claims are also repo-backed
-- `failed`: the explicit `Q` failed one of the required checks
-
-In the current repository, the paper-facing default is intentionally
-conservative: G1 and G2 are verified exactly over `Q` for the explicit quartic,
-and the reviewer-V4 package is strong enough to justify `degree112_certified`.
-The repository still does not promote to `ordinary_node_verified` or
-`defect_verified` unless reducedness, Hessian rank-3, and defect certificates
-are actually present in machine-readable form.
-
-For arrangements `84` and `84a`, the current smoothing status is
-`degree112_certified`. Exact G1/G2 genericity verification and a
-characteristic-zero degree-112 saturated Jacobian certificate are repo-backed.
-The repository does not currently promote either arrangement to
-`ordinary_node_verified` or `defect_verified`; reducedness, Hessian-rank,
-critical-degree, Hilbert-function, and defect certificates remain pending.
-
-## Defect Computation Gate
-
-The next decisive computation for the smoothing-bridge program is the classical
-defect of the expected 112-node configurations associated with the `84` and
-`84a` smoothing bridges. That computation requires CAS support and depends on
-the critical degree in which the node scheme fails to impose independent
-conditions.
-
-At present the repository does not fake this degree or the resulting defect.
-Instead, it contains raw smoothing-bridge example records, CAS templates, a
-high-priority computation queue, and an empty verified-results ingestion file
-so that literature verification and subsequent Macaulay2/Singular runs can be
-tracked cleanly.
-
-The current queue state for `smoothing_bridge_84` and `smoothing_bridge_84a` is
-deliberately conservative: `critical_degree = null`,
-`critical_degree_status = needs_literature_verification`, and
-`defect_status = not_computed`. This keeps the next mathematical dependency
-explicit before any final CAS-backed defect claim is made.
-
-## Paper Tables And Figures
-
-Paper-facing assets are generated by `scripts/generate_paper_assets.py`.
-Tables are written under `paper/tables`, figures under `paper/figures`, and
-machine-readable companion files under `data/processed/paper_tables` and
-`data/processed/paper_figures`.
-
-Some figures depend on optional processed data or optional plotting support,
-most notably the p4-collinearity graph figure. When those dependencies are
-missing, the asset generator records a clear skip reason rather than failing.
-Defect values, singular-locus cardinalities, and operator-route validations are
-never fabricated: queued or partial computations remain explicitly marked
-`not_computed`, `queued`, or `partial` until verified results are ingested.
-
-## Equivariant HodgeCY Spectra
-
-The equivariant spectrum layer is experimental and additive. It computes
-incidence-preserving automorphism groups, stratified gluing complexes, orbit
-decompositions, and permutation characters for selected double-octic
-arrangements.
-
-This layer is motivated by the Cynk--Kocel--Cynk automorphism classification
-for double octic arrangements. It is designed to sit beside the existing
-HodgeCY smoothing and atom-profile code rather than replace it.
-
-The current control-triple computation covers arrangements `83`, `84`, and
-`84a`. The `84` and `84a` records use the existing HodgeCY representatives.
-The `83` record is a rational specialization of a parameterized
-Cynk--Kocel--Cynk equation and should be treated as provisional until the
-parameter choice is reviewed.
-
-An explicit search helper,
-`scripts/search_arrangement_83_representative.py`, searches normalized
-integer parameter choices for the arrangement-83 parameterized equation. In the
-current run, no valid representative was found for the normalized range
-induced by raw tuples `A0,A1,A2,A3 in {-5,...,5} \ {0}`, up to common scaling
-with `A0=1`. The current 83 specialization remains `provisional`, with
-expected and computed inventories recorded separately in the generated
-equivariant-spectrum JSON and a search report written to
-`data/processed/equivariant_spectra/arrangement_83_search_report.json`.
-
-This new layer does not change the v0.1.0 smoothing verification claims. It
-does not promote `ordinary_node_verified` or `defect_verified`; arrangements
-`84` and `84a` remain `degree112_certified`.
-
-Commands:
-
-- `python scripts/search_arrangement_83_representative.py`
-- `python scripts/compute_equivariant_spectrum_control_triple.py`
-- `python -m pytest -q tests/test_equivariant_incidence.py tests/test_equivariant_gluing_complex.py tests/test_equivariant_spectrum_control_triple.py`
-
-### Fixed-equation equivariant clustering
-
-The fixed-equation clustering pass computes equivariant incidence-gluing
-spectra only for currently ingested CKC records that are validated,
-non-parameterized, and fixed. In the current repository this includes `84` and
-`84a`; the provisional parameterized `83` representative is explicitly skipped
-and recorded in the coverage metadata.
-
-The generated cluster tables identify examples with identical local
-singularity inventory and Hodge numbers but different equivariant
-incidence-gluing data. The first current witness is `84/84a`: they share the
-same local inventory and Hodge numbers, but differ in automorphism group order,
-rank over `F2`, Smith normal form, orbit decompositions, and permutation
-characters.
-
-Machine-readable outputs are written under
-`data/processed/equivariant_spectra/`, including
-`fixed_equation_equivariant_spectrum_summary.csv`,
-`fixed_equation_equivariant_clusters.json`, and
-`fixed_equation_equivariant_differentiating_pairs.csv`. Paper-facing tables are
-written to `paper/tables/table_fixed_equation_equivariant_clusters.*` and
-`paper/tables/table_fixed_equation_equivariant_differentiating_pairs.*`.
-
-Command:
-
-- `python scripts/cluster_equivariant_spectra_fixed_equations.py`
-
-### Fixed-equation batch 001
-
-The first fixed-equation CKC batch is written separately under
-`data/processed/equivariant_spectra/fixed_equation_batch_001/`. It is scoped to
-the currently repo-backed validated, fixed, non-parameterized CKC entries:
-`84` and `84a`. The batch explicitly excludes the provisional parameterized
-`83` specialization and records that exclusion in `batch_manifest.json`.
-
-Batch 001 emits per-arrangement spectrum JSON, a spectrum summary, clusters by
-shared local inventory and Hodge data, and a differentiating-pairs table for
-examples with identical local/Hodge data but different equivariant
-incidence-gluing spectra.
-
-Command:
-
-- `python scripts/compute_fixed_equation_batch_001.py`
-
-## CKC PDF Equation Extraction
-
-The raw CKC equation index is extracted directly from the source PDF Section
-6.1. This extraction is separate from the validated HodgeCY control-pair
-records: a record being extracted from the PDF does not mean its incidence
-data, Hodge data, or fixed-equation status have been independently validated.
-
-The extraction script reads
-`data/raw/cynk_kocel_cynk_2026/2602.19413v1-cynk-kocel-cynk.pdf` and writes
-`data/raw/cynk_kocel_cynk_2026/ckc_equation_index_001_455.json`, plus coverage
-and audit outputs under `data/processed/equivariant_spectra/`.
-
-Commands:
-
-- `python scripts/extract_ckc_equation_index_from_pdf.py`
-- `python -m pytest -q tests/test_ckc_pdf_extraction.py`
-
-## CKC Fixed Rational Batch Validation
-
-The fixed rational validation pass consumes the raw Section 6.1 extraction and
-attempts exact combinatorial/incidence validation for the fixed rational
-equation candidates:
-
-`1, 3, 19, 32, 69, 93, 238, 239, 240, 241, 245`.
-
-Here, validation means that the equation parses into eight rational linear
-factors and supports exact incidence-table, singularity-inventory,
-automorphism, gluing-complex, orbit, and permutation-character computations.
-It does not validate smoothing behavior and does not newly prove Hodge
-numbers. Any Hodge data shown in the generated tables are table lookups from
-the existing Cynk--Meyer data.
-
-The algebraic fixed candidates `452` and `453` are recorded in the validation
-report as `skipped_algebraic_coefficients` until an exact quadratic-field
-coefficient pipeline is added.
-
-Command:
-
-- `python scripts/validate_ckc_fixed_rational_batch.py`
-
-### CKC 239/240/241 Theorem Values
-
-The fixed rational batch contains a theorem-ready differentiating cluster:
-arrangements `239`, `240`, and `241` have the same local singularity inventory
-
-`p3=16, p4_0=10, p4_1=0, p5_0=0, p5_1=0, p5_2=0, l3=0`,
-
-but different equivariant incidence-gluing signatures. The compact theorem
-table records the automorphism group order, gluing rank data, Smith normal
-form, orbit decompositions, and permutation-character distributions for the
-three arrangements.
-
-Generated outputs:
-
-- `paper/tables/table_ckc_239_240_241_equivariant_signature.csv`
-- `paper/tables/table_ckc_239_240_241_equivariant_signature.tex`
-- `data/processed/equivariant_spectra/ckc_fixed_rational_batch/ckc_239_240_241_theorem_values.json`
-- `data/processed/equivariant_spectra/ckc_fixed_rational_batch/theorem_summary_239_240_241.json`
-
-Command:
-
-- `python scripts/build_ckc_239_240_241_theorem_values.py`
-
-## HodgeCY v0.2.0 theorem-certificate release
-
-The v0.2.0 release-preparation layer generates theorem-bearing source assembly
-certificates for arrangements 84, 84a, 239, 240, and 241. The certificates live
-under `release/hodgecy-v0.2.0/` after running:
+- `src/hodgecy/`: Python package, catalog/query/storage infrastructure, adapters, exact algebra, relationships, certificates, and HodgeCY I modules.
+- `scripts/`: reproducibility and corpus/bootstrap utilities.
+- `tests/`: package, data, corpus, query, and HodgeCY I regression tests.
+- `docs/`: architecture and public corpus documentation.
+- `docs/corpus/`: sanitized current corpus metadata and audit-facing public docs.
+- `data/`: small repository fixtures and HodgeCY I reproducibility sources; not the production corpus.
+- `paper/`: manuscript-facing tables and figures.
+- `release/`: v0.2.0 release/reproducibility bundle.
+- `m2/` and `singular/`: CAS scripts/templates for optional verification workflows.
+
+## Development And Testing
+
+Run the full test suite:
 
 ```bash
-python scripts/build_v0_2_0_release.py
-python scripts/verify_v0_2_0_release.py
+python -m pytest -q
 ```
 
-Zenodo DOI: `10.5281/zenodo.21429481`. The 84/84a smoothing status
-remains `degree112_certified`; this release does not promote
-`ordinary_node_verified` or `defect_verified`.
+Useful focused checks:
 
+```bash
+python -m pytest tests/test_wave2_permanent_ingest.py -q
+python -m pytest tests/test_current_corpus_closure.py -q
+python -m pytest tests/test_ckc_239_240_241_theorem_values.py -q
+```
+
+The final public-documentation promotion gate reruns the full suite and the HodgeCY I theorem-bearing regression slice.
+
+## Licensing
+
+The repository's release metadata and citation metadata declare the HodgeCY software as MIT licensed. External datasets retain their own source licenses and terms; the software license does not relicense the source corpora.
+
+Before a formal new release, add or verify a standalone `LICENSE` file if one is required by the release process.
+
+## Citation
+
+For the current software release metadata, cite:
+
+```text
+Rahman, Abdul. HodgeCY: Computational Hodge Atom Profiles and Source Assembly Spectra
+for Double-Octic Calabi--Yau Threefolds. Version 0.2.0. Zenodo.
+https://doi.org/10.5281/zenodo.21429481
+```
+
+The expanded corpus audit has not created a new DOI or release. Do not cite a new release DOI until the explicit release step is performed.
+
+## Future Data Updates
+
+The initial corpus acquisition program is complete: four acquisition waves were reconciled, Wave 5 is not required, and the comprehensive initial corpus is ready for release preparation. Future public datasets should be treated as versioned HodgeCY corpus updates rather than reopening the initial acquisition program.

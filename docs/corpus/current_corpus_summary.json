@@ -1,0 +1,43 @@
+{
+  "acquisition_waves_completed": 4,
+  "comprehensive_initial_corpus": true,
+  "corpus_name": "HodgeCY initial comprehensive corpus",
+  "corpus_status": "final initial corpus audit ready",
+  "documentation_version": "initial-comprehensive-corpus-2026-08-22",
+  "generated_from_snapshot": "current_hodgecy_corpus_snapshot.json",
+  "instance_count": 80,
+  "known_exceptions": [
+    "DESY CICY GV h11=9 is represented as SOURCE_CORRUPT.",
+    "APS gCICY g21N5.mx/g21N6.mx are verified native Wolfram sources; normalized export requires Wolfram runtime.",
+    "ToricCY is remote/native-lazy, not fully normalized locally.",
+    "Pfaffian/determinantal and integral topology/torsion are source registries without broad public machine-readable corpora."
+  ],
+  "logical_dataset_count": 53,
+  "nested_enrichment_counts": {
+    "aps_gcicy_native_source_files": 2,
+    "cicy_divisor_rows": 57885,
+    "toriccy_top_level_assets": 7
+  },
+  "physical_source_count": 187,
+  "query_table_count": 32,
+  "relationship_edge_count": 241798,
+  "software_commit": "f6d030cd0b17447b725b42d1a5af440bdd20959f",
+  "source_data_record_count": 574616978,
+  "storage_class_counts": {
+    "CODE_RESOURCE": 2,
+    "COMPLETE_COLUMNAR": 2,
+    "COMPLETE_NATIVE_LAZY": 4,
+    "COMPLETE_NATIVE_SOURCE": 1,
+    "COMPLETE_NORMALIZED": 18,
+    "COMPLETE_RELATIONSHIP": 3,
+    "COMPLETE_REMOTE": 5,
+    "COMPLETE_REMOTE_NATIVE_LAZY": 1,
+    "COMPUTABLE_NOT_PREENUMERATED": 2,
+    "EXCLUDED_LOW_VALUE": 1,
+    "MANUAL_SOURCE_REQUIRED": 2,
+    "PARTIAL_PUBLIC_CORPUS": 4,
+    "SOURCE_CORRUPT": 1,
+    "SOURCE_REGISTRY_ONLY": 7
+  },
+  "wave5_required": false
+}

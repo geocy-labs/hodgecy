@@ -1,0 +1,54 @@
+dataset_id	human_readable_dataset	data_family	storage_completion_class	headline_record_count	nested_enrichment_count	relationship_count	source_status	short_provenance
+aesz_cydb_remote	AESZ/CY differential equation database	picard_fuchs	COMPLETE_REMOTE				COMPLETE_REMOTE	Almkvist, van Enckevort, van Straten, Zudilin / CYDB | https://cydb.mathematik.uni-mainz.de/
+aps_gcicy_type21_supplements	APS Physical Review D supplemental files g21N5.mx and g21N6.mx	generalized_cicy	COMPLETE_NATIVE_SOURCE		2 native source files		COMPLETE_NATIVE_SOURCE	APS Physical Review D supplemental files g21N5.mx and g21N6.mx | https://journals.aps.org/prd/supplemental/10.1103/PhysRevD.107.086004
+borcea_voisin_source_registry	Borcea-Voisin systematic source registry	borcea_voisin	SOURCE_REGISTRY_ONLY				SOURCE_REGISTRY_ONLY	Borcea-Voisin systematic source registry
+cicy3_discrete_symmetries_orientifolds	Cicy3 Discrete Symmetries Orientifolds	cicy3	COMPLETE_NATIVE_LAZY				COMPLETE_LOCAL	
+cicy3_divisor_configs_orientifold	Cicy3 Divisor Configs Orientifold	cicy3	COMPLETE_NORMALIZED	7821			COMPLETE_LOCAL	
+cicy3_divisor_topology_springer	CICY3 divisor topology Springer source	cicy3	COMPLETE_NORMALIZED	7820			COMPLETE_COLUMNAR	CICY3 divisor topology Springer source | https://link.springer.com/article/10.1007/JHEP05%282022%29101
+cicy3_divisors_springer	Cicy3 Divisors Springer	cicy3	MANUAL_SOURCE_REQUIRED				COMPLETE_LOCAL	
+cicy3_favorable	Favorable CICY threefold presentations	cicy3	COMPLETE_NORMALIZED	7820			COMPLETE_LOCAL	
+cicy3_fibrations	Obvious CICY3 fibrations	cicy3	COMPLETE_NORMALIZED	139597			COMPLETE_LOCAL	
+cicy3_orientifold_discrete_symmetry	Cicy3 Orientifold Discrete Symmetry	cicy3	COMPLETE_NATIVE_LAZY				COMPLETE_NATIVE	
+cicy3_orientifolds_favourable	Cicy3 Orientifolds Favourable	cicy3	COMPLETE_NORMALIZED	7820			COMPLETE_LOCAL	
+cicy3_quotient_fibrations	Cicy3 Quotient Fibrations	cicy3	COMPLETE_NORMALIZED	20700			COMPLETE_LOCAL	
+cicy3_quotients	CICY free actions and quotients	cicy3	COMPLETE_NORMALIZED	1695			COMPLETE_LOCAL	
+cicy3_standard	Complete CICY threefold configurations	cicy3	COMPLETE_NORMALIZED	7890			COMPLETE_LOCAL	
+cicy3_thraxion_candidates	Cicy3 Thraxion Candidates	cicy3	COMPLETE_NORMALIZED	1			COMPLETE_LOCAL	
+cicy3_thraxion_transitions	Cicy3 Thraxion Transitions	cicy3	COMPLETE_NORMALIZED	1			COMPLETE_LOCAL	
+cicy4_core	Complete CICY fourfold configurations/topology	cicy4	COMPLETE_NORMALIZED	921497			COMPLETE_LOCAL	
+cicy4_fibrations	CICY4 elliptic fibration archive	cicy4	COMPLETE_NATIVE_LAZY	921497			COMPLETE_NATIVE	
+cicy_divisor_topologies_cms_2022	Springer/JHEP CICY divisor topology ESM	cicy3	COMPLETE_NORMALIZED	7820	57885		COMPLETE_COLUMNAR	Springer/JHEP CICY divisor topology ESM | https://link.springer.com/article/10.1007/JHEP05%282022%29101
+cicy_gv_invariants_desy	DESY CICY Gopakumar--Vafa Invariants	cicy3	COMPLETE_COLUMNAR	99515615			COMPLETE_COLUMNAR	Carta, Mininno, Righi, Westphal; arXiv:2101.07272 | https://www.desy.de/~westphal/GV_CICY_webpage/GVInvariants.html
+cicy_gv_invariants_desy_h11_9_repair	DESY CICY GV h11=9 repaired archive	cicy3_enumerative	SOURCE_CORRUPT				SOURCE_CORRUPT	DESY CICY GV h11=9 repaired archive | https://www.desy.de/~westphal/GV_CICY_webpage/GVInvariants.html
+current_corpus_relationships	Current Corpus Relationships	current_corpus_relationships	COMPLETE_RELATIONSHIP			175928	COMPLETE_COLUMNAR	
+cytools_source_registry	CYTools software/data interface	toric_hypersurface	SOURCE_REGISTRY_ONLY				SOURCE_REGISTRY_ONLY	CYTools | https://github.com/LiamMcAllisterGroup/cytools
+cytools_toric_computable_capability	CYTools computable toric cone and triangulation workflow	toric_hypersurface	COMPUTABLE_NOT_PREENUMERATED				COMPUTABLE_NOT_PREENUMERATED	CYTools computable toric cone and triangulation workflow | https://github.com/LiamMcAllisterGroup/cytools
+double_octics	Double Octics	double_octics	PARTIAL_PUBLIC_CORPUS				PARTIAL_PUBLIC_CORPUS	
+double_octics_external	Double Octics External	double_octics_external	PARTIAL_PUBLIC_CORPUS				COMPLETE_LOCAL	
+explicit_nodal_conifold_corpus	Explicit Nodal Conifold Corpus	explicit_nodal_conifold_corpus	PARTIAL_PUBLIC_CORPUS				PARTIAL_PUBLIC_CORPUS	
+gcicy_fake_weighted	Fake weighted projective CYCI records	weighted_p4	COMPLETE_NORMALIZED	1752			COMPLETE_LOCAL	
+gcicy_ml_cui_gao_wang_2023	Machine-learned generalized CICY supplemental matrices	cicy3	MANUAL_SOURCE_REQUIRED				MANUAL_SOURCE_REQUIRED	Cui, Gao, Wang; Machine learning configuration matrices for generalized CICYs | https://doi.org/10.1103/PhysRevD.107.086004
+genuine_gcicy	Genuine Gcicy	genuine_gcicy	SOURCE_REGISTRY_ONLY				SOURCE_REGISTRY_ONLY	
+grassmannian_homogeneous	Grassmannian Homogeneous	grassmannian_homogeneous	SOURCE_REGISTRY_ONLY				SOURCE_REGISTRY_ONLY	
+grassmannian_homogeneous_source_only	Grassmannian Homogeneous Source Only	grassmannian_homogeneous_source_only	SOURCE_REGISTRY_ONLY				COMPLETE_LOCAL	
+integral_topology_torsion_source_registry	Integral topology/torsion source registry	topology	SOURCE_REGISTRY_ONLY				SOURCE_REGISTRY_ONLY	Integral topology/torsion source registry | https://projecteuclid.org/journals/geometry-and-topology/volume-11/issue-1/Algebraic-topology-of-CalabiYau-threefolds-in-toric-varieties/10.2140/gt.2007.11.597.full
+ip_weight_systems_4d	4D IP weight systems with Hodge/K3 data	toric_hypersurface	COMPLETE_NORMALIZED	184026			COMPLETE_LOCAL	
+kreuzer_skarke	Kreuzer-Skarke reflexive 4-polytopes	toric_hypersurface	COMPLETE_NATIVE_LAZY	473800776			COMPLETE_COLUMNAR	
+ks_orientifolds_groupofxg_2024	GroupofXG KS Orientifold Release	toric_hypersurface	COMPLETE_REMOTE	135			COMPLETE_REMOTE	Cao, Gao, Gao; Orientifold Calabi--Yau threefolds; JHEP10(2024)188 | https://github.com/GroupofXG/anewcydatabase/releases/tag/data-v1
+ml_conifold_pfv_scorer_dataset	ML conifold PFV scorer dataset	source_registry	EXCLUDED_LOW_VALUE				UNRESOLVED	ML conifold PFV scorer dataset
+partialflagvarieties_grassmannian_cy3_table1	PartialFlagVarieties Grassmannian CY3 Table 1	grassmannian_homogeneous	COMPLETE_NORMALIZED	31			COMPLETE_COLUMNAR	Inoue-Ito-Miura; arXiv:1607.07821 | https://github.com/HomogeneousTools/PartialFlagVarieties.jl
+partialflagvarieties_jl	PartialFlagVarieties.jl	grassmannian_homogeneous	CODE_RESOURCE				COMPUTABLE_NOT_PREENUMERATED	https://github.com/HomogeneousTools/PartialFlagVarieties.jl | https://github.com/HomogeneousTools/PartialFlagVarieties.jl
+pfaffian_determinantal_cy_source_registry	Pfaffian/determinantal Calabi-Yau source registry	pfaffian_determinantal	SOURCE_REGISTRY_ONLY				SOURCE_REGISTRY_ONLY	Pfaffian/determinantal Calabi-Yau source registry | https://arxiv.org/abs/1006.0223
+picard_fuchs_cyo	Picard Fuchs Cyo	picard_fuchs	COMPLETE_REMOTE	613			COMPLETE_LOCAL	
+picard_fuchs_cyo_topological	Calabi-Yau operator topological data	picard_fuchs	COMPLETE_NORMALIZED	1197			COMPLETE_LOCAL	
+thraxion_conifold_transition	Thraxion Conifold Transition	thraxion_conifold_transition	PARTIAL_PUBLIC_CORPUS				COMPLETE_NATIVE	
+toric_ci_nef_partitions	Toric Ci Nef Partitions	toric_hypersurface	COMPUTABLE_NOT_PREENUMERATED				COMPUTABLE_NOT_PREENUMERATED	
+toric_ks_fibrations_abbasi_nally_taylor_2026	Toric/KS Fibrations from Zenodo 18500236	toric_hypersurface	COMPLETE_REMOTE	5			COMPLETE_REMOTE	Abbasi, Nally, Taylor; arXiv:2511.10601 / Zenodo 18500236 | https://zenodo.org/records/18500236
+toric_orientifold_enrichment	Toric Orientifold Enrichment	toric_hypersurface	COMPLETE_REMOTE				COMPLETE_REMOTE	
+toriccy_database	ToricCY database/package/query service	toric_hypersurface	COMPLETE_REMOTE_NATIVE_LAZY		7		COMPLETE_REMOTE_NATIVE_LAZY	ToricCY database/package/query service | https://www.rossealtman.com/toriccy
+twoparameterk3_code_resource	TwoParameterK3 Code and Notebook Resource	k3_fibered	CODE_RESOURCE				COMPUTABLE_NOT_PREENUMERATED	https://github.com/bpioline/TwoParameterK3 | https://github.com/bpioline/TwoParameterK3
+twoparameterk3_models	TwoParameterK3 Model and Operator Source Headers	k3_fibered	COMPLETE_NORMALIZED	39			COMPLETE_COLUMNAR	Doran-Pioline-Schimannek; arXiv:2408.02994 | https://github.com/bpioline/TwoParameterK3
+wave2_source_relationships	Wave 2 Source Relationships	source_relationships	COMPLETE_COLUMNAR				COMPLETE_COLUMNAR	
+wave3_source_relationships	Wave 3 Source and Resource Relationships	source_registry	COMPLETE_RELATIONSHIP				COMPLETE_COLUMNAR	HodgeCY Wave 3 permanent ingest
+wave4_source_relationships	Wave 4 source relationships	relationships	COMPLETE_RELATIONSHIP			65714	COMPLETE_COLUMNAR	Wave 4 source relationships
+weighted_p4	Weighted-P4 CY hypersurfaces	weighted_p4	COMPLETE_NORMALIZED	2781			COMPLETE_LOCAL	
