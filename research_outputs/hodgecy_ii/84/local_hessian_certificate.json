@@ -1,0 +1,8 @@
+{
+  "arrangement_id": "84",
+  "status": "UNRESOLVED",
+  "branch_quadratic_rank_3_verified": false,
+  "double_cover_quadratic_rank_4_verified": false,
+  "evidence_state": "LOG_ONLY",
+  "notes": "No exact per-point or per-component Hessian minor certificate is bundled."
+}

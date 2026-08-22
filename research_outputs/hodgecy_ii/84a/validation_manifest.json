@@ -73,5 +73,20 @@
     ],
     "interpretation": "Formal block expansion beta_A: Z<double_lines> -> Z<formal_nodes>; no Hodge meaning assigned."
   },
-  "promotion_policy": "Do not promote to ordinary_node_verified until exact reducedness, support, and Hessian certificates are ingested."
+  "promotion_policy": "Do not promote to ordinary_node_verified until exact reducedness, support, and Hessian certificates are ingested.",
+  "gate_a_reconciled": true,
+  "support_verified": false,
+  "radical_verified": false,
+  "hessian_verified": false,
+  "frozen_node_ideal": null,
+  "gate_a_status": "degree112_certified",
+  "gate_a_blockers": [
+    "support_matches_28x4_blocks",
+    "radicality",
+    "geometric_support_count_112",
+    "branch_quadratic_rank_3",
+    "double_cover_quadratic_rank_4",
+    "frozen_exact_node_ideal",
+    "reproducible_cas_metadata"
+  ]
 }

@@ -1,0 +1,18 @@
+{
+  "arrangement_id": "84",
+  "status": "blocked",
+  "ordinary_node_verified": false,
+  "candidate_jacobian_input": "candidate_jacobian_input.sing",
+  "candidate_jacobian_input_sha256": "7319f1c503cbe569d0d0372b52ef0cebb33f8caf354d9756a722b43c0e40066d",
+  "frozen_node_ideal": null,
+  "reason": "No certificate-grade radical node ideal, support equality, or Hessian-rank certificate is present.",
+  "missing_components": [
+    "support_matches_28x4_blocks",
+    "radicality",
+    "geometric_support_count_112",
+    "branch_quadratic_rank_3",
+    "double_cover_quadratic_rank_4",
+    "frozen_exact_node_ideal",
+    "reproducible_cas_metadata"
+  ]
+}

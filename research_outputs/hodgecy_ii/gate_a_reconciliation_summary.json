@@ -1,0 +1,180 @@
+{
+  "schema": "hodgecy_ii_gate_a_reconciliation.v1",
+  "singular_available": false,
+  "macaulay2_available": false,
+  "sage_available": false,
+  "input_identities": {
+    "84": {
+      "arrangement_polynomial_sha256": "2b8a4755984481a872b12809242466ee67705aab6882458fe8222979e1c5c58e",
+      "quartic_sha256": "bb1fcf62cad3f791a0b52cacaa429d3fb6087a5d5e2f2a57861205deef556cb8",
+      "branch_polynomial_sha256": "6532d39fe05eba1e3af8a2bfc763f6102ed9523ccae6e4fefedfed530c646f4d",
+      "jacobian_generators_sha256": "2a1781adb5a5ffcac298fef3e36e5384352c1efbff2d7b76d5e49d1636162780"
+    },
+    "84a": {
+      "arrangement_polynomial_sha256": "d5c32195a152940c2999bec692894fa63d8b78522058b11899eda59463955f0b",
+      "quartic_sha256": "bb1fcf62cad3f791a0b52cacaa429d3fb6087a5d5e2f2a57861205deef556cb8",
+      "branch_polynomial_sha256": "e43e2ff8a5bad3418cea1f30b4a521517f50986f7c7fa5f7b4d4e102f7dcc59d",
+      "jacobian_generators_sha256": "7e1596ed7f517e2d74f9d2bfc25c72ffa47a0a8d232eae819bff15b1699ea963"
+    }
+  },
+  "decisions": {
+    "84": {
+      "arrangement_id": "84",
+      "current_status": "degree112_certified",
+      "promoted_status": "degree112_certified",
+      "can_promote": false,
+      "missing_components": [
+        "support_matches_28x4_blocks",
+        "radicality",
+        "geometric_support_count_112",
+        "branch_quadratic_rank_3",
+        "double_cover_quadratic_rank_4",
+        "frozen_exact_node_ideal",
+        "reproducible_cas_metadata"
+      ],
+      "components": [
+        {
+          "name": "saturated_jacobian_scheme",
+          "passed": true,
+          "evidence_state": "REPRODUCIBLE_BUT_INCOMPLETE",
+          "notes": "Historical Singular degree output exists, but no frozen saturated ideal generators are present."
+        },
+        {
+          "name": "zero_dimensionality",
+          "passed": true,
+          "evidence_state": "REPRODUCIBLE_BUT_INCOMPLETE",
+          "notes": "Cone dimension 1 corresponds to projective dimension 0 for the historical run."
+        },
+        {
+          "name": "degree_112",
+          "passed": true,
+          "evidence_state": "REPRODUCIBLE_BUT_INCOMPLETE",
+          "notes": "Machine-readable historical degree output records 112."
+        },
+        {
+          "name": "support_matches_28x4_blocks",
+          "passed": false,
+          "evidence_state": "LOG_ONLY",
+          "notes": "Formal 28 x 4 blocks exist, but no radical/equality certificate with the Jacobian support is present."
+        },
+        {
+          "name": "radicality",
+          "passed": false,
+          "evidence_state": "LOG_ONLY",
+          "notes": "Reducedness is asserted in prose only."
+        },
+        {
+          "name": "geometric_support_count_112",
+          "passed": false,
+          "evidence_state": "LOG_ONLY",
+          "notes": "No exact geometric support decomposition or component count is bundled."
+        },
+        {
+          "name": "branch_quadratic_rank_3",
+          "passed": false,
+          "evidence_state": "LOG_ONLY",
+          "notes": "No per-component Hessian minor/rank certificate is bundled."
+        },
+        {
+          "name": "double_cover_quadratic_rank_4",
+          "passed": false,
+          "evidence_state": "LOG_ONLY",
+          "notes": "No exact double-cover quadratic-rank certificate is bundled."
+        },
+        {
+          "name": "frozen_exact_node_ideal",
+          "passed": false,
+          "evidence_state": "UNKNOWN",
+          "notes": "No canonical radical node ideal artifact exists yet."
+        },
+        {
+          "name": "reproducible_cas_metadata",
+          "passed": false,
+          "evidence_state": "REPRODUCIBLE_BUT_INCOMPLETE",
+          "notes": "CAS executable/version is unavailable in this environment; historical script/output lacks full metadata."
+        }
+      ]
+    },
+    "84a": {
+      "arrangement_id": "84a",
+      "current_status": "degree112_certified",
+      "promoted_status": "degree112_certified",
+      "can_promote": false,
+      "missing_components": [
+        "support_matches_28x4_blocks",
+        "radicality",
+        "geometric_support_count_112",
+        "branch_quadratic_rank_3",
+        "double_cover_quadratic_rank_4",
+        "frozen_exact_node_ideal",
+        "reproducible_cas_metadata"
+      ],
+      "components": [
+        {
+          "name": "saturated_jacobian_scheme",
+          "passed": true,
+          "evidence_state": "REPRODUCIBLE_BUT_INCOMPLETE",
+          "notes": "Historical Singular degree output exists, but no frozen saturated ideal generators are present."
+        },
+        {
+          "name": "zero_dimensionality",
+          "passed": true,
+          "evidence_state": "REPRODUCIBLE_BUT_INCOMPLETE",
+          "notes": "Cone dimension 1 corresponds to projective dimension 0 for the historical run."
+        },
+        {
+          "name": "degree_112",
+          "passed": true,
+          "evidence_state": "REPRODUCIBLE_BUT_INCOMPLETE",
+          "notes": "Machine-readable historical degree output records 112."
+        },
+        {
+          "name": "support_matches_28x4_blocks",
+          "passed": false,
+          "evidence_state": "LOG_ONLY",
+          "notes": "Formal 28 x 4 blocks exist, but no radical/equality certificate with the Jacobian support is present."
+        },
+        {
+          "name": "radicality",
+          "passed": false,
+          "evidence_state": "LOG_ONLY",
+          "notes": "Reducedness is asserted in prose only."
+        },
+        {
+          "name": "geometric_support_count_112",
+          "passed": false,
+          "evidence_state": "LOG_ONLY",
+          "notes": "No exact geometric support decomposition or component count is bundled."
+        },
+        {
+          "name": "branch_quadratic_rank_3",
+          "passed": false,
+          "evidence_state": "LOG_ONLY",
+          "notes": "No per-component Hessian minor/rank certificate is bundled."
+        },
+        {
+          "name": "double_cover_quadratic_rank_4",
+          "passed": false,
+          "evidence_state": "LOG_ONLY",
+          "notes": "No exact double-cover quadratic-rank certificate is bundled."
+        },
+        {
+          "name": "frozen_exact_node_ideal",
+          "passed": false,
+          "evidence_state": "UNKNOWN",
+          "notes": "No canonical radical node ideal artifact exists yet."
+        },
+        {
+          "name": "reproducible_cas_metadata",
+          "passed": false,
+          "evidence_state": "REPRODUCIBLE_BUT_INCOMPLETE",
+          "notes": "CAS executable/version is unavailable in this environment; historical script/output lacks full metadata."
+        }
+      ]
+    }
+  },
+  "gate_a_complete": false,
+  "ready_for_defect_gate": false,
+  "ready_for_source_to_node_gate": false,
+  "raw_stronger_logs_reconciled": true
+}

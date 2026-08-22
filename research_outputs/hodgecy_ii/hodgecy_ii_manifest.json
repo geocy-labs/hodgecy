@@ -29,7 +29,7 @@
   "additional_full_fidelity_witnesses": [],
   "theorem_ready_count": 0,
   "unresolved_count": 1,
-  "tests_passed": "161 passed in 161.59s",
+  "tests_passed": "166 passed in 158.14s",
   "commits_created": [
     "5ef0143e347f4108dc7e955de838545dd88207be"
   ],
@@ -38,5 +38,37 @@
   "input_manifests": [
     "research/hodgecy_ii/input_manifests/84.json",
     "research/hodgecy_ii/input_manifests/84a.json"
-  ]
+  ],
+  "support_verified_84": false,
+  "support_verified_84a": false,
+  "radical_verified_84": false,
+  "radical_verified_84a": false,
+  "hessian_verified_84": false,
+  "hessian_verified_84a": false,
+  "frozen_node_ideal_84": null,
+  "frozen_node_ideal_84a": null,
+  "gate_a_complete": false,
+  "gate_a_blockers": {
+    "84": [
+      "support_matches_28x4_blocks",
+      "radicality",
+      "geometric_support_count_112",
+      "branch_quadratic_rank_3",
+      "double_cover_quadratic_rank_4",
+      "frozen_exact_node_ideal",
+      "reproducible_cas_metadata"
+    ],
+    "84a": [
+      "support_matches_28x4_blocks",
+      "radicality",
+      "geometric_support_count_112",
+      "branch_quadratic_rank_3",
+      "double_cover_quadratic_rank_4",
+      "frozen_exact_node_ideal",
+      "reproducible_cas_metadata"
+    ]
+  },
+  "gate_a_reconciliation": "research_outputs/hodgecy_ii/gate_a_reconciliation_summary.json",
+  "ready_for_defect_gate": false,
+  "ready_for_source_to_node_gate": false
 }

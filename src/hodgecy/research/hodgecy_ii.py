@@ -71,6 +71,33 @@ class ResultClass(str, Enum):
     PARTIALLY_RESOLVED = "PARTIALLY_RESOLVED"
 
 
+class GateAEvidenceState(str, Enum):
+    """Evidence classification for Gate A ordinary-node promotion."""
+
+    CERTIFICATE_GRADE = "CERTIFICATE_GRADE"
+    REPRODUCIBLE_BUT_INCOMPLETE = "REPRODUCIBLE_BUT_INCOMPLETE"
+    LOG_ONLY = "LOG_ONLY"
+    CLAIM_WITHOUT_REPRODUCIBLE_INPUT = "CLAIM_WITHOUT_REPRODUCIBLE_INPUT"
+    STALE_INPUT = "STALE_INPUT"
+    INCONSISTENT = "INCONSISTENT"
+    IRRELEVANT = "IRRELEVANT"
+    UNKNOWN = "UNKNOWN"
+
+
+GATE_A_REQUIRED_COMPONENTS = (
+    "saturated_jacobian_scheme",
+    "zero_dimensionality",
+    "degree_112",
+    "support_matches_28x4_blocks",
+    "radicality",
+    "geometric_support_count_112",
+    "branch_quadratic_rank_3",
+    "double_cover_quadratic_rank_4",
+    "frozen_exact_node_ideal",
+    "reproducible_cas_metadata",
+)
+
+
 @dataclass(frozen=True, slots=True)
 class FidelityLayer:
     """One level of a pairwise fidelity comparison."""
@@ -97,6 +124,52 @@ class FidelityLayer:
             "realization_status": self.realization_status.value,
             "source_label": self.source_label,
             "notes": self.notes,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class GateAComponent:
+    """One required component of ordinary-node verification."""
+
+    name: str
+    passed: bool
+    evidence_state: GateAEvidenceState
+    notes: str
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "name": self.name,
+            "passed": self.passed,
+            "evidence_state": self.evidence_state.value,
+            "notes": self.notes,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class GateAPromotionDecision:
+    """Promotion decision for one arrangement at Gate A."""
+
+    arrangement_id: str
+    current_status: str
+    promoted_status: str
+    components: tuple[GateAComponent, ...]
+
+    @property
+    def can_promote(self) -> bool:
+        return all(component.passed for component in self.components)
+
+    @property
+    def missing_components(self) -> tuple[str, ...]:
+        return tuple(component.name for component in self.components if not component.passed)
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "arrangement_id": self.arrangement_id,
+            "current_status": self.current_status,
+            "promoted_status": self.promoted_status,
+            "can_promote": self.can_promote,
+            "missing_components": list(self.missing_components),
+            "components": [component.to_dict() for component in self.components],
         }
 
 
@@ -219,4 +292,34 @@ def source_survival_profile(
         evidence_status=EvidenceStatus.CANDIDATE,
         realization_status=RealizationStatus.NODE_REALIZED,
         notes=notes or "Comparison matrix supplied; torsion/saturation survival remains to be computed.",
+    )
+
+
+def gate_a_promotion_decision(
+    arrangement_id: str,
+    *,
+    current_status: str,
+    passed_components: Mapping[str, bool],
+    component_evidence: Mapping[str, GateAEvidenceState] | None = None,
+    component_notes: Mapping[str, str] | None = None,
+) -> GateAPromotionDecision:
+    """Return a conservative ordinary-node promotion decision."""
+
+    evidence = component_evidence or {}
+    notes = component_notes or {}
+    components = tuple(
+        GateAComponent(
+            name=component,
+            passed=bool(passed_components.get(component, False)),
+            evidence_state=evidence.get(component, GateAEvidenceState.UNKNOWN),
+            notes=notes.get(component, ""),
+        )
+        for component in GATE_A_REQUIRED_COMPONENTS
+    )
+    promoted = "ordinary_node_verified" if all(component.passed for component in components) else current_status
+    return GateAPromotionDecision(
+        arrangement_id=arrangement_id,
+        current_status=current_status,
+        promoted_status=promoted,
+        components=components,
     )

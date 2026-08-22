@@ -1,0 +1,9 @@
+{
+  "arrangement_id": "84",
+  "status": "UNRESOLVED",
+  "block_count": 28,
+  "formal_node_count": 112,
+  "support_verified": false,
+  "evidence_state": "LOG_ONLY",
+  "notes": "Formal blocks are available, but equality with the saturated Jacobian support is not certificate-grade."
+}

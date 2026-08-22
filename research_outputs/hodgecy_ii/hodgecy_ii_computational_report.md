@@ -138,3 +138,18 @@ Research branch: `research/hodgecy-ii-fidelity`.
 
 Next checkpoint should ingest or regenerate exact Gate A node certificates
 before any theorem candidate is promoted.
+## Gate A Reconciliation
+
+Historical stronger-claim artifacts were inventoried and reconciled. The only machine-readable certificate-level progress currently present is the historical Singular-backed degree output: both arrangements have cone dimension 1 and degree 112 for the Jacobian standard-basis computation. This supports `degree112_certified` but is not sufficient for `ordinary_node_verified`.
+
+The following required components remain unresolved for both 84 and 84a:
+
+- support equality between the saturated Jacobian scheme and the predicted 28 x 4 block union
+- radicality / reducedness as a machine-readable exact certificate
+- geometric support count as 112 distinct points over Qbar
+- branch quadratic rank 3 at every support component
+- double-cover quadratic rank 4 at every support component
+- frozen exact radical node ideal
+- reproducible CAS metadata with executable/version in the current environment
+
+No defect, source-to-node, or Hodge-atom gate was attempted in this pass. Gate A remains incomplete and the status for both arrangements remains `degree112_certified`.
