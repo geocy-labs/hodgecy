@@ -2,7 +2,11 @@
 
 HodgeCY is a computational Hodge/Calabi--Yau data system and reproducibility framework for assembling, querying, relating, and validating large heterogeneous Calabi--Yau and Hodge-theoretic datasets.
 
-Current release: **HodgeCY v1.0.0**, the first comprehensive HodgeCY corpus release. A v1.0.0 Zenodo DOI has not yet been minted; the historical HodgeCY I / v0.2.0 DOI remains separate.
+Current release: **HodgeCY v1.0.0 - First Comprehensive Corpus Release**.
+
+DOI: https://doi.org/10.5281/zenodo.22062175
+
+The historical HodgeCY I / v0.2.0 DOI remains separate.
 
 The repository contains the HodgeCY Python package, data adapters, query/catalog infrastructure, tests, small fixtures, documentation, and HodgeCY I reproducibility assets. The production research corpus is intentionally kept outside Git and is addressed through a local data root.
 
@@ -239,11 +243,12 @@ The HodgeCY software is MIT licensed; see [`LICENSE`](LICENSE). External dataset
 
 ## Citation
 
-For HodgeCY v1.0.0, cite the repository/tag metadata until Zenodo mints a v1.0.0 DOI:
+For the current comprehensive HodgeCY release, cite:
 
 ```text
-Rahman, Abdul. HodgeCY: A Computational Hodge and Calabi--Yau Data System.
-Version 1.0.0. GitHub. https://github.com/geocy-labs/hodgecy
+Rahman, A. (2026). HodgeCY v1.0.0 - First Comprehensive Corpus Release
+(Version 1.0.0) [Computer software]. Zenodo.
+https://doi.org/10.5281/zenodo.22062175
 ```
 
 For the narrower historical HodgeCY I / v0.2.0 double-octic computational release, cite:

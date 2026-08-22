@@ -2,6 +2,8 @@
 
 This directory contains the small, public metadata view of the HodgeCY v1.0.0 initial comprehensive corpus. It is intentionally not the corpus itself.
 
+Release DOI: https://doi.org/10.5281/zenodo.22062175
+
 ## Current Audited State
 
 | Measure | Value |

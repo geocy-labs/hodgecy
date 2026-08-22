@@ -20,6 +20,8 @@
   },
   "physical_source_count": 187,
   "query_table_count": 32,
+  "release_doi": "10.5281/zenodo.22062175",
+  "release_url": "https://doi.org/10.5281/zenodo.22062175",
   "release_version": "1.0.0",
   "relationship_edge_count": 241798,
   "software_commit": "f6d030cd0b17447b725b42d1a5af440bdd20959f",

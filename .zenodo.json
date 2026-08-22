@@ -20,7 +20,7 @@
     "reproducibility"
   ],
   "license": "MIT",
-  "notes": "No v1.0.0 DOI is declared in this repository metadata before Zenodo mints one. The historical HodgeCY I / v0.2.0 archived software DOI is 10.5281/zenodo.21429481 and remains a related earlier research output, not the v1.0.0 DOI.",
+  "notes": "Published HodgeCY v1.0.0 DOI: 10.5281/zenodo.22062175. The historical HodgeCY I / v0.2.0 archived software DOI is 10.5281/zenodo.21429481 and remains a related earlier research output, not the v1.0.0 DOI.",
   "publication_date": "2026-08-22",
   "related_identifiers": [
     {
@@ -39,7 +39,7 @@
       "scheme": "doi"
     }
   ],
-  "title": "HodgeCY: A Computational Hodge and Calabi--Yau Data System",
+  "title": "HodgeCY v1.0.0 - First Comprehensive Corpus Release",
   "upload_type": "software",
-  "version": "v1.0.0"
+  "version": "1.0.0"
 }

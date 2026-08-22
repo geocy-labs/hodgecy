@@ -4,6 +4,8 @@ Release date: 2026-08-22
 
 HodgeCY v1.0.0 is the first comprehensive HodgeCY corpus release. It promotes the audited data-system foundation, public corpus documentation, provenance model, query/catalog infrastructure, and HodgeCY I compatibility layer as the current release line.
 
+Zenodo archive: https://doi.org/10.5281/zenodo.22062175
+
 ## Audited Corpus State
 
 | Measure | Value |
@@ -47,7 +49,7 @@ HodgeCY I / v0.2.0 remains the historical theorem-bearing double-octic computati
 
 https://doi.org/10.5281/zenodo.21429481
 
-That DOI is not the v1.0.0 DOI. No v1.0.0 Zenodo DOI has been minted at the time of this release-candidate preparation.
+That DOI is not the v1.0.0 DOI. The v1.0.0 archive DOI is https://doi.org/10.5281/zenodo.22062175.
 
 ## Known Limitations
 

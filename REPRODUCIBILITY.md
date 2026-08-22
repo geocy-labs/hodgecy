@@ -2,6 +2,8 @@
 
 HodgeCY has several reproducibility layers. A fresh clone contains the package, tests, fixtures, public metadata summaries, and HodgeCY I release assets; it does not contain the 574,616,978-record production corpus.
 
+The HodgeCY v1.0.0 release archive is available at https://doi.org/10.5281/zenodo.22062175.
+
 ## CI-Safe Repository Tests
 
 Run the ordinary repository test suite with:

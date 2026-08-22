@@ -1,12 +1,13 @@
 cff-version: 1.2.0
-title: "HodgeCY: A Computational Hodge and Calabi--Yau Data System"
+title: "HodgeCY v1.0.0 - First Comprehensive Corpus Release"
 message: "If you use HodgeCY v1.0.0, please cite the software release and acknowledge the external source datasets used for your analysis."
 type: software
 authors:
   - family-names: Rahman
     given-names: Abdul
 version: "1.0.0"
+doi: "10.5281/zenodo.22062175"
 date-released: "2026-08-22"
 repository-code: "https://github.com/geocy-labs/hodgecy"
 license: MIT
-abstract: "HodgeCY v1.0.0 is the first comprehensive HodgeCY data-system release, providing source-aware Calabi--Yau and Hodge-theoretic corpus infrastructure, typed schemas, query/catalog support, provenance and checksum tracking, relationship infrastructure, exact algebra utilities, certificate support, and HodgeCY I reproducibility assets. The v1.0.0 Zenodo DOI has not yet been minted."
+abstract: "HodgeCY v1.0.0 is the first comprehensive HodgeCY data-system release, providing source-aware Calabi--Yau and Hodge-theoretic corpus infrastructure, typed schemas, query/catalog support, provenance and checksum tracking, relationship infrastructure, exact algebra utilities, certificate support, and HodgeCY I reproducibility assets."
