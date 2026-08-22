@@ -29,10 +29,12 @@
   "additional_full_fidelity_witnesses": [],
   "theorem_ready_count": 0,
   "unresolved_count": 1,
-  "tests_passed": null,
-  "commits_created": [],
+  "tests_passed": "161 passed in 161.59s",
+  "commits_created": [
+    "5ef0143e347f4108dc7e955de838545dd88207be"
+  ],
   "remote_branch": "research/hodgecy-ii-fidelity",
-  "remote_verified": false,
+  "remote_verified": true,
   "input_manifests": [
     "research/hodgecy_ii/input_manifests/84.json",
     "research/hodgecy_ii/input_manifests/84a.json"
