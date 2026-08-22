@@ -4,7 +4,7 @@
 
 - Is the complete HodgeCY II universe 455? **NO**.
 - The number 455 is the CKC-numbered subuniverse denominator only. HodgeCY v1.0.0 also contains Cynk-Meyer table records, supplemental 84a, source assemblies, node/conifold artifacts, and operator/arithmetic/fibration enrichment routes.
-- The production `HODGECY_DATA_ROOT` was not set in this run, so normalized production relationship parquet inspection is recorded as unresolved rather than silently omitted.
+- This report was generated in explicit `--repo-local` mode, so normalized production relationship parquet inspection is out of scope.
 
 ## Counts
 

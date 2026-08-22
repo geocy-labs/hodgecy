@@ -1,6 +1,6 @@
-# Exhaustive Fidelity Discovery Report
+# Partial Repo-Local Fidelity Discovery Report
 
-This report is exhaustive for the repo-local v1.0.0 evidence loaded by `scripts/hodgecy_ii_universe_deep_dive.py`. Production-root relationship tables were not available in this shell.
+This PARTIAL_REPO_LOCAL report covers only the repo-local evidence loaded by `scripts/hodgecy_ii_universe_deep_dive.py --repo-local`. It is not a full-corpus exhaustive discovery report.
 
 ## 84/84a-Like Sets: Same Local Source Inventory And Same Ordinary Hodge Data
 

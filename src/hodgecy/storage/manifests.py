@@ -3,6 +3,7 @@ from __future__ import annotations
 import csv
 import json
 from pathlib import Path
+import re
 from typing import Any, Iterable
 
 from hodgecy.core.dataset import ConstructionFamily, DatasetDescriptor
@@ -23,6 +24,11 @@ def _enum_value(enum_cls, value):
             return enum_cls[raw].value
         except KeyError:
             raise
+
+
+def _token(value: str) -> str:
+    token = re.sub(r"[^A-Za-z0-9._=-]+", "_", value).strip("_")
+    return (token if token and token[0].isalnum() else "id_" + token)[:96]
 
 _DESCRIPTOR_KEYS = {
     "dataset_id", "id", "id_schema_version", "name", "construction_family", "family", "acquisition_status",
@@ -71,7 +77,7 @@ def descriptor_from_manifest_record(record: dict[str, Any]) -> DatasetDescriptor
 
 
 def instance_from_manifest_record(record: dict[str, Any], descriptor: DatasetDescriptor) -> DatasetInstance:
-    instance_id = str(record.get("instance_id") or f"{descriptor.dataset_id.local_id}_{descriptor.source_version or 'registry'}")
+    instance_id = _token(str(record.get("instance_id") or f"{descriptor.dataset_id.local_id}_{descriptor.source_version or 'registry'}"))
     return DatasetInstance(
         instance_id=instance_id,
         dataset_id=descriptor.dataset_id,
@@ -91,7 +97,7 @@ def source_refs_from_manifest_record(record: dict[str, Any], instance: DatasetIn
     source_uri = record.get("uri")
     if not source_path and not source_uri:
         return ()
-    source_id = str(record.get("source_id") or f"{instance.instance_id}_source")
+    source_id = _token(str(record.get("source_id") or f"{instance.instance_id}_source"))
     return (
         PhysicalSourceRef(
             source_id=source_id,

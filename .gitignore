@@ -4,3 +4,8 @@ __pycache__/
 .pytest_cache/
 *.duckdb
 *.duckdb.wal
+.env
+.env.local
+.hodgecy.local.json
+.hodgecy/
+local_data_config.*

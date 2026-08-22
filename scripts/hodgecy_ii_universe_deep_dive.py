@@ -9,6 +9,7 @@ fidelity.  Source-assembly diagnostics remain source-level diagnostics.
 from __future__ import annotations
 
 import csv
+import argparse
 import hashlib
 import itertools
 import json
@@ -34,6 +35,7 @@ from hodgecy.research.hodgecy_ii_census import (  # noqa: E402
     stable_fingerprint,
     torsion_profile,
 )
+from hodgecy.research.full_corpus_context import FullCorpusContext  # noqa: E402
 
 OUT_ROOT = REPO_ROOT / "research_outputs" / "hodgecy_ii"
 UNIVERSE_DIR = OUT_ROOT / "universe"
@@ -41,6 +43,7 @@ UNIVERSE_DIR = OUT_ROOT / "universe"
 DATASET_CENSUS = REPO_ROOT / "docs" / "corpus" / "current_dataset_census.tsv"
 CORPUS_SUMMARY = REPO_ROOT / "docs" / "corpus" / "current_corpus_summary.json"
 CKC_INDEX = REPO_ROOT / "data" / "raw" / "cynk_kocel_cynk_2026" / "ckc_equation_index_001_455.json"
+CKC_FORGOTTEN_TABLE = REPO_ROOT / "data" / "raw" / "cynk_kocel_cynk_2026" / "ckc_forgotten_arrangements_table.json"
 CYNK_MEYER_TABLE1 = REPO_ROOT / "data" / "raw" / "cynk_meyer_table1.csv"
 CYNK_MEYER_FAMILIES = REPO_ROOT / "data" / "raw" / "cynk_meyer_families.json"
 CYNK_MEYER_RIGID = REPO_ROOT / "data" / "raw" / "cynk_meyer_rigid_equations.json"
@@ -59,14 +62,6 @@ RELATIONSHIP_DATASETS = {
 }
 
 SPECIAL_FOCUS_IDS = {"84", "84a", "239", "240", "241"}
-
-FORGOTTEN_CKC_HODGE_ROWS = {
-    "451": {"p3": 13, "p4_0": 6, "p4_1": 3, "p5_0": 0, "p5_1": 1, "p5_2": 0, "l3": 1, "h11": 46, "h12": 0, "euler": 92},
-    "452": {"p3": 20, "p4_0": 9, "p4_1": 0, "p5_0": 0, "p5_1": 0, "p5_2": 0, "l3": 0, "h11": 38, "h12": 0, "euler": 76},
-    "453": {"p3": 20, "p4_0": 9, "p4_1": 0, "p5_0": 0, "p5_1": 0, "p5_2": 0, "l3": 0, "h11": 38, "h12": 0, "euler": 76},
-    "454": {"p3": 24, "p4_0": 8, "p4_1": 0, "p5_0": 0, "p5_1": 0, "p5_2": 0, "l3": 0, "h11": 37, "h12": 1, "euler": 72},
-    "455": {"p3": 28, "p4_0": 7, "p4_1": 0, "p5_0": 0, "p5_1": 0, "p5_2": 0, "l3": 0, "h11": 36, "h12": 2, "euler": 68},
-}
 
 
 def read_json(path: Path) -> Any:
@@ -164,7 +159,7 @@ def load_dataset_audit() -> tuple[list[dict[str, Any]], dict[str, Any]]:
                 "row_level_inspected": "REPO_LOCAL" if dataset_id not in RELATIONSHIP_DATASETS else "PRODUCTION_ROOT_REQUIRED",
                 "relevant_to_hodgecy_ii": yes_no(direct or relationship or enriches),
                 "relevance_reason": dataset_relevance_reason(row, direct, relationship, enriches),
-                "production_root_available": yes_no(bool(os.environ.get("HODGECY_DATA_ROOT"))),
+                "production_root_available": "REPO_LOCAL_NOT_APPLICABLE",
             }
         )
     return audit, summary
@@ -219,6 +214,18 @@ def load_table1_rows() -> dict[str, dict[str, Any]]:
     for row in read_csv(CYNK_MEYER_TABLE1):
         row = {key: parse_scalar(value) for key, value in row.items()}
         rows[str(row["arrangement"])] = row
+    return rows
+
+
+def load_ckc_forgotten_rows() -> dict[str, dict[str, Any]]:
+    payload = read_json(CKC_FORGOTTEN_TABLE)
+    rows = {}
+    for row in payload["records"]:
+        normalized = dict(row)
+        normalized["source_dataset"] = "cynk_kocel_cynk_2026_forgotten_arrangements_table"
+        normalized["source_reference"] = payload["source_reference"]
+        normalized["validation_state"] = payload["validation_state"]
+        rows[str(row["arrangement_id"])] = normalized
     return rows
 
 
@@ -287,12 +294,13 @@ def compact_snf(values: Iterable[Any] | None) -> str | None:
 def build_ckc_presentations(
     ckc_records: dict[str, dict[str, Any]],
     table1_rows: dict[str, dict[str, Any]],
+    forgotten_rows: dict[str, dict[str, Any]],
     assembly_by_id: dict[str, Any],
 ) -> list[dict[str, Any]]:
     presentations = []
     for arrangement_id in sorted(ckc_records, key=natural_arrangement_key):
         record = ckc_records[arrangement_id]
-        table_row = table1_rows.get(arrangement_id) or FORGOTTEN_CKC_HODGE_ROWS.get(arrangement_id)
+        table_row = table1_rows.get(arrangement_id) or forgotten_rows.get(arrangement_id)
         assembly = assembly_by_id.get(arrangement_id)
         inventory = inventory_from_row(table_row)
         hodge = hodge_from_row(table_row)
@@ -303,7 +311,7 @@ def build_ckc_presentations(
         presentations.append(
             {
                 "universe_id": f"ckc:{arrangement_id}",
-                "hodgecy_dataset_id": "double_octics_external",
+                "hodgecy_dataset_id": "cynk_kocel_cynk_2026",
                 "source_dataset": "cynk_kocel_cynk_2026",
                 "native_source_record_id": arrangement_id,
                 "normalized_hodgecy_id": f"double_octic:ckc:{arrangement_id}",
@@ -564,14 +572,14 @@ def build_operator_links(table1_rows: dict[str, dict[str, Any]]) -> list[dict[st
     return links
 
 
-def build_crosswalk(ckc_presentations: list[dict[str, Any]], table1_rows: dict[str, dict[str, Any]], assembly_rows: list[dict[str, Any]], node_links: list[dict[str, Any]], operator_links: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def build_crosswalk(ckc_presentations: list[dict[str, Any]], table1_rows: dict[str, dict[str, Any]], forgotten_rows: dict[str, dict[str, Any]], assembly_rows: list[dict[str, Any]], node_links: list[dict[str, Any]], operator_links: list[dict[str, Any]]) -> list[dict[str, Any]]:
     assembly_ids = {str(row["native_source_record_id"]) for row in assembly_rows}
     node_ids = {str(row["arrangement_id"]) for row in node_links}
     operator_ids = {str(row["arrangement_id"]) for row in operator_links}
     rows = []
     for row in ckc_presentations:
         arrangement_id = str(row["ckc_id"])
-        table = table1_rows.get(arrangement_id) or FORGOTTEN_CKC_HODGE_ROWS.get(arrangement_id)
+        table = table1_rows.get(arrangement_id) or forgotten_rows.get(arrangement_id)
         rows.append(
             {
                 "ckc_id": arrangement_id,
@@ -750,7 +758,14 @@ def build_discovery_sets(presentations: list[dict[str, Any]], assembly_rows: lis
         if len(members) <= 1:
             continue
         ids = [m["presentation_id"] for m in sorted(members, key=lambda item: natural_arrangement_key(item["presentation_id"]))]
-        assembly_classes = sorted({m["integral_signature"] or "assembly_unavailable" for m in members})
+        known_assembly_classes = sorted({m["integral_signature"] for m in members if m.get("integral_signature")})
+        unresolved_count = sum(1 for m in members if not m.get("integral_signature"))
+        if len(known_assembly_classes) > 1:
+            finer_source_variation: bool | str = True
+        elif unresolved_count:
+            finer_source_variation = "UNKNOWN"
+        else:
+            finer_source_variation = False
         fixed_local_hodge.append(
             {
                 "set_id": f"fixed_local_hodge_{index:03d}",
@@ -759,8 +774,9 @@ def build_discovery_sets(presentations: list[dict[str, Any]], assembly_rows: lis
                 "local_inventory": local_sig,
                 "hodge": hodge_sig,
                 "source_level_result": "same local source inventory and same ordinary Hodge data",
-                "finer_source_variation": len(assembly_classes) > 1 or "assembly_unavailable" in assembly_classes,
-                "source_assembly_classes": assembly_classes,
+                "finer_source_variation": finer_source_variation,
+                "source_assembly_classes": known_assembly_classes,
+                "source_assembly_unresolved_members": unresolved_count,
                 "node_level_result": "unresolved",
                 "hodge_atom_result": "unresolved",
             }
@@ -919,7 +935,7 @@ def build_reports(
         "",
         f"- Is the complete HodgeCY II universe 455? **{denominators['IS_COMPLETE_HODGECY_II_UNIVERSE_455']}**.",
         "- The number 455 is the CKC-numbered subuniverse denominator only. HodgeCY v1.0.0 also contains Cynk-Meyer table records, supplemental 84a, source assemblies, node/conifold artifacts, and operator/arithmetic/fibration enrichment routes.",
-        "- The production `HODGECY_DATA_ROOT` was not set in this run, so normalized production relationship parquet inspection is recorded as unresolved rather than silently omitted.",
+        "- This report was generated in explicit `--repo-local` mode, so normalized production relationship parquet inspection is out of scope.",
         "",
         "## Counts",
         "",
@@ -957,9 +973,9 @@ def build_reports(
     (UNIVERSE_DIR / "universe_summary.md").write_text("\n".join(universe_lines) + "\n", encoding="utf-8")
 
     fidelity_lines = [
-        "# Exhaustive Fidelity Discovery Report",
+        "# Partial Repo-Local Fidelity Discovery Report",
         "",
-        "This report is exhaustive for the repo-local v1.0.0 evidence loaded by `scripts/hodgecy_ii_universe_deep_dive.py`. Production-root relationship tables were not available in this shell.",
+        "This PARTIAL_REPO_LOCAL report covers only the repo-local evidence loaded by `scripts/hodgecy_ii_universe_deep_dive.py --repo-local`. It is not a full-corpus exhaustive discovery report.",
         "",
         "## 84/84a-Like Sets: Same Local Source Inventory And Same Ordinary Hodge Data",
         "",
@@ -998,7 +1014,7 @@ def build_reports(
         "- The older `research_outputs/hodgecy_ii/census` output is preserved as a fixed-equation pilot census.",
         "- The new universe pass does not use `census_eligible` as a scientific gate; every relevant CKC source row is represented with availability/provenance metadata.",
         "- `455` is valid for the CKC-numbered pairwise denominator, not for the complete v1.0.0 HodgeCY II research universe.",
-        "- Production relationship tables require `HODGECY_DATA_ROOT`; this run records those joins as unresolved.",
+        "- Production relationship traversal is handled by `scripts/hodgecy_full_corpus_doctor.py`; this repo-local notebook records those joins as out of scope.",
         "- Source assembly is kept separate from node/LMHS/Hodge-atom realization under the Problem 7.10 firewall.",
     ]
     (OUT_ROOT / "discovery_notes.md").write_text("\n".join(notes) + "\n", encoding="utf-8")
@@ -1058,16 +1074,17 @@ def compute_denominators(
     }
 
 
-def main() -> None:
+def run_repo_local() -> None:
     UNIVERSE_DIR.mkdir(parents=True, exist_ok=True)
     dataset_audit, corpus_summary = load_dataset_audit()
     ckc_payload, ckc_records = load_ckc_records()
     table1_rows = load_table1_rows()
+    forgotten_rows = load_ckc_forgotten_rows()
     assemblies = load_source_assemblies()
     assembly_rows = build_assembly_rows(assemblies)
     assembly_by_id = {str(row["native_source_record_id"]): row for row in assembly_rows}
 
-    ckc_presentations = build_ckc_presentations(ckc_records, table1_rows, {record.arrangement_id: record for record in assemblies})
+    ckc_presentations = build_ckc_presentations(ckc_records, table1_rows, forgotten_rows, {record.arrangement_id: record for record in assemblies})
     cynk_records = build_cynk_meyer_records(table1_rows)
     equation_records = build_equation_records()
     node_links = build_node_links()
@@ -1083,13 +1100,13 @@ def main() -> None:
     source_presentations = source_presentations_for_pairwise(ckc_presentations, table1_rows, assembly_rows)
     pairwise_rows = build_pairwise_rows(source_presentations)
     discovery = build_discovery_sets(source_presentations, assembly_rows, node_links)
-    crosswalk = build_crosswalk(ckc_presentations, table1_rows, assembly_rows, node_links, operator_links)
+    crosswalk = build_crosswalk(ckc_presentations, table1_rows, forgotten_rows, assembly_rows, node_links, operator_links)
     denominators = compute_denominators(ckc_presentations, cynk_records, equation_records, assembly_rows, node_links, operator_links)
 
     hodge_enrichments = []
     for arrangement_id, row in sorted(table1_rows.items(), key=lambda item: natural_arrangement_key(item[0])):
         hodge_enrichments.append({"arrangement_id": arrangement_id, "source_dataset": "cynk_meyer_table1", **{key: row.get(key) for key in (*INVENTORY_KEYS, *HODGE_KEYS, "rigid", "modular_form", "hodgecy_role")}})
-    for arrangement_id, row in FORGOTTEN_CKC_HODGE_ROWS.items():
+    for arrangement_id, row in forgotten_rows.items():
         hodge_enrichments.append({"arrangement_id": arrangement_id, "source_dataset": "ckc_forgotten_arrangements_table", **row})
 
     output_paths = {
@@ -1138,7 +1155,7 @@ def main() -> None:
         "dataset_audit_count": len(dataset_audit),
         "dataset_audit": dataset_audit,
         "ckc_index_summary": {key: ckc_payload.get(key) for key in ("total_expected_records", "records_loaded", "parser_coverage_complete", "full_validated_dataset_loaded", "validation_status")},
-        "production_data_root": os.environ.get("HODGECY_DATA_ROOT"),
+        "production_data_root": "PARTIAL_REPO_LOCAL_MODE_NOT_RECORDED",
         "production_relationship_tables_loaded": False,
         "problem_7_10_firewall": "source assembly is not node relation, LMHS, or Hodge atom realization without a natural comparison map",
         "outputs": {key: rel(path) for key, path in output_paths.items()},
@@ -1154,6 +1171,30 @@ def main() -> None:
     print(f"- repo-local comparable source presentations: {len(source_presentations)}")
     print(f"- pairwise comparisons: {len(pairwise_rows)}")
     print(f"- complete HodgeCY II universe is 455: {denominators['IS_COMPLETE_HODGECY_II_UNIVERSE_455']}")
+
+
+def run_full_corpus_preflight(root: str | None = None) -> None:
+    context = FullCorpusContext.open(root)
+    context.assert_v1_ready()
+    counts = context.summary_counts()
+    print("HodgeCY II full-corpus context ready:")
+    print(f"- logical datasets: {counts['logical_dataset_count']}")
+    print(f"- dataset instances: {counts['instance_count']}")
+    print(f"- physical sources: {counts['physical_source_count']}")
+    print(f"- query tables: {counts['query_table_count']}")
+    print(f"- relationship edges: {counts['relationship_edge_count']}")
+    print("- discovery not run in activation/repair mode")
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="HodgeCY II universe entry point.")
+    parser.add_argument("--root", default=None, help="Production HODGECY_DATA_ROOT for full-corpus mode.")
+    parser.add_argument("--repo-local", action="store_true", help="Run the historical PARTIAL_REPO_LOCAL generator explicitly.")
+    args = parser.parse_args()
+    if args.repo_local:
+        run_repo_local()
+        return
+    run_full_corpus_preflight(args.root)
 
 
 if __name__ == "__main__":

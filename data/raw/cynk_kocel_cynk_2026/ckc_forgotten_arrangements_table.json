@@ -1,0 +1,13 @@
+{
+  "schema": "ckc_forgotten_arrangements_table.v1",
+  "source_reference": "Cynk--Kocel--Cynk 2026, forgotten arrangements table in arXiv source 2602.19413",
+  "source_artifact": "research_outputs/hodgecy_ii/deep_dive/source_discovery/symmetries4_arxiv.tex",
+  "validation_state": "source_reported_from_ckc_arxiv_tex",
+  "records": [
+    {"arrangement_id": "451", "p3": 13, "p4_0": 6, "p4_1": 3, "p5_0": 0, "p5_1": 1, "p5_2": 0, "l3": 1, "h11": 46, "h12": 0, "euler": 92},
+    {"arrangement_id": "452", "p3": 20, "p4_0": 9, "p4_1": 0, "p5_0": 0, "p5_1": 0, "p5_2": 0, "l3": 0, "h11": 38, "h12": 0, "euler": 76},
+    {"arrangement_id": "453", "p3": 20, "p4_0": 9, "p4_1": 0, "p5_0": 0, "p5_1": 0, "p5_2": 0, "l3": 0, "h11": 38, "h12": 0, "euler": 76},
+    {"arrangement_id": "454", "p3": 24, "p4_0": 8, "p4_1": 0, "p5_0": 0, "p5_1": 0, "p5_2": 0, "l3": 0, "h11": 37, "h12": 1, "euler": 72},
+    {"arrangement_id": "455", "p3": 28, "p4_0": 7, "p4_1": 0, "p5_0": 0, "p5_1": 0, "p5_2": 0, "l3": 0, "h11": 36, "h12": 2, "euler": 68}
+  ]
+}

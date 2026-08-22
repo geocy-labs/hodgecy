@@ -16,17 +16,18 @@ EXPECTED_KS_ROWS = 473_800_776
 def main() -> int:
     parser = argparse.ArgumentParser(description="Read-only HodgeCY data catalog smoke check")
     parser.add_argument("--root", default=None, help="HODGECY data root; defaults to environment/config")
+    parser.add_argument("--catalog-name", default="current_corpus", help="Catalog name under HODGECY_DATA_ROOT/catalogs")
     parser.add_argument("--create", action="store_true", help="Create metadata catalog if missing")
     args = parser.parse_args()
 
     root = open_data_root(args.root, require_exists=True)
-    catalog = open_catalog(root, create=args.create)
+    catalog = open_catalog(root, name=args.catalog_name, create=args.create, read_only=not args.create)
     manifest = root.manifests / "datasets.json"
-    if manifest.exists():
+    if args.create and manifest.exists():
         catalog.bootstrap_manifest(manifest)
 
     ks_dir = root.root / KS_RELATIVE_DIR
-    if ks_dir.exists():
+    if args.create and ks_dir.exists():
         parquet_files = sorted(ks_dir.glob("*.parquet"))
         if parquet_files:
             descriptor = DatasetDescriptor(
@@ -50,8 +51,16 @@ def main() -> int:
             ))
             print(f"KS parquet files found: {len(parquet_files)}")
             print(f"Expected KS rows: {EXPECTED_KS_ROWS}")
+    elif ks_dir.exists():
+        parquet_files = sorted(ks_dir.glob("*.parquet"))
+        if parquet_files:
+            print(f"KS parquet files found: {len(parquet_files)}")
+            print(f"Expected KS rows: {EXPECTED_KS_ROWS}")
     print(f"Catalog: {catalog.path}")
     print(f"Datasets known: {len(catalog.list_datasets())}")
+    print(f"Instances known: {len(catalog.list_instances())}")
+    print(f"Physical sources known: {len(catalog.list_physical_sources())}")
+    print(f"Query tables known: {len(catalog.list_tables())}")
     return 0
 
 

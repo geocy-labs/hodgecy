@@ -10,6 +10,13 @@ from .errors import ValidationError
 
 _FAMILY_RE = re.compile(r"^[a-z][a-z0-9_]*$")
 
+
+def normalize_construction_family(name: str) -> str:
+    normalized = re.sub(r"[^a-z0-9_]+", "_", str(name).lower()).strip("_")
+    if not normalized or not normalized[0].isalpha():
+        normalized = f"source_registry_{normalized}".strip("_")
+    return normalized or "source_registry"
+
 @dataclass(frozen=True, slots=True)
 class ConstructionFamily:
     name: str
@@ -20,7 +27,7 @@ class ConstructionFamily:
 
     @classmethod
     def known(cls, name: str) -> "ConstructionFamily":
-        return cls(name)
+        return cls(normalize_construction_family(name))
 
     def to_dict(self) -> dict[str, str]:
         return {"name": self.name}
@@ -65,7 +72,7 @@ class DatasetDescriptor:
     @classmethod
     def from_dict(cls, payload: dict[str, Any]) -> "DatasetDescriptor":
         return cls(
-            dataset_id=HodgeCYID.from_dict(payload["dataset_id"]), construction_family=ConstructionFamily(str(payload["construction_family"]["name"])),
+            dataset_id=HodgeCYID.from_dict(payload["dataset_id"]), construction_family=ConstructionFamily.known(str(payload["construction_family"]["name"])),
             name=str(payload["name"]), acquisition_status=AcquisitionStatus(payload["acquisition_status"]),
             redistribution_status=RedistributionStatus(payload["redistribution_status"]), schema_version=SchemaVersion.from_dict(payload["schema_version"]),
             source_version=payload.get("source_version"), record_semantics=payload.get("record_semantics"),

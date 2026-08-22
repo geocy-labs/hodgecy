@@ -21,7 +21,7 @@ spec.loader.exec_module(deep_dive)
 
 
 def test_universe_deep_dive_outputs_and_denominators() -> None:
-    deep_dive.main()
+    deep_dive.run_repo_local()
 
     manifest = json.loads((OUT_ROOT / "universe" / "universe_manifest.json").read_text(encoding="utf-8"))
     denominators = manifest["denominators"]
@@ -35,7 +35,7 @@ def test_universe_deep_dive_outputs_and_denominators() -> None:
 
 
 def test_ckc_crosswalk_and_pairwise_scope() -> None:
-    deep_dive.main()
+    deep_dive.run_repo_local()
 
     with (OUT_ROOT / "ckc455_crosswalk.tsv").open("r", encoding="utf-8", newline="") as handle:
         crosswalk = list(csv.DictReader(handle, delimiter="\t"))
@@ -55,7 +55,7 @@ def test_ckc_crosswalk_and_pairwise_scope() -> None:
 
 
 def test_no_census_eligible_field_in_new_machine_records() -> None:
-    deep_dive.main()
+    deep_dive.run_repo_local()
 
     universe_rows = pd.read_parquet(OUT_ROOT / "universe" / "universe_records.parquet")
     presentation_rows = pd.read_parquet(OUT_ROOT / "all_source_presentations.parquet")
@@ -66,7 +66,7 @@ def test_no_census_eligible_field_in_new_machine_records() -> None:
 
 
 def test_discovery_sets_include_core_witnesses() -> None:
-    deep_dive.main()
+    deep_dive.run_repo_local()
 
     fixed = json.loads((OUT_ROOT / "all_fixed_local_hodge_sets.json").read_text(encoding="utf-8"))
     local = json.loads((OUT_ROOT / "all_local_inventory_fidelity_sets.json").read_text(encoding="utf-8"))
@@ -74,6 +74,9 @@ def test_discovery_sets_include_core_witnesses() -> None:
     problem = json.loads((OUT_ROOT / "all_problem_7_10_candidate_sets.json").read_text(encoding="utf-8"))
 
     assert any(set(item["members"]) == {"84", "84a"} for item in fixed)
+    unresolved_pairs = {tuple(item["members"]): item for item in fixed}
+    assert unresolved_pairs[("61", "451")]["finer_source_variation"] == "UNKNOWN"
+    assert unresolved_pairs[("452", "453")]["finer_source_variation"] == "UNKNOWN"
     assert any({"84", "84a", "239", "240", "241"}.issubset(set(item["members"])) for item in local)
     assert any({"84", "84a", "239", "240"}.issubset(set(item["members"])) for item in rational)
     assert {target["members"][0] for target in problem} == {"84", "84a"}

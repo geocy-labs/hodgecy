@@ -45,16 +45,26 @@ class SourceFormat(str, Enum):
     TSV = "tsv"
     CSV = "csv"
     ZIP = "zip"
+    ZIP_CORRUPT = "zip_corrupt"
     NATIVE = "native"
     REMOTE = "remote"
+    REMOTE_BOX_ASSET = "remote_box_asset"
+    REMOTE_REGISTRY_REFERENCE = "remote_registry_reference"
+    HTML_BOX_METADATA = "html_box_metadata"
+    WOLFRAM_LANGUAGE_TEXT = "wolfram_language_text"
+    WOLFRAM_MX = "wolfram_mx"
 
 
 class TableKind(str, Enum):
     SOURCE = "source"
     NORMALIZED = "normalized"
+    NORMALIZED_CHILD = "normalized_child"
     DERIVED = "derived"
     RELATIONSHIP = "relationship"
+    RELATIONSHIPS = "relationships"
     FIBRATION = "fibration"
+    NATIVE_LAZY_ASSET_INDEX = "native_lazy_asset_index"
+    NATIVE_SOURCE_MANIFEST = "native_source_manifest"
 
 
 @dataclass(frozen=True, slots=True)

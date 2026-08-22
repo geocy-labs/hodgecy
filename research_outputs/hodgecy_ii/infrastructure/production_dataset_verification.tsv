@@ -1,0 +1,54 @@
+dataset_id	expected_completion_class	catalog_present	manifest_present	physical_backing_resolved	query_table_present	source_instances	expected_or_manifest_count	actual_or_metadata_count	traversal_test	status	notes
+aesz_cydb_remote	COMPLETE_REMOTE	YES	NO	YES	NO	1		0	registered_pointer	OK	remote/native pointer registered
+aps_gcicy_type21_supplements	COMPLETE_NATIVE_SOURCE	YES	NO	YES	YES	2		2	head(1):source_record_id	OK	rows=1;estimated=2
+borcea_voisin_source_registry	SOURCE_REGISTRY_ONLY	YES	NO	YES	NO	2		0	registered_pointer	OK	remote/native pointer registered
+cicy3_discrete_symmetries_orientifolds	COMPLETE_NATIVE_LAZY	YES	NO	YES	NO	1		0	path_exists	OK	checked 2 local path(s)
+cicy3_divisor_configs_orientifold	COMPLETE_NORMALIZED	YES	YES	YES	YES	2	7821	7821	head(1):source_record_id	OK	rows=1;estimated=7821
+cicy3_divisor_topology_springer	COMPLETE_NORMALIZED	YES	NO	NO	NO	1	7820	7820	descriptor_present	OK	source-registry/computable dataset has no local table
+cicy3_divisors_springer	MANUAL_SOURCE_REQUIRED	YES	YES	YES	NO	1		0	path_exists	OK	checked 1 local path(s)
+cicy3_favorable	COMPLETE_NORMALIZED	YES	YES	YES	YES	2	7820	7820	head(1):source_record_id	OK	rows=1;estimated=7890
+cicy3_fibrations	COMPLETE_NORMALIZED	YES	YES	YES	YES	2	139597	139597	head(1):source_record_id	OK	rows=1;estimated=139597
+cicy3_orientifold_discrete_symmetry	COMPLETE_NATIVE_LAZY	YES	NO	NO	NO	1		0	descriptor_present	OK	source-registry/computable dataset has no local table
+cicy3_orientifolds_favourable	COMPLETE_NORMALIZED	YES	YES	YES	YES	2	7820	7820	head(1):source_record_id	OK	rows=1;estimated=7820
+cicy3_quotient_fibrations	COMPLETE_NORMALIZED	YES	NO	YES	YES	2	20700	20700	head(1):source_record_id	OK	rows=1;estimated=20700
+cicy3_quotients	COMPLETE_NORMALIZED	YES	YES	YES	YES	3	1695	1695	head(1):source_record_id	OK	rows=1;estimated=1695
+cicy3_standard	COMPLETE_NORMALIZED	YES	YES	YES	YES	2	7890	7890	head(1):source_record_id	OK	rows=1;estimated=7890
+cicy3_thraxion_candidates	COMPLETE_NORMALIZED	YES	YES	YES	YES	2	1	1	head(1):source_record_id	OK	rows=1;estimated=1
+cicy3_thraxion_transitions	COMPLETE_NORMALIZED	YES	YES	YES	YES	2	1	1	head(1):source_record_id	OK	rows=1;estimated=1
+cicy4_core	COMPLETE_NORMALIZED	YES	YES	YES	YES	2	921497	921497	head(1):source_record_id	OK	rows=1;estimated=921497
+cicy4_fibrations	COMPLETE_NATIVE_LAZY	YES	YES	YES	YES	2	921497	921497	head(1):source_record_id	OK	rows=1;estimated=297
+cicy_divisor_topologies_cms_2022	COMPLETE_NORMALIZED	YES	NO	YES	YES	3	7820	7820	head(1):source_record_id	OK	rows=1;estimated=57885
+cicy_gv_invariants_desy	COMPLETE_COLUMNAR	YES	NO	YES	YES	2	99515615	99515616	head(1):source_archive	OK	rows=1;estimated=1
+cicy_gv_invariants_desy_h11_9_repair	SOURCE_CORRUPT	YES	NO	YES	NO	2		0	path_exists	OK	checked 1 local path(s)
+current_corpus_relationships	COMPLETE_RELATIONSHIP	YES	NO	YES	YES	1	175928	175928	head(1):relationship_id	OK	rows=1;estimated=175928
+cytools_source_registry	SOURCE_REGISTRY_ONLY	YES	NO	YES	NO	1		0	registered_pointer	OK	remote/native pointer registered
+cytools_toric_computable_capability	COMPUTABLE_NOT_PREENUMERATED	YES	NO	YES	NO	1		0	registered_pointer	OK	remote/native pointer registered
+double_octics	PARTIAL_PUBLIC_CORPUS	YES	NO	NO	NO	1		0	descriptor_present	OK	source-registry/computable dataset has no local table
+double_octics_external	PARTIAL_PUBLIC_CORPUS	YES	YES	YES	NO	1		0	path_exists	OK	checked 2 local path(s)
+explicit_nodal_conifold_corpus	PARTIAL_PUBLIC_CORPUS	YES	NO	NO	NO	1		0	descriptor_present	OK	source-registry/computable dataset has no local table
+gcicy_fake_weighted	COMPLETE_NORMALIZED	YES	YES	YES	YES	2	1752	1752	head(1):source_record_id	OK	rows=1;estimated=1752
+gcicy_ml_cui_gao_wang_2023	MANUAL_SOURCE_REQUIRED	YES	NO	YES	NO	1		0	registered_pointer	OK	remote/native pointer registered
+genuine_gcicy	SOURCE_REGISTRY_ONLY	YES	NO	YES	NO	1	0	0	descriptor_present	OK	source-registry/computable dataset has no local table
+grassmannian_homogeneous	SOURCE_REGISTRY_ONLY	YES	NO	YES	NO	2	0	0	registered_pointer	OK	remote/native pointer registered
+grassmannian_homogeneous_source_only	SOURCE_REGISTRY_ONLY	YES	NO	YES	NO	1		0	path_exists	OK	checked 1 local path(s)
+integral_topology_torsion_source_registry	SOURCE_REGISTRY_ONLY	YES	NO	YES	NO	1		0	registered_pointer	OK	remote/native pointer registered
+ip_weight_systems_4d	COMPLETE_NORMALIZED	YES	YES	YES	YES	2	184026	184026	head(1):source_record_id	OK	rows=1;estimated=184026
+kreuzer_skarke	COMPLETE_NATIVE_LAZY	YES	YES	YES	YES	1	473800776	473800776	head(1):vertex_count	OK	rows=1;estimated=473800776
+ks_orientifolds_groupofxg_2024	COMPLETE_REMOTE	YES	NO	YES	YES	1	135	135	head(1):dataset_id	OK	rows=1;estimated=135
+ml_conifold_pfv_scorer_dataset	EXCLUDED_LOW_VALUE	YES	NO	YES	NO	1		0	registered_pointer	OK	remote/native pointer registered
+partialflagvarieties_grassmannian_cy3_table1	COMPLETE_NORMALIZED	YES	NO	YES	YES	1	31	31	head(1):source_record_id	OK	rows=1;estimated=31
+partialflagvarieties_jl	CODE_RESOURCE	YES	NO	YES	NO	1		0	path_exists	OK	checked 1 local path(s)
+pfaffian_determinantal_cy_source_registry	SOURCE_REGISTRY_ONLY	YES	NO	YES	NO	3		0	registered_pointer	OK	remote/native pointer registered
+picard_fuchs_cyo	COMPLETE_REMOTE	YES	NO	NO	NO	1	613	613	descriptor_present	OK	source-registry/computable dataset has no local table
+picard_fuchs_cyo_topological	COMPLETE_NORMALIZED	YES	YES	YES	YES	3	1197	1197	head(1):operator_id	OK	rows=1;estimated=613
+thraxion_conifold_transition	PARTIAL_PUBLIC_CORPUS	YES	NO	NO	NO	1		0	descriptor_present	OK	source-registry/computable dataset has no local table
+toric_ci_nef_partitions	COMPUTABLE_NOT_PREENUMERATED	YES	NO	YES	NO	1		0	path_exists	OK	checked 5 local path(s)
+toric_ks_fibrations_abbasi_nally_taylor_2026	COMPLETE_REMOTE	YES	NO	YES	YES	1	5	5	head(1):dataset_id	OK	rows=1;estimated=5
+toric_orientifold_enrichment	COMPLETE_REMOTE	YES	NO	YES	NO	1		0	descriptor_present	OK	source-registry/computable dataset has no local table
+toriccy_database	COMPLETE_REMOTE_NATIVE_LAZY	YES	NO	YES	YES	2		7	head(1):source_record_id	OK	rows=1;estimated=7
+twoparameterk3_code_resource	CODE_RESOURCE	YES	NO	YES	NO	1		0	path_exists	OK	checked 1 local path(s)
+twoparameterk3_models	COMPLETE_NORMALIZED	YES	NO	YES	YES	1	39	39	head(1):source_record_id	OK	rows=1;estimated=39
+wave2_source_relationships	COMPLETE_COLUMNAR	YES	NO	YES	YES	1		5523	head(1):relationship_id	OK	rows=1;estimated=5523
+wave3_source_relationships	COMPLETE_RELATIONSHIP	YES	NO	YES	YES	1		78	head(1):relationship_id	OK	rows=1;estimated=78
+wave4_source_relationships	COMPLETE_RELATIONSHIP	YES	NO	YES	YES	1		65714	head(1):relationship_id	OK	rows=1;estimated=65714
+weighted_p4	COMPLETE_NORMALIZED	YES	YES	YES	YES	2	2781	2781	head(1):source_record_id	OK	rows=1;estimated=7555
