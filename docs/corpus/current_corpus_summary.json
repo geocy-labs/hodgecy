@@ -1,9 +1,9 @@
 {
   "acquisition_waves_completed": 4,
   "comprehensive_initial_corpus": true,
-  "corpus_name": "HodgeCY initial comprehensive corpus",
-  "corpus_status": "final initial corpus audit ready",
-  "documentation_version": "initial-comprehensive-corpus-2026-08-22",
+  "corpus_name": "HodgeCY v1.0.0 initial comprehensive corpus",
+  "corpus_status": "v1.0.0 release-candidate frozen",
+  "documentation_version": "hodgecy-v1.0.0-initial-comprehensive-corpus-2026-08-22",
   "generated_from_snapshot": "current_hodgecy_corpus_snapshot.json",
   "instance_count": 80,
   "known_exceptions": [
@@ -20,6 +20,7 @@
   },
   "physical_source_count": 187,
   "query_table_count": 32,
+  "release_version": "1.0.0",
   "relationship_edge_count": 241798,
   "software_commit": "f6d030cd0b17447b725b42d1a5af440bdd20959f",
   "source_data_record_count": 574616978,

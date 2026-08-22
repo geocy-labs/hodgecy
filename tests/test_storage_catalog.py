@@ -41,7 +41,7 @@ def test_catalog_create_register_and_reopen(tmp_path) -> None:
         source_format=SourceFormat.PARQUET,
         byte_size=123,
     ))
-    snapshot = catalog.create_snapshot("snapshot_v1", hodgecy_version="0.2.0")
+    snapshot = catalog.create_snapshot("snapshot_v1", hodgecy_version="1.0.0")
 
     reopened = open_catalog(tmp_path, read_only=True)
     assert reopened.metadata.catalog_schema_version.value == "v1"

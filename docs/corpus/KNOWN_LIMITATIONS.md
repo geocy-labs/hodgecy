@@ -1,6 +1,6 @@
 # Known Limitations And Future Dataset Updates
 
-The initial HodgeCY acquisition program is complete. Future discoveries should be treated as versioned corpus updates, not as Wave 5.
+The initial HodgeCY acquisition program is complete and released as the HodgeCY v1.0.0 initial comprehensive corpus. Future discoveries should be treated as versioned corpus updates, not as Wave 5.
 
 ## Final Known Exceptions
 

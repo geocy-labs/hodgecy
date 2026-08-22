@@ -6,20 +6,22 @@
       "name": "Rahman, Abdul"
     }
   ],
-  "description": "Theorem-bearing source assembly certificates for selected double-octic arrangements in the HodgeCY I manuscript.",
+  "description": "HodgeCY v1.0.0 is the first comprehensive HodgeCY data-system release. It provides source-aware computational Hodge and Calabi--Yau corpus infrastructure, typed dataset schemas, catalog and query tooling, provenance and checksum tracking, relationship infrastructure, basis-aware exact algebra support, certificate/reproducibility support, and public documentation for an audited external corpus containing 574,616,978 headline source/data records across 53 logical datasets, 80 dataset/source instances, 187 physical sources, and 32 query tables. Large third-party scientific data remain external and retain their original licenses and terms.",
   "keywords": [
-    "Calabi--Yau threefolds",
-    "double octics",
-    "Hodge atom profiles",
-    "source assembly complexes",
-    "Smith normal form",
-    "hyperplane arrangements",
-    "automorphism groups",
-    "computational algebraic geometry"
+    "Calabi--Yau manifolds",
+    "Hodge theory",
+    "computational algebraic geometry",
+    "Kreuzer--Skarke",
+    "CICY",
+    "ToricCY",
+    "Picard--Fuchs operators",
+    "provenance",
+    "scientific data infrastructure",
+    "reproducibility"
   ],
   "license": "MIT",
-  "notes": "HodgeCY v0.2.0 Zenodo DOI: 10.5281/zenodo.21429481. Prepared from generation source commit c5bf38455f3ee4989efa2eeb02fcbac3bae3a0bb. Tagged release commit is resolved from v0.2.0.",
-  "publication_date": "2026-07-18",
+  "notes": "No v1.0.0 DOI is declared in this repository metadata before Zenodo mints one. The historical HodgeCY I / v0.2.0 archived software DOI is 10.5281/zenodo.21429481 and remains a related earlier research output, not the v1.0.0 DOI.",
+  "publication_date": "2026-08-22",
   "related_identifiers": [
     {
       "identifier": "https://github.com/geocy-labs/hodgecy",
@@ -27,12 +29,17 @@
       "scheme": "url"
     },
     {
+      "identifier": "https://www.preprints.org/manuscript/202607.0967",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
       "identifier": "10.5281/zenodo.21429481",
-      "relation": "isVersionOf",
+      "relation": "references",
       "scheme": "doi"
     }
   ],
-  "title": "HodgeCY: Computational Hodge Atom Profiles and Source Assembly Spectra for Double-Octic Calabi--Yau Threefolds",
+  "title": "HodgeCY: A Computational Hodge and Calabi--Yau Data System",
   "upload_type": "software",
-  "version": "v0.2.0"
+  "version": "v1.0.0"
 }

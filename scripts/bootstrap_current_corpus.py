@@ -26,7 +26,7 @@ def main() -> int:
         catalog_name=args.catalog_name,
         batch_size=args.batch_size,
         hodgecy_commit=_git_head(),
-        hodgecy_version="0.2.0",
+        hodgecy_version="1.0.0",
     ))
     print(json.dumps(result.to_dict(), indent=2, sort_keys=True))
     return 0

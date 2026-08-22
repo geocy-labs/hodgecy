@@ -4,7 +4,7 @@ from __future__ import annotations
 def test_package_imports() -> None:
     import hodgecy
 
-    assert hodgecy.__version__ == "0.2.0"
+    assert hodgecy.__version__ == "1.0.0"
 
 
 def test_legacy_package_imports_remain_available() -> None:

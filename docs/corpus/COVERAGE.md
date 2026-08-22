@@ -1,6 +1,6 @@
 # HodgeCY Coverage
 
-Coverage states are deliberately conservative. A strong category may still contain source-reported, rather than independently recomputed, mathematical fields; a source-registry category is represented as a permanent source disposition, not as a complete normalized corpus.
+Coverage states for the HodgeCY v1.0.0 initial comprehensive corpus are deliberately conservative. A strong category may still contain source-reported, rather than independently recomputed, mathematical fields; a source-registry category is represented as a permanent source disposition, not as a complete normalized corpus.
 
 ## Final Coverage Matrix
 

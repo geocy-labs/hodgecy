@@ -172,11 +172,19 @@ def _git_output(args: list[str]) -> str:
 
 
 def _load_version() -> str:
-    payload = tomllib.loads((REPO_ROOT / "pyproject.toml").read_text(encoding="utf-8"))
-    version = payload["project"]["version"]
+    version = _current_package_version()
     if version != PACKAGE_VERSION:
-        raise RuntimeError(f"pyproject version {version!r} does not match {PACKAGE_VERSION!r}.")
+        return PACKAGE_VERSION
     return version
+
+
+def _current_package_version() -> str:
+    payload = tomllib.loads((REPO_ROOT / "pyproject.toml").read_text(encoding="utf-8"))
+    return str(payload["project"]["version"])
+
+
+def _legacy_top_level_metadata_enabled() -> bool:
+    return _current_package_version() == PACKAGE_VERSION
 
 
 def _control_records() -> dict[str, dict[str, Any]]:
@@ -635,8 +643,9 @@ Each `column_supports.json` lists the row indices and point labels where a given
 
 The 84/84a smoothing status is `degree112_certified`; ordinary-node and defect verification are intentionally not promoted in this release.
 """
-    (REPO_ROOT / "RELEASE_NOTES.md").write_text(root_release_notes, encoding="utf-8")
-    (REPO_ROOT / "REPRODUCIBILITY.md").write_text(root_repro, encoding="utf-8")
+    if _legacy_top_level_metadata_enabled():
+        (REPO_ROOT / "RELEASE_NOTES.md").write_text(root_release_notes, encoding="utf-8")
+        (REPO_ROOT / "REPRODUCIBILITY.md").write_text(root_repro, encoding="utf-8")
     (RELEASE_DIR / "RELEASE_NOTES.md").write_text(root_release_notes, encoding="utf-8")
     (RELEASE_DIR / "REPRODUCIBILITY.md").write_text(root_repro, encoding="utf-8")
     (RELEASE_DIR / "README.md").write_text(
@@ -649,6 +658,8 @@ The 84/84a smoothing status is `degree112_certified`; ordinary-node and defect v
 
 
 def _write_citation_and_zenodo() -> None:
+    if not _legacy_top_level_metadata_enabled():
+        return
     version = _load_version()
     date = datetime.now(timezone.utc).date().isoformat()
     commit = _git_output(["rev-parse", "HEAD"])
@@ -705,6 +716,8 @@ preferred-citation:
 
 
 def _update_readme() -> None:
+    if not _legacy_top_level_metadata_enabled():
+        return
     readme = REPO_ROOT / "README.md"
     text = readme.read_text(encoding="utf-8")
     marker = "## HodgeCY v0.2.0 theorem-certificate release"

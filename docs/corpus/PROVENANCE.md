@@ -1,6 +1,6 @@
 # HodgeCY Provenance Model
 
-HodgeCY keeps source records, presentations, abstract geometric claims, derived relationships, and theorem certificates separate. A row in a source table is not automatically a claim that two presentations define the same abstract Calabi--Yau object.
+HodgeCY v1.0.0 keeps source records, presentations, abstract geometric claims, derived relationships, and theorem certificates separate. A row in a source table is not automatically a claim that two presentations define the same abstract Calabi--Yau object.
 
 ## Provenance Fields
 

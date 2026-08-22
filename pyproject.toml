@@ -1,13 +1,14 @@
 [build-system]
-requires = ["setuptools>=68", "wheel"]
+requires = ["setuptools>=77", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "hodgecy"
-version = "0.2.0"
-description = "Computational research tools for HodgeCY under GeoCY."
+version = "1.0.0"
+description = "Computational Hodge and Calabi--Yau data-system infrastructure for HodgeCY."
 readme = "README.md"
 requires-python = ">=3.10"
+license = "MIT"
 authors = [
   { name = "A. Rahman", email = "arahman@alum.howard.edu" }
 ]

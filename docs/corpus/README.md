@@ -1,6 +1,6 @@
 # HodgeCY Corpus Documentation
 
-This directory contains the small, public metadata view of the initial comprehensive HodgeCY corpus. It is intentionally not the corpus itself.
+This directory contains the small, public metadata view of the HodgeCY v1.0.0 initial comprehensive corpus. It is intentionally not the corpus itself.
 
 ## Current Audited State
 

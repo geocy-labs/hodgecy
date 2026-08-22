@@ -2,6 +2,8 @@
 
 HodgeCY is a computational Hodge/Calabi--Yau data system and reproducibility framework for assembling, querying, relating, and validating large heterogeneous Calabi--Yau and Hodge-theoretic datasets.
 
+Current release: **HodgeCY v1.0.0**, the first comprehensive HodgeCY corpus release. A v1.0.0 Zenodo DOI has not yet been minted; the historical HodgeCY I / v0.2.0 DOI remains separate.
+
 The repository contains the HodgeCY Python package, data adapters, query/catalog infrastructure, tests, small fixtures, documentation, and HodgeCY I reproducibility assets. The production research corpus is intentionally kept outside Git and is addressed through a local data root.
 
 HodgeCY does **not** claim to be a complete database of all Calabi--Yau manifolds. It is a source-aware corpus and infrastructure layer: source records, presentations, abstract geometry claims, derived relationships, and theorem certificates are kept distinct.
@@ -96,7 +98,7 @@ export HODGECY_DATA_ROOT=/path/to/hodgecy-data
 ```
 
 ```powershell
-$env:HODGECY_DATA_ROOT="D:\data\hodgecy-data"
+$env:HODGECY_DATA_ROOT="<path-to-hodgecy-data>"
 ```
 
 The package reads this environment variable through `hodgecy.config.HodgeCYConfig`.
@@ -179,7 +181,7 @@ HodgeCY I is the theorem-bearing double-octic/reproducibility layer in this repo
 Public references:
 
 - HodgeCY I manuscript/preprint: https://www.preprints.org/manuscript/202607.0967
-- HodgeCY v0.2.0 Zenodo software DOI: https://doi.org/10.5281/zenodo.21429481
+- HodgeCY I / v0.2.0 archived software DOI: https://doi.org/10.5281/zenodo.21429481
 
 The broader corpus documentation does not upgrade source-reported fields into HodgeCY I theorem claims. Theorem-bearing outputs remain limited to the certified/reproducibility assets tracked for HodgeCY I.
 
@@ -233,13 +235,18 @@ The final public-documentation promotion gate reruns the full suite and the Hodg
 
 ## Licensing
 
-The repository's release metadata and citation metadata declare the HodgeCY software as MIT licensed. External datasets retain their own source licenses and terms; the software license does not relicense the source corpora.
-
-Before a formal new release, add or verify a standalone `LICENSE` file if one is required by the release process.
+The HodgeCY software is MIT licensed; see [`LICENSE`](LICENSE). External datasets retain their own source licenses and terms. The HodgeCY software license does not relicense third-party source corpora.
 
 ## Citation
 
-For the current software release metadata, cite:
+For HodgeCY v1.0.0, cite the repository/tag metadata until Zenodo mints a v1.0.0 DOI:
+
+```text
+Rahman, Abdul. HodgeCY: A Computational Hodge and Calabi--Yau Data System.
+Version 1.0.0. GitHub. https://github.com/geocy-labs/hodgecy
+```
+
+For the narrower historical HodgeCY I / v0.2.0 double-octic computational release, cite:
 
 ```text
 Rahman, Abdul. HodgeCY: Computational Hodge Atom Profiles and Source Assembly Spectra
@@ -247,8 +254,8 @@ for Double-Octic Calabi--Yau Threefolds. Version 0.2.0. Zenodo.
 https://doi.org/10.5281/zenodo.21429481
 ```
 
-The expanded corpus audit has not created a new DOI or release. Do not cite a new release DOI until the explicit release step is performed.
+Do not cite the v0.2.0 DOI as the v1.0.0 DOI.
 
 ## Future Data Updates
 
-The initial corpus acquisition program is complete: four acquisition waves were reconciled, Wave 5 is not required, and the comprehensive initial corpus is ready for release preparation. Future public datasets should be treated as versioned HodgeCY corpus updates rather than reopening the initial acquisition program.
+The initial corpus acquisition program is complete: four acquisition waves were reconciled, Wave 5 is not required, and the comprehensive initial corpus is released as HodgeCY v1.0.0. Future public datasets should be treated as versioned HodgeCY corpus updates rather than reopening the initial acquisition program.

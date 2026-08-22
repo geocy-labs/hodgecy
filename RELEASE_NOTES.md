@@ -1,23 +1,59 @@
-# HodgeCY v0.2.0
+# HodgeCY v1.0.0
 
-Release date: 2026-07-18
+Release date: 2026-08-22
 
-Generation source commit recorded during preparation: `c5bf38455f3ee4989efa2eeb02fcbac3bae3a0bb`
+HodgeCY v1.0.0 is the first comprehensive HodgeCY corpus release. It promotes the audited data-system foundation, public corpus documentation, provenance model, query/catalog infrastructure, and HodgeCY I compatibility layer as the current release line.
 
-Tagged release commit: resolve with `git rev-parse v0.2.0^{}` after
-checking out the published tag.
+## Audited Corpus State
 
-## Scientific scope
+| Measure | Value |
+| --- | --- |
+| Headline source/data records | 574,616,978 |
+| Logical datasets | 53 |
+| Dataset/source instances | 80 |
+| Physical sources | 187 |
+| Query tables | 32 |
+| Architecture-impacting unresolved items | 0 |
+| Comprehensive initial corpus | Yes |
+| Wave 5 required | No |
 
-This theorem-bearing release supports the HodgeCY I source-assembly certificate layer for arrangements 84, 84a, 239, 240, and 241.
+The production corpus remains external to Git. The repository contains code, tests, fixtures, schemas, reproducibility assets, and small public metadata summaries only.
 
-## Principal outputs
+## Major Data Domains
 
-- Exact incidence and source-assembly matrix certificates for each arrangement.
-- Rational and finite-field ranks, Smith normal forms, and integral cokernel decompositions.
-- Incidence-preserving automorphism actions, orbit data, and permutation-character distributions.
-- Comparison certificates for 84/84a and 239/240/241.
+This release documents and supports the audited initial corpus spanning:
 
-## Status of 84 and 84a
+- Kreuzer--Skarke 4D reflexive polytopes;
+- CICY3 configuration, favorable, fibration, quotient, free-action, and orientifold-related sources;
+- CICY4 configuration and fibration sources;
+- weighted hypersurfaces and 4D IP weight systems;
+- DESY CICY Gopakumar--Vafa data;
+- Springer/JHEP CICY divisor topology;
+- genuine APS gCICY native Wolfram sources;
+- Grassmannian CY3 sources;
+- ToricCY remote/native-lazy assets;
+- orientifold and involution sources;
+- Picard--Fuchs/operator and topological operator data;
+- TwoParameterK3 source models;
+- double-octic/HodgeCY I theorem and reproducibility sources.
 
-Arrangements 84 and 84a remain `degree112_certified`. Exact G1/G2 genericity and characteristic-zero degree-112 saturated Jacobian certificates are repo-backed. This release does not claim `ordinary_node_verified` or `defect_verified`; reducedness, Hessian-rank, defect, and mixed-Hodge-theoretic realization remain pending.
+## Infrastructure
+
+The v1.0.0 release includes source provenance tracking, checksum/integrity metadata, typed schemas, catalog/query support, relationship infrastructure, basis-aware exact algebra, lazy/native large-data access, and certificate/reproducibility support.
+
+## HodgeCY I Historical Release
+
+HodgeCY I / v0.2.0 remains the historical theorem-bearing double-octic computational release. Its archived software DOI is:
+
+https://doi.org/10.5281/zenodo.21429481
+
+That DOI is not the v1.0.0 DOI. No v1.0.0 Zenodo DOI has been minted at the time of this release-candidate preparation.
+
+## Known Limitations
+
+- DESY CICY GV `h11=9` is represented as `SOURCE_CORRUPT`.
+- Genuine APS gCICY `.mx` normalization still requires a Wolfram-compatible runtime.
+- ToricCY remains remote/native-lazy, not a fully normalized local mirror.
+- Pfaffian/determinantal and integral topology/torsion domains remain source-registry-only where no broad public machine-readable corpus was found.
+
+External dataset licenses and terms remain attached to their original sources; the MIT software license does not relicense third-party source data.

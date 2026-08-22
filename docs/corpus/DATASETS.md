@@ -1,6 +1,6 @@
 # HodgeCY Dataset Census
 
-HodgeCY's public Git repository stores code, tests, fixtures, schemas, and this metadata summary. The production corpus lives in an external data root.
+HodgeCY v1.0.0's public Git repository stores code, tests, fixtures, schemas, and this metadata summary. The production corpus lives in an external data root.
 
 ## Major Datasets
 

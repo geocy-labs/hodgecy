@@ -1,22 +1,12 @@
 cff-version: 1.2.0
-title: "HodgeCY: Computational Hodge Atom Profiles and Source Assembly Spectra for Double-Octic Calabi--Yau Threefolds"
-message: "If you use this software, please cite the HodgeCY software release."
+title: "HodgeCY: A Computational Hodge and Calabi--Yau Data System"
+message: "If you use HodgeCY v1.0.0, please cite the software release and acknowledge the external source datasets used for your analysis."
 type: software
 authors:
   - family-names: Rahman
     given-names: Abdul
-version: "0.2.0"
-date-released: "2026-07-18"
+version: "1.0.0"
+date-released: "2026-08-22"
 repository-code: "https://github.com/geocy-labs/hodgecy"
 license: MIT
-abstract: "Computational certificates for Hodge atom profiles and source assembly spectra of double-octic Calabi--Yau threefold arrangements."
-preferred-citation:
-  type: software
-  title: "HodgeCY: Computational Hodge Atom Profiles and Source Assembly Spectra for Double-Octic Calabi--Yau Threefolds"
-  authors:
-    - family-names: Rahman
-      given-names: Abdul
-  version: "0.2.0"
-  year: 2026
-  doi: "10.5281/zenodo.21429481"
-  notes: "HodgeCY v0.2.0 Zenodo DOI: 10.5281/zenodo.21429481. Generation source commit c5bf38455f3ee4989efa2eeb02fcbac3bae3a0bb; tagged release commit is resolved from v0.2.0."
+abstract: "HodgeCY v1.0.0 is the first comprehensive HodgeCY data-system release, providing source-aware Calabi--Yau and Hodge-theoretic corpus infrastructure, typed schemas, query/catalog support, provenance and checksum tracking, relationship infrastructure, exact algebra utilities, certificate support, and HodgeCY I reproducibility assets. The v1.0.0 Zenodo DOI has not yet been minted."
