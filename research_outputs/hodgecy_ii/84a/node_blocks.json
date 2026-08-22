@@ -1,0 +1,453 @@
+{
+  "arrangement_id": "84a",
+  "blocks": [
+    {
+      "block_id": "84a_B01",
+      "source_double_line_index": 1,
+      "line_key": "1,0,0,0|0,0,0,1",
+      "plane_pairs": [
+        "p1:p2"
+      ],
+      "node_ids": [
+        "84a_B01_n1",
+        "84a_B01_n2",
+        "84a_B01_n3",
+        "84a_B01_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B02",
+      "source_double_line_index": 2,
+      "line_key": "1,0,0,-1|0,1,0,-1",
+      "plane_pairs": [
+        "p1:p3"
+      ],
+      "node_ids": [
+        "84a_B02_n1",
+        "84a_B02_n2",
+        "84a_B02_n3",
+        "84a_B02_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B03",
+      "source_double_line_index": 3,
+      "line_key": "1,0,0,-1|0,1,0,1",
+      "plane_pairs": [
+        "p1:p4"
+      ],
+      "node_ids": [
+        "84a_B03_n1",
+        "84a_B03_n2",
+        "84a_B03_n3",
+        "84a_B03_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B04",
+      "source_double_line_index": 4,
+      "line_key": "1,0,0,-1|0,0,1,-1",
+      "plane_pairs": [
+        "p1:p5"
+      ],
+      "node_ids": [
+        "84a_B04_n1",
+        "84a_B04_n2",
+        "84a_B04_n3",
+        "84a_B04_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B05",
+      "source_double_line_index": 5,
+      "line_key": "1,0,0,-1|0,0,1,1",
+      "plane_pairs": [
+        "p1:p6"
+      ],
+      "node_ids": [
+        "84a_B05_n1",
+        "84a_B05_n2",
+        "84a_B05_n3",
+        "84a_B05_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B06",
+      "source_double_line_index": 6,
+      "line_key": "1,0,0,-1|0,1,1,0",
+      "plane_pairs": [
+        "p1:p7"
+      ],
+      "node_ids": [
+        "84a_B06_n1",
+        "84a_B06_n2",
+        "84a_B06_n3",
+        "84a_B06_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B07",
+      "source_double_line_index": 7,
+      "line_key": "1,0,0,-1|0,1,1,-2",
+      "plane_pairs": [
+        "p1:p8"
+      ],
+      "node_ids": [
+        "84a_B07_n1",
+        "84a_B07_n2",
+        "84a_B07_n3",
+        "84a_B07_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B08",
+      "source_double_line_index": 8,
+      "line_key": "1,0,0,1|0,1,0,-1",
+      "plane_pairs": [
+        "p2:p3"
+      ],
+      "node_ids": [
+        "84a_B08_n1",
+        "84a_B08_n2",
+        "84a_B08_n3",
+        "84a_B08_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B09",
+      "source_double_line_index": 9,
+      "line_key": "1,0,0,1|0,1,0,1",
+      "plane_pairs": [
+        "p2:p4"
+      ],
+      "node_ids": [
+        "84a_B09_n1",
+        "84a_B09_n2",
+        "84a_B09_n3",
+        "84a_B09_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B10",
+      "source_double_line_index": 10,
+      "line_key": "1,0,0,1|0,0,1,-1",
+      "plane_pairs": [
+        "p2:p5"
+      ],
+      "node_ids": [
+        "84a_B10_n1",
+        "84a_B10_n2",
+        "84a_B10_n3",
+        "84a_B10_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B11",
+      "source_double_line_index": 11,
+      "line_key": "1,0,0,1|0,0,1,1",
+      "plane_pairs": [
+        "p2:p6"
+      ],
+      "node_ids": [
+        "84a_B11_n1",
+        "84a_B11_n2",
+        "84a_B11_n3",
+        "84a_B11_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B12",
+      "source_double_line_index": 12,
+      "line_key": "1,0,0,1|0,1,1,-2",
+      "plane_pairs": [
+        "p2:p7"
+      ],
+      "node_ids": [
+        "84a_B12_n1",
+        "84a_B12_n2",
+        "84a_B12_n3",
+        "84a_B12_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B13",
+      "source_double_line_index": 13,
+      "line_key": "1,0,0,1|0,1,1,-4",
+      "plane_pairs": [
+        "p2:p8"
+      ],
+      "node_ids": [
+        "84a_B13_n1",
+        "84a_B13_n2",
+        "84a_B13_n3",
+        "84a_B13_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B14",
+      "source_double_line_index": 14,
+      "line_key": "0,1,0,0|0,0,0,1",
+      "plane_pairs": [
+        "p3:p4"
+      ],
+      "node_ids": [
+        "84a_B14_n1",
+        "84a_B14_n2",
+        "84a_B14_n3",
+        "84a_B14_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B15",
+      "source_double_line_index": 15,
+      "line_key": "0,1,0,-1|0,0,1,-1",
+      "plane_pairs": [
+        "p3:p5"
+      ],
+      "node_ids": [
+        "84a_B15_n1",
+        "84a_B15_n2",
+        "84a_B15_n3",
+        "84a_B15_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B16",
+      "source_double_line_index": 16,
+      "line_key": "0,1,0,-1|0,0,1,1",
+      "plane_pairs": [
+        "p3:p6"
+      ],
+      "node_ids": [
+        "84a_B16_n1",
+        "84a_B16_n2",
+        "84a_B16_n3",
+        "84a_B16_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B17",
+      "source_double_line_index": 17,
+      "line_key": "1,0,1,0|0,1,0,-1",
+      "plane_pairs": [
+        "p3:p7"
+      ],
+      "node_ids": [
+        "84a_B17_n1",
+        "84a_B17_n2",
+        "84a_B17_n3",
+        "84a_B17_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B18",
+      "source_double_line_index": 18,
+      "line_key": "1,0,1,-2|0,1,0,-1",
+      "plane_pairs": [
+        "p3:p8"
+      ],
+      "node_ids": [
+        "84a_B18_n1",
+        "84a_B18_n2",
+        "84a_B18_n3",
+        "84a_B18_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B19",
+      "source_double_line_index": 19,
+      "line_key": "0,1,0,1|0,0,1,-1",
+      "plane_pairs": [
+        "p4:p5"
+      ],
+      "node_ids": [
+        "84a_B19_n1",
+        "84a_B19_n2",
+        "84a_B19_n3",
+        "84a_B19_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B20",
+      "source_double_line_index": 20,
+      "line_key": "0,1,0,1|0,0,1,1",
+      "plane_pairs": [
+        "p4:p6"
+      ],
+      "node_ids": [
+        "84a_B20_n1",
+        "84a_B20_n2",
+        "84a_B20_n3",
+        "84a_B20_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B21",
+      "source_double_line_index": 21,
+      "line_key": "1,0,1,-2|0,1,0,1",
+      "plane_pairs": [
+        "p4:p7"
+      ],
+      "node_ids": [
+        "84a_B21_n1",
+        "84a_B21_n2",
+        "84a_B21_n3",
+        "84a_B21_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B22",
+      "source_double_line_index": 22,
+      "line_key": "1,0,1,-4|0,1,0,1",
+      "plane_pairs": [
+        "p4:p8"
+      ],
+      "node_ids": [
+        "84a_B22_n1",
+        "84a_B22_n2",
+        "84a_B22_n3",
+        "84a_B22_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B23",
+      "source_double_line_index": 23,
+      "line_key": "0,0,1,0|0,0,0,1",
+      "plane_pairs": [
+        "p5:p6"
+      ],
+      "node_ids": [
+        "84a_B23_n1",
+        "84a_B23_n2",
+        "84a_B23_n3",
+        "84a_B23_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B24",
+      "source_double_line_index": 24,
+      "line_key": "1,1,0,0|0,0,1,-1",
+      "plane_pairs": [
+        "p5:p7"
+      ],
+      "node_ids": [
+        "84a_B24_n1",
+        "84a_B24_n2",
+        "84a_B24_n3",
+        "84a_B24_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B25",
+      "source_double_line_index": 25,
+      "line_key": "1,1,0,-2|0,0,1,-1",
+      "plane_pairs": [
+        "p5:p8"
+      ],
+      "node_ids": [
+        "84a_B25_n1",
+        "84a_B25_n2",
+        "84a_B25_n3",
+        "84a_B25_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B26",
+      "source_double_line_index": 26,
+      "line_key": "1,1,0,-2|0,0,1,1",
+      "plane_pairs": [
+        "p6:p7"
+      ],
+      "node_ids": [
+        "84a_B26_n1",
+        "84a_B26_n2",
+        "84a_B26_n3",
+        "84a_B26_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B27",
+      "source_double_line_index": 27,
+      "line_key": "1,1,0,-4|0,0,1,1",
+      "plane_pairs": [
+        "p6:p8"
+      ],
+      "node_ids": [
+        "84a_B27_n1",
+        "84a_B27_n2",
+        "84a_B27_n3",
+        "84a_B27_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84a_B28",
+      "source_double_line_index": 28,
+      "line_key": "1,1,1,0|0,0,0,1",
+      "plane_pairs": [
+        "p7:p8"
+      ],
+      "node_ids": [
+        "84a_B28_n1",
+        "84a_B28_n2",
+        "84a_B28_n3",
+        "84a_B28_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    }
+  ]
+}

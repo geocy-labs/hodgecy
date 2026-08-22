@@ -1,0 +1,2928 @@
+{
+  "schema": "hodgecy_ii_frozen_input.v1",
+  "arrangement_id": "84",
+  "source_release": "hodgecy-v0.2.0",
+  "current_repository_version": "1.0.0",
+  "provenance": {
+    "theorem_summary": "release/hodgecy-v0.2.0/arrangements/84/theorem_summary.json",
+    "source": "release/hodgecy-v0.2.0/arrangements/84/source.json",
+    "lines": "release/hodgecy-v0.2.0/arrangements/84/lines.json",
+    "points": "release/hodgecy-v0.2.0/arrangements/84/points.json",
+    "matrix": "release/hodgecy-v0.2.0/arrangements/84/matrix.json",
+    "orbit_data": "release/hodgecy-v0.2.0/arrangements/84/orbit_data.json",
+    "smoothing_verification": "data/processed/smoothing_verification_84.json",
+    "equivariant_summary": "data/processed/equivariant_spectra/fixed_equation_batch_001/spectrum_summary.csv"
+  },
+  "arrangement_equation": "(x-t)(x+t)(y-t)(y+t)(z-t)(z+t)(x+y+z+t)(x+y+z-3t)",
+  "ordered_plane_factors": [
+    {
+      "coefficients": [
+        "1",
+        "0",
+        "0",
+        "-1"
+      ],
+      "equation": "x - t",
+      "label": "p1"
+    },
+    {
+      "coefficients": [
+        "1",
+        "0",
+        "0",
+        "1"
+      ],
+      "equation": "x + t",
+      "label": "p2"
+    },
+    {
+      "coefficients": [
+        "0",
+        "1",
+        "0",
+        "-1"
+      ],
+      "equation": "y - t",
+      "label": "p3"
+    },
+    {
+      "coefficients": [
+        "0",
+        "1",
+        "0",
+        "1"
+      ],
+      "equation": "y + t",
+      "label": "p4"
+    },
+    {
+      "coefficients": [
+        "0",
+        "0",
+        "1",
+        "-1"
+      ],
+      "equation": "z - t",
+      "label": "p5"
+    },
+    {
+      "coefficients": [
+        "0",
+        "0",
+        "1",
+        "1"
+      ],
+      "equation": "z + t",
+      "label": "p6"
+    },
+    {
+      "coefficients": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "equation": "x + y + z + t",
+      "label": "p7"
+    },
+    {
+      "coefficients": [
+        "1",
+        "1",
+        "1",
+        "-3"
+      ],
+      "equation": "x + y + z - 3t",
+      "label": "p8"
+    }
+  ],
+  "exact_incidence_table": [
+    {
+      "incident_double_lines": [
+        "L01",
+        "L02",
+        "L03",
+        "L08",
+        "L09",
+        "L14"
+      ],
+      "multiplicity": 4,
+      "planes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "point_id": "q01"
+    },
+    {
+      "incident_double_lines": [
+        "L01",
+        "L04",
+        "L05",
+        "L10",
+        "L11",
+        "L23"
+      ],
+      "multiplicity": 4,
+      "planes": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "point_id": "q02"
+    },
+    {
+      "incident_double_lines": [
+        "L01",
+        "L06",
+        "L07",
+        "L12",
+        "L13",
+        "L28"
+      ],
+      "multiplicity": 4,
+      "planes": [
+        0,
+        1,
+        6,
+        7
+      ],
+      "point_id": "q03"
+    },
+    {
+      "incident_double_lines": [
+        "L02",
+        "L04",
+        "L07",
+        "L15",
+        "L18",
+        "L25"
+      ],
+      "multiplicity": 4,
+      "planes": [
+        0,
+        2,
+        4,
+        7
+      ],
+      "point_id": "q04"
+    },
+    {
+      "incident_double_lines": [
+        "L02",
+        "L05",
+        "L16"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        0,
+        2,
+        5
+      ],
+      "point_id": "q05"
+    },
+    {
+      "incident_double_lines": [
+        "L02",
+        "L06",
+        "L17"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        0,
+        2,
+        6
+      ],
+      "point_id": "q06"
+    },
+    {
+      "incident_double_lines": [
+        "L03",
+        "L04",
+        "L19"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        0,
+        3,
+        4
+      ],
+      "point_id": "q07"
+    },
+    {
+      "incident_double_lines": [
+        "L03",
+        "L05",
+        "L06",
+        "L20",
+        "L21",
+        "L26"
+      ],
+      "multiplicity": 4,
+      "planes": [
+        0,
+        3,
+        5,
+        6
+      ],
+      "point_id": "q08"
+    },
+    {
+      "incident_double_lines": [
+        "L03",
+        "L07",
+        "L22"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        0,
+        3,
+        7
+      ],
+      "point_id": "q09"
+    },
+    {
+      "incident_double_lines": [
+        "L04",
+        "L06",
+        "L24"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        0,
+        4,
+        6
+      ],
+      "point_id": "q10"
+    },
+    {
+      "incident_double_lines": [
+        "L05",
+        "L07",
+        "L27"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        0,
+        5,
+        7
+      ],
+      "point_id": "q11"
+    },
+    {
+      "incident_double_lines": [
+        "L08",
+        "L10",
+        "L15"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        1,
+        2,
+        4
+      ],
+      "point_id": "q12"
+    },
+    {
+      "incident_double_lines": [
+        "L08",
+        "L11",
+        "L12",
+        "L16",
+        "L17",
+        "L26"
+      ],
+      "multiplicity": 4,
+      "planes": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "point_id": "q13"
+    },
+    {
+      "incident_double_lines": [
+        "L08",
+        "L13",
+        "L18"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        1,
+        2,
+        7
+      ],
+      "point_id": "q14"
+    },
+    {
+      "incident_double_lines": [
+        "L09",
+        "L10",
+        "L12",
+        "L19",
+        "L21",
+        "L24"
+      ],
+      "multiplicity": 4,
+      "planes": [
+        1,
+        3,
+        4,
+        6
+      ],
+      "point_id": "q15"
+    },
+    {
+      "incident_double_lines": [
+        "L09",
+        "L11",
+        "L20"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        1,
+        3,
+        5
+      ],
+      "point_id": "q16"
+    },
+    {
+      "incident_double_lines": [
+        "L09",
+        "L13",
+        "L22"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        1,
+        3,
+        7
+      ],
+      "point_id": "q17"
+    },
+    {
+      "incident_double_lines": [
+        "L10",
+        "L13",
+        "L25"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        1,
+        4,
+        7
+      ],
+      "point_id": "q18"
+    },
+    {
+      "incident_double_lines": [
+        "L11",
+        "L13",
+        "L27"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        1,
+        5,
+        7
+      ],
+      "point_id": "q19"
+    },
+    {
+      "incident_double_lines": [
+        "L14",
+        "L15",
+        "L16",
+        "L19",
+        "L20",
+        "L23"
+      ],
+      "multiplicity": 4,
+      "planes": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "point_id": "q20"
+    },
+    {
+      "incident_double_lines": [
+        "L14",
+        "L17",
+        "L18",
+        "L21",
+        "L22",
+        "L28"
+      ],
+      "multiplicity": 4,
+      "planes": [
+        2,
+        3,
+        6,
+        7
+      ],
+      "point_id": "q21"
+    },
+    {
+      "incident_double_lines": [
+        "L15",
+        "L17",
+        "L24"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        2,
+        4,
+        6
+      ],
+      "point_id": "q22"
+    },
+    {
+      "incident_double_lines": [
+        "L16",
+        "L18",
+        "L27"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        2,
+        5,
+        7
+      ],
+      "point_id": "q23"
+    },
+    {
+      "incident_double_lines": [
+        "L19",
+        "L22",
+        "L25"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        3,
+        4,
+        7
+      ],
+      "point_id": "q24"
+    },
+    {
+      "incident_double_lines": [
+        "L20",
+        "L22",
+        "L27"
+      ],
+      "multiplicity": 3,
+      "planes": [
+        3,
+        5,
+        7
+      ],
+      "point_id": "q25"
+    },
+    {
+      "incident_double_lines": [
+        "L23",
+        "L24",
+        "L25",
+        "L26",
+        "L27",
+        "L28"
+      ],
+      "multiplicity": 4,
+      "planes": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "point_id": "q26"
+    }
+  ],
+  "local_inventory": [
+    16,
+    10,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "hodge_numbers": {
+    "euler": 80,
+    "h11": 40,
+    "h12": 0
+  },
+  "source_assembly_matrix": {
+    "arrangement_id": "84",
+    "column_generators": [
+      {
+        "line_id": "L01",
+        "multiplicity": 2,
+        "planes": [
+          0,
+          1
+        ]
+      },
+      {
+        "line_id": "L02",
+        "multiplicity": 2,
+        "planes": [
+          0,
+          2
+        ]
+      },
+      {
+        "line_id": "L03",
+        "multiplicity": 2,
+        "planes": [
+          0,
+          3
+        ]
+      },
+      {
+        "line_id": "L04",
+        "multiplicity": 2,
+        "planes": [
+          0,
+          4
+        ]
+      },
+      {
+        "line_id": "L05",
+        "multiplicity": 2,
+        "planes": [
+          0,
+          5
+        ]
+      },
+      {
+        "line_id": "L06",
+        "multiplicity": 2,
+        "planes": [
+          0,
+          6
+        ]
+      },
+      {
+        "line_id": "L07",
+        "multiplicity": 2,
+        "planes": [
+          0,
+          7
+        ]
+      },
+      {
+        "line_id": "L08",
+        "multiplicity": 2,
+        "planes": [
+          1,
+          2
+        ]
+      },
+      {
+        "line_id": "L09",
+        "multiplicity": 2,
+        "planes": [
+          1,
+          3
+        ]
+      },
+      {
+        "line_id": "L10",
+        "multiplicity": 2,
+        "planes": [
+          1,
+          4
+        ]
+      },
+      {
+        "line_id": "L11",
+        "multiplicity": 2,
+        "planes": [
+          1,
+          5
+        ]
+      },
+      {
+        "line_id": "L12",
+        "multiplicity": 2,
+        "planes": [
+          1,
+          6
+        ]
+      },
+      {
+        "line_id": "L13",
+        "multiplicity": 2,
+        "planes": [
+          1,
+          7
+        ]
+      },
+      {
+        "line_id": "L14",
+        "multiplicity": 2,
+        "planes": [
+          2,
+          3
+        ]
+      },
+      {
+        "line_id": "L15",
+        "multiplicity": 2,
+        "planes": [
+          2,
+          4
+        ]
+      },
+      {
+        "line_id": "L16",
+        "multiplicity": 2,
+        "planes": [
+          2,
+          5
+        ]
+      },
+      {
+        "line_id": "L17",
+        "multiplicity": 2,
+        "planes": [
+          2,
+          6
+        ]
+      },
+      {
+        "line_id": "L18",
+        "multiplicity": 2,
+        "planes": [
+          2,
+          7
+        ]
+      },
+      {
+        "line_id": "L19",
+        "multiplicity": 2,
+        "planes": [
+          3,
+          4
+        ]
+      },
+      {
+        "line_id": "L20",
+        "multiplicity": 2,
+        "planes": [
+          3,
+          5
+        ]
+      },
+      {
+        "line_id": "L21",
+        "multiplicity": 2,
+        "planes": [
+          3,
+          6
+        ]
+      },
+      {
+        "line_id": "L22",
+        "multiplicity": 2,
+        "planes": [
+          3,
+          7
+        ]
+      },
+      {
+        "line_id": "L23",
+        "multiplicity": 2,
+        "planes": [
+          4,
+          5
+        ]
+      },
+      {
+        "line_id": "L24",
+        "multiplicity": 2,
+        "planes": [
+          4,
+          6
+        ]
+      },
+      {
+        "line_id": "L25",
+        "multiplicity": 2,
+        "planes": [
+          4,
+          7
+        ]
+      },
+      {
+        "line_id": "L26",
+        "multiplicity": 2,
+        "planes": [
+          5,
+          6
+        ]
+      },
+      {
+        "line_id": "L27",
+        "multiplicity": 2,
+        "planes": [
+          5,
+          7
+        ]
+      },
+      {
+        "line_id": "L28",
+        "multiplicity": 2,
+        "planes": [
+          6,
+          7
+        ]
+      }
+    ],
+    "matrix": [
+      [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "row_generators": [
+      {
+        "incident_double_lines": [
+          "L01",
+          "L02",
+          "L03",
+          "L08",
+          "L09",
+          "L14"
+        ],
+        "multiplicity": 4,
+        "planes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "point_id": "q01"
+      },
+      {
+        "incident_double_lines": [
+          "L01",
+          "L04",
+          "L05",
+          "L10",
+          "L11",
+          "L23"
+        ],
+        "multiplicity": 4,
+        "planes": [
+          0,
+          1,
+          4,
+          5
+        ],
+        "point_id": "q02"
+      },
+      {
+        "incident_double_lines": [
+          "L01",
+          "L06",
+          "L07",
+          "L12",
+          "L13",
+          "L28"
+        ],
+        "multiplicity": 4,
+        "planes": [
+          0,
+          1,
+          6,
+          7
+        ],
+        "point_id": "q03"
+      },
+      {
+        "incident_double_lines": [
+          "L02",
+          "L04",
+          "L07",
+          "L15",
+          "L18",
+          "L25"
+        ],
+        "multiplicity": 4,
+        "planes": [
+          0,
+          2,
+          4,
+          7
+        ],
+        "point_id": "q04"
+      },
+      {
+        "incident_double_lines": [
+          "L02",
+          "L05",
+          "L16"
+        ],
+        "multiplicity": 3,
+        "planes": [
+          0,
+          2,
+          5
+        ],
+        "point_id": "q05"
+      },
+      {
+        "incident_double_lines": [
+          "L02",
+          "L06",
+          "L17"
+        ],
+        "multiplicity": 3,
+        "planes": [
+          0,
+          2,
+          6
+        ],
+        "point_id": "q06"
+      },
+      {
+        "incident_double_lines": [
+          "L03",
+          "L04",
+          "L19"
+        ],
+        "multiplicity": 3,
+        "planes": [
+          0,
+          3,
+          4
+        ],
+        "point_id": "q07"
+      },
+      {
+        "incident_double_lines": [
+          "L03",
+          "L05",
+          "L06",
+          "L20",
+          "L21",
+          "L26"
+        ],
+        "multiplicity": 4,
+        "planes": [
+          0,
+          3,
+          5,
+          6
+        ],
+        "point_id": "q08"
+      },
+      {
+        "incident_double_lines": [
+          "L03",
+          "L07",
+          "L22"
+        ],
+        "multiplicity": 3,
+        "planes": [
+          0,
+          3,
+          7
+        ],
+        "point_id": "q09"
+      },
+      {
+        "incident_double_lines": [
+          "L04",
+          "L06",
+          "L24"
+        ],
+        "multiplicity": 3,
+        "planes": [
+          0,
+          4,
+          6
+        ],
+        "point_id": "q10"
+      },
+      {
+        "incident_double_lines": [
+          "L05",
+          "L07",
+          "L27"
+        ],
+        "multiplicity": 3,
+        "planes": [
+          0,
+          5,
+          7
+        ],
+        "point_id": "q11"
+      },
+      {
+        "incident_double_lines": [
+          "L08",
+          "L10",
+          "L15"
+        ],
+        "multiplicity": 3,
+        "planes": [
+          1,
+          2,
+          4
+        ],
+        "point_id": "q12"
+      },
+      {
+        "incident_double_lines": [
+          "L08",
+          "L11",
+          "L12",
+          "L16",
+          "L17",
+          "L26"
+        ],
+        "multiplicity": 4,
+        "planes": [
+          1,
+          2,
+          5,
+          6
+        ],
+        "point_id": "q13"
+      },
+      {
+        "incident_double_lines": [
+          "L08",
+          "L13",
+          "L18"
+        ],
+        "multiplicity": 3,
+        "planes": [
+          1,
+          2,
+          7
+        ],
+        "point_id": "q14"
+      },
+      {
+        "incident_double_lines": [
+          "L09",
+          "L10",
+          "L12",
+          "L19",
+          "L21",
+          "L24"
+        ],
+        "multiplicity": 4,
+        "planes": [
+          1,
+          3,
+          4,
+          6
+        ],
+        "point_id": "q15"
+      },
+      {
+        "incident_double_lines": [
+          "L09",
+          "L11",
+          "L20"
+        ],
+        "multiplicity": 3,
+        "planes": [
+          1,
+          3,
+          5
+        ],
+        "point_id": "q16"
+      },
+      {
+        "incident_double_lines": [
+          "L09",
+          "L13",
+          "L22"
+        ],
+        "multiplicity": 3,
+        "planes": [
+          1,
+          3,
+          7
+        ],
+        "point_id": "q17"
+      },
+      {
+        "incident_double_lines": [
+          "L10",
+          "L13",
+          "L25"
+        ],
+        "multiplicity": 3,
+        "planes": [
+          1,
+          4,
+          7
+        ],
+        "point_id": "q18"
+      },
+      {
+        "incident_double_lines": [
+          "L11",
+          "L13",
+          "L27"
+        ],
+        "multiplicity": 3,
+        "planes": [
+          1,
+          5,
+          7
+        ],
+        "point_id": "q19"
+      },
+      {
+        "incident_double_lines": [
+          "L14",
+          "L15",
+          "L16",
+          "L19",
+          "L20",
+          "L23"
+        ],
+        "multiplicity": 4,
+        "planes": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "point_id": "q20"
+      },
+      {
+        "incident_double_lines": [
+          "L14",
+          "L17",
+          "L18",
+          "L21",
+          "L22",
+          "L28"
+        ],
+        "multiplicity": 4,
+        "planes": [
+          2,
+          3,
+          6,
+          7
+        ],
+        "point_id": "q21"
+      },
+      {
+        "incident_double_lines": [
+          "L15",
+          "L17",
+          "L24"
+        ],
+        "multiplicity": 3,
+        "planes": [
+          2,
+          4,
+          6
+        ],
+        "point_id": "q22"
+      },
+      {
+        "incident_double_lines": [
+          "L16",
+          "L18",
+          "L27"
+        ],
+        "multiplicity": 3,
+        "planes": [
+          2,
+          5,
+          7
+        ],
+        "point_id": "q23"
+      },
+      {
+        "incident_double_lines": [
+          "L19",
+          "L22",
+          "L25"
+        ],
+        "multiplicity": 3,
+        "planes": [
+          3,
+          4,
+          7
+        ],
+        "point_id": "q24"
+      },
+      {
+        "incident_double_lines": [
+          "L20",
+          "L22",
+          "L27"
+        ],
+        "multiplicity": 3,
+        "planes": [
+          3,
+          5,
+          7
+        ],
+        "point_id": "q25"
+      },
+      {
+        "incident_double_lines": [
+          "L23",
+          "L24",
+          "L25",
+          "L26",
+          "L27",
+          "L28"
+        ],
+        "multiplicity": 4,
+        "planes": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "point_id": "q26"
+      }
+    ],
+    "shape": [
+      26,
+      28
+    ]
+  },
+  "source_matrix_shape": [
+    26,
+    28
+  ],
+  "source_rational_rank": 26,
+  "source_modular_ranks": {
+    "F2": 23,
+    "F3": 24
+  },
+  "source_smith_normal_form": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    6,
+    12
+  ],
+  "automorphism_data": {
+    "order": 6,
+    "plane_orbit_sizes": [
+      1,
+      1,
+      3,
+      3
+    ],
+    "double_line_orbit_sizes": [
+      1,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      6
+    ],
+    "multiple_point_orbit_sizes": [
+      1,
+      1,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      6
+    ],
+    "orbit_data": {
+      "double_line_orbit_sizes": [
+        1,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        6
+      ],
+      "double_line_orbits": [
+        [
+          [
+            6,
+            7
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        [
+          [
+            0,
+            6
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            4,
+            6
+          ]
+        ],
+        [
+          [
+            0,
+            7
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            4,
+            7
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        [
+          [
+            1,
+            6
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            5,
+            6
+          ]
+        ],
+        [
+          [
+            1,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            5,
+            7
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      ],
+      "multiple_point_orbit_sizes": [
+        1,
+        1,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        6
+      ],
+      "multiple_point_orbits": [
+        [
+          [
+            0,
+            2,
+            4,
+            7
+          ]
+        ],
+        [
+          [
+            1,
+            3,
+            5
+          ]
+        ],
+        [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        [
+          [
+            0,
+            1,
+            6,
+            7
+          ],
+          [
+            2,
+            3,
+            6,
+            7
+          ],
+          [
+            4,
+            5,
+            6,
+            7
+          ]
+        ],
+        [
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            1,
+            2,
+            4
+          ]
+        ],
+        [
+          [
+            0,
+            2,
+            6
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            2,
+            4,
+            6
+          ]
+        ],
+        [
+          [
+            0,
+            3,
+            5,
+            6
+          ],
+          [
+            1,
+            2,
+            5,
+            6
+          ],
+          [
+            1,
+            3,
+            4,
+            6
+          ]
+        ],
+        [
+          [
+            1,
+            3,
+            7
+          ],
+          [
+            1,
+            5,
+            7
+          ],
+          [
+            3,
+            5,
+            7
+          ]
+        ],
+        [
+          [
+            0,
+            3,
+            7
+          ],
+          [
+            0,
+            5,
+            7
+          ],
+          [
+            1,
+            2,
+            7
+          ],
+          [
+            1,
+            4,
+            7
+          ],
+          [
+            2,
+            5,
+            7
+          ],
+          [
+            3,
+            4,
+            7
+          ]
+        ]
+      ],
+      "plane_orbit_sizes": [
+        1,
+        1,
+        3,
+        3
+      ],
+      "plane_orbits": [
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          1,
+          3,
+          5
+        ]
+      ]
+    },
+    "character_C0_distribution": {
+      "2": 2,
+      "26": 1,
+      "8": 3
+    },
+    "character_C1_distribution": {
+      "1": 2,
+      "28": 1,
+      "8": 3
+    }
+  },
+  "quartic_perturbation": {
+    "Q0": "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t",
+    "epsilon": "1",
+    "recorded_status": "degree112_certified",
+    "release_theorem_status": "degree112_certified",
+    "ordinary_node_verified": false,
+    "notes": "degree112_certified: (G1), (G2) verified over Q; saturated Jacobian degree 112 certified; reducedness and Hessian-rank checks pending."
+  },
+  "degree_112_certificate": {
+    "expected_node_count": 112,
+    "double_line_count": 28,
+    "G1_avoids_multiple_points": true,
+    "G2_squarefree_on_double_lines": true,
+    "G3_global_singular_locus_checked": false,
+    "singular_locus_length": null,
+    "reduced": null,
+    "ordinary_nodes": null
+  },
+  "formal_node_blocks": [
+    {
+      "block_id": "84_B01",
+      "source_double_line_index": 1,
+      "line_key": "1,0,0,0|0,0,0,1",
+      "plane_pairs": [
+        "p1:p2"
+      ],
+      "node_ids": [
+        "84_B01_n1",
+        "84_B01_n2",
+        "84_B01_n3",
+        "84_B01_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B02",
+      "source_double_line_index": 2,
+      "line_key": "1,0,0,-1|0,1,0,-1",
+      "plane_pairs": [
+        "p1:p3"
+      ],
+      "node_ids": [
+        "84_B02_n1",
+        "84_B02_n2",
+        "84_B02_n3",
+        "84_B02_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B03",
+      "source_double_line_index": 3,
+      "line_key": "1,0,0,-1|0,1,0,1",
+      "plane_pairs": [
+        "p1:p4"
+      ],
+      "node_ids": [
+        "84_B03_n1",
+        "84_B03_n2",
+        "84_B03_n3",
+        "84_B03_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B04",
+      "source_double_line_index": 4,
+      "line_key": "1,0,0,-1|0,0,1,-1",
+      "plane_pairs": [
+        "p1:p5"
+      ],
+      "node_ids": [
+        "84_B04_n1",
+        "84_B04_n2",
+        "84_B04_n3",
+        "84_B04_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B05",
+      "source_double_line_index": 5,
+      "line_key": "1,0,0,-1|0,0,1,1",
+      "plane_pairs": [
+        "p1:p6"
+      ],
+      "node_ids": [
+        "84_B05_n1",
+        "84_B05_n2",
+        "84_B05_n3",
+        "84_B05_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B06",
+      "source_double_line_index": 6,
+      "line_key": "1,0,0,-1|0,1,1,2",
+      "plane_pairs": [
+        "p1:p7"
+      ],
+      "node_ids": [
+        "84_B06_n1",
+        "84_B06_n2",
+        "84_B06_n3",
+        "84_B06_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B07",
+      "source_double_line_index": 7,
+      "line_key": "1,0,0,-1|0,1,1,-2",
+      "plane_pairs": [
+        "p1:p8"
+      ],
+      "node_ids": [
+        "84_B07_n1",
+        "84_B07_n2",
+        "84_B07_n3",
+        "84_B07_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B08",
+      "source_double_line_index": 8,
+      "line_key": "1,0,0,1|0,1,0,-1",
+      "plane_pairs": [
+        "p2:p3"
+      ],
+      "node_ids": [
+        "84_B08_n1",
+        "84_B08_n2",
+        "84_B08_n3",
+        "84_B08_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B09",
+      "source_double_line_index": 9,
+      "line_key": "1,0,0,1|0,1,0,1",
+      "plane_pairs": [
+        "p2:p4"
+      ],
+      "node_ids": [
+        "84_B09_n1",
+        "84_B09_n2",
+        "84_B09_n3",
+        "84_B09_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B10",
+      "source_double_line_index": 10,
+      "line_key": "1,0,0,1|0,0,1,-1",
+      "plane_pairs": [
+        "p2:p5"
+      ],
+      "node_ids": [
+        "84_B10_n1",
+        "84_B10_n2",
+        "84_B10_n3",
+        "84_B10_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B11",
+      "source_double_line_index": 11,
+      "line_key": "1,0,0,1|0,0,1,1",
+      "plane_pairs": [
+        "p2:p6"
+      ],
+      "node_ids": [
+        "84_B11_n1",
+        "84_B11_n2",
+        "84_B11_n3",
+        "84_B11_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B12",
+      "source_double_line_index": 12,
+      "line_key": "1,0,0,1|0,1,1,0",
+      "plane_pairs": [
+        "p2:p7"
+      ],
+      "node_ids": [
+        "84_B12_n1",
+        "84_B12_n2",
+        "84_B12_n3",
+        "84_B12_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B13",
+      "source_double_line_index": 13,
+      "line_key": "1,0,0,1|0,1,1,-4",
+      "plane_pairs": [
+        "p2:p8"
+      ],
+      "node_ids": [
+        "84_B13_n1",
+        "84_B13_n2",
+        "84_B13_n3",
+        "84_B13_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B14",
+      "source_double_line_index": 14,
+      "line_key": "0,1,0,0|0,0,0,1",
+      "plane_pairs": [
+        "p3:p4"
+      ],
+      "node_ids": [
+        "84_B14_n1",
+        "84_B14_n2",
+        "84_B14_n3",
+        "84_B14_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B15",
+      "source_double_line_index": 15,
+      "line_key": "0,1,0,-1|0,0,1,-1",
+      "plane_pairs": [
+        "p3:p5"
+      ],
+      "node_ids": [
+        "84_B15_n1",
+        "84_B15_n2",
+        "84_B15_n3",
+        "84_B15_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B16",
+      "source_double_line_index": 16,
+      "line_key": "0,1,0,-1|0,0,1,1",
+      "plane_pairs": [
+        "p3:p6"
+      ],
+      "node_ids": [
+        "84_B16_n1",
+        "84_B16_n2",
+        "84_B16_n3",
+        "84_B16_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B17",
+      "source_double_line_index": 17,
+      "line_key": "1,0,1,2|0,1,0,-1",
+      "plane_pairs": [
+        "p3:p7"
+      ],
+      "node_ids": [
+        "84_B17_n1",
+        "84_B17_n2",
+        "84_B17_n3",
+        "84_B17_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B18",
+      "source_double_line_index": 18,
+      "line_key": "1,0,1,-2|0,1,0,-1",
+      "plane_pairs": [
+        "p3:p8"
+      ],
+      "node_ids": [
+        "84_B18_n1",
+        "84_B18_n2",
+        "84_B18_n3",
+        "84_B18_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B19",
+      "source_double_line_index": 19,
+      "line_key": "0,1,0,1|0,0,1,-1",
+      "plane_pairs": [
+        "p4:p5"
+      ],
+      "node_ids": [
+        "84_B19_n1",
+        "84_B19_n2",
+        "84_B19_n3",
+        "84_B19_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B20",
+      "source_double_line_index": 20,
+      "line_key": "0,1,0,1|0,0,1,1",
+      "plane_pairs": [
+        "p4:p6"
+      ],
+      "node_ids": [
+        "84_B20_n1",
+        "84_B20_n2",
+        "84_B20_n3",
+        "84_B20_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B21",
+      "source_double_line_index": 21,
+      "line_key": "1,0,1,0|0,1,0,1",
+      "plane_pairs": [
+        "p4:p7"
+      ],
+      "node_ids": [
+        "84_B21_n1",
+        "84_B21_n2",
+        "84_B21_n3",
+        "84_B21_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B22",
+      "source_double_line_index": 22,
+      "line_key": "1,0,1,-4|0,1,0,1",
+      "plane_pairs": [
+        "p4:p8"
+      ],
+      "node_ids": [
+        "84_B22_n1",
+        "84_B22_n2",
+        "84_B22_n3",
+        "84_B22_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B23",
+      "source_double_line_index": 23,
+      "line_key": "0,0,1,0|0,0,0,1",
+      "plane_pairs": [
+        "p5:p6"
+      ],
+      "node_ids": [
+        "84_B23_n1",
+        "84_B23_n2",
+        "84_B23_n3",
+        "84_B23_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B24",
+      "source_double_line_index": 24,
+      "line_key": "1,1,0,2|0,0,1,-1",
+      "plane_pairs": [
+        "p5:p7"
+      ],
+      "node_ids": [
+        "84_B24_n1",
+        "84_B24_n2",
+        "84_B24_n3",
+        "84_B24_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B25",
+      "source_double_line_index": 25,
+      "line_key": "1,1,0,-2|0,0,1,-1",
+      "plane_pairs": [
+        "p5:p8"
+      ],
+      "node_ids": [
+        "84_B25_n1",
+        "84_B25_n2",
+        "84_B25_n3",
+        "84_B25_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B26",
+      "source_double_line_index": 26,
+      "line_key": "1,1,0,0|0,0,1,1",
+      "plane_pairs": [
+        "p6:p7"
+      ],
+      "node_ids": [
+        "84_B26_n1",
+        "84_B26_n2",
+        "84_B26_n3",
+        "84_B26_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B27",
+      "source_double_line_index": 27,
+      "line_key": "1,1,0,-4|0,0,1,1",
+      "plane_pairs": [
+        "p6:p8"
+      ],
+      "node_ids": [
+        "84_B27_n1",
+        "84_B27_n2",
+        "84_B27_n3",
+        "84_B27_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    },
+    {
+      "block_id": "84_B28",
+      "source_double_line_index": 28,
+      "line_key": "1,1,1,0|0,0,0,1",
+      "plane_pairs": [
+        "p7:p8"
+      ],
+      "node_ids": [
+        "84_B28_n1",
+        "84_B28_n2",
+        "84_B28_n3",
+        "84_B28_n4"
+      ],
+      "node_count": 4,
+      "status": "formal_block_from_squarefree_quartic_restriction"
+    }
+  ],
+  "beta_block_expansion": {
+    "matrix_shape": [
+      112,
+      28
+    ],
+    "rank_Q": 28,
+    "column_sums": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "row_sums_all_one": true,
+    "smith_normal_form": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "interpretation": "Formal block expansion beta_A: Z<double_lines> -> Z<formal_nodes>; no Hodge meaning assigned."
+  },
+  "fidelity_ladder_seed": {
+    "source_F1": "local_inventory",
+    "source_F2": "source_rational_rank",
+    "source_F3": "source_smith_normal_form",
+    "source_F4": "automorphism_orbit_and_character_data",
+    "realized_status": "SOURCE_ONLY"
+  },
+  "hodge_atom_status": "UNRESOLVED",
+  "terminology_guard": "This manifest is source and formal-node data only; it is not a Hodge atom spectrum.",
+  "source_summary_row": {
+    "arrangement_id": "84",
+    "representative_status": "validated",
+    "source_reference": "Existing HodgeCY arrangement_84 representative; Cynk--Meyer/Cynk--Kocel--Cynk control data",
+    "local_inventory_signature": "p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0",
+    "hodge_signature": "h12=0;h11=40;euler=80",
+    "h12": "0",
+    "h11": "40",
+    "euler": "80",
+    "incidence_table_size": "10",
+    "automorphism_group_order": "6",
+    "gluing_matrix_shape": "26x28",
+    "rank_Q": "26",
+    "rank_F2": "23",
+    "kernel_dim_Q": "2",
+    "cokernel_dim_Q": "0",
+    "smith_normal_form": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,6,12",
+    "plane_orbit_sizes": "1,1,3,3",
+    "double_line_orbit_sizes": "1,3,3,3,3,3,3,3,6",
+    "multiple_point_orbit_sizes": "1,1,3,3,3,3,3,3,6",
+    "character_C1_distribution": "{1: 2, 8: 3, 28: 1}",
+    "character_C0_distribution": "{2: 2, 8: 3, 26: 1}",
+    "equivariant_signature": "{\"automorphism_group_order\": 6, \"character_C0\": \"2:2;26:1;8:3\", \"character_C1\": \"1:2;28:1;8:3\", \"double_line_orbit_sizes\": \"1,3,3,3,3,3,3,3,6\", \"multiple_point_orbit_sizes\": \"1,1,3,3,3,3,3,3,6\", \"plane_orbit_sizes\": \"1,1,3,3\", \"rank_F2\": 23, \"rank_Q\": 26, \"smith_normal_form\": \"1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,6,12\"}"
+  }
+}
