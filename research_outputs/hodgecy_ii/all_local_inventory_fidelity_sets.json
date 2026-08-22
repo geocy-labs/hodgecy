@@ -1,0 +1,71 @@
+[
+  {
+    "member_count": 2,
+    "members": [
+      "61",
+      "451"
+    ],
+    "set_id": "local_signature_061",
+    "signature": "p3=13;p4_0=6;p4_1=3;p5_0=0;p5_1=1;p5_2=0;l3=1"
+  },
+  {
+    "member_count": 2,
+    "members": [
+      "78",
+      "79"
+    ],
+    "set_id": "local_signature_078",
+    "signature": "p3=32;p4_0=6;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0"
+  },
+  {
+    "member_count": 2,
+    "members": [
+      "80",
+      "455"
+    ],
+    "set_id": "local_signature_079",
+    "signature": "p3=28;p4_0=7;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0"
+  },
+  {
+    "member_count": 2,
+    "members": [
+      "81",
+      "454"
+    ],
+    "set_id": "local_signature_080",
+    "signature": "p3=24;p4_0=8;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0"
+  },
+  {
+    "member_count": 4,
+    "members": [
+      "82",
+      "245",
+      "452",
+      "453"
+    ],
+    "set_id": "local_signature_081",
+    "signature": "p3=20;p4_0=9;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0"
+  },
+  {
+    "member_count": 6,
+    "members": [
+      "83",
+      "84",
+      "84a",
+      "239",
+      "240",
+      "241"
+    ],
+    "set_id": "local_signature_082",
+    "signature": "p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0"
+  },
+  {
+    "member_count": 2,
+    "members": [
+      "85",
+      "238"
+    ],
+    "set_id": "local_signature_083",
+    "signature": "p3=8;p4_0=12;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0"
+  }
+]

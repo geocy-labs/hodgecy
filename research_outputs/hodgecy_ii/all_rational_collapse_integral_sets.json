@@ -1,0 +1,15 @@
+[
+  {
+    "integral_signature_count": 2,
+    "members": [
+      "84",
+      "84a",
+      "239",
+      "240"
+    ],
+    "node_level_result": "unresolved",
+    "rational_signature": "rational:7fd30f3ecd2e87dc8be51f423d5c008e85920f600f819d6a6af453f0261da336",
+    "set_id": "rational_collapse_integral_006",
+    "source_level_result": "same rational source assembly but different integral Smith data"
+  }
+]
