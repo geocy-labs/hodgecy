@@ -1,0 +1,2 @@
+fiber_id	source_level	target_level	source_fingerprint	member_count	members	inventory_signature	hodge_signature	target_signature_count	target_classes	recovery_status
+hodge_refined_to_integral_006	hodge_refined	integral	hodge_refined:69acd5e4bbc7448a621b50a514ac8a5f3469b88d390eea5eb833efa3f277eb6c	2	84,84a	p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0	h12=0;h11=40;euler=80	2	integral:0f35cfa13ab162d82ff72b9eefe774ef9525849e3b621dab8bbf942c57f53985[84]; integral:6e71b52edeb7fb43a2d3c314484508c54ae48ffb13fe4d4236e29aabbd1f003c[84a]	integral_separates_hodge_refined_fiber

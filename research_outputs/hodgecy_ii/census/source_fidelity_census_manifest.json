@@ -1,0 +1,105 @@
+{
+  "outputs": {
+    "research_outputs/hodgecy_ii/census/census_summary.json": "421079ff5f1668ff0dcae3eea67a2742428fc22abecc49ea305a252860c9ea7c",
+    "research_outputs/hodgecy_ii/census/census_summary.md": "c8d6ade3a773ef50c315eb28112f75a96446ed748c23cd476520585ca6154b07",
+    "research_outputs/hodgecy_ii/census/ckc_coverage_audit.tsv": "76d76d73f18237de33e4ba442608bd742fb03c8398d3588dd8b081c9af2c6060",
+    "research_outputs/hodgecy_ii/census/fidelity_refinement_trees.json": "d1898ccf9b34098169d104020ff7178ad82808610df2cfaf8fd7773f659fa41d",
+    "research_outputs/hodgecy_ii/census/figure_local_fiber_size_histogram.tsv": "2f7d3c4561e7f732858ba8588e6de021b3f479d49f58a89a1e4104c57d6dde77",
+    "research_outputs/hodgecy_ii/census/figure_refinement_counts.tsv": "b55e296e245498f4b1789d0f9b5b80b68cad3e6467fd9c34a108e4bd8e901348",
+    "research_outputs/hodgecy_ii/census/figure_torsion_prime_distribution.tsv": "b324ed253c537cc5b75fa49f697d989b53064778f74b72cd22255e1e210381c7",
+    "research_outputs/hodgecy_ii/census/local_inventory_fibers.json": "6358449013f63c3bda13b78c727c07c8cc17dcff5f1f05eb93c8a7744c11fdb6",
+    "research_outputs/hodgecy_ii/census/local_inventory_fibers.tsv": "5356d68e04503c8d2edca87e4a9c689fac51448df5a5538f4796606002bf9dc0",
+    "research_outputs/hodgecy_ii/census/nontrivial_fidelity_fibers.tsv": "36c9a2bc83e9db5c32fbe3f043ecb6c7f73813994587771d69ad68fdd766e57f",
+    "research_outputs/hodgecy_ii/census/prime_sensitive_profiles.tsv": "ffdef1c0db1d95dd909fcc5037e48b4b80f231227752ac14675e904d723d9ada",
+    "research_outputs/hodgecy_ii/census/recurrent_equivariant_signatures.tsv": "af720b4164073ac003fab3579239795e2f97a2a9732df69bc029f87d401b5c0b",
+    "research_outputs/hodgecy_ii/census/recurrent_integral_assembly_types.tsv": "e1a5c198c6ff6020f4ca3e8ff7cfd00087afa6421f383b190b5edfdc605dfae2",
+    "research_outputs/hodgecy_ii/census/recurrent_rational_assembly_types.tsv": "1d97d17ec2b05189ccf703bd24fa5f0e4afd3667bedb42c289532466173f3464",
+    "research_outputs/hodgecy_ii/census/source_assembly_records.json": "ef205c306c1ec0e21be5b3e9cb465b3591866ab0325d9c0ac42ebe885c84e272",
+    "research_outputs/hodgecy_ii/census/source_assembly_records.tsv": "995dccf7718f33fe9fd1418e94a30b4bf201d438424db4e16bda070fe1a7a675",
+    "research_outputs/hodgecy_ii/census/structural_observations.md": "457a23269f8b99c1c9a316c63dd0a08b01de4ab71b4ce6709d9685ab4f43ee50",
+    "research_outputs/hodgecy_ii/census/table_fidelity_fibers.tsv": "5356d68e04503c8d2edca87e4a9c689fac51448df5a5538f4796606002bf9dc0",
+    "research_outputs/hodgecy_ii/census/table_hodge_collapse_assembly_recovery.tsv": "b1ee985a0368b9640040e6fcbb124304ae845ae9187bce9d682ed1e19586b5f5",
+    "research_outputs/hodgecy_ii/census/table_hodge_refined_fidelity_fibers.tsv": "7bf70bb345af8c5a22c4cd512a1dcbf31c7ad62c65ddb8a97996daeb8113ef83",
+    "research_outputs/hodgecy_ii/census/table_integral_collapse_equivariant_recovery.tsv": "fb2322e95e311c4b181e4fc2ab87d1e307745e3d0425ddfaceb85fdf6f05c716",
+    "research_outputs/hodgecy_ii/census/table_local_collapse_rational_recovery.tsv": "f51b5fdd093e60c188f38105b0164730e218916636b6467e602638c4cd12a453",
+    "research_outputs/hodgecy_ii/census/table_prime_sensitive_fibers.tsv": "ffdef1c0db1d95dd909fcc5037e48b4b80f231227752ac14675e904d723d9ada",
+    "research_outputs/hodgecy_ii/census/table_rational_collapse_integral_recovery.tsv": "f2baab55f8885565b77af19112d9aec9bb5407067dd6a8cb156ecbe454a4cb96",
+    "research_outputs/hodgecy_ii/census/table_recurrent_assembly_types.tsv": "a8b8e6efee59e9453bbd39045039f46135f284ac3a43de8ca5609f9b42adbff2",
+    "research_outputs/hodgecy_ii/source_fidelity_census_report.md": "c8d6ade3a773ef50c315eb28112f75a96446ed748c23cd476520585ca6154b07"
+  },
+  "schema": "hodgecy_ii_source_fidelity_census_manifest.v1",
+  "source_inputs": {
+    "data/processed/equivariant_spectra/ckc_fixed_rational_batch/ckc_fixed_rational_spectra.json": "faee3cc6a2f09e993f7c5e1d06c4963120993562512d5afb9c1d0ca19d29be3b",
+    "data/processed/equivariant_spectra/fixed_equation_batch_001/hodgecy_equivariant_spectrum_84.json": "c33590a40b7ef44dc0620bbf6694d5d8d30f7d8cb10c0603683fecc41e438e7e",
+    "data/processed/equivariant_spectra/fixed_equation_batch_001/hodgecy_equivariant_spectrum_84a.json": "987ff473e06e21a99539f4d6743c0d8ddff42831f03786c3691a4f80ef7b171d",
+    "data/raw/cynk_kocel_cynk_2026/ckc_equation_index_001_455.json": "5d07cc66371162c1625fc4f07e97fd31b26c13db3c8ea0b53aaa4e9f43f4600c",
+    "data/raw/cynk_meyer_table1.csv": "759f3a996a5b79ebfe3fe52d8d3c3ec1f3bcbb50eded0c0259635bbc30d7bdb2"
+  },
+  "summary": {
+    "census_eligible": 13,
+    "ckc_index_census_eligible": 12,
+    "clean_two_stratum_count": 7,
+    "eligible_arrangement_ids": [
+      "1",
+      "3",
+      "19",
+      "32",
+      "69",
+      "84",
+      "84a",
+      "93",
+      "238",
+      "239",
+      "240",
+      "241",
+      "245"
+    ],
+    "equivariant_signature_count": 13,
+    "hodge_collapse_assembly_recovery_fiber_count": 1,
+    "hodge_refined_fiber_count": 6,
+    "hodge_table_linked_eligible_count": 7,
+    "ineligible_source_records": 443,
+    "integral_collapse_equivariant_recovery_fiber_count": 2,
+    "integral_signature_count": 11,
+    "known_witnesses": {
+      "recurrent_equivariant_signatures": [],
+      "recurrent_integral_signatures": [
+        "84,240",
+        "84a,239"
+      ],
+      "same_hodge_local_rational_integral_split": [
+        "84",
+        "84a"
+      ],
+      "same_local_rational_split": [
+        "84",
+        "84a",
+        "239",
+        "240",
+        "241"
+      ]
+    },
+    "local_collapse_rational_recovery_fiber_count": 1,
+    "local_inventory_fiber_count": 9,
+    "nontrivial_hodge_refined_fiber_count": 1,
+    "nontrivial_local_inventory_fiber_count": 1,
+    "rational_collapse_integral_recovery_fiber_count": 1,
+    "rational_signature_count": 10,
+    "raw_full_validated_dataset_loaded": false,
+    "raw_parser_coverage_complete": true,
+    "recurrent_equivariant_signature_count": 0,
+    "recurrent_integral_assembly_type_count": 2,
+    "recurrent_rational_assembly_type_count": 1,
+    "schema": "hodgecy_ii_source_fidelity_census.v1",
+    "source_recomputed_without_hodge_count": 6,
+    "source_record_coverage_audited": 455,
+    "source_records_loaded": 455,
+    "supplemental_control_arrangement_ids": [
+      "84a"
+    ],
+    "supplemental_control_census_eligible": 1,
+    "terminology_guard": "source_fidelity_census_only_not_node_or_hodge_atom_realization",
+    "total_ckc_types": 455,
+    "truncated_two_stratum_count": 6
+  }
+}

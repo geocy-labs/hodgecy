@@ -1,0 +1,456 @@
+arrangement_id	source_record_present	equation_present	equation_type	source_extraction_status	source_validation_status	linear_factor_count	has_parameters	incidence_table_present	local_inventory_constructible	two_stratum_constructible	group_constructible	hodge_data_available	hodge_data_source	triple_line_count	validation_tier	census_eligible	exclusion_reason	parser_coverage_complete	full_validated_dataset_loaded
+1	YES	YES	fixed_rational	extracted	unvalidated	8	NO	YES	YES	YES	YES	YES	source_spectrum_or_cynk_meyer_table1	4	S2_HODGE_TABLE_LINKED	YES		YES	NO
+2	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	4	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+3	YES	YES	fixed_rational	extracted	unvalidated	8	NO	YES	YES	YES	YES	YES	source_spectrum_or_cynk_meyer_table1	3	S2_HODGE_TABLE_LINKED	YES		YES	NO
+4	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	3	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+5	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	3	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+6	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	3	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+7	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	3	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+8	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	3	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+9	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	3	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+10	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	3	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+11	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	3	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+12	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	3	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+13	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	3	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+14	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	3	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+15	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	2	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+16	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	2	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+17	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	2	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+18	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	2	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+19	YES	YES	fixed_rational	extracted	unvalidated	8	NO	YES	YES	YES	YES	YES	source_spectrum_or_cynk_meyer_table1	2	S2_HODGE_TABLE_LINKED	YES		YES	NO
+20	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	2	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+21	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	2	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+22	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	2	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+23	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	2	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+24	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	2	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+25	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	2	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+26	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	2	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+27	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	2	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+28	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	2	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+29	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	2	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+30	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	2	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+31	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	2	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+32	YES	YES	fixed_rational	extracted	unvalidated	8	NO	YES	YES	YES	YES	YES	source_spectrum_or_cynk_meyer_table1	2	S2_HODGE_TABLE_LINKED	YES		YES	NO
+33	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	2	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+34	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	2	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+35	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	2	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+36	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	2	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+37	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	2	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+38	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	1	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+39	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	1	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+40	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	1	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+41	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	1	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+42	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	1	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+43	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	1	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+44	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	1	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+45	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	1	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+46	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	1	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+47	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	1	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+48	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	1	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+49	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	1	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+50	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	1	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+51	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	1	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+52	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	1	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+53	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	1	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+54	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	1	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+55	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	1	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+56	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	1	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+57	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	1	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+58	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	1	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+59	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	1	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+60	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	1	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+61	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	1	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+62	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	0	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+63	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	0	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+64	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	0	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+65	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	0	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+66	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	0	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+67	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	0	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+68	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	0	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+69	YES	YES	fixed_rational	extracted	unvalidated	8	NO	YES	YES	YES	YES	YES	source_spectrum_or_cynk_meyer_table1	1	S2_HODGE_TABLE_LINKED	YES		YES	NO
+70	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	0	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+71	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	0	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+72	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	0	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+73	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	0	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+74	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	0	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+75	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	0	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+76	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	0	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+77	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	0	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+78	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	0	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+79	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	0	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+80	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	0	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+81	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	0	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+82	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	0	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+83	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	0	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+84	YES	YES	parameterized	extracted	unvalidated	8	YES	YES	YES	YES	YES	YES	source_spectrum_or_cynk_meyer_table1	0	S2_HODGE_TABLE_LINKED	YES		YES	NO
+85	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	SOURCE_TABLE_ONLY	NO	NO	YES	source_spectrum_or_cynk_meyer_table1	0	S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+86	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+87	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+88	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+89	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+90	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+91	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+92	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+93	YES	YES	fixed_rational	extracted	unvalidated	8	NO	YES	YES	YES	YES	NO		1	S1_SOURCE_RECOMPUTED	YES		YES	NO
+94	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+95	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+96	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+97	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+98	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+99	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+100	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+101	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+102	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+103	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+104	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+105	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+106	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+107	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+108	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+109	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+110	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+111	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+112	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+113	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+114	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+115	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+116	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+117	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+118	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+119	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+120	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+121	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+122	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+123	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+124	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+125	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+126	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+127	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+128	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+129	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+130	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+131	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+132	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+133	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+134	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+135	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+136	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+137	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+138	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+139	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+140	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+141	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+142	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+143	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+144	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+145	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+146	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+147	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+148	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+149	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+150	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+151	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+152	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+153	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+154	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+155	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+156	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+157	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+158	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+159	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+160	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+161	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+162	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+163	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+164	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+165	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+166	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+167	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+168	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+169	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+170	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+171	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+172	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+173	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+174	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+175	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+176	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+177	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+178	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+179	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+180	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+181	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+182	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+183	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+184	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+185	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+186	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+187	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+188	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+189	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+190	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+191	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+192	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+193	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+194	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+195	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+196	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+197	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+198	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+199	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+200	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+201	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+202	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+203	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+204	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+205	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+206	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+207	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+208	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+209	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+210	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+211	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+212	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+213	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+214	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+215	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+216	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+217	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+218	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+219	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+220	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+221	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+222	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+223	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+224	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+225	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+226	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+227	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+228	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+229	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+230	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+231	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+232	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+233	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+234	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+235	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+236	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+237	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+238	YES	YES	fixed_rational	extracted	unvalidated	8	NO	YES	YES	YES	YES	NO		0	S1_SOURCE_RECOMPUTED	YES		YES	NO
+239	YES	YES	fixed_rational	extracted	unvalidated	8	NO	YES	YES	YES	YES	NO		0	S1_SOURCE_RECOMPUTED	YES		YES	NO
+240	YES	YES	fixed_rational	extracted	unvalidated	8	NO	YES	YES	YES	YES	NO		0	S1_SOURCE_RECOMPUTED	YES		YES	NO
+241	YES	YES	fixed_rational	extracted	unvalidated	8	NO	YES	YES	YES	YES	NO		0	S1_SOURCE_RECOMPUTED	YES		YES	NO
+242	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+243	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+244	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+245	YES	YES	fixed_rational	extracted	unvalidated	8	NO	YES	YES	YES	YES	NO		0	S1_SOURCE_RECOMPUTED	YES		YES	NO
+246	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+247	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+248	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+249	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+250	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+251	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+252	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+253	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+254	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+255	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+256	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+257	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+258	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+259	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+260	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+261	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+262	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+263	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+264	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+265	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+266	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+267	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+268	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+269	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+270	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+271	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+272	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+273	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+274	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+275	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+276	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+277	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+278	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+279	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+280	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+281	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+282	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+283	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+284	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+285	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+286	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+287	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+288	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+289	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+290	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+291	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+292	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+293	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+294	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+295	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+296	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+297	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+298	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+299	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+300	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+301	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+302	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+303	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+304	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+305	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+306	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+307	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+308	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+309	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+310	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+311	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+312	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+313	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+314	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+315	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+316	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+317	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+318	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+319	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+320	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+321	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+322	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+323	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+324	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+325	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+326	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+327	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+328	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+329	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+330	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+331	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+332	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+333	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+334	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+335	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+336	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+337	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+338	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+339	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+340	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+341	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+342	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+343	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+344	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+345	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+346	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+347	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+348	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+349	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+350	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+351	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+352	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+353	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+354	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+355	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+356	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+357	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+358	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+359	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+360	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+361	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+362	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+363	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+364	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+365	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+366	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+367	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+368	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+369	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+370	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+371	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+372	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+373	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+374	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+375	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+376	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+377	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+378	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+379	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+380	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+381	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+382	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+383	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+384	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+385	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+386	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+387	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+388	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+389	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+390	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+391	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+392	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+393	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+394	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+395	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+396	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+397	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+398	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+399	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+400	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+401	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+402	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+403	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+404	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+405	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+406	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+407	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+408	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+409	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+410	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+411	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+412	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+413	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+414	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+415	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+416	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+417	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+418	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+419	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+420	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+421	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+422	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+423	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+424	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+425	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+426	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+427	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+428	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+429	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+430	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+431	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+432	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+433	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+434	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+435	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+436	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+437	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+438	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+439	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+440	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+441	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+442	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+443	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+444	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+445	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+446	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+447	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+448	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+449	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+450	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+451	YES	NO	partial_or_problematic_extraction	partial	unvalidated	13	NO	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+452	YES	YES	fixed_algebraic	extracted	unvalidated	8	NO	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+453	YES	YES	fixed_algebraic	extracted	unvalidated	8	NO	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+454	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO
+455	YES	YES	parameterized	extracted	unvalidated	8	YES	NO	NO	NO	NO	NO			S0_UNVALIDATED_SOURCE_RECORD	NO	raw_pdf_extraction_not_promoted_to_recomputed_source_complex	YES	NO

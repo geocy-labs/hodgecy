@@ -16,6 +16,17 @@ from .hodgecy_ii import (
     gate_a_promotion_decision,
     source_survival_profile,
 )
+from .hodgecy_ii_census import (
+    HODGE_KEYS,
+    INVENTORY_KEYS,
+    SourceAssemblyRecord,
+    group_records,
+    hodge_tuple,
+    inventory_tuple,
+    normalize_spectrum,
+    stable_fingerprint,
+    torsion_profile,
+)
 
 __all__ = [
     "EvidenceStatus",
@@ -31,5 +42,14 @@ __all__ = [
     "beta_block_expansion_matrix",
     "first_separating_level",
     "gate_a_promotion_decision",
+    "HODGE_KEYS",
+    "INVENTORY_KEYS",
+    "SourceAssemblyRecord",
+    "group_records",
+    "hodge_tuple",
+    "inventory_tuple",
+    "normalize_spectrum",
     "source_survival_profile",
+    "stable_fingerprint",
+    "torsion_profile",
 ]

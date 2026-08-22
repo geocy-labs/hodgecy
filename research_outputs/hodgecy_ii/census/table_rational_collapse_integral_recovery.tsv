@@ -1,0 +1,2 @@
+fiber_id	source_level	target_level	source_fingerprint	member_count	members	inventory_signature	hodge_signature	target_signature_count	target_classes	recovery_status
+rational_to_integral_006	rational	integral	rational:9d168feab7fd7642ecf30d07dacb9d15e40c068b5c91076c9135e77bc9b74af3	4	84,84a,239,240	p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0	UNKNOWN | h12=0;h11=40;euler=80	2	integral:0f35cfa13ab162d82ff72b9eefe774ef9525849e3b621dab8bbf942c57f53985[84,240]; integral:6e71b52edeb7fb43a2d3c314484508c54ae48ffb13fe4d4236e29aabbd1f003c[84a,239]	integral_separates_rational_fiber

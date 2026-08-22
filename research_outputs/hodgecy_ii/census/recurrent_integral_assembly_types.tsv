@@ -1,0 +1,3 @@
+recurrent_type_id	signature_kind	fingerprint	member_count	members	inventory_signature	hodge_signature	rank_Q	rank_F2	smith_normal_form	automorphism_group_order
+integral_recurrent_006	integral	integral:0f35cfa13ab162d82ff72b9eefe774ef9525849e3b621dab8bbf942c57f53985	2	84,240	p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0	UNKNOWN | h12=0;h11=40;euler=80	26	23	1^23,2,6,12	6
+integral_recurrent_007	integral	integral:6e71b52edeb7fb43a2d3c314484508c54ae48ffb13fe4d4236e29aabbd1f003c	2	84a,239	p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0	UNKNOWN | h12=0;h11=40;euler=80	26	21	1^21,2,4^3,12	24

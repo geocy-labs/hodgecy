@@ -1,0 +1,2 @@
+fiber_id	fingerprint	member_count	members	regime	inventory_signature	hodge_signature	rank_Q_values	rank_F2_values	integral_signature_count	equivariant_signature_count	automorphism_group_orders
+local_fiber_006	local:d689892f18909ee09390855bbe914f1af6c790faa8afbdeeae9eeeb3010b5a61	5	84,84a,239,240,241	CLEAN_TWO_STRATUM	p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0	UNKNOWN | h12=0;h11=40;euler=80	24,26	21,23,24	3	5	6,24,32

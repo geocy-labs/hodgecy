@@ -1,0 +1,7 @@
+fiber_id	fingerprint	member_count	members	regime	inventory_signature	hodge_signature	rank_Q_values	rank_F2_values	integral_signature_count	equivariant_signature_count	automorphism_group_orders
+hodge_refined_fiber_001	hodge_refined:bc1900b004b2837dba62acf15488069d767f6a32ea7fcd30ddfa9d6d201fff04	1	1	TRUNCATED_TWO_STRATUM	p3=4;p4_0=5;p4_1=0;p5_0=4;p5_1=0;p5_2=0;l3=4	h12=1;h11=69;euler=136	13	11	1	1	8
+hodge_refined_fiber_002	hodge_refined:7b6b30f40b63c8928de4afbfa9ba5e5993fca3a8d0003f03bd777c34435f535c	1	3	TRUNCATED_TWO_STRATUM	p3=8;p4_0=6;p4_1=0;p5_0=3;p5_1=0;p5_2=0;l3=3	h12=3;h11=59;euler=112	16	13	1	1	6
+hodge_refined_fiber_003	hodge_refined:f5f319b283235a41ff63a4acec31892dc7436054705d6b5b9440bff3169d2cda	1	19	TRUNCATED_TWO_STRATUM	p3=9;p4_0=8;p4_1=0;p5_0=2;p5_1=0;p5_2=0;l3=2	h12=4;h11=50;euler=92	18	16	1	1	4
+hodge_refined_fiber_004	hodge_refined:66f0a2c4a944307bcc9403fefd4447cb82739c90639d70f757fec8e8253f6d8d	1	32	TRUNCATED_TWO_STRATUM	p3=8;p4_0=11;p4_1=0;p5_0=1;p5_1=0;p5_2=0;l3=2	h12=4;h11=46;euler=84	20	18	1	1	4
+hodge_refined_fiber_005	hodge_refined:2563f8ba1dc52591253abdee25f6b57eb31a743960821428cf0123c2636a325d	1	69	TRUNCATED_TWO_STRATUM	p3=14;p4_0=6;p4_1=0;p5_0=2;p5_1=0;p5_2=0;l3=1	h12=4;h11=38;euler=68	21	20	1	1	4
+hodge_refined_fiber_006	hodge_refined:69acd5e4bbc7448a621b50a514ac8a5f3469b88d390eea5eb833efa3f277eb6c	2	84,84a	CLEAN_TWO_STRATUM	p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0	h12=0;h11=40;euler=80	26	21,23	2	2	6,24

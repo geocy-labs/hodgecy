@@ -1,0 +1,67 @@
+{
+  "census_eligible": 13,
+  "ckc_index_census_eligible": 12,
+  "clean_two_stratum_count": 7,
+  "eligible_arrangement_ids": [
+    "1",
+    "3",
+    "19",
+    "32",
+    "69",
+    "84",
+    "84a",
+    "93",
+    "238",
+    "239",
+    "240",
+    "241",
+    "245"
+  ],
+  "equivariant_signature_count": 13,
+  "hodge_collapse_assembly_recovery_fiber_count": 1,
+  "hodge_refined_fiber_count": 6,
+  "hodge_table_linked_eligible_count": 7,
+  "ineligible_source_records": 443,
+  "integral_collapse_equivariant_recovery_fiber_count": 2,
+  "integral_signature_count": 11,
+  "known_witnesses": {
+    "recurrent_equivariant_signatures": [],
+    "recurrent_integral_signatures": [
+      "84,240",
+      "84a,239"
+    ],
+    "same_hodge_local_rational_integral_split": [
+      "84",
+      "84a"
+    ],
+    "same_local_rational_split": [
+      "84",
+      "84a",
+      "239",
+      "240",
+      "241"
+    ]
+  },
+  "local_collapse_rational_recovery_fiber_count": 1,
+  "local_inventory_fiber_count": 9,
+  "nontrivial_hodge_refined_fiber_count": 1,
+  "nontrivial_local_inventory_fiber_count": 1,
+  "rational_collapse_integral_recovery_fiber_count": 1,
+  "rational_signature_count": 10,
+  "raw_full_validated_dataset_loaded": false,
+  "raw_parser_coverage_complete": true,
+  "recurrent_equivariant_signature_count": 0,
+  "recurrent_integral_assembly_type_count": 2,
+  "recurrent_rational_assembly_type_count": 1,
+  "schema": "hodgecy_ii_source_fidelity_census.v1",
+  "source_recomputed_without_hodge_count": 6,
+  "source_record_coverage_audited": 455,
+  "source_records_loaded": 455,
+  "supplemental_control_arrangement_ids": [
+    "84a"
+  ],
+  "supplemental_control_census_eligible": 1,
+  "terminology_guard": "source_fidelity_census_only_not_node_or_hodge_atom_realization",
+  "total_ckc_types": 455,
+  "truncated_two_stratum_count": 6
+}

@@ -30,4 +30,9 @@ None yet.
 - Source-to-node chain/comparison map.
 - Genuine rational/integral/equivariant Hodge atom comparison.
 - LMHS / extension fidelity.
-- Complete double-octic source-assembly fiber scan.
+
+## SOURCE-FIDELITY CENSUS CHECKPOINT
+
+- Source-level CKC audit complete for 455 raw source records, with 13 committed source-recomputed assemblies classified.
+- The census is a computational observation only: it is not a node, defect, LMHS, or Hodge-atom realization result.
+- Current source-level recovery witnesses include the local fiber `84,84a,239,240,241` and the Hodge-refined integral split `84,84a`.

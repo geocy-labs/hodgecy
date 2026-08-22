@@ -1,0 +1,190 @@
+{
+  "fibers": [
+    {
+      "automorphism_group_orders": [
+        8
+      ],
+      "equivariant_signature_count": 1,
+      "fiber_id": "local_fiber_001",
+      "fingerprint": "local:13fabb8b620a6058757ac06ee0c489b65752d5160f03ec714812b1903b4387c6",
+      "hodge_signature": "h12=1;h11=69;euler=136",
+      "integral_signature_count": 1,
+      "inventory_signature": "p3=4;p4_0=5;p4_1=0;p5_0=4;p5_1=0;p5_2=0;l3=4",
+      "member_count": 1,
+      "members": "1",
+      "rank_F2_values": [
+        11
+      ],
+      "rank_Q_values": [
+        13
+      ],
+      "regime": "TRUNCATED_TWO_STRATUM"
+    },
+    {
+      "automorphism_group_orders": [
+        6
+      ],
+      "equivariant_signature_count": 1,
+      "fiber_id": "local_fiber_002",
+      "fingerprint": "local:99d070b192df53ef332ea22e557164d074febcb04bc653c89ccabfe27675ccce",
+      "hodge_signature": "h12=3;h11=59;euler=112",
+      "integral_signature_count": 1,
+      "inventory_signature": "p3=8;p4_0=6;p4_1=0;p5_0=3;p5_1=0;p5_2=0;l3=3",
+      "member_count": 1,
+      "members": "3",
+      "rank_F2_values": [
+        13
+      ],
+      "rank_Q_values": [
+        16
+      ],
+      "regime": "TRUNCATED_TWO_STRATUM"
+    },
+    {
+      "automorphism_group_orders": [
+        4
+      ],
+      "equivariant_signature_count": 1,
+      "fiber_id": "local_fiber_003",
+      "fingerprint": "local:960b87e600d23c7faec38121f73d969e922c0077dc1c32b1c22b935de0821c24",
+      "hodge_signature": "h12=4;h11=50;euler=92",
+      "integral_signature_count": 1,
+      "inventory_signature": "p3=9;p4_0=8;p4_1=0;p5_0=2;p5_1=0;p5_2=0;l3=2",
+      "member_count": 1,
+      "members": "19",
+      "rank_F2_values": [
+        16
+      ],
+      "rank_Q_values": [
+        18
+      ],
+      "regime": "TRUNCATED_TWO_STRATUM"
+    },
+    {
+      "automorphism_group_orders": [
+        4
+      ],
+      "equivariant_signature_count": 1,
+      "fiber_id": "local_fiber_004",
+      "fingerprint": "local:512c3b6c5583f686b7888443d96d6254c760a5865f0b1769e25dad905bf99975",
+      "hodge_signature": "h12=4;h11=46;euler=84",
+      "integral_signature_count": 1,
+      "inventory_signature": "p3=8;p4_0=11;p4_1=0;p5_0=1;p5_1=0;p5_2=0;l3=2",
+      "member_count": 1,
+      "members": "32",
+      "rank_F2_values": [
+        18
+      ],
+      "rank_Q_values": [
+        20
+      ],
+      "regime": "TRUNCATED_TWO_STRATUM"
+    },
+    {
+      "automorphism_group_orders": [
+        4
+      ],
+      "equivariant_signature_count": 1,
+      "fiber_id": "local_fiber_005",
+      "fingerprint": "local:1b3b0d3929dc47c8a1a7b18278833368cf1f2220cc002446e8cf6946a1f207e4",
+      "hodge_signature": "h12=4;h11=38;euler=68",
+      "integral_signature_count": 1,
+      "inventory_signature": "p3=14;p4_0=6;p4_1=0;p5_0=2;p5_1=0;p5_2=0;l3=1",
+      "member_count": 1,
+      "members": "69",
+      "rank_F2_values": [
+        20
+      ],
+      "rank_Q_values": [
+        21
+      ],
+      "regime": "TRUNCATED_TWO_STRATUM"
+    },
+    {
+      "automorphism_group_orders": [
+        6,
+        24,
+        32
+      ],
+      "equivariant_signature_count": 5,
+      "fiber_id": "local_fiber_006",
+      "fingerprint": "local:d689892f18909ee09390855bbe914f1af6c790faa8afbdeeae9eeeb3010b5a61",
+      "hodge_signature": "UNKNOWN | h12=0;h11=40;euler=80",
+      "integral_signature_count": 3,
+      "inventory_signature": "p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0",
+      "member_count": 5,
+      "members": "84,84a,239,240,241",
+      "rank_F2_values": [
+        21,
+        23,
+        24
+      ],
+      "rank_Q_values": [
+        24,
+        26
+      ],
+      "regime": "CLEAN_TWO_STRATUM"
+    },
+    {
+      "automorphism_group_orders": [
+        4
+      ],
+      "equivariant_signature_count": 1,
+      "fiber_id": "local_fiber_007",
+      "fingerprint": "local:f07507d334e098cd2c32eb849be75fd0b6c5819b90f93f0bb2196d81fca3d4d0",
+      "hodge_signature": "UNKNOWN",
+      "integral_signature_count": 1,
+      "inventory_signature": "p3=13;p4_0=9;p4_1=0;p5_0=1;p5_1=0;p5_2=0;l3=1",
+      "member_count": 1,
+      "members": "93",
+      "rank_F2_values": [
+        21
+      ],
+      "rank_Q_values": [
+        23
+      ],
+      "regime": "TRUNCATED_TWO_STRATUM"
+    },
+    {
+      "automorphism_group_orders": [
+        192
+      ],
+      "equivariant_signature_count": 1,
+      "fiber_id": "local_fiber_008",
+      "fingerprint": "local:243745ea368d3b67b2e10f8ab97de620180be2732a15f3a0f7810bb7ee71eeb3",
+      "hodge_signature": "UNKNOWN",
+      "integral_signature_count": 1,
+      "inventory_signature": "p3=8;p4_0=12;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0",
+      "member_count": 1,
+      "members": "238",
+      "rank_F2_values": [
+        16
+      ],
+      "rank_Q_values": [
+        20
+      ],
+      "regime": "CLEAN_TWO_STRATUM"
+    },
+    {
+      "automorphism_group_orders": [
+        2
+      ],
+      "equivariant_signature_count": 1,
+      "fiber_id": "local_fiber_009",
+      "fingerprint": "local:db3b63a987de5ecdb1ae6bf44089341f178573db1bde47c43648049add61f6bf",
+      "hodge_signature": "UNKNOWN",
+      "integral_signature_count": 1,
+      "inventory_signature": "p3=20;p4_0=9;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0",
+      "member_count": 1,
+      "members": "245",
+      "rank_F2_values": [
+        24
+      ],
+      "rank_Q_values": [
+        27
+      ],
+      "regime": "CLEAN_TWO_STRATUM"
+    }
+  ],
+  "schema": "hodgecy_ii_local_inventory_fibers.v1"
+}

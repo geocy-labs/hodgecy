@@ -1,0 +1,1341 @@
+{
+  "records": [
+    {
+      "arrangement_id": "1",
+      "automorphism_group_order": 8,
+      "cokernel_dim_Q": 0,
+      "double_line_orbit_sizes": [
+        2,
+        2,
+        4,
+        8
+      ],
+      "equivariant_fingerprint": "equivariant:014f15ea11c68a49a98cd1e6000e99fee2094b7e4382a6593d9134bc46f92802",
+      "gluing_matrix_shape": [
+        13,
+        16
+      ],
+      "hodge": {
+        "euler": 136,
+        "h11": 69,
+        "h12": 1
+      },
+      "hodge_refined_fingerprint": "hodge_refined:bc1900b004b2837dba62acf15488069d767f6a32ea7fcd30ddfa9d6d201fff04",
+      "hodge_source": "data/raw/cynk_meyer_table1.csv",
+      "integral_fingerprint": "integral:8cdc9399d310ad8e8dd4f75d687c9868f55a22d0b6d006fcb9493c8911301937",
+      "inventory": {
+        "l3": 4,
+        "p3": 4,
+        "p4_0": 5,
+        "p4_1": 0,
+        "p5_0": 4,
+        "p5_1": 0,
+        "p5_2": 0
+      },
+      "kernel_dim_Q": 3,
+      "local_fingerprint": "local:13fabb8b620a6058757ac06ee0c489b65752d5160f03ec714812b1903b4387c6",
+      "multiple_point_orbit_sizes": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "p_primary_exponents": {
+        "2": [
+          1,
+          2
+        ],
+        "3": [
+          1
+        ]
+      },
+      "plane_orbit_sizes": [
+        4,
+        4
+      ],
+      "rank_F2": 11,
+      "rank_Q": 13,
+      "rational_fingerprint": "rational:4dba73752abbd81deea1c4721ac44047dc25c830e88bda5ff9ceb9fe01857c72",
+      "realization_status": "SOURCE_ONLY",
+      "regime": "TRUNCATED_TWO_STRATUM",
+      "smith_normal_form": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        12
+      ],
+      "source_dataset": "ckc_fixed_rational_batch",
+      "source_reference": "Cynk--Kocel--Cynk 2026, Section 6.1",
+      "torsion_invariant_factors": [
+        2,
+        12
+      ],
+      "torsion_primes": [
+        2,
+        3
+      ],
+      "validation_tier": "S2_HODGE_TABLE_LINKED"
+    },
+    {
+      "arrangement_id": "3",
+      "automorphism_group_order": 6,
+      "cokernel_dim_Q": 1,
+      "double_line_orbit_sizes": [
+        1,
+        3,
+        3,
+        3,
+        3,
+        6
+      ],
+      "equivariant_fingerprint": "equivariant:fa36adea3502b44ff5542f7b19f5f31b2fa1842c8220179a7a22473f2c0404b8",
+      "gluing_matrix_shape": [
+        17,
+        19
+      ],
+      "hodge": {
+        "euler": 112,
+        "h11": 59,
+        "h12": 3
+      },
+      "hodge_refined_fingerprint": "hodge_refined:7b6b30f40b63c8928de4afbfa9ba5e5993fca3a8d0003f03bd777c34435f535c",
+      "hodge_source": "data/raw/cynk_meyer_table1.csv",
+      "integral_fingerprint": "integral:ff57b7cf10e8e2c3b0b888a210d7cd89aa157d6f53889cddd9740186d7f6724a",
+      "inventory": {
+        "l3": 3,
+        "p3": 8,
+        "p4_0": 6,
+        "p4_1": 0,
+        "p5_0": 3,
+        "p5_1": 0,
+        "p5_2": 0
+      },
+      "kernel_dim_Q": 3,
+      "local_fingerprint": "local:99d070b192df53ef332ea22e557164d074febcb04bc653c89ccabfe27675ccce",
+      "multiple_point_orbit_sizes": [
+        1,
+        1,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "p_primary_exponents": {
+        "2": [
+          1,
+          1,
+          2
+        ],
+        "3": [
+          1
+        ]
+      },
+      "plane_orbit_sizes": [
+        1,
+        1,
+        3,
+        3
+      ],
+      "rank_F2": 13,
+      "rank_Q": 16,
+      "rational_fingerprint": "rational:f130d29e4c4d5489b9da64fb9d4d1a777fbcba08f8b21362d620c285d10478a5",
+      "realization_status": "SOURCE_ONLY",
+      "regime": "TRUNCATED_TWO_STRATUM",
+      "smith_normal_form": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        12
+      ],
+      "source_dataset": "ckc_fixed_rational_batch",
+      "source_reference": "Cynk--Kocel--Cynk 2026, Section 6.1",
+      "torsion_invariant_factors": [
+        2,
+        2,
+        12
+      ],
+      "torsion_primes": [
+        2,
+        3
+      ],
+      "validation_tier": "S2_HODGE_TABLE_LINKED"
+    },
+    {
+      "arrangement_id": "19",
+      "automorphism_group_order": 4,
+      "cokernel_dim_Q": 1,
+      "double_line_orbit_sizes": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
+      ],
+      "equivariant_fingerprint": "equivariant:a96d2a82fd0f41fd3606d6e445e84adb3e8b97286fedf570a39e218187987a8f",
+      "gluing_matrix_shape": [
+        19,
+        22
+      ],
+      "hodge": {
+        "euler": 92,
+        "h11": 50,
+        "h12": 4
+      },
+      "hodge_refined_fingerprint": "hodge_refined:f5f319b283235a41ff63a4acec31892dc7436054705d6b5b9440bff3169d2cda",
+      "hodge_source": "data/raw/cynk_meyer_table1.csv",
+      "integral_fingerprint": "integral:d9f43e2cd1636599af3ad9b9f78e990549ebce9d2d0dfbadda8ba36f266dfec8",
+      "inventory": {
+        "l3": 2,
+        "p3": 9,
+        "p4_0": 8,
+        "p4_1": 0,
+        "p5_0": 2,
+        "p5_1": 0,
+        "p5_2": 0
+      },
+      "kernel_dim_Q": 4,
+      "local_fingerprint": "local:960b87e600d23c7faec38121f73d969e922c0077dc1c32b1c22b935de0821c24",
+      "multiple_point_orbit_sizes": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        4,
+        4
+      ],
+      "p_primary_exponents": {
+        "2": [
+          1,
+          2
+        ],
+        "5": [
+          1
+        ]
+      },
+      "plane_orbit_sizes": [
+        1,
+        1,
+        2,
+        2,
+        2
+      ],
+      "rank_F2": 16,
+      "rank_Q": 18,
+      "rational_fingerprint": "rational:3ce290c27529759754ba0fe56236528f7dacbb99361d2aa6c9f14e1d405c8c78",
+      "realization_status": "SOURCE_ONLY",
+      "regime": "TRUNCATED_TWO_STRATUM",
+      "smith_normal_form": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        20
+      ],
+      "source_dataset": "ckc_fixed_rational_batch",
+      "source_reference": "Cynk--Kocel--Cynk 2026, Section 6.1",
+      "torsion_invariant_factors": [
+        2,
+        20
+      ],
+      "torsion_primes": [
+        2,
+        5
+      ],
+      "validation_tier": "S2_HODGE_TABLE_LINKED"
+    },
+    {
+      "arrangement_id": "32",
+      "automorphism_group_order": 4,
+      "cokernel_dim_Q": 0,
+      "double_line_orbit_sizes": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
+      ],
+      "equivariant_fingerprint": "equivariant:dcc1f8bb9cd10a9207e9309fd5b1ed9e42b9659ce9a4981a046ed3d4f5da2ce5",
+      "gluing_matrix_shape": [
+        20,
+        22
+      ],
+      "hodge": {
+        "euler": 84,
+        "h11": 46,
+        "h12": 4
+      },
+      "hodge_refined_fingerprint": "hodge_refined:66f0a2c4a944307bcc9403fefd4447cb82739c90639d70f757fec8e8253f6d8d",
+      "hodge_source": "data/raw/cynk_meyer_table1.csv",
+      "integral_fingerprint": "integral:bfa6187a14091f4be7d1f8689541b66ae7d526dea1283448145bae839a6153fb",
+      "inventory": {
+        "l3": 2,
+        "p3": 8,
+        "p4_0": 11,
+        "p4_1": 0,
+        "p5_0": 1,
+        "p5_1": 0,
+        "p5_2": 0
+      },
+      "kernel_dim_Q": 2,
+      "local_fingerprint": "local:512c3b6c5583f686b7888443d96d6254c760a5865f0b1769e25dad905bf99975",
+      "multiple_point_orbit_sizes": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
+        4
+      ],
+      "p_primary_exponents": {
+        "2": [
+          2,
+          2
+        ],
+        "3": [
+          1,
+          1
+        ]
+      },
+      "plane_orbit_sizes": [
+        1,
+        1,
+        2,
+        4
+      ],
+      "rank_F2": 18,
+      "rank_Q": 20,
+      "rational_fingerprint": "rational:8c13c2243972c1f6d57eae09f14af09a3edba6ed66476b06f8a665cbb4a71762",
+      "realization_status": "SOURCE_ONLY",
+      "regime": "TRUNCATED_TWO_STRATUM",
+      "smith_normal_form": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        12,
+        12
+      ],
+      "source_dataset": "ckc_fixed_rational_batch",
+      "source_reference": "Cynk--Kocel--Cynk 2026, Section 6.1",
+      "torsion_invariant_factors": [
+        12,
+        12
+      ],
+      "torsion_primes": [
+        2,
+        3
+      ],
+      "validation_tier": "S2_HODGE_TABLE_LINKED"
+    },
+    {
+      "arrangement_id": "69",
+      "automorphism_group_order": 4,
+      "cokernel_dim_Q": 1,
+      "double_line_orbit_sizes": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4,
+        4
+      ],
+      "equivariant_fingerprint": "equivariant:91632e2c473b9df302dabef7abe351bfe02761309c5d4db92bcc71bbf0f0785f",
+      "gluing_matrix_shape": [
+        22,
+        25
+      ],
+      "hodge": {
+        "euler": 68,
+        "h11": 38,
+        "h12": 4
+      },
+      "hodge_refined_fingerprint": "hodge_refined:2563f8ba1dc52591253abdee25f6b57eb31a743960821428cf0123c2636a325d",
+      "hodge_source": "data/raw/cynk_meyer_table1.csv",
+      "integral_fingerprint": "integral:8e74e6dadb905be7cd8af48d3b23954084900a46834ade81cabc9f60c7777055",
+      "inventory": {
+        "l3": 1,
+        "p3": 14,
+        "p4_0": 6,
+        "p4_1": 0,
+        "p5_0": 2,
+        "p5_1": 0,
+        "p5_2": 0
+      },
+      "kernel_dim_Q": 4,
+      "local_fingerprint": "local:1b3b0d3929dc47c8a1a7b18278833368cf1f2220cc002446e8cf6946a1f207e4",
+      "multiple_point_orbit_sizes": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
+        4
+      ],
+      "p_primary_exponents": {
+        "2": [
+          1
+        ],
+        "3": [
+          1
+        ]
+      },
+      "plane_orbit_sizes": [
+        1,
+        1,
+        2,
+        4
+      ],
+      "rank_F2": 20,
+      "rank_Q": 21,
+      "rational_fingerprint": "rational:ed8539db8f660ab2db350019b18145f44f0a5a21f2b18b6c7b4f5808fffe3e6e",
+      "realization_status": "SOURCE_ONLY",
+      "regime": "TRUNCATED_TWO_STRATUM",
+      "smith_normal_form": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        6
+      ],
+      "source_dataset": "ckc_fixed_rational_batch",
+      "source_reference": "Cynk--Kocel--Cynk 2026, Section 6.1",
+      "torsion_invariant_factors": [
+        6
+      ],
+      "torsion_primes": [
+        2,
+        3
+      ],
+      "validation_tier": "S2_HODGE_TABLE_LINKED"
+    },
+    {
+      "arrangement_id": "84",
+      "automorphism_group_order": 6,
+      "cokernel_dim_Q": 0,
+      "double_line_orbit_sizes": [
+        1,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        6
+      ],
+      "equivariant_fingerprint": "equivariant:a356b7214e1a3bfad56c34f6a7dd420794ae0334918bea5ff0bf8d6292eee697",
+      "gluing_matrix_shape": [
+        26,
+        28
+      ],
+      "hodge": {
+        "euler": 80,
+        "h11": 40,
+        "h12": 0
+      },
+      "hodge_refined_fingerprint": "hodge_refined:69acd5e4bbc7448a621b50a514ac8a5f3469b88d390eea5eb833efa3f277eb6c",
+      "hodge_source": null,
+      "integral_fingerprint": "integral:0f35cfa13ab162d82ff72b9eefe774ef9525849e3b621dab8bbf942c57f53985",
+      "inventory": {
+        "l3": 0,
+        "p3": 16,
+        "p4_0": 10,
+        "p4_1": 0,
+        "p5_0": 0,
+        "p5_1": 0,
+        "p5_2": 0
+      },
+      "kernel_dim_Q": 2,
+      "local_fingerprint": "local:d689892f18909ee09390855bbe914f1af6c790faa8afbdeeae9eeeb3010b5a61",
+      "multiple_point_orbit_sizes": [
+        1,
+        1,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        6
+      ],
+      "p_primary_exponents": {
+        "2": [
+          1,
+          1,
+          2
+        ],
+        "3": [
+          1,
+          1
+        ]
+      },
+      "plane_orbit_sizes": [
+        1,
+        1,
+        3,
+        3
+      ],
+      "rank_F2": 23,
+      "rank_Q": 26,
+      "rational_fingerprint": "rational:9d168feab7fd7642ecf30d07dacb9d15e40c068b5c91076c9135e77bc9b74af3",
+      "realization_status": "SOURCE_ONLY",
+      "regime": "CLEAN_TWO_STRATUM",
+      "smith_normal_form": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        6,
+        12
+      ],
+      "source_dataset": "fixed_equation_batch_001",
+      "source_reference": "Existing HodgeCY arrangement_84 representative; Cynk--Meyer/Cynk--Kocel--Cynk control data",
+      "torsion_invariant_factors": [
+        2,
+        6,
+        12
+      ],
+      "torsion_primes": [
+        2,
+        3
+      ],
+      "validation_tier": "S2_HODGE_TABLE_LINKED"
+    },
+    {
+      "arrangement_id": "84a",
+      "automorphism_group_order": 24,
+      "cokernel_dim_Q": 0,
+      "double_line_orbit_sizes": [
+        4,
+        6,
+        6,
+        12
+      ],
+      "equivariant_fingerprint": "equivariant:cec0bc22101ff26a383597a0d675a770fa765fb684bc11b28a56d13fa44082b1",
+      "gluing_matrix_shape": [
+        26,
+        28
+      ],
+      "hodge": {
+        "euler": 80,
+        "h11": 40,
+        "h12": 0
+      },
+      "hodge_refined_fingerprint": "hodge_refined:69acd5e4bbc7448a621b50a514ac8a5f3469b88d390eea5eb833efa3f277eb6c",
+      "hodge_source": null,
+      "integral_fingerprint": "integral:6e71b52edeb7fb43a2d3c314484508c54ae48ffb13fe4d4236e29aabbd1f003c",
+      "inventory": {
+        "l3": 0,
+        "p3": 16,
+        "p4_0": 10,
+        "p4_1": 0,
+        "p5_0": 0,
+        "p5_1": 0,
+        "p5_2": 0
+      },
+      "kernel_dim_Q": 2,
+      "local_fingerprint": "local:d689892f18909ee09390855bbe914f1af6c790faa8afbdeeae9eeeb3010b5a61",
+      "multiple_point_orbit_sizes": [
+        4,
+        4,
+        6,
+        12
+      ],
+      "p_primary_exponents": {
+        "2": [
+          1,
+          2,
+          2,
+          2,
+          2
+        ],
+        "3": [
+          1
+        ]
+      },
+      "plane_orbit_sizes": [
+        4,
+        4
+      ],
+      "rank_F2": 21,
+      "rank_Q": 26,
+      "rational_fingerprint": "rational:9d168feab7fd7642ecf30d07dacb9d15e40c068b5c91076c9135e77bc9b74af3",
+      "realization_status": "SOURCE_ONLY",
+      "regime": "CLEAN_TWO_STRATUM",
+      "smith_normal_form": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        4,
+        4,
+        4,
+        12
+      ],
+      "source_dataset": "fixed_equation_batch_001",
+      "source_reference": "Existing HodgeCY arrangement_84a representative; Cynk--Meyer/Cynk--Kocel--Cynk control data",
+      "torsion_invariant_factors": [
+        2,
+        4,
+        4,
+        4,
+        12
+      ],
+      "torsion_primes": [
+        2,
+        3
+      ],
+      "validation_tier": "S2_HODGE_TABLE_LINKED"
+    },
+    {
+      "arrangement_id": "93",
+      "automorphism_group_order": 4,
+      "cokernel_dim_Q": 0,
+      "double_line_orbit_sizes": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
+      ],
+      "equivariant_fingerprint": "equivariant:f08c38f9f1a174f4687a9d72103add96ec0924218e8618c4d9ee69fc88f34ccc",
+      "gluing_matrix_shape": [
+        23,
+        25
+      ],
+      "hodge": null,
+      "hodge_refined_fingerprint": "hodge_refined:f176092656579d7aeadf1434e84239997b937876f576599e78457de727f0e725",
+      "hodge_source": null,
+      "integral_fingerprint": "integral:bc2eabac637538c382f762bc02ed6fd910ee51f91855388db4b68353d1a96122",
+      "inventory": {
+        "l3": 1,
+        "p3": 13,
+        "p4_0": 9,
+        "p4_1": 0,
+        "p5_0": 1,
+        "p5_1": 0,
+        "p5_2": 0
+      },
+      "kernel_dim_Q": 2,
+      "local_fingerprint": "local:f07507d334e098cd2c32eb849be75fd0b6c5819b90f93f0bb2196d81fca3d4d0",
+      "multiple_point_orbit_sizes": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
+      ],
+      "p_primary_exponents": {
+        "2": [
+          2,
+          3
+        ],
+        "3": [
+          2
+        ]
+      },
+      "plane_orbit_sizes": [
+        1,
+        1,
+        2,
+        2,
+        2
+      ],
+      "rank_F2": 21,
+      "rank_Q": 23,
+      "rational_fingerprint": "rational:8acab93fca92c6c48923dc53223b2c1c31e3d29372006a111cca53c04e8c32f8",
+      "realization_status": "SOURCE_ONLY",
+      "regime": "TRUNCATED_TWO_STRATUM",
+      "smith_normal_form": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        4,
+        72
+      ],
+      "source_dataset": "ckc_fixed_rational_batch",
+      "source_reference": "Cynk--Kocel--Cynk 2026, Section 6.1",
+      "torsion_invariant_factors": [
+        4,
+        72
+      ],
+      "torsion_primes": [
+        2,
+        3
+      ],
+      "validation_tier": "S1_SOURCE_RECOMPUTED"
+    },
+    {
+      "arrangement_id": "238",
+      "automorphism_group_order": 192,
+      "cokernel_dim_Q": 0,
+      "double_line_orbit_sizes": [
+        12,
+        16
+      ],
+      "equivariant_fingerprint": "equivariant:293e7dab639ec2deeb5ea84fdc5190c1920d1931bf169fb1e8e163c50ee7db29",
+      "gluing_matrix_shape": [
+        20,
+        28
+      ],
+      "hodge": null,
+      "hodge_refined_fingerprint": "hodge_refined:073b6262d0c994c1c9fbeccb2fd1a17d11af7772187a6fd9e0706aa83908c1ed",
+      "hodge_source": null,
+      "integral_fingerprint": "integral:51c7cb95decd38422c44283d0e6eb91ed616e9a348458fbd64a9bd2e0afef4b1",
+      "inventory": {
+        "l3": 0,
+        "p3": 8,
+        "p4_0": 12,
+        "p4_1": 0,
+        "p5_0": 0,
+        "p5_1": 0,
+        "p5_2": 0
+      },
+      "kernel_dim_Q": 8,
+      "local_fingerprint": "local:243745ea368d3b67b2e10f8ab97de620180be2732a15f3a0f7810bb7ee71eeb3",
+      "multiple_point_orbit_sizes": [
+        8,
+        12
+      ],
+      "p_primary_exponents": {
+        "2": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "3": [
+          1
+        ]
+      },
+      "plane_orbit_sizes": [
+        8
+      ],
+      "rank_F2": 16,
+      "rank_Q": 20,
+      "rational_fingerprint": "rational:405da6b6fa75a4fb255b0f47f73b366ab6d9c8c909e858a6f48b2786468e6a22",
+      "realization_status": "SOURCE_ONLY",
+      "regime": "CLEAN_TWO_STRATUM",
+      "smith_normal_form": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        4,
+        4,
+        4,
+        12
+      ],
+      "source_dataset": "ckc_fixed_rational_batch",
+      "source_reference": "Cynk--Kocel--Cynk 2026, Section 6.1",
+      "torsion_invariant_factors": [
+        4,
+        4,
+        4,
+        12
+      ],
+      "torsion_primes": [
+        2,
+        3
+      ],
+      "validation_tier": "S1_SOURCE_RECOMPUTED"
+    },
+    {
+      "arrangement_id": "239",
+      "automorphism_group_order": 24,
+      "cokernel_dim_Q": 0,
+      "double_line_orbit_sizes": [
+        4,
+        6,
+        6,
+        12
+      ],
+      "equivariant_fingerprint": "equivariant:0d480f7fd07bcb080743f003b1309d6316290817ea1177055ea1514979fd13df",
+      "gluing_matrix_shape": [
+        26,
+        28
+      ],
+      "hodge": null,
+      "hodge_refined_fingerprint": "hodge_refined:e017f04add53cf4499d69a56e7484cc7ab7b8383174ff8b707f8986bd91940b3",
+      "hodge_source": null,
+      "integral_fingerprint": "integral:6e71b52edeb7fb43a2d3c314484508c54ae48ffb13fe4d4236e29aabbd1f003c",
+      "inventory": {
+        "l3": 0,
+        "p3": 16,
+        "p4_0": 10,
+        "p4_1": 0,
+        "p5_0": 0,
+        "p5_1": 0,
+        "p5_2": 0
+      },
+      "kernel_dim_Q": 2,
+      "local_fingerprint": "local:d689892f18909ee09390855bbe914f1af6c790faa8afbdeeae9eeeb3010b5a61",
+      "multiple_point_orbit_sizes": [
+        4,
+        4,
+        6,
+        12
+      ],
+      "p_primary_exponents": {
+        "2": [
+          1,
+          2,
+          2,
+          2,
+          2
+        ],
+        "3": [
+          1
+        ]
+      },
+      "plane_orbit_sizes": [
+        4,
+        4
+      ],
+      "rank_F2": 21,
+      "rank_Q": 26,
+      "rational_fingerprint": "rational:9d168feab7fd7642ecf30d07dacb9d15e40c068b5c91076c9135e77bc9b74af3",
+      "realization_status": "SOURCE_ONLY",
+      "regime": "CLEAN_TWO_STRATUM",
+      "smith_normal_form": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        4,
+        4,
+        4,
+        12
+      ],
+      "source_dataset": "ckc_fixed_rational_batch",
+      "source_reference": "Cynk--Kocel--Cynk 2026, Section 6.1",
+      "torsion_invariant_factors": [
+        2,
+        4,
+        4,
+        4,
+        12
+      ],
+      "torsion_primes": [
+        2,
+        3
+      ],
+      "validation_tier": "S1_SOURCE_RECOMPUTED"
+    },
+    {
+      "arrangement_id": "240",
+      "automorphism_group_order": 6,
+      "cokernel_dim_Q": 0,
+      "double_line_orbit_sizes": [
+        1,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        6
+      ],
+      "equivariant_fingerprint": "equivariant:1a02b414b33e84e6a398b214bc2682820f5dc5f7a593654b29418954633bf73b",
+      "gluing_matrix_shape": [
+        26,
+        28
+      ],
+      "hodge": null,
+      "hodge_refined_fingerprint": "hodge_refined:e017f04add53cf4499d69a56e7484cc7ab7b8383174ff8b707f8986bd91940b3",
+      "hodge_source": null,
+      "integral_fingerprint": "integral:0f35cfa13ab162d82ff72b9eefe774ef9525849e3b621dab8bbf942c57f53985",
+      "inventory": {
+        "l3": 0,
+        "p3": 16,
+        "p4_0": 10,
+        "p4_1": 0,
+        "p5_0": 0,
+        "p5_1": 0,
+        "p5_2": 0
+      },
+      "kernel_dim_Q": 2,
+      "local_fingerprint": "local:d689892f18909ee09390855bbe914f1af6c790faa8afbdeeae9eeeb3010b5a61",
+      "multiple_point_orbit_sizes": [
+        1,
+        1,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        6
+      ],
+      "p_primary_exponents": {
+        "2": [
+          1,
+          1,
+          2
+        ],
+        "3": [
+          1,
+          1
+        ]
+      },
+      "plane_orbit_sizes": [
+        1,
+        1,
+        3,
+        3
+      ],
+      "rank_F2": 23,
+      "rank_Q": 26,
+      "rational_fingerprint": "rational:9d168feab7fd7642ecf30d07dacb9d15e40c068b5c91076c9135e77bc9b74af3",
+      "realization_status": "SOURCE_ONLY",
+      "regime": "CLEAN_TWO_STRATUM",
+      "smith_normal_form": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        6,
+        12
+      ],
+      "source_dataset": "ckc_fixed_rational_batch",
+      "source_reference": "Cynk--Kocel--Cynk 2026, Section 6.1",
+      "torsion_invariant_factors": [
+        2,
+        6,
+        12
+      ],
+      "torsion_primes": [
+        2,
+        3
+      ],
+      "validation_tier": "S1_SOURCE_RECOMPUTED"
+    },
+    {
+      "arrangement_id": "241",
+      "automorphism_group_order": 32,
+      "cokernel_dim_Q": 2,
+      "double_line_orbit_sizes": [
+        4,
+        8,
+        16
+      ],
+      "equivariant_fingerprint": "equivariant:f308bc01d071aafc31cb16a5f5eb6dd197ac9e191ef086cdc51d7f235cde7f45",
+      "gluing_matrix_shape": [
+        26,
+        28
+      ],
+      "hodge": null,
+      "hodge_refined_fingerprint": "hodge_refined:e017f04add53cf4499d69a56e7484cc7ab7b8383174ff8b707f8986bd91940b3",
+      "hodge_source": null,
+      "integral_fingerprint": "integral:6d7364b1b430714f158be54459f86f79bc76a2030464babcc8364e9ea44169f6",
+      "inventory": {
+        "l3": 0,
+        "p3": 16,
+        "p4_0": 10,
+        "p4_1": 0,
+        "p5_0": 0,
+        "p5_1": 0,
+        "p5_2": 0
+      },
+      "kernel_dim_Q": 4,
+      "local_fingerprint": "local:d689892f18909ee09390855bbe914f1af6c790faa8afbdeeae9eeeb3010b5a61",
+      "multiple_point_orbit_sizes": [
+        2,
+        8,
+        16
+      ],
+      "p_primary_exponents": {
+        "3": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "plane_orbit_sizes": [
+        8
+      ],
+      "rank_F2": 24,
+      "rank_Q": 24,
+      "rational_fingerprint": "rational:462f2b410aba3c0f73eff388afc3cb45413ea2adfe72bcd2b7aa3687f77a4ae0",
+      "realization_status": "SOURCE_ONLY",
+      "regime": "CLEAN_TWO_STRATUM",
+      "smith_normal_form": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "source_dataset": "ckc_fixed_rational_batch",
+      "source_reference": "Cynk--Kocel--Cynk 2026, Section 6.1",
+      "torsion_invariant_factors": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "torsion_primes": [
+        3
+      ],
+      "validation_tier": "S1_SOURCE_RECOMPUTED"
+    },
+    {
+      "arrangement_id": "245",
+      "automorphism_group_order": 2,
+      "cokernel_dim_Q": 2,
+      "double_line_orbit_sizes": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "equivariant_fingerprint": "equivariant:6dc241cbd454931756deee3847164797a7219b7f9fc02ad865bc8ed4262596f4",
+      "gluing_matrix_shape": [
+        29,
+        28
+      ],
+      "hodge": null,
+      "hodge_refined_fingerprint": "hodge_refined:699590ab2b7b38997ad372a723b86d02b7014daae0723fcb79ec29e583bc9be1",
+      "hodge_source": null,
+      "integral_fingerprint": "integral:fb764fc756f722a1b5e4f70eee790c679597e9b87c03065064b78e8c6b1d23b2",
+      "inventory": {
+        "l3": 0,
+        "p3": 20,
+        "p4_0": 9,
+        "p4_1": 0,
+        "p5_0": 0,
+        "p5_1": 0,
+        "p5_2": 0
+      },
+      "kernel_dim_Q": 1,
+      "local_fingerprint": "local:db3b63a987de5ecdb1ae6bf44089341f178573db1bde47c43648049add61f6bf",
+      "multiple_point_orbit_sizes": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "p_primary_exponents": {
+        "2": [
+          1,
+          1,
+          2
+        ],
+        "3": [
+          1
+        ]
+      },
+      "plane_orbit_sizes": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2
+      ],
+      "rank_F2": 24,
+      "rank_Q": 27,
+      "rational_fingerprint": "rational:84e97413f1ec74450843281a3416cdaeec8f147bd0a22079648de98ef9574d4d",
+      "realization_status": "SOURCE_ONLY",
+      "regime": "CLEAN_TWO_STRATUM",
+      "smith_normal_form": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        12
+      ],
+      "source_dataset": "ckc_fixed_rational_batch",
+      "source_reference": "Cynk--Kocel--Cynk 2026, Section 6.1",
+      "torsion_invariant_factors": [
+        2,
+        2,
+        12
+      ],
+      "torsion_primes": [
+        2,
+        3
+      ],
+      "validation_tier": "S1_SOURCE_RECOMPUTED"
+    }
+  ],
+  "schema": "hodgecy_ii_source_assembly_records.v1"
+}

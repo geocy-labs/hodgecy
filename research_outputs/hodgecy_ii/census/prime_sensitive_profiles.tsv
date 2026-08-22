@@ -1,0 +1,14 @@
+arrangement_id	regime	rank_Q	rank_F2	known_modular_ranks	smith_normal_form	torsion_invariant_factors	torsion_primes	p_primary_exponents	prime_sensitive
+1	TRUNCATED_TWO_STRATUM	13	11	"{""2"":11}"	1^11,2,12	2,12	2,3	"{""2"":[1,2],""3"":[1]}"	YES
+3	TRUNCATED_TWO_STRATUM	16	13	"{""2"":13}"	1^13,2^2,12	2,2,12	2,3	"{""2"":[1,1,2],""3"":[1]}"	YES
+19	TRUNCATED_TWO_STRATUM	18	16	"{""2"":16}"	1^16,2,20	2,20	2,5	"{""2"":[1,2],""5"":[1]}"	YES
+32	TRUNCATED_TWO_STRATUM	20	18	"{""2"":18}"	1^18,12^2	12,12	2,3	"{""2"":[2,2],""3"":[1,1]}"	YES
+69	TRUNCATED_TWO_STRATUM	21	20	"{""2"":20}"	1^20,6	6	2,3	"{""2"":[1],""3"":[1]}"	YES
+84	CLEAN_TWO_STRATUM	26	23	"{""2"":23}"	1^23,2,6,12	2,6,12	2,3	"{""2"":[1,1,2],""3"":[1,1]}"	YES
+84a	CLEAN_TWO_STRATUM	26	21	"{""2"":21}"	1^21,2,4^3,12	2,4,4,4,12	2,3	"{""2"":[1,2,2,2,2],""3"":[1]}"	YES
+93	TRUNCATED_TWO_STRATUM	23	21	"{""2"":21}"	1^21,4,72	4,72	2,3	"{""2"":[2,3],""3"":[2]}"	YES
+238	CLEAN_TWO_STRATUM	20	16	"{""2"":16}"	1^16,4^3,12	4,4,4,12	2,3	"{""2"":[2,2,2,2],""3"":[1]}"	YES
+239	CLEAN_TWO_STRATUM	26	21	"{""2"":21}"	1^21,2,4^3,12	2,4,4,4,12	2,3	"{""2"":[1,2,2,2,2],""3"":[1]}"	YES
+240	CLEAN_TWO_STRATUM	26	23	"{""2"":23}"	1^23,2,6,12	2,6,12	2,3	"{""2"":[1,1,2],""3"":[1,1]}"	YES
+241	CLEAN_TWO_STRATUM	24	24	"{""2"":24}"	1^19,3^5	3,3,3,3,3	3	"{""3"":[1,1,1,1,1]}"	YES
+245	CLEAN_TWO_STRATUM	27	24	"{""2"":24}"	1^24,2^2,12	2,2,12	2,3	"{""2"":[1,1,2],""3"":[1]}"	YES

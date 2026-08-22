@@ -1,0 +1,76 @@
+{
+  "hodge_refined_to_integral": [
+    {
+      "fiber_id": "hodge_refined_to_integral_006",
+      "hodge_signature": "h12=0;h11=40;euler=80",
+      "inventory_signature": "p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0",
+      "member_count": 2,
+      "members": "84,84a",
+      "recovery_status": "integral_separates_hodge_refined_fiber",
+      "source_fingerprint": "hodge_refined:69acd5e4bbc7448a621b50a514ac8a5f3469b88d390eea5eb833efa3f277eb6c",
+      "source_level": "hodge_refined",
+      "target_classes": "integral:0f35cfa13ab162d82ff72b9eefe774ef9525849e3b621dab8bbf942c57f53985[84]; integral:6e71b52edeb7fb43a2d3c314484508c54ae48ffb13fe4d4236e29aabbd1f003c[84a]",
+      "target_level": "integral",
+      "target_signature_count": 2
+    }
+  ],
+  "integral_to_equivariant": [
+    {
+      "fiber_id": "integral_to_equivariant_006",
+      "hodge_signature": "UNKNOWN | h12=0;h11=40;euler=80",
+      "inventory_signature": "p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0",
+      "member_count": 2,
+      "members": "84,240",
+      "recovery_status": "equivariant_separates_integral_fiber",
+      "source_fingerprint": "integral:0f35cfa13ab162d82ff72b9eefe774ef9525849e3b621dab8bbf942c57f53985",
+      "source_level": "integral",
+      "target_classes": "equivariant:a356b7214e1a3bfad56c34f6a7dd420794ae0334918bea5ff0bf8d6292eee697[84]; equivariant:1a02b414b33e84e6a398b214bc2682820f5dc5f7a593654b29418954633bf73b[240]",
+      "target_level": "equivariant",
+      "target_signature_count": 2
+    },
+    {
+      "fiber_id": "integral_to_equivariant_007",
+      "hodge_signature": "UNKNOWN | h12=0;h11=40;euler=80",
+      "inventory_signature": "p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0",
+      "member_count": 2,
+      "members": "84a,239",
+      "recovery_status": "equivariant_separates_integral_fiber",
+      "source_fingerprint": "integral:6e71b52edeb7fb43a2d3c314484508c54ae48ffb13fe4d4236e29aabbd1f003c",
+      "source_level": "integral",
+      "target_classes": "equivariant:cec0bc22101ff26a383597a0d675a770fa765fb684bc11b28a56d13fa44082b1[84a]; equivariant:0d480f7fd07bcb080743f003b1309d6316290817ea1177055ea1514979fd13df[239]",
+      "target_level": "equivariant",
+      "target_signature_count": 2
+    }
+  ],
+  "local_to_rational": [
+    {
+      "fiber_id": "local_to_rational_006",
+      "hodge_signature": "UNKNOWN | h12=0;h11=40;euler=80",
+      "inventory_signature": "p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0",
+      "member_count": 5,
+      "members": "84,84a,239,240,241",
+      "recovery_status": "rational_separates_local_fiber",
+      "source_fingerprint": "local:d689892f18909ee09390855bbe914f1af6c790faa8afbdeeae9eeeb3010b5a61",
+      "source_level": "local",
+      "target_classes": "rational:9d168feab7fd7642ecf30d07dacb9d15e40c068b5c91076c9135e77bc9b74af3[84,84a,239,240]; rational:462f2b410aba3c0f73eff388afc3cb45413ea2adfe72bcd2b7aa3687f77a4ae0[241]",
+      "target_level": "rational",
+      "target_signature_count": 2
+    }
+  ],
+  "rational_to_integral": [
+    {
+      "fiber_id": "rational_to_integral_006",
+      "hodge_signature": "UNKNOWN | h12=0;h11=40;euler=80",
+      "inventory_signature": "p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0",
+      "member_count": 4,
+      "members": "84,84a,239,240",
+      "recovery_status": "integral_separates_rational_fiber",
+      "source_fingerprint": "rational:9d168feab7fd7642ecf30d07dacb9d15e40c068b5c91076c9135e77bc9b74af3",
+      "source_level": "rational",
+      "target_classes": "integral:0f35cfa13ab162d82ff72b9eefe774ef9525849e3b621dab8bbf942c57f53985[84,240]; integral:6e71b52edeb7fb43a2d3c314484508c54ae48ffb13fe4d4236e29aabbd1f003c[84a,239]",
+      "target_level": "integral",
+      "target_signature_count": 2
+    }
+  ],
+  "schema": "hodgecy_ii_fidelity_refinement_trees.v1"
+}
