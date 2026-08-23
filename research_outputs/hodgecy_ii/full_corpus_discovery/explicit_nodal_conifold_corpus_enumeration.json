@@ -1,0 +1,36 @@
+{
+  "columnar_source_count": 0,
+  "corpus_release_fingerprint": "8bbf1dff732529afb634f4a24c1d250d3e7ff3a54c79cbfd9c3584e4bca1622b",
+  "dataset_id": "explicit_nodal_conifold_corpus",
+  "enumeration_status": "descriptor_only_no_production_record_table",
+  "firewall": "SOURCE/PRESENTATION/GEOMETRY/NODE/HODGE levels not promoted without natural comparison data",
+  "instance_count": 1,
+  "instances": [
+    {
+      "acquisition_status": "PARTIAL_PUBLIC_CORPUS",
+      "adapter_name": "current_corpus_bootstrap",
+      "dataset_id": {
+        "kind": "dataset",
+        "local_id": "explicit_nodal_conifold_corpus",
+        "namespace": "dataset",
+        "schema_version": "v1"
+      },
+      "installed_at": "2026-08-20T16:23:03.098187+00:00",
+      "instance_id": "explicit_nodal_conifold_corpus_current",
+      "metadata": {
+        "bootstrap_schema": "current_corpus_bootstrap.v1"
+      },
+      "record_count": null,
+      "redistribution_status": "unspecified",
+      "schema_version": {
+        "value": "v1"
+      },
+      "source_revision": "PARTIAL_PUBLIC_CORPUS",
+      "source_version": "PARTIAL_PUBLIC_CORPUS"
+    }
+  ],
+  "physical_source_count": 0,
+  "physical_sources": [],
+  "relationship_edge_count": 0,
+  "relationship_sample": []
+}
