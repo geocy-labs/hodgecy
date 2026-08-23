@@ -1,0 +1,53 @@
+{
+  "schema": "hodgecy.ckc_algebraic_repairs.v1",
+  "source_pdf": "data/raw/cynk_kocel_cynk_2026/2602.19413v1-cynk-kocel-cynk.pdf",
+  "source_location": "Section 6.1 equation list, PDF page 45",
+  "notes": "Short exact factor records transcribed from the local source PDF to repair fraction/radical collapses in raw PDF extraction. These are equations only; validation still requires matching the CKC local inventory.",
+  "records": [
+    {
+      "arrangement_id": "451",
+      "coefficient_field": "Q(sqrt(-3))",
+      "validation_status": "equation_repaired_inventory_mismatch",
+      "linear_factor_texts": [
+        "x+(sqrt(-3)-1)/2*y",
+        "x",
+        "y",
+        "y+t",
+        "x+t",
+        "-x+(-sqrt(-3)+1)/2*y+(sqrt(-3)-1)/2*z-t",
+        "z",
+        "z+t"
+      ]
+    },
+    {
+      "arrangement_id": "452",
+      "coefficient_field": "Q(sqrt(-3))",
+      "validation_status": "equation_repaired_inventory_matches_source_table",
+      "linear_factor_texts": [
+        "x",
+        "y",
+        "(sqrt(-3)+3)/2*x+y+(sqrt(-3)+3)/2*z",
+        "z",
+        "t",
+        "3/2*(sqrt(-3)+1)*x+(sqrt(-3)+3)/2*y+3*t",
+        "y+(sqrt(-3)+3)/2*z+(sqrt(-3)+3)/2*t",
+        "x+y+z+t"
+      ]
+    },
+    {
+      "arrangement_id": "453",
+      "coefficient_field": "Q(sqrt(5))",
+      "validation_status": "equation_repaired_inventory_matches_source_table",
+      "linear_factor_texts": [
+        "x",
+        "y",
+        "z",
+        "x+y+(sqrt(5)+1)/2*z",
+        "(sqrt(5)+3)/2*x+(3*sqrt(5)+7)/2*y+(3*sqrt(5)+7)/2*t",
+        "t",
+        "x+y+z+t",
+        "(sqrt(5)+3)/2*x+(3*sqrt(5)+7)/2*z+(3*sqrt(5)+7)/2*t"
+      ]
+    }
+  ]
+}

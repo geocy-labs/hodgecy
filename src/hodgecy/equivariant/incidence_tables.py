@@ -6,14 +6,54 @@ from itertools import combinations
 from typing import Any
 
 import sympy as sp
+from sympy.polys.polyerrors import PolynomialError
+
+from .linear_forms import linear_forms_from_factor_texts
 
 LinearForm = dict[str, Any]
 Quadruple = tuple[int, int, int, int]
 
 
 def _rank(linear_forms: list[LinearForm], indices: tuple[int, ...]) -> int:
-    rows = [[sp.Rational(value) for value in linear_forms[index]["coefficients"]] for index in indices]
-    return sp.Matrix(rows).rank() if rows else 0
+    rows = [[sp.sympify(value) for value in linear_forms[index]["coefficients"]] for index in indices]
+    return generic_matrix_rank(sp.Matrix(rows)) if rows else 0
+
+
+def generic_matrix_rank(matrix: sp.Matrix) -> int:
+    """Return the exact generic rank by symbolic minor nonvanishing.
+
+    Entries may live in Q, a rational function field over parameters, an
+    algebraic number field represented by SymPy radicals, or a mixture of
+    algebraic constants and parameters.  No floating-point evaluation is used.
+    """
+
+    max_rank = min(int(matrix.rows), int(matrix.cols))
+    if max_rank == 0:
+        return 0
+    for rank in range(max_rank, 0, -1):
+        for row_indices in combinations(range(matrix.rows), rank):
+            for col_indices in combinations(range(matrix.cols), rank):
+                minor = matrix.extract(row_indices, col_indices).det()
+                if not is_identically_zero(minor):
+                    return rank
+    return 0
+
+
+def is_identically_zero(value: Any) -> bool:
+    """Return whether an exact expression is identically zero."""
+
+    expr = sp.cancel(sp.factor(sp.together(sp.sympify(value))))
+    if expr == 0:
+        return True
+    if expr.is_zero is True:
+        return True
+    if expr.is_number:
+        return sp.simplify(expr) == 0
+    try:
+        numerator, denominator = sp.fraction(expr)
+        return sp.Poly(numerator, *sorted(numerator.free_symbols, key=lambda symbol: symbol.name)).is_zero
+    except (PolynomialError, ValueError):
+        return sp.simplify(expr) == 0
 
 
 def parse_linear_forms_from_record(record: dict) -> list[LinearForm]:
@@ -30,6 +70,8 @@ def parse_linear_forms_from_record(record: dict) -> list[LinearForm]:
             }
         )
     if len(forms) != 8:
+        if record.get("linear_factor_texts"):
+            return linear_forms_from_factor_texts(record)
         raise ValueError(f"Expected 8 linear forms, found {len(forms)}.")
     return forms
 
@@ -48,17 +90,18 @@ def minimal_incidence_table(incidence_table: list[Quadruple]) -> list[Quadruple]
     return sorted({tuple(sorted(quadruple)) for quadruple in incidence_table})
 
 
-def _planes_containing_flat(linear_forms: list[LinearForm], seed: tuple[int, ...], rank: int) -> tuple[int, ...]:
+def _planes_containing_flat(linear_forms: list[LinearForm], seed: tuple[int, ...], rank: int, rank_func=None) -> tuple[int, ...]:
+    rank_func = rank_func or (lambda indices: _rank(linear_forms, indices))
     containing = set(seed)
     for index in range(len(linear_forms)):
         candidate = tuple(sorted(containing | {index}))
-        if _rank(linear_forms, candidate) == rank:
+        if rank_func(candidate) == rank:
             containing.add(index)
     return tuple(sorted(containing))
 
 
 def _rref_key(linear_forms: list[LinearForm], indices: tuple[int, ...]) -> str:
-    matrix = sp.Matrix([[sp.Rational(value) for value in linear_forms[index]["coefficients"]] for index in indices])
+    matrix = sp.Matrix([[sp.sympify(value) for value in linear_forms[index]["coefficients"]] for index in indices])
     reduced, _ = matrix.rref()
     rows = []
     for row_index in range(reduced.rows):
@@ -79,18 +122,26 @@ def singular_strata_from_incidence_table(incidence_table: list[Quadruple], linea
             "inventory": {"p3": 0, "p4_0": len(points), "p4_1": 0, "p5_0": 0, "p5_1": 0, "p5_2": 0, "double_lines": 0, "triple_lines": 0},
         }
 
+    rank_cache: dict[tuple[int, ...], int] = {}
+
+    def rank_indices(indices: tuple[int, ...]) -> int:
+        key = tuple(sorted(indices))
+        if key not in rank_cache:
+            rank_cache[key] = _rank(linear_forms, key)
+        return rank_cache[key]
+
     line_by_key: dict[str, tuple[int, ...]] = {}
     for pair in combinations(range(len(linear_forms)), 2):
-        if _rank(linear_forms, pair) != 2:
+        if rank_indices(pair) != 2:
             continue
-        planes = _planes_containing_flat(linear_forms, pair, rank=2)
+        planes = _planes_containing_flat(linear_forms, pair, rank=2, rank_func=rank_indices)
         line_by_key[_rref_key(linear_forms, planes)] = planes
 
     point_by_key: dict[str, tuple[int, ...]] = {}
     for triple in combinations(range(len(linear_forms)), 3):
-        if _rank(linear_forms, triple) != 3:
+        if rank_indices(triple) != 3:
             continue
-        planes = _planes_containing_flat(linear_forms, triple, rank=3)
+        planes = _planes_containing_flat(linear_forms, triple, rank=3, rank_func=rank_indices)
         if len(planes) >= 3:
             point_by_key[_rref_key(linear_forms, planes)] = planes
 

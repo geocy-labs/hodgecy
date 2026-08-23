@@ -1,0 +1,17 @@
+{
+  "corpus_release_fingerprint": "8bbf1dff732529afb634f4a24c1d250d3e7ff3a54c79cbfd9c3584e4bca1622b",
+  "exact_source_assemblies": 15,
+  "newly_promoted": [
+    "452",
+    "453"
+  ],
+  "schema": "hodgecy_ii_blocker_elimination.v1",
+  "software_blockers_remaining": 0,
+  "status_counts": {
+    "computed_exact_repaired_quadratic_source_assembly": 2,
+    "computed_exact_two_stratum_source_assembly": 13,
+    "unresolved_repaired_equation_inventory_mismatch": 1,
+    "unresolved_source_parameter_constraints_missing_from_local_payload": 440
+  },
+  "total_double_octic_presentations": 456
+}
