@@ -19,7 +19,8 @@
 
 ## Hodge Collision Pass
 
-- Hodge group inventory rows: 44161.
+- Distinct Hodge tuples: 30319.
+- Hodge group inventory rows by dataset/family: 44161.
 - Repeated-Hodge inventory rows: 39293.
 - Cross-family Hodge collisions: 10478.
 - Early reading: ordinary Hodge data collapse heavily both within families and across construction families; the useful signal lives in the attached structural columns and relationship neighborhoods.

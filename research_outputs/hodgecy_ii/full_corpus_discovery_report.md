@@ -3,7 +3,8 @@
 - Corpus release fingerprint: `8bbf1dff732529afb634f4a24c1d250d3e7ff3a54c79cbfd9c3584e4bca1622b`
 - Production relationship edges traversed: 247243
 - CY3 source/presentation/geometry projection rows: 217558
-- Distinct Hodge inventory rows: 44161
+- Distinct Hodge tuples: 30319
+- Hodge inventory rows by dataset/family: 44161
 - Repeated-Hodge fibers: 39293
 - Cross-family Hodge collisions: 10478
 - Explicit nodal/conifold production status: `descriptor_only_no_production_record_table` with 0 relationship edges

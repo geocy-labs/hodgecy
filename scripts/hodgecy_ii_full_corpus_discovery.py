@@ -254,7 +254,8 @@ def main(argv: list[str] | None = None) -> int:
     )
     print("HodgeCY II full-corpus discovery pass complete")
     print(f"- CY3 projection rows: {len(projection)}")
-    print(f"- distinct Hodge tuples/groups: {len(hodge_inventory)}")
+    print(f"- distinct Hodge tuples: {hodge_inventory['hodge_key'].nunique() if len(hodge_inventory) else 0}")
+    print(f"- Hodge inventory rows: {len(hodge_inventory)}")
     print(f"- repeated-Hodge groups: {len(repeated_hodge)}")
     print(f"- cross-family Hodge collisions: {len(cross_family)}")
     print(f"- double-octic fixed-local/fixed-Hodge fibers: {len(double_outputs['fixed_local_hodge'])}")
@@ -906,10 +907,12 @@ def discuss_projection(projection: pd.DataFrame) -> list[str]:
 
 
 def discuss_hodge_groups(hodge_inventory: pd.DataFrame, repeated_hodge: pd.DataFrame, cross_family: pd.DataFrame) -> list[str]:
+    unique_hodge = hodge_inventory["hodge_key"].nunique() if len(hodge_inventory) else 0
     return [
         "## Hodge Collision Pass",
         "",
-        f"- Hodge group inventory rows: {len(hodge_inventory)}.",
+        f"- Distinct Hodge tuples: {unique_hodge}.",
+        f"- Hodge group inventory rows by dataset/family: {len(hodge_inventory)}.",
         f"- Repeated-Hodge inventory rows: {len(repeated_hodge)}.",
         f"- Cross-family Hodge collisions: {len(cross_family)}.",
         "- Early reading: ordinary Hodge data collapse heavily both within families and across construction families; the useful signal lives in the attached structural columns and relationship neighborhoods.",
@@ -984,7 +987,8 @@ def build_report(**kwargs: Any) -> str:
         f"- Corpus release fingerprint: `{ctx.release_fingerprint}`",
         f"- Production relationship edges traversed: {kwargs['component_summary']['relationship_edges']}",
         f"- CY3 source/presentation/geometry projection rows: {len(projection)}",
-        f"- Distinct Hodge inventory rows: {len(hodge_inventory)}",
+        f"- Distinct Hodge tuples: {hodge_inventory['hodge_key'].nunique() if len(hodge_inventory) else 0}",
+        f"- Hodge inventory rows by dataset/family: {len(hodge_inventory)}",
         f"- Repeated-Hodge fibers: {len(repeated_hodge)}",
         f"- Cross-family Hodge collisions: {len(cross_family)}",
         f"- Explicit nodal/conifold production status: `{explicit_nodal['enumeration_status']}` with {explicit_nodal['relationship_edge_count']} relationship edges",
