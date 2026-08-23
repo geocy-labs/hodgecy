@@ -1,0 +1,10 @@
+{
+  "blocked_source_assembly_count": 443,
+  "computed_exact_source_assembly_count": 13,
+  "corpus_release_fingerprint": "8bbf1dff732529afb634f4a24c1d250d3e7ff3a54c79cbfd9c3584e4bca1622b",
+  "fixed_local_hodge_fiber_count": 3,
+  "matrix_manifest": "research_outputs/hodgecy_ii/source_assembly_deep_dive/all_456_source_assembly_matrices/matrix_manifest.json",
+  "presentation_count": 456,
+  "repeated_local_fiber_count": 7,
+  "schema": "hodgecy_ii_complete_source_assembly_deep_dive.v1"
+}
