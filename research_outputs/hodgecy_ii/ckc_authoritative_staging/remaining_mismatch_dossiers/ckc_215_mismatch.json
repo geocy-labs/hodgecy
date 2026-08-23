@@ -1,0 +1,136 @@
+{
+  "arrangement_id": "215",
+  "computed_incidence": [
+    [
+      0,
+      1,
+      2,
+      3
+    ],
+    [
+      0,
+      1,
+      2,
+      4
+    ],
+    [
+      0,
+      1,
+      3,
+      4
+    ],
+    [
+      0,
+      1,
+      5,
+      6
+    ],
+    [
+      0,
+      2,
+      3,
+      4
+    ],
+    [
+      0,
+      2,
+      5,
+      7
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      1,
+      3,
+      5,
+      7
+    ],
+    [
+      2,
+      3,
+      6,
+      7
+    ]
+  ],
+  "computed_inventory": {
+    "l3": 0,
+    "p3": 30,
+    "p4_0": 4,
+    "p4_1": 0,
+    "p5_0": 1,
+    "p5_1": 0,
+    "p5_2": 0
+  },
+  "conditions": [
+    "ckc_param_condition_0047"
+  ],
+  "determinant_polynomial_status": "not_serialized_in_compact_dossier",
+  "eight_factors": [
+    "x",
+    "y",
+    "(x+t)",
+    "(y+t)",
+    "(A0*x+A1*y+A2*t)",
+    "z",
+    "(A0*x+A3*y+(-A0-A3)*z)",
+    "(z+t)"
+  ],
+  "exact_equation": "x*y*(x+t)*(y+t)*(A0*x+A1*y+A2*t)*z*(A0*x+A3*y+(-A0-A3)*z)*(z+t)",
+  "expected_inventory": null,
+  "geometric_inventory": {
+    "l3": 0,
+    "p3": 30,
+    "p4_0": 4,
+    "p4_1": 0,
+    "p5_0": 1,
+    "p5_1": 0,
+    "p5_2": 0
+  },
+  "geometric_inventory_match": false,
+  "issue_classification": "special_realization_or_scoped_condition_insufficient",
+  "magma_comparison": "ported IncidenceTable/Singularities logic used through HodgeCY exact linear algebra",
+  "magma_inventory": {
+    "l3": 0,
+    "p3": 30,
+    "p4_0": 4,
+    "p4_1": 0,
+    "p5_0": 1,
+    "p5_1": 0,
+    "p5_2": 0
+  },
+  "magma_inventory_match": false,
+  "notes": [],
+  "parameter_domain": {
+    "condition_scope": [
+      "contiguous_ckc_id_range"
+    ],
+    "conditions": [
+      "ckc_param_condition_0047"
+    ],
+    "parameter_symbols": [
+      "A0",
+      "A1",
+      "A2",
+      "A3"
+    ]
+  },
+  "source_context": {
+    "classification_refs": [],
+    "pdf_pages": [
+      39
+    ],
+    "tex_source": [
+      {
+        "lines": [
+          2277,
+          2280
+        ],
+        "source_file": "symmetries4_arxiv.tex"
+      }
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "arrangement_id": "334",
+  "computed_incidence": [
+    [
+      0,
+      1,
+      2,
+      3
+    ],
+    [
+      0,
+      1,
+      4,
+      5
+    ],
+    [
+      0,
+      1,
+      6,
+      7
+    ],
+    [
+      0,
+      2,
+      4,
+      6
+    ],
+    [
+      1,
+      2,
+      5,
+      7
+    ],
+    [
+      4,
+      5,
+      6,
+      7
+    ]
+  ],
+  "computed_inventory": {
+    "l3": 0,
+    "p3": 32,
+    "p4_0": 6,
+    "p4_1": 0,
+    "p5_0": 0,
+    "p5_1": 0,
+    "p5_2": 0
+  },
+  "conditions": [],
+  "determinant_polynomial_status": "not_serialized_in_compact_dossier",
+  "eight_factors": [
+    "x",
+    "(x+t)",
+    "((-A0-A1)*x+A0*y+A1*z)",
+    "(A2*x+A0*y+A1*z+A3*t)",
+    "y",
+    "(y+t)",
+    "z",
+    "(z+t)"
+  ],
+  "exact_equation": "x*(x+t)*((-A0-A1)*x+A0*y+A1*z)*(A2*x+A0*y+A1*z+A3*t)*y*(y+t)*z*(z+t)",
+  "expected_inventory": null,
+  "geometric_inventory": {
+    "l3": 0,
+    "p3": 32,
+    "p4_0": 6,
+    "p4_1": 0,
+    "p5_0": 0,
+    "p5_1": 0,
+    "p5_2": 0
+  },
+  "geometric_inventory_match": false,
+  "issue_classification": "missing_parameter_relation_or_generic_family_mismatch",
+  "magma_comparison": "ported IncidenceTable/Singularities logic used through HodgeCY exact linear algebra",
+  "magma_inventory": {
+    "l3": 0,
+    "p3": 32,
+    "p4_0": 6,
+    "p4_1": 0,
+    "p5_0": 0,
+    "p5_1": 0,
+    "p5_2": 0
+  },
+  "magma_inventory_match": false,
+  "notes": [],
+  "parameter_domain": {
+    "condition_scope": [],
+    "conditions": [],
+    "parameter_symbols": [
+      "A0",
+      "A1",
+      "A2",
+      "A3"
+    ]
+  },
+  "source_context": {
+    "classification_refs": [],
+    "pdf_pages": [
+      42
+    ],
+    "tex_source": [
+      {
+        "lines": [
+          2634,
+          2637
+        ],
+        "source_file": "symmetries4_arxiv.tex"
+      }
+    ]
+  }
+}

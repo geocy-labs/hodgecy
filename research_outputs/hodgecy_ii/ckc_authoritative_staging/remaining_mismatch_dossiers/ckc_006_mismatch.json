@@ -1,0 +1,210 @@
+{
+  "arrangement_id": "6",
+  "computed_incidence": [
+    [
+      0,
+      1,
+      2,
+      3
+    ],
+    [
+      0,
+      1,
+      2,
+      4
+    ],
+    [
+      0,
+      1,
+      2,
+      5
+    ],
+    [
+      0,
+      1,
+      2,
+      6
+    ],
+    [
+      0,
+      1,
+      2,
+      7
+    ],
+    [
+      0,
+      1,
+      3,
+      4
+    ],
+    [
+      0,
+      1,
+      5,
+      6
+    ],
+    [
+      0,
+      2,
+      3,
+      4
+    ],
+    [
+      0,
+      2,
+      5,
+      6
+    ],
+    [
+      0,
+      3,
+      4,
+      5
+    ],
+    [
+      0,
+      3,
+      4,
+      6
+    ],
+    [
+      0,
+      3,
+      4,
+      7
+    ],
+    [
+      0,
+      3,
+      5,
+      6
+    ],
+    [
+      0,
+      4,
+      5,
+      6
+    ],
+    [
+      0,
+      5,
+      6,
+      7
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      1,
+      2,
+      5,
+      6
+    ],
+    [
+      1,
+      3,
+      5,
+      7
+    ],
+    [
+      3,
+      4,
+      5,
+      6
+    ]
+  ],
+  "computed_inventory": {
+    "l3": 3,
+    "p3": 16,
+    "p4_0": 1,
+    "p4_1": 3,
+    "p5_0": 0,
+    "p5_1": 0,
+    "p5_2": 3
+  },
+  "conditions": [],
+  "determinant_polynomial_status": "not_serialized_in_compact_dossier",
+  "eight_factors": [
+    "t",
+    "x",
+    "(x+t)",
+    "y",
+    "(y+t)",
+    "z",
+    "(z+t)",
+    "(A0*x+A1*y+A2*z)"
+  ],
+  "exact_equation": "t*x*(x+t)*y*(y+t)*z*(z+t)*(A0*x+A1*y+A2*z)",
+  "expected_inventory": {
+    "l3": 3,
+    "p3": 8,
+    "p4_0": 3,
+    "p4_1": 3,
+    "p5_0": 0,
+    "p5_1": 0,
+    "p5_2": 3
+  },
+  "geometric_inventory": {
+    "l3": 3,
+    "p3": 16,
+    "p4_0": 4,
+    "p4_1": 0,
+    "p5_0": 3,
+    "p5_1": 0,
+    "p5_2": 0
+  },
+  "geometric_inventory_match": false,
+  "issue_classification": "missing_parameter_relation_or_generic_family_mismatch",
+  "magma_comparison": "ported IncidenceTable/Singularities logic used through HodgeCY exact linear algebra",
+  "magma_inventory": {
+    "l3": 3,
+    "p3": 16,
+    "p4_0": 1,
+    "p4_1": 3,
+    "p5_0": 0,
+    "p5_1": 0,
+    "p5_2": 3
+  },
+  "magma_inventory_match": false,
+  "notes": [],
+  "parameter_domain": {
+    "condition_scope": [],
+    "conditions": [],
+    "parameter_symbols": [
+      "A0",
+      "A1",
+      "A2"
+    ]
+  },
+  "source_context": {
+    "classification_refs": [
+      "ckc_classification_or_incidence_0023",
+      "ckc_classification_or_incidence_0029",
+      "ckc_classification_or_incidence_0031",
+      "ckc_classification_or_incidence_0034",
+      "ckc_classification_or_incidence_0039",
+      "ckc_classification_or_incidence_0047",
+      "ckc_classification_or_incidence_0048",
+      "ckc_classification_or_incidence_0049",
+      "ckc_classification_or_incidence_0052",
+      "ckc_classification_or_incidence_0053",
+      "ckc_classification_or_incidence_0054",
+      "ckc_classification_or_incidence_0060"
+    ],
+    "pdf_pages": [
+      35
+    ],
+    "tex_source": [
+      {
+        "lines": [
+          1650,
+          1653
+        ],
+        "source_file": "symmetries4_arxiv.tex"
+      }
+    ]
+  }
+}

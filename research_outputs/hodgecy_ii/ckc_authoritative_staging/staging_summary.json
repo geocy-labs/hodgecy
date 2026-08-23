@@ -1,0 +1,1773 @@
+{
+  "451_STATUS": "STILL_MISMATCHED; parse=True; inventory_match=False; magma_match=True; geometric_match=False",
+  "454_STATUS": "MATCH_WITHOUT_EXTRA_CONSTRAINTS; parse=True; inventory_match=True; magma_match=True; geometric_match=True",
+  "83_STATUS": "STILL_MISMATCHED; parse=True; inventory_match=False; magma_match=False; geometric_match=False",
+  "CKC_STAGED_RECORDS": 455,
+  "EXACT_8_FACTOR_PARSES": 455,
+  "EXACT_CKC_SOURCE_ASSEMBLIES": 19,
+  "GEOMETRIC_INVENTORY_MATCHES": 15,
+  "HISTORICAL_CANONICAL_MATCHES": 11,
+  "HISTORICAL_TRUE_SUBSTANTIVE_DISCREPANCIES": 0,
+  "INCIDENCE_MATCH_AFTER_SCOPED_CONSTRAINTS": 0,
+  "INCIDENCE_MATCH_WITHOUT_EXTRA_CONSTRAINTS": 19,
+  "INCIDENCE_STILL_MISMATCHED": 436,
+  "MAGMA_INVENTORY_MATCHES": 14,
+  "TOTAL_WITH_84A": 20,
+  "incidence_status_counts": {
+    "MATCH_WITHOUT_EXTRA_CONSTRAINTS": 19,
+    "STILL_MISMATCHED": 436
+  },
+  "refined_discrepancy_counts": {
+    "ALGEBRAIC_CONSTANT_NORMALIZATION_DIFFERENCE": 2,
+    "EXACT_CANONICAL_MATCH": 11,
+    "HISTORICAL_PARSER_ERROR": 1,
+    "PARAMETER_RENAMING_DIFFERENCE": 18,
+    "TEXT_ONLY_DIFFERENCE": 423
+  },
+  "remaining_mismatches": [
+    {
+      "arrangement_id": "2",
+      "reason": "special_realization_or_scoped_condition_insufficient"
+    },
+    {
+      "arrangement_id": "4",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "6",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "7",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "8",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "11",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "12",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "13",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "14",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "15",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "16",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "18",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "20",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "21",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "22",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "23",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "24",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "25",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "26",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "27",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "28",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "29",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "30",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "31",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "33",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "34",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "35",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "36",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "37",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "38",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "39",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "40",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "41",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "42",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "43",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "44",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "45",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "46",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "47",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "48",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "49",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "50",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "51",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "52",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "53",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "54",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "55",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "56",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "57",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "58",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "59",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "60",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "61",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "62",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "63",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "64",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "65",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "66",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "67",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "68",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "70",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "71",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "72",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "73",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "74",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "75",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "76",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "77",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "78",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "79",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "80",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "81",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "82",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "83",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "84",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "85",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "86",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "87",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "88",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "89",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "90",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "91",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "92",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "94",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "95",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "96",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "97",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "98",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "99",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "100",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "101",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "102",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "103",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "104",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "105",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "106",
+      "reason": "special_realization_or_scoped_condition_insufficient"
+    },
+    {
+      "arrangement_id": "107",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "108",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "109",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "110",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "111",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "112",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "113",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "114",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "115",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "116",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "117",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "118",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "119",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "120",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "121",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "122",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "123",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "124",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "125",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "126",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "127",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "128",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "129",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "130",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "131",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "132",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "133",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "134",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "135",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "136",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "137",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "138",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "139",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "140",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "141",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "142",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "143",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "144",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "145",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "146",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "147",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "148",
+      "reason": "special_realization_or_scoped_condition_insufficient"
+    },
+    {
+      "arrangement_id": "149",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "150",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "151",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "152",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "153",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "154",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "155",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "156",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "157",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "158",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "159",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "160",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "161",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "162",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "163",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "164",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "165",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "166",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "167",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "168",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "169",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "170",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "171",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "172",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "173",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "174",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "175",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "176",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "177",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "178",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "179",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "180",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "181",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "182",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "183",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "184",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "185",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "186",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "187",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "188",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "189",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "190",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "191",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "192",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "193",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "194",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "195",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "196",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "197",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "198",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "199",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "200",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "201",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "202",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "203",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "204",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "205",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "206",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "207",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "208",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "209",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "210",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "211",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "212",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "213",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "214",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "215",
+      "reason": "special_realization_or_scoped_condition_insufficient"
+    },
+    {
+      "arrangement_id": "216",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "217",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "218",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "219",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "220",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "221",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "222",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "223",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "224",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "225",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "226",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "227",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "228",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "229",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "230",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "231",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "232",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "233",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "234",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "235",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "236",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "237",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "242",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "243",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "244",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "246",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "247",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "248",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "249",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "250",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "251",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "252",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "253",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "254",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "255",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "256",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "257",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "258",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "259",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "260",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "261",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "262",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "263",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "264",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "265",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "266",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "267",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "268",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "269",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "270",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "271",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "272",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "273",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "274",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "275",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "276",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "277",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "278",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "279",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "280",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "281",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "282",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "283",
+      "reason": "special_realization_or_scoped_condition_insufficient"
+    },
+    {
+      "arrangement_id": "284",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "285",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "286",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "287",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "288",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "289",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "290",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "291",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "292",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "293",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "294",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "295",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "296",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "297",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "298",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "299",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "300",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "301",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "302",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "303",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "304",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "305",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "306",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "307",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "308",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "309",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "310",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "311",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "312",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "313",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "314",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "315",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "316",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "317",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "318",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "319",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "320",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "321",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "322",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "323",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "324",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "325",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "326",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "327",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "328",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "329",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "330",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "331",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "332",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "333",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "334",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "335",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "336",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "337",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "338",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "339",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "340",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "341",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "342",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "343",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "344",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "345",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "346",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "347",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "348",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "349",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "350",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "351",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "352",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "353",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "354",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "355",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "356",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "357",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "358",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "359",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "360",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "361",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "362",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "363",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "364",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "365",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "366",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "367",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "368",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "369",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "370",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "371",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "372",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "373",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "374",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "375",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "376",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "377",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "378",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "379",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "380",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "381",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "382",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "383",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "384",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "385",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "386",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "387",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "388",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "389",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "390",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "391",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "392",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "393",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "394",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "395",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "396",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "397",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "398",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "399",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "400",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "401",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "402",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "403",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "404",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "405",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "406",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "407",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "408",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "409",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "410",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "411",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "412",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "413",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "414",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "415",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "416",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "417",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "418",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "419",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "420",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "421",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "422",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "423",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "424",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "425",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "426",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "427",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "428",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "429",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "430",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "431",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "432",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "433",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "434",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "435",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "436",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "437",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "438",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "439",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "440",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "441",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "442",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "443",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "444",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "445",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "446",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "447",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "448",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "449",
+      "reason": "special_realization_or_scoped_condition_insufficient"
+    },
+    {
+      "arrangement_id": "450",
+      "reason": "missing_parameter_relation_or_generic_family_mismatch"
+    },
+    {
+      "arrangement_id": "451",
+      "reason": "magma_inventory_match_geometric_source_assembly_mismatch"
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "arrangement_id": "2",
+  "computed_incidence": [
+    [
+      0,
+      1,
+      2,
+      3
+    ],
+    [
+      0,
+      1,
+      2,
+      4
+    ],
+    [
+      0,
+      1,
+      2,
+      5
+    ],
+    [
+      0,
+      1,
+      2,
+      6
+    ],
+    [
+      0,
+      1,
+      2,
+      7
+    ],
+    [
+      0,
+      1,
+      3,
+      4
+    ],
+    [
+      0,
+      1,
+      5,
+      6
+    ],
+    [
+      0,
+      2,
+      3,
+      4
+    ],
+    [
+      0,
+      2,
+      5,
+      6
+    ],
+    [
+      0,
+      3,
+      4,
+      5
+    ],
+    [
+      0,
+      3,
+      4,
+      6
+    ],
+    [
+      0,
+      3,
+      4,
+      7
+    ],
+    [
+      0,
+      3,
+      5,
+      7
+    ],
+    [
+      0,
+      4,
+      5,
+      7
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      1,
+      2,
+      5,
+      6
+    ],
+    [
+      1,
+      3,
+      5,
+      6
+    ],
+    [
+      1,
+      3,
+      5,
+      7
+    ],
+    [
+      1,
+      3,
+      6,
+      7
+    ],
+    [
+      1,
+      4,
+      5,
+      6
+    ],
+    [
+      1,
+      5,
+      6,
+      7
+    ],
+    [
+      2,
+      3,
+      5,
+      7
+    ],
+    [
+      3,
+      4,
+      5,
+      7
+    ],
+    [
+      3,
+      5,
+      6,
+      7
+    ]
+  ],
+  "computed_inventory": {
+    "l3": 4,
+    "p3": 8,
+    "p4_0": 0,
+    "p4_1": 4,
+    "p5_0": 0,
+    "p5_1": 0,
+    "p5_2": 4
+  },
+  "conditions": [
+    "ckc_param_condition_0032"
+  ],
+  "determinant_polynomial_status": "not_serialized_in_compact_dossier",
+  "eight_factors": [
+    "x",
+    "y",
+    "(A0*x+A1*y)",
+    "(x+z)",
+    "z",
+    "(y+t)",
+    "t",
+    "(x+y+z+t)"
+  ],
+  "exact_equation": "x*y*(A0*x+A1*y)*(x+z)*z*(y+t)*t*(x+y+z+t)",
+  "expected_inventory": {
+    "l3": 4,
+    "p3": 4,
+    "p4_0": 1,
+    "p4_1": 4,
+    "p5_0": 0,
+    "p5_1": 0,
+    "p5_2": 4
+  },
+  "geometric_inventory": {
+    "l3": 4,
+    "p3": 8,
+    "p4_0": 4,
+    "p4_1": 0,
+    "p5_0": 4,
+    "p5_1": 0,
+    "p5_2": 0
+  },
+  "geometric_inventory_match": false,
+  "issue_classification": "special_realization_or_scoped_condition_insufficient",
+  "magma_comparison": "ported IncidenceTable/Singularities logic used through HodgeCY exact linear algebra",
+  "magma_inventory": {
+    "l3": 4,
+    "p3": 8,
+    "p4_0": 0,
+    "p4_1": 4,
+    "p5_0": 0,
+    "p5_1": 0,
+    "p5_2": 4
+  },
+  "magma_inventory_match": false,
+  "notes": [],
+  "parameter_domain": {
+    "condition_scope": [
+      "single_arrangement"
+    ],
+    "conditions": [
+      "ckc_param_condition_0032"
+    ],
+    "parameter_symbols": [
+      "A0",
+      "A1"
+    ]
+  },
+  "source_context": {
+    "classification_refs": [
+      "ckc_classification_or_incidence_0003",
+      "ckc_classification_or_incidence_0009",
+      "ckc_classification_or_incidence_0010",
+      "ckc_classification_or_incidence_0011",
+      "ckc_classification_or_incidence_0015",
+      "ckc_classification_or_incidence_0023",
+      "ckc_classification_or_incidence_0024",
+      "ckc_classification_or_incidence_0028",
+      "ckc_classification_or_incidence_0029",
+      "ckc_classification_or_incidence_0030",
+      "ckc_classification_or_incidence_0031",
+      "ckc_classification_or_incidence_0032",
+      "ckc_classification_or_incidence_0033",
+      "ckc_classification_or_incidence_0034",
+      "ckc_classification_or_incidence_0035",
+      "ckc_classification_or_incidence_0036",
+      "ckc_classification_or_incidence_0037",
+      "ckc_classification_or_incidence_0038",
+      "ckc_classification_or_incidence_0039",
+      "ckc_classification_or_incidence_0040",
+      "ckc_classification_or_incidence_0044",
+      "ckc_classification_or_incidence_0047",
+      "ckc_classification_or_incidence_0048",
+      "ckc_classification_or_incidence_0049",
+      "ckc_classification_or_incidence_0050",
+      "ckc_classification_or_incidence_0051",
+      "ckc_classification_or_incidence_0052",
+      "ckc_classification_or_incidence_0053",
+      "ckc_classification_or_incidence_0056",
+      "ckc_classification_or_incidence_0057",
+      "ckc_classification_or_incidence_0059",
+      "ckc_classification_or_incidence_0060"
+    ],
+    "pdf_pages": [
+      6
+    ],
+    "tex_source": [
+      {
+        "lines": [
+          1638,
+          1641
+        ],
+        "source_file": "symmetries4_arxiv.tex"
+      }
+    ]
+  }
+}

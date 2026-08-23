@@ -1,0 +1,14 @@
+{
+  "outputs": {
+    "authoritative_incidence": "ckc455_authoritative_incidence.parquet",
+    "incidence_validation": "ckc455_incidence_validation.tsv",
+    "parameter_conditions": "ckc_parameter_conditions_staged.parquet",
+    "parse_audit": "equation_parse_audit.tsv",
+    "refined_discrepancies": "historical_ckc_ingest_discrepancies_refined.tsv",
+    "remaining_mismatch_dossiers": "remaining_mismatch_dossiers/",
+    "source_assembly_coverage": "ckc455_source_assembly_coverage.tsv",
+    "staged_records_jsonl": "ckc455_staged_records.jsonl",
+    "staged_records_parquet": "ckc455_staged_records.parquet"
+  },
+  "schema": "hodgecy.ckc_authoritative_staged_to_derived_manifest.v1"
+}
