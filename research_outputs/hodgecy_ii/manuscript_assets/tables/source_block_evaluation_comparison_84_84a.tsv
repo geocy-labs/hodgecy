@@ -1,17 +1,17 @@
-layer	84	84a	comparison	status
-local inventory	l3=0;p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0	l3=0;p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0	equal	VERIFIED
-Hodge signature	euler=80;h11=40;h12=0	euler=80;h11=40;h12=0	equal	VERIFIED
-source rank_Q	26	26	equal	VERIFIED
-source H1_Q rank	2	2	equal	VERIFIED
-source rank_mod_2	23	21	different	VERIFIED
-source SNF	(1^23,2,6,12)	(1^21,2,4^3,12)	different	VERIFIED
-torsion factors	[2, 6, 12]	[2, 4, 4, 4, 12]	different	VERIFIED
-block ideal hash	428406a6d72603cea07594fbbeac4aacdd35ed7437a203a77751d7e16a6b5eb7	3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98	different block schemes	VERIFIED
-Hilbert profile H_B(0..8)	[1, 4, 10, 20, 34, 52, 74, 92, 105]	[1, 4, 10, 20, 34, 52, 74, 92, 105]	equal	VERIFIED
-H_B(8)	105	105	equal	VERIFIED
-evaluation rank	105	105	equal	VERIFIED
-evaluation deficiency	7	7	equal	VERIFIED
-evaluation relation dimension	7	7	equal	VERIFIED
-conditional classical defect	7	7	equal if ordinary-node gate passes	CONDITIONAL
-actual classical defect	UNKNOWN	UNKNOWN	unknown	UNKNOWN
-source-to-evaluation chain map	UNKNOWN	UNKNOWN	not constructed	UNKNOWN
+layer	84	84a	comparison	status	structural_status	structural_basis
+local inventory	l3=0;p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0	l3=0;p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0	equal	VERIFIED	SOURCE_LEVEL	same local inventory
+Hodge signature	euler=80;h11=40;h12=0	euler=80;h11=40;h12=0	equal	VERIFIED	SOURCE_LEVEL	same h11/h12/euler
+source rank_Q	26	26	equal	VERIFIED	SOURCE_LEVEL	rational source assembly equality
+source H1_Q rank	2	2	equal	VERIFIED	SOURCE_LEVEL	rational source H1 equality
+source rank_mod_2	23	21	different	VERIFIED	SOURCE_LEVEL	integral source split
+source SNF	(1^23,2,6,12)	(1^21,2,4^3,12)	different	VERIFIED	SOURCE_LEVEL	integral source split
+torsion factors	2 | 6 | 12	2 | 4 | 4 | 4 | 12	different	VERIFIED	SOURCE_LEVEL	integral source split
+block ideal hash	428406a6d72603cea07594fbbeac4aacdd35ed7437a203a77751d7e16a6b5eb7	3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98	different block schemes	VERIFIED	BLOCK_GEOMETRY	distinct verified block schemes
+Hilbert profile H_B(0..8)	1 | 4 | 10 | 20 | 34 | 52 | 74 | 92 | 105	1 | 4 | 10 | 20 | 34 | 52 | 74 | 92 | 105	equal	VERIFIED	COMPUTED_AND_PROVED_STRUCTURALLY	proved by Hilbert-Burch plus regular quartic section
+H_B(8)	105	105	equal	VERIFIED	COMPUTED_AND_PROVED_STRUCTURALLY	coefficient in structural Hilbert series
+evaluation rank	105	105	equal	VERIFIED	COMPUTED_AND_PROVED_STRUCTURALLY	rank(E_8)=H_B(8)
+evaluation deficiency	7	7	equal	VERIFIED	COMPUTED_AND_PROVED_STRUCTURALLY	h^1(P3,I_B(8))=7
+evaluation relation dimension	7	7	equal	VERIFIED	COMPUTED_AND_PROVED_STRUCTURALLY	dimension equality only; no source map
+conditional classical defect	7	7	equal if ordinary-node gate passes	CONDITIONAL	NOT_PROMOTED	requires ordinary-node/full-node-scheme promotion
+actual classical defect	UNKNOWN	UNKNOWN	unknown	UNKNOWN	NOT_PROMOTED	ordinary-node/full saturated Jacobian gate remains open
+source-to-evaluation chain map	UNKNOWN	UNKNOWN	not constructed	UNKNOWN	OPEN	no theorem-backed map constructed

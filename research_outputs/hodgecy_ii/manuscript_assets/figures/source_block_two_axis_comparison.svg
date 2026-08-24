@@ -28,18 +28,18 @@
 <polygon points="220,237 212,232 212,242" fill="#555" />
 <rect x="250" y="210" width="130" height="54" rx="5" fill="#e9f5ef" stroke="#438461" />
 <text x="315" y="233" font-family="Arial" font-size="13" text-anchor="middle">H_B(0..8)</text>
-<text x="315" y="252" font-family="Arial" font-size="11" text-anchor="middle" fill="#333">equal</text>
+<text x="315" y="252" font-family="Arial" font-size="11" text-anchor="middle" fill="#333">proved HB + Q</text>
 <line x1="380" y1="237" x2="400" y2="237" stroke="#555" />
 <polygon points="400,237 392,232 392,242" fill="#555" />
 <rect x="410" y="210" width="130" height="54" rx="5" fill="#f5f5f5" stroke="#777" />
 <text x="475" y="233" font-family="Arial" font-size="13" text-anchor="middle">E_8 rank</text>
-<text x="475" y="252" font-family="Arial" font-size="11" text-anchor="middle" fill="#333">105 = 105</text>
+<text x="475" y="252" font-family="Arial" font-size="11" text-anchor="middle" fill="#333">105 = 105 proved</text>
 <line x1="540" y1="237" x2="560" y2="237" stroke="#555" />
 <polygon points="560,237 552,232 552,242" fill="#555" />
 <rect x="570" y="210" width="130" height="54" rx="5" fill="#f5f5f5" stroke="#777" />
 <text x="635" y="233" font-family="Arial" font-size="13" text-anchor="middle">relations</text>
-<text x="635" y="252" font-family="Arial" font-size="11" text-anchor="middle" fill="#333">7 = 7</text>
+<text x="635" y="252" font-family="Arial" font-size="11" text-anchor="middle" fill="#333">7 = 7 proved</text>
 <line x1="475" y1="140" x2="475" y2="210" stroke="#999" stroke-dasharray="4 4" />
-<text x="490" y="178" font-family="Arial" font-size="12" fill="#555">collapse at E_8 despite source split</text>
+<text x="490" y="178" font-family="Arial" font-size="12" fill="#555">structural block collapse despite source split</text>
 <text x="70" y="302" font-family="Arial" font-size="12" fill="#555">No source-to-evaluation chain map or integral evaluation lattice is constructed.</text>
 </svg>

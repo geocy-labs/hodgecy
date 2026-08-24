@@ -31,6 +31,20 @@ BLOCK_GEOMETRY_PATH = THEOREM_EVIDENCE_ROOT / "block_geometry" / "block_geometry
 BLOCK_EVALUATION_PATH = THEOREM_EVIDENCE_ROOT / "block_evaluation" / "block_evaluation_comparison_84_84a.json"
 SOURCE_BLOCK_COMPARISON_PATH = THEOREM_EVIDENCE_ROOT / "source_block_comparison" / "source_block_evaluation_comparison_84_84a.json"
 HILBERT_BURCH_PATH = THEOREM_EVIDENCE_ROOT / "hilbert_burch_block_theorem.json"
+LITERATURE_REVIEW_MD_PATH = FINAL_ROOT / "hodgecy_ii_literature_review.md"
+LITERATURE_REVIEW_JSON_PATH = FINAL_ROOT / "hodgecy_ii_literature_review.json"
+RELATED_WORK_BIB_PATH = FINAL_ROOT / "hodgecy_ii_related_work.bib"
+HILBERT_BURCH_THEOREM_TEX_PATH = FINAL_ROOT / "hodgecy_ii_hilbert_burch_theorem.tex"
+STAR_CONFIGURATION_AUDIT_MD_PATH = FINAL_ROOT / "hodgecy_ii_star_configuration_audit.md"
+STAR_CONFIGURATION_AUDIT_JSON_PATH = FINAL_ROOT / "hodgecy_ii_star_configuration_audit.json"
+OPTIONAL_FINAL_ASSETS = (
+    LITERATURE_REVIEW_MD_PATH,
+    LITERATURE_REVIEW_JSON_PATH,
+    RELATED_WORK_BIB_PATH,
+    HILBERT_BURCH_THEOREM_TEX_PATH,
+    STAR_CONFIGURATION_AUDIT_MD_PATH,
+    STAR_CONFIGURATION_AUDIT_JSON_PATH,
+)
 DEPRECATED_ARTIFACT_PREFIXES = (
     "research_outputs/hodgecy_ii/baseline/",
     "research_outputs/hodgecy_ii/defect_blob7/",
@@ -180,6 +194,10 @@ def final_artifact_paths(paths: Iterable[Path]) -> list[Path]:
     return [path for path in paths if path.exists() and path != FINAL_ARTIFACT_MANIFEST_PATH]
 
 
+def existing_optional_final_assets() -> list[Path]:
+    return [path for path in OPTIONAL_FINAL_ASSETS if path.exists()]
+
+
 def rel(path: Path) -> str:
     return path.relative_to(REPO_ROOT).as_posix()
 
@@ -235,6 +253,10 @@ def load_canonical() -> dict[str, Any]:
     }
     if HILBERT_BURCH_PATH.exists():
         data["hilbert_burch"] = read_json(HILBERT_BURCH_PATH)
+    if LITERATURE_REVIEW_JSON_PATH.exists():
+        data["literature_review"] = read_json(LITERATURE_REVIEW_JSON_PATH)
+    if STAR_CONFIGURATION_AUDIT_JSON_PATH.exists():
+        data["star_configuration_audit"] = read_json(STAR_CONFIGURATION_AUDIT_JSON_PATH)
     return data
 
 
@@ -363,12 +385,109 @@ def evidence_matrix_rows() -> list[dict[str, str]]:
             [
                 ("84/84a line-skeleton Hilbert-Burch resolution", "PROVED", "0 -> S(-8)^7 -> S(-7)^8 -> I_C -> 0 under verified no-three-planes-on-a-line hypotheses."),
                 ("84/84a quartic regular section", "PROVED", "Q restricts to a nonzero squarefree quartic on every associated line."),
+                ("84/84a block mapping-cone resolution", "PROVED", "0 -> S(-12)^7 -> S(-11)^8 plus S(-8)^7 -> S(-7)^8 plus S(-4) -> S -> S/I_B -> 0 for the verified block scheme."),
                 ("structural block Hilbert series", "PROVED", "(1-t^4)(1-8t^7+7t^8)/(1-t)^4 for the verified block scheme."),
                 ("H^1(I_B(8))=7", "PROVED", "Sheaf/evaluation sequence for the verified block scheme."),
                 ("Hilbert-Burch source-to-evaluation map", "NOT_CLAIMED", "Rank-seven syzygy contribution explains dimension only; no source map is constructed."),
             ]
         )
     return [{"statement": statement, "status": status, "basis": basis} for statement, status, basis in rows]
+
+
+def block_evaluation_comparison_rows(data: dict[str, Any]) -> list[dict[str, Any]]:
+    results = data["evaluation"]["results"]
+    profile = [value["H_B_d"] for value in results["84"]["hilbert_table"]["values"]]
+    theorem_ready = "COMPUTED_AND_PROVED_STRUCTURALLY" if data.get("hilbert_burch") else "COMPUTED"
+    rows = [
+        ("block scheme degree", results["84"]["scheme_degree"], results["84a"]["scheme_degree"], "equal", "exact block result", "COMPUTED", "PROVED_STRUCTURALLY", "28 lines times 4 regular quartic points"),
+        ("Hilbert profile H_B(0..8)", profile, profile, "equal", "exact block result", "COMPUTED", theorem_ready, "matches (1-t^4)(1-8t^7+7t^8)/(1-t)^4"),
+        ("H_B(8)", results["84"]["H_B_8"], results["84a"]["H_B_8"], "equal", "exact block result", "COMPUTED", theorem_ready, "coefficient in structural Hilbert series"),
+        ("eval source dim", results["84"]["evaluation_source_dimension"], results["84a"]["evaluation_source_dimension"], "equal", "exact block result", "COMPUTED", "COMBINATORIAL", "dim S_8 = binom(11,3)"),
+        ("eval target length", results["84"]["evaluation_target_length"], results["84a"]["evaluation_target_length"], "equal", "exact block result", "COMPUTED", "PROVED_STRUCTURALLY", "degree of verified block scheme"),
+        ("eval rank", results["84"]["evaluation_rank"], results["84a"]["evaluation_rank"], "equal", "exact block result", "COMPUTED", theorem_ready, "rank(E_8)=H_B(8)"),
+        ("eval kernel dim", results["84"]["evaluation_kernel_dimension"], results["84a"]["evaluation_kernel_dimension"], "equal", "exact block result", "COMPUTED", "DERIVED", "dim S_8 - rank(E_8)"),
+        ("eval cokernel dim", results["84"]["evaluation_cokernel_dimension"], results["84a"]["evaluation_cokernel_dimension"], "equal", "exact block result", "COMPUTED", theorem_ready, "degree(B)-H_B(8)"),
+        ("block evaluation deficiency", results["84"]["block_evaluation_deficiency"], results["84a"]["block_evaluation_deficiency"], "equal", "exact block result", "COMPUTED", theorem_ready, "h^1(P3,I_B(8)) = 112 - 105"),
+        ("eval relation dim", results["84"]["evaluation_relation_dimension"], results["84a"]["evaluation_relation_dimension"], "equal", "exact block rank summary", "COMPUTED", theorem_ready, "dim ker(E_8^T)=target length-rank"),
+        ("conditional classical defect", results["84"]["conditional_classical_defect_value"], results["84a"]["conditional_classical_defect_value"], "equal", "conditional on ordinary-node gate", "CONDITIONAL", "NOT_PROMOTED", "requires ordinary-node/full-node-scheme promotion"),
+        ("verified classical defect", "UNKNOWN", "UNKNOWN", "equal", "not promoted", "OPEN", "NOT_PROMOTED", "ordinary-node/full saturated Jacobian gate remains open"),
+    ]
+    return [
+        {
+            "invariant": invariant,
+            "84": left,
+            "84a": right,
+            "comparison": comparison,
+            "claim_layer": claim_layer,
+            "computational_status": computational_status,
+            "structural_status": structural_status,
+            "structural_basis": structural_basis,
+        }
+        for invariant, left, right, comparison, claim_layer, computational_status, structural_status, structural_basis in rows
+    ]
+
+
+def source_block_evaluation_comparison_rows(data: dict[str, Any]) -> list[dict[str, Any]]:
+    source = data["source_regression"]
+    comparison = data["source_evaluation"]
+    profile = comparison["block_hilbert_comparison"]["profile"]
+    h_b_8 = profile[8]
+    theorem_ready = "COMPUTED_AND_PROVED_STRUCTURALLY" if data.get("hilbert_burch") else "COMPUTED"
+    rows = [
+        ("local inventory", local_inventory_string(source["84"]["local_inventory"]), local_inventory_string(source["84a"]["local_inventory"]), "equal", "VERIFIED", "SOURCE_LEVEL", "same local inventory"),
+        ("Hodge signature", hodge_signature_string(source["84"]["hodge_signature"]), hodge_signature_string(source["84a"]["hodge_signature"]), "equal", "VERIFIED", "SOURCE_LEVEL", "same h11/h12/euler"),
+        ("source rank_Q", source["84"]["rank_Q"], source["84a"]["rank_Q"], "equal", "VERIFIED", "SOURCE_LEVEL", "rational source assembly equality"),
+        ("source H1_Q rank", 2, 2, "equal", "VERIFIED", "SOURCE_LEVEL", "rational source H1 equality"),
+        ("source rank_mod_2", source["84"]["rank_mod_2"], source["84a"]["rank_mod_2"], "different", "VERIFIED", "SOURCE_LEVEL", "integral source split"),
+        ("source SNF", smith_compact(source["84"]["smith_type"]), smith_compact(source["84a"]["smith_type"]), "different", "VERIFIED", "SOURCE_LEVEL", "integral source split"),
+        ("torsion factors", source["84"]["torsion_factors"], source["84a"]["torsion_factors"], "different", "VERIFIED", "SOURCE_LEVEL", "integral source split"),
+        ("block ideal hash", data["evaluation"]["results"]["84"]["block_scheme_hash"], data["evaluation"]["results"]["84a"]["block_scheme_hash"], "different block schemes", "VERIFIED", "BLOCK_GEOMETRY", "distinct verified block schemes"),
+        ("Hilbert profile H_B(0..8)", profile, profile, "equal", "VERIFIED", theorem_ready, "proved by Hilbert-Burch plus regular quartic section"),
+        ("H_B(8)", h_b_8, h_b_8, "equal", "VERIFIED", theorem_ready, "coefficient in structural Hilbert series"),
+        ("evaluation rank", comparison["critical_evaluation_comparison"]["rank"], comparison["critical_evaluation_comparison"]["rank"], "equal", "VERIFIED", theorem_ready, "rank(E_8)=H_B(8)"),
+        ("evaluation deficiency", comparison["critical_evaluation_comparison"]["deficiency"], comparison["critical_evaluation_comparison"]["deficiency"], "equal", "VERIFIED", theorem_ready, "h^1(P3,I_B(8))=7"),
+        ("evaluation relation dimension", comparison["evaluation_relation_comparison"]["relation_dimension"], comparison["evaluation_relation_comparison"]["relation_dimension"], "equal", "VERIFIED", theorem_ready, "dimension equality only; no source map"),
+        ("conditional classical defect", 7, 7, "equal if ordinary-node gate passes", "CONDITIONAL", "NOT_PROMOTED", "requires ordinary-node/full-node-scheme promotion"),
+        ("actual classical defect", "UNKNOWN", "UNKNOWN", "unknown", "UNKNOWN", "NOT_PROMOTED", "ordinary-node/full saturated Jacobian gate remains open"),
+        ("source-to-evaluation chain map", "UNKNOWN", "UNKNOWN", "not constructed", "UNKNOWN", "OPEN", "no theorem-backed map constructed"),
+    ]
+    return [
+        {
+            "layer": layer,
+            "84": left,
+            "84a": right,
+            "comparison": row_comparison,
+            "status": status,
+            "structural_status": structural_status,
+            "structural_basis": structural_basis,
+        }
+        for layer, left, right, row_comparison, status, structural_status, structural_basis in rows
+    ]
+
+
+def local_inventory_string(value: dict[str, Any]) -> str:
+    keys = ("l3", "p3", "p4_0", "p4_1", "p5_0", "p5_1", "p5_2")
+    return ";".join(f"{key}={value[key]}" for key in keys)
+
+
+def hodge_signature_string(value: dict[str, Any] | None) -> str:
+    if value is None:
+        return "UNKNOWN"
+    return f"euler={value['euler']};h11={value['h11']};h12={value['h12']}"
+
+
+def smith_compact(values: list[int]) -> str:
+    pieces = []
+    index = 0
+    while index < len(values):
+        value = values[index]
+        count = 1
+        index += 1
+        while index < len(values) and values[index] == value:
+            count += 1
+            index += 1
+        pieces.append(f"{value}^{count}" if count > 1 else str(value))
+    return "(" + ",".join(pieces) + ")"
 
 
 def table_inventory() -> list[dict[str, Any]]:
@@ -394,9 +513,9 @@ def figure_inventory() -> list[dict[str, Any]]:
         ("II.1", "Fidelity hierarchy", "fidelity_hierarchy.svg", "fidelity_hierarchy_data.json", "Source-fidelity ladder."),
         ("II.2", "84-neighborhood refinement tree", "neighborhood_84_refinement_tree.svg", "neighborhood_84_refinement_tree_data.json", "84-neighborhood refinement cascade."),
         ("II.3", "Block/node certification bridge", "node_certification_bridge.svg", "node_certification_bridge_data.json", "Source blocks to degree-112 block scheme bridge."),
-        ("II.4", "Hilbert-profile comparison", "hilbert_profile_comparison.svg", "hilbert_profile_comparison_data.json", "84/84a Hilbert profile equality."),
+        ("II.4", "Hilbert-profile comparison", "hilbert_profile_comparison.svg", "hilbert_profile_comparison_data.json", "84/84a Hilbert profile equality matching the proved structural Hilbert series."),
         ("II.5", "Evaluation relation diagram", "evaluation_relation_diagram.svg", "evaluation_relation_diagram_data.json", "Degree-8 evaluation relation summary."),
-        ("II.6", "Source versus block-evaluation axes", "source_block_two_axis_comparison.svg", "source_block_two_axis_comparison_data.json", "Two-axis source split/block-evaluation collapse."),
+        ("II.6", "Source versus block-evaluation axes", "source_block_two_axis_comparison.svg", "source_block_two_axis_comparison_data.json", "Source split and structurally explained block-evaluation collapse; comparison morphism remains open."),
         ("S.1", "Final result hierarchy", "final_result_hierarchy.svg", "final_result_hierarchy_data.json", "Concise final source/block-evaluation hierarchy."),
     ]
     rows = []
@@ -501,6 +620,40 @@ def write_final_hierarchy_figure() -> list[Path]:
     return [data_path, svg_path]
 
 
+def update_structural_figure_data(data: dict[str, Any]) -> list[Path]:
+    profile = data["source_evaluation"]["block_hilbert_comparison"]["profile"]
+    hilbert_payload = {
+        "schema": "hodgecy_ii_hilbert_profile_comparison.v2",
+        "degrees": list(range(len(profile))),
+        "critical_degree": 8,
+        "profiles": {"84": profile, "84a": profile},
+        "visual_distinction_policy": "84 and 84a remain separately drawn even though the profiles coincide.",
+        "interpretation": {
+            "computed_equality": True,
+            "structural_explanation": "The common profile is the coefficient sequence of (1-t^4)(1-8*t^7+7*t^8)/(1-t)^4.",
+            "theorem_source": rel(HILBERT_BURCH_PATH) if HILBERT_BURCH_PATH.exists() else "",
+            "manuscript_theorem": rel(HILBERT_BURCH_THEOREM_TEX_PATH) if HILBERT_BURCH_THEOREM_TEX_PATH.exists() else "",
+            "classical_defect_promoted": False,
+        },
+    }
+    source_block_path = FIGURE_ROOT / "source_block_two_axis_comparison_data.json"
+    source_block_payload = read_json(source_block_path) if source_block_path.exists() else {"schema": "hodgecy_ii_source_block_two_axis_comparison.v1", "comparison": data["source_evaluation"]}
+    source_block_payload["structural_interpretation"] = {
+        "block_side_collapse": "STRUCTURALLY_EXPLAINED_BY_HILBERT_BURCH_PLUS_REGULAR_QUARTIC",
+        "line_skeleton_resolution": "0 -> S(-8)^7 -> S(-7)^8 -> I_C -> 0",
+        "block_hilbert_series": "(1-t^4)(1-8*t^7+7*t^8)/(1-t)^4",
+        "degree_8_deficiency": 7,
+        "source_to_evaluation_morphism": "OPEN_NOT_CONSTRUCTED",
+        "integral_evaluation_lattice": "OPEN_NOT_CONSTRUCTED",
+    }
+    source_block_payload.setdefault("comparison", {}).setdefault("comparison_morphism_status", {})["source_to_evaluation_chain_map"] = "unknown"
+    source_block_payload["comparison"]["comparison_morphism_status"]["explicit_theorem_backed_data_available"] = False
+    return [
+        write_json(FIGURE_ROOT / "hilbert_profile_comparison_data.json", hilbert_payload),
+        write_json(source_block_path, source_block_payload),
+    ]
+
+
 def theorem_evidence_bundle(data: dict[str, Any]) -> list[Path]:
     paths = []
     source = data["source_regression"]
@@ -568,11 +721,12 @@ def final_research_manifest(result_summary_path: Path, asset_manifest_path: Path
     ]
     if HILBERT_BURCH_PATH.exists():
         primary_inputs.append(HILBERT_BURCH_PATH)
+    primary_inputs.extend(existing_optional_final_assets())
     return {
         "schema": "hodgecy_ii_final_computational_state.v1",
         "package_version": HODGECY_VERSION,
         "git_commit": "resolved-by-repository-history",
-        "branch": "main",
+        "branch": git_output("branch", "--show-current") or "research/hodgecy-ii-hilbert-burch",
         "python_version": platform.python_version(),
         "dependency_versions": dependency_versions(),
         "test_counts": test_summary or {"baseline": "338 passed, 2 skipped"},
@@ -707,7 +861,11 @@ def main() -> None:
     outputs.append(write_markdown_record(FINAL_ROOT / "future_research_leads.md", "HodgeCY II Future Research Leads", future_research_leads()))
 
     outputs.extend(write_table_bundle(TABLE_ROOT, "final_evidence_status_matrix", evidence))
+    outputs.extend(write_table_bundle(TABLE_ROOT, "block_evaluation_comparison_84_84a", block_evaluation_comparison_rows(data)))
+    outputs.extend(write_table_bundle(TABLE_ROOT, "source_block_evaluation_comparison_84_84a", source_block_evaluation_comparison_rows(data)))
     outputs.extend(write_final_hierarchy_figure())
+    outputs.extend(update_structural_figure_data(data))
+    outputs.extend(existing_optional_final_assets())
     table_rows = table_inventory()
     figure_rows = figure_inventory()
     outputs.append(write_json(MANIFEST_ROOT / "final_manuscript_table_inventory.json", {"schema": "hodgecy_ii_final_table_inventory.v1", "tables": table_rows}))
@@ -760,7 +918,13 @@ def deterministic_asset_check() -> dict[str, Any]:
         TABLE_ROOT / "final_evidence_status_matrix.tsv",
         TABLE_ROOT / "source_block_evaluation_comparison_84_84a.tsv",
         DATA_ROOT / "fidelity_census_summary.json",
+        FIGURE_ROOT / "hilbert_profile_comparison_data.json",
+        FIGURE_ROOT / "source_block_two_axis_comparison_data.json",
         FIGURE_ROOT / "final_result_hierarchy.svg",
+        LITERATURE_REVIEW_JSON_PATH,
+        RELATED_WORK_BIB_PATH,
+        HILBERT_BURCH_THEOREM_TEX_PATH,
+        STAR_CONFIGURATION_AUDIT_JSON_PATH,
     ]
     return {"schema": "hodgecy_ii_deterministic_asset_check.v1", "status": "PASS", "watched_hashes": {rel(path): file_sha256(path) for path in watched if path.exists()}, "volatile_metadata_normalized": True}
 

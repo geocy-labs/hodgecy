@@ -1,15 +1,18 @@
-\begin{tabular}{lllll}
-invariant & 84 & 84a & comparison & claim\_layer \\
+\begin{tabular}{llllllll}
 \hline
-block scheme degree & 112 & 112 & equal & exact block result \\
-H\_B(8) & 105 & 105 & equal & exact block result \\
-eval source dim & 165 & 165 & equal & exact block result \\
-eval target length & 112 & 112 & equal & exact block result \\
-eval rank & 105 & 105 & equal & exact block result \\
-eval kernel dim & 60 & 60 & equal & exact block result \\
-eval cokernel dim & 7 & 7 & equal & exact block result \\
-block evaluation deficiency & 7 & 7 & equal & exact block result \\
-eval relation dim & 7 & 7 & equal & exact block rank summary \\
-conditional classical defect & 7 & 7 & equal & conditional on ordinary-node gate \\
-verified classical defect & UNKNOWN & UNKNOWN & equal & not promoted \\
+invariant & 84 & 84a & comparison & claim\_layer & computational\_status & structural\_status & structural\_basis \\
+\hline
+block scheme degree & 112 & 112 & equal & exact block result & COMPUTED & PROVED\_STRUCTURALLY & 28 lines times 4 regular quartic points \\
+Hilbert profile H\_B(0..8) & 1 | 4 | 10 | 20 | 34 | 52 | 74 | 92 | 105 & 1 | 4 | 10 | 20 | 34 | 52 | 74 | 92 | 105 & equal & exact block result & COMPUTED & COMPUTED\_AND\_PROVED\_STRUCTURALLY & matches (1-t^4)(1-8t^7+7t^8)/(1-t)^4 \\
+H\_B(8) & 105 & 105 & equal & exact block result & COMPUTED & COMPUTED\_AND\_PROVED\_STRUCTURALLY & coefficient in structural Hilbert series \\
+eval source dim & 165 & 165 & equal & exact block result & COMPUTED & COMBINATORIAL & dim S\_8 = binom(11,3) \\
+eval target length & 112 & 112 & equal & exact block result & COMPUTED & PROVED\_STRUCTURALLY & degree of verified block scheme \\
+eval rank & 105 & 105 & equal & exact block result & COMPUTED & COMPUTED\_AND\_PROVED\_STRUCTURALLY & rank(E\_8)=H\_B(8) \\
+eval kernel dim & 60 & 60 & equal & exact block result & COMPUTED & DERIVED & dim S\_8 - rank(E\_8) \\
+eval cokernel dim & 7 & 7 & equal & exact block result & COMPUTED & COMPUTED\_AND\_PROVED\_STRUCTURALLY & degree(B)-H\_B(8) \\
+block evaluation deficiency & 7 & 7 & equal & exact block result & COMPUTED & COMPUTED\_AND\_PROVED\_STRUCTURALLY & h^1(P3,I\_B(8)) = 112 - 105 \\
+eval relation dim & 7 & 7 & equal & exact block rank summary & COMPUTED & COMPUTED\_AND\_PROVED\_STRUCTURALLY & dim ker(E\_8^T)=target length-rank \\
+conditional classical defect & 7 & 7 & equal & conditional on ordinary-node gate & CONDITIONAL & NOT\_PROMOTED & requires ordinary-node/full-node-scheme promotion \\
+verified classical defect & UNKNOWN & UNKNOWN & equal & not promoted & OPEN & NOT\_PROMOTED & ordinary-node/full saturated Jacobian gate remains open \\
+\hline
 \end{tabular}

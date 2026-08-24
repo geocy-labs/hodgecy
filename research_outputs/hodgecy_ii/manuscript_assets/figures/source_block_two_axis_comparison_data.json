@@ -1348,5 +1348,13 @@
       "status": "CANDIDATE_THEOREM_RECORD"
     }
   },
-  "schema": "hodgecy_ii_source_block_two_axis_comparison.v1"
+  "schema": "hodgecy_ii_source_block_two_axis_comparison.v1",
+  "structural_interpretation": {
+    "block_hilbert_series": "(1-t^4)(1-8*t^7+7*t^8)/(1-t)^4",
+    "block_side_collapse": "STRUCTURALLY_EXPLAINED_BY_HILBERT_BURCH_PLUS_REGULAR_QUARTIC",
+    "degree_8_deficiency": 7,
+    "integral_evaluation_lattice": "OPEN_NOT_CONSTRUCTED",
+    "line_skeleton_resolution": "0 -> S(-8)^7 -> S(-7)^8 -> I_C -> 0",
+    "source_to_evaluation_morphism": "OPEN_NOT_CONSTRUCTED"
+  }
 }

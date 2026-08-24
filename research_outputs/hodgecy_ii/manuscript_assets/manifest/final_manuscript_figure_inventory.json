@@ -31,12 +31,12 @@
       "title": "Block/node certification bridge"
     },
     {
-      "caption_data": "84/84a Hilbert profile equality.",
+      "caption_data": "84/84a Hilbert profile equality matching the proved structural Hilbert series.",
       "data_source": "research_outputs/hodgecy_ii/manuscript_assets/figures/hilbert_profile_comparison_data.json",
       "figure_id": "II.4",
       "figure_path": "research_outputs/hodgecy_ii/manuscript_assets/figures/hilbert_profile_comparison.svg",
       "generator": "hodgecy_ii_final_freeze.py",
-      "input_hash": "f69489cd7f67c5591db4cf3c606a74f4dbf7589924804776261e21e7a897c0b8",
+      "input_hash": "adb12f8a9bf0b77e37a6b01cbd7e494cb746584f0018e912bab772c388d2c40a",
       "status": "MAIN_TEXT",
       "title": "Hilbert-profile comparison"
     },
@@ -51,12 +51,12 @@
       "title": "Evaluation relation diagram"
     },
     {
-      "caption_data": "Two-axis source split/block-evaluation collapse.",
+      "caption_data": "Source split and structurally explained block-evaluation collapse; comparison morphism remains open.",
       "data_source": "research_outputs/hodgecy_ii/manuscript_assets/figures/source_block_two_axis_comparison_data.json",
       "figure_id": "II.6",
       "figure_path": "research_outputs/hodgecy_ii/manuscript_assets/figures/source_block_two_axis_comparison.svg",
       "generator": "hodgecy_ii_final_freeze.py",
-      "input_hash": "630635ab9264d1beba01152c8fd6195ae1f9ed9a5f8f4f28bf45063049fbf04b",
+      "input_hash": "2e07f8f65144727614dece4b95eb2b65584c7320fd45ba71889de4ee5ea53322",
       "status": "MAIN_TEXT",
       "title": "Source versus block-evaluation axes"
     },

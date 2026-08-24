@@ -1,20 +1,22 @@
-\begin{tabular}{lllll}
-layer & 84 & 84a & comparison & status \\
+\begin{tabular}{lllllll}
 \hline
-local inventory & l3=0;p3=16;p4\_0=10;p4\_1=0;p5\_0=0;p5\_1=0;p5\_2=0 & l3=0;p3=16;p4\_0=10;p4\_1=0;p5\_0=0;p5\_1=0;p5\_2=0 & equal & VERIFIED \\
-Hodge signature & euler=80;h11=40;h12=0 & euler=80;h11=40;h12=0 & equal & VERIFIED \\
-source rank\_Q & 26 & 26 & equal & VERIFIED \\
-source H1\_Q rank & 2 & 2 & equal & VERIFIED \\
-source rank\_mod\_2 & 23 & 21 & different & VERIFIED \\
-source SNF & (1^23,2,6,12) & (1^21,2,4^3,12) & different & VERIFIED \\
-torsion factors & [2, 6, 12] & [2, 4, 4, 4, 12] & different & VERIFIED \\
-block ideal hash & 428406a6d72603cea07594fbbeac4aacdd35ed7437a203a77751d7e16a6b5eb7 & 3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98 & different block schemes & VERIFIED \\
-Hilbert profile H\_B(0..8) & [1, 4, 10, 20, 34, 52, 74, 92, 105] & [1, 4, 10, 20, 34, 52, 74, 92, 105] & equal & VERIFIED \\
-H\_B(8) & 105 & 105 & equal & VERIFIED \\
-evaluation rank & 105 & 105 & equal & VERIFIED \\
-evaluation deficiency & 7 & 7 & equal & VERIFIED \\
-evaluation relation dimension & 7 & 7 & equal & VERIFIED \\
-conditional classical defect & 7 & 7 & equal if ordinary-node gate passes & CONDITIONAL \\
-actual classical defect & UNKNOWN & UNKNOWN & unknown & UNKNOWN \\
-source-to-evaluation chain map & UNKNOWN & UNKNOWN & not constructed & UNKNOWN \\
+layer & 84 & 84a & comparison & status & structural\_status & structural\_basis \\
+\hline
+local inventory & l3=0;p3=16;p4\_0=10;p4\_1=0;p5\_0=0;p5\_1=0;p5\_2=0 & l3=0;p3=16;p4\_0=10;p4\_1=0;p5\_0=0;p5\_1=0;p5\_2=0 & equal & VERIFIED & SOURCE\_LEVEL & same local inventory \\
+Hodge signature & euler=80;h11=40;h12=0 & euler=80;h11=40;h12=0 & equal & VERIFIED & SOURCE\_LEVEL & same h11/h12/euler \\
+source rank\_Q & 26 & 26 & equal & VERIFIED & SOURCE\_LEVEL & rational source assembly equality \\
+source H1\_Q rank & 2 & 2 & equal & VERIFIED & SOURCE\_LEVEL & rational source H1 equality \\
+source rank\_mod\_2 & 23 & 21 & different & VERIFIED & SOURCE\_LEVEL & integral source split \\
+source SNF & (1^23,2,6,12) & (1^21,2,4^3,12) & different & VERIFIED & SOURCE\_LEVEL & integral source split \\
+torsion factors & 2 | 6 | 12 & 2 | 4 | 4 | 4 | 12 & different & VERIFIED & SOURCE\_LEVEL & integral source split \\
+block ideal hash & 428406a6d72603cea07594fbbeac4aacdd35ed7437a203a77751d7e16a6b5eb7 & 3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98 & different block schemes & VERIFIED & BLOCK\_GEOMETRY & distinct verified block schemes \\
+Hilbert profile H\_B(0..8) & 1 | 4 | 10 | 20 | 34 | 52 | 74 | 92 | 105 & 1 | 4 | 10 | 20 | 34 | 52 | 74 | 92 | 105 & equal & VERIFIED & COMPUTED\_AND\_PROVED\_STRUCTURALLY & proved by Hilbert-Burch plus regular quartic section \\
+H\_B(8) & 105 & 105 & equal & VERIFIED & COMPUTED\_AND\_PROVED\_STRUCTURALLY & coefficient in structural Hilbert series \\
+evaluation rank & 105 & 105 & equal & VERIFIED & COMPUTED\_AND\_PROVED\_STRUCTURALLY & rank(E\_8)=H\_B(8) \\
+evaluation deficiency & 7 & 7 & equal & VERIFIED & COMPUTED\_AND\_PROVED\_STRUCTURALLY & h^1(P3,I\_B(8))=7 \\
+evaluation relation dimension & 7 & 7 & equal & VERIFIED & COMPUTED\_AND\_PROVED\_STRUCTURALLY & dimension equality only; no source map \\
+conditional classical defect & 7 & 7 & equal if ordinary-node gate passes & CONDITIONAL & NOT\_PROMOTED & requires ordinary-node/full-node-scheme promotion \\
+actual classical defect & UNKNOWN & UNKNOWN & unknown & UNKNOWN & NOT\_PROMOTED & ordinary-node/full saturated Jacobian gate remains open \\
+source-to-evaluation chain map & UNKNOWN & UNKNOWN & not constructed & UNKNOWN & OPEN & no theorem-backed map constructed \\
+\hline
 \end{tabular}

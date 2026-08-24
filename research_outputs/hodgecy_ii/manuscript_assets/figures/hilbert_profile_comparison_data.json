@@ -11,6 +11,13 @@
     7,
     8
   ],
+  "interpretation": {
+    "classical_defect_promoted": false,
+    "computed_equality": true,
+    "manuscript_theorem": "research_outputs/hodgecy_ii/final/hodgecy_ii_hilbert_burch_theorem.tex",
+    "structural_explanation": "The common profile is the coefficient sequence of (1-t^4)(1-8*t^7+7*t^8)/(1-t)^4.",
+    "theorem_source": "research_outputs/hodgecy_ii/final/theorem_evidence/hilbert_burch_block_theorem.json"
+  },
   "profiles": {
     "84": [
       1,
@@ -35,5 +42,6 @@
       105
     ]
   },
-  "schema": "hodgecy_ii_hilbert_profile_comparison.v1"
+  "schema": "hodgecy_ii_hilbert_profile_comparison.v2",
+  "visual_distinction_policy": "84 and 84a remain separately drawn even though the profiles coincide."
 }

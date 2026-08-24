@@ -13,6 +13,15 @@
       "research_outputs/hodgecy_ii/final/hodgecy_ii_conditional_results.md": {
         "sha256": "1fe93267dfc4f62261d3f4a0d37dbb291d5310c9a9bbd085bdadc04ff9a75bb0"
       },
+      "research_outputs/hodgecy_ii/final/hodgecy_ii_hilbert_burch_theorem.tex": {
+        "sha256": "a6eb94f99b996871aad5f3f8f4162462e891a833040aa87bb5628e5ea027c65f"
+      },
+      "research_outputs/hodgecy_ii/final/hodgecy_ii_literature_review.json": {
+        "sha256": "562dba4390a58aad426314367cfc0f688a36649a7e08304c83dd8bde6368898e"
+      },
+      "research_outputs/hodgecy_ii/final/hodgecy_ii_literature_review.md": {
+        "sha256": "cfa7f70bd2a6553c6595a023bcbf8e5dceefb21630c4403565cff2d6c0996e3f"
+      },
       "research_outputs/hodgecy_ii/final/hodgecy_ii_open_problems.json": {
         "sha256": "2c3315334378f5cd356b340253a651283c03744b70211593a8ee46c1fc6d6130"
       },
@@ -24,6 +33,15 @@
       },
       "research_outputs/hodgecy_ii/final/hodgecy_ii_question_status.md": {
         "sha256": "90b1a5fdc9f2d71564a92da054adc98f6f1ab625c27ba009d4458395d85f6d76"
+      },
+      "research_outputs/hodgecy_ii/final/hodgecy_ii_related_work.bib": {
+        "sha256": "612a3a7cd8f3a3c8084e3f59dc7d4a259f289c9e0efa7ae647ab6fbab6765ad4"
+      },
+      "research_outputs/hodgecy_ii/final/hodgecy_ii_star_configuration_audit.json": {
+        "sha256": "5754a343856c4b1d20cc401f28e33e42760681e555c3a4bd2da24e81082d3b9e"
+      },
+      "research_outputs/hodgecy_ii/final/hodgecy_ii_star_configuration_audit.md": {
+        "sha256": "2b6016462c603d337ba40aee7f06c037e27771c94ca30f33a1687586a2162e59"
       },
       "research_outputs/hodgecy_ii/final/hodgecy_ii_theorem_candidates.json": {
         "sha256": "aabba2e8800be34626ff2605be800794a897befbfe60d27a184b7910d1948a08"
@@ -38,7 +56,7 @@
         "sha256": "ccdd374ebe6f7e80982e8ad1a0b9bf64eda6a2b7e1d5c1cdd66bb1eeec849151"
       },
       "research_outputs/hodgecy_ii/final/reproduction/deterministic_asset_check.json": {
-        "sha256": "e3fa6dbef500aeafc8776e95ddfec1f6fda39e3e9713bc998e1c4b0f5dd7066c"
+        "sha256": "996e01e178ffa8530a9288397b1c3acd6263e70d6f95456f49e60166dfe4e6a0"
       },
       "research_outputs/hodgecy_ii/final/reproduction/fresh_store_reproduction.json": {
         "sha256": "c39dfe3115a3dbc37000bd6655e04f3eb31a7f1bf091b0b3b8d9ad89115d47ea"
@@ -64,35 +82,71 @@
       "research_outputs/hodgecy_ii/manuscript_assets/figures/final_result_hierarchy_data.json": {
         "sha256": "a45995dc8a2a6af970aef73036a74fcbe0caa8b06a9ee03f33a12acad6ceee57"
       },
+      "research_outputs/hodgecy_ii/manuscript_assets/figures/hilbert_profile_comparison_data.json": {
+        "sha256": "adb12f8a9bf0b77e37a6b01cbd7e494cb746584f0018e912bab772c388d2c40a"
+      },
+      "research_outputs/hodgecy_ii/manuscript_assets/figures/source_block_two_axis_comparison_data.json": {
+        "sha256": "2e07f8f65144727614dece4b95eb2b65584c7320fd45ba71889de4ee5ea53322"
+      },
       "research_outputs/hodgecy_ii/manuscript_assets/manifest/final_manuscript_figure_inventory.json": {
-        "sha256": "47bafa42b3c5d531233a6ed548b1147a954321faa08f15a924ce14a947f922d2"
+        "sha256": "4eb65132058347060ff1b012660f0aa9fc455bf79a8705154094ad9420632480"
       },
       "research_outputs/hodgecy_ii/manuscript_assets/manifest/final_manuscript_figure_inventory.md": {
-        "sha256": "9fb631a6a242c9063b1a61ddb80006761726c785ff845ebdaa99b46f608ca74b"
+        "sha256": "f1be33a960abcbf4458be671e4d1c87aaf374cbadffc7eb0cac2ae18c472d5d6"
       },
       "research_outputs/hodgecy_ii/manuscript_assets/manifest/final_manuscript_table_inventory.json": {
-        "sha256": "e487f9d80d1543aea0e807aedc701d714895950027da4267851f487854b610c3"
+        "sha256": "f251c9ff3dab7a1ceda9af3949d4f2094086f9291ac3cc4b89b04969d77f8c7d"
       },
       "research_outputs/hodgecy_ii/manuscript_assets/manifest/final_manuscript_table_inventory.md": {
-        "sha256": "436366e5b04b9d55a0937afb8b6496344f97ccfa8e040e94eb9856107da00398"
+        "sha256": "fb78b43ab339bc52cfec3935a9d100c174baa9b65c7e83bc29203afad2f853e3"
       },
       "research_outputs/hodgecy_ii/manuscript_assets/manifest/hodgecy_iii_handoff.json": {
         "sha256": "294b2c277e94098143e234ef2b9e73f300d54d41ca78ccc2b6f550396d90b349"
       },
+      "research_outputs/hodgecy_ii/manuscript_assets/tables/block_evaluation_comparison_84_84a.csv": {
+        "sha256": "995877117bab24fc0475eb8d70af464eab826b8f3104083a8d31a5c74bcac3b7"
+      },
+      "research_outputs/hodgecy_ii/manuscript_assets/tables/block_evaluation_comparison_84_84a.json": {
+        "sha256": "8aa7834ebd6d8cfbceca2461f886f661726a5cef62ea3fedea60a5c8ad16ab5d"
+      },
+      "research_outputs/hodgecy_ii/manuscript_assets/tables/block_evaluation_comparison_84_84a.md": {
+        "sha256": "56f423241247e09eb2cda5efc2e4c8e0bccea284583619091a63f1369fa20238"
+      },
+      "research_outputs/hodgecy_ii/manuscript_assets/tables/block_evaluation_comparison_84_84a.tex": {
+        "sha256": "68d38b3e79ab3e023eb92574f310740bcff2d9454149b5fcc9845b50d1adb6e3"
+      },
+      "research_outputs/hodgecy_ii/manuscript_assets/tables/block_evaluation_comparison_84_84a.tsv": {
+        "sha256": "679774daea58c4a6578bf59ff627ae82d6cd0241748362f05f58d44e2a52c547"
+      },
       "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.csv": {
-        "sha256": "4052d1c349980d4912fdbe90bd2f21d6d8ed9151322780d056b467211f0aa312"
+        "sha256": "1c009ec3fd54967cf8312c7abd50195b25025a5552d47e185c22a6c30c2605b9"
       },
       "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.json": {
-        "sha256": "2f5e681710162bca5e93b47a02a1885023f63b68f92f7b0e4d80221dab66dad2"
+        "sha256": "db7fce8bdf3c63aa45373a67fcd33005251a652d44e2a7dc7ab948f57c4bdebf"
       },
       "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.md": {
-        "sha256": "d53b0aae8a51f23e569a635c1501fa3d91364fe3d1080aaf0b3f15868d2fe0d7"
+        "sha256": "70c597217cf99352e8c6e11a655e4917ca7f9e8c56bbef770287957e665b5fe5"
       },
       "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.tex": {
-        "sha256": "8769d651c31720697e1cecca123fa5741390525f9abd57db0f5ba635e0f90ef0"
+        "sha256": "8138edcd15948541fc61c07d1c155e60d129ba93ddfb08b755318db17558a347"
       },
       "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.tsv": {
-        "sha256": "82bf3d134a9afcf17b05406e3ebc90becebc83524e014e3d6e3d62d2adeb7974"
+        "sha256": "c3f4d8dd534865254c570c2f57b067b4d33afb3780236e9cfaa07016ae6c3357"
+      },
+      "research_outputs/hodgecy_ii/manuscript_assets/tables/source_block_evaluation_comparison_84_84a.csv": {
+        "sha256": "aec06f5217ae298791d1b975f781aee97cb7c5b0112757a133999b7ac28dabb7"
+      },
+      "research_outputs/hodgecy_ii/manuscript_assets/tables/source_block_evaluation_comparison_84_84a.json": {
+        "sha256": "3f4e99456523154e476c692faede61d511c7baae7541f596d1d845837b57b57a"
+      },
+      "research_outputs/hodgecy_ii/manuscript_assets/tables/source_block_evaluation_comparison_84_84a.md": {
+        "sha256": "21cbea3c68d9e5bfb6ddb9af488a9faea226b7b807622ef1f3bc9ea2b895141d"
+      },
+      "research_outputs/hodgecy_ii/manuscript_assets/tables/source_block_evaluation_comparison_84_84a.tex": {
+        "sha256": "de77ec167cee4f014531bdadd8c618135ba2f708a4ab31ce2005c550d3354d5c"
+      },
+      "research_outputs/hodgecy_ii/manuscript_assets/tables/source_block_evaluation_comparison_84_84a.tsv": {
+        "sha256": "45626af1b11d85c9f6114cfabab11e7fe7861606080dfcc7843012032a8e0d92"
       }
     },
     "schema": "hodgecy_ii_final_artifact_manifest.v1"

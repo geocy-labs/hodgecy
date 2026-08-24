@@ -120,6 +120,11 @@
     "status": "PROVED"
   },
   {
+    "basis": "0 -> S(-12)^7 -> S(-11)^8 plus S(-8)^7 -> S(-7)^8 plus S(-4) -> S -> S/I_B -> 0 for the verified block scheme.",
+    "statement": "84/84a block mapping-cone resolution",
+    "status": "PROVED"
+  },
+  {
     "basis": "(1-t^4)(1-8t^7+7t^8)/(1-t)^4 for the verified block scheme.",
     "statement": "structural block Hilbert series",
     "status": "PROVED"

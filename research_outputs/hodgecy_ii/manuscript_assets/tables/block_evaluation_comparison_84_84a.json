@@ -4,76 +4,139 @@
     "84a": 112,
     "claim_layer": "exact block result",
     "comparison": "equal",
-    "invariant": "block scheme degree"
+    "computational_status": "COMPUTED",
+    "invariant": "block scheme degree",
+    "structural_basis": "28 lines times 4 regular quartic points",
+    "structural_status": "PROVED_STRUCTURALLY"
+  },
+  {
+    "84": [
+      1,
+      4,
+      10,
+      20,
+      34,
+      52,
+      74,
+      92,
+      105
+    ],
+    "84a": [
+      1,
+      4,
+      10,
+      20,
+      34,
+      52,
+      74,
+      92,
+      105
+    ],
+    "claim_layer": "exact block result",
+    "comparison": "equal",
+    "computational_status": "COMPUTED",
+    "invariant": "Hilbert profile H_B(0..8)",
+    "structural_basis": "matches (1-t^4)(1-8t^7+7t^8)/(1-t)^4",
+    "structural_status": "COMPUTED_AND_PROVED_STRUCTURALLY"
   },
   {
     "84": 105,
     "84a": 105,
     "claim_layer": "exact block result",
     "comparison": "equal",
-    "invariant": "H_B(8)"
+    "computational_status": "COMPUTED",
+    "invariant": "H_B(8)",
+    "structural_basis": "coefficient in structural Hilbert series",
+    "structural_status": "COMPUTED_AND_PROVED_STRUCTURALLY"
   },
   {
     "84": 165,
     "84a": 165,
     "claim_layer": "exact block result",
     "comparison": "equal",
-    "invariant": "eval source dim"
+    "computational_status": "COMPUTED",
+    "invariant": "eval source dim",
+    "structural_basis": "dim S_8 = binom(11,3)",
+    "structural_status": "COMBINATORIAL"
   },
   {
     "84": 112,
     "84a": 112,
     "claim_layer": "exact block result",
     "comparison": "equal",
-    "invariant": "eval target length"
+    "computational_status": "COMPUTED",
+    "invariant": "eval target length",
+    "structural_basis": "degree of verified block scheme",
+    "structural_status": "PROVED_STRUCTURALLY"
   },
   {
     "84": 105,
     "84a": 105,
     "claim_layer": "exact block result",
     "comparison": "equal",
-    "invariant": "eval rank"
+    "computational_status": "COMPUTED",
+    "invariant": "eval rank",
+    "structural_basis": "rank(E_8)=H_B(8)",
+    "structural_status": "COMPUTED_AND_PROVED_STRUCTURALLY"
   },
   {
     "84": 60,
     "84a": 60,
     "claim_layer": "exact block result",
     "comparison": "equal",
-    "invariant": "eval kernel dim"
+    "computational_status": "COMPUTED",
+    "invariant": "eval kernel dim",
+    "structural_basis": "dim S_8 - rank(E_8)",
+    "structural_status": "DERIVED"
   },
   {
     "84": 7,
     "84a": 7,
     "claim_layer": "exact block result",
     "comparison": "equal",
-    "invariant": "eval cokernel dim"
+    "computational_status": "COMPUTED",
+    "invariant": "eval cokernel dim",
+    "structural_basis": "degree(B)-H_B(8)",
+    "structural_status": "COMPUTED_AND_PROVED_STRUCTURALLY"
   },
   {
     "84": 7,
     "84a": 7,
     "claim_layer": "exact block result",
     "comparison": "equal",
-    "invariant": "block evaluation deficiency"
+    "computational_status": "COMPUTED",
+    "invariant": "block evaluation deficiency",
+    "structural_basis": "h^1(P3,I_B(8)) = 112 - 105",
+    "structural_status": "COMPUTED_AND_PROVED_STRUCTURALLY"
   },
   {
     "84": 7,
     "84a": 7,
     "claim_layer": "exact block rank summary",
     "comparison": "equal",
-    "invariant": "eval relation dim"
+    "computational_status": "COMPUTED",
+    "invariant": "eval relation dim",
+    "structural_basis": "dim ker(E_8^T)=target length-rank",
+    "structural_status": "COMPUTED_AND_PROVED_STRUCTURALLY"
   },
   {
     "84": 7,
     "84a": 7,
     "claim_layer": "conditional on ordinary-node gate",
     "comparison": "equal",
-    "invariant": "conditional classical defect"
+    "computational_status": "CONDITIONAL",
+    "invariant": "conditional classical defect",
+    "structural_basis": "requires ordinary-node/full-node-scheme promotion",
+    "structural_status": "NOT_PROMOTED"
   },
   {
     "84": "UNKNOWN",
     "84a": "UNKNOWN",
     "claim_layer": "not promoted",
     "comparison": "equal",
-    "invariant": "verified classical defect"
+    "computational_status": "OPEN",
+    "invariant": "verified classical defect",
+    "structural_basis": "ordinary-node/full saturated Jacobian gate remains open",
+    "structural_status": "NOT_PROMOTED"
   }
 ]

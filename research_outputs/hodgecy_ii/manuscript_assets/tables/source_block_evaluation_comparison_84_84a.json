@@ -4,42 +4,54 @@
     "84a": "l3=0;p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0",
     "comparison": "equal",
     "layer": "local inventory",
-    "status": "VERIFIED"
+    "status": "VERIFIED",
+    "structural_basis": "same local inventory",
+    "structural_status": "SOURCE_LEVEL"
   },
   {
     "84": "euler=80;h11=40;h12=0",
     "84a": "euler=80;h11=40;h12=0",
     "comparison": "equal",
     "layer": "Hodge signature",
-    "status": "VERIFIED"
+    "status": "VERIFIED",
+    "structural_basis": "same h11/h12/euler",
+    "structural_status": "SOURCE_LEVEL"
   },
   {
     "84": 26,
     "84a": 26,
     "comparison": "equal",
     "layer": "source rank_Q",
-    "status": "VERIFIED"
+    "status": "VERIFIED",
+    "structural_basis": "rational source assembly equality",
+    "structural_status": "SOURCE_LEVEL"
   },
   {
     "84": 2,
     "84a": 2,
     "comparison": "equal",
     "layer": "source H1_Q rank",
-    "status": "VERIFIED"
+    "status": "VERIFIED",
+    "structural_basis": "rational source H1 equality",
+    "structural_status": "SOURCE_LEVEL"
   },
   {
     "84": 23,
     "84a": 21,
     "comparison": "different",
     "layer": "source rank_mod_2",
-    "status": "VERIFIED"
+    "status": "VERIFIED",
+    "structural_basis": "integral source split",
+    "structural_status": "SOURCE_LEVEL"
   },
   {
     "84": "(1^23,2,6,12)",
     "84a": "(1^21,2,4^3,12)",
     "comparison": "different",
     "layer": "source SNF",
-    "status": "VERIFIED"
+    "status": "VERIFIED",
+    "structural_basis": "integral source split",
+    "structural_status": "SOURCE_LEVEL"
   },
   {
     "84": [
@@ -56,14 +68,18 @@
     ],
     "comparison": "different",
     "layer": "torsion factors",
-    "status": "VERIFIED"
+    "status": "VERIFIED",
+    "structural_basis": "integral source split",
+    "structural_status": "SOURCE_LEVEL"
   },
   {
     "84": "428406a6d72603cea07594fbbeac4aacdd35ed7437a203a77751d7e16a6b5eb7",
     "84a": "3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98",
     "comparison": "different block schemes",
     "layer": "block ideal hash",
-    "status": "VERIFIED"
+    "status": "VERIFIED",
+    "structural_basis": "distinct verified block schemes",
+    "structural_status": "BLOCK_GEOMETRY"
   },
   {
     "84": [
@@ -90,55 +106,71 @@
     ],
     "comparison": "equal",
     "layer": "Hilbert profile H_B(0..8)",
-    "status": "VERIFIED"
+    "status": "VERIFIED",
+    "structural_basis": "proved by Hilbert-Burch plus regular quartic section",
+    "structural_status": "COMPUTED_AND_PROVED_STRUCTURALLY"
   },
   {
     "84": 105,
     "84a": 105,
     "comparison": "equal",
     "layer": "H_B(8)",
-    "status": "VERIFIED"
+    "status": "VERIFIED",
+    "structural_basis": "coefficient in structural Hilbert series",
+    "structural_status": "COMPUTED_AND_PROVED_STRUCTURALLY"
   },
   {
     "84": 105,
     "84a": 105,
     "comparison": "equal",
     "layer": "evaluation rank",
-    "status": "VERIFIED"
+    "status": "VERIFIED",
+    "structural_basis": "rank(E_8)=H_B(8)",
+    "structural_status": "COMPUTED_AND_PROVED_STRUCTURALLY"
   },
   {
     "84": 7,
     "84a": 7,
     "comparison": "equal",
     "layer": "evaluation deficiency",
-    "status": "VERIFIED"
+    "status": "VERIFIED",
+    "structural_basis": "h^1(P3,I_B(8))=7",
+    "structural_status": "COMPUTED_AND_PROVED_STRUCTURALLY"
   },
   {
     "84": 7,
     "84a": 7,
     "comparison": "equal",
     "layer": "evaluation relation dimension",
-    "status": "VERIFIED"
+    "status": "VERIFIED",
+    "structural_basis": "dimension equality only; no source map",
+    "structural_status": "COMPUTED_AND_PROVED_STRUCTURALLY"
   },
   {
     "84": 7,
     "84a": 7,
     "comparison": "equal if ordinary-node gate passes",
     "layer": "conditional classical defect",
-    "status": "CONDITIONAL"
+    "status": "CONDITIONAL",
+    "structural_basis": "requires ordinary-node/full-node-scheme promotion",
+    "structural_status": "NOT_PROMOTED"
   },
   {
     "84": "UNKNOWN",
     "84a": "UNKNOWN",
     "comparison": "unknown",
     "layer": "actual classical defect",
-    "status": "UNKNOWN"
+    "status": "UNKNOWN",
+    "structural_basis": "ordinary-node/full saturated Jacobian gate remains open",
+    "structural_status": "NOT_PROMOTED"
   },
   {
     "84": "UNKNOWN",
     "84a": "UNKNOWN",
     "comparison": "not constructed",
     "layer": "source-to-evaluation chain map",
-    "status": "UNKNOWN"
+    "status": "UNKNOWN",
+    "structural_basis": "no theorem-backed map constructed",
+    "structural_status": "OPEN"
   }
 ]

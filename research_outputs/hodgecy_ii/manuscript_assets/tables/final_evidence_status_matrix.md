@@ -24,6 +24,7 @@
 | LMHS/Hodge-atom interpretation | NOT_CLAIMED | No LMHS/MHM or complete Hodge-atom spectrum asserted. |
 | 84/84a line-skeleton Hilbert-Burch resolution | PROVED | 0 -> S(-8)^7 -> S(-7)^8 -> I_C -> 0 under verified no-three-planes-on-a-line hypotheses. |
 | 84/84a quartic regular section | PROVED | Q restricts to a nonzero squarefree quartic on every associated line. |
+| 84/84a block mapping-cone resolution | PROVED | 0 -> S(-12)^7 -> S(-11)^8 plus S(-8)^7 -> S(-7)^8 plus S(-4) -> S -> S/I_B -> 0 for the verified block scheme. |
 | structural block Hilbert series | PROVED | (1-t^4)(1-8t^7+7t^8)/(1-t)^4 for the verified block scheme. |
 | H^1(I_B(8))=7 | PROVED | Sheaf/evaluation sequence for the verified block scheme. |
 | Hilbert-Burch source-to-evaluation map | NOT_CLAIMED | Rank-seven syzygy contribution explains dimension only; no source map is constructed. |
