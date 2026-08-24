@@ -6,7 +6,7 @@
   "base_main_before_cleanup": "2d04671bf741c9b64a409e36382396f893f1cbf6",
   "branch_head_before_cleanup_commit": "ccece82c305bfa86ae235bd1cadc3fba0da5e618",
   "cleanup_commit": "814cfab",
-  "main_commit_after_fast_forward": "pending",
+  "main_commit_after_fast_forward": "resolved-by-repository-history",
   "retained_research_outputs": {
     "research_outputs/hodgecy_ii/census": "retained census-level data",
     "research_outputs/hodgecy_ii/final": "canonical final result, theorem-evidence, source-record, reproduction, and cleanup records",
@@ -86,7 +86,7 @@
     "LMHS/Hodge-atom interpretation remains NOT_CLAIMED"
   ],
   "branch_cleanup_status": {
-    "research/hodgecy-ii-fidelity": "pending main fast-forward",
-    "hodgecy-refresh-foundation": "pending ancestry check after main fast-forward"
+    "research/hodgecy-ii-fidelity": "deleted after merge into main",
+    "hodgecy-refresh-foundation": "deleted after ancestry check confirmed containment in main"
   }
 }
