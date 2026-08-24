@@ -1,247 +1,161 @@
 # HodgeCY
 
-HodgeCY is a computational Hodge/Calabi--Yau data system and reproducibility framework for assembling, querying, relating, and validating large heterogeneous Calabi--Yau and Hodge-theoretic datasets.
+HodgeCY is a source-aware computational Hodge and Calabi--Yau data system. It
+keeps source presentations, normalized records, derived invariants,
+relationships, and theorem-grade certificates distinct so that a calculation
+can be reused without silently becoming a geometric claim.
 
 Current release: **HodgeCY v1.0.0 - First Comprehensive Corpus Release**.
 
 DOI: https://doi.org/10.5281/zenodo.22062175
 
-The historical HodgeCY I / v0.2.0 DOI remains separate.
+The historical HodgeCY I / v0.2.0 DOI remains separate:
+https://doi.org/10.5281/zenodo.21429481
 
-The repository contains the HodgeCY Python package, data adapters, query/catalog infrastructure, tests, small fixtures, documentation, and HodgeCY I reproducibility assets. The production research corpus is intentionally kept outside Git and is addressed through a local data root.
+## Current Mathematical Layers
 
-HodgeCY does **not** claim to be a complete database of all Calabi--Yau manifolds. It is a source-aware corpus and infrastructure layer: source records, presentations, abstract geometry claims, derived relationships, and theorem certificates are kept distinct.
+HodgeCY separates the following layers.
 
-## Current Corpus At A Glance
+- Source / arrangement layer: source records, plane arrangements, incidence
+  profiles, Hodge table links, rational/modular/integral source assembly, Smith
+  normal forms, torsion, and symmetry signatures.
+- Node geometry layer: singular-scheme infrastructure, Hilbert functions,
+  ordinary-double-point checks, and node-block certificates where explicit
+  geometric input is available.
+- Relation layer: abstract node-relation complexes and source-to-node
+  comparison framework, with feasibility states separated from theorem claims.
+- Future Hodge-atom layers: vanishing-cycle, LMHS, extension, and atom-level
+  structures. These are not inferred merely from source-fidelity census
+  membership.
 
-| Measure | Audited value |
-| --- | --- |
-| Headline source/data records | 574,616,978 |
-| Logical datasets | 53 |
-| Dataset/source instances | 80 |
-| Physical sources | 187 |
-| Query tables | 32 |
-| Relationship edges | 241,798 |
-| CICY divisor enrichment rows | 57,885 |
-| ToricCY top-level assets | 7 |
-| Acquisition waves complete | 4 |
-| Comprehensive initial corpus | Yes |
-| Wave 5 required | No |
+The firewall is intentional: same local inventory, same Hodge data, same
+rational source type, same integral source type, and same equivariant source
+type are different statements.
 
-**Counting convention.** The headline source/data record count counts one primary source, normalized, or native record according to the final corpus census. Relationship edges, nested divisor rows, archive member counts, remote asset counts, and source-registry entries are reported separately because they are different kinds of objects.
+## What HodgeCY Can Currently Compute
 
-The small public metadata summary is in [`docs/corpus`](docs/corpus/README.md). It contains no production data rows.
+Implemented generic infrastructure includes:
 
-## Major Datasets
+- arrangement/source profiles and incidence inventories;
+- rational, modular, and integral source assembly;
+- exact integer-lattice and Smith-normal-form calculations;
+- source symmetry and equivariant signature comparisons;
+- persistent result records, artifacts, certificates, and comparison sets;
+- cross-dataset catalog/query infrastructure with lazy large-table access;
+- singular-scheme and Hilbert-function certification scaffolding;
+- classical-defect infrastructure;
+- node-relation complexes;
+- source-to-node comparison morphisms and feasibility records.
 
-| Data family | Dataset/source | Record count | Representation | Notes |
-| --- | --- | --- | --- | --- |
-| Toric/KS | Kreuzer--Skarke 4D reflexive polytopes | 473,800,776 | COMPLETE_COLUMNAR / native-lazy query table | Large Parquet-backed corpus; heavy columns stay lazy. |
-| Enumerative | DESY CICY GV invariants | 99,515,615 | COMPLETE_COLUMNAR | h11=1..8 represented; h11=9 source-corrupt exception tracked. |
-| CICY4 | Complete CICY fourfold configurations/topology | 921,497 | COMPLETE_LOCAL / normalized | CICY4 fibration archive remains native-lazy where appropriate. |
-| Toric weights | 4D IP weight systems | 184,026 | COMPLETE_LOCAL / normalized | Weight-system and Hodge/K3 metadata. |
-| CICY fibrations | Obvious CICY3 fibrations | 139,597 | COMPLETE_LOCAL / normalized | Exact source-backed fibration edges. |
-| CICY quotients | CICY3 quotient fibrations | 20,700 | COMPLETE_LOCAL / normalized | Quotient fibration records. |
-| CICY3 | Complete CICY threefold configurations | 7,890 | COMPLETE_LOCAL / normalized | Standard CICY3 presentations. |
-| CICY3 | Favorable CICY data | 7,890 | COMPLETE_LOCAL / normalized | Favorable presentations and topology fields. |
-| Weighted hypersurfaces | Weighted-P4 CY hypersurfaces | 7,555 | COMPLETE_LOCAL / normalized | Weighted P4 source rows. |
-| CICY quotient/free action | CICY free actions and quotients | 1,695 | COMPLETE_LOCAL / normalized | Free-action source records. |
-| Divisors | Springer/JHEP CICY divisor topology | 7,820 parent records; 57,885 divisor rows | COMPLETE_NORMALIZED | Nested divisor Hodge tuples are enrichment rows, not headline records. |
-| gCICY | APS g21N5.mx / g21N6.mx genuine gCICY source | 2 native source files | COMPLETE_NATIVE_SOURCE | Wolfram export needed before normalized row count is claimed. |
-| ToricCY | ToricCY POLY/GEOM/TRIANG/INVOL assets | 7 top-level assets; 4,434,624,498 advertised bytes | COMPLETE_REMOTE_NATIVE_LAZY | Remote/native-lazy registry, not an eager mirror. |
-| Operators | Picard--Fuchs/operator records | 613 operators; 584 topological rows | COMPLETE_LOCAL / normalized | Operator and topological enrichment layers. |
-| Double octics | HodgeCY I double-octic sources and certificates | partial public corpus | PARTIAL_PUBLIC_CORPUS | Theorem-bearing examples remain explicitly scoped. |
-| Grassmannian | PartialFlagVarieties / Grassmannian CY3 records | 31 | COMPLETE_COLUMNAR | Source-derived records plus code resource. |
-| K3-fibered | TwoParameterK3 source models | 39 | COMPLETE_COLUMNAR | Source model/operator headers. |
+Completed theorem-bearing calculations are narrower. HodgeCY I provides the
+tracked double-octic source and smoothing assets for the principal `84 / 84a`
+pair. Broader population-level source-fidelity census rows are context unless a
+separate validation status says otherwise.
 
-See [`docs/corpus/DATASETS.md`](docs/corpus/DATASETS.md) for the complete logical dataset census.
+## Quick Start
 
-## What HodgeCY Represents
+Install for local development:
 
-HodgeCY represents multiple orthogonal layers:
-
-- construction and presentation records;
-- source-reported Hodge and topological invariants;
-- weight systems and toric data;
-- CICY and CICY4 configuration data;
-- fibrations and quotient/fibration relationships;
-- group actions, quotients, involutions, and orientifold-related source data;
-- divisors, intersection-ring expressions, and divisor topology;
-- basis-aware vectors, matrices, tensors, and exact algebra infrastructure;
-- Picard--Fuchs operators, periods, and topological operator enrichments;
-- enumerative invariant sources;
-- source-backed relationships and crosswalks;
-- provenance, validation, and source-integrity states;
-- native-lazy and remote/native-lazy large-data representations.
-
-Depth is not uniform across all categories. [`docs/corpus/COVERAGE.md`](docs/corpus/COVERAGE.md) gives the conservative final coverage matrix.
-
-## Data Architecture
-
-HodgeCY uses a source-preserving architecture:
-
-```text
-raw/native source
-  -> source instance + provenance
-  -> normalized typed records OR native/lazy representation
-  -> relationship/enrichment layer
-  -> query interface
-  -> certificates/reproducibility where applicable
+```bash
+python -m pip install -e ".[dev,storage]"
+python -m pytest -q
 ```
 
-A source record is not the same thing as a presentation; a presentation is not automatically an abstract geometry; a derived relationship is not a theorem unless it has the required validation or certificate. This distinction is central to HodgeCY.
+Generate the HodgeCY II manuscript-facing census assets:
 
-## External Data Model
+```bash
+python scripts/generate_hodgecy_ii_manuscript_assets.py
+```
 
-The hundreds of millions of records are not committed to Git. The Git repository contains code, adapters, schemas, tests, small fixtures, documentation, and reproducibility logic. The large research corpus lives in an external data root with raw, staged, normalized, catalog, manifest, checksum, report, cache, rejected, and log areas.
+The generated scope and asset manifests are:
 
-Configure a corpus root with `HODGECY_DATA_ROOT` or pass a root explicitly:
+- [HodgeCY II scope](research_outputs/hodgecy_ii/manuscript_assets/manifest/hodgecy_ii_scope.json)
+- [HodgeCY II asset manifest](research_outputs/hodgecy_ii/manuscript_assets/manifest/hodgecy_ii_asset_manifest.json)
+
+For external production data, configure a data root:
 
 ```bash
 export HODGECY_DATA_ROOT=/path/to/hodgecy-data
 ```
 
+PowerShell:
+
 ```powershell
 $env:HODGECY_DATA_ROOT="<path-to-hodgecy-data>"
 ```
 
-The package reads this environment variable through `hodgecy.config.HodgeCYConfig`.
+## HodgeCY II
 
-## Installation
+HodgeCY II uses the complete source-level fidelity census as population
+context:
 
-HodgeCY requires Python 3.10 or newer.
+- total double-octic presentations processed: `456`;
+- historical nontrivial fidelity pairs/sets: `114`;
+- primary deep geometric laboratory: `84 / 84a`.
 
-```bash
-git clone https://github.com/geocy-labs/hodgecy.git
-cd hodgecy
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install -U pip
-python -m pip install -e ".[dev,storage]"
-```
+The census shows that source-fidelity collapse and separation recur beyond the
+principal pair. HodgeCY II does not geometrically analyze all 114 sets; that
+full population classification is deferred to HodgeCY III.
 
-On PowerShell:
+Representative controls include `61 / 451`, `84 / 84a`, `452 / 453`,
+`84 / 240`, `84a / 239`, and `239 / 240 / 241`. The generated tables preserve
+the factor-normalization warning for `451` and the deferred exact
+quadratic-field status for `452 / 453`.
 
-```powershell
-git clone https://github.com/geocy-labs/hodgecy.git
-cd hodgecy
-py -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install -U pip
-python -m pip install -e ".[dev,storage]"
-```
+## Reproducibility
 
-Core dependencies are `pandas` and `sympy`. The `dev` extra installs `pytest`; the `storage` extra installs `duckdb` and `pyarrow` for catalog/query work.
+Persistent outputs record HodgeCY version, git commit, input hashes, source
+record IDs, generator version, and validation/provenance status. Generated
+manuscript assets are rebuilt from the historical census TSV and current v1.0
+structured source records.
 
-## Quick Start
+Local SQLite result stores, caches, and transient CAS artifacts are not
+committed. Versioned artifacts are JSON/TSV/CSV/Markdown/LaTeX/SVG files with
+hashes in the asset manifest.
 
-Open the current external corpus catalog:
+## Documentation
 
-```python
-from hodgecy.config import open_data_root
-from hodgecy.storage import open_catalog
+Start with the documentation index:
 
-root = open_data_root(require_exists=True)
-catalog = open_catalog(root, name="current_corpus", read_only=True)
-
-print(len(catalog.payload["datasets"]))
-print(len(catalog.payload["tables"]))
-```
-
-Query a bounded projection from a registered table:
-
-```python
-from hodgecy.query import QuerySpec
-
-spec = QuerySpec(
-    table="current_cicy3_standard",
-    fields=("source_record_id", "h11", "h21"),
-).limit(5)
-
-rows = catalog.query(spec).to_arrow()
-print(rows)
-```
-
-Inspect large-data planning before materialization:
-
-```python
-from hodgecy.query import QuerySpec
-
-spec = QuerySpec(
-    table="kreuzer_skarke",
-    fields=("h11", "h12", "euler_characteristic"),
-).limit(10)
-
-result = catalog.query(spec)
-print(result.plan)
-```
-
-Large tables are lazy by default; use explicit projections and limits.
-
-## HodgeCY I
-
-HodgeCY I is the theorem-bearing double-octic/reproducibility layer in this repository. It is narrower than the full corpus: it concerns computational Hodge atom profiles, source assembly spectra, and selected double-octic Calabi--Yau threefold arrangements.
-
-Public references:
-
-- HodgeCY I manuscript/preprint: https://www.preprints.org/manuscript/202607.0967
-- HodgeCY I / v0.2.0 archived software DOI: https://doi.org/10.5281/zenodo.21429481
-
-The broader corpus documentation does not upgrade source-reported fields into HodgeCY I theorem claims. Theorem-bearing outputs remain limited to the certified/reproducibility assets tracked for HodgeCY I.
-
-## Known Limitations
-
-HodgeCY documents limitations explicitly:
-
-- DESY CICY GV `h11=9` is represented as `SOURCE_CORRUPT`.
-- APS genuine gCICY files `g21N5.mx` and `g21N6.mx` are verified native Wolfram sources, but normalized row export requires a Wolfram-compatible runtime.
-- ToricCY is represented as remote/native-lazy metadata and asset indexing, not as a fully normalized local mirror.
-- Pfaffian/determinantal Calabi--Yau coverage is source-registry-only.
-- Integral topology/torsion coverage is source-registry-only.
-
-See [`docs/corpus/KNOWN_LIMITATIONS.md`](docs/corpus/KNOWN_LIMITATIONS.md).
-
-## Provenance And Validation
-
-Every permanent corpus disposition records source identity, source instance, source revision, physical source or locator, checksum/integrity state where applicable, adapter/schema, validation state, and citation or URL. Data licenses remain attached to their original sources.
-
-See [`docs/corpus/PROVENANCE.md`](docs/corpus/PROVENANCE.md).
+- [Documentation index](docs/README.md)
+- [Current public corpus summary](docs/corpus/README.md)
+- [Result schema firewall](docs/result_schema_firewall.md)
+- [ResultStore registry](docs/result_store_registry.md)
+- [Comparison engine](docs/comparison_engine.md)
+- [HodgeCY II cohort](docs/hodgecy_ii_cohort.md)
+- [Integral lattice engine](docs/integral_lattice_engine.md)
+- [Node relation complexes](docs/node_relation_complexes.md)
+- [Source-to-node comparison](docs/source_to_node_comparison.md)
 
 ## Repository Layout
 
-- `src/hodgecy/`: Python package, catalog/query/storage infrastructure, adapters, exact algebra, relationships, certificates, and HodgeCY I modules.
-- `scripts/`: reproducibility and corpus/bootstrap utilities.
-- `tests/`: package, data, corpus, query, and HodgeCY I regression tests.
-- `docs/`: architecture and public corpus documentation.
-- `docs/corpus/`: sanitized current corpus metadata and audit-facing public docs.
-- `data/`: small repository fixtures and HodgeCY I reproducibility sources; not the production corpus.
-- `paper/`: manuscript-facing tables and figures.
-- `release/`: v0.2.0 release/reproducibility bundle.
-- `m2/` and `singular/`: CAS scripts/templates for optional verification workflows.
+- `src/hodgecy/`: package code, adapters, exact algebra, storage, comparison,
+  relations, certificates, and research helpers.
+- `scripts/`: reproducibility, corpus, and manuscript-asset generators.
+- `tests/`: package, data, storage, comparison, and HodgeCY regression tests.
+- `docs/`: architecture and workflow documentation.
+- `docs/corpus/`: sanitized public corpus metadata.
+- `data/`: small fixtures and HodgeCY I/HodgeCY II reproducibility inputs.
+- `research_outputs/`: versioned research reports and generated manuscript
+  assets; local databases and caches stay ignored.
+- `paper/`: manuscript-facing tables and figures for the earlier paper asset
+  pipeline.
+- `release/`: historical v0.2.0 release/reproducibility bundle.
 
-## Development And Testing
+## Roadmap
 
-Run the full test suite:
+- Promote the `84 / 84a` deep geometric chain through ordinary-node, defect,
+  source-to-node, and Hodge-atom layers only when the required certificates are
+  present.
+- Keep the complete 114-set source-fidelity census available as HodgeCY II
+  population context.
+- Reserve full theorem-level population stratification and broader new mining
+  for HodgeCY III.
 
-```bash
-python -m pytest -q
-```
+## Licensing And Citation
 
-Useful focused checks:
-
-```bash
-python -m pytest tests/test_wave2_permanent_ingest.py -q
-python -m pytest tests/test_current_corpus_closure.py -q
-python -m pytest tests/test_ckc_239_240_241_theorem_values.py -q
-```
-
-The final public-documentation promotion gate reruns the full suite and the HodgeCY I theorem-bearing regression slice.
-
-## Licensing
-
-The HodgeCY software is MIT licensed; see [`LICENSE`](LICENSE). External datasets retain their own source licenses and terms. The HodgeCY software license does not relicense third-party source corpora.
-
-## Citation
+The HodgeCY software is MIT licensed; see [LICENSE](LICENSE). External datasets
+retain their own licenses and terms.
 
 For the current comprehensive HodgeCY release, cite:
 
@@ -251,16 +165,10 @@ Rahman, A. (2026). HodgeCY v1.0.0 - First Comprehensive Corpus Release
 https://doi.org/10.5281/zenodo.22062175
 ```
 
-For the narrower historical HodgeCY I / v0.2.0 double-octic computational release, cite:
+For HodgeCY I / v0.2.0:
 
 ```text
-Rahman, Abdul. HodgeCY: Computational Hodge Atom Profiles and Source Assembly Spectra
-for Double-Octic Calabi--Yau Threefolds. Version 0.2.0. Zenodo.
+Rahman, Abdul. HodgeCY: Computational Hodge Atom Profiles and Source Assembly
+Spectra for Double-Octic Calabi--Yau Threefolds. Version 0.2.0. Zenodo.
 https://doi.org/10.5281/zenodo.21429481
 ```
-
-Do not cite the v0.2.0 DOI as the v1.0.0 DOI.
-
-## Future Data Updates
-
-The initial corpus acquisition program is complete: four acquisition waves were reconciled, Wave 5 is not required, and the comprehensive initial corpus is released as HodgeCY v1.0.0. Future public datasets should be treated as versioned HodgeCY corpus updates rather than reopening the initial acquisition program.

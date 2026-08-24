@@ -1,0 +1,321 @@
+{
+  "equivariant_split": [
+    {
+      "first_separation": "equivariant/symmetry type",
+      "members": "84 / 240",
+      "shared": "integral_source_type"
+    },
+    {
+      "first_separation": "equivariant/symmetry type",
+      "members": "84a / 239",
+      "shared": "integral_source_type"
+    }
+  ],
+  "fixed_inventory_comparison": {
+    "arity": "triple",
+    "category": "OTHER NEW FIDELITY SETS",
+    "equivariant_type": "equivariant:0d480f7fd07bcb080743f003b1309d6316290817ea1177055ea1514979fd13df || equivariant:1a02b414b33e84e6a398b214bc2682820f5dc5f7a593654b29418954633bf73b || equivariant:f308bc01d071aafc31cb16a5f5eb6dd197ac9e191ef086cdc51d7f235cde7f45",
+    "equivariant_types": [
+      "equivariant:0d480f7fd07bcb080743f003b1309d6316290817ea1177055ea1514979fd13df",
+      "equivariant:1a02b414b33e84e6a398b214bc2682820f5dc5f7a593654b29418954633bf73b",
+      "equivariant:f308bc01d071aafc31cb16a5f5eb6dd197ac9e191ef086cdc51d7f235cde7f45"
+    ],
+    "fidelity_set_id": "F0003",
+    "first_separating_level": "rational_source",
+    "first_separating_level_text": "rational source type",
+    "hodge_signature": "UNKNOWN_HODGE",
+    "hodge_signatures": [
+      "UNKNOWN_HODGE"
+    ],
+    "integral_source_type": "integral:0f35cfa13ab162d82ff72b9eefe774ef9525849e3b621dab8bbf942c57f53985 || integral:6d7364b1b430714f158be54459f86f79bc76a2030464babcc8364e9ea44169f6 || integral:6e71b52edeb7fb43a2d3c314484508c54ae48ffb13fe4d4236e29aabbd1f003c",
+    "integral_source_types": [
+      "integral:0f35cfa13ab162d82ff72b9eefe774ef9525849e3b621dab8bbf942c57f53985",
+      "integral:6d7364b1b430714f158be54459f86f79bc76a2030464babcc8364e9ea44169f6",
+      "integral:6e71b52edeb7fb43a2d3c314484508c54ae48ffb13fe4d4236e29aabbd1f003c"
+    ],
+    "local_inventory": "p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0",
+    "member_validation_status": {
+      "239": "CONTEXT_READY_SOURCE_RECOMPUTED",
+      "240": "CONTEXT_READY_SOURCE_RECOMPUTED",
+      "241": "CONTEXT_READY_SOURCE_RECOMPUTED"
+    },
+    "members": [
+      "239",
+      "240",
+      "241"
+    ],
+    "members_display": "239 / 240 / 241",
+    "notes": "same local and Hodge invariants but source assembly splits at the rational type",
+    "original_category": "OTHER NEW FIDELITY SETS",
+    "provenance": {
+      "historical_census_schema": "hodgecy_ii_complete_fidelity_census_historical.v1",
+      "historical_census_source": "research_outputs/hodgecy_ii/complete_fidelity_pairs_and_sets.tsv",
+      "historical_set_id": "F0003"
+    },
+    "rational_source_type": "rational:462f2b410aba3c0f73eff388afc3cb45413ea2adfe72bcd2b7aa3687f77a4ae0 || rational:9d168feab7fd7642ecf30d07dacb9d15e40c068b5c91076c9135e77bc9b74af3",
+    "rational_source_types": [
+      "rational:462f2b410aba3c0f73eff388afc3cb45413ea2adfe72bcd2b7aa3687f77a4ae0",
+      "rational:9d168feab7fd7642ecf30d07dacb9d15e40c068b5c91076c9135e77bc9b74af3"
+    ],
+    "set_size": 3,
+    "shared_levels": [
+      "local_inventory",
+      "hodge_data"
+    ],
+    "source_artifact": "research_outputs/hodgecy_ii/complete_fidelity_pairs_and_sets.tsv",
+    "torsion_type": "complete_torsion_type:1aa2322a1eab3450cb1a1c9c036c975371e9b58dd1d8321e4e21c38f3a558bbe || complete_torsion_type:4cc4f0826c667c3a4863954d065de2bfb6b875a1451cd33256828bbdb27b1567 || complete_torsion_type:f71c81808713ef7f68453672ddddcd3175b24f06bc1adce939e8dcbb5bd34632",
+    "torsion_types": [
+      "complete_torsion_type:1aa2322a1eab3450cb1a1c9c036c975371e9b58dd1d8321e4e21c38f3a558bbe",
+      "complete_torsion_type:4cc4f0826c667c3a4863954d065de2bfb6b875a1451cd33256828bbdb27b1567",
+      "complete_torsion_type:f71c81808713ef7f68453672ddddcd3175b24f06bc1adce939e8dcbb5bd34632"
+    ],
+    "validation_status": "CONTEXT_READY_SOURCE_CONTEXT"
+  },
+  "hodge_split": {
+    "first_separation": "Hodge data",
+    "note": "Hodge data split the six-member local fiber in the historical census.",
+    "source": "83 / 84 / 84a / 239 / 240 / 241"
+  },
+  "integral_classes": [
+    {
+      "arity": "pair",
+      "category": "INTEGRAL COLLAPSE / EQUIVARIANT SEPARATION",
+      "equivariant_type": "equivariant:1a02b414b33e84e6a398b214bc2682820f5dc5f7a593654b29418954633bf73b || equivariant:a356b7214e1a3bfad56c34f6a7dd420794ae0334918bea5ff0bf8d6292eee697",
+      "equivariant_types": [
+        "equivariant:1a02b414b33e84e6a398b214bc2682820f5dc5f7a593654b29418954633bf73b",
+        "equivariant:a356b7214e1a3bfad56c34f6a7dd420794ae0334918bea5ff0bf8d6292eee697"
+      ],
+      "fidelity_set_id": "D0001",
+      "first_separating_level": "equivariant_source",
+      "first_separating_level_text": "equivariant/symmetry type",
+      "hodge_signature": "UNKNOWN_HODGE || h12=0;h11=40;euler=80",
+      "hodge_signatures": [
+        "UNKNOWN_HODGE",
+        "h12=0;h11=40;euler=80"
+      ],
+      "integral_source_type": "integral:0f35cfa13ab162d82ff72b9eefe774ef9525849e3b621dab8bbf942c57f53985",
+      "integral_source_types": [
+        "integral:0f35cfa13ab162d82ff72b9eefe774ef9525849e3b621dab8bbf942c57f53985"
+      ],
+      "local_inventory": "p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0",
+      "member_validation_status": {
+        "240": "CONTEXT_READY_SOURCE_RECOMPUTED",
+        "84": "THEOREM_READY_SOURCE_CONTROL"
+      },
+      "members": [
+        "84",
+        "240"
+      ],
+      "members_display": "84 / 240",
+      "notes": "same integral source type but different equivariant/symmetry type",
+      "original_category": "INTEGRAL COLLAPSE / EQUIVARIANT SEPARATION",
+      "provenance": {
+        "historical_census_schema": "hodgecy_ii_complete_fidelity_census_historical.v1",
+        "historical_census_source": "research_outputs/hodgecy_ii/complete_fidelity_pairs_and_sets.tsv",
+        "historical_set_id": "D0001"
+      },
+      "rational_source_type": "rational:9d168feab7fd7642ecf30d07dacb9d15e40c068b5c91076c9135e77bc9b74af3",
+      "rational_source_types": [
+        "rational:9d168feab7fd7642ecf30d07dacb9d15e40c068b5c91076c9135e77bc9b74af3"
+      ],
+      "set_size": 2,
+      "shared_levels": [
+        "integral_source"
+      ],
+      "source_artifact": "research_outputs/hodgecy_ii/complete_fidelity_pairs_and_sets.tsv",
+      "torsion_type": "complete_torsion_type:4cc4f0826c667c3a4863954d065de2bfb6b875a1451cd33256828bbdb27b1567 || complete_torsion_type:9e3c65f813550a7933f7cd9dbe4cf6431d0f63520e705c69fce69c8511b6a46b",
+      "torsion_types": [
+        "complete_torsion_type:4cc4f0826c667c3a4863954d065de2bfb6b875a1451cd33256828bbdb27b1567",
+        "complete_torsion_type:9e3c65f813550a7933f7cd9dbe4cf6431d0f63520e705c69fce69c8511b6a46b"
+      ],
+      "validation_status": "CONTEXT_READY_SOURCE_CONTEXT"
+    },
+    {
+      "arity": "pair",
+      "category": "INTEGRAL COLLAPSE / EQUIVARIANT SEPARATION",
+      "equivariant_type": "equivariant:0d480f7fd07bcb080743f003b1309d6316290817ea1177055ea1514979fd13df || equivariant:cec0bc22101ff26a383597a0d675a770fa765fb684bc11b28a56d13fa44082b1",
+      "equivariant_types": [
+        "equivariant:0d480f7fd07bcb080743f003b1309d6316290817ea1177055ea1514979fd13df",
+        "equivariant:cec0bc22101ff26a383597a0d675a770fa765fb684bc11b28a56d13fa44082b1"
+      ],
+      "fidelity_set_id": "D0002",
+      "first_separating_level": "equivariant_source",
+      "first_separating_level_text": "equivariant/symmetry type",
+      "hodge_signature": "UNKNOWN_HODGE || h12=0;h11=40;euler=80",
+      "hodge_signatures": [
+        "UNKNOWN_HODGE",
+        "h12=0;h11=40;euler=80"
+      ],
+      "integral_source_type": "integral:6e71b52edeb7fb43a2d3c314484508c54ae48ffb13fe4d4236e29aabbd1f003c",
+      "integral_source_types": [
+        "integral:6e71b52edeb7fb43a2d3c314484508c54ae48ffb13fe4d4236e29aabbd1f003c"
+      ],
+      "local_inventory": "p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0",
+      "member_validation_status": {
+        "239": "CONTEXT_READY_SOURCE_RECOMPUTED",
+        "84a": "THEOREM_READY_SOURCE_CONTROL"
+      },
+      "members": [
+        "84a",
+        "239"
+      ],
+      "members_display": "84a / 239",
+      "notes": "same integral source type but different equivariant/symmetry type",
+      "original_category": "INTEGRAL COLLAPSE / EQUIVARIANT SEPARATION",
+      "provenance": {
+        "historical_census_schema": "hodgecy_ii_complete_fidelity_census_historical.v1",
+        "historical_census_source": "research_outputs/hodgecy_ii/complete_fidelity_pairs_and_sets.tsv",
+        "historical_set_id": "D0002"
+      },
+      "rational_source_type": "rational:9d168feab7fd7642ecf30d07dacb9d15e40c068b5c91076c9135e77bc9b74af3",
+      "rational_source_types": [
+        "rational:9d168feab7fd7642ecf30d07dacb9d15e40c068b5c91076c9135e77bc9b74af3"
+      ],
+      "set_size": 2,
+      "shared_levels": [
+        "integral_source"
+      ],
+      "source_artifact": "research_outputs/hodgecy_ii/complete_fidelity_pairs_and_sets.tsv",
+      "torsion_type": "complete_torsion_type:f71c81808713ef7f68453672ddddcd3175b24f06bc1adce939e8dcbb5bd34632",
+      "torsion_types": [
+        "complete_torsion_type:f71c81808713ef7f68453672ddddcd3175b24f06bc1adce939e8dcbb5bd34632"
+      ],
+      "validation_status": "CONTEXT_READY_SOURCE_CONTEXT"
+    }
+  ],
+  "local_fiber": {
+    "arity": "larger_set",
+    "category": "SAME LOCAL + DIFFERENT HODGE",
+    "equivariant_type": "complete_equivariant_source_type:0f5797c7ecd228a51b2d9a7a86416639a243e6e6ea13161442e0cb5c1c4b8723 || equivariant:0d480f7fd07bcb080743f003b1309d6316290817ea1177055ea1514979fd13df || equivariant:1a02b414b33e84e6a398b214bc2682820f5dc5f7a593654b29418954633bf73b || equivariant:a356b7214e1a3bfad56c34f6a7dd420794ae0334918bea5ff0bf8d6292eee697 || equivariant:cec0bc22101ff26a383597a0d675a770fa765fb684bc11b28a56d13fa44082b1 || equivariant:f308bc01d071aafc31cb16a5f5eb6dd197ac9e191ef086cdc51d7f235cde7f45",
+    "equivariant_types": [
+      "complete_equivariant_source_type:0f5797c7ecd228a51b2d9a7a86416639a243e6e6ea13161442e0cb5c1c4b8723",
+      "equivariant:0d480f7fd07bcb080743f003b1309d6316290817ea1177055ea1514979fd13df",
+      "equivariant:1a02b414b33e84e6a398b214bc2682820f5dc5f7a593654b29418954633bf73b",
+      "equivariant:a356b7214e1a3bfad56c34f6a7dd420794ae0334918bea5ff0bf8d6292eee697",
+      "equivariant:cec0bc22101ff26a383597a0d675a770fa765fb684bc11b28a56d13fa44082b1",
+      "equivariant:f308bc01d071aafc31cb16a5f5eb6dd197ac9e191ef086cdc51d7f235cde7f45"
+    ],
+    "fidelity_set_id": "B0005",
+    "first_separating_level": "hodge_data",
+    "first_separating_level_text": "Hodge data",
+    "hodge_signature": "UNKNOWN_HODGE || h12=0;h11=40;euler=80 || h12=1;h11=41;euler=80",
+    "hodge_signatures": [
+      "UNKNOWN_HODGE",
+      "h12=0;h11=40;euler=80",
+      "h12=1;h11=41;euler=80"
+    ],
+    "integral_source_type": "complete_integral_source_type:7fce817f1505b503fc111ea75b77cc9a13eda43f5413541059266ee30f96e7f0 || integral:0f35cfa13ab162d82ff72b9eefe774ef9525849e3b621dab8bbf942c57f53985 || integral:6d7364b1b430714f158be54459f86f79bc76a2030464babcc8364e9ea44169f6 || integral:6e71b52edeb7fb43a2d3c314484508c54ae48ffb13fe4d4236e29aabbd1f003c",
+    "integral_source_types": [
+      "complete_integral_source_type:7fce817f1505b503fc111ea75b77cc9a13eda43f5413541059266ee30f96e7f0",
+      "integral:0f35cfa13ab162d82ff72b9eefe774ef9525849e3b621dab8bbf942c57f53985",
+      "integral:6d7364b1b430714f158be54459f86f79bc76a2030464babcc8364e9ea44169f6",
+      "integral:6e71b52edeb7fb43a2d3c314484508c54ae48ffb13fe4d4236e29aabbd1f003c"
+    ],
+    "local_inventory": "p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0",
+    "member_validation_status": {
+      "239": "CONTEXT_READY_SOURCE_RECOMPUTED",
+      "240": "CONTEXT_READY_SOURCE_RECOMPUTED",
+      "241": "CONTEXT_READY_SOURCE_RECOMPUTED",
+      "83": "CENSUS_LEVEL",
+      "84": "THEOREM_READY_SOURCE_CONTROL",
+      "84a": "THEOREM_READY_SOURCE_CONTROL"
+    },
+    "members": [
+      "83",
+      "84",
+      "84a",
+      "239",
+      "240",
+      "241"
+    ],
+    "members_display": "83 / 84 / 84a / 239 / 240 / 241",
+    "notes": "repeated-local fiber: same local inventory but Hodge data separates members",
+    "original_category": "SAME LOCAL + DIFFERENT HODGE",
+    "provenance": {
+      "historical_census_schema": "hodgecy_ii_complete_fidelity_census_historical.v1",
+      "historical_census_source": "research_outputs/hodgecy_ii/complete_fidelity_pairs_and_sets.tsv",
+      "historical_set_id": "B0005"
+    },
+    "rational_source_type": "complete_rational_source_type:63ab94465d0041c4e09cd44e36a470301561b4f41c2a10a482638eeeab411edb || rational:462f2b410aba3c0f73eff388afc3cb45413ea2adfe72bcd2b7aa3687f77a4ae0 || rational:9d168feab7fd7642ecf30d07dacb9d15e40c068b5c91076c9135e77bc9b74af3",
+    "rational_source_types": [
+      "complete_rational_source_type:63ab94465d0041c4e09cd44e36a470301561b4f41c2a10a482638eeeab411edb",
+      "rational:462f2b410aba3c0f73eff388afc3cb45413ea2adfe72bcd2b7aa3687f77a4ae0",
+      "rational:9d168feab7fd7642ecf30d07dacb9d15e40c068b5c91076c9135e77bc9b74af3"
+    ],
+    "set_size": 6,
+    "shared_levels": [
+      "local_inventory"
+    ],
+    "source_artifact": "research_outputs/hodgecy_ii/complete_fidelity_pairs_and_sets.tsv",
+    "torsion_type": "complete_torsion_type:1aa2322a1eab3450cb1a1c9c036c975371e9b58dd1d8321e4e21c38f3a558bbe || complete_torsion_type:4cc4f0826c667c3a4863954d065de2bfb6b875a1451cd33256828bbdb27b1567 || complete_torsion_type:9e3c65f813550a7933f7cd9dbe4cf6431d0f63520e705c69fce69c8511b6a46b || complete_torsion_type:cb7ced63ce452a4a9c8ef6a2846485b212cdadd94217314dc6c5a0bee3f9c7ad || complete_torsion_type:f71c81808713ef7f68453672ddddcd3175b24f06bc1adce939e8dcbb5bd34632",
+    "torsion_types": [
+      "complete_torsion_type:1aa2322a1eab3450cb1a1c9c036c975371e9b58dd1d8321e4e21c38f3a558bbe",
+      "complete_torsion_type:4cc4f0826c667c3a4863954d065de2bfb6b875a1451cd33256828bbdb27b1567",
+      "complete_torsion_type:9e3c65f813550a7933f7cd9dbe4cf6431d0f63520e705c69fce69c8511b6a46b",
+      "complete_torsion_type:cb7ced63ce452a4a9c8ef6a2846485b212cdadd94217314dc6c5a0bee3f9c7ad",
+      "complete_torsion_type:f71c81808713ef7f68453672ddddcd3175b24f06bc1adce939e8dcbb5bd34632"
+    ],
+    "validation_status": "CONTEXT_READY_SOURCE_CONTEXT"
+  },
+  "rational_collapse": {
+    "arity": "larger_set",
+    "category": "RATIONAL COLLAPSE / INTEGRAL SEPARATION",
+    "equivariant_type": "equivariant:0d480f7fd07bcb080743f003b1309d6316290817ea1177055ea1514979fd13df || equivariant:1a02b414b33e84e6a398b214bc2682820f5dc5f7a593654b29418954633bf73b || equivariant:a356b7214e1a3bfad56c34f6a7dd420794ae0334918bea5ff0bf8d6292eee697 || equivariant:cec0bc22101ff26a383597a0d675a770fa765fb684bc11b28a56d13fa44082b1",
+    "equivariant_types": [
+      "equivariant:0d480f7fd07bcb080743f003b1309d6316290817ea1177055ea1514979fd13df",
+      "equivariant:1a02b414b33e84e6a398b214bc2682820f5dc5f7a593654b29418954633bf73b",
+      "equivariant:a356b7214e1a3bfad56c34f6a7dd420794ae0334918bea5ff0bf8d6292eee697",
+      "equivariant:cec0bc22101ff26a383597a0d675a770fa765fb684bc11b28a56d13fa44082b1"
+    ],
+    "fidelity_set_id": "C0001",
+    "first_separating_level": "integral_source",
+    "first_separating_level_text": "integral/Smith type",
+    "hodge_signature": "UNKNOWN_HODGE || h12=0;h11=40;euler=80",
+    "hodge_signatures": [
+      "UNKNOWN_HODGE",
+      "h12=0;h11=40;euler=80"
+    ],
+    "integral_source_type": "integral:0f35cfa13ab162d82ff72b9eefe774ef9525849e3b621dab8bbf942c57f53985 || integral:6e71b52edeb7fb43a2d3c314484508c54ae48ffb13fe4d4236e29aabbd1f003c",
+    "integral_source_types": [
+      "integral:0f35cfa13ab162d82ff72b9eefe774ef9525849e3b621dab8bbf942c57f53985",
+      "integral:6e71b52edeb7fb43a2d3c314484508c54ae48ffb13fe4d4236e29aabbd1f003c"
+    ],
+    "local_inventory": "p3=16;p4_0=10;p4_1=0;p5_0=0;p5_1=0;p5_2=0;l3=0",
+    "member_validation_status": {
+      "239": "CONTEXT_READY_SOURCE_RECOMPUTED",
+      "240": "CONTEXT_READY_SOURCE_RECOMPUTED",
+      "84": "THEOREM_READY_SOURCE_CONTROL",
+      "84a": "THEOREM_READY_SOURCE_CONTROL"
+    },
+    "members": [
+      "84",
+      "84a",
+      "239",
+      "240"
+    ],
+    "members_display": "84 / 84a / 239 / 240",
+    "notes": "same rational source type but different integral/Smith type",
+    "original_category": "RATIONAL COLLAPSE / INTEGRAL SEPARATION",
+    "provenance": {
+      "historical_census_schema": "hodgecy_ii_complete_fidelity_census_historical.v1",
+      "historical_census_source": "research_outputs/hodgecy_ii/complete_fidelity_pairs_and_sets.tsv",
+      "historical_set_id": "C0001"
+    },
+    "rational_source_type": "rational:9d168feab7fd7642ecf30d07dacb9d15e40c068b5c91076c9135e77bc9b74af3",
+    "rational_source_types": [
+      "rational:9d168feab7fd7642ecf30d07dacb9d15e40c068b5c91076c9135e77bc9b74af3"
+    ],
+    "set_size": 4,
+    "shared_levels": [
+      "rational_source"
+    ],
+    "source_artifact": "research_outputs/hodgecy_ii/complete_fidelity_pairs_and_sets.tsv",
+    "torsion_type": "complete_torsion_type:4cc4f0826c667c3a4863954d065de2bfb6b875a1451cd33256828bbdb27b1567 || complete_torsion_type:9e3c65f813550a7933f7cd9dbe4cf6431d0f63520e705c69fce69c8511b6a46b || complete_torsion_type:f71c81808713ef7f68453672ddddcd3175b24f06bc1adce939e8dcbb5bd34632",
+    "torsion_types": [
+      "complete_torsion_type:4cc4f0826c667c3a4863954d065de2bfb6b875a1451cd33256828bbdb27b1567",
+      "complete_torsion_type:9e3c65f813550a7933f7cd9dbe4cf6431d0f63520e705c69fce69c8511b6a46b",
+      "complete_torsion_type:f71c81808713ef7f68453672ddddcd3175b24f06bc1adce939e8dcbb5bd34632"
+    ],
+    "validation_status": "CONTEXT_READY_SOURCE_CONTEXT"
+  }
+}

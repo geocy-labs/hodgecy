@@ -1,0 +1,14 @@
+{
+  "levels": [
+    "local_inventory",
+    "hodge_data",
+    "rational_source",
+    "integral_source",
+    "equivariant_source"
+  ],
+  "nonclaims": [
+    "node_geometry",
+    "defect",
+    "hodge_atom"
+  ]
+}

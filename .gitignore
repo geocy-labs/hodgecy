@@ -9,3 +9,6 @@ __pycache__/
 .hodgecy.local.json
 .hodgecy/
 local_data_config.*
+research_outputs/hodgecy_ii/**/*.sqlite
+research_outputs/hodgecy_ii/**/artifacts/
+research_outputs/hodgecy_ii/hodge_atom_fidelity/

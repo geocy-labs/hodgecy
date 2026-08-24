@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="250" viewBox="0 0 1160 250">
+<rect width="100%" height="100%" fill="white"/>
+<text x="50" y="38" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#111">HodgeCY II Source-Fidelity Hierarchy</text>
+<text x="50" y="210" font-family="Arial, sans-serif" font-size="15" fill="#333">Moving right restores increasingly fine source-level information; node geometry and Hodge atoms are outside this ladder.</text>
+<rect x="50" y="82" width="185" height="64" rx="6" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+<text x="142.5" y="120" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#111">local inventory</text>
+<line x1="243" y1="114.0" x2="262" y2="114.0" stroke="#475569" stroke-width="2"/>
+<path d="M262 114.0 l-8 -5 v10 z" fill="#475569"/>
+<rect x="270" y="82" width="185" height="64" rx="6" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+<text x="362.5" y="120" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#111">Hodge data</text>
+<line x1="463" y1="114.0" x2="482" y2="114.0" stroke="#475569" stroke-width="2"/>
+<path d="M482 114.0 l-8 -5 v10 z" fill="#475569"/>
+<rect x="490" y="82" width="185" height="64" rx="6" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+<text x="582.5" y="120" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#111">rational source type</text>
+<line x1="683" y1="114.0" x2="702" y2="114.0" stroke="#475569" stroke-width="2"/>
+<path d="M702 114.0 l-8 -5 v10 z" fill="#475569"/>
+<rect x="710" y="82" width="185" height="64" rx="6" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+<text x="802.5" y="120" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#111">integral / Smith type</text>
+<line x1="903" y1="114.0" x2="922" y2="114.0" stroke="#475569" stroke-width="2"/>
+<path d="M922 114.0 l-8 -5 v10 z" fill="#475569"/>
+<rect x="930" y="82" width="185" height="64" rx="6" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+<text x="1022.5" y="120" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#111">equivariant source type</text>
+</svg>

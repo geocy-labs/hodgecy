@@ -1,0 +1,82 @@
+[
+  {
+    "measure": "total_processed",
+    "status": "CONTEXT_READY",
+    "value": 456
+  },
+  {
+    "measure": "nontrivial_pairs_sets",
+    "status": "CONTEXT_READY",
+    "value": 114
+  },
+  {
+    "measure": "pairs",
+    "status": "CONTEXT_READY",
+    "value": 57
+  },
+  {
+    "measure": "triples",
+    "status": "CONTEXT_READY",
+    "value": 13
+  },
+  {
+    "measure": "larger_sets",
+    "status": "CONTEXT_READY",
+    "value": 44
+  },
+  {
+    "measure": "category:INTEGRAL COLLAPSE / EQUIVARIANT SEPARATION",
+    "status": "CONTEXT_READY",
+    "value": 57
+  },
+  {
+    "measure": "category:OTHER NEW FIDELITY SETS",
+    "status": "CONTEXT_READY",
+    "value": 3
+  },
+  {
+    "measure": "category:RATIONAL COLLAPSE / INTEGRAL SEPARATION",
+    "status": "CONTEXT_READY",
+    "value": 26
+  },
+  {
+    "measure": "category:RECURRENT SOURCE TYPES",
+    "status": "CONTEXT_READY",
+    "value": 19
+  },
+  {
+    "measure": "category:SAME LOCAL + DIFFERENT HODGE",
+    "status": "CONTEXT_READY",
+    "value": 6
+  },
+  {
+    "measure": "category:SAME LOCAL + SAME HODGE",
+    "status": "CONTEXT_READY",
+    "value": 3
+  },
+  {
+    "measure": "first_separation:Hodge data",
+    "status": "CONTEXT_READY",
+    "value": 6
+  },
+  {
+    "measure": "first_separation:equivariant/symmetry type",
+    "status": "CONTEXT_READY",
+    "value": 57
+  },
+  {
+    "measure": "first_separation:integral/Smith type",
+    "status": "CONTEXT_READY",
+    "value": 28
+  },
+  {
+    "measure": "first_separation:none among computed invariants",
+    "status": "CONTEXT_READY",
+    "value": 19
+  },
+  {
+    "measure": "first_separation:rational source type",
+    "status": "CONTEXT_READY",
+    "value": 4
+  }
+]

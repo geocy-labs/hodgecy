@@ -1,0 +1,17 @@
+measure,value,status
+total_processed,456,CONTEXT_READY
+nontrivial_pairs_sets,114,CONTEXT_READY
+pairs,57,CONTEXT_READY
+triples,13,CONTEXT_READY
+larger_sets,44,CONTEXT_READY
+category:INTEGRAL COLLAPSE / EQUIVARIANT SEPARATION,57,CONTEXT_READY
+category:OTHER NEW FIDELITY SETS,3,CONTEXT_READY
+category:RATIONAL COLLAPSE / INTEGRAL SEPARATION,26,CONTEXT_READY
+category:RECURRENT SOURCE TYPES,19,CONTEXT_READY
+category:SAME LOCAL + DIFFERENT HODGE,6,CONTEXT_READY
+category:SAME LOCAL + SAME HODGE,3,CONTEXT_READY
+first_separation:Hodge data,6,CONTEXT_READY
+first_separation:equivariant/symmetry type,57,CONTEXT_READY
+first_separation:integral/Smith type,28,CONTEXT_READY
+first_separation:none among computed invariants,19,CONTEXT_READY
+first_separation:rational source type,4,CONTEXT_READY

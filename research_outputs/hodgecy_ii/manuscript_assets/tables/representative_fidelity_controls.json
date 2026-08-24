@@ -1,0 +1,62 @@
+[
+  {
+    "first_separation": "rational source type",
+    "members": "61 / 451",
+    "role_in_hodgecy_ii": "direct same-local same-Hodge control with 451 warning preserved",
+    "shared_hodge": "equal",
+    "shared_integral": "different/not asserted",
+    "shared_local": "equal",
+    "shared_rational": "different/not asserted",
+    "validation_status": "MIXED_WITH_HISTORICAL_ONLY_MEMBERS"
+  },
+  {
+    "first_separation": "integral/Smith type",
+    "members": "84 / 84a",
+    "role_in_hodgecy_ii": "primary deep HodgeCY II pair",
+    "shared_hodge": "equal",
+    "shared_integral": "different/not asserted",
+    "shared_local": "equal",
+    "shared_rational": "equal",
+    "validation_status": "THEOREM_READY_SOURCE_CONTROL"
+  },
+  {
+    "first_separation": "integral/Smith type",
+    "members": "452 / 453",
+    "role_in_hodgecy_ii": "quadratic-field deferred same-local same-Hodge control",
+    "shared_hodge": "equal",
+    "shared_integral": "different/not asserted",
+    "shared_local": "equal",
+    "shared_rational": "equal",
+    "validation_status": "MIXED_WITH_HISTORICAL_ONLY_MEMBERS"
+  },
+  {
+    "first_separation": "equivariant/symmetry type",
+    "members": "84 / 240",
+    "role_in_hodgecy_ii": "integral-collapse equivariant-separation control",
+    "shared_hodge": "different/not asserted",
+    "shared_integral": "equal",
+    "shared_local": "not asserted",
+    "shared_rational": "equal",
+    "validation_status": "CONTEXT_READY_SOURCE_CONTEXT"
+  },
+  {
+    "first_separation": "equivariant/symmetry type",
+    "members": "84a / 239",
+    "role_in_hodgecy_ii": "integral-collapse equivariant-separation control",
+    "shared_hodge": "different/not asserted",
+    "shared_integral": "equal",
+    "shared_local": "not asserted",
+    "shared_rational": "equal",
+    "validation_status": "CONTEXT_READY_SOURCE_CONTEXT"
+  },
+  {
+    "first_separation": "rational source type",
+    "members": "239 / 240 / 241",
+    "role_in_hodgecy_ii": "fixed-inventory same-Hodge rational-separation comparison",
+    "shared_hodge": "equal",
+    "shared_integral": "different/not asserted",
+    "shared_local": "equal",
+    "shared_rational": "different/not asserted",
+    "validation_status": "CONTEXT_READY_SOURCE_CONTEXT"
+  }
+]
