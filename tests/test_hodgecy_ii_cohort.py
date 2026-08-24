@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import json
 
-from hodgecy.cohorts import baseline_hodgecy_ii_comparison, ingest_hodgecy_ii_cohort, load_hodgecy_ii_manifest
+from hodgecy.cohorts import baseline_hodgecy_ii_comparison, hodgecy_ii_node_geometry_blob5, ingest_hodgecy_ii_cohort, load_hodgecy_ii_manifest
 from hodgecy.core import ComparisonState, EvidenceStatus, ResultKind
 from hodgecy.storage import ResultStore
 
@@ -106,3 +106,47 @@ def test_reopen_persistence_keeps_cohort_records_available(tmp_path) -> None:
     assert reopened.get_geometry("hodgecy-ii-84a").source_entry_id == "84a"
     assert reopened.get_comparison_set("hodgecy-ii-239-241").member_geometry_ids == ("hodgecy-ii-239", "hodgecy-ii-240", "hodgecy-ii-241")
     assert reopened.get_invariants(geometry_id="hodgecy-ii-241", name="rank_Q")[0].value == 24
+
+
+def test_blob5_node_geometry_persists_imported_84_degree_but_keeps_odp_unknown(tmp_path) -> None:
+    store = make_store(tmp_path)
+    result = hodgecy_ii_node_geometry_blob5(store)
+    by_name = {item.invariant_name: item for item in store.get_invariants(geometry_id="hodgecy-ii-84", result_kind=ResultKind.NODE_GEOMETRY)}
+
+    assert result.node_summaries["84"]["singular_scheme_degree"] == 112
+    assert by_name["singular_scheme_dimension"].value == 0
+    assert by_name["singular_scheme_dimension"].evidence_status is EvidenceStatus.IMPORTED
+    assert by_name["singular_scheme_degree"].value == 112
+    assert by_name["singular_support_cardinality"].value is None
+    assert by_name["singular_support_cardinality"].evidence_status is EvidenceStatus.UNKNOWN
+    assert by_name["singular_scheme_reduced"].evidence_status is EvidenceStatus.UNKNOWN
+    assert by_name["pointwise_odp_verified_count"].evidence_status is EvidenceStatus.UNKNOWN
+    assert by_name["finite_reduced_odp_scheme"].evidence_status is EvidenceStatus.UNKNOWN
+    assert by_name["generic_parameter_verified"].evidence_status is EvidenceStatus.UNKNOWN
+
+
+def test_blob5_node_geometry_does_not_analyze_239_240_241_without_models(tmp_path) -> None:
+    store = make_store(tmp_path)
+    hodgecy_ii_node_geometry_blob5(store)
+    by_name = {item.invariant_name: item for item in store.get_invariants(geometry_id="hodgecy-ii-239", result_kind=ResultKind.NODE_GEOMETRY)}
+
+    assert by_name["singular_scheme_degree"].value is None
+    assert by_name["singular_scheme_degree"].evidence_status is EvidenceStatus.UNKNOWN
+    assert "no exact supported singular-fiber model" in (by_name["singular_scheme_degree"].notes or "")
+
+
+def test_blob5_node_geometry_reports_and_pair_comparison(tmp_path) -> None:
+    store = make_store(tmp_path)
+    report_dir = tmp_path / "node_reports"
+    result = hodgecy_ii_node_geometry_blob5(store, report_dir=report_dir)
+
+    pair_states = {item.comparison_key: item.state for item in result.pair_84_node_report.invariant_results}
+    assert pair_states["singular_scheme_degree"] is ComparisonState.EQUAL
+    assert pair_states["singular_support_cardinality"] is ComparisonState.UNKNOWN
+    assert result.pair_84_node_first_difference.state is ComparisonState.UNKNOWN
+    paths = {path.name for path in result.report_paths}
+    assert "hodgecy_ii_node_geometry_blob5.json" in paths
+    assert "hodgecy_ii_84_84a_node_geometry_comparison.md" in paths
+    payload = json.loads((report_dir / "hodgecy_ii_node_geometry_blob5.json").read_text(encoding="utf-8"))
+    assert payload["node_summaries"]["84a"]["singular_scheme_degree"] == 112
+    assert "comparison_time" not in json.dumps(payload)

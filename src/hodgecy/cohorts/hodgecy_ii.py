@@ -40,7 +40,24 @@ UNKNOWN_LATER_INVARIANTS = (
     ("conifold_atom_spectrum", ResultKind.CONIFOLD_ATOM),
 )
 
+NODE_GEOMETRY_INVARIANTS = (
+    "parameter_specialization",
+    "fixed_parameter_singular_scheme_degree_certified",
+    "generic_parameter_verified",
+    "singular_scheme_dimension",
+    "singular_scheme_degree",
+    "singular_support_cardinality",
+    "singular_support_complete",
+    "singular_scheme_reduced",
+    "pointwise_singular_verified_count",
+    "pointwise_odp_verified_count",
+    "all_points_odp",
+    "double_cover_odp_verified",
+    "finite_reduced_odp_scheme",
+)
+
 PAIR_ORDER = HODGE_INVARIANTS + SOURCE_INVARIANTS + tuple(name for name, _ in UNKNOWN_LATER_INVARIANTS)
+PAIR_WITH_NODE_GEOMETRY_ORDER = PAIR_ORDER + NODE_GEOMETRY_INVARIANTS
 PAIR_AVAILABLE_FIRST_DIFFERENCE_ORDER = HODGE_INVARIANTS + SOURCE_INVARIANTS
 SOURCE_REFINEMENT_LEVELS = (
     ("local_inventory",),
@@ -95,6 +112,30 @@ class HodgeCYIIBaselineResult:
             "set_239_241_first_split": self.set_239_241_first_split.to_dict(),
             "source_cohort_refinement": self.source_cohort_refinement.to_dict(),
             "source_cohort_first_split": self.source_cohort_first_split.to_dict(),
+            "report_paths": [path.as_posix() for path in self.report_paths],
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class HodgeCYIINodeGeometryResult:
+    ingest: HodgeCYIICohortIngestResult
+    node_runs: tuple[CalculationRun, ...]
+    node_invariant_names: tuple[str, ...]
+    node_summaries: dict[str, dict[str, Any]]
+    pair_84_node_report: PairComparisonReport
+    pair_84_node_first_difference: FirstDifferenceResult
+    pair_84_appended_report: PairComparisonReport
+    report_paths: tuple[Path, ...] = ()
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "ingest": self.ingest.to_dict(),
+            "node_runs": [run.to_dict() for run in self.node_runs],
+            "node_invariant_names": list(self.node_invariant_names),
+            "node_summaries": self.node_summaries,
+            "pair_84_node_report": self.pair_84_node_report.to_dict(),
+            "pair_84_node_first_difference": self.pair_84_node_first_difference.to_dict(),
+            "pair_84_appended_report": self.pair_84_appended_report.to_dict(),
             "report_paths": [path.as_posix() for path in self.report_paths],
         }
 
@@ -203,6 +244,87 @@ def baseline_hodgecy_ii_comparison(
     return HodgeCYIIBaselineResult(ingest, pair_report, pair_first, set_results, set_refinement, set_first, source_refinement, source_first, paths)
 
 
+def hodgecy_ii_node_geometry_blob5(
+    store: ResultStore,
+    *,
+    manifest_path: str | Path | None = None,
+    root: str | Path | None = None,
+    report_dir: str | Path | None = None,
+) -> HodgeCYIINodeGeometryResult:
+    """Persist the Blob 5 node-geometry baseline for the current HodgeCY II cohort.
+
+    This function does not run the large 112-point double-octic scheme through
+    SymPy. It records the exact fixed-parameter model metadata and the existing
+    imported degree-112 singular-scheme facts for 84/84a, while leaving support,
+    reducedness, Hessian, double-cover ODP, and global finite-reduced-ODP claims
+    UNKNOWN until an exact backend/certificate supplies them.
+    """
+
+    root_path = Path(root) if root is not None else repo_root()
+    ingest = ingest_hodgecy_ii_cohort(store, manifest_path=manifest_path, root=root_path)
+    manifest = ingest.manifest
+    arrangement_to_geometry = {member["arrangement_id"]: member["geometry_id"] for member in manifest["members"]}
+    runs: list[CalculationRun] = []
+    node_summaries: dict[str, dict[str, Any]] = {}
+
+    for member in manifest["members"]:
+        arrangement_id = member["arrangement_id"]
+        geometry_id = member["geometry_id"]
+        summary_path = root_path / member["summary_path"]
+        summary = json.loads(summary_path.read_text(encoding="utf-8"))
+        smoothing_path = root_path / "data" / "processed" / f"smoothing_verification_{arrangement_id}.json"
+        smoothing = _load_optional_json(smoothing_path)
+        input_metadata = {
+            "blob": 5,
+            "summary_path": member["summary_path"],
+            "summary_sha256": stable_sha256(summary),
+            "smoothing_verification_path": smoothing_path.relative_to(root_path).as_posix() if smoothing_path.exists() else None,
+            "smoothing_verification_sha256": None if smoothing is None else stable_sha256(smoothing),
+        }
+        run = store.begin_run(
+            geometry_id=geometry_id,
+            calculation_type="hodgecy_ii_node_geometry_blob5",
+            input_metadata=input_metadata,
+            parameters={"scope": "singular_scheme_and_odp_certification_baseline", "no_defect_or_hodge_atoms": True},
+            backend="hodgecy.cohorts.hodgecy_ii + hodgecy.geometry.singularities",
+            coefficient_ring="QQ/imported",
+            environment_metadata={"manifest_path": str(manifest_path or MANIFEST_RELATIVE_PATH)},
+            notes="Blob 5 node-geometry baseline; missing exact support/reducedness/Hessian data remain UNKNOWN.",
+        )
+        certificate = _record_blob5_node_certificate(store, run.run_id, member, summary, smoothing, smoothing_path if smoothing is not None else None)
+        for record in _node_geometry_records_from_summary(run.run_id, summary, member, smoothing, certificate.certificate_id):
+            store.record_invariant(**record)
+        runs.append(store.complete_run(run.run_id))
+        node_summaries[arrangement_id] = _node_summary(summary, member, smoothing)
+
+    engine = ComparisonEngine(store)
+    pair_members = (arrangement_to_geometry["84"], arrangement_to_geometry["84a"])
+    pair_node_report = engine.compare_pair(pair_members[0], pair_members[1], invariants=NODE_GEOMETRY_INVARIANTS)
+    pair_node_first = engine.first_difference(pair_members, NODE_GEOMETRY_INVARIANTS)
+    pair_appended_report = engine.compare_pair(pair_members[0], pair_members[1], invariants=PAIR_WITH_NODE_GEOMETRY_ORDER)
+
+    paths: tuple[Path, ...] = ()
+    if report_dir is not None:
+        paths = _write_node_geometry_reports(
+            Path(report_dir),
+            node_summaries=node_summaries,
+            pair_node_report=pair_node_report,
+            pair_node_first=pair_node_first,
+            pair_appended_report=pair_appended_report,
+        )
+
+    return HodgeCYIINodeGeometryResult(
+        ingest=ingest,
+        node_runs=tuple(runs),
+        node_invariant_names=NODE_GEOMETRY_INVARIANTS,
+        node_summaries=node_summaries,
+        pair_84_node_report=pair_node_report,
+        pair_84_node_first_difference=pair_node_first,
+        pair_84_appended_report=pair_appended_report,
+        report_paths=paths,
+    )
+
+
 def _records_from_summary(run_id: str, geometry_id: str, summary: dict[str, Any], member: dict[str, Any]) -> list[dict[str, Any]]:
     provenance = f"imported from {member['summary_path']}"
     records: list[dict[str, Any]] = []
@@ -270,6 +392,172 @@ def _records_from_summary(run_id: str, geometry_id: str, summary: dict[str, Any]
     return records
 
 
+def _load_optional_json(path: Path) -> dict[str, Any] | None:
+    if not path.exists():
+        return None
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _record_blob5_node_certificate(
+    store: ResultStore,
+    run_id: str,
+    member: dict[str, Any],
+    summary: dict[str, Any],
+    smoothing: dict[str, Any] | None,
+    smoothing_path: Path | None,
+):
+    arrangement_id = member["arrangement_id"]
+    perturbation = summary.get("quartic_perturbation") or {}
+    exact_model_available = smoothing is not None and arrangement_id in {"84", "84a"}
+    evidence = {
+        "arrangement_id": arrangement_id,
+        "geometry_id": member["geometry_id"],
+        "level_A_candidate_points": {
+            "status": EvidenceStatus.UNKNOWN.value,
+            "reason": "No exact complete candidate support list is canonical for Blob 5 ingestion.",
+        },
+        "level_B_pointwise_singular_verification": {
+            "status": EvidenceStatus.UNKNOWN.value,
+            "reason": "No pointwise exact support certificates are available in canonical tracked data.",
+        },
+        "level_C_complete_reduced_singular_scheme": {
+            "dimension": perturbation.get("saturated_jacobian_scheme_dimension"),
+            "degree": perturbation.get("saturated_jacobian_scheme_degree"),
+            "dimension_degree_status": EvidenceStatus.IMPORTED.value if perturbation else EvidenceStatus.UNKNOWN.value,
+            "support_complete_status": EvidenceStatus.UNKNOWN.value,
+            "reducedness_status": EvidenceStatus.UNKNOWN.value,
+        },
+        "level_D_ordinary_double_points": {
+            "status": EvidenceStatus.UNKNOWN.value,
+            "reason": "ordinary_node_verified is not claimed by release v0.2.0; reducedness/support/Hessian certificates are absent here.",
+        },
+        "double_cover_total_space": {
+            "status": EvidenceStatus.UNKNOWN.value,
+            "reason": "No explicit pointwise branch ODP certificate was available for the double-cover local theorem step.",
+        },
+        "parameter_specialization": _parameter_specialization(summary, smoothing),
+        "exact_model_available": exact_model_available,
+        "exact_backend_gap": _exact_backend_gap(arrangement_id, smoothing),
+        "source_paths": {
+            "summary_path": member["summary_path"],
+            "smoothing_verification_path": None if smoothing_path is None else smoothing_path.as_posix(),
+        },
+        "mathematical_firewall": {
+            "node_count_does_not_imply_node_relation_rank": True,
+            "odp_does_not_imply_vanishing_cycle_independence": True,
+            "degree_does_not_equal_support_without_reducedness": True,
+            "branch_data_not_promoted_without_double_cover_step": True,
+            "fixed_parameter_not_generic_parameter": True,
+            "no_hodge_atom_constructed": True,
+        },
+    }
+    return store.record_certificate(
+        certificate_type="hodgecy_ii_blob5_node_geometry_baseline",
+        subject_type="geometry",
+        subject_id=member["geometry_id"],
+        method="release import plus Blob 5 mathematical firewall",
+        evidence=evidence,
+        generated_by_run_id=run_id,
+        notes="Blob 5 separates imported singular-scheme facts from missing support/reducedness/Hessian/ODP certificates.",
+    )
+
+
+def _node_geometry_records_from_summary(
+    run_id: str,
+    summary: dict[str, Any],
+    member: dict[str, Any],
+    smoothing: dict[str, Any] | None,
+    certificate_id: str,
+) -> list[dict[str, Any]]:
+    arrangement_id = member["arrangement_id"]
+    perturbation = summary.get("quartic_perturbation") or {}
+    provenance = f"Blob 5 node baseline from {member['summary_path']}"
+    parameter = _parameter_specialization(summary, smoothing)
+    if arrangement_id in {"84", "84a"} and perturbation:
+        dimension = perturbation.get("saturated_jacobian_scheme_dimension")
+        degree = perturbation.get("saturated_jacobian_scheme_degree")
+        fixed_degree = perturbation.get("status") == "degree112_certified" and dimension == 0 and degree is not None
+        records = {
+            "parameter_specialization": (parameter, EvidenceStatus.IMPORTED, "fixed smoothing metadata imported from canonical records"),
+            "fixed_parameter_singular_scheme_degree_certified": (fixed_degree, EvidenceStatus.IMPORTED, "release imports a fixed epsilon singular-scheme degree certificate"),
+            "generic_parameter_verified": (None, EvidenceStatus.UNKNOWN, "fixed epsilon=1 data do not prove a generic-parameter statement"),
+            "singular_scheme_dimension": (dimension, EvidenceStatus.IMPORTED, "saturated projective Jacobian scheme dimension imported from release"),
+            "singular_scheme_degree": (degree, EvidenceStatus.IMPORTED, "saturated projective Jacobian scheme degree imported from release"),
+            "singular_support_cardinality": (None, EvidenceStatus.UNKNOWN, "exact support list is not canonical in Blob 5"),
+            "singular_support_complete": (None, EvidenceStatus.UNKNOWN, "candidate support completeness is not certified"),
+            "singular_scheme_reduced": (None, EvidenceStatus.UNKNOWN, "reducedness certificate is not present in canonical tracked data"),
+            "pointwise_singular_verified_count": (None, EvidenceStatus.UNKNOWN, "pointwise F=dF=0 support certificates are absent"),
+            "pointwise_odp_verified_count": (None, EvidenceStatus.UNKNOWN, "affine-chart Hessian certificates are absent"),
+            "all_points_odp": (None, EvidenceStatus.UNKNOWN, "global ODP claim is withheld"),
+            "double_cover_odp_verified": (None, EvidenceStatus.UNKNOWN, "double-cover total-space ODP step has no pointwise input"),
+            "finite_reduced_odp_scheme": (None, EvidenceStatus.UNKNOWN, "global certificate prerequisites are incomplete"),
+        }
+    else:
+        records = {
+            name: (None, EvidenceStatus.UNKNOWN, "no exact supported singular-fiber model is documented for Blob 5")
+            for name in NODE_GEOMETRY_INVARIANTS
+        }
+        records["parameter_specialization"] = ({}, EvidenceStatus.UNKNOWN, "no exact supported model supplied")
+
+    return [
+        {
+            "run_id": run_id,
+            "name": name,
+            "value": value,
+            "result_kind": ResultKind.NODE_GEOMETRY,
+            "evidence_status": status,
+            "method": "hodgecy_ii_blob5_node_geometry_baseline",
+            "provenance": provenance,
+            "certificate_id": certificate_id,
+            "notes": notes,
+        }
+        for name, (value, status, notes) in records.items()
+    ]
+
+
+def _parameter_specialization(summary: dict[str, Any], smoothing: dict[str, Any] | None) -> dict[str, Any]:
+    perturbation = summary.get("quartic_perturbation") or {}
+    if not perturbation and smoothing is None:
+        return {}
+    return {
+        "epsilon": perturbation.get("epsilon") or (smoothing or {}).get("epsilon"),
+        "quartic_Q": perturbation.get("quartic_Q") or (smoothing or {}).get("quartic_Q"),
+        "fixed_specialization_verified": bool(perturbation.get("status") == "degree112_certified"),
+        "generic_parameter_verified": None,
+        "status_note": "fixed epsilon specialization only; no generic-parameter promotion",
+    }
+
+
+def _exact_backend_gap(arrangement_id: str, smoothing: dict[str, Any] | None) -> str:
+    if arrangement_id not in {"84", "84a"}:
+        return "No exact supported singular-fiber model is documented for this cohort member."
+    if smoothing is None:
+        return "No smoothing-verification record is present."
+    return (
+        "Exact smoothing polynomial metadata is present, but Blob 5 has no in-repo exact CAS certificate for "
+        "complete support, reducedness, affine-chart Hessian rank at all 112 points, and the double-cover local step."
+    )
+
+
+def _node_summary(summary: dict[str, Any], member: dict[str, Any], smoothing: dict[str, Any] | None) -> dict[str, Any]:
+    perturbation = summary.get("quartic_perturbation") or {}
+    return {
+        "arrangement_id": member["arrangement_id"],
+        "geometry_id": member["geometry_id"],
+        "model_used": "fixed epsilon smoothing bridge metadata" if smoothing is not None else "none",
+        "parameter_specialization": _parameter_specialization(summary, smoothing),
+        "singular_scheme_dimension": perturbation.get("saturated_jacobian_scheme_dimension"),
+        "singular_scheme_degree": perturbation.get("saturated_jacobian_scheme_degree"),
+        "support_cardinality": None,
+        "support_complete": None,
+        "reduced": None,
+        "pointwise_odp_count": None,
+        "double_cover_odp_verified": None,
+        "global_certification_status": EvidenceStatus.UNKNOWN.value,
+        "backend_gap": _exact_backend_gap(member["arrangement_id"], smoothing),
+    }
+
+
 def _ensure_comparison_set(store: ResultStore, item: dict[str, Any], arrangement_to_geometry: dict[str, str]) -> ComparisonSetRecord:
     comparison_set_id = item["comparison_set_id"]
     try:
@@ -326,6 +614,43 @@ def _write_reports(
     return paths
 
 
+def _write_node_geometry_reports(
+    report_dir: Path,
+    *,
+    node_summaries: dict[str, dict[str, Any]],
+    pair_node_report: PairComparisonReport,
+    pair_node_first: FirstDifferenceResult,
+    pair_appended_report: PairComparisonReport,
+) -> tuple[Path, ...]:
+    report_dir.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "node_summaries": node_summaries,
+        "pair_84_node_report": pair_node_report.to_dict(),
+        "pair_84_node_first_difference": pair_node_first.to_dict(),
+        "pair_84_appended_report": pair_appended_report.to_dict(),
+    }
+    paths = (
+        report_dir / "hodgecy_ii_node_geometry_blob5.json",
+        report_dir / "hodgecy_ii_node_geometry_blob5.md",
+        report_dir / "hodgecy_ii_84_84a_node_geometry_comparison.json",
+        report_dir / "hodgecy_ii_84_84a_node_geometry_comparison.md",
+    )
+    paths[0].write_text(_deterministic_json(payload) + "\n", encoding="utf-8")
+    paths[1].write_text(_node_geometry_markdown(node_summaries), encoding="utf-8")
+    paths[2].write_text(
+        _deterministic_json(
+            {
+                "pair_84_node_report": pair_node_report.to_dict(),
+                "pair_84_node_first_difference": pair_node_first.to_dict(),
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    paths[3].write_text(_node_pair_markdown(pair_node_report, pair_node_first), encoding="utf-8")
+    return paths
+
+
 def _deterministic_json(payload: dict[str, Any]) -> str:
     return canonical_json(_strip_comparison_times(payload))
 
@@ -345,6 +670,50 @@ def _pair_markdown(report: PairComparisonReport, first: FirstDifferenceResult) -
         right = result.operands[1].value if len(result.operands) > 1 else None
         lines.append(f"| {result.comparison_key} | `{left}` | `{right}` | {result.state.value} |")
     lines.extend(["", f"First current available distinction: {first.first_difference or first.state.value}", ""])
+    return "\n".join(lines)
+
+
+def _node_geometry_markdown(node_summaries: dict[str, dict[str, Any]]) -> str:
+    lines = ["# HodgeCY II Node Geometry - Blob 5", ""]
+    for arrangement_id in sorted(node_summaries):
+        item = node_summaries[arrangement_id]
+        parameter = item["parameter_specialization"] or {}
+        lines.extend(
+            [
+                f"## {arrangement_id}",
+                f"- geometry_id: `{item['geometry_id']}`",
+                f"- model used: {item['model_used']}",
+                f"- parameter specialization: `{parameter}`",
+                f"- singular scheme dimension: `{item['singular_scheme_dimension']}`",
+                f"- singular scheme degree: `{item['singular_scheme_degree']}`",
+                f"- support cardinality: `{item['support_cardinality']}`",
+                f"- reduced: `{item['reduced']}`",
+                f"- ODP count: `{item['pointwise_odp_count']}`",
+                f"- double-cover ODP verified: `{item['double_cover_odp_verified']}`",
+                f"- global certification status: `{item['global_certification_status']}`",
+                f"- backend gap: {item['backend_gap']}",
+                "",
+            ]
+        )
+    lines.extend(
+        [
+            "## Firewall",
+            "- A degree value is not treated as a support cardinality without support and reducedness certificates.",
+            "- No node-relation rank, defect, vanishing-cycle relation, or Hodge atom is computed here.",
+            "- Fixed epsilon metadata is not promoted to a generic-parameter theorem.",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def _node_pair_markdown(report: PairComparisonReport, first: FirstDifferenceResult) -> str:
+    lines = ["# HodgeCY II Node Geometry - 84 vs 84a", "", "| Invariant | 84 | 84a | State |", "| --- | --- | --- | --- |"]
+    for result in report.invariant_results:
+        left = result.operands[0].value if result.operands else None
+        right = result.operands[1].value if len(result.operands) > 1 else None
+        lines.append(f"| {result.comparison_key} | `{left}` | `{right}` | {result.state.value} |")
+    lines.extend(["", f"First node-geometry distinction: {first.first_difference or first.state.value}", ""])
     return "\n".join(lines)
 
 

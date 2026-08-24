@@ -3,7 +3,9 @@
 from .hodgecy_ii import (
     HodgeCYIIBaselineResult,
     HodgeCYIICohortIngestResult,
+    HodgeCYIINodeGeometryResult,
     baseline_hodgecy_ii_comparison,
+    hodgecy_ii_node_geometry_blob5,
     ingest_hodgecy_ii_cohort,
     load_hodgecy_ii_manifest,
 )
@@ -11,7 +13,9 @@ from .hodgecy_ii import (
 __all__ = [
     "HodgeCYIIBaselineResult",
     "HodgeCYIICohortIngestResult",
+    "HodgeCYIINodeGeometryResult",
     "baseline_hodgecy_ii_comparison",
+    "hodgecy_ii_node_geometry_blob5",
     "ingest_hodgecy_ii_cohort",
     "load_hodgecy_ii_manifest",
 ]
