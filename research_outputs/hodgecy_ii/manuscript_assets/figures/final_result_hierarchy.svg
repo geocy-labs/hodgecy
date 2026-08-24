@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="360" viewBox="0 0 920 360">
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="40" y="34" font-family="Arial" font-size="19" font-weight="700">HodgeCY II Final Result Hierarchy</text>
+<text x="60" y="86" font-family="Arial" font-size="15" font-weight="700">SOURCE LEVEL</text>
+<text x="60" y="220" font-family="Arial" font-size="15" font-weight="700">BLOCK-EVALUATION LEVEL</text>
+<rect x="165" y="62" width="150" height="48" rx="5" fill="#e9f5ef" stroke="#438461"/><text x="240" y="91" font-family="Arial" font-size="13" text-anchor="middle">same local</text>
+<rect x="335" y="62" width="150" height="48" rx="5" fill="#e9f5ef" stroke="#438461"/><text x="410" y="91" font-family="Arial" font-size="13" text-anchor="middle">same Hodge</text>
+<rect x="505" y="62" width="150" height="48" rx="5" fill="#e9f5ef" stroke="#438461"/><text x="580" y="91" font-family="Arial" font-size="13" text-anchor="middle">same rational</text>
+<rect x="675" y="62" width="170" height="48" rx="5" fill="#fff0de" stroke="#b06a23"/><text x="760" y="91" font-family="Arial" font-size="13" text-anchor="middle">different integral</text>
+<rect x="165" y="196" width="150" height="48" rx="5" fill="#eef3fb" stroke="#4f6f9a"/><text x="240" y="225" font-family="Arial" font-size="13" text-anchor="middle">degree 112 blocks</text>
+<rect x="335" y="196" width="150" height="48" rx="5" fill="#e9f5ef" stroke="#438461"/><text x="410" y="225" font-family="Arial" font-size="13" text-anchor="middle">same H_B(0..8)</text>
+<rect x="505" y="196" width="150" height="48" rx="5" fill="#e9f5ef" stroke="#438461"/><text x="580" y="225" font-family="Arial" font-size="13" text-anchor="middle">H_B(8)=105</text>
+<rect x="675" y="196" width="170" height="48" rx="5" fill="#e9f5ef" stroke="#438461"/><text x="760" y="225" font-family="Arial" font-size="13" text-anchor="middle">deficiency=7</text>
+<line x1="315" y1="86" x2="335" y2="86" stroke="#555"/><line x1="485" y1="86" x2="505" y2="86" stroke="#555"/><line x1="655" y1="86" x2="675" y2="86" stroke="#555"/>
+<line x1="315" y1="220" x2="335" y2="220" stroke="#555"/><line x1="485" y1="220" x2="505" y2="220" stroke="#555"/><line x1="655" y1="220" x2="675" y2="220" stroke="#555"/>
+<line x1="508" y1="118" x2="508" y2="188" stroke="#777" stroke-dasharray="5 5"/><text x="526" y="157" font-family="Arial" font-size="12" fill="#555">comparison morphism UNKNOWN</text>
+<text x="60" y="316" font-family="Arial" font-size="12" fill="#555">Dashed line marks an open comparison problem, not a constructed map.</text>
+</svg>

@@ -1,0 +1,16 @@
+{
+  "block_evaluation_axis": [
+    "exact degree-112 block schemes",
+    "same Hilbert profile through d=8",
+    "same H_B(8)=105",
+    "same evaluation deficiency=7"
+  ],
+  "comparison_morphism": "UNKNOWN",
+  "schema": "hodgecy_ii_final_result_hierarchy.v1",
+  "source_axis": [
+    "same local",
+    "same Hodge",
+    "same rational source",
+    "DIFFERENT integral source"
+  ]
+}

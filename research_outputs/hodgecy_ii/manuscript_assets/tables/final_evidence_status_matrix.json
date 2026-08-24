@@ -1,0 +1,112 @@
+[
+  {
+    "basis": "456 processed records in frozen census context.",
+    "statement": "456-record census",
+    "status": "COMPUTED"
+  },
+  {
+    "basis": "57 pairs, 13 triples, 44 larger sets; reconciliation reproduced.",
+    "statement": "114 nontrivial fidelity sets",
+    "status": "COMPUTED"
+  },
+  {
+    "basis": "Same local inventory.",
+    "statement": "84/84a local equality",
+    "status": "VERIFIED"
+  },
+  {
+    "basis": "h11=40, h12=0, euler=80 for both.",
+    "statement": "84/84a Hodge equality",
+    "status": "VERIFIED"
+  },
+  {
+    "basis": "rank_Q=26, H1_Q=2, H0_Q=0 for both.",
+    "statement": "84/84a rational source equality",
+    "status": "VERIFIED"
+  },
+  {
+    "basis": "Smith forms and rank_mod_2 differ.",
+    "statement": "84/84a integral source inequality",
+    "status": "VERIFIED"
+  },
+  {
+    "basis": "Blob 12 reduced degree-112 block scheme.",
+    "statement": "84 verified block scheme",
+    "status": "VERIFIED"
+  },
+  {
+    "basis": "Blob 12 reduced degree-112 block scheme.",
+    "statement": "84a verified block scheme",
+    "status": "VERIFIED"
+  },
+  {
+    "basis": "28 four-point blocks.",
+    "statement": "block scheme degree 112",
+    "status": "VERIFIED"
+  },
+  {
+    "basis": "Block-level reducedness certificate.",
+    "statement": "block reducedness",
+    "status": "VERIFIED"
+  },
+  {
+    "basis": "Blob 12 containment certificate.",
+    "statement": "block -> singular containment",
+    "status": "VERIFIED"
+  },
+  {
+    "basis": "Saturated Jacobian/full promotion gate incomplete.",
+    "statement": "full ordinary-node promotion",
+    "status": "OPEN"
+  },
+  {
+    "basis": "No final saturated node ideal certificate.",
+    "statement": "frozen saturated node ideal",
+    "status": "OPEN"
+  },
+  {
+    "basis": "1,4,10,20,34,52,74,92,105 for both.",
+    "statement": "Hilbert profile 0..8",
+    "status": "VERIFIED"
+  },
+  {
+    "basis": "Critical degree value for both.",
+    "statement": "H_B(8)=105",
+    "status": "VERIFIED"
+  },
+  {
+    "basis": "Block-scheme evaluation deficiency for both.",
+    "statement": "block evaluation deficiency=7",
+    "status": "VERIFIED"
+  },
+  {
+    "basis": "dim ker(E_8^T)=7 for both.",
+    "statement": "evaluation relation dimension=7",
+    "status": "VERIFIED"
+  },
+  {
+    "basis": "Only if ordinary-node/full-node hypotheses are certified.",
+    "statement": "classical defect=7",
+    "status": "CONDITIONAL"
+  },
+  {
+    "basis": "No chain map constructed.",
+    "statement": "source-to-evaluation morphism",
+    "status": "OPEN"
+  },
+  {
+    "basis": "No vanishing-cycle map inferred.",
+    "statement": "source-to-vanishing morphism",
+    "status": "NOT_CLAIMED"
+  },
+  {
+    "basis": "Not constructed.",
+    "statement": "integral evaluation lattice",
+    "status": "OPEN"
+  },
+  {
+    "basis": "No LMHS/MHM or complete Hodge-atom spectrum asserted.",
+    "statement": "LMHS/Hodge-atom interpretation",
+    "status": "NOT_CLAIMED"
+  }
+]

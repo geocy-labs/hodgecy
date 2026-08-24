@@ -1,0 +1,28 @@
+{
+  "deferred_questions": [
+    "456-record population fidelity stratification",
+    "set-size distribution",
+    "first-separation-depth distribution",
+    "prime-sensitive population analysis",
+    "integral-collapse/equivariant-separation population",
+    "84-neighborhood refinement cascade",
+    "new candidate discovery using v1.0",
+    "validation promotion of census candidates"
+  ],
+  "population": {
+    "nontrivial_sets": 114,
+    "processed": 456
+  },
+  "representative_families": [
+    "61 / 451",
+    "84 / 84a",
+    "452 / 453",
+    "84 / 240",
+    "84a / 239",
+    "239 / 240 / 241",
+    "83 / 84 / 84a / 239 / 240 / 241"
+  ],
+  "schema": "hodgecy_iii_handoff.v1",
+  "status": "DEFERRED_TO_HODGECY_III",
+  "validation_status_policy": "Preserve theorem-ready, context-ready, historical-warning, and census-level distinctions."
+}

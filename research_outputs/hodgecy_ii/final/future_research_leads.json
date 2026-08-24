@@ -1,0 +1,35 @@
+{
+  "leads": [
+    {
+      "lead": "theoretical explanation of the common Hilbert sequence",
+      "lead_id": "RL1",
+      "status": "RESEARCH_LEAD"
+    },
+    {
+      "lead": "possible universality of block evaluation deficiency 7",
+      "lead_id": "RL2",
+      "status": "RESEARCH_LEAD"
+    },
+    {
+      "lead": "relation of the 7-dimensional evaluation space to syzygies",
+      "lead_id": "RL3",
+      "status": "RESEARCH_LEAD"
+    },
+    {
+      "lead": "integral evaluation lattice",
+      "lead_id": "RL4",
+      "status": "RESEARCH_LEAD"
+    },
+    {
+      "lead": "source-to-evaluation comparison map",
+      "lead_id": "RL5",
+      "status": "RESEARCH_LEAD"
+    },
+    {
+      "lead": "perturbation dependence",
+      "lead_id": "RL6",
+      "status": "RESEARCH_LEAD"
+    }
+  ],
+  "schema": "hodgecy_ii_future_research_leads.v1"
+}

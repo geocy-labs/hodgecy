@@ -1,0 +1,12 @@
+{
+  "results": [
+    {
+      "conclusion": "delta_84 = delta_84a = 7.",
+      "condition": "If the verified block schemes are identified with the complete ordinary-node schemes under the applicable nodal-double-solid hypotheses.",
+      "conditional_result_id": "C1",
+      "nonpromotion": "Actual classical defect remains UNKNOWN until ordinary-node/full-node-scheme promotion is certified.",
+      "status": "CONDITIONAL"
+    }
+  ],
+  "schema": "hodgecy_ii_conditional_results.v1"
+}

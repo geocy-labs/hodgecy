@@ -1,0 +1,45 @@
+{
+  "open_problems": [
+    {
+      "problem": "Complete ordinary-node promotion for the chosen perturbations.",
+      "problem_id": "O1",
+      "status": "OPEN"
+    },
+    {
+      "problem": "Freeze/reproduce the final saturated Jacobian node ideals.",
+      "problem_id": "O2",
+      "status": "OPEN"
+    },
+    {
+      "problem": "Verify/promote classical defect.",
+      "problem_id": "O3",
+      "status": "OPEN"
+    },
+    {
+      "problem": "Construct a natural source-to-evaluation or source-to-node comparison morphism.",
+      "problem_id": "O4",
+      "status": "OPEN"
+    },
+    {
+      "problem": "Determine whether source relations inject into, map to, filter, or otherwise interact with the 7-dimensional evaluation-relation space.",
+      "problem_id": "O5",
+      "status": "OPEN"
+    },
+    {
+      "problem": "Construct a natural integral evaluation-relation lattice.",
+      "problem_id": "O6",
+      "status": "OPEN"
+    },
+    {
+      "problem": "Compare with vanishing-cycle and exceptional-curve relation lattices.",
+      "problem_id": "O7",
+      "status": "OPEN"
+    },
+    {
+      "problem": "Mixed-Hodge/LMHS realization.",
+      "problem_id": "O8",
+      "status": "OPEN"
+    }
+  ],
+  "schema": "hodgecy_ii_open_problems.v1"
+}

@@ -60,6 +60,98 @@
       "sha256": "528d80bef53291d84800ba12e75dd67d0935f573a2e4c5b6262a605353ee57cf",
       "status": "BLOB13_READY"
     },
+    "research_outputs/hodgecy_ii/final/future_research_leads.json": {
+      "sha256": "9963317e22ea6f36e79795c704b1df31b4c601ba5017fa6fe5b21683cb90d7f0",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/final/future_research_leads.md": {
+      "sha256": "8f8be22dc5ac406e01a102d5e656a53e8dff41b07ef59b2532c51050d6426c20",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/final/hodgecy_ii_conditional_results.json": {
+      "sha256": "95a56526f3d02aa3e215512d82ca2eb8be21b6112eb5dc304a3c0583a2a91f6b",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/final/hodgecy_ii_conditional_results.md": {
+      "sha256": "1fe93267dfc4f62261d3f4a0d37dbb291d5310c9a9bbd085bdadc04ff9a75bb0",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/final/hodgecy_ii_final_artifact_manifest.json": {
+      "sha256": "30abdde4b74551c0511a1ce5d649de22672f3f082f38804660d3a6b93bd09212",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/final/hodgecy_ii_final_research_manifest.json": {
+      "sha256": "7142d955d80a4ef6bc3de12beeabf7cdfb082b298712c67c01d9f9080c305f0f",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/final/hodgecy_ii_final_results.json": {
+      "sha256": "7487026222be1da45c3ed1484eb948378aa12835da82691318e179b3a401c24e",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/final/hodgecy_ii_final_results.md": {
+      "sha256": "19c132d5408123ee91f2b14e395adcca260351d7dbbd9d80f9d4c11490923e73",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/final/hodgecy_ii_open_problems.json": {
+      "sha256": "2c3315334378f5cd356b340253a651283c03744b70211593a8ee46c1fc6d6130",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/final/hodgecy_ii_open_problems.md": {
+      "sha256": "5db17dc2d520fdeb727b45be978d217162bc528e183192ecd890c895957ee229",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/final/hodgecy_ii_question_status.json": {
+      "sha256": "ceed4fadf8d5283e02a8e21d811c7a2c406259fabd201d13354d8359d340237b",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/final/hodgecy_ii_question_status.md": {
+      "sha256": "5235d455218996f8ef6a7950ea2d41ca55f11f9856dd5c3898ba064255b3a775",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/final/hodgecy_ii_theorem_candidates.json": {
+      "sha256": "01a80947d9a8acfb66b8b1d523db79a852a7468657122579199c14003a2f0fdb",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/final/hodgecy_ii_theorem_candidates.md": {
+      "sha256": "2a443db7595a1b56cb523badbfb9fb59ffb500e63bb1714207b03a41fbb24de3",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/final/representative_candidate_statuses.json": {
+      "sha256": "03f3d56299567a04ebb8702776f2ad1dfe5e4dc2218b8a78a2b7a5e81207aa2a",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/final/representative_candidate_statuses.md": {
+      "sha256": "ccdd374ebe6f7e80982e8ad1a0b9bf64eda6a2b7e1d5c1cdd66bb1eeec849151",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/final/reproduction/deterministic_asset_check.json": {
+      "sha256": "08fe7629e1f721ad915df0c21880d4baa21a91656e52b0d506eb5704264a9329",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/final/reproduction/fresh_store_reproduction.json": {
+      "sha256": "131a59703be55c491610bc2c2aa8450a6c1904d9bb5397e7a1ab1d2bfbbe5e7a",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/final/reproduction/fresh_store_reproduction.md": {
+      "sha256": "1fd5b0f5b80d9c24412a32669f4711714be4cc9d4ed298e37a1e57f9363225a2",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/final/theorem_evidence/84/manifest.json": {
+      "sha256": "6d9f1e755ff2a6d49cf3f28cf51fcc7f4b1959bba2d6eb11742aa370ebed37cf",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/final/theorem_evidence/84a/manifest.json": {
+      "sha256": "734c7b5f89002b11f3f7ff72c46d040dce016722e97b1abaa45b9684c1fb404c",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/final/theorem_evidence/manifest.json": {
+      "sha256": "6e53c702962ee216dfd2adde6b38280a6ebb019372831ff55041b0588640ed5f",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/final/theorem_evidence/pair_comparison/manifest.json": {
+      "sha256": "154f3159598e765cd3b7abf973faf71092a94b62fc7b7da1a7af93dc66e8c977",
+      "status": "BLOB15_FINAL"
+    },
     "research_outputs/hodgecy_ii/manuscript_assets/data/fidelity_census_reconciled.json": {
       "sha256": "4c0eb2a37b56e7cb3b36a1531a1f68d9b64fe540ae4406e05bf1c67322c865c6",
       "status": "CONTEXT_READY"
@@ -120,6 +212,14 @@
       "sha256": "5a0561bbfb49c8a6c5037e12e7c62a095e30450a9ee6f734835dc42aab73b503",
       "status": "CONTEXT_READY"
     },
+    "research_outputs/hodgecy_ii/manuscript_assets/figures/final_result_hierarchy.svg": {
+      "sha256": "0e6b8b30c150c75b643c79e0481ae4c5868f343f5be763b401dd02701b0c74d6",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/manuscript_assets/figures/final_result_hierarchy_data.json": {
+      "sha256": "a45995dc8a2a6af970aef73036a74fcbe0caa8b06a9ee03f33a12acad6ceee57",
+      "status": "BLOB15_FINAL"
+    },
     "research_outputs/hodgecy_ii/manuscript_assets/figures/hilbert_profile_comparison.svg": {
       "sha256": "16a11ba039ef25a581bac8123ca0878ddbcddb1320d4c18bb55e7b15161e4b16",
       "status": "BLOB13_READY"
@@ -144,9 +244,29 @@
       "sha256": "630635ab9264d1beba01152c8fd6195ae1f9ed9a5f8f4f28bf45063049fbf04b",
       "status": "BLOB14_READY"
     },
+    "research_outputs/hodgecy_ii/manuscript_assets/manifest/final_manuscript_figure_inventory.json": {
+      "sha256": "bc941d1e77273ebace118219550dccc44db40dfd1f4e0320e625879f1d9cc4ea",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/manuscript_assets/manifest/final_manuscript_figure_inventory.md": {
+      "sha256": "db8510d6069db650b2a3dd8d440718db68ba0c952b74d21c9e411c39d0691433",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/manuscript_assets/manifest/final_manuscript_table_inventory.json": {
+      "sha256": "50b50a7022d629b99377192001cde5a6364bef35aa8765f2c7fe68949423618b",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/manuscript_assets/manifest/final_manuscript_table_inventory.md": {
+      "sha256": "aba41fbcd9f8b439f31d6ea1a498d6905289df2a63cf53eb3022d6028642497e",
+      "status": "BLOB15_FINAL"
+    },
     "research_outputs/hodgecy_ii/manuscript_assets/manifest/hodgecy_ii_scope.json": {
-      "sha256": "b47b05bdc04895bc85243f9401a2ae59118e3fb97bbe9cee2bcfee546eb02e77",
-      "status": "CONTEXT_READY"
+      "sha256": "589f8b436e7235a7d8cd347f2e7db8f712c291d1c7cbaa1d1711268afcbde9f2",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/manuscript_assets/manifest/hodgecy_iii_handoff.json": {
+      "sha256": "294b2c277e94098143e234ef2b9e73f300d54d41ca78ccc2b6f550396d90b349",
+      "status": "BLOB15_FINAL"
     },
     "research_outputs/hodgecy_ii/manuscript_assets/tables/block_evaluation_comparison_84_84a.csv": {
       "sha256": "c91b3202d76cb35dd74f4910facb68588427bdcd6f7bf9a9e38494359f31a65b",
@@ -187,6 +307,26 @@
     "research_outputs/hodgecy_ii/manuscript_assets/tables/fidelity_census_summary.tsv": {
       "sha256": "d58d4bfca5bd1b726967748c904b73d57aa46f4e4e9043af9d2d2ed111dd2be9",
       "status": "CONTEXT_READY"
+    },
+    "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.csv": {
+      "sha256": "9c8d816aaaaea10bf0c03b786ad19a3c1c999730a70eaad7bebc33e801307404",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.json": {
+      "sha256": "260ffea859ae1292eec7e1862284feedcabaf42829a817c0d9afd83fe9724789",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.md": {
+      "sha256": "347f956a200a9bb03631fb5f253c310ee391f5aa84ca451994d4d4761ac92fc6",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.tex": {
+      "sha256": "ee9f78fa60699d9b7d14d921a3a5a66187f7e50ba7e967c24454bedbe2c99f5e",
+      "status": "BLOB15_FINAL"
+    },
+    "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.tsv": {
+      "sha256": "f50f73c479f62f0af28e38d5e84b7d180058f0e90db0f91286ca4594db2c7b11",
+      "status": "BLOB15_FINAL"
     },
     "research_outputs/hodgecy_ii/manuscript_assets/tables/neighborhood_84_refinement.csv": {
       "sha256": "8449f7690f1c78ace435af1c64055142cf74437a02c345bd1930e85bda8f925a",
@@ -302,6 +442,14 @@
     "non_determination_certificate": "block_evaluation_does_not_determine_integral_source_type",
     "status": "EXACT_BLOCK_EVALUATION_COLLAPSE",
     "table_ii_6": "research_outputs/hodgecy_ii/manuscript_assets/tables/source_block_evaluation_comparison_84_84a.tsv"
+  },
+  "blob_15_final_freeze": {
+    "final_evidence_matrix": "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.tsv",
+    "final_results": "research_outputs/hodgecy_ii/final/hodgecy_ii_final_results.json",
+    "hodgecy_iii_handoff": "research_outputs/hodgecy_ii/manuscript_assets/manifest/hodgecy_iii_handoff.json",
+    "question_status": "research_outputs/hodgecy_ii/final/hodgecy_ii_question_status.json",
+    "reproduction_command": "python scripts/reproduce_hodgecy_ii.py",
+    "theorem_evidence_bundle": "research_outputs/hodgecy_ii/final/theorem_evidence/manifest.json"
   },
   "deterministic_generation": "Volatile timestamps are normalized; identical input hashes produce identical table, JSON, membership, and classification content.",
   "generated_at": "normalized-deterministic-generation",

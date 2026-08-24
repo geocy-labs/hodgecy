@@ -1,0 +1,66 @@
+{
+  "results": [
+    {
+      "claim": "The current HodgeCY fidelity census contains 456 processed records and 114 nontrivial pairs/sets.",
+      "evidence": {
+        "larger_sets": 44,
+        "nontrivial_sets": 114,
+        "pairs": 57,
+        "processed": 456,
+        "triples": 13
+      },
+      "result_id": "A",
+      "status": "CONTEXT_READY",
+      "title": "Fidelity census context"
+    },
+    {
+      "claim": "84 and 84a share local, Hodge, and rational source data but have nonisomorphic integral source assembly complexes.",
+      "evidence": {
+        "SNF_84": "(1^23,2,6,12)",
+        "SNF_84a": "(1^21,2,4,4,4,12)",
+        "source": "Blob 8"
+      },
+      "result_id": "B",
+      "status": "VERIFIED",
+      "title": "Integral source separation"
+    },
+    {
+      "claim": "The verified reduced degree-112 block schemes have identical Hilbert functions through degree 8 and equal block-evaluation deficiency 7.",
+      "evidence": {
+        "H_B_0_8": [
+          1,
+          4,
+          10,
+          20,
+          34,
+          52,
+          74,
+          92,
+          105
+        ],
+        "H_B_8": 105,
+        "epsilon_B": 7,
+        "source": "Blob 13"
+      },
+      "result_id": "C",
+      "status": "VERIFIED",
+      "title": "Exact block-evaluation collapse"
+    },
+    {
+      "claim": "On 84/84a, exact block-Hilbert/evaluation data through degree 8 do not determine integral source assembly type.",
+      "evidence": {
+        "different_integral_source_smith_type": true,
+        "same_block_evaluation_signature": true,
+        "source": "Blob 14"
+      },
+      "nonclaims": [
+        "No reverse global determinacy claim.",
+        "No source-to-evaluation chain map."
+      ],
+      "result_id": "D",
+      "status": "VERIFIED_ON_WITNESS_PAIR",
+      "title": "Block evaluation does not determine integral source type"
+    }
+  ],
+  "schema": "hodgecy_ii_theorem_candidates.v1"
+}

@@ -1,0 +1,75 @@
+{
+  "questions": [
+    {
+      "answer": "YES",
+      "evidence": "456 processed; 114 nontrivial pairs/sets.",
+      "question": "Are fidelity collapse/separation phenomena broader than 84 / 84a?",
+      "question_id": "Q1",
+      "status": "ANSWERED"
+    },
+    {
+      "answer": "YES; rank_Q=26 and H1_Q rank=2 for both.",
+      "evidence": "Blob 8 source lattice comparison.",
+      "question": "Do 84 / 84a remain equivalent at rational source level?",
+      "question_id": "Q2",
+      "status": "ANSWERED"
+    },
+    {
+      "answer": "NO; Smith forms differ.",
+      "evidence": "SNF(84)=(1^23,2,6,12); SNF(84a)=(1^21,2,4,4,4,12).",
+      "question": "Do 84 / 84a remain equivalent integrally at source level?",
+      "question_id": "Q3",
+      "status": "ANSWERED"
+    },
+    {
+      "answer": "YES for the verified block schemes.",
+      "evidence": "Blob 12 node-block certificates.",
+      "question": "Can the perturbation geometry be represented by exact finite reduced degree-112 block schemes?",
+      "question_id": "Q4",
+      "status": "ANSWERED"
+    },
+    {
+      "answer": "NO; final saturated Jacobian/full promotion certificate remains incomplete.",
+      "evidence": "Blob 12 blocker and Blob 13 validation statuses.",
+      "question": "Has complete ordinary-node promotion been achieved?",
+      "question_id": "Q5",
+      "status": "OPEN / PARTIALLY_ANSWERED"
+    },
+    {
+      "answer": "NO; profiles agree through degree 8.",
+      "evidence": "Blob 13 Hilbert tables.",
+      "question": "Do the two verified block schemes have different Hilbert profiles through critical degree?",
+      "question_id": "Q6",
+      "status": "ANSWERED"
+    },
+    {
+      "answer": "NO; both equal 7.",
+      "evidence": "Blob 13 critical-degree evaluation.",
+      "question": "Do their degree-8 block-evaluation deficiencies differ?",
+      "question_id": "Q7",
+      "status": "ANSWERED"
+    },
+    {
+      "answer": "NO on the 84/84a witness pair.",
+      "evidence": "Blob 14 non-determination certificate.",
+      "question": "Do the tested block-evaluation data determine integral source assembly type?",
+      "question_id": "Q8",
+      "status": "ANSWERED"
+    },
+    {
+      "answer": "Only conditionally; do not promote.",
+      "evidence": "Blob 13/14 conditional defect records.",
+      "question": "Are the classical nodal defects verified to equal 7?",
+      "question_id": "Q9",
+      "status": "CONDITIONAL / OPEN"
+    },
+    {
+      "answer": "NO; status remains UNKNOWN.",
+      "evidence": "Blob 10 and Blob 14 firewall records.",
+      "question": "Has a natural source-to-evaluation/node chain map been constructed?",
+      "question_id": "Q10",
+      "status": "OPEN"
+    }
+  ],
+  "schema": "hodgecy_ii_question_status.v1"
+}

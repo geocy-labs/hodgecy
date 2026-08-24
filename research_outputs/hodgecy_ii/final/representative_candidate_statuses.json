@@ -1,0 +1,47 @@
+{
+  "representatives": [
+    {
+      "first_separation": "rational source type",
+      "members": "61 / 451",
+      "shared_integral": "different/not asserted",
+      "shared_rational": "different/not asserted",
+      "validation_status": "MIXED_WITH_HISTORICAL_ONLY_MEMBERS"
+    },
+    {
+      "first_separation": "integral/Smith type",
+      "members": "84 / 84a",
+      "shared_integral": "different/not asserted",
+      "shared_rational": "equal",
+      "validation_status": "THEOREM_READY_SOURCE_CONTROL"
+    },
+    {
+      "first_separation": "integral/Smith type",
+      "members": "452 / 453",
+      "shared_integral": "different/not asserted",
+      "shared_rational": "equal",
+      "validation_status": "MIXED_WITH_HISTORICAL_ONLY_MEMBERS"
+    },
+    {
+      "first_separation": "equivariant/symmetry type",
+      "members": "84 / 240",
+      "shared_integral": "equal",
+      "shared_rational": "equal",
+      "validation_status": "CONTEXT_READY_SOURCE_CONTEXT"
+    },
+    {
+      "first_separation": "equivariant/symmetry type",
+      "members": "84a / 239",
+      "shared_integral": "equal",
+      "shared_rational": "equal",
+      "validation_status": "CONTEXT_READY_SOURCE_CONTEXT"
+    },
+    {
+      "first_separation": "rational source type",
+      "members": "239 / 240 / 241",
+      "shared_integral": "different/not asserted",
+      "shared_rational": "different/not asserted",
+      "validation_status": "CONTEXT_READY_SOURCE_CONTEXT"
+    }
+  ],
+  "schema": "hodgecy_ii_representative_statuses.v1"
+}
