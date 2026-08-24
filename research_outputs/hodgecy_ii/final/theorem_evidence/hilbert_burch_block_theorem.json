@@ -1,0 +1,402 @@
+{
+  "content_hash": "b930a740880dcd25148819f061a5ec4fd88302ab1474d5ae54631b0a28356305",
+  "control_examples": {
+    "239": {
+      "line_skeleton": {
+        "arrangement_id": "239",
+        "embedded_components_status": "PROVED_NONE_BY_SATURATED_UNMIXED_PERFECT_IDEAL",
+        "height_status": "PROVED",
+        "hilbert_burch_matrix_shape": [
+          8,
+          7
+        ],
+        "ideal_equality_status": "PROVED_BY_VERIFIED_CODIMENSION_TWO_STAR_CONFIGURATION_THEOREM",
+        "ideal_saturation_status": "PROVED_BY_PERFECT_HEIGHT_TWO_POSITIVE_DIMENSION_QUOTIENT",
+        "line_skeleton_degree": 28,
+        "line_skeleton_hilbert_function_0_12": [
+          1,
+          4,
+          10,
+          20,
+          35,
+          56,
+          84,
+          112,
+          140,
+          168,
+          196,
+          224,
+          252
+        ],
+        "line_skeleton_hilbert_series": "(1 - 8*t^7 + 7*t^8)/(1-t)^4",
+        "line_skeleton_resolution": "0 -> S(-8)^7 -> S(-7)^8 -> I_C -> 0",
+        "maximal_minors_match_generators": true,
+        "no_three_planes_contain_a_line": true,
+        "pair_count": 28,
+        "pairwise_independent": true,
+        "plane_equations": [
+          "x",
+          "y",
+          "z",
+          "x + y - z",
+          "t + z",
+          "t + x + y + z",
+          "t + x",
+          "t + y"
+        ],
+        "plane_hash": "af891bde2bef4236fb05507d50fb7602f399cbebc85e474ed6150e22c8ad26ea",
+        "reducedness_status": "PROVED_AS_INTERSECTION_OF_DISTINCT_LINE_PRIMES",
+        "syzygies_verified": true,
+        "theorem_hypotheses_status": "VERIFIED",
+        "triple_rank_condition": true,
+        "triple_rank_distribution": {
+          "3": 56
+        }
+      },
+      "quartic_block": {
+        "quartic_perturbation": null,
+        "reason": "Exact control arrangement planes are available, but quartic_perturbation is null in the release theorem summary.",
+        "status": "NOT_APPLICABLE"
+      }
+    },
+    "240": {
+      "line_skeleton": {
+        "arrangement_id": "240",
+        "embedded_components_status": "PROVED_NONE_BY_SATURATED_UNMIXED_PERFECT_IDEAL",
+        "height_status": "PROVED",
+        "hilbert_burch_matrix_shape": [
+          8,
+          7
+        ],
+        "ideal_equality_status": "PROVED_BY_VERIFIED_CODIMENSION_TWO_STAR_CONFIGURATION_THEOREM",
+        "ideal_saturation_status": "PROVED_BY_PERFECT_HEIGHT_TWO_POSITIVE_DIMENSION_QUOTIENT",
+        "line_skeleton_degree": 28,
+        "line_skeleton_hilbert_function_0_12": [
+          1,
+          4,
+          10,
+          20,
+          35,
+          56,
+          84,
+          112,
+          140,
+          168,
+          196,
+          224,
+          252
+        ],
+        "line_skeleton_hilbert_series": "(1 - 8*t^7 + 7*t^8)/(1-t)^4",
+        "line_skeleton_resolution": "0 -> S(-8)^7 -> S(-7)^8 -> I_C -> 0",
+        "maximal_minors_match_generators": true,
+        "no_three_planes_contain_a_line": true,
+        "pair_count": 28,
+        "pairwise_independent": true,
+        "plane_equations": [
+          "x",
+          "y",
+          "z",
+          "x - y - z",
+          "t + x",
+          "t + y",
+          "t + z",
+          "-2*t + x - 2*y - 2*z"
+        ],
+        "plane_hash": "d1ee34bec484d0587611a5eb99ad7fea7ec56270833b3ab9acf86d9e3e76cfb9",
+        "reducedness_status": "PROVED_AS_INTERSECTION_OF_DISTINCT_LINE_PRIMES",
+        "syzygies_verified": true,
+        "theorem_hypotheses_status": "VERIFIED",
+        "triple_rank_condition": true,
+        "triple_rank_distribution": {
+          "3": 56
+        }
+      },
+      "quartic_block": {
+        "quartic_perturbation": null,
+        "reason": "Exact control arrangement planes are available, but quartic_perturbation is null in the release theorem summary.",
+        "status": "NOT_APPLICABLE"
+      }
+    },
+    "241": {
+      "line_skeleton": {
+        "arrangement_id": "241",
+        "embedded_components_status": "PROVED_NONE_BY_SATURATED_UNMIXED_PERFECT_IDEAL",
+        "height_status": "PROVED",
+        "hilbert_burch_matrix_shape": [
+          8,
+          7
+        ],
+        "ideal_equality_status": "PROVED_BY_VERIFIED_CODIMENSION_TWO_STAR_CONFIGURATION_THEOREM",
+        "ideal_saturation_status": "PROVED_BY_PERFECT_HEIGHT_TWO_POSITIVE_DIMENSION_QUOTIENT",
+        "line_skeleton_degree": 28,
+        "line_skeleton_hilbert_function_0_12": [
+          1,
+          4,
+          10,
+          20,
+          35,
+          56,
+          84,
+          112,
+          140,
+          168,
+          196,
+          224,
+          252
+        ],
+        "line_skeleton_hilbert_series": "(1 - 8*t^7 + 7*t^8)/(1-t)^4",
+        "line_skeleton_resolution": "0 -> S(-8)^7 -> S(-7)^8 -> I_C -> 0",
+        "maximal_minors_match_generators": true,
+        "no_three_planes_contain_a_line": true,
+        "pair_count": 28,
+        "pairwise_independent": true,
+        "plane_equations": [
+          "x",
+          "y",
+          "z",
+          "x - y - z",
+          "t + x - y",
+          "t",
+          "-t + x + y - z",
+          "t + x + y + z"
+        ],
+        "plane_hash": "3ca9da75f8b0a29fe7f6eea76376e6307aa6d36705ba6abf898db41125f55ffd",
+        "reducedness_status": "PROVED_AS_INTERSECTION_OF_DISTINCT_LINE_PRIMES",
+        "syzygies_verified": true,
+        "theorem_hypotheses_status": "VERIFIED",
+        "triple_rank_condition": true,
+        "triple_rank_distribution": {
+          "3": 56
+        }
+      },
+      "quartic_block": {
+        "quartic_perturbation": null,
+        "reason": "Exact control arrangement planes are available, but quartic_perturbation is null in the release theorem summary.",
+        "status": "NOT_APPLICABLE"
+      }
+    }
+  },
+  "firewall": {
+    "classical_defect_promoted": false,
+    "evaluation_relations_identified_with_hodge_atoms": false,
+    "full_singular_scheme_equals_block_scheme_claimed": false,
+    "integral_evaluation_lattice_constructed": false,
+    "ordinary_node_verified_promoted": false,
+    "source_to_evaluation_map_constructed": false,
+    "vanishing_cycle_or_lmhs_claimed": false
+  },
+  "general_formula": {
+    "block_hilbert_series": "(1-t^q)*(1 - s*t^(s-1) + (s-1)*t^s)/(1-t)^4",
+    "hypotheses": [
+      "S = k[x0,x1,x2,x3].",
+      "L_1,...,L_s are distinct linear forms.",
+      "Every pair has rank 2.",
+      "Every triple has rank at least 3; equivalently no three planes contain a line.",
+      "Q has degree q and is a non-zero-divisor on S/I_C."
+    ],
+    "line_skeleton_hilbert_series": "(1 - s*t^(s-1) + (s-1)*t^s)/(1-t)^4",
+    "line_skeleton_resolution": "0 -> S(-s)^(s-1) -> S(-(s-1))^s -> I_C -> 0",
+    "status": "PROVED_WITH_HYPOTHESES"
+  },
+  "hodgecy_version": "1.0.0",
+  "primary_arrangements": {
+    "84": {
+      "line_skeleton": {
+        "arrangement_id": "84",
+        "embedded_components_status": "PROVED_NONE_BY_SATURATED_UNMIXED_PERFECT_IDEAL",
+        "height_status": "PROVED",
+        "hilbert_burch_matrix_shape": [
+          8,
+          7
+        ],
+        "ideal_equality_status": "PROVED_BY_VERIFIED_CODIMENSION_TWO_STAR_CONFIGURATION_THEOREM",
+        "ideal_saturation_status": "PROVED_BY_PERFECT_HEIGHT_TWO_POSITIVE_DIMENSION_QUOTIENT",
+        "line_skeleton_degree": 28,
+        "line_skeleton_hilbert_function_0_12": [
+          1,
+          4,
+          10,
+          20,
+          35,
+          56,
+          84,
+          112,
+          140,
+          168,
+          196,
+          224,
+          252
+        ],
+        "line_skeleton_hilbert_series": "(1 - 8*t^7 + 7*t^8)/(1-t)^4",
+        "line_skeleton_resolution": "0 -> S(-8)^7 -> S(-7)^8 -> I_C -> 0",
+        "maximal_minors_match_generators": true,
+        "no_three_planes_contain_a_line": true,
+        "pair_count": 28,
+        "pairwise_independent": true,
+        "plane_equations": [
+          "-t + x",
+          "t + x",
+          "-t + y",
+          "t + y",
+          "-t + z",
+          "t + z",
+          "t + x + y + z",
+          "-3*t + x + y + z"
+        ],
+        "plane_hash": "565638e1551d806477f8c396bc40287f5f747d98717dca7dda174582842dd7ab",
+        "reducedness_status": "PROVED_AS_INTERSECTION_OF_DISTINCT_LINE_PRIMES",
+        "syzygies_verified": true,
+        "theorem_hypotheses_status": "VERIFIED",
+        "triple_rank_condition": true,
+        "triple_rank_distribution": {
+          "3": 56
+        }
+      },
+      "quartic_block": {
+        "arrangement_id": "84",
+        "block_hilbert_series": "(1-t^4)*(1 - 8*t^7 + 7*t^8)/(1-t)^4",
+        "block_resolution": "0 -> S(-12)^7 -> S(-11)^8 + S(-8)^7 -> S(-7)^8 + S(-4) -> S -> S/I_B -> 0",
+        "classical_defect_status": "CONDITIONAL_NOT_PROMOTED",
+        "evaluation_deficiency_explanation_status": "PROVED_FOR_VERIFIED_BLOCK_SCHEME",
+        "formula_matches_existing_block_computation": true,
+        "h1_i_b_8_dimension": 7,
+        "line_restrictions_checked": 28,
+        "observed_block_hilbert_function_0_8": [
+          1,
+          4,
+          10,
+          20,
+          34,
+          52,
+          74,
+          92,
+          105
+        ],
+        "quartic": "5*t**4 + t*x*y*z + x**4 + 2*y**4 + 3*z**4",
+        "quartic_regular_reason": "Q restricts to a nonzero squarefree quartic on every associated line prime of the reduced line skeleton.",
+        "quartic_regular_status": "PROVED",
+        "squarefree_degree_four_restrictions": true,
+        "stabilization_degree": 9,
+        "theoretical_hilbert_function_0_12": [
+          1,
+          4,
+          10,
+          20,
+          34,
+          52,
+          74,
+          92,
+          105,
+          112,
+          112,
+          112,
+          112
+        ]
+      }
+    },
+    "84a": {
+      "line_skeleton": {
+        "arrangement_id": "84a",
+        "embedded_components_status": "PROVED_NONE_BY_SATURATED_UNMIXED_PERFECT_IDEAL",
+        "height_status": "PROVED",
+        "hilbert_burch_matrix_shape": [
+          8,
+          7
+        ],
+        "ideal_equality_status": "PROVED_BY_VERIFIED_CODIMENSION_TWO_STAR_CONFIGURATION_THEOREM",
+        "ideal_saturation_status": "PROVED_BY_PERFECT_HEIGHT_TWO_POSITIVE_DIMENSION_QUOTIENT",
+        "line_skeleton_degree": 28,
+        "line_skeleton_hilbert_function_0_12": [
+          1,
+          4,
+          10,
+          20,
+          35,
+          56,
+          84,
+          112,
+          140,
+          168,
+          196,
+          224,
+          252
+        ],
+        "line_skeleton_hilbert_series": "(1 - 8*t^7 + 7*t^8)/(1-t)^4",
+        "line_skeleton_resolution": "0 -> S(-8)^7 -> S(-7)^8 -> I_C -> 0",
+        "maximal_minors_match_generators": true,
+        "no_three_planes_contain_a_line": true,
+        "pair_count": 28,
+        "pairwise_independent": true,
+        "plane_equations": [
+          "-t + x",
+          "t + x",
+          "-t + y",
+          "t + y",
+          "-t + z",
+          "t + z",
+          "-t + x + y + z",
+          "-3*t + x + y + z"
+        ],
+        "plane_hash": "59d75a1731f1e24c55a3211bd30f49c86199da0d7b23b28a09a56311217e9133",
+        "reducedness_status": "PROVED_AS_INTERSECTION_OF_DISTINCT_LINE_PRIMES",
+        "syzygies_verified": true,
+        "theorem_hypotheses_status": "VERIFIED",
+        "triple_rank_condition": true,
+        "triple_rank_distribution": {
+          "3": 56
+        }
+      },
+      "quartic_block": {
+        "arrangement_id": "84a",
+        "block_hilbert_series": "(1-t^4)*(1 - 8*t^7 + 7*t^8)/(1-t)^4",
+        "block_resolution": "0 -> S(-12)^7 -> S(-11)^8 + S(-8)^7 -> S(-7)^8 + S(-4) -> S -> S/I_B -> 0",
+        "classical_defect_status": "CONDITIONAL_NOT_PROMOTED",
+        "evaluation_deficiency_explanation_status": "PROVED_FOR_VERIFIED_BLOCK_SCHEME",
+        "formula_matches_existing_block_computation": true,
+        "h1_i_b_8_dimension": 7,
+        "line_restrictions_checked": 28,
+        "observed_block_hilbert_function_0_8": [
+          1,
+          4,
+          10,
+          20,
+          34,
+          52,
+          74,
+          92,
+          105
+        ],
+        "quartic": "5*t**4 + t*x*y*z + x**4 + 2*y**4 + 3*z**4",
+        "quartic_regular_reason": "Q restricts to a nonzero squarefree quartic on every associated line prime of the reduced line skeleton.",
+        "quartic_regular_status": "PROVED",
+        "squarefree_degree_four_restrictions": true,
+        "stabilization_degree": 9,
+        "theoretical_hilbert_function_0_12": [
+          1,
+          4,
+          10,
+          20,
+          34,
+          52,
+          74,
+          92,
+          105,
+          112,
+          112,
+          112,
+          112
+        ]
+      }
+    }
+  },
+  "proof_obligations_open": [
+    "The final saturated Jacobian/full singular scheme is still not identified with the block scheme.",
+    "Ordinary-node promotion remains open.",
+    "The classical nodal defect remains conditional.",
+    "No source-to-evaluation, vanishing-cycle, LMHS, MHM, or Hodge-atom morphism is constructed.",
+    "No integral evaluation-relation lattice is constructed."
+  ],
+  "schema": "hodgecy_ii_hilbert_burch_block_theorem.v1",
+  "status": "PROVED_WITH_STATED_HYPOTHESES",
+  "supported_statement": "For the frozen 84 and 84a eight-plane arrangements, the ideal generated by the sevenfold products F/L_i is the saturated reduced codimension-two line-skeleton ideal because the verified no-three-planes-on-a-line hypothesis makes the codimension-two star-configuration theorem applicable. Its Hilbert-Burch resolution is 0 -> S(-8)^7 -> S(-7)^8 -> I_C -> 0. The frozen quartic Q is a non-zero-divisor on S/I_C, so the verified block scheme B = C cap V(Q) has mapping-cone resolution 0 -> S(-12)^7 -> S(-11)^8 + S(-8)^7 -> S(-7)^8 + S(-4) -> S -> S/I_B -> 0, Hilbert series (1-t^4)(1-8t^7+7t^8)/(1-t)^4, Hilbert function 1,4,10,20,34,52,74,92,105,112,112,..., and dim H^1(P^3,I_B(8)) = 7. This proves the structural explanation only for the verified block scheme, not the classical nodal defect."
+}
