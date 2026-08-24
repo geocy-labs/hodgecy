@@ -8,6 +8,7 @@ from hodgecy.cohorts import (
     hodgecy_ii_integral_lattice_blob8,
     hodgecy_ii_node_geometry_blob5,
     hodgecy_ii_node_ideal_hilbert_blob6,
+    hodgecy_ii_node_relation_blob9,
     ingest_hodgecy_ii_cohort,
     load_hodgecy_ii_manifest,
 )
@@ -303,4 +304,61 @@ def test_blob8_source_lattice_reports_are_written(tmp_path) -> None:
     payload = json.loads((report_dir / "hodgecy_ii_integral_lattice_blob8.json").read_text(encoding="utf-8"))
     assert payload["summaries"]["84"]["matrix_role"] == "source_assembly"
     assert payload["summaries"]["84a"]["rank_mod_2"] == 21
+    assert "comparison_time" not in json.dumps(payload)
+
+
+def test_blob9_records_expected_84_shapes_but_keeps_node_relations_unknown(tmp_path) -> None:
+    store = make_store(tmp_path)
+    result = hodgecy_ii_node_relation_blob9(store)
+    blob9_run_ids = {run.run_id for run in store.get_runs(geometry_id="hodgecy-ii-84", calculation_type="hodgecy_ii_node_relation_blob9")}
+    by_name = {
+        item.invariant_name: item
+        for item in store.get_invariants(geometry_id="hodgecy-ii-84", result_kind=ResultKind.NODE_RELATION)
+        if item.run_id in blob9_run_ids
+    }
+
+    assert result.summaries["84"]["expected_node_count"] == 112
+    assert result.summaries["84"]["critical_degree"] == 8
+    assert result.summaries["84"]["expected_evaluation_matrix_shape"] == [112, 165]
+    assert result.summaries["84"]["expected_relation_map_shape"] == [165, 112]
+    assert by_name["expected_relation_realization_kind"].value == "evaluation_condition"
+    assert by_name["node_generator_rank"].value is None
+    assert by_name["node_generator_rank"].evidence_status is EvidenceStatus.UNKNOWN
+    assert by_name["rational_evaluation_relation_rank"].value is None
+    assert by_name["integral_evaluation_relation_snf"].evidence_status is EvidenceStatus.UNKNOWN
+    assert "without verified node support" in (by_name["node_generator_module_status"].notes or "")
+
+
+def test_blob9_does_not_assign_relation_model_to_239_240_241(tmp_path) -> None:
+    store = make_store(tmp_path)
+    result = hodgecy_ii_node_relation_blob9(store)
+    blob9_run_ids = {run.run_id for run in store.get_runs(geometry_id="hodgecy-ii-239", calculation_type="hodgecy_ii_node_relation_blob9")}
+    by_name = {
+        item.invariant_name: item
+        for item in store.get_invariants(geometry_id="hodgecy-ii-239", result_kind=ResultKind.NODE_RELATION)
+        if item.run_id in blob9_run_ids
+    }
+
+    assert result.summaries["239"]["expected_node_count"] is None
+    assert result.summaries["239"]["expected_evaluation_matrix_shape"] is None
+    assert by_name["expected_relation_realization_kind"].value is None
+    assert by_name["rational_evaluation_relation_complex"].evidence_status is EvidenceStatus.UNKNOWN
+    assert by_name["source_to_node_map_status"].value == "NOT_CONSTRUCTED"
+
+
+def test_blob9_reports_84_84a_relation_status(tmp_path) -> None:
+    store = make_store(tmp_path)
+    report_dir = tmp_path / "node_relation_reports"
+    result = hodgecy_ii_node_relation_blob9(store, report_dir=report_dir)
+
+    pair_states = {item.comparison_key: item.state for item in result.pair_84_node_relation_report.invariant_results}
+    assert pair_states["expected_evaluation_matrix_shape"] is ComparisonState.EQUAL
+    assert pair_states["node_generator_rank"] is ComparisonState.UNKNOWN
+    assert pair_states["rational_evaluation_relation_rank"] is ComparisonState.UNKNOWN
+    assert result.pair_84_node_relation_first_difference.state is ComparisonState.UNKNOWN
+    paths = {path.name for path in result.report_paths}
+    assert "hodgecy_ii_node_relation_blob9.json" in paths
+    assert "hodgecy_ii_84_84a_relation_status.md" in paths
+    payload = json.loads((report_dir / "hodgecy_ii_node_relation_blob9.json").read_text(encoding="utf-8"))
+    assert payload["summaries"]["84a"]["expected_relation_map_shape"] == [165, 112]
     assert "comparison_time" not in json.dumps(payload)
