@@ -106,6 +106,7 @@ def test_generated_blob13_assets_are_status_aware() -> None:
     scope = json.loads((repo_root() / "research_outputs" / "hodgecy_ii" / "manuscript_assets" / "manifest" / "hodgecy_ii_scope.json").read_text(encoding="utf-8"))
 
     assert "block evaluation deficiency\t7\t7\tequal\texact block result" in table
+    assert "COMPUTED_AND_PROVED_STRUCTURALLY" in table
     assert "verified classical defect\tUNKNOWN\tUNKNOWN\tequal\tnot promoted" in table
     assert {"arrangement": "84", "layer": "classical defect", "status": "UNKNOWN"} in validation
     assert scope["required_geometric_outputs"]["block_evaluation"]["classical_defect"] == "UNKNOWN"

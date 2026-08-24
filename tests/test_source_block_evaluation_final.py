@@ -66,5 +66,6 @@ def test_final_freeze_writes_deterministic_source_block_assets() -> None:
 
     assert payload["non_determination_certificate"]["certificate_id"] == "block_evaluation_does_not_determine_integral_source_type"
     assert "source SNF\t(1^23,2,6,12)\t(1^21,2,4^3,12)\tdifferent\tVERIFIED" in table
+    assert "proved by Hilbert-Burch plus regular quartic section" in table
     assert "source-to-evaluation chain map\tUNKNOWN\tUNKNOWN\tnot constructed\tUNKNOWN" in table
     assert scope["required_geometric_outputs"]["claim_boundaries"]["source_to_evaluation_chain_map"] == "UNKNOWN"
