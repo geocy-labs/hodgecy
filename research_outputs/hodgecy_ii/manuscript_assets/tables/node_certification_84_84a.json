@@ -1,0 +1,32 @@
+[
+  {
+    "G1": "VERIFIED",
+    "G2": "VERIFIED",
+    "arrangement": "84",
+    "block_jacobian_containment": "VERIFIED",
+    "block_scheme": "VERIFIED",
+    "block_scheme_hash": "428406a6d72603cea07594fbbeac4aacdd35ed7437a203a77751d7e16a6b5eb7",
+    "defect": "UNKNOWN",
+    "ordinary_node_promotion": "UNKNOWN",
+    "ordinary_node_verified": "UNKNOWN",
+    "perturbation_polynomial": "FROZEN_EXACT",
+    "predicted_blocks": 28,
+    "predicted_degree": 112,
+    "saturated_jacobian_ideal": "UNKNOWN"
+  },
+  {
+    "G1": "VERIFIED",
+    "G2": "VERIFIED",
+    "arrangement": "84a",
+    "block_jacobian_containment": "VERIFIED",
+    "block_scheme": "VERIFIED",
+    "block_scheme_hash": "3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98",
+    "defect": "UNKNOWN",
+    "ordinary_node_promotion": "UNKNOWN",
+    "ordinary_node_verified": "UNKNOWN",
+    "perturbation_polynomial": "FROZEN_EXACT",
+    "predicted_blocks": 28,
+    "predicted_degree": 112,
+    "saturated_jacobian_ideal": "UNKNOWN"
+  }
+]

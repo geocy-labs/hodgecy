@@ -61,9 +61,18 @@ from .singularities import (
     unique_projective_points,
 )
 from .symmetry import GroupActionPayload, GroupPayload, QuotientPayload
+from .verified_node_blocks import (
+    CertificateStep,
+    NodeBlockCertification,
+    PredictedNodeBlock,
+    build_node_block_certification,
+    disjointness_certificate,
+    promotion_from_equal_length_subscheme,
+)
 
 __all__ = [
     "ClassicalDefectResult",
+    "CertificateStep",
     "CompletenessStatus",
     "CriticalDegreeResult",
     "DefectConvention",
@@ -82,8 +91,10 @@ __all__ = [
     "HilbertFunctionValue",
     "IdealComparisonState",
     "IdealSource",
+    "NodeBlockCertification",
     "PointClassification",
     "PointSingularityCertificate",
+    "PredictedNodeBlock",
     "ProjectiveSchemeIdeal",
     "ProjectiveHypersurface",
     "ProjectivePoint",
@@ -94,6 +105,7 @@ __all__ = [
     "begin_defect_run",
     "begin_hilbert_run",
     "begin_node_geometry_run",
+    "build_node_block_certification",
     "certify_double_cover_odp",
     "classify_affine_hypersurface_point",
     "classify_projective_hypersurface_point",
@@ -103,6 +115,7 @@ __all__ = [
     "count_standard_monomials",
     "cross_check_evaluation_methods",
     "defect_firewall",
+    "disjointness_certificate",
     "evaluation_from_hilbert",
     "evaluation_from_points",
     "fibration_rows",
@@ -117,6 +130,7 @@ __all__ = [
     "persist_hilbert_table",
     "point_ideal",
     "projective_source_dimension",
+    "promotion_from_equal_length_subscheme",
     "persist_singular_scheme_result",
     "resolve_critical_degree",
     "unknown_classical_defect_result",

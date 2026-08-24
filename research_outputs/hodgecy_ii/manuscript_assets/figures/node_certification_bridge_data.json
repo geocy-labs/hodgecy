@@ -1,0 +1,33 @@
+{
+  "arrangements": [
+    "84",
+    "84a"
+  ],
+  "schema": "hodgecy_ii_node_certification_bridge_figure.v1",
+  "stages": [
+    {
+      "stage": "G1/G2",
+      "status": "VERIFIED"
+    },
+    {
+      "stage": "28 reduced blocks",
+      "status": "VERIFIED"
+    },
+    {
+      "stage": "disjoint degree 112 block scheme",
+      "status": "VERIFIED"
+    },
+    {
+      "stage": "Jacobian containment",
+      "status": "VERIFIED"
+    },
+    {
+      "stage": "saturated Jacobian ideal",
+      "status": "UNKNOWN"
+    },
+    {
+      "stage": "ordinary-node promotion",
+      "status": "UNKNOWN"
+    }
+  ]
+}

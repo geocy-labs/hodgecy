@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="270" viewBox="0 0 940 270">
+<rect width="100%" height="100%" fill="#ffffff" />
+<text x="40" y="42" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#111">Figure II.3. Node-block certification bridge</text>
+<text x="40" y="66" font-family="Arial, sans-serif" font-size="13" fill="#444">84 and 84a stop at saturated Jacobian ideal: exact promotion remains UNKNOWN</text>
+<rect x="40" y="90" width="140" height="72" rx="6" fill="#dff3ea" stroke="#1c7c54" stroke-width="1.5" />
+<text x="110.0" y="122" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#111">G1/G2</text>
+<text x="110.0" y="144" font-family="Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#1c7c54">VERIFIED</text>
+<line x1="184" y1="126" x2="202" y2="126" stroke="#555" stroke-width="1.2" />
+<polygon points="202,126 194,121 194,131" fill="#555" />
+<rect x="190" y="90" width="140" height="72" rx="6" fill="#dff3ea" stroke="#1c7c54" stroke-width="1.5" />
+<text x="260.0" y="122" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#111">28 reduced blocks</text>
+<text x="260.0" y="144" font-family="Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#1c7c54">VERIFIED</text>
+<line x1="334" y1="126" x2="352" y2="126" stroke="#555" stroke-width="1.2" />
+<polygon points="352,126 344,121 344,131" fill="#555" />
+<rect x="340" y="90" width="140" height="72" rx="6" fill="#dff3ea" stroke="#1c7c54" stroke-width="1.5" />
+<text x="410.0" y="122" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#111">disjoint degree 112 block scheme</text>
+<text x="410.0" y="144" font-family="Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#1c7c54">VERIFIED</text>
+<line x1="484" y1="126" x2="502" y2="126" stroke="#555" stroke-width="1.2" />
+<polygon points="502,126 494,121 494,131" fill="#555" />
+<rect x="490" y="90" width="140" height="72" rx="6" fill="#dff3ea" stroke="#1c7c54" stroke-width="1.5" />
+<text x="560.0" y="122" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#111">Jacobian containment</text>
+<text x="560.0" y="144" font-family="Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#1c7c54">VERIFIED</text>
+<line x1="634" y1="126" x2="652" y2="126" stroke="#555" stroke-width="1.2" />
+<polygon points="652,126 644,121 644,131" fill="#555" />
+<rect x="640" y="90" width="140" height="72" rx="6" fill="#fff0c8" stroke="#9a6a00" stroke-width="1.5" />
+<text x="710.0" y="122" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#111">saturated Jacobian ideal</text>
+<text x="710.0" y="144" font-family="Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#9a6a00">UNKNOWN</text>
+<line x1="784" y1="126" x2="802" y2="126" stroke="#555" stroke-width="1.2" />
+<polygon points="802,126 794,121 794,131" fill="#555" />
+<rect x="790" y="90" width="140" height="72" rx="6" fill="#fff0c8" stroke="#9a6a00" stroke-width="1.5" />
+<text x="860.0" y="122" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#111">ordinary-node promotion</text>
+<text x="860.0" y="144" font-family="Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#9a6a00">UNKNOWN</text>
+<text x="40" y="222" font-family="Arial, sans-serif" font-size="12" fill="#555">Exact block scheme and Jacobian containment are repo-native; saturated Jacobian ideal/reducedness requires an unavailable exact CAS certificate.</text>
+</svg>

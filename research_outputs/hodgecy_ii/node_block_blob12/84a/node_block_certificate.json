@@ -1,0 +1,610 @@
+{
+  "arrangement_id": "84a",
+  "backend": {
+    "base_field": "QQ",
+    "external_cas_on_path": {
+      "M2": null,
+      "Singular": null,
+      "sage": null
+    },
+    "python_backend": "sympy",
+    "saturated_jacobian_reproducible_in_current_environment": false,
+    "sympy_version": "1.14.0"
+  },
+  "block_scheme_hash": "3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98",
+  "blocker": "No Singular/Sage/Macaulay2 executable is available on PATH, and SymPy does not provide a reliable exact saturated Jacobian ideal/degree/reducedness certificate for this projective zero-scheme.",
+  "blocks": [
+    {
+      "block_id": "84a:L01:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "-t + x",
+        "t + x",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L01",
+      "parameter_polynomial": "3*u**4 + 2",
+      "planes": [
+        "p1",
+        "p2"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L02:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "-t + x",
+        "-t + y",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L02",
+      "parameter_polynomial": "8*u**4 + u**3 + 3",
+      "planes": [
+        "p1",
+        "p3"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L03:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "-t + x",
+        "t + y",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L03",
+      "parameter_polynomial": "8*u**4 - u**3 + 3",
+      "planes": [
+        "p1",
+        "p4"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L04:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "-t + x",
+        "-t + z",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L04",
+      "parameter_polynomial": "9*u**4 + u**3 + 2",
+      "planes": [
+        "p1",
+        "p5"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L05:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "-t + x",
+        "t + z",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L05",
+      "parameter_polynomial": "9*u**4 - u**3 + 2",
+      "planes": [
+        "p1",
+        "p6"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L06:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "-t + x",
+        "-t + x + y + z",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L06",
+      "parameter_polynomial": "6*u**4 - u**2 + 5",
+      "planes": [
+        "p1",
+        "p7"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L07:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "-t + x",
+        "-3*t + x + y + z",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L07",
+      "parameter_polynomial": "38*u**4 - 62*u**3 + 47*u**2 - 16*u + 5",
+      "planes": [
+        "p1",
+        "p8"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L08:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "t + x",
+        "-t + y",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L08",
+      "parameter_polynomial": "8*u**4 - u**3 + 3",
+      "planes": [
+        "p2",
+        "p3"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L09:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "t + x",
+        "t + y",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L09",
+      "parameter_polynomial": "8*u**4 + u**3 + 3",
+      "planes": [
+        "p2",
+        "p4"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L10:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "t + x",
+        "-t + z",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L10",
+      "parameter_polynomial": "9*u**4 - u**3 + 2",
+      "planes": [
+        "p2",
+        "p5"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L11:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "t + x",
+        "t + z",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L11",
+      "parameter_polynomial": "9*u**4 + u**3 + 2",
+      "planes": [
+        "p2",
+        "p6"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L12:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "t + x",
+        "-t + x + y + z",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L12",
+      "parameter_polynomial": "38*u**4 - 66*u**3 + 49*u**2 - 16*u + 5",
+      "planes": [
+        "p2",
+        "p7"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L13:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "t + x",
+        "-3*t + x + y + z",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L13",
+      "parameter_polynomial": "518*u**4 - 516*u**3 + 193*u**2 - 32*u + 5",
+      "planes": [
+        "p2",
+        "p8"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L14:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "-t + y",
+        "t + y",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L14",
+      "parameter_polynomial": "3*u**4 + 1",
+      "planes": [
+        "p3",
+        "p4"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L15:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "-t + y",
+        "-t + z",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L15",
+      "parameter_polynomial": "10*u**4 + u**3 + 1",
+      "planes": [
+        "p3",
+        "p5"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L16:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "-t + y",
+        "t + z",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L16",
+      "parameter_polynomial": "10*u**4 - u**3 + 1",
+      "planes": [
+        "p3",
+        "p6"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L17:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "-t + y",
+        "-t + x + y + z",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L17",
+      "parameter_polynomial": "7*u**4 - u**2 + 4",
+      "planes": [
+        "p3",
+        "p7"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L18:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "-t + y",
+        "-3*t + x + y + z",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L18",
+      "parameter_polynomial": "23*u**4 - 30*u**3 + 23*u**2 - 8*u + 4",
+      "planes": [
+        "p3",
+        "p8"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L19:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "t + y",
+        "-t + z",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L19",
+      "parameter_polynomial": "10*u**4 - u**3 + 1",
+      "planes": [
+        "p4",
+        "p5"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L20:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "t + y",
+        "t + z",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L20",
+      "parameter_polynomial": "10*u**4 + u**3 + 1",
+      "planes": [
+        "p4",
+        "p6"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L21:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "t + y",
+        "-t + x + y + z",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L21",
+      "parameter_polynomial": "23*u**4 - 34*u**3 + 25*u**2 - 8*u + 4",
+      "planes": [
+        "p4",
+        "p7"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L22:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "t + y",
+        "-3*t + x + y + z",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L22",
+      "parameter_polynomial": "263*u**4 - 260*u**3 + 97*u**2 - 16*u + 4",
+      "planes": [
+        "p4",
+        "p8"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L23:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "-t + z",
+        "t + z",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L23",
+      "parameter_polynomial": "2*u**4 + 1",
+      "planes": [
+        "p5",
+        "p6"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L24:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "-t + z",
+        "-t + x + y + z",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L24",
+      "parameter_polynomial": "8*u**4 - u**2 + 3",
+      "planes": [
+        "p5",
+        "p7"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L25:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "-t + z",
+        "-3*t + x + y + z",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L25",
+      "parameter_polynomial": "24*u**4 - 30*u**3 + 23*u**2 - 8*u + 3",
+      "planes": [
+        "p5",
+        "p8"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L26:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "t + z",
+        "-t + x + y + z",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L26",
+      "parameter_polynomial": "24*u**4 - 34*u**3 + 25*u**2 - 8*u + 3",
+      "planes": [
+        "p6",
+        "p7"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L27:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "t + z",
+        "-3*t + x + y + z",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L27",
+      "parameter_polynomial": "264*u**4 - 260*u**3 + 97*u**2 - 16*u + 3",
+      "planes": [
+        "p6",
+        "p8"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    },
+    {
+      "block_id": "84a:L28:Q0",
+      "degree": 4,
+      "ideal_generators": [
+        "-t + x + y + z",
+        "-3*t + x + y + z",
+        "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
+      ],
+      "line_id": "L28",
+      "parameter_polynomial": "4*u**4 + 4*u**3 + 6*u**2 + 4*u + 3",
+      "planes": [
+        "p7",
+        "p8"
+      ],
+      "reduced": true,
+      "status": "VERIFIED"
+    }
+  ],
+  "certificate_steps": [
+    {
+      "blocker": null,
+      "certificate_type": "predicted_node_block",
+      "data": {
+        "block_count": 28,
+        "expected_block_count": 28
+      },
+      "evidence": "The exact 28 double-line blocks are B_ij = V(l_i, l_j, Q0).",
+      "status": "VERIFIED"
+    },
+    {
+      "blocker": null,
+      "certificate_type": "block_squarefree",
+      "data": {
+        "total_blocks": 28,
+        "verified_blocks": 28
+      },
+      "evidence": "For every double line, Q0 restricts to a squarefree degree-4 polynomial over QQ.",
+      "status": "VERIFIED"
+    },
+    {
+      "blocker": null,
+      "certificate_type": "block_disjointness",
+      "data": {
+        "checked_pairs": 378,
+        "meetings_excluded_by_G1": 198,
+        "skew_pairs": 180
+      },
+      "evidence": "Every pair of predicted blocks is either skew or meets only at an arrangement multiple point where Q0 is nonzero.",
+      "status": "VERIFIED"
+    },
+    {
+      "blocker": null,
+      "certificate_type": "global_block_scheme",
+      "data": {
+        "degree": 112,
+        "g1_violations": [],
+        "reduced": true
+      },
+      "evidence": "The disjoint union of 28 reduced degree-4 blocks is reduced of degree 112.",
+      "status": "VERIFIED"
+    },
+    {
+      "blocker": "No Singular/Sage/Macaulay2 executable is available on PATH, and SymPy does not provide a reliable exact saturated Jacobian ideal/degree/reducedness certificate for this projective zero-scheme.",
+      "certificate_type": "saturated_jacobian_ideal",
+      "data": null,
+      "evidence": "The exact saturated Jacobian ideal was not recomputed or frozen in this environment.",
+      "status": "UNKNOWN"
+    },
+    {
+      "blocker": null,
+      "certificate_type": "block_jacobian_containment",
+      "data": {
+        "checked_blocks": 28,
+        "checked_reductions": 140
+      },
+      "evidence": "F_A and all first partial derivatives reduce to zero modulo each exact block ideal (linear_i, linear_j, Q0).",
+      "status": "VERIFIED"
+    },
+    {
+      "blocker": "No Singular/Sage/Macaulay2 executable is available on PATH, and SymPy does not provide a reliable exact saturated Jacobian ideal/degree/reducedness certificate for this projective zero-scheme.",
+      "certificate_type": "equal_degree_scheme_identification",
+      "data": {
+        "predicted_block_degree": 112
+      },
+      "evidence": "Equal-degree identification is blocked until the saturated Jacobian degree/reducedness certificate is reproduced.",
+      "status": "UNKNOWN"
+    },
+    {
+      "blocker": "Requires equal-degree scheme identification.",
+      "certificate_type": "theorem_backed_local_A1",
+      "data": null,
+      "evidence": "The local A1 theorem applies after exact singular-scheme equality is certified.",
+      "status": "UNKNOWN"
+    },
+    {
+      "blocker": "Requires theorem_backed_local_A1.",
+      "certificate_type": "theorem_backed_double_cover_ODP",
+      "data": null,
+      "evidence": "The double-cover ODP promotion applies after local A1 is certified at the frozen node ideal.",
+      "status": "UNKNOWN"
+    },
+    {
+      "blocker": "No Singular/Sage/Macaulay2 executable is available on PATH, and SymPy does not provide a reliable exact saturated Jacobian ideal/degree/reducedness certificate for this projective zero-scheme.",
+      "certificate_type": "frozen_node_ideal",
+      "data": null,
+      "evidence": "Only the predicted block scheme is frozen; the final saturated node ideal is not.",
+      "status": "UNKNOWN"
+    },
+    {
+      "blocker": "No Singular/Sage/Macaulay2 executable is available on PATH, and SymPy does not provide a reliable exact saturated Jacobian ideal/degree/reducedness certificate for this projective zero-scheme.",
+      "certificate_type": "ordinary_node_promotion",
+      "data": null,
+      "evidence": "Ambient saturated Jacobian degree is unavailable.",
+      "status": "UNKNOWN"
+    }
+  ],
+  "epsilon": "1",
+  "node_ideal_hash": null,
+  "perturbation_polynomial": "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t",
+  "promotion_status": "UNKNOWN",
+  "schema": "hodgecy_ii_verified_node_blocks.v1",
+  "smoothing_polynomial_hash": "e43e2ff8a5bad3418cea1f30b4a521517f50986f7c7fa5f7b4d4e102f7dcc59d",
+  "validation_status": {
+    "G1": "VERIFIED",
+    "G2": "VERIFIED",
+    "block_jacobian_containment": "VERIFIED",
+    "block_scheme": "VERIFIED",
+    "defect": "UNKNOWN",
+    "degree112": "HISTORICAL_CERTIFIED",
+    "ordinary_node_verified": "UNKNOWN",
+    "perturbation_polynomial": "FROZEN_EXACT",
+    "saturated_jacobian_ideal": "UNKNOWN",
+    "source_assembly": "VERIFIED"
+  }
+}

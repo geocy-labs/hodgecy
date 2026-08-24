@@ -11,6 +11,40 @@
       "full equivariant population classification"
     ]
   },
+  "geometric_status_blob_12": {
+    "84": {
+      "block_scheme_hash": "428406a6d72603cea07594fbbeac4aacdd35ed7437a203a77751d7e16a6b5eb7",
+      "promotion_status": "UNKNOWN",
+      "validation_status": {
+        "G1": "VERIFIED",
+        "G2": "VERIFIED",
+        "block_jacobian_containment": "VERIFIED",
+        "block_scheme": "VERIFIED",
+        "defect": "UNKNOWN",
+        "degree112": "HISTORICAL_CERTIFIED",
+        "ordinary_node_verified": "UNKNOWN",
+        "perturbation_polynomial": "FROZEN_EXACT",
+        "saturated_jacobian_ideal": "UNKNOWN",
+        "source_assembly": "VERIFIED"
+      }
+    },
+    "84a": {
+      "block_scheme_hash": "3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98",
+      "promotion_status": "UNKNOWN",
+      "validation_status": {
+        "G1": "VERIFIED",
+        "G2": "VERIFIED",
+        "block_jacobian_containment": "VERIFIED",
+        "block_scheme": "VERIFIED",
+        "defect": "UNKNOWN",
+        "degree112": "HISTORICAL_CERTIFIED",
+        "ordinary_node_verified": "UNKNOWN",
+        "perturbation_polynomial": "FROZEN_EXACT",
+        "saturated_jacobian_ideal": "UNKNOWN",
+        "source_assembly": "VERIFIED"
+      }
+    }
+  },
   "hodgecy_version": "1.0.0",
   "nonclaims": {
     "census_membership": "Census membership is not theorem-level geometric validation.",
@@ -23,7 +57,7 @@
     "no_hodge_atom": "Blob 11 constructs no Hodge atom spectrum.",
     "no_node_ideal": "Blob 11 creates no node ideal.",
     "no_node_relations": "Blob 11 asserts no node relation or source-to-node morphism.",
-    "no_odp_promotion": "Blob 11 performs no ODP promotion.",
+    "no_odp_promotion": "Blob 12 verifies the predicted block scheme and Jacobian containment for 84/84a, but ordinary-node promotion remains UNKNOWN without a reproducible saturated Jacobian ideal.",
     "projective_equivalence": "Equal source signatures do not prove projective equivalence.",
     "rational_vs_integral": "Same rational source type does not imply same integral source type."
   },
@@ -47,6 +81,11 @@
   ],
   "required_geometric_outputs": {
     "blob_11": "none; scope freeze and source-fidelity census assets only",
+    "blob_12": {
+      "blocked_step": "saturated_jacobian_ideal",
+      "ordinary_node_promotion": "UNKNOWN",
+      "strongest_certified_stage": "exact reduced disjoint degree-112 predicted block scheme with Jacobian containment"
+    },
     "later_blobs": [
       "ordinary_node_verified",
       "defect_verified",
