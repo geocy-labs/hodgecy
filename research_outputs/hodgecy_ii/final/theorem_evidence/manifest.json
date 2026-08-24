@@ -1,4 +1,7 @@
 {
+  "extra_evidence": [
+    "research_outputs/hodgecy_ii/final/theorem_evidence/hilbert_burch_block_theorem.json"
+  ],
   "manifests": [
     "research_outputs/hodgecy_ii/final/theorem_evidence/84/manifest.json",
     "research_outputs/hodgecy_ii/final/theorem_evidence/84a/manifest.json",

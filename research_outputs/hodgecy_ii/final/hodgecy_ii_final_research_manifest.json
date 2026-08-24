@@ -21,18 +21,19 @@
     "research_outputs/hodgecy_ii/complete_fidelity_pairs_and_sets.tsv": "b43085f490adf5ab9ef5d6f480ebedc789d1890f49ab53769bf031309b78e6db",
     "research_outputs/hodgecy_ii/final/theorem_evidence/block_evaluation/block_evaluation_comparison_84_84a.json": "63a038b3274073f7827c57b8ce21b4f4acf46818ec6ddebf7891337af837df4a",
     "research_outputs/hodgecy_ii/final/theorem_evidence/block_geometry/block_geometry_certification_84_84a.json": "319071bb03ab9710ae07aad6b44253c6ead5a193fd0779a947a8fd1d2ec3c9cc",
+    "research_outputs/hodgecy_ii/final/theorem_evidence/hilbert_burch_block_theorem.json": "6f6edade281bd92a5c64d2873074fa2826f88189fa462a08a6b00fbffe9e9e26",
     "research_outputs/hodgecy_ii/final/theorem_evidence/source_block_comparison/source_block_evaluation_comparison_84_84a.json": "6d65a86e0feb423932adc0c4baf1e42cc5a90d08848fd2f35282f14668a0ac0a",
     "research_outputs/hodgecy_ii/final/theorem_evidence/source_lattice/source_lattice_comparison_84_84a.json": "0382becfdeaff86161368dd3bdc0a2a59c33a136023ffff6cdacbe9fd831685a"
   },
   "primary_output_hashes": {
-    "research_outputs/hodgecy_ii/final/hodgecy_ii_final_results.json": "3b89a7b2d066e016ed5bb194bbc33e7a337e4dde47a623baf21285f6dcd41356"
+    "research_outputs/hodgecy_ii/final/hodgecy_ii_final_results.json": "1cc072ebfed1f2a5172fc3c3b5210b55e935f1f3b3f401546fe8782f5b86ef39"
   },
   "primary_output_references": {
     "research_outputs/hodgecy_ii/manuscript_assets/manifest/hodgecy_ii_asset_manifest.json": "referenced without hash to avoid a circular manifest dependency"
   },
   "python_version": "3.12.10",
   "release_tag": null,
-  "result_summary_hash": "3b89a7b2d066e016ed5bb194bbc33e7a337e4dde47a623baf21285f6dcd41356",
+  "result_summary_hash": "1cc072ebfed1f2a5172fc3c3b5210b55e935f1f3b3f401546fe8782f5b86ef39",
   "schema": "hodgecy_ii_final_computational_state.v1",
   "scope_version": "hodgecy_ii_scope.v1",
   "test_counts": {

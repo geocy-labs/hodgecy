@@ -2,6 +2,10 @@
   "block_evaluation_comparison": {
     "path": "research_outputs/hodgecy_ii/final/theorem_evidence/block_evaluation/block_evaluation_comparison_84_84a.json"
   },
+  "hilbert_burch_block_theorem": {
+    "path": "research_outputs/hodgecy_ii/final/theorem_evidence/hilbert_burch_block_theorem.json",
+    "status": "PROVED_WITH_STATED_HYPOTHESES"
+  },
   "members": [
     "84",
     "84a"

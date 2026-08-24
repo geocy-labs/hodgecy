@@ -26,6 +26,7 @@ REQUIRED_INPUTS = [
     "research_outputs/hodgecy_ii/final/theorem_evidence/source_lattice/source_lattice_comparison_84_84a.json",
     "research_outputs/hodgecy_ii/final/theorem_evidence/block_geometry/block_geometry_certification_84_84a.json",
     "research_outputs/hodgecy_ii/final/theorem_evidence/block_evaluation/block_evaluation_comparison_84_84a.json",
+    "research_outputs/hodgecy_ii/final/theorem_evidence/hilbert_burch_block_theorem.json",
     "research_outputs/hodgecy_ii/final/theorem_evidence/source_block_comparison/source_block_evaluation_comparison_84_84a.json",
 ]
 

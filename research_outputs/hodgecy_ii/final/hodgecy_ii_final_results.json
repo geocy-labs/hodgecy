@@ -26,10 +26,10 @@
         "sha256": "90b1a5fdc9f2d71564a92da054adc98f6f1ab625c27ba009d4458395d85f6d76"
       },
       "research_outputs/hodgecy_ii/final/hodgecy_ii_theorem_candidates.json": {
-        "sha256": "48b21427c4537271a4c018562ee8f6edb07cc81b9498047021a6f681c290cdfd"
+        "sha256": "aabba2e8800be34626ff2605be800794a897befbfe60d27a184b7910d1948a08"
       },
       "research_outputs/hodgecy_ii/final/hodgecy_ii_theorem_candidates.md": {
-        "sha256": "5158106c61ff4500534b1170435c3be6d32936477b54baa71a629dcc9c5d85d6"
+        "sha256": "235a3d3193c17a8e2e582801e1631497445a55f2da0d74962ca1d305e21ed191"
       },
       "research_outputs/hodgecy_ii/final/representative_candidate_statuses.json": {
         "sha256": "03f3d56299567a04ebb8702776f2ad1dfe5e4dc2218b8a78a2b7a5e81207aa2a"
@@ -38,7 +38,7 @@
         "sha256": "ccdd374ebe6f7e80982e8ad1a0b9bf64eda6a2b7e1d5c1cdd66bb1eeec849151"
       },
       "research_outputs/hodgecy_ii/final/reproduction/deterministic_asset_check.json": {
-        "sha256": "f4dfe396336ae8dadc6f07ebe2abace595661f498bd13496b669c75bb2deaf62"
+        "sha256": "e3fa6dbef500aeafc8776e95ddfec1f6fda39e3e9713bc998e1c4b0f5dd7066c"
       },
       "research_outputs/hodgecy_ii/final/reproduction/fresh_store_reproduction.json": {
         "sha256": "c39dfe3115a3dbc37000bd6655e04f3eb31a7f1bf091b0b3b8d9ad89115d47ea"
@@ -53,10 +53,10 @@
         "sha256": "5292c7df1ff9879aa5903f9716f97db87a214007df297766f55a3c59c61dcd9e"
       },
       "research_outputs/hodgecy_ii/final/theorem_evidence/manifest.json": {
-        "sha256": "6e53c702962ee216dfd2adde6b38280a6ebb019372831ff55041b0588640ed5f"
+        "sha256": "daef127d442b4d5906eb6e62010dd83cb45bec5d9e8d2de0933c9f49c4d58634"
       },
       "research_outputs/hodgecy_ii/final/theorem_evidence/pair_comparison/manifest.json": {
-        "sha256": "7ea8b9c0a59c2b7ebb139996c511356a45079294f7691e77bf7cfd8c051ec107"
+        "sha256": "4693e1b57123213a5e457bfba7d4c4b558988c7dc324d3c045d09a8423cac04e"
       },
       "research_outputs/hodgecy_ii/manuscript_assets/figures/final_result_hierarchy.svg": {
         "sha256": "0e6b8b30c150c75b643c79e0481ae4c5868f343f5be763b401dd02701b0c74d6"
@@ -71,28 +71,28 @@
         "sha256": "9fb631a6a242c9063b1a61ddb80006761726c785ff845ebdaa99b46f608ca74b"
       },
       "research_outputs/hodgecy_ii/manuscript_assets/manifest/final_manuscript_table_inventory.json": {
-        "sha256": "c2a90752078b51a98e2a743b20ca8602422a1d1cfbd5396d17b46d2d0019295e"
+        "sha256": "e487f9d80d1543aea0e807aedc701d714895950027da4267851f487854b610c3"
       },
       "research_outputs/hodgecy_ii/manuscript_assets/manifest/final_manuscript_table_inventory.md": {
-        "sha256": "138b43d754927c0cef888561ee6e91dc2c3029b445f978827f475be6757e3820"
+        "sha256": "436366e5b04b9d55a0937afb8b6496344f97ccfa8e040e94eb9856107da00398"
       },
       "research_outputs/hodgecy_ii/manuscript_assets/manifest/hodgecy_iii_handoff.json": {
         "sha256": "294b2c277e94098143e234ef2b9e73f300d54d41ca78ccc2b6f550396d90b349"
       },
       "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.csv": {
-        "sha256": "f654c65e833fc88acb43561c40814f3cc7b55da58464ac6c677f1709037dbd72"
+        "sha256": "4052d1c349980d4912fdbe90bd2f21d6d8ed9151322780d056b467211f0aa312"
       },
       "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.json": {
-        "sha256": "33ac56c90c8f80872810ce8cf58e664fe27da6f2edd86da9ff25c3b4e7ff0877"
+        "sha256": "2f5e681710162bca5e93b47a02a1885023f63b68f92f7b0e4d80221dab66dad2"
       },
       "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.md": {
-        "sha256": "a057bdc28a2a8980f9025de54e607a8d0c1ef152ee55e47d4abd6993161d0279"
+        "sha256": "d53b0aae8a51f23e569a635c1501fa3d91364fe3d1080aaf0b3f15868d2fe0d7"
       },
       "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.tex": {
-        "sha256": "64d4bd7b87e689e853e53aa899bb0dd13278c93281329850cddc9f9e1cca0311"
+        "sha256": "8769d651c31720697e1cecca123fa5741390525f9abd57db0f5ba635e0f90ef0"
       },
       "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.tsv": {
-        "sha256": "a35ef7fb359da75676ef9a75b5d0a41a8b1302ae55060514fa730466d1454263"
+        "sha256": "82bf3d134a9afcf17b05406e3ebc90becebc83524e014e3d6e3d62d2adeb7974"
       }
     },
     "schema": "hodgecy_ii_final_artifact_manifest.v1"

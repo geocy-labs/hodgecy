@@ -30,6 +30,7 @@ SOURCE_LATTICE_PATH = THEOREM_EVIDENCE_ROOT / "source_lattice" / "source_lattice
 BLOCK_GEOMETRY_PATH = THEOREM_EVIDENCE_ROOT / "block_geometry" / "block_geometry_certification_84_84a.json"
 BLOCK_EVALUATION_PATH = THEOREM_EVIDENCE_ROOT / "block_evaluation" / "block_evaluation_comparison_84_84a.json"
 SOURCE_BLOCK_COMPARISON_PATH = THEOREM_EVIDENCE_ROOT / "source_block_comparison" / "source_block_evaluation_comparison_84_84a.json"
+HILBERT_BURCH_PATH = THEOREM_EVIDENCE_ROOT / "hilbert_burch_block_theorem.json"
 DEPRECATED_ARTIFACT_PREFIXES = (
     "research_outputs/hodgecy_ii/baseline/",
     "research_outputs/hodgecy_ii/defect_blob7/",
@@ -221,7 +222,7 @@ def git_output(*args: str) -> str | None:
 
 
 def load_canonical() -> dict[str, Any]:
-    return {
+    data = {
         "census_summary": read_json(DATA_ROOT / "fidelity_census_summary.json"),
         "census_reconciled": read_json(DATA_ROOT / "fidelity_census_reconciled.json"),
         "asset_manifest": read_json(MANIFEST_ROOT / "hodgecy_ii_asset_manifest.json"),
@@ -232,6 +233,9 @@ def load_canonical() -> dict[str, Any]:
         "source_evaluation": read_json(SOURCE_BLOCK_COMPARISON_PATH),
         "source_lattice": read_json(SOURCE_LATTICE_PATH),
     }
+    if HILBERT_BURCH_PATH.exists():
+        data["hilbert_burch"] = read_json(HILBERT_BURCH_PATH)
+    return data
 
 
 def question_statuses(data: dict[str, Any]) -> list[dict[str, Any]]:
@@ -252,12 +256,34 @@ def question_statuses(data: dict[str, Any]) -> list[dict[str, Any]]:
 
 def theorem_candidates(data: dict[str, Any]) -> list[dict[str, Any]]:
     summary = data["census_summary"]
-    return [
+    candidates = [
         {"result_id": "A", "title": "Fidelity census context", "status": "CONTEXT_READY", "claim": "The current HodgeCY fidelity census contains 456 processed records and 114 nontrivial pairs/sets.", "evidence": {"processed": summary["total_processed"], "nontrivial_sets": summary["nontrivial_pairs_sets"], "pairs": summary["pairs"], "triples": summary["triples"], "larger_sets": summary["larger_sets"]}},
         {"result_id": "B", "title": "Integral source separation", "status": "VERIFIED", "claim": "84 and 84a share local, Hodge, and rational source data but have nonisomorphic integral source assembly complexes.", "evidence": {"SNF_84": "(1^23,2,6,12)", "SNF_84a": "(1^21,2,4,4,4,12)", "source": "final source-lattice comparison"}},
         {"result_id": "C", "title": "Exact block-evaluation collapse", "status": "VERIFIED", "claim": "The verified reduced degree-112 block schemes have identical Hilbert functions through degree 8 and equal block-evaluation deficiency 7.", "evidence": {"H_B_0_8": [1, 4, 10, 20, 34, 52, 74, 92, 105], "H_B_8": 105, "epsilon_B": 7, "source": "final block-evaluation certificate"}},
         {"result_id": "D", "title": "Block evaluation does not determine integral source type", "status": "VERIFIED_ON_WITNESS_PAIR", "claim": "On 84/84a, exact block-Hilbert/evaluation data through degree 8 do not determine integral source assembly type.", "evidence": {"same_block_evaluation_signature": True, "different_integral_source_smith_type": True, "source": "final source-versus-block comparison"}, "nonclaims": ["No reverse global determinacy claim.", "No source-to-evaluation chain map."]},
     ]
+    hilbert_burch = data.get("hilbert_burch")
+    if hilbert_burch:
+        candidates.append(
+            {
+                "result_id": "E",
+                "title": "Hilbert-Burch block-profile explanation",
+                "status": hilbert_burch["status"],
+                "claim": "The shared 84/84a verified block Hilbert profile and degree-8 block-evaluation deficiency are structurally explained by the eight-plane line-skeleton Hilbert-Burch resolution and regular quartic section.",
+                "evidence": {
+                    "source": "final Hilbert-Burch block theorem evidence",
+                    "hilbert_series": "(1-t^4)(1-8t^7+7t^8)/(1-t)^4",
+                    "H_B_0_10": [1, 4, 10, 20, 34, 52, 74, 92, 105, 112, 112],
+                    "H1_I_B_8": 7,
+                },
+                "nonclaims": [
+                    "No classical defect promotion.",
+                    "No full singular-scheme equality claim.",
+                    "No source-to-evaluation morphism.",
+                ],
+            }
+        )
+    return candidates
 
 
 def conditional_results() -> list[dict[str, Any]]:
@@ -332,6 +358,16 @@ def evidence_matrix_rows() -> list[dict[str, str]]:
         ("integral evaluation lattice", "OPEN", "Not constructed."),
         ("LMHS/Hodge-atom interpretation", "NOT_CLAIMED", "No LMHS/MHM or complete Hodge-atom spectrum asserted."),
     ]
+    if HILBERT_BURCH_PATH.exists():
+        rows.extend(
+            [
+                ("84/84a line-skeleton Hilbert-Burch resolution", "PROVED", "0 -> S(-8)^7 -> S(-7)^8 -> I_C -> 0 under verified no-three-planes-on-a-line hypotheses."),
+                ("84/84a quartic regular section", "PROVED", "Q restricts to a nonzero squarefree quartic on every associated line."),
+                ("structural block Hilbert series", "PROVED", "(1-t^4)(1-8t^7+7t^8)/(1-t)^4 for the verified block scheme."),
+                ("H^1(I_B(8))=7", "PROVED", "Sheaf/evaluation sequence for the verified block scheme."),
+                ("Hilbert-Burch source-to-evaluation map", "NOT_CLAIMED", "Rank-seven syzygy contribution explains dimension only; no source map is constructed."),
+            ]
+        )
     return [{"statement": statement, "status": status, "basis": basis} for statement, status, basis in rows]
 
 
@@ -487,8 +523,11 @@ def theorem_evidence_bundle(data: dict[str, Any]) -> list[Path]:
         "block_evaluation_comparison": {"path": rel(BLOCK_EVALUATION_PATH)},
         "non_determination_certificate": data["source_evaluation"]["non_determination_certificate"]["certificate_id"],
     }
+    if data.get("hilbert_burch"):
+        pair["hilbert_burch_block_theorem"] = {"path": rel(HILBERT_BURCH_PATH), "status": data["hilbert_burch"]["status"]}
     paths.append(write_json(FINAL_ROOT / "theorem_evidence" / "pair_comparison" / "manifest.json", pair))
-    paths.append(write_json(FINAL_ROOT / "theorem_evidence" / "manifest.json", {"schema": "hodgecy_ii_theorem_evidence_bundle.v1", "members": ["84", "84a"], "manifests": [rel(path) for path in paths]}))
+    extra_evidence = [rel(HILBERT_BURCH_PATH)] if data.get("hilbert_burch") else []
+    paths.append(write_json(FINAL_ROOT / "theorem_evidence" / "manifest.json", {"schema": "hodgecy_ii_theorem_evidence_bundle.v1", "members": ["84", "84a"], "manifests": [rel(path) for path in paths], "extra_evidence": extra_evidence}))
     return paths
 
 
@@ -527,6 +566,8 @@ def final_research_manifest(result_summary_path: Path, asset_manifest_path: Path
         BLOCK_EVALUATION_PATH,
         SOURCE_BLOCK_COMPARISON_PATH,
     ]
+    if HILBERT_BURCH_PATH.exists():
+        primary_inputs.append(HILBERT_BURCH_PATH)
     return {
         "schema": "hodgecy_ii_final_computational_state.v1",
         "package_version": HODGECY_VERSION,

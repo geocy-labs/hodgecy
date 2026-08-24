@@ -21,3 +21,8 @@ source-to-evaluation morphism,OPEN,No chain map constructed.
 source-to-vanishing morphism,NOT_CLAIMED,No vanishing-cycle map inferred.
 integral evaluation lattice,OPEN,Not constructed.
 LMHS/Hodge-atom interpretation,NOT_CLAIMED,No LMHS/MHM or complete Hodge-atom spectrum asserted.
+84/84a line-skeleton Hilbert-Burch resolution,PROVED,0 -> S(-8)^7 -> S(-7)^8 -> I_C -> 0 under verified no-three-planes-on-a-line hypotheses.
+84/84a quartic regular section,PROVED,Q restricts to a nonzero squarefree quartic on every associated line.
+structural block Hilbert series,PROVED,(1-t^4)(1-8t^7+7t^8)/(1-t)^4 for the verified block scheme.
+H^1(I_B(8))=7,PROVED,Sheaf/evaluation sequence for the verified block scheme.
+Hilbert-Burch source-to-evaluation map,NOT_CLAIMED,Rank-seven syzygy contribution explains dimension only; no source map is constructed.

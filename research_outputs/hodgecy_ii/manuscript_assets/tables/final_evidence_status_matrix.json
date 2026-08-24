@@ -108,5 +108,30 @@
     "basis": "No LMHS/MHM or complete Hodge-atom spectrum asserted.",
     "statement": "LMHS/Hodge-atom interpretation",
     "status": "NOT_CLAIMED"
+  },
+  {
+    "basis": "0 -> S(-8)^7 -> S(-7)^8 -> I_C -> 0 under verified no-three-planes-on-a-line hypotheses.",
+    "statement": "84/84a line-skeleton Hilbert-Burch resolution",
+    "status": "PROVED"
+  },
+  {
+    "basis": "Q restricts to a nonzero squarefree quartic on every associated line.",
+    "statement": "84/84a quartic regular section",
+    "status": "PROVED"
+  },
+  {
+    "basis": "(1-t^4)(1-8t^7+7t^8)/(1-t)^4 for the verified block scheme.",
+    "statement": "structural block Hilbert series",
+    "status": "PROVED"
+  },
+  {
+    "basis": "Sheaf/evaluation sequence for the verified block scheme.",
+    "statement": "H^1(I_B(8))=7",
+    "status": "PROVED"
+  },
+  {
+    "basis": "Rank-seven syzygy contribution explains dimension only; no source map is constructed.",
+    "statement": "Hilbert-Burch source-to-evaluation map",
+    "status": "NOT_CLAIMED"
   }
 ]
