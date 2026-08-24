@@ -270,7 +270,7 @@ def test_blob8_source_lattice_reproduces_84_84a_mod2_distinction(tmp_path) -> No
     assert result.summaries["84a"]["rank_Q"] == 26
     assert result.summaries["84"]["rank_mod_2"] == 23
     assert result.summaries["84a"]["rank_mod_2"] == 21
-    assert result.pair_84_source_lattice_first_difference.first_difference == "matrix_hash"
+    assert result.pair_84_source_lattice_first_difference.first_difference == "rank_mod_2"
 
     pair_states = {item.comparison_key: item.state for item in result.pair_84_source_lattice_report.invariant_results}
     assert pair_states["rank_Q"] is ComparisonState.EQUAL
@@ -288,7 +288,7 @@ def test_blob8_source_lattice_reproduces_239_240_241_rational_split(tmp_path) ->
     assert result.summaries["239"]["rank_mod_2"] == 21
     assert result.summaries["240"]["rank_mod_2"] == 23
     assert result.summaries["241"]["rank_mod_2"] == 24
-    assert result.set_239_241_source_lattice_first_difference.first_difference == "matrix_hash"
+    assert result.set_239_241_source_lattice_first_difference.first_difference == "rank_Q"
     assert result.summaries["241"]["legacy_cross_check"]["rank_Q_matches_source_record"] is True
 
 

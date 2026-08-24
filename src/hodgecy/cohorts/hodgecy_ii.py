@@ -85,7 +85,6 @@ DEFECT_BLOB7_INVARIANTS = (
 
 INTEGRAL_LATTICE_BLOB8_INVARIANTS = (
     "matrix_shape",
-    "matrix_hash",
     "rank_Q",
     "rank_mod_2",
     "rank_mod_3",
@@ -96,6 +95,7 @@ INTEGRAL_LATTICE_BLOB8_INVARIANTS = (
     "integral_cokernel_decomposition",
     "cokernel_structure",
     "saturation_index",
+    "matrix_hash",
 )
 
 PAIR_ORDER = HODGE_INVARIANTS + SOURCE_INVARIANTS + tuple(name for name, _ in UNKNOWN_LATER_INVARIANTS)
