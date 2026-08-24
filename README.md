@@ -67,10 +67,17 @@ Generate the HodgeCY II manuscript-facing census assets:
 python scripts/generate_hodgecy_ii_manuscript_assets.py
 ```
 
+Reproduce the final HodgeCY II synthesis package:
+
+```bash
+python scripts/reproduce_hodgecy_ii.py
+```
+
 The generated scope and asset manifests are:
 
 - [HodgeCY II scope](research_outputs/hodgecy_ii/manuscript_assets/manifest/hodgecy_ii_scope.json)
 - [HodgeCY II asset manifest](research_outputs/hodgecy_ii/manuscript_assets/manifest/hodgecy_ii_asset_manifest.json)
+- [HodgeCY II final results](research_outputs/hodgecy_ii/final/hodgecy_ii_final_results.json)
 
 For external production data, configure a data root:
 
@@ -108,6 +115,10 @@ degree `8`, while their verified integral source Smith types differ. This is a
 non-determination certificate at the verified block-scheme level only; no
 source-to-evaluation chain map or integral evaluation lattice is inferred.
 
+The final HodgeCY II synthesis freezes question statuses, theorem candidates,
+conditional results, open problems, manuscript table/figure inventories, and a
+HodgeCY III handoff under [research_outputs/hodgecy_ii/final](research_outputs/hodgecy_ii/final).
+
 Representative controls include `61 / 451`, `84 / 84a`, `452 / 453`,
 `84 / 240`, `84a / 239`, and `239 / 240 / 241`. The generated tables preserve
 the factor-normalization warning for `451` and the deferred exact
@@ -138,6 +149,7 @@ Start with the documentation index:
 - [Node relation complexes](docs/node_relation_complexes.md)
 - [Source-to-node comparison](docs/source_to_node_comparison.md)
 - [Source versus block evaluation](docs/source_block_evaluation_comparison.md)
+- [Reproduce HodgeCY II](docs/reproduce_hodgecy_ii.md)
 
 ## Repository Layout
 
