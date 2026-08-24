@@ -26,6 +26,7 @@ class EvidenceStatus(str, Enum):
 
 class ResultKind(str, Enum):
     SOURCE_ASSEMBLY = "source_assembly"
+    HODGE_DATA = "hodge_data"
     NODE_GEOMETRY = "node_geometry"
     NODE_RELATION = "node_relation"
     CONIFOLD_ATOM = "conifold_atom"

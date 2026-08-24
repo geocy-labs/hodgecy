@@ -1,0 +1,97 @@
+{
+  "cohort_id": "hodgecy-ii",
+  "display_name": "HodgeCY II baseline comparison cohort",
+  "description": "Current HodgeCY II source-level comparison cohort for arrangements 84, 84a, 239, 240, and 241.",
+  "scope": "Source/coarse baseline only. Membership does not assert a common conifold realization or computed Hodge-atom spectrum.",
+  "provenance": {
+    "primary_release": "release/hodgecy-v0.2.0",
+    "control_data": "data/raw/cynk_kocel_cynk_2026/control_triple_83_84_84a.json",
+    "notes": "Arrangement 83 appears in control-triple data as provisional and is excluded from the current Blob 4 cohort."
+  },
+  "members": [
+    {
+      "arrangement_id": "84",
+      "geometry_id": "hodgecy-ii-84",
+      "display_name": "Cynk--Meyer arrangement 84",
+      "geometry_type": "eight_plane_arrangement_source_profile",
+      "source_dataset": "hodgecy-v0.2.0-release",
+      "source_dataset_version": "v0.2.0",
+      "source_entry_id": "84",
+      "summary_path": "release/hodgecy-v0.2.0/arrangements/84/theorem_summary.json",
+      "provenance": "Existing HodgeCY arrangement_84 representative; source-level theorem summary from release/hodgecy-v0.2.0."
+    },
+    {
+      "arrangement_id": "84a",
+      "geometry_id": "hodgecy-ii-84a",
+      "display_name": "Cynk--Meyer arrangement 84a",
+      "geometry_type": "eight_plane_arrangement_source_profile",
+      "source_dataset": "hodgecy-v0.2.0-release",
+      "source_dataset_version": "v0.2.0",
+      "source_entry_id": "84a",
+      "summary_path": "release/hodgecy-v0.2.0/arrangements/84a/theorem_summary.json",
+      "provenance": "Existing HodgeCY arrangement_84a representative; source-level theorem summary from release/hodgecy-v0.2.0."
+    },
+    {
+      "arrangement_id": "239",
+      "geometry_id": "hodgecy-ii-239",
+      "display_name": "Cynk--Kocel--Cynk arrangement 239",
+      "geometry_type": "eight_plane_arrangement_source_profile",
+      "source_dataset": "hodgecy-v0.2.0-release",
+      "source_dataset_version": "v0.2.0",
+      "source_entry_id": "239",
+      "summary_path": "release/hodgecy-v0.2.0/arrangements/239/theorem_summary.json",
+      "provenance": "Source-level theorem summary from release/hodgecy-v0.2.0."
+    },
+    {
+      "arrangement_id": "240",
+      "geometry_id": "hodgecy-ii-240",
+      "display_name": "Cynk--Kocel--Cynk arrangement 240",
+      "geometry_type": "eight_plane_arrangement_source_profile",
+      "source_dataset": "hodgecy-v0.2.0-release",
+      "source_dataset_version": "v0.2.0",
+      "source_entry_id": "240",
+      "summary_path": "release/hodgecy-v0.2.0/arrangements/240/theorem_summary.json",
+      "provenance": "Source-level theorem summary from release/hodgecy-v0.2.0."
+    },
+    {
+      "arrangement_id": "241",
+      "geometry_id": "hodgecy-ii-241",
+      "display_name": "Cynk--Kocel--Cynk arrangement 241",
+      "geometry_type": "eight_plane_arrangement_source_profile",
+      "source_dataset": "hodgecy-v0.2.0-release",
+      "source_dataset_version": "v0.2.0",
+      "source_entry_id": "241",
+      "summary_path": "release/hodgecy-v0.2.0/arrangements/241/theorem_summary.json",
+      "provenance": "Source-level theorem summary from release/hodgecy-v0.2.0."
+    }
+  ],
+  "comparison_sets": [
+    {
+      "comparison_set_id": "hodgecy-ii-84-pair",
+      "display_name": "HodgeCY II 84 / 84a development pair",
+      "members": ["84", "84a"],
+      "selection_criterion": "Primary HodgeCY II geometric development pair.",
+      "notes": "Blob 4 compares only existing source/coarse invariants; no new node or atom claims are made."
+    },
+    {
+      "comparison_set_id": "hodgecy-ii-239-241",
+      "display_name": "HodgeCY II 239 / 240 / 241 structural family",
+      "members": ["239", "240", "241"],
+      "selection_criterion": "Fixed-local-inventory structural comparison family.",
+      "notes": "Used to inspect source-level splits under finer persisted invariants."
+    },
+    {
+      "comparison_set_id": "hodgecy-ii-source-cohort",
+      "display_name": "HodgeCY II source-level cohort",
+      "members": ["84", "84a", "239", "240", "241"],
+      "selection_criterion": "Cross-example source-level comparison cohort.",
+      "notes": "Membership does not assert a common conifold realization."
+    }
+  ],
+  "excluded_explicit_records": [
+    {
+      "arrangement_id": "83",
+      "reason": "Explicitly present in control_triple_83_84_84a.json but representative_status is provisional and fixed_equation_batch_001 excludes it."
+    }
+  ]
+}
