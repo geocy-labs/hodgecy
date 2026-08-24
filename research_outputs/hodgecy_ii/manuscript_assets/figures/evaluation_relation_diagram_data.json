@@ -1,0 +1,17 @@
+{
+  "results": {
+    "84": {
+      "cokernel_dimension": 7,
+      "kernel_dimension": 60,
+      "rank": 105,
+      "relation_dimension": 7
+    },
+    "84a": {
+      "cokernel_dimension": 7,
+      "kernel_dimension": 60,
+      "rank": 105,
+      "relation_dimension": 7
+    }
+  },
+  "schema": "hodgecy_ii_evaluation_relation_diagram.v1"
+}

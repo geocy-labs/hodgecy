@@ -27,6 +27,7 @@ It is the preferred entry point for repository docs.
 
 - [Singular-scheme ODP certification](singular_scheme_odp_certification.md)
 - [Verified node-block geometry](verified_node_block_geometry.md)
+- [Block-scheme evaluation](block_scheme_evaluation.md)
 - [Node ideal and Hilbert functions](node_ideal_hilbert_function.md)
 - [Smoothing bridge local model](smoothing_bridge_local_model.md)
 

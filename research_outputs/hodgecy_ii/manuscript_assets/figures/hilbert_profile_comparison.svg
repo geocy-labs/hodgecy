@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="360" viewBox="0 0 760 360">
+<rect width="100%" height="100%" fill="#fff" />
+<text x="40" y="32" font-family="Arial, sans-serif" font-size="18" font-weight="700">Figure II.4. Block-scheme Hilbert profiles</text>
+<line x1="54" y1="306" x2="706" y2="306" stroke="#222" />
+<line x1="54" y1="306" x2="54" y2="54" stroke="#222" />
+<text x="54.0" y="332" font-family="Arial" font-size="11" text-anchor="middle">0</text>
+<text x="135.5" y="332" font-family="Arial" font-size="11" text-anchor="middle">1</text>
+<text x="217.0" y="332" font-family="Arial" font-size="11" text-anchor="middle">2</text>
+<text x="298.5" y="332" font-family="Arial" font-size="11" text-anchor="middle">3</text>
+<text x="380.0" y="332" font-family="Arial" font-size="11" text-anchor="middle">4</text>
+<text x="461.5" y="332" font-family="Arial" font-size="11" text-anchor="middle">5</text>
+<text x="543.0" y="332" font-family="Arial" font-size="11" text-anchor="middle">6</text>
+<text x="624.5" y="332" font-family="Arial" font-size="11" text-anchor="middle">7</text>
+<text x="706.0" y="332" font-family="Arial" font-size="11" text-anchor="middle">8</text>
+<text x="44" y="310.0" font-family="Arial" font-size="11" text-anchor="end">0</text>
+<text x="44" y="242.8" font-family="Arial" font-size="11" text-anchor="end">28</text>
+<text x="44" y="175.6" font-family="Arial" font-size="11" text-anchor="end">56</text>
+<text x="44" y="108.4" font-family="Arial" font-size="11" text-anchor="end">84</text>
+<text x="44" y="58.0" font-family="Arial" font-size="11" text-anchor="end">112</text>
+<line x1="706.0" y1="54" x2="706.0" y2="306" stroke="#777" stroke-dasharray="4 4" />
+<text x="700.0" y="68" font-family="Arial" font-size="11" text-anchor="end">d=8</text>
+<path d="M 54.00 303.60 L 135.50 296.40 L 217.00 282.00 L 298.50 258.00 L 380.00 224.40 L 461.50 181.20 L 543.00 128.40 L 624.50 85.20 L 706.00 54.00" fill="none" stroke="#0f6b8f" stroke-width="2.2" />
+<circle cx="54.00" cy="303.60" r="3.5" fill="#0f6b8f" />
+<circle cx="135.50" cy="296.40" r="3.5" fill="#0f6b8f" />
+<circle cx="217.00" cy="282.00" r="3.5" fill="#0f6b8f" />
+<circle cx="298.50" cy="258.00" r="3.5" fill="#0f6b8f" />
+<circle cx="380.00" cy="224.40" r="3.5" fill="#0f6b8f" />
+<circle cx="461.50" cy="181.20" r="3.5" fill="#0f6b8f" />
+<circle cx="543.00" cy="128.40" r="3.5" fill="#0f6b8f" />
+<circle cx="624.50" cy="85.20" r="3.5" fill="#0f6b8f" />
+<circle cx="706.00" cy="54.00" r="3.5" fill="#0f6b8f" />
+<text x="698.00" y="44.00" font-family="Arial" font-size="12" fill="#0f6b8f" text-anchor="end">84</text>
+<path d="M 54.00 303.60 L 135.50 296.40 L 217.00 282.00 L 298.50 258.00 L 380.00 224.40 L 461.50 181.20 L 543.00 128.40 L 624.50 85.20 L 706.00 54.00" fill="none" stroke="#b15d22" stroke-width="2.2" />
+<circle cx="54.00" cy="303.60" r="3.5" fill="#b15d22" />
+<circle cx="135.50" cy="296.40" r="3.5" fill="#b15d22" />
+<circle cx="217.00" cy="282.00" r="3.5" fill="#b15d22" />
+<circle cx="298.50" cy="258.00" r="3.5" fill="#b15d22" />
+<circle cx="380.00" cy="224.40" r="3.5" fill="#b15d22" />
+<circle cx="461.50" cy="181.20" r="3.5" fill="#b15d22" />
+<circle cx="543.00" cy="128.40" r="3.5" fill="#b15d22" />
+<circle cx="624.50" cy="85.20" r="3.5" fill="#b15d22" />
+<circle cx="706.00" cy="54.00" r="3.5" fill="#b15d22" />
+<text x="698.00" y="44.00" font-family="Arial" font-size="12" fill="#b15d22" text-anchor="end">84a</text>
+<text x="370" y="344" font-family="Arial" font-size="12" text-anchor="middle">degree d</text>
+<text x="20" y="190" font-family="Arial" font-size="12" transform="rotate(-90 20 190)" text-anchor="middle">H_B(d)</text>
+</svg>

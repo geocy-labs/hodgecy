@@ -1,0 +1,114 @@
+[
+  {
+    "H_B_8": 105,
+    "block_ideal_hash": "3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98",
+    "certificate_type": "critical_degree_block_evaluation",
+    "critical_degree_certificate": {
+      "applicability_checks": {
+        "ambient_base": "P^3",
+        "ambient_dimension": 3,
+        "branch_degree_even": true,
+        "characteristic": 0,
+        "cover_degree": 2
+      },
+      "certificate_type": "critical_degree_rule",
+      "convention": "nodal_double_solid_clemens_cynk",
+      "rule": "for a double cover of P^3 branched over degree 2d, k_crit = 3d - 4",
+      "theorem_reference": "Clemens/Cynk nodal double-solid convention"
+    },
+    "git_commit": "f7a9ef3bfbcd6850b1dc4c7e13e290c45ad20bc0",
+    "hodgecy_version": "1.0.0",
+    "scheme_degree": 112
+  },
+  {
+    "backend": "sympy exact line quotient remainders+sympy.Matrix.rank",
+    "block_ideal_hash": "3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98",
+    "certificate_type": "block_evaluation_rank",
+    "degree": 8,
+    "evaluation_rank": 105,
+    "git_commit": "f7a9ef3bfbcd6850b1dc4c7e13e290c45ad20bc0",
+    "hodgecy_version": "1.0.0",
+    "rank_identity": "rank(E_8) = H_B(8)",
+    "source_dimension": 165,
+    "target_length": 112
+  },
+  {
+    "block_ideal_hash": "3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98",
+    "certificate_type": "block_evaluation_deficiency",
+    "classical_defect_status": "unknown",
+    "degree": 8,
+    "epsilon_B": 7,
+    "firewall": {
+      "block_evaluation_deficiency_is_not_automatically_classical_defect": true,
+      "different_hilbert_functions_do_not_explain_source_smith_difference": true,
+      "equal_evaluation_deficiencies_do_not_imply_equal_block_schemes": true,
+      "equal_hilbert_functions_do_not_imply_isomorphic_schemes": true,
+      "evaluation_relation_dimension_is_not_source_kernel_rank": true,
+      "no_exceptional_curve_relation_constructed": true,
+      "no_hodge_atom_spectrum_constructed": true,
+      "no_integral_evaluation_lattice_fabricated": true,
+      "no_picard_lefschetz_calculation": true,
+      "no_source_to_evaluation_morphism_inferred": true,
+      "no_vanishing_cycle_relation_constructed": true
+    },
+    "git_commit": "f7a9ef3bfbcd6850b1dc4c7e13e290c45ad20bc0",
+    "hodgecy_version": "1.0.0",
+    "terminology": "degree-8 block-scheme evaluation deficiency"
+  },
+  {
+    "block_ideal_hash": "3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98",
+    "certificate_type": "evaluation_relation_dimension",
+    "explicit_dual_matrix_constructed": false,
+    "firewall": {
+      "block_evaluation_deficiency_is_not_automatically_classical_defect": true,
+      "different_hilbert_functions_do_not_explain_source_smith_difference": true,
+      "equal_evaluation_deficiencies_do_not_imply_equal_block_schemes": true,
+      "equal_hilbert_functions_do_not_imply_isomorphic_schemes": true,
+      "evaluation_relation_dimension_is_not_source_kernel_rank": true,
+      "no_exceptional_curve_relation_constructed": true,
+      "no_hodge_atom_spectrum_constructed": true,
+      "no_integral_evaluation_lattice_fabricated": true,
+      "no_picard_lefschetz_calculation": true,
+      "no_source_to_evaluation_morphism_inferred": true,
+      "no_vanishing_cycle_relation_constructed": true
+    },
+    "git_commit": "f7a9ef3bfbcd6850b1dc4c7e13e290c45ad20bc0",
+    "hodgecy_version": "1.0.0",
+    "identity": "dim ker(E_8^T) = target_length - rank(E_8)",
+    "integral_evaluation_relation_complex": "UNKNOWN",
+    "relation_dimension": 7
+  },
+  {
+    "actual_classical_defect": null,
+    "actual_classical_defect_status": "unknown",
+    "block_ideal_hash": "3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98",
+    "certificate_type": "conditional_defect",
+    "condition": "only if the verified block scheme is identified with the full ordinary-node scheme under the HodgeCY defect hypotheses",
+    "conditional_classical_defect_value": 7,
+    "firewall": {
+      "block_evaluation_deficiency_is_not_automatically_classical_defect": true,
+      "different_hilbert_functions_do_not_explain_source_smith_difference": true,
+      "equal_evaluation_deficiencies_do_not_imply_equal_block_schemes": true,
+      "equal_hilbert_functions_do_not_imply_isomorphic_schemes": true,
+      "evaluation_relation_dimension_is_not_source_kernel_rank": true,
+      "no_exceptional_curve_relation_constructed": true,
+      "no_hodge_atom_spectrum_constructed": true,
+      "no_integral_evaluation_lattice_fabricated": true,
+      "no_picard_lefschetz_calculation": true,
+      "no_source_to_evaluation_morphism_inferred": true,
+      "no_vanishing_cycle_relation_constructed": true
+    },
+    "git_commit": "f7a9ef3bfbcd6850b1dc4c7e13e290c45ad20bc0",
+    "hodgecy_version": "1.0.0",
+    "prerequisites": {
+      "applicable_double_solid_model": true,
+      "certified_critical_degree_rule": true,
+      "complete_support": false,
+      "exact_evaluation_or_hilbert_computation": true,
+      "exact_node_ideal": false,
+      "finite_singular_scheme": true,
+      "ordinary_node_classification": false,
+      "reducedness": true
+    }
+  }
+]

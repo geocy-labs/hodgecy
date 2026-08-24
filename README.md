@@ -97,6 +97,11 @@ The census shows that source-fidelity collapse and separation recur beyond the
 principal pair. HodgeCY II does not geometrically analyze all 114 sets; that
 full population classification is deferred to HodgeCY III.
 
+For `84` and `84a`, HodgeCY now computes exact Hilbert and critical-degree
+evaluation invariants of the verified reduced 112-point block schemes. Full
+classical-defect promotion remains conditional on the ordinary-node certificate
+gate.
+
 Representative controls include `61 / 451`, `84 / 84a`, `452 / 453`,
 `84 / 240`, `84a / 239`, and `239 / 240 / 241`. The generated tables preserve
 the factor-normalization warning for `451` and the deferred exact

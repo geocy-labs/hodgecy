@@ -1,0 +1,79 @@
+[
+  {
+    "84": 112,
+    "84a": 112,
+    "claim_layer": "exact block result",
+    "comparison": "equal",
+    "invariant": "block scheme degree"
+  },
+  {
+    "84": 105,
+    "84a": 105,
+    "claim_layer": "exact block result",
+    "comparison": "equal",
+    "invariant": "H_B(8)"
+  },
+  {
+    "84": 165,
+    "84a": 165,
+    "claim_layer": "exact block result",
+    "comparison": "equal",
+    "invariant": "eval source dim"
+  },
+  {
+    "84": 112,
+    "84a": 112,
+    "claim_layer": "exact block result",
+    "comparison": "equal",
+    "invariant": "eval target length"
+  },
+  {
+    "84": 105,
+    "84a": 105,
+    "claim_layer": "exact block result",
+    "comparison": "equal",
+    "invariant": "eval rank"
+  },
+  {
+    "84": 60,
+    "84a": 60,
+    "claim_layer": "exact block result",
+    "comparison": "equal",
+    "invariant": "eval kernel dim"
+  },
+  {
+    "84": 7,
+    "84a": 7,
+    "claim_layer": "exact block result",
+    "comparison": "equal",
+    "invariant": "eval cokernel dim"
+  },
+  {
+    "84": 7,
+    "84a": 7,
+    "claim_layer": "exact block result",
+    "comparison": "equal",
+    "invariant": "block evaluation deficiency"
+  },
+  {
+    "84": 7,
+    "84a": 7,
+    "claim_layer": "exact block rank summary",
+    "comparison": "equal",
+    "invariant": "eval relation dim"
+  },
+  {
+    "84": 7,
+    "84a": 7,
+    "claim_layer": "conditional on ordinary-node gate",
+    "comparison": "equal",
+    "invariant": "conditional classical defect"
+  },
+  {
+    "84": "UNKNOWN",
+    "84a": "UNKNOWN",
+    "claim_layer": "not promoted",
+    "comparison": "equal",
+    "invariant": "verified classical defect"
+  }
+]

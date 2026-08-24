@@ -1,47 +1,52 @@
 [
   {
     "arrangement": "84",
-    "layer": "perturbation_polynomial",
-    "status": "FROZEN_EXACT"
-  },
-  {
-    "arrangement": "84",
-    "layer": "source_assembly",
+    "layer": "source assembly",
     "status": "VERIFIED"
   },
   {
     "arrangement": "84",
-    "layer": "degree112",
+    "layer": "degree-112 historical certificate",
     "status": "HISTORICAL_CERTIFIED"
   },
   {
     "arrangement": "84",
-    "layer": "G1",
+    "layer": "verified block scheme",
     "status": "VERIFIED"
   },
   {
     "arrangement": "84",
-    "layer": "G2",
-    "status": "VERIFIED"
-  },
-  {
-    "arrangement": "84",
-    "layer": "block_scheme",
-    "status": "VERIFIED"
-  },
-  {
-    "arrangement": "84",
-    "layer": "saturated_jacobian_ideal",
-    "status": "UNKNOWN"
-  },
-  {
-    "arrangement": "84",
-    "layer": "block_jacobian_containment",
+    "layer": "block->singular containment",
     "status": "VERIFIED"
   },
   {
     "arrangement": "84",
     "layer": "ordinary_node_verified",
+    "status": "UNKNOWN"
+  },
+  {
+    "arrangement": "84",
+    "layer": "block Hilbert function",
+    "status": "VERIFIED"
+  },
+  {
+    "arrangement": "84",
+    "layer": "critical-degree evaluation",
+    "status": "VERIFIED"
+  },
+  {
+    "arrangement": "84",
+    "layer": "block evaluation deficiency",
+    "status": "VERIFIED"
+  },
+  {
+    "arrangement": "84",
+    "layer": "classical defect",
+    "status": "UNKNOWN"
+  },
+  {
+    "arrangement": "84",
+    "layer": "integral evaluation relation complex",
     "status": "UNKNOWN"
   },
   {
@@ -51,47 +56,52 @@
   },
   {
     "arrangement": "84a",
-    "layer": "perturbation_polynomial",
-    "status": "FROZEN_EXACT"
-  },
-  {
-    "arrangement": "84a",
-    "layer": "source_assembly",
+    "layer": "source assembly",
     "status": "VERIFIED"
   },
   {
     "arrangement": "84a",
-    "layer": "degree112",
+    "layer": "degree-112 historical certificate",
     "status": "HISTORICAL_CERTIFIED"
   },
   {
     "arrangement": "84a",
-    "layer": "G1",
+    "layer": "verified block scheme",
     "status": "VERIFIED"
   },
   {
     "arrangement": "84a",
-    "layer": "G2",
-    "status": "VERIFIED"
-  },
-  {
-    "arrangement": "84a",
-    "layer": "block_scheme",
-    "status": "VERIFIED"
-  },
-  {
-    "arrangement": "84a",
-    "layer": "saturated_jacobian_ideal",
-    "status": "UNKNOWN"
-  },
-  {
-    "arrangement": "84a",
-    "layer": "block_jacobian_containment",
+    "layer": "block->singular containment",
     "status": "VERIFIED"
   },
   {
     "arrangement": "84a",
     "layer": "ordinary_node_verified",
+    "status": "UNKNOWN"
+  },
+  {
+    "arrangement": "84a",
+    "layer": "block Hilbert function",
+    "status": "VERIFIED"
+  },
+  {
+    "arrangement": "84a",
+    "layer": "critical-degree evaluation",
+    "status": "VERIFIED"
+  },
+  {
+    "arrangement": "84a",
+    "layer": "block evaluation deficiency",
+    "status": "VERIFIED"
+  },
+  {
+    "arrangement": "84a",
+    "layer": "classical defect",
+    "status": "UNKNOWN"
+  },
+  {
+    "arrangement": "84a",
+    "layer": "integral evaluation relation complex",
     "status": "UNKNOWN"
   },
   {
