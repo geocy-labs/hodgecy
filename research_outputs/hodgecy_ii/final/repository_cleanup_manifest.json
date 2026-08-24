@@ -1,0 +1,92 @@
+{
+  "schema": "hodgecy_ii_repository_cleanup_manifest.v1",
+  "program": "HodgeCY II",
+  "package_version": "1.0.0",
+  "cleanup_branch": "research/hodgecy-ii-fidelity",
+  "base_main_before_cleanup": "2d04671bf741c9b64a409e36382396f893f1cbf6",
+  "branch_head_before_cleanup_commit": "ccece82c305bfa86ae235bd1cadc3fba0da5e618",
+  "cleanup_commit": "814cfab",
+  "main_commit_after_fast_forward": "pending",
+  "retained_research_outputs": {
+    "research_outputs/hodgecy_ii/census": "retained census-level data",
+    "research_outputs/hodgecy_ii/final": "canonical final result, theorem-evidence, source-record, reproduction, and cleanup records",
+    "research_outputs/hodgecy_ii/manuscript_assets": "publication-quality tables, figures, data, and manifests",
+    "research_outputs/hodgecy_ii/complete_fidelity_pairs_and_sets.md": "readable complete nontrivial pairs/sets report",
+    "research_outputs/hodgecy_ii/complete_fidelity_pairs_and_sets.tsv": "tabular complete nontrivial pairs/sets report"
+  },
+  "canonical_theorem_evidence": [
+    "research_outputs/hodgecy_ii/final/theorem_evidence/source_lattice/source_lattice_comparison_84_84a.json",
+    "research_outputs/hodgecy_ii/final/theorem_evidence/block_geometry/block_geometry_certification_84_84a.json",
+    "research_outputs/hodgecy_ii/final/theorem_evidence/block_geometry/84/node_block_certificate.json",
+    "research_outputs/hodgecy_ii/final/theorem_evidence/block_geometry/84/predicted_node_blocks.tsv",
+    "research_outputs/hodgecy_ii/final/theorem_evidence/block_geometry/84a/node_block_certificate.json",
+    "research_outputs/hodgecy_ii/final/theorem_evidence/block_geometry/84a/predicted_node_blocks.tsv",
+    "research_outputs/hodgecy_ii/final/theorem_evidence/block_evaluation/block_evaluation_comparison_84_84a.json",
+    "research_outputs/hodgecy_ii/final/theorem_evidence/block_evaluation/84/block_evaluation_result.json",
+    "research_outputs/hodgecy_ii/final/theorem_evidence/block_evaluation/84/block_hilbert_function.tsv",
+    "research_outputs/hodgecy_ii/final/theorem_evidence/block_evaluation/84a/block_evaluation_result.json",
+    "research_outputs/hodgecy_ii/final/theorem_evidence/block_evaluation/84a/block_hilbert_function.tsv",
+    "research_outputs/hodgecy_ii/final/theorem_evidence/source_block_comparison/source_block_evaluation_comparison_84_84a.json",
+    "research_outputs/hodgecy_ii/final/source_records/ckc455_staged_records.jsonl",
+    "research_outputs/hodgecy_ii/final/source_records/ckc455_crosswalk.tsv"
+  ],
+  "removed_checkpoint_categories": [
+    "per-arrangement Gate A scratch directories",
+    "chronological checkpoint output directories",
+    "source-ingest mismatch dossiers",
+    "obsolete full-corpus discovery staging outputs",
+    "obsolete source-assembly blocker and deep-dive staging outputs",
+    "obsolete top-level all_* derived parquet/json artifacts",
+    "obsolete chronological generator scripts",
+    "obsolete chronological docs"
+  ],
+  "cleanup_counts_before_commit": {
+    "tracked_files_deleted": 686,
+    "tracked_files_modified": 66,
+    "untracked_canonical_files_added": 15,
+    "final_output_files_retained": 37,
+    "manuscript_asset_files_retained": 68
+  },
+  "documentation_policy": {
+    "readme_strategy": "Top-level and docs README files point to stable current docs and final reproduction assets.",
+    "chronological_blob_language": "Removed from public README, docs, final manifests, and manuscript manifests.",
+    "stale_output_paths": "Public references to deleted checkpoint directories were removed."
+  },
+  "publication_asset_inventory": {
+    "tables": 7,
+    "figures": 7,
+    "main_text_tables": 7,
+    "main_text_figures": 6,
+    "supplementary_figures": 1
+  },
+  "reproduction_status": {
+    "command": "python scripts/reproduce_hodgecy_ii.py",
+    "status": "PASS",
+    "processed": 456,
+    "nontrivial_sets": 114,
+    "pairs": 57,
+    "triples": 13,
+    "larger_sets": 44,
+    "unsupported_promotions": "none"
+  },
+  "validation": {
+    "pytest": "337 passed, 2 skipped",
+    "svg_tex_inventory": "validated 7 SVG figures and 7 TeX tables",
+    "markdown_local_links": "ok",
+    "public_stale_path_scan": "ok",
+    "public_blob_language_scan": "ok",
+    "git_diff_check": "ok with CRLF warnings only"
+  },
+  "open_research_boundaries_preserved": [
+    "ordinary-node/full-node-scheme promotion remains OPEN",
+    "final saturated Jacobian node ideal remains OPEN",
+    "classical defect value 7 remains CONDITIONAL",
+    "source-to-evaluation morphism remains OPEN",
+    "integral evaluation lattice remains OPEN",
+    "LMHS/Hodge-atom interpretation remains NOT_CLAIMED"
+  ],
+  "branch_cleanup_status": {
+    "research/hodgecy-ii-fidelity": "pending main fast-forward",
+    "hodgecy-refresh-foundation": "pending ancestry check after main fast-forward"
+  }
+}
