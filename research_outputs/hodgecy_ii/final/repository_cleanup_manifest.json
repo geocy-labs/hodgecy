@@ -49,7 +49,7 @@
   },
   "documentation_policy": {
     "readme_strategy": "Top-level and docs README files point to stable current docs and final reproduction assets.",
-    "chronological_blob_language": "Removed from public README, docs, final manifests, and manuscript manifests.",
+    "chronological_checkpoint_language": "Removed from public README, docs, final manifests, and manuscript manifests.",
     "stale_output_paths": "Public references to deleted checkpoint directories were removed."
   },
   "publication_asset_inventory": {
@@ -74,7 +74,7 @@
     "svg_tex_inventory": "validated 7 SVG figures and 7 TeX tables",
     "markdown_local_links": "ok",
     "public_stale_path_scan": "ok",
-    "public_blob_language_scan": "ok",
+    "public_checkpoint_language_scan": "ok",
     "git_diff_check": "ok with CRLF warnings only"
   },
   "open_research_boundaries_preserved": [
