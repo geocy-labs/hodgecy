@@ -1,5 +1,23 @@
 from __future__ import annotations
 
+from .defects import (
+    ClassicalDefectResult,
+    CriticalDegreeResult,
+    DefectConvention,
+    EvaluationCrossCheckResult,
+    EvaluationMapResult,
+    EvaluationMethod,
+    begin_defect_run,
+    classical_defect_from_evaluation,
+    cross_check_evaluation_methods,
+    defect_firewall,
+    evaluation_from_hilbert,
+    evaluation_from_points,
+    persist_classical_defect_result,
+    projective_source_dimension,
+    resolve_critical_degree,
+    unknown_classical_defect_result,
+)
 from .fibrations import FibrationPayload, fibration_rows
 from .projective_schemes import (
     ExactSchemeIdealUnavailableError,
@@ -45,8 +63,14 @@ from .singularities import (
 from .symmetry import GroupActionPayload, GroupPayload, QuotientPayload
 
 __all__ = [
+    "ClassicalDefectResult",
     "CompletenessStatus",
+    "CriticalDegreeResult",
+    "DefectConvention",
     "DoubleCoverModel",
+    "EvaluationCrossCheckResult",
+    "EvaluationMapResult",
+    "EvaluationMethod",
     "ExactSchemeIdealUnavailableError",
     "FibrationPayload",
     "FiniteReducedODPSchemeCertificate",
@@ -67,14 +91,20 @@ __all__ = [
     "SchemeSupportStatus",
     "SingularSchemeResult",
     "analyze_projective_singular_scheme",
+    "begin_defect_run",
     "begin_hilbert_run",
     "begin_node_geometry_run",
     "certify_double_cover_odp",
     "classify_affine_hypersurface_point",
     "classify_projective_hypersurface_point",
+    "classical_defect_from_evaluation",
     "compare_hilbert_functions",
     "compare_ideals",
     "count_standard_monomials",
+    "cross_check_evaluation_methods",
+    "defect_firewall",
+    "evaluation_from_hilbert",
+    "evaluation_from_points",
     "fibration_rows",
     "groebner_basis_data",
     "global_finite_reduced_odp_certificate",
@@ -83,8 +113,12 @@ __all__ = [
     "hilbert_polynomial",
     "ideal_of_points",
     "normalize_projective_coordinates",
+    "persist_classical_defect_result",
     "persist_hilbert_table",
     "point_ideal",
+    "projective_source_dimension",
     "persist_singular_scheme_result",
+    "resolve_critical_degree",
+    "unknown_classical_defect_result",
     "unique_projective_points",
 ]
