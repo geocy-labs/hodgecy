@@ -1,11 +1,11 @@
 {
-  "asset_manifest_hash": "c4214c46ccdfb30aeb96dae25d51b61762f9f0d19713c469e60f17a9aa41c4bf",
+  "asset_manifest_hash": "0d25004a7169340a348c0a6a172914e460d04d281d40d50452e7c4c59aad2434",
   "branch": "research/hodgecy-ii-fidelity",
   "dependency_versions": {
     "pandas": "3.0.2",
     "sympy": "1.14.0"
   },
-  "git_commit": "9a058b7394626b1e57d3fedaa08879657a2eae23",
+  "git_commit": "b77de79815ad164e788fa290804bdb237a4b47c5",
   "known_limitations": [
     "Complete ordinary-node promotion for the chosen perturbations.",
     "Freeze/reproduce the final saturated Jacobian node ideals.",
@@ -26,7 +26,7 @@
   },
   "primary_output_hashes": {
     "research_outputs/hodgecy_ii/final/hodgecy_ii_final_results.json": "7487026222be1da45c3ed1484eb948378aa12835da82691318e179b3a401c24e",
-    "research_outputs/hodgecy_ii/manuscript_assets/manifest/hodgecy_ii_asset_manifest.json": "c4214c46ccdfb30aeb96dae25d51b61762f9f0d19713c469e60f17a9aa41c4bf"
+    "research_outputs/hodgecy_ii/manuscript_assets/manifest/hodgecy_ii_asset_manifest.json": "0d25004a7169340a348c0a6a172914e460d04d281d40d50452e7c4c59aad2434"
   },
   "python_version": "3.12.10",
   "release_tag": null,

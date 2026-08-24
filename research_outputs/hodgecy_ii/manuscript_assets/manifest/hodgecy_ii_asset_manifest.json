@@ -77,11 +77,11 @@
       "status": "BLOB15_FINAL"
     },
     "research_outputs/hodgecy_ii/final/hodgecy_ii_final_artifact_manifest.json": {
-      "sha256": "30abdde4b74551c0511a1ce5d649de22672f3f082f38804660d3a6b93bd09212",
+      "sha256": "13d4fc758354a3b0c0c154e23a3855a3eeb7473a8d11fd0352907ae09d6c543a",
       "status": "BLOB15_FINAL"
     },
     "research_outputs/hodgecy_ii/final/hodgecy_ii_final_research_manifest.json": {
-      "sha256": "7142d955d80a4ef6bc3de12beeabf7cdfb082b298712c67c01d9f9080c305f0f",
+      "sha256": "5dee66b8a5cb09554fd7fb6443215cf320619b8f2fbc0b511765d6199d25a0b7",
       "status": "BLOB15_FINAL"
     },
     "research_outputs/hodgecy_ii/final/hodgecy_ii_final_results.json": {
