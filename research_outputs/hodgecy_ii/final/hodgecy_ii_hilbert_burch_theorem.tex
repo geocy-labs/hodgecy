@@ -1,0 +1,250 @@
+% HodgeCY II Hilbert-Burch theorem/proof package.
+% This file is a manuscript asset, not a standalone LaTeX document.
+
+\begin{theorem}[Eight-plane line skeleton]\label{thm:hodgecy-ii-eight-plane-line-skeleton}
+Let \(S=k[x_0,x_1,x_2,x_3]\), and let
+\(L_1,\ldots,L_8\in S_1\) be distinct linear forms such that every
+pair has rank \(2\) and every triple has rank \(3\).  Equivalently, no
+three of the corresponding planes in \({\bf P}^3\) contain a common
+line.  Put
+\[
+  F=\prod_{i=1}^8 L_i,
+  \qquad
+  I_C=(F/L_1,\ldots,F/L_8).
+\]
+Then
+\[
+  I_C=\bigcap_{1\le i<j\le 8}(L_i,L_j).
+\]
+Thus \(I_C\) is the saturated reduced ideal of the union \(C\) of the
+\(\binom{8}{2}=28\) pairwise intersection lines.  Moreover \(I_C\) has
+Hilbert--Burch resolution
+\[
+  0 \longrightarrow S(-8)^7
+    \xrightarrow{\,M\,}
+  S(-7)^8
+    \longrightarrow I_C
+    \longrightarrow 0,
+\]
+where
+\[
+M=
+\begin{pmatrix}
+L_1&0&0&0&0&0&0\\
+0&L_2&0&0&0&0&0\\
+0&0&L_3&0&0&0&0\\
+0&0&0&L_4&0&0&0\\
+0&0&0&0&L_5&0&0\\
+0&0&0&0&0&L_6&0\\
+0&0&0&0&0&0&L_7\\
+-L_8&-L_8&-L_8&-L_8&-L_8&-L_8&-L_8
+\end{pmatrix}.
+\]
+\end{theorem}
+
+\begin{proof}
+Write \(G_i=F/L_i\).  Each \(G_m\) belongs to every pair ideal
+\((L_i,L_j)\): if \(m\notin\{i,j\}\), then \(G_m\) contains both
+factors \(L_i,L_j\); if \(m=i\), it contains \(L_j\); and if \(m=j\),
+it contains \(L_i\).  Hence
+\[
+  I_C\subseteq \bigcap_{i<j}(L_i,L_j).
+\]
+
+For the reverse inclusion and saturation, use the codimension-two
+basic-double-link induction.  For \(s\ge 2\), let
+\[
+  J_s=\bigcap_{1\le i<j\le s}(L_i,L_j),
+  \qquad
+  P_s=\prod_{i=1}^s L_i.
+\]
+The case \(s=2\) is \(J_2=(L_1,L_2)\).  Assume
+\[
+  J_{s-1}=(P_{s-1}/L_1,\ldots,P_{s-1}/L_{s-1}).
+\]
+Since no three planes contain a line, the plane \(L_s=0\) contains no
+line component of the old codimension-two skeleton.  The elementary
+basic-double-link exact sequence, equivalently Proposition 2.6 of
+Geramita--Harbourne--Migliore applied in this codimension-two
+situation, gives
+\[
+  J_s=L_sJ_{s-1}+(P_{s-1}).
+\]
+Substituting the induction hypothesis yields
+\[
+  J_s=
+  (L_sP_{s-1}/L_1,\ldots,L_sP_{s-1}/L_{s-1},P_{s-1})
+  =(P_s/L_1,\ldots,P_s/L_s).
+\]
+Taking \(s=8\) proves the displayed ideal identity.  The right-hand
+side is an intersection of distinct line primes, so it is saturated and
+reduced.
+
+It remains to record the resolution.  The maximal minors of the
+displayed \(8\times 7\) matrix \(M\), up to the usual alternating
+signs, are exactly the generators \(G_1,\ldots,G_8\).  The columns give
+the syzygies
+\[
+  L_iG_i-L_8G_8=0,\qquad i=1,\ldots,7.
+\]
+The generators have no common factor, so the ideal has height \(2\).
+The Hilbert--Burch theorem therefore gives the stated free resolution.
+\end{proof}
+
+\begin{corollary}[Hilbert series of the line skeleton]\label{cor:hodgecy-ii-line-skeleton-hilbert-series}
+For the curve \(C\) of Theorem~\ref{thm:hodgecy-ii-eight-plane-line-skeleton},
+\[
+  \operatorname{Hilb}_{S/I_C}(t)
+  =
+  \frac{1-8t^7+7t^8}{(1-t)^4}.
+\]
+\end{corollary}
+
+\begin{proof}
+Take Hilbert series in the Hilbert--Burch resolution of
+Theorem~\ref{thm:hodgecy-ii-eight-plane-line-skeleton}.
+\end{proof}
+
+\begin{theorem}[Regular quartic block section]\label{thm:hodgecy-ii-regular-quartic-block-section}
+Let \(C\) be as in Theorem~\ref{thm:hodgecy-ii-eight-plane-line-skeleton}.
+Let \(Q\in S_4\) be a quartic whose image in \(S/(L_i,L_j)\) is nonzero
+for every associated line prime \((L_i,L_j)\) of \(S/I_C\).  Then \(Q\)
+is a non-zero-divisor on \(S/I_C\).  If
+\[
+  I_B=I_C+(Q),
+\]
+then there is an exact sequence
+\[
+  0 \longrightarrow (S/I_C)(-4)
+  \xrightarrow{\cdot Q}
+  S/I_C
+  \longrightarrow S/I_B
+  \longrightarrow 0.
+\]
+For the frozen HodgeCY II arrangements \(84\) and \(84a\), the verifier
+checks all \(28\) line restrictions and certifies that \(Q\) restricts
+to a nonzero squarefree quartic on every associated line.
+\end{theorem}
+
+\begin{proof}
+The ideal \(I_C\) is reduced and saturated with associated primes
+exactly the line primes \((L_i,L_j)\).  A homogeneous element is a
+non-zero-divisor on \(S/I_C\) precisely when it is contained in none of
+these associated primes.  The stated nonvanishing of each line
+restriction is exactly this condition.  Multiplication by \(Q\) is
+therefore injective on \(S/I_C\), giving the displayed exact sequence.
+The final assertion is the frozen HodgeCY II computation recorded in
+the theorem evidence bundle.
+\end{proof}
+
+\begin{corollary}[Mapping-cone resolution]\label{cor:hodgecy-ii-block-mapping-cone}
+For the block scheme \(B=C\cap V(Q)\) of
+Theorem~\ref{thm:hodgecy-ii-regular-quartic-block-section}, \(S/I_B\)
+has free resolution
+\[
+0
+\longrightarrow S(-12)^7
+\longrightarrow S(-11)^8 \oplus S(-8)^7
+\longrightarrow S(-7)^8 \oplus S(-4)
+\longrightarrow S
+\longrightarrow S/I_B
+\longrightarrow 0.
+\]
+\end{corollary}
+
+\begin{proof}
+Apply the mapping cone to multiplication by \(Q\) on the
+Hilbert--Burch resolution of \(S/I_C\).  Since multiplication by \(Q\)
+is injective on \(S/I_C\), the resulting complex is exact.
+\end{proof}
+
+\begin{corollary}[Structural Hilbert collapse]\label{cor:hodgecy-ii-structural-hilbert-collapse}
+For the verified HodgeCY II block schemes attached to \(84\) and
+\(84a\),
+\[
+  \operatorname{Hilb}_{S/I_B}(t)
+  =
+  \frac{(1-t^4)(1-8t^7+7t^8)}{(1-t)^4}.
+\]
+Consequently
+\[
+  H_B(d)=1,4,10,20,34,52,74,92,105,112,112,\ldots,
+\]
+with stabilization at degree \(9\).
+\end{corollary}
+
+\begin{proof}
+Use the exact sequence of
+Theorem~\ref{thm:hodgecy-ii-regular-quartic-block-section}.  Thus
+\[
+  \operatorname{Hilb}_{S/I_B}(t)
+  =(1-t^4)\operatorname{Hilb}_{S/I_C}(t).
+\]
+Substitute Corollary~\ref{cor:hodgecy-ii-line-skeleton-hilbert-series}
+and expand the coefficients.
+\end{proof}
+
+\begin{corollary}[Degree-eight cohomology and block-evaluation deficiency]\label{cor:hodgecy-ii-degree-eight-deficiency}
+For the verified HodgeCY II block schemes attached to \(84\) and
+\(84a\),
+\[
+  h^1({\bf P}^3,\mathcal I_B(8))=7.
+\]
+Equivalently, the degree-eight evaluation cokernel has dimension
+\[
+  \epsilon_B=7
+\]
+for the verified block scheme.
+\end{corollary}
+
+\begin{proof}
+The vector space of degree-eight forms in \(S\) has dimension
+\(\binom{11}{3}=165\).  Since \(B\) has degree \(112\) and
+Corollary~\ref{cor:hodgecy-ii-structural-hilbert-collapse} gives
+\(H_B(8)=105\), the standard exact sequence
+\[
+0\to H^0(\mathcal I_B(8))\to H^0(\mathcal O_{{\bf P}^3}(8))
+\to H^0(\mathcal O_B)\to H^1(\mathcal I_B(8))\to 0
+\]
+gives
+\[
+  h^1(\mathcal I_B(8))=112-105=7.
+\]
+The evaluation map on degree-eight forms has image dimension
+\(H_B(8)=105\), so its cokernel also has dimension \(7\).
+This proves the block-scheme deficiency only.  It is not a promotion
+of the classical nodal defect.
+\end{proof}
+
+\begin{proposition}[HodgeCY II non-determination witness]\label{prop:hodgecy-ii-nondetermination}
+For the frozen witness pair \(84/84a\), the verified source data give
+\[
+  HA_{\bf Q}^{(2)}(84)\cong HA_{\bf Q}^{(2)}(84a),
+  \qquad
+  HA_{\bf Z}^{(2)}(84)\not\cong HA_{\bf Z}^{(2)}(84a),
+\]
+while the verified block schemes have identical structural
+Hilbert/evaluation data through degree \(8\), including
+\(\epsilon_B=7\).  Therefore the verified degree-eight block-evaluation
+data do not determine the integral source-assembly type on the witness
+pair \(84/84a\).
+\end{proposition}
+
+\begin{proof}
+The source-lattice certificate records equal rational source rank
+\(26\) and equal rational \(H_1\)-rank \(2\), but different integral
+Smith forms
+\[
+  (1^{23},2,6,12)
+  \quad\hbox{and}\quad
+  (1^{21},2,4,4,4,12).
+\]
+Corollaries~\ref{cor:hodgecy-ii-structural-hilbert-collapse} and
+\ref{cor:hodgecy-ii-degree-eight-deficiency} prove that the verified
+block Hilbert/evaluation signatures coincide.  This is a
+non-determination statement on this witness pair only.  It does not
+assert a reverse implication, a canonical source-to-evaluation map, an
+integral evaluation lattice, an LMHS identification, or a classical
+defect promotion.
+\end{proof}
+
