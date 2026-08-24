@@ -19,7 +19,28 @@ class MaterializationLimitError(StorageError):
     """Raised when a query result would exceed configured materialization limits."""
 
 
+class ResultStoreError(StorageError):
+    """Base class for persistent mathematical result registry failures."""
+
+
+class ResultStoreSchemaVersionError(ResultStoreError):
+    """Raised when a result-store schema version cannot be opened safely."""
+
+
+class RecordNotFoundError(ResultStoreError, KeyError):
+    """Raised when a requested persistent result record does not exist."""
+
+
+class ImmutableRecordError(ResultStoreError):
+    """Raised when code attempts to destructively overwrite historical records."""
+
+
+class ArtifactIntegrityError(ResultStoreError):
+    """Raised when an artifact's bytes no longer match its stored content hash."""
+
+
 __all__ = [
-    "CatalogVersionError", "ConfigurationError", "MaterializationLimitError",
-    "MissingCapabilityError", "StorageError", "ValidationError",
+    "ArtifactIntegrityError", "CatalogVersionError", "ConfigurationError", "ImmutableRecordError", "MaterializationLimitError",
+    "MissingCapabilityError", "RecordNotFoundError", "ResultStoreError", "ResultStoreSchemaVersionError",
+    "StorageError", "ValidationError",
 ]
