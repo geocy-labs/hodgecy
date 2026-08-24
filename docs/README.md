@@ -28,6 +28,7 @@ It is the preferred entry point for repository docs.
 - [Singular-scheme ODP certification](singular_scheme_odp_certification.md)
 - [Verified node-block geometry](verified_node_block_geometry.md)
 - [Block-scheme evaluation](block_scheme_evaluation.md)
+- [Source versus block evaluation](source_block_evaluation_comparison.md)
 - [Node ideal and Hilbert functions](node_ideal_hilbert_function.md)
 - [Smoothing bridge local model](smoothing_bridge_local_model.md)
 
@@ -40,6 +41,7 @@ It is the preferred entry point for repository docs.
 
 - [Node relation complexes](node_relation_complexes.md)
 - [Source-to-node comparison](source_to_node_comparison.md)
+- [Source versus block evaluation](source_block_evaluation_comparison.md)
 - [Relationship infrastructure](blob7_relationships.md)
 
 ## HodgeCY II Workflows

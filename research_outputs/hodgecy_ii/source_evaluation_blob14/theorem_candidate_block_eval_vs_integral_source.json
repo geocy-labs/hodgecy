@@ -1,0 +1,37 @@
+{
+  "conditional_corollary_record": {
+    "condition": "ordinary-node/full-node-scheme promotion",
+    "conditional_corollary_id": "conditional_classical_defect_collapse_84_84a",
+    "statement": "Under the ordinary-node promotion gate, both classical defects equal 7.",
+    "status": "CONDITIONAL"
+  },
+  "non_determination_certificate": {
+    "certificate_id": "block_evaluation_does_not_determine_integral_source_type",
+    "claim": "Verified block Hilbert/evaluation data through the critical degree do not determine the integral source type.",
+    "evidence_status": "VERIFIED",
+    "nonclaims": [
+      "No reverse determinacy theorem is asserted.",
+      "No source-to-evaluation chain map is constructed."
+    ],
+    "support": [
+      "84 and 84a have equal verified block Hilbert profiles through degree 8.",
+      "84 and 84a have equal degree-8 evaluation rank, deficiency, and evaluation relation dimension.",
+      "84 and 84a have different verified integral source Smith types."
+    ],
+    "witnesses": [
+      "84",
+      "84a"
+    ]
+  },
+  "schema": "hodgecy_ii_source_evaluation_theorem_candidate.v1",
+  "theorem_candidate_record": {
+    "candidate_theorem_id": "candidate_block_evaluation_collapse_with_integral_source_separation",
+    "hypotheses": [
+      "Blob 8 verified source lattice records",
+      "Blob 12 verified reduced block schemes",
+      "Blob 13 verified block evaluation"
+    ],
+    "statement": "At the verified block-evaluation level, 84 and 84a collapse while their integral source types separate.",
+    "status": "CANDIDATE_THEOREM_RECORD"
+  }
+}

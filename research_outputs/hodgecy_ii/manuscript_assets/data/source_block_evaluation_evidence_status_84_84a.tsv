@@ -1,0 +1,11 @@
+layer	84	84a	claim_status
+source assembly rational data	VERIFIED	VERIFIED	VERIFIED
+source assembly integral/SNF data	VERIFIED	VERIFIED	VERIFIED
+verified block scheme	VERIFIED	VERIFIED	VERIFIED
+block Hilbert profile through degree 8	VERIFIED	VERIFIED	VERIFIED
+degree-8 block evaluation	VERIFIED	VERIFIED	VERIFIED
+conditional classical defect	CONDITIONAL	CONDITIONAL	CONDITIONAL
+ordinary-node promotion	UNKNOWN	UNKNOWN	UNKNOWN
+actual classical defect	UNKNOWN	UNKNOWN	UNKNOWN
+source-to-evaluation chain map	UNKNOWN	UNKNOWN	UNKNOWN
+integral evaluation lattice	UNKNOWN	UNKNOWN	UNKNOWN

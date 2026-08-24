@@ -1,0 +1,62 @@
+[
+  {
+    "84": "VERIFIED",
+    "84a": "VERIFIED",
+    "claim_status": "VERIFIED",
+    "layer": "source assembly rational data"
+  },
+  {
+    "84": "VERIFIED",
+    "84a": "VERIFIED",
+    "claim_status": "VERIFIED",
+    "layer": "source assembly integral/SNF data"
+  },
+  {
+    "84": "VERIFIED",
+    "84a": "VERIFIED",
+    "claim_status": "VERIFIED",
+    "layer": "verified block scheme"
+  },
+  {
+    "84": "VERIFIED",
+    "84a": "VERIFIED",
+    "claim_status": "VERIFIED",
+    "layer": "block Hilbert profile through degree 8"
+  },
+  {
+    "84": "VERIFIED",
+    "84a": "VERIFIED",
+    "claim_status": "VERIFIED",
+    "layer": "degree-8 block evaluation"
+  },
+  {
+    "84": "CONDITIONAL",
+    "84a": "CONDITIONAL",
+    "claim_status": "CONDITIONAL",
+    "layer": "conditional classical defect"
+  },
+  {
+    "84": "UNKNOWN",
+    "84a": "UNKNOWN",
+    "claim_status": "UNKNOWN",
+    "layer": "ordinary-node promotion"
+  },
+  {
+    "84": "UNKNOWN",
+    "84a": "UNKNOWN",
+    "claim_status": "UNKNOWN",
+    "layer": "actual classical defect"
+  },
+  {
+    "84": "UNKNOWN",
+    "84a": "UNKNOWN",
+    "claim_status": "UNKNOWN",
+    "layer": "source-to-evaluation chain map"
+  },
+  {
+    "84": "UNKNOWN",
+    "84a": "UNKNOWN",
+    "claim_status": "UNKNOWN",
+    "layer": "integral evaluation lattice"
+  }
+]

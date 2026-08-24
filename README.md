@@ -102,6 +102,12 @@ evaluation invariants of the verified reduced 112-point block schemes. Full
 classical-defect promotion remains conditional on the ordinary-node certificate
 gate.
 
+The current `84 / 84a` comparison also records a source-vs-block-evaluation
+collapse: their verified block Hilbert/evaluation profiles agree through
+degree `8`, while their verified integral source Smith types differ. This is a
+non-determination certificate at the verified block-scheme level only; no
+source-to-evaluation chain map or integral evaluation lattice is inferred.
+
 Representative controls include `61 / 451`, `84 / 84a`, `452 / 453`,
 `84 / 240`, `84a / 239`, and `239 / 240 / 241`. The generated tables preserve
 the factor-normalization warning for `451` and the deferred exact
@@ -131,6 +137,7 @@ Start with the documentation index:
 - [Integral lattice engine](docs/integral_lattice_engine.md)
 - [Node relation complexes](docs/node_relation_complexes.md)
 - [Source-to-node comparison](docs/source_to_node_comparison.md)
+- [Source versus block evaluation](docs/source_block_evaluation_comparison.md)
 
 ## Repository Layout
 

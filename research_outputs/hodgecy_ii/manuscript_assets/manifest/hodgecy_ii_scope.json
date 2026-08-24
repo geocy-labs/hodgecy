@@ -39,9 +39,11 @@
     "members_452_453": "452/453 retain exact quadratic-field deferred status.",
     "no_defect": "Blob 13 computes exact degree-8 block-scheme evaluation deficiencies for 84/84a, but verified classical defect remains UNKNOWN until ordinary-node prerequisites are satisfied.",
     "no_hodge_atom": "Blob 11 constructs no Hodge atom spectrum.",
+    "no_integral_evaluation_lattice": "Blob 14 constructs no integral evaluation relation lattice.",
     "no_node_ideal": "Blob 11 creates no node ideal.",
     "no_node_relations": "Blob 11 asserts no node relation or source-to-node morphism.",
     "no_odp_promotion": "Blob 11 performs no ODP promotion.",
+    "no_source_to_evaluation_morphism": "Blob 14 records only a double-line to four-point-block index correspondence; no theorem-backed source-to-evaluation chain map is constructed.",
     "projective_equivalence": "Equal source signatures do not prove projective equivalence.",
     "rational_vs_integral": "Same rational source type does not imply same integral source type."
   },
@@ -76,6 +78,14 @@
       "critical_degree_block_evaluation": "VERIFIED",
       "descriptive_case": "Case C - Hilbert collapse over computed range"
     },
+    "blob_14": {
+      "classical_defect": "UNKNOWN",
+      "conditional_classical_defect": "CONDITIONAL",
+      "exact_result_status": "EXACT_BLOCK_EVALUATION_COLLAPSE",
+      "integral_evaluation_lattice": "UNKNOWN",
+      "source_to_evaluation_chain_map": "UNKNOWN",
+      "source_vs_block_evaluation_comparison": "VERIFIED"
+    },
     "later_blobs": [
       "ordinary_node_verified",
       "defect_verified",
@@ -83,6 +93,14 @@
     ]
   },
   "schema": "hodgecy_ii_scope.v1",
+  "source_evaluation_status_blob_14": {
+    "84_84a": {
+      "actual_classical_defect": "UNKNOWN",
+      "interpretation_class": "BLOCK_EVALUATION_COLLAPSE_WITH_INTEGRAL_SOURCE_SEPARATION",
+      "non_determination_certificate": "block_evaluation_does_not_determine_integral_source_type",
+      "status": "EXACT_BLOCK_EVALUATION_COLLAPSE"
+    }
+  },
   "summary": {
     "counts_by_category": {
       "INTEGRAL COLLAPSE / EQUIVARIANT SEPARATION": 57,

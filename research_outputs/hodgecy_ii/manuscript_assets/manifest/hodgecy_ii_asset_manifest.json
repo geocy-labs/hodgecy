@@ -1,5 +1,9 @@
 {
   "artifacts": {
+    "docs/source_block_evaluation_comparison.md": {
+      "sha256": "a500b9b259d4ea2f2894fe15f1fea7a76b3c0e364bdac5a718de0251c026d64c",
+      "status": "BLOB14_READY"
+    },
     "research_outputs/hodgecy_ii/evaluation_blob13/84/block_evaluation_certificates.json": {
       "sha256": "92833f99268c2309e54225f3e2d284efe6dee5adb87038a3027c411ae52c40e7",
       "status": "BLOB13_READY"
@@ -76,6 +80,18 @@
       "sha256": "39dfd7084ee2edc03fc7ec9acc3288776907a152de2eec51947869a0bb43e50b",
       "status": "CONTEXT_READY"
     },
+    "research_outputs/hodgecy_ii/manuscript_assets/data/source_block_evaluation_evidence_status_84_84a.json": {
+      "sha256": "4cd438454ecd995f38973af57e0d11411e3e48df37618a8d18aaa56f164ba88d",
+      "status": "BLOB14_READY"
+    },
+    "research_outputs/hodgecy_ii/manuscript_assets/data/source_block_evaluation_evidence_status_84_84a.md": {
+      "sha256": "c46ebcd46ac0f2224b81a850274848856b057e794fbad59796b359ddc112c13e",
+      "status": "BLOB14_READY"
+    },
+    "research_outputs/hodgecy_ii/manuscript_assets/data/source_block_evaluation_evidence_status_84_84a.tsv": {
+      "sha256": "282da670916e0f4aedaca9ad15c58a9de41125e3ff1b9ca7b59b07120a22429c",
+      "status": "BLOB14_READY"
+    },
     "research_outputs/hodgecy_ii/manuscript_assets/data/validation_status_84_84a.json": {
       "sha256": "a20b75da33c5178f2d9d98c6a7a45b91170d6b54ec1f4e366886e51767d7a9b6",
       "status": "BLOB13_READY"
@@ -120,8 +136,16 @@
       "sha256": "39dfd7084ee2edc03fc7ec9acc3288776907a152de2eec51947869a0bb43e50b",
       "status": "CONTEXT_READY"
     },
+    "research_outputs/hodgecy_ii/manuscript_assets/figures/source_block_two_axis_comparison.svg": {
+      "sha256": "911dab359d8564329c6f8ea694a95b37c14902bca435c79f911dd81ff9711955",
+      "status": "BLOB14_READY"
+    },
+    "research_outputs/hodgecy_ii/manuscript_assets/figures/source_block_two_axis_comparison_data.json": {
+      "sha256": "630635ab9264d1beba01152c8fd6195ae1f9ed9a5f8f4f28bf45063049fbf04b",
+      "status": "BLOB14_READY"
+    },
     "research_outputs/hodgecy_ii/manuscript_assets/manifest/hodgecy_ii_scope.json": {
-      "sha256": "908b8a3149dd47ffe672b545b404e948e23a131145989cc24f9c026fb56a8fd4",
+      "sha256": "b47b05bdc04895bc85243f9401a2ae59118e3fb97bbe9cee2bcfee546eb02e77",
       "status": "CONTEXT_READY"
     },
     "research_outputs/hodgecy_ii/manuscript_assets/tables/block_evaluation_comparison_84_84a.csv": {
@@ -203,6 +227,66 @@
     "research_outputs/hodgecy_ii/manuscript_assets/tables/representative_fidelity_controls.tsv": {
       "sha256": "17b2fc53b9b47ce1b4ad42cb9cc7cc814fc87c7ae29d656d6b9bc08e248328b2",
       "status": "CONTEXT_READY"
+    },
+    "research_outputs/hodgecy_ii/manuscript_assets/tables/source_block_evaluation_comparison_84_84a.csv": {
+      "sha256": "65f42553d8b1de26364642252693c620f55038fd57d20d2a440604cb329d071e",
+      "status": "BLOB14_READY"
+    },
+    "research_outputs/hodgecy_ii/manuscript_assets/tables/source_block_evaluation_comparison_84_84a.json": {
+      "sha256": "c24a21dde34d85e410a26960f2dfa4070b7fb562b60c28d1c3dbcb3ec85a638c",
+      "status": "BLOB14_READY"
+    },
+    "research_outputs/hodgecy_ii/manuscript_assets/tables/source_block_evaluation_comparison_84_84a.md": {
+      "sha256": "82908ed60a1b0d6addda7240bc032931bdf412f4ad440b6d9146d391ebd72663",
+      "status": "BLOB14_READY"
+    },
+    "research_outputs/hodgecy_ii/manuscript_assets/tables/source_block_evaluation_comparison_84_84a.tex": {
+      "sha256": "b054e95f22be34ea7851c81735590074026f6616c76bbdb4199f82209fe869d4",
+      "status": "BLOB14_READY"
+    },
+    "research_outputs/hodgecy_ii/manuscript_assets/tables/source_block_evaluation_comparison_84_84a.tsv": {
+      "sha256": "7a96c27a3f583dc6c250823b69a55d02aac0a532b80d77f7b2a5e8c0696581ad",
+      "status": "BLOB14_READY"
+    },
+    "research_outputs/hodgecy_ii/source_evaluation_blob14/84/source_block_index_correspondence.tsv": {
+      "sha256": "67450a66e33a3d9d26f65fc87948bd7ed189bf3d4741ca0de78eb4e86ab3b9ff",
+      "status": "BLOB14_READY"
+    },
+    "research_outputs/hodgecy_ii/source_evaluation_blob14/84a/source_block_index_correspondence.tsv": {
+      "sha256": "d2011e67447dafe8b8fe2542c04b3cc0dccf6ed7b9dc17f5663f03b6d38293b4",
+      "status": "BLOB14_READY"
+    },
+    "research_outputs/hodgecy_ii/source_evaluation_blob14/conditional_defect_corollary.json": {
+      "sha256": "8066c7583161f4d06b8158e31cb0e29bd60348290a3ecef9a6f8c98442439b72",
+      "status": "BLOB14_READY"
+    },
+    "research_outputs/hodgecy_ii/source_evaluation_blob14/conditional_defect_corollary.md": {
+      "sha256": "36cdc4219ed6401c25ba31257ac06076381b0f6d460db8594b66780d598b3636",
+      "status": "BLOB14_READY"
+    },
+    "research_outputs/hodgecy_ii/source_evaluation_blob14/hodgecy_ii_84_84a_source_evaluation_comparison.json": {
+      "sha256": "f5b4a91dc278241892783d5f3ab4c5b53b275f31c23874ac4e1a277f6166407c",
+      "status": "BLOB14_READY"
+    },
+    "research_outputs/hodgecy_ii/source_evaluation_blob14/hodgecy_ii_84_84a_source_evaluation_comparison.md": {
+      "sha256": "64799e13f43614b70deb5355e7840169b05aa087196178d0b703532c86d946d9",
+      "status": "BLOB14_READY"
+    },
+    "research_outputs/hodgecy_ii/source_evaluation_blob14/hodgecy_ii_source_evaluation_blob14.json": {
+      "sha256": "9aa252900dc80dae7aba2a8c2e9177d92ae504aa53ee9d03d15064adb053caf2",
+      "status": "BLOB14_READY"
+    },
+    "research_outputs/hodgecy_ii/source_evaluation_blob14/hodgecy_ii_source_evaluation_blob14.md": {
+      "sha256": "bad2a5fc271bc68750637d048da86c87cd29407de197714f4558eaa7ac9ae04d",
+      "status": "BLOB14_READY"
+    },
+    "research_outputs/hodgecy_ii/source_evaluation_blob14/theorem_candidate_block_eval_vs_integral_source.json": {
+      "sha256": "cb82f2aef70bf862b7555fb0bc083c2585a6e81305f9099c052dbcf88f93e1f0",
+      "status": "BLOB14_READY"
+    },
+    "research_outputs/hodgecy_ii/source_evaluation_blob14/theorem_candidate_block_eval_vs_integral_source.md": {
+      "sha256": "ee9dbdc4b3140f4c9dd448db0ebad17c332903a10364fb805d2f72ae01988bc0",
+      "status": "BLOB14_READY"
     }
   },
   "blob_13_block_evaluation": {
@@ -210,6 +294,14 @@
     "figure_ii_4": "research_outputs/hodgecy_ii/manuscript_assets/figures/hilbert_profile_comparison.svg",
     "figure_ii_5": "research_outputs/hodgecy_ii/manuscript_assets/figures/evaluation_relation_diagram.svg",
     "table_ii_5": "research_outputs/hodgecy_ii/manuscript_assets/tables/block_evaluation_comparison_84_84a.tsv"
+  },
+  "blob_14_source_evaluation": {
+    "classical_defect": "UNKNOWN",
+    "comparison_report": "research_outputs/hodgecy_ii/source_evaluation_blob14/hodgecy_ii_84_84a_source_evaluation_comparison.md",
+    "figure_ii_6": "research_outputs/hodgecy_ii/manuscript_assets/figures/source_block_two_axis_comparison.svg",
+    "non_determination_certificate": "block_evaluation_does_not_determine_integral_source_type",
+    "status": "EXACT_BLOCK_EVALUATION_COLLAPSE",
+    "table_ii_6": "research_outputs/hodgecy_ii/manuscript_assets/tables/source_block_evaluation_comparison_84_84a.tsv"
   },
   "deterministic_generation": "Volatile timestamps are normalized; identical input hashes produce identical table, JSON, membership, and classification content.",
   "generated_at": "normalized-deterministic-generation",
