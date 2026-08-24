@@ -2,7 +2,13 @@ from __future__ import annotations
 
 import json
 
-from hodgecy.cohorts import baseline_hodgecy_ii_comparison, hodgecy_ii_node_geometry_blob5, ingest_hodgecy_ii_cohort, load_hodgecy_ii_manifest
+from hodgecy.cohorts import (
+    baseline_hodgecy_ii_comparison,
+    hodgecy_ii_node_geometry_blob5,
+    hodgecy_ii_node_ideal_hilbert_blob6,
+    ingest_hodgecy_ii_cohort,
+    load_hodgecy_ii_manifest,
+)
 from hodgecy.core import ComparisonState, EvidenceStatus, ResultKind
 from hodgecy.storage import ResultStore
 
@@ -149,4 +155,46 @@ def test_blob5_node_geometry_reports_and_pair_comparison(tmp_path) -> None:
     assert "hodgecy_ii_84_84a_node_geometry_comparison.md" in paths
     payload = json.loads((report_dir / "hodgecy_ii_node_geometry_blob5.json").read_text(encoding="utf-8"))
     assert payload["node_summaries"]["84a"]["singular_scheme_degree"] == 112
+    assert "comparison_time" not in json.dumps(payload)
+
+
+def test_blob6_node_ideal_hilbert_keeps_84_ideal_and_hilbert_unknown(tmp_path) -> None:
+    store = make_store(tmp_path)
+    result = hodgecy_ii_node_ideal_hilbert_blob6(store)
+    by_name = {item.invariant_name: item for item in store.get_invariants(geometry_id="hodgecy-ii-84", result_kind=ResultKind.NODE_GEOMETRY)}
+
+    assert result.summaries["84"]["imported_singular_scheme_degree"] == 112
+    assert by_name["exact_node_ideal_available"].value is False
+    assert by_name["exact_node_ideal_available"].evidence_status is EvidenceStatus.COMPUTED
+    assert by_name["scheme_ideal_hash"].value is None
+    assert by_name["scheme_ideal_hash"].evidence_status is EvidenceStatus.UNKNOWN
+    assert by_name["hilbert_function_table"].value is None
+    assert by_name["hilbert_function_table"].evidence_status is EvidenceStatus.UNKNOWN
+    assert "degree 112 is not enough" in (by_name["hilbert_computation_status"].notes or "")
+
+
+def test_blob6_does_not_analyze_239_240_241_without_node_ideals(tmp_path) -> None:
+    store = make_store(tmp_path)
+    hodgecy_ii_node_ideal_hilbert_blob6(store)
+    by_name = {item.invariant_name: item for item in store.get_invariants(geometry_id="hodgecy-ii-240", result_kind=ResultKind.NODE_GEOMETRY)}
+
+    assert by_name["scheme_ideal_hash"].value is None
+    assert by_name["hilbert_function_table"].evidence_status is EvidenceStatus.UNKNOWN
+    assert "No exact supported node/singular-scheme ideal" in (by_name["hilbert_computation_status"].notes or "")
+
+
+def test_blob6_reports_unknown_84_84a_hilbert_comparison(tmp_path) -> None:
+    store = make_store(tmp_path)
+    report_dir = tmp_path / "hilbert_reports"
+    result = hodgecy_ii_node_ideal_hilbert_blob6(store, report_dir=report_dir)
+
+    pair_states = {item.comparison_key: item.state for item in result.pair_84_hilbert_report.invariant_results}
+    assert pair_states["exact_node_ideal_available"] is ComparisonState.EQUAL
+    assert pair_states["scheme_ideal_hash"] is ComparisonState.UNKNOWN
+    assert result.pair_84_hilbert_first_difference.state is ComparisonState.UNKNOWN
+    paths = {path.name for path in result.report_paths}
+    assert "hodgecy_ii_node_ideal_hilbert_blob6.json" in paths
+    assert "hodgecy_ii_84_84a_hilbert_comparison.md" in paths
+    payload = json.loads((report_dir / "hodgecy_ii_node_ideal_hilbert_blob6.json").read_text(encoding="utf-8"))
+    assert payload["summaries"]["84"]["exact_node_or_singular_ideal_available"] is False
     assert "comparison_time" not in json.dumps(payload)

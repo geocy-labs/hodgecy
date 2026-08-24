@@ -56,6 +56,19 @@ NODE_GEOMETRY_INVARIANTS = (
     "finite_reduced_odp_scheme",
 )
 
+NODE_IDEAL_HILBERT_INVARIANTS = (
+    "exact_node_ideal_available",
+    "node_ideal_source",
+    "scheme_ideal_hash",
+    "scheme_ideal_saturated",
+    "scheme_dimension_from_ideal",
+    "scheme_degree_from_ideal",
+    "hilbert_function_table",
+    "hilbert_stabilization_degree",
+    "hilbert_polynomial",
+    "hilbert_computation_status",
+)
+
 PAIR_ORDER = HODGE_INVARIANTS + SOURCE_INVARIANTS + tuple(name for name, _ in UNKNOWN_LATER_INVARIANTS)
 PAIR_WITH_NODE_GEOMETRY_ORDER = PAIR_ORDER + NODE_GEOMETRY_INVARIANTS
 PAIR_AVAILABLE_FIRST_DIFFERENCE_ORDER = HODGE_INVARIANTS + SOURCE_INVARIANTS
@@ -136,6 +149,26 @@ class HodgeCYIINodeGeometryResult:
             "pair_84_node_report": self.pair_84_node_report.to_dict(),
             "pair_84_node_first_difference": self.pair_84_node_first_difference.to_dict(),
             "pair_84_appended_report": self.pair_84_appended_report.to_dict(),
+            "report_paths": [path.as_posix() for path in self.report_paths],
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class HodgeCYIINodeIdealHilbertResult:
+    ingest: HodgeCYIICohortIngestResult
+    runs: tuple[CalculationRun, ...]
+    summaries: dict[str, dict[str, Any]]
+    pair_84_hilbert_report: PairComparisonReport
+    pair_84_hilbert_first_difference: FirstDifferenceResult
+    report_paths: tuple[Path, ...] = ()
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "ingest": self.ingest.to_dict(),
+            "runs": [run.to_dict() for run in self.runs],
+            "summaries": self.summaries,
+            "pair_84_hilbert_report": self.pair_84_hilbert_report.to_dict(),
+            "pair_84_hilbert_first_difference": self.pair_84_hilbert_first_difference.to_dict(),
             "report_paths": [path.as_posix() for path in self.report_paths],
         }
 
@@ -321,6 +354,73 @@ def hodgecy_ii_node_geometry_blob5(
         pair_84_node_report=pair_node_report,
         pair_84_node_first_difference=pair_node_first,
         pair_84_appended_report=pair_appended_report,
+        report_paths=paths,
+    )
+
+
+def hodgecy_ii_node_ideal_hilbert_blob6(
+    store: ResultStore,
+    *,
+    manifest_path: str | Path | None = None,
+    root: str | Path | None = None,
+    report_dir: str | Path | None = None,
+) -> HodgeCYIINodeIdealHilbertResult:
+    """Persist the Blob 6 node-ideal/Hilbert checkpoint for HodgeCY II.
+
+    The current canonical records contain imported singular-scheme degree data
+    for 84/84a but no frozen exact homogeneous node ideal. Blob 6 therefore
+    records Hilbert data as UNKNOWN for the research cohort rather than
+    constructing an ideal from degree or candidate support.
+    """
+
+    root_path = Path(root) if root is not None else repo_root()
+    ingest = ingest_hodgecy_ii_cohort(store, manifest_path=manifest_path, root=root_path)
+    manifest = ingest.manifest
+    arrangement_to_geometry = {member["arrangement_id"]: member["geometry_id"] for member in manifest["members"]}
+    runs: list[CalculationRun] = []
+    summaries: dict[str, dict[str, Any]] = {}
+
+    for member in manifest["members"]:
+        arrangement_id = member["arrangement_id"]
+        summary_path = root_path / member["summary_path"]
+        summary = json.loads(summary_path.read_text(encoding="utf-8"))
+        input_metadata = {
+            "blob": 6,
+            "summary_path": member["summary_path"],
+            "summary_sha256": stable_sha256(summary),
+            "blob5_report": "research_outputs/hodgecy_ii/node_geometry_blob5/hodgecy_ii_node_geometry_blob5.json",
+        }
+        run = store.begin_run(
+            geometry_id=member["geometry_id"],
+            calculation_type="hodgecy_ii_node_ideal_hilbert_blob6",
+            input_metadata=input_metadata,
+            parameters={"scope": "node_ideal_and_hilbert_checkpoint", "no_defect": True},
+            backend="hodgecy.cohorts.hodgecy_ii + hodgecy.geometry.projective_schemes",
+            coefficient_ring="QQ/unknown-ideal",
+            environment_metadata={"manifest_path": str(manifest_path or MANIFEST_RELATIVE_PATH)},
+            notes="Blob 6 checkpoint; exact node ideals are not fabricated from degree data.",
+        )
+        certificate = _record_blob6_hilbert_certificate(store, run.run_id, member, summary)
+        for record in _node_ideal_hilbert_records(run.run_id, member, summary, certificate.certificate_id):
+            store.record_invariant(**record)
+        runs.append(store.complete_run(run.run_id))
+        summaries[arrangement_id] = _node_ideal_hilbert_summary(member, summary)
+
+    engine = ComparisonEngine(store)
+    pair_members = (arrangement_to_geometry["84"], arrangement_to_geometry["84a"])
+    pair_report = engine.compare_pair(pair_members[0], pair_members[1], invariants=NODE_IDEAL_HILBERT_INVARIANTS)
+    pair_first = engine.first_difference(pair_members, NODE_IDEAL_HILBERT_INVARIANTS)
+
+    paths: tuple[Path, ...] = ()
+    if report_dir is not None:
+        paths = _write_node_ideal_hilbert_reports(Path(report_dir), summaries=summaries, pair_report=pair_report, pair_first=pair_first)
+
+    return HodgeCYIINodeIdealHilbertResult(
+        ingest=ingest,
+        runs=tuple(runs),
+        summaries=summaries,
+        pair_84_hilbert_report=pair_report,
+        pair_84_hilbert_first_difference=pair_first,
         report_paths=paths,
     )
 
@@ -558,6 +658,94 @@ def _node_summary(summary: dict[str, Any], member: dict[str, Any], smoothing: di
     }
 
 
+def _record_blob6_hilbert_certificate(store: ResultStore, run_id: str, member: dict[str, Any], summary: dict[str, Any]):
+    arrangement_id = member["arrangement_id"]
+    perturbation = summary.get("quartic_perturbation") or {}
+    evidence = {
+        "arrangement_id": arrangement_id,
+        "geometry_id": member["geometry_id"],
+        "exact_node_ideal_available": False,
+        "ideal_source": None,
+        "imported_singular_scheme_dimension": perturbation.get("saturated_jacobian_scheme_dimension"),
+        "imported_singular_scheme_degree": perturbation.get("saturated_jacobian_scheme_degree"),
+        "hilbert_function_status": EvidenceStatus.UNKNOWN.value,
+        "reason": _node_ideal_gap(arrangement_id),
+        "firewall": {
+            "degree_112_does_not_determine_ideal": True,
+            "node_ideal_is_not_node_relation_lattice": True,
+            "hilbert_function_is_not_vanishing_cycle_spectrum": True,
+            "equal_hilbert_functions_do_not_imply_equal_schemes": True,
+            "candidate_point_ideal_not_complete_without_certificate": True,
+            "eventual_hilbert_value_does_not_imply_reducedness": True,
+            "no_classical_defect_asserted": True,
+        },
+    }
+    return store.record_certificate(
+        certificate_type="hodgecy_ii_blob6_node_ideal_hilbert_checkpoint",
+        subject_type="geometry",
+        subject_id=member["geometry_id"],
+        method="missing exact ideal checkpoint",
+        evidence=evidence,
+        generated_by_run_id=run_id,
+        notes="No exact homogeneous node ideal is available; Hilbert data remain UNKNOWN.",
+    )
+
+
+def _node_ideal_hilbert_records(run_id: str, member: dict[str, Any], summary: dict[str, Any], certificate_id: str) -> list[dict[str, Any]]:
+    arrangement_id = member["arrangement_id"]
+    gap = _node_ideal_gap(arrangement_id)
+    values = {
+        "exact_node_ideal_available": (False, EvidenceStatus.COMPUTED, gap),
+        "node_ideal_source": (None, EvidenceStatus.UNKNOWN, "no exact ideal source is available"),
+        "scheme_ideal_hash": (None, EvidenceStatus.UNKNOWN, "no homogeneous ideal generators are available to hash"),
+        "scheme_ideal_saturated": (None, EvidenceStatus.UNKNOWN, "saturation cannot be assessed without an exact ideal"),
+        "scheme_dimension_from_ideal": (None, EvidenceStatus.UNKNOWN, "dimension from ideal is unavailable"),
+        "scheme_degree_from_ideal": (None, EvidenceStatus.UNKNOWN, "degree from ideal is unavailable; imported degree is not an ideal"),
+        "hilbert_function_table": (None, EvidenceStatus.UNKNOWN, "Hilbert table cannot be computed without exact homogeneous ideal"),
+        "hilbert_stabilization_degree": (None, EvidenceStatus.UNKNOWN, "stabilization cannot be assessed without Hilbert values"),
+        "hilbert_polynomial": (None, EvidenceStatus.UNKNOWN, "Hilbert polynomial cannot be computed without exact homogeneous ideal"),
+        "hilbert_computation_status": ("unknown_missing_exact_ideal", EvidenceStatus.UNKNOWN, gap),
+    }
+    return [
+        {
+            "run_id": run_id,
+            "name": name,
+            "value": value,
+            "result_kind": ResultKind.NODE_GEOMETRY,
+            "evidence_status": status,
+            "method": "hodgecy_ii_blob6_node_ideal_hilbert_checkpoint",
+            "provenance": f"Blob 6 checkpoint from {member['summary_path']}",
+            "certificate_id": certificate_id,
+            "notes": notes,
+        }
+        for name, (value, status, notes) in values.items()
+    ]
+
+
+def _node_ideal_hilbert_summary(member: dict[str, Any], summary: dict[str, Any]) -> dict[str, Any]:
+    perturbation = summary.get("quartic_perturbation") or {}
+    return {
+        "arrangement_id": member["arrangement_id"],
+        "geometry_id": member["geometry_id"],
+        "exact_node_or_singular_ideal_available": False,
+        "source_of_ideal": None,
+        "imported_singular_scheme_dimension": perturbation.get("saturated_jacobian_scheme_dimension"),
+        "imported_singular_scheme_degree": perturbation.get("saturated_jacobian_scheme_degree"),
+        "hilbert_computation_status": "UNKNOWN",
+        "hilbert_values": None,
+        "reason": _node_ideal_gap(member["arrangement_id"]),
+    }
+
+
+def _node_ideal_gap(arrangement_id: str) -> str:
+    if arrangement_id in {"84", "84a"}:
+        return (
+            "Imported fixed-parameter singular-scheme dimension/degree exist, but no frozen exact homogeneous "
+            "node/singular ideal generators are present; degree 112 is not enough to reconstruct I_Sigma."
+        )
+    return "No exact supported node/singular-scheme ideal is documented for this cohort member."
+
+
 def _ensure_comparison_set(store: ResultStore, item: dict[str, Any], arrangement_to_geometry: dict[str, str]) -> ComparisonSetRecord:
     comparison_set_id = item["comparison_set_id"]
     try:
@@ -651,6 +839,32 @@ def _write_node_geometry_reports(
     return paths
 
 
+def _write_node_ideal_hilbert_reports(
+    report_dir: Path,
+    *,
+    summaries: dict[str, dict[str, Any]],
+    pair_report: PairComparisonReport,
+    pair_first: FirstDifferenceResult,
+) -> tuple[Path, ...]:
+    report_dir.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "summaries": summaries,
+        "pair_84_hilbert_report": pair_report.to_dict(),
+        "pair_84_hilbert_first_difference": pair_first.to_dict(),
+    }
+    paths = (
+        report_dir / "hodgecy_ii_node_ideal_hilbert_blob6.json",
+        report_dir / "hodgecy_ii_node_ideal_hilbert_blob6.md",
+        report_dir / "hodgecy_ii_84_84a_hilbert_comparison.json",
+        report_dir / "hodgecy_ii_84_84a_hilbert_comparison.md",
+    )
+    paths[0].write_text(_deterministic_json(payload) + "\n", encoding="utf-8")
+    paths[1].write_text(_node_ideal_hilbert_markdown(summaries), encoding="utf-8")
+    paths[2].write_text(_deterministic_json({"pair_84_hilbert_report": pair_report.to_dict(), "pair_84_hilbert_first_difference": pair_first.to_dict()}) + "\n", encoding="utf-8")
+    paths[3].write_text(_hilbert_pair_markdown(pair_report, pair_first), encoding="utf-8")
+    return paths
+
+
 def _deterministic_json(payload: dict[str, Any]) -> str:
     return canonical_json(_strip_comparison_times(payload))
 
@@ -714,6 +928,47 @@ def _node_pair_markdown(report: PairComparisonReport, first: FirstDifferenceResu
         right = result.operands[1].value if len(result.operands) > 1 else None
         lines.append(f"| {result.comparison_key} | `{left}` | `{right}` | {result.state.value} |")
     lines.extend(["", f"First node-geometry distinction: {first.first_difference or first.state.value}", ""])
+    return "\n".join(lines)
+
+
+def _node_ideal_hilbert_markdown(summaries: dict[str, dict[str, Any]]) -> str:
+    lines = ["# HodgeCY II Node Ideal and Hilbert - Blob 6", ""]
+    for arrangement_id in sorted(summaries):
+        item = summaries[arrangement_id]
+        lines.extend(
+            [
+                f"## {arrangement_id}",
+                f"- geometry_id: `{item['geometry_id']}`",
+                f"- exact node/singular ideal available: `{item['exact_node_or_singular_ideal_available']}`",
+                f"- source of ideal: `{item['source_of_ideal']}`",
+                f"- imported singular scheme dimension: `{item['imported_singular_scheme_dimension']}`",
+                f"- imported singular scheme degree: `{item['imported_singular_scheme_degree']}`",
+                f"- Hilbert computation status: `{item['hilbert_computation_status']}`",
+                f"- Hilbert values: `{item['hilbert_values']}`",
+                f"- reason: {item['reason']}",
+                "",
+            ]
+        )
+    lines.extend(
+        [
+            "## Firewall",
+            "- Degree 112 does not determine a homogeneous node ideal.",
+            "- A node ideal or Hilbert function is not a node-relation lattice or vanishing-cycle spectrum.",
+            "- Equal Hilbert functions do not imply equal schemes.",
+            "- No classical defect is computed in Blob 6.",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def _hilbert_pair_markdown(report: PairComparisonReport, first: FirstDifferenceResult) -> str:
+    lines = ["# HodgeCY II Hilbert Comparison - 84 vs 84a", "", "| Invariant | 84 | 84a | State |", "| --- | --- | --- | --- |"]
+    for result in report.invariant_results:
+        left = result.operands[0].value if result.operands else None
+        right = result.operands[1].value if len(result.operands) > 1 else None
+        lines.append(f"| {result.comparison_key} | `{left}` | `{right}` | {result.state.value} |")
+    lines.extend(["", f"First Hilbert distinction: {first.first_difference or first.state.value}", ""])
     return "\n".join(lines)
 
 
