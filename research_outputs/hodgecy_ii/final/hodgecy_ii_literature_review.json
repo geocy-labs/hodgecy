@@ -1,0 +1,175 @@
+{
+  "schema": "hodgecy_ii_literature_review.v1",
+  "status": "SOURCE_CHECKED",
+  "review_date": "2026-08-24",
+  "scope": "HodgeCY II related work for source-aware fidelity, double-octic refinement, Hilbert-Burch block explanation, and conservative novelty framing.",
+  "items": [
+    {
+      "key": "KreuzerSkarke2000",
+      "authors": "Maximilian Kreuzer and Harald Skarke",
+      "title": "Complete classification of reflexive polyhedra in four dimensions",
+      "year": 2000,
+      "journal_or_publisher": "Advances in Theoretical and Mathematical Physics",
+      "doi": "10.4310/ATMP.2000.v4.n6.a2",
+      "arxiv": "hep-th/0002240",
+      "stable_url": "https://arxiv.org/abs/hep-th/0002240",
+      "checked_claims": [
+        "The four-dimensional reflexive-polytope classification contains 473,800,776 polytopes.",
+        "The same dataset has 30,108 distinct Hodge-number pairs.",
+        "This is historical context for many-to-one collapse at the Hodge-number level."
+      ],
+      "hodgecy_ii_relevance": "This is the classical large-scale toric-hypersurface backdrop. HodgeCY II does not claim to discover Hodge-number degeneracy; it uses that phenomenon as motivation for finer source-aware fidelity layers."
+    },
+    {
+      "key": "AshmoreHe2011",
+      "authors": "Anthony Ashmore and Yang-Hui He",
+      "title": "Calabi-Yau Three-folds: Poincare Polynomials and Fractals",
+      "year": 2011,
+      "journal_or_publisher": "Strings, Gauge Fields, and the Geometry Behind: The Legacy of Maximilian Kreuzer, World Scientific",
+      "doi": "10.1142/9789814412551_0007",
+      "arxiv": "1110.1612",
+      "stable_url": "https://arxiv.org/abs/1110.1612",
+      "checked_claims": [
+        "The work studies statistical and fractal structure in Calabi-Yau data.",
+        "It reports 15,067,026 self-mirror entries in the Kreuzer-Skarke distribution.",
+        "It gives large same-Hodge multiplicities, including 910,113 for the pair (27,27), 877,191 for (25,25), and 875,275 for (26,26)."
+      ],
+      "hodgecy_ii_relevance": "This directly blocks any novelty claim of the form 'no previous work found 10,000+ Calabi-Yau collisions' when collision means repeated Hodge data or similarly coarse numerical data."
+    },
+    {
+      "key": "CynkVanStraten2019",
+      "authors": "Slawomir Cynk and Duco van Straten",
+      "title": "Picard-Fuchs operators for octic arrangements I. The case of orphans",
+      "year": 2019,
+      "journal_or_publisher": "Communications in Number Theory and Physics",
+      "doi": "10.4310/CNTP.2019.v13.n1.a1",
+      "arxiv": "1709.09752",
+      "stable_url": "https://arxiv.org/abs/1709.09752",
+      "checked_claims": [
+        "The paper studies Picard-Fuchs operators for double octic arrangements.",
+        "Its abstract records 25 families in the orphan case, with seven order-two and eighteen order-four operators.",
+        "It emphasizes that Picard-Fuchs or birational-period data can separate families not distinguished by coarse Hodge information."
+      ],
+      "hodgecy_ii_relevance": "This is the closest double-octic precedent for refining coarse Hodge information by more sensitive structure. HodgeCY II differs by tracking source assembly, rational/integral lattice data, equivariance, and later block-evaluation layers."
+    },
+    {
+      "key": "GrimmRuehleVanDeHeisteeg2021",
+      "authors": "Thomas W. Grimm, Fabian Ruehle, and Damian van de Heisteeg",
+      "title": "Classifying Calabi-Yau Threefolds Using Infinite Distance Limits",
+      "year": 2021,
+      "journal_or_publisher": "Communications in Mathematical Physics",
+      "doi": "10.1007/s00220-021-03972-9",
+      "arxiv": "1910.02963",
+      "stable_url": "https://arxiv.org/abs/1910.02963",
+      "checked_claims": [
+        "The paper classifies infinite-distance limits in Kahler moduli space using limiting mixed Hodge structures.",
+        "It packages degeneration data in Hasse diagrams and reads off fibration information.",
+        "It treats examples from toric hypersurfaces and complete intersections in products of projective spaces."
+      ],
+      "hodgecy_ii_relevance": "This is conceptual adjacency: degeneration-sensitive Hodge-theoretic structure refines ordinary topological/Hodge information. HodgeCY II does not identify its source assemblies or Hodge atoms with their LMHS invariants."
+    },
+    {
+      "key": "BrodieConstantinLukasRuehle2022",
+      "authors": "Callum R. Brodie, Andrei Constantin, Andre Lukas, and Fabian Ruehle",
+      "title": "Geodesics in the extended Kahler cone of Calabi-Yau threefolds",
+      "year": 2022,
+      "journal_or_publisher": "Journal of High Energy Physics",
+      "doi": "10.1007/JHEP03(2022)024",
+      "arxiv": "2108.10323",
+      "stable_url": "https://arxiv.org/abs/2108.10323",
+      "checked_claims": [
+        "The paper studies extended Kahler/effective cones for h11=2 Calabi-Yau threefolds drawn from CICY and Kreuzer-Skarke constructions.",
+        "It compares topology-changing phenomena including flops and boundary behavior.",
+        "It is relevant as systematic cross-construction comparison, not as a HodgeCY source-fidelity census."
+      ],
+      "hodgecy_ii_relevance": "This provides adjacent precedent for comparing Calabi-Yau data across construction frameworks. HodgeCY II's hierarchy is different: it is source/arrangement-aware and tracks first separation across rational, integral, equivariant, and geometric-evaluation layers."
+    },
+    {
+      "key": "ChandraConstantinFraserTalienteHarveyLukas2024",
+      "authors": "Aditi Chandra, Andrei Constantin, Cristofero S. Fraser-Taliente, Thomas R. Harvey, and Andre Lukas",
+      "title": "Enumerating Calabi-Yau Manifolds: Placing Bounds on the Number of Diffeomorphism Classes in the Kreuzer-Skarke List",
+      "year": 2024,
+      "journal_or_publisher": "Fortschritte der Physik",
+      "doi": "10.1002/prop.202300264",
+      "arxiv": "2310.05909",
+      "stable_url": "https://arxiv.org/abs/2310.05909",
+      "checked_claims": [
+        "The paper uses Hodge numbers, triple-intersection data, second Chern class data, and integral basis changes/equivalence checks to bound diffeomorphism classes.",
+        "It relies on the Wall-Jupp classification framework for simply connected smooth Calabi-Yau threefolds with torsion-free cohomology.",
+        "It gives strong adjacent precedent for coarse collapse followed by finer integral/topological separation."
+      ],
+      "hodgecy_ii_relevance": "This is especially important adjacent work. HodgeCY II should be framed as a different refinement ladder: local and Hodge data, rational source assembly, integral source lattice, equivariant structure, and verified geometric relation/evaluation layers."
+    },
+    {
+      "key": "GeramitaHarbourneMigliore2013",
+      "authors": "Anthony V. Geramita, Brian Harbourne, and Juan Migliore",
+      "title": "Star configurations in P^n",
+      "year": 2013,
+      "journal_or_publisher": "Journal of Algebra",
+      "doi": "10.1016/j.jalgebra.2012.11.034",
+      "arxiv": "1203.5685",
+      "stable_url": "https://arxiv.org/abs/1203.5685",
+      "checked_claims": [
+        "Definition 2.1 imposes the properly-meeting condition on the hyperplanes.",
+        "Proposition 2.9 gives ACM status, h-vector, degree, and generator degree for star configurations under those hypotheses.",
+        "Proposition 2.6 supplies the basic-double-link construction used in the direct codimension-two proof below."
+      ],
+      "hodgecy_ii_relevance": "The full properly-meeting theorem is stronger than the verified 84/84a hypotheses because higher-order point concurrences are allowed. HodgeCY II therefore uses the paper as standard context and uses the basic-double-link framework plus an explicit Hilbert-Burch matrix rather than citing Proposition 2.9 as a black box."
+    },
+    {
+      "key": "Burch1968",
+      "authors": "Lindsay Burch",
+      "title": "On ideals of finite homological dimension in local rings",
+      "year": 1968,
+      "journal_or_publisher": "Mathematical Proceedings of the Cambridge Philosophical Society",
+      "doi": "10.1017/S0305004100043620",
+      "arxiv": null,
+      "stable_url": "https://doi.org/10.1017/S0305004100043620",
+      "checked_claims": [
+        "This is a primary source in the Hilbert-Burch tradition.",
+        "HodgeCY II uses the standard Hilbert-Burch theorem for perfect height-two ideals generated by maximal minors of an s by s-1 matrix."
+      ],
+      "hodgecy_ii_relevance": "The Hilbert-Burch theorem explains the rank-seven syzygy package for the eight sevenfold-product generators."
+    },
+    {
+      "key": "BrunsHerzog1998",
+      "authors": "Winfried Bruns and Jurgen Herzog",
+      "title": "Cohen-Macaulay Rings",
+      "year": 1998,
+      "journal_or_publisher": "Cambridge University Press",
+      "doi": null,
+      "arxiv": null,
+      "stable_url": "https://www.cambridge.org/core/books/cohenmacaulay-rings/5532811D5F523B5AB1F651CC48111558",
+      "checked_claims": [
+        "Theorem 1.4.17 is a standard Hilbert-Burch reference."
+      ],
+      "hodgecy_ii_relevance": "Used as a standard reference for the Hilbert-Burch theorem."
+    },
+    {
+      "key": "Eisenbud1995",
+      "authors": "David Eisenbud",
+      "title": "Commutative Algebra with a View Toward Algebraic Geometry",
+      "year": 1995,
+      "journal_or_publisher": "Springer",
+      "doi": null,
+      "arxiv": null,
+      "stable_url": "https://doi.org/10.1007/978-1-4612-5350-1",
+      "checked_claims": [
+        "Theorem 20.15 is a standard Hilbert-Burch reference."
+      ],
+      "hodgecy_ii_relevance": "Used as a standard reference for the Hilbert-Burch theorem and the determinantal resolution viewpoint."
+    }
+  ],
+  "novelty_statement": {
+    "rejected_claim": "No previous work has found >10,000 Calabi-Yau collisions.",
+    "reason_rejected": "Large degeneracies under Hodge numbers and other coarse invariants are already documented in the Kreuzer-Skarke distribution and later statistical studies.",
+    "conservative_claim": "Large degeneracies of Calabi-Yau data under Hodge numbers and other coarse invariants are well known, and previous work has refined them using intersection data, Chern classes, Picard-Fuchs operators, degeneration data, and integral topological invariants. What appears absent in the literature reviewed here is a source-aware computational fidelity census that records where presentations first separate along a hierarchy of local, Hodge, rational source-assembly, integral source-lattice, equivariant, and later geometric relation/evaluation invariants."
+  },
+  "hodgecy_ii_story": [
+    "A source-aware fidelity hierarchy for double-octic presentations.",
+    "A witness pair 84/84a that collapses at local, Hodge, and rational source levels but separates integrally.",
+    "An exact geometric continuation to verified 112-point block schemes.",
+    "A proved structural explanation showing why the block Hilbert/evaluation data collapse again.",
+    "A concrete non-monotone fidelity phenomenon: coarse equality -> integral source separation -> structurally forced block-evaluation collapse."
+  ]
+}
