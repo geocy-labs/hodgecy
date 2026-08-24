@@ -85,6 +85,7 @@ TABLE_ROOT = MANUSCRIPT_ROOT / "tables"
 FIGURE_ROOT = MANUSCRIPT_ROOT / "figures"
 DATA_ROOT = MANUSCRIPT_ROOT / "data"
 MANIFEST_ROOT = MANUSCRIPT_ROOT / "manifest"
+FINAL_ARTIFACT_MANIFEST_PATH = FINAL_ROOT / "hodgecy_ii_final_artifact_manifest.json"
 
 
 def stable_json(payload: Any) -> str:
@@ -172,6 +173,10 @@ def file_sha256(path: Path) -> str:
         for chunk in iter(lambda: handle.read(1024 * 1024), b""):
             digest.update(chunk)
     return digest.hexdigest()
+
+
+def final_artifact_paths(paths: Iterable[Path]) -> list[Path]:
+    return [path for path in paths if path.exists() and path != FINAL_ARTIFACT_MANIFEST_PATH]
 
 
 def rel(path: Path) -> str:
@@ -531,9 +536,10 @@ def final_research_manifest(result_summary_path: Path, asset_manifest_path: Path
         "dependency_versions": dependency_versions(),
         "test_counts": test_summary or {"baseline": "338 passed, 2 skipped"},
         "primary_input_hashes": {rel(path): file_sha256(path) for path in primary_inputs},
-        "primary_output_hashes": {rel(result_summary_path): file_sha256(result_summary_path), rel(asset_manifest_path): file_sha256(asset_manifest_path)},
+        "primary_output_hashes": {rel(result_summary_path): file_sha256(result_summary_path)},
+        "primary_output_references": {rel(asset_manifest_path): "referenced without hash to avoid a circular manifest dependency"},
         "scope_version": read_json(MANIFEST_ROOT / "hodgecy_ii_scope.json")["schema"],
-        "asset_manifest_hash": file_sha256(asset_manifest_path),
+        "asset_manifest_reference": rel(asset_manifest_path),
         "result_summary_hash": file_sha256(result_summary_path),
         "known_limitations": [item["problem"] for item in open_problems()],
         "release_tag": None,
@@ -676,8 +682,8 @@ def main() -> None:
     outputs.append(write_text(FINAL_ROOT / "reproduction" / "fresh_store_reproduction.md", "# Fresh-Store Reproduction\n\n" + markdown_table(fresh["comparisons"]) + f"\nStatus: `{fresh['status']}`\n"))
     outputs.append(write_json(FINAL_ROOT / "reproduction" / "deterministic_asset_check.json", deterministic_asset_check()))
 
-    preliminary_manifest = {"schema": "hodgecy_ii_final_artifact_manifest.v1", "artifacts": {rel(path): {"sha256": file_sha256(path)} for path in outputs if path.exists()}}
-    outputs.append(write_json(FINAL_ROOT / "hodgecy_ii_final_artifact_manifest.json", preliminary_manifest))
+    preliminary_manifest = {"schema": "hodgecy_ii_final_artifact_manifest.v1", "artifacts": {rel(path): {"sha256": file_sha256(path)} for path in final_artifact_paths(outputs)}}
+    outputs.append(write_json(FINAL_ARTIFACT_MANIFEST_PATH, preliminary_manifest))
     result_payload = final_result_summary(data, preliminary_manifest)
     result_json = write_json(FINAL_ROOT / "hodgecy_ii_final_results.json", result_payload)
     outputs.append(result_json)
@@ -686,7 +692,7 @@ def main() -> None:
 
     scope_path = update_scope_manifest()
     outputs.append(scope_path)
-    final_manifest_path = write_json(FINAL_ROOT / "hodgecy_ii_final_artifact_manifest.json", {"schema": "hodgecy_ii_final_artifact_manifest.v1", "artifacts": {rel(path): {"sha256": file_sha256(path), "status": "FINAL"} for path in outputs if path.exists()}})
+    final_manifest_path = write_json(FINAL_ARTIFACT_MANIFEST_PATH, {"schema": "hodgecy_ii_final_artifact_manifest.v1", "artifacts": {rel(path): {"sha256": file_sha256(path), "status": "FINAL"} for path in final_artifact_paths(outputs)}})
     outputs.append(final_manifest_path)
     asset_manifest_path = update_asset_manifest(outputs)
     print("HodgeCY II final freeze assets generated")

@@ -1,5 +1,5 @@
 {
-  "asset_manifest_hash": "70b2f3501cf069ae1221f650e09f085c4f228ff1ad1986561525258d10efa49f",
+  "asset_manifest_reference": "research_outputs/hodgecy_ii/manuscript_assets/manifest/hodgecy_ii_asset_manifest.json",
   "branch": "main",
   "dependency_versions": {
     "pandas": "3.0.2",
@@ -25,8 +25,10 @@
     "research_outputs/hodgecy_ii/final/theorem_evidence/source_lattice/source_lattice_comparison_84_84a.json": "0382becfdeaff86161368dd3bdc0a2a59c33a136023ffff6cdacbe9fd831685a"
   },
   "primary_output_hashes": {
-    "research_outputs/hodgecy_ii/final/hodgecy_ii_final_results.json": "3b89a7b2d066e016ed5bb194bbc33e7a337e4dde47a623baf21285f6dcd41356",
-    "research_outputs/hodgecy_ii/manuscript_assets/manifest/hodgecy_ii_asset_manifest.json": "70b2f3501cf069ae1221f650e09f085c4f228ff1ad1986561525258d10efa49f"
+    "research_outputs/hodgecy_ii/final/hodgecy_ii_final_results.json": "3b89a7b2d066e016ed5bb194bbc33e7a337e4dde47a623baf21285f6dcd41356"
+  },
+  "primary_output_references": {
+    "research_outputs/hodgecy_ii/manuscript_assets/manifest/hodgecy_ii_asset_manifest.json": "referenced without hash to avoid a circular manifest dependency"
   },
   "python_version": "3.12.10",
   "release_tag": null,
