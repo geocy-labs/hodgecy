@@ -14,3 +14,6 @@ class ValidationError(HodgeCYError, ValueError):
 
 class ConfigurationError(HodgeCYError, ValueError):
     pass
+
+class MathematicalPromotionError(HodgeCYError, TypeError):
+    pass
