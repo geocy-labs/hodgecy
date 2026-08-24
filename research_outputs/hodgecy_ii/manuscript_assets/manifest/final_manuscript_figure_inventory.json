@@ -5,9 +5,9 @@
       "data_source": "research_outputs/hodgecy_ii/manuscript_assets/figures/fidelity_hierarchy_data.json",
       "figure_id": "II.1",
       "figure_path": "research_outputs/hodgecy_ii/manuscript_assets/figures/fidelity_hierarchy.svg",
-      "generator": "hodgecy_ii_final_freeze.py / prior blob generators",
+      "generator": "hodgecy_ii_final_freeze.py",
       "input_hash": "5a0561bbfb49c8a6c5037e12e7c62a095e30450a9ee6f734835dc42aab73b503",
-      "status": "MANUSCRIPT_READY",
+      "status": "MAIN_TEXT",
       "title": "Fidelity hierarchy"
     },
     {
@@ -15,9 +15,9 @@
       "data_source": "research_outputs/hodgecy_ii/manuscript_assets/figures/neighborhood_84_refinement_tree_data.json",
       "figure_id": "II.2",
       "figure_path": "research_outputs/hodgecy_ii/manuscript_assets/figures/neighborhood_84_refinement_tree.svg",
-      "generator": "hodgecy_ii_final_freeze.py / prior blob generators",
+      "generator": "hodgecy_ii_final_freeze.py",
       "input_hash": "39dfd7084ee2edc03fc7ec9acc3288776907a152de2eec51947869a0bb43e50b",
-      "status": "MANUSCRIPT_READY",
+      "status": "MAIN_TEXT",
       "title": "84-neighborhood refinement tree"
     },
     {
@@ -25,9 +25,9 @@
       "data_source": "research_outputs/hodgecy_ii/manuscript_assets/figures/node_certification_bridge_data.json",
       "figure_id": "II.3",
       "figure_path": "research_outputs/hodgecy_ii/manuscript_assets/figures/node_certification_bridge.svg",
-      "generator": "hodgecy_ii_final_freeze.py / prior blob generators",
+      "generator": "hodgecy_ii_final_freeze.py",
       "input_hash": "76e254383e457e4c7a2a612e00435418d26c0b092f42e8fe471f19a9d80b8d63",
-      "status": "MANUSCRIPT_READY",
+      "status": "MAIN_TEXT",
       "title": "Block/node certification bridge"
     },
     {
@@ -35,9 +35,9 @@
       "data_source": "research_outputs/hodgecy_ii/manuscript_assets/figures/hilbert_profile_comparison_data.json",
       "figure_id": "II.4",
       "figure_path": "research_outputs/hodgecy_ii/manuscript_assets/figures/hilbert_profile_comparison.svg",
-      "generator": "hodgecy_ii_final_freeze.py / prior blob generators",
+      "generator": "hodgecy_ii_final_freeze.py",
       "input_hash": "f69489cd7f67c5591db4cf3c606a74f4dbf7589924804776261e21e7a897c0b8",
-      "status": "MANUSCRIPT_READY",
+      "status": "MAIN_TEXT",
       "title": "Hilbert-profile comparison"
     },
     {
@@ -45,9 +45,9 @@
       "data_source": "research_outputs/hodgecy_ii/manuscript_assets/figures/evaluation_relation_diagram_data.json",
       "figure_id": "II.5",
       "figure_path": "research_outputs/hodgecy_ii/manuscript_assets/figures/evaluation_relation_diagram.svg",
-      "generator": "hodgecy_ii_final_freeze.py / prior blob generators",
+      "generator": "hodgecy_ii_final_freeze.py",
       "input_hash": "0aac30f081f71e684567045cf24cb8c1ffdc083b9035c5be4a3717a2ae4e0d2b",
-      "status": "MANUSCRIPT_READY",
+      "status": "MAIN_TEXT",
       "title": "Evaluation relation diagram"
     },
     {
@@ -55,9 +55,9 @@
       "data_source": "research_outputs/hodgecy_ii/manuscript_assets/figures/source_block_two_axis_comparison_data.json",
       "figure_id": "II.6",
       "figure_path": "research_outputs/hodgecy_ii/manuscript_assets/figures/source_block_two_axis_comparison.svg",
-      "generator": "hodgecy_ii_final_freeze.py / prior blob generators",
+      "generator": "hodgecy_ii_final_freeze.py",
       "input_hash": "630635ab9264d1beba01152c8fd6195ae1f9ed9a5f8f4f28bf45063049fbf04b",
-      "status": "MANUSCRIPT_READY",
+      "status": "MAIN_TEXT",
       "title": "Source versus block-evaluation axes"
     },
     {
@@ -65,9 +65,9 @@
       "data_source": "research_outputs/hodgecy_ii/manuscript_assets/figures/final_result_hierarchy_data.json",
       "figure_id": "S.1",
       "figure_path": "research_outputs/hodgecy_ii/manuscript_assets/figures/final_result_hierarchy.svg",
-      "generator": "hodgecy_ii_final_freeze.py / prior blob generators",
+      "generator": "hodgecy_ii_final_freeze.py",
       "input_hash": "a45995dc8a2a6af970aef73036a74fcbe0caa8b06a9ee03f33a12acad6ceee57",
-      "status": "MANUSCRIPT_READY",
+      "status": "SUPPLEMENTARY",
       "title": "Final result hierarchy"
     }
   ],

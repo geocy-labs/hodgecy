@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import csv
 import json
 from pathlib import Path
 
@@ -8,49 +7,50 @@ from hodgecy.research import GATE_A_REQUIRED_COMPONENTS, GateAEvidenceState, gat
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-GATE_A_ROOT = REPO_ROOT / "research_outputs" / "hodgecy_ii"
+FINAL_ROOT = REPO_ROOT / "research_outputs" / "hodgecy_ii" / "final"
+THEOREM_EVIDENCE_ROOT = FINAL_ROOT / "theorem_evidence"
+ASSET_ROOT = REPO_ROOT / "research_outputs" / "hodgecy_ii" / "manuscript_assets"
 
 
 def _json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def test_gate_a_input_identity_hashes_are_frozen_for_both_arrangements() -> None:
-    summary = _json(GATE_A_ROOT / "gate_a_reconciliation_summary.json")
+def test_final_block_geometry_identity_hashes_are_frozen_for_both_arrangements() -> None:
+    certificate = _json(THEOREM_EVIDENCE_ROOT / "block_geometry" / "block_geometry_certification_84_84a.json")
+    by_arrangement = {item["arrangement_id"]: item for item in certificate["certifications"]}
 
-    assert summary["input_identities"]["84"]["quartic_sha256"] == summary["input_identities"]["84a"]["quartic_sha256"]
-    assert summary["input_identities"]["84"]["branch_polynomial_sha256"] != summary["input_identities"]["84a"]["branch_polynomial_sha256"]
+    assert set(by_arrangement) == {"84", "84a"}
+    assert certificate["ordinary_node_promotion"] == "UNKNOWN"
+    assert certificate["blocked_step"] == "saturated_jacobian_ideal"
+    assert by_arrangement["84"]["block_scheme_hash"] != by_arrangement["84a"]["block_scheme_hash"]
+
+    for arrangement_id, item in by_arrangement.items():
+        assert item["validation_status"]["block_scheme"] == "VERIFIED"
+        assert item["validation_status"]["ordinary_node_verified"] == "UNKNOWN"
+        assert item["validation_status"]["saturated_jacobian_ideal"] == "UNKNOWN"
+        assert item["promotion_status"] == "UNKNOWN"
+        assert item["backend"]["saturated_jacobian_reproducible_in_current_environment"] is False
+        assert len(item["blocks"]) == 28
+        assert sum(block["degree"] for block in item["blocks"]) == 112
+        assert all(block["status"] == "VERIFIED" for block in item["blocks"])
+        assert all(block["reduced"] is True for block in item["blocks"])
+
+
+def test_final_theorem_evidence_manifests_resolve_block_geometry_and_evaluation() -> None:
     for arrangement_id in ("84", "84a"):
-        identity = _json(GATE_A_ROOT / arrangement_id / "jacobian_input.json")
-        assert identity["Q0"] == "x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t"
-        assert identity["epsilon"] == "1"
-        assert set(identity["jacobian_generators"]) == {"F", "dF_dx", "dF_dy", "dF_dz", "dF_dt"}
+        manifest = _json(THEOREM_EVIDENCE_ROOT / arrangement_id / "manifest.json")
+        block_path = REPO_ROOT / manifest["block_scheme"]["path"]
+        evaluation_path = REPO_ROOT / manifest["evaluation_result"]["path"]
+        hilbert_path = REPO_ROOT / manifest["hilbert_table"]["path"]
 
-
-def test_gate_a_artifact_inventory_marks_no_artifact_sufficient_for_promotion() -> None:
-    with (GATE_A_ROOT / "gate_a_artifact_inventory.tsv").open(newline="", encoding="utf-8") as handle:
-        rows = list(csv.DictReader(handle, delimiter="\t"))
-
-    assert rows
-    assert all(row["sufficient_for_status"] == "NO" for row in rows)
-    assert {row["evidence_state"] for row in rows} >= {
-        GateAEvidenceState.REPRODUCIBLE_BUT_INCOMPLETE.value,
-        GateAEvidenceState.LOG_ONLY.value,
-    }
-
-
-def test_gate_a_certificate_parsing_keeps_support_radical_hessian_unresolved() -> None:
-    for arrangement_id in ("84", "84a"):
-        support = _json(GATE_A_ROOT / arrangement_id / "support_certificate.json")
-        radicality = _json(GATE_A_ROOT / arrangement_id / "radicality_certificate.json")
-        hessian = _json(GATE_A_ROOT / arrangement_id / "local_hessian_certificate.json")
-
-        assert support["block_count"] == 28
-        assert support["formal_node_count"] == 112
-        assert support["support_verified"] is False
-        assert radicality["radical_verified"] is False
-        assert hessian["branch_quadratic_rank_3_verified"] is False
-        assert hessian["double_cover_quadratic_rank_4_verified"] is False
+        assert block_path.exists()
+        assert evaluation_path.exists()
+        assert hilbert_path.exists()
+        assert "final/theorem_evidence" in manifest["block_scheme"]["path"].replace("\\", "/")
+        assert manifest["evaluation_result"]["H_B_8"] == 105
+        assert manifest["evaluation_result"]["deficiency"] == 7
+        assert manifest["source_signature"]["validation_status"] == "THEOREM_READY_SOURCE_CONTROL"
 
 
 def test_gate_a_promotion_logic_requires_every_required_component() -> None:
@@ -69,16 +69,17 @@ def test_gate_a_promotion_logic_requires_every_required_component() -> None:
     assert "radicality" in decision.missing_components
 
 
-def test_gate_a_summary_blocks_defect_and_source_to_node_gates() -> None:
-    summary = _json(GATE_A_ROOT / "gate_a_reconciliation_summary.json")
-    manifest = _json(GATE_A_ROOT / "hodgecy_ii_manifest.json")
+def test_final_status_matrix_blocks_defect_and_source_to_node_gates() -> None:
+    final_results = _json(FINAL_ROOT / "hodgecy_ii_final_results.json")
+    rows = _json(ASSET_ROOT / "tables" / "final_evidence_status_matrix.json")
+    by_statement = {row["statement"]: row for row in rows}
 
-    assert summary["raw_stronger_logs_reconciled"] is True
-    assert summary["gate_a_complete"] is False
-    assert manifest["node_verified_84"] is False
-    assert manifest["node_verified_84a"] is False
-    assert manifest["ready_for_defect_gate"] is False
-    assert manifest["ready_for_source_to_node_gate"] is False
-    for arrangement_id in ("84", "84a"):
-        assert summary["decisions"][arrangement_id]["promoted_status"] == "degree112_certified"
-        assert "frozen_exact_node_ideal" in summary["decisions"][arrangement_id]["missing_components"]
+    assert final_results["block_geometry_results"]["84"]["ordinary_node_status"] == "UNKNOWN"
+    assert final_results["block_geometry_results"]["84a"]["ordinary_node_status"] == "UNKNOWN"
+    assert final_results["evaluation_results"]["84"]["actual_classical_defect"] == "UNKNOWN"
+    assert final_results["evaluation_results"]["84a"]["actual_classical_defect"] == "UNKNOWN"
+    assert final_results["comparison_results"]["source_to_evaluation_chain_map"] == "unknown"
+    assert by_statement["full ordinary-node promotion"]["status"] == "OPEN"
+    assert by_statement["frozen saturated node ideal"]["status"] == "OPEN"
+    assert by_statement["classical defect=7"]["status"] == "CONDITIONAL"
+    assert by_statement["source-to-evaluation morphism"]["status"] == "OPEN"

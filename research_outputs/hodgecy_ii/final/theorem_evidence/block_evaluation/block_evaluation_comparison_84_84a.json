@@ -1,0 +1,735 @@
+{
+  "comparison": {
+    "compared_degrees": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "critical_values_agree": true,
+    "descriptive_case": "Case C - Hilbert collapse over computed range",
+    "evaluation_deficiencies_agree": true,
+    "evaluation_ranks_agree": true,
+    "firewall": {
+      "block_evaluation_deficiency_is_not_automatically_classical_defect": true,
+      "different_hilbert_functions_do_not_explain_source_smith_difference": true,
+      "equal_evaluation_deficiencies_do_not_imply_equal_block_schemes": true,
+      "equal_hilbert_functions_do_not_imply_isomorphic_schemes": true,
+      "evaluation_relation_dimension_is_not_source_kernel_rank": true,
+      "no_exceptional_curve_relation_constructed": true,
+      "no_hodge_atom_spectrum_constructed": true,
+      "no_integral_evaluation_lattice_fabricated": true,
+      "no_picard_lefschetz_calculation": true,
+      "no_source_to_evaluation_morphism_inferred": true,
+      "no_vanishing_cycle_relation_constructed": true
+    },
+    "first_hilbert_difference": null,
+    "hilbert_profile_state": "EQUAL through computed range",
+    "left_arrangement": "84",
+    "relation_dimensions_agree": true,
+    "right_arrangement": "84a"
+  },
+  "results": {
+    "84": {
+      "H_B_8": 105,
+      "actual_classical_defect": null,
+      "actual_classical_defect_status": "unknown",
+      "arrangement_id": "84",
+      "block_evaluation_deficiency": 7,
+      "block_scheme_hash": "428406a6d72603cea07594fbbeac4aacdd35ed7437a203a77751d7e16a6b5eb7",
+      "certificates": [
+        {
+          "H_B_8": 105,
+          "block_ideal_hash": "428406a6d72603cea07594fbbeac4aacdd35ed7437a203a77751d7e16a6b5eb7",
+          "certificate_type": "critical_degree_block_evaluation",
+          "critical_degree_certificate": {
+            "applicability_checks": {
+              "ambient_base": "P^3",
+              "ambient_dimension": 3,
+              "branch_degree_even": true,
+              "characteristic": 0,
+              "cover_degree": 2
+            },
+            "certificate_type": "critical_degree_rule",
+            "convention": "nodal_double_solid_clemens_cynk",
+            "rule": "for a double cover of P^3 branched over degree 2d, k_crit = 3d - 4",
+            "theorem_reference": "Clemens/Cynk nodal double-solid convention"
+          },
+          "git_commit": "f7a9ef3bfbcd6850b1dc4c7e13e290c45ad20bc0",
+          "hodgecy_version": "1.0.0",
+          "scheme_degree": 112
+        },
+        {
+          "backend": "sympy exact line quotient remainders+sympy.Matrix.rank",
+          "block_ideal_hash": "428406a6d72603cea07594fbbeac4aacdd35ed7437a203a77751d7e16a6b5eb7",
+          "certificate_type": "block_evaluation_rank",
+          "degree": 8,
+          "evaluation_rank": 105,
+          "git_commit": "f7a9ef3bfbcd6850b1dc4c7e13e290c45ad20bc0",
+          "hodgecy_version": "1.0.0",
+          "rank_identity": "rank(E_8) = H_B(8)",
+          "source_dimension": 165,
+          "target_length": 112
+        },
+        {
+          "block_ideal_hash": "428406a6d72603cea07594fbbeac4aacdd35ed7437a203a77751d7e16a6b5eb7",
+          "certificate_type": "block_evaluation_deficiency",
+          "classical_defect_status": "unknown",
+          "degree": 8,
+          "epsilon_B": 7,
+          "firewall": {
+            "block_evaluation_deficiency_is_not_automatically_classical_defect": true,
+            "different_hilbert_functions_do_not_explain_source_smith_difference": true,
+            "equal_evaluation_deficiencies_do_not_imply_equal_block_schemes": true,
+            "equal_hilbert_functions_do_not_imply_isomorphic_schemes": true,
+            "evaluation_relation_dimension_is_not_source_kernel_rank": true,
+            "no_exceptional_curve_relation_constructed": true,
+            "no_hodge_atom_spectrum_constructed": true,
+            "no_integral_evaluation_lattice_fabricated": true,
+            "no_picard_lefschetz_calculation": true,
+            "no_source_to_evaluation_morphism_inferred": true,
+            "no_vanishing_cycle_relation_constructed": true
+          },
+          "git_commit": "f7a9ef3bfbcd6850b1dc4c7e13e290c45ad20bc0",
+          "hodgecy_version": "1.0.0",
+          "terminology": "degree-8 block-scheme evaluation deficiency"
+        },
+        {
+          "block_ideal_hash": "428406a6d72603cea07594fbbeac4aacdd35ed7437a203a77751d7e16a6b5eb7",
+          "certificate_type": "evaluation_relation_dimension",
+          "explicit_dual_matrix_constructed": false,
+          "firewall": {
+            "block_evaluation_deficiency_is_not_automatically_classical_defect": true,
+            "different_hilbert_functions_do_not_explain_source_smith_difference": true,
+            "equal_evaluation_deficiencies_do_not_imply_equal_block_schemes": true,
+            "equal_hilbert_functions_do_not_imply_isomorphic_schemes": true,
+            "evaluation_relation_dimension_is_not_source_kernel_rank": true,
+            "no_exceptional_curve_relation_constructed": true,
+            "no_hodge_atom_spectrum_constructed": true,
+            "no_integral_evaluation_lattice_fabricated": true,
+            "no_picard_lefschetz_calculation": true,
+            "no_source_to_evaluation_morphism_inferred": true,
+            "no_vanishing_cycle_relation_constructed": true
+          },
+          "git_commit": "f7a9ef3bfbcd6850b1dc4c7e13e290c45ad20bc0",
+          "hodgecy_version": "1.0.0",
+          "identity": "dim ker(E_8^T) = target_length - rank(E_8)",
+          "integral_evaluation_relation_complex": "UNKNOWN",
+          "relation_dimension": 7
+        },
+        {
+          "actual_classical_defect": null,
+          "actual_classical_defect_status": "unknown",
+          "block_ideal_hash": "428406a6d72603cea07594fbbeac4aacdd35ed7437a203a77751d7e16a6b5eb7",
+          "certificate_type": "conditional_defect",
+          "condition": "only if the verified block scheme is identified with the full ordinary-node scheme under the HodgeCY defect hypotheses",
+          "conditional_classical_defect_value": 7,
+          "firewall": {
+            "block_evaluation_deficiency_is_not_automatically_classical_defect": true,
+            "different_hilbert_functions_do_not_explain_source_smith_difference": true,
+            "equal_evaluation_deficiencies_do_not_imply_equal_block_schemes": true,
+            "equal_hilbert_functions_do_not_imply_isomorphic_schemes": true,
+            "evaluation_relation_dimension_is_not_source_kernel_rank": true,
+            "no_exceptional_curve_relation_constructed": true,
+            "no_hodge_atom_spectrum_constructed": true,
+            "no_integral_evaluation_lattice_fabricated": true,
+            "no_picard_lefschetz_calculation": true,
+            "no_source_to_evaluation_morphism_inferred": true,
+            "no_vanishing_cycle_relation_constructed": true
+          },
+          "git_commit": "f7a9ef3bfbcd6850b1dc4c7e13e290c45ad20bc0",
+          "hodgecy_version": "1.0.0",
+          "prerequisites": {
+            "applicable_double_solid_model": true,
+            "certified_critical_degree_rule": true,
+            "complete_support": false,
+            "exact_evaluation_or_hilbert_computation": true,
+            "exact_node_ideal": false,
+            "finite_singular_scheme": true,
+            "ordinary_node_classification": false,
+            "reducedness": true
+          }
+        }
+      ],
+      "conditional_classical_defect_value": 7,
+      "critical_degree": {
+        "ambient_base": "P^3",
+        "ambient_dimension": 3,
+        "branch_degree": 8,
+        "certificate": {
+          "applicability_checks": {
+            "ambient_base": "P^3",
+            "ambient_dimension": 3,
+            "branch_degree_even": true,
+            "characteristic": 0,
+            "cover_degree": 2
+          },
+          "certificate_type": "critical_degree_rule",
+          "convention": "nodal_double_solid_clemens_cynk",
+          "rule": "for a double cover of P^3 branched over degree 2d, k_crit = 3d - 4",
+          "theorem_reference": "Clemens/Cynk nodal double-solid convention"
+        },
+        "characteristic": 0,
+        "convention": "nodal_double_solid_clemens_cynk",
+        "cover_degree": 2,
+        "critical_degree": 8,
+        "d": 4,
+        "evidence_status": "verified",
+        "source_dimension": 165
+      },
+      "evaluation_cokernel_dimension": 7,
+      "evaluation_kernel_dimension": 60,
+      "evaluation_rank": 105,
+      "evaluation_relation_dimension": 7,
+      "evaluation_source_dimension": 165,
+      "evaluation_target_length": 112,
+      "evidence_status": "verified",
+      "explicit_dual_relation_map_constructed": false,
+      "explicit_evaluation_matrix_constructed": false,
+      "explicit_point_evaluation": "NOT_REQUIRED",
+      "hilbert_table": {
+        "arrangement_id": "84",
+        "backend": "sympy exact line quotient remainders+sympy.Matrix.rank",
+        "base_field": "QQ",
+        "block_scheme_hash": "428406a6d72603cea07594fbbeac4aacdd35ed7437a203a77751d7e16a6b5eb7",
+        "certificate": {
+          "algorithm": "rank of S_d -> direct sum QQ[u]/(Q0|_L) degree-d block quotient components",
+          "backend": "sympy exact line quotient remainders+sympy.Matrix.rank",
+          "base_field": "QQ",
+          "block_geometry_reducedness_certificate": true,
+          "block_ideal_hash": "428406a6d72603cea07594fbbeac4aacdd35ed7437a203a77751d7e16a6b5eb7",
+          "certificate_type": "block_hilbert_function",
+          "firewall": {
+            "block_evaluation_deficiency_is_not_automatically_classical_defect": true,
+            "different_hilbert_functions_do_not_explain_source_smith_difference": true,
+            "equal_evaluation_deficiencies_do_not_imply_equal_block_schemes": true,
+            "equal_hilbert_functions_do_not_imply_isomorphic_schemes": true,
+            "evaluation_relation_dimension_is_not_source_kernel_rank": true,
+            "no_exceptional_curve_relation_constructed": true,
+            "no_hodge_atom_spectrum_constructed": true,
+            "no_integral_evaluation_lattice_fabricated": true,
+            "no_picard_lefschetz_calculation": true,
+            "no_source_to_evaluation_morphism_inferred": true,
+            "no_vanishing_cycle_relation_constructed": true
+          },
+          "hodgecy_version": "1.0.0",
+          "scheme_degree": 112,
+          "sympy_version": "1.14.0"
+        },
+        "certified_stabilization_degree": null,
+        "evidence_status": "verified",
+        "groebner_cache_hash": "ca68c178362d503b2cfa32e40f827f1daf6a0dbd52f42c4e16204f7d41c1b50c",
+        "observed_constant_tail": null,
+        "values": [
+          {
+            "H_B_d": 1,
+            "degree": 0,
+            "dim_I_B_d": 0,
+            "dim_S_d": 1,
+            "evaluation_matrix_shape": [
+              28,
+              1
+            ],
+            "evaluation_rank": 1,
+            "evidence_status": "verified",
+            "matrix_hash": "9e602307596223b459b197c307b1b0f843cfd886f5f8ef49c7c636dc1b7c491a",
+            "method": "rank of exact direct-sum line quotient matrix over QQ",
+            "target_quotient_dimension": 28
+          },
+          {
+            "H_B_d": 4,
+            "degree": 1,
+            "dim_I_B_d": 0,
+            "dim_S_d": 4,
+            "evaluation_matrix_shape": [
+              56,
+              4
+            ],
+            "evaluation_rank": 4,
+            "evidence_status": "verified",
+            "matrix_hash": "313b650320eae6aa6bf32924e00528d9ba6984374ee8f36df3535cbba764e7a5",
+            "method": "rank of exact direct-sum line quotient matrix over QQ",
+            "target_quotient_dimension": 56
+          },
+          {
+            "H_B_d": 10,
+            "degree": 2,
+            "dim_I_B_d": 0,
+            "dim_S_d": 10,
+            "evaluation_matrix_shape": [
+              84,
+              10
+            ],
+            "evaluation_rank": 10,
+            "evidence_status": "verified",
+            "matrix_hash": "76553232d64c0d4efeeb3dd3a36f993608cc6c5880612b9011fc252992d99775",
+            "method": "rank of exact direct-sum line quotient matrix over QQ",
+            "target_quotient_dimension": 84
+          },
+          {
+            "H_B_d": 20,
+            "degree": 3,
+            "dim_I_B_d": 0,
+            "dim_S_d": 20,
+            "evaluation_matrix_shape": [
+              112,
+              20
+            ],
+            "evaluation_rank": 20,
+            "evidence_status": "verified",
+            "matrix_hash": "4f2a4b79d342ccf61c6c9db44f83667a2b6107ae198c1e01637b188606d13abb",
+            "method": "rank of exact direct-sum line quotient matrix over QQ",
+            "target_quotient_dimension": 112
+          },
+          {
+            "H_B_d": 34,
+            "degree": 4,
+            "dim_I_B_d": 1,
+            "dim_S_d": 35,
+            "evaluation_matrix_shape": [
+              112,
+              35
+            ],
+            "evaluation_rank": 34,
+            "evidence_status": "verified",
+            "matrix_hash": "09bde1c048d55de94484830004e2259d055b44c72a00a6d9053f2fed3284dea7",
+            "method": "rank of exact direct-sum line quotient matrix over QQ",
+            "target_quotient_dimension": 112
+          },
+          {
+            "H_B_d": 52,
+            "degree": 5,
+            "dim_I_B_d": 4,
+            "dim_S_d": 56,
+            "evaluation_matrix_shape": [
+              112,
+              56
+            ],
+            "evaluation_rank": 52,
+            "evidence_status": "verified",
+            "matrix_hash": "242897633e008f251b785c9a7f5c2de675e9126890ef68fee91329d16b8bce3a",
+            "method": "rank of exact direct-sum line quotient matrix over QQ",
+            "target_quotient_dimension": 112
+          },
+          {
+            "H_B_d": 74,
+            "degree": 6,
+            "dim_I_B_d": 10,
+            "dim_S_d": 84,
+            "evaluation_matrix_shape": [
+              112,
+              84
+            ],
+            "evaluation_rank": 74,
+            "evidence_status": "verified",
+            "matrix_hash": "354dcfb970b6affbd0ab66584f0a6ab40bac6fd94d4575a7459e9905e6fa5733",
+            "method": "rank of exact direct-sum line quotient matrix over QQ",
+            "target_quotient_dimension": 112
+          },
+          {
+            "H_B_d": 92,
+            "degree": 7,
+            "dim_I_B_d": 28,
+            "dim_S_d": 120,
+            "evaluation_matrix_shape": [
+              112,
+              120
+            ],
+            "evaluation_rank": 92,
+            "evidence_status": "verified",
+            "matrix_hash": "212164b3be295318a54f9852df8ac4b0b097ab32be7d003388437e02145e5ead",
+            "method": "rank of exact direct-sum line quotient matrix over QQ",
+            "target_quotient_dimension": 112
+          },
+          {
+            "H_B_d": 105,
+            "degree": 8,
+            "dim_I_B_d": 60,
+            "dim_S_d": 165,
+            "evaluation_matrix_shape": [
+              112,
+              165
+            ],
+            "evaluation_rank": 105,
+            "evidence_status": "verified",
+            "matrix_hash": "68730ea9f2dff4d36982da9ef02b1161a895ce3f0fb32cd1ee3c901557b3dd1f",
+            "method": "rank of exact direct-sum line quotient matrix over QQ",
+            "target_quotient_dimension": 112
+          }
+        ]
+      },
+      "integral_evaluation_relation_complex": "UNKNOWN",
+      "scheme_degree": 112,
+      "timings": {
+        "critical_degree_seconds": 3.290001768618822e-05,
+        "degree_8_evaluation_seconds": 0.0,
+        "hilbert_degree_0_seconds": 0.07365649996791035,
+        "hilbert_degree_1_seconds": 0.08164170000236481,
+        "hilbert_degree_2_seconds": 0.21506230009254068,
+        "hilbert_degree_3_seconds": 0.420005000079982,
+        "hilbert_degree_4_seconds": 0.6215701999608427,
+        "hilbert_degree_5_seconds": 0.944799599936232,
+        "hilbert_degree_6_seconds": 1.6126947000157088,
+        "hilbert_degree_7_seconds": 3.0308552999049425,
+        "hilbert_degree_8_seconds": 6.173931000055745,
+        "hilbert_table_seconds": 13.363051900058053,
+        "line_quotient_preparation_seconds": 0.18838170007802546,
+        "relation_analysis_seconds": 0.0,
+        "total_seconds": 13.363104100106284
+      }
+    },
+    "84a": {
+      "H_B_8": 105,
+      "actual_classical_defect": null,
+      "actual_classical_defect_status": "unknown",
+      "arrangement_id": "84a",
+      "block_evaluation_deficiency": 7,
+      "block_scheme_hash": "3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98",
+      "certificates": [
+        {
+          "H_B_8": 105,
+          "block_ideal_hash": "3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98",
+          "certificate_type": "critical_degree_block_evaluation",
+          "critical_degree_certificate": {
+            "applicability_checks": {
+              "ambient_base": "P^3",
+              "ambient_dimension": 3,
+              "branch_degree_even": true,
+              "characteristic": 0,
+              "cover_degree": 2
+            },
+            "certificate_type": "critical_degree_rule",
+            "convention": "nodal_double_solid_clemens_cynk",
+            "rule": "for a double cover of P^3 branched over degree 2d, k_crit = 3d - 4",
+            "theorem_reference": "Clemens/Cynk nodal double-solid convention"
+          },
+          "git_commit": "f7a9ef3bfbcd6850b1dc4c7e13e290c45ad20bc0",
+          "hodgecy_version": "1.0.0",
+          "scheme_degree": 112
+        },
+        {
+          "backend": "sympy exact line quotient remainders+sympy.Matrix.rank",
+          "block_ideal_hash": "3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98",
+          "certificate_type": "block_evaluation_rank",
+          "degree": 8,
+          "evaluation_rank": 105,
+          "git_commit": "f7a9ef3bfbcd6850b1dc4c7e13e290c45ad20bc0",
+          "hodgecy_version": "1.0.0",
+          "rank_identity": "rank(E_8) = H_B(8)",
+          "source_dimension": 165,
+          "target_length": 112
+        },
+        {
+          "block_ideal_hash": "3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98",
+          "certificate_type": "block_evaluation_deficiency",
+          "classical_defect_status": "unknown",
+          "degree": 8,
+          "epsilon_B": 7,
+          "firewall": {
+            "block_evaluation_deficiency_is_not_automatically_classical_defect": true,
+            "different_hilbert_functions_do_not_explain_source_smith_difference": true,
+            "equal_evaluation_deficiencies_do_not_imply_equal_block_schemes": true,
+            "equal_hilbert_functions_do_not_imply_isomorphic_schemes": true,
+            "evaluation_relation_dimension_is_not_source_kernel_rank": true,
+            "no_exceptional_curve_relation_constructed": true,
+            "no_hodge_atom_spectrum_constructed": true,
+            "no_integral_evaluation_lattice_fabricated": true,
+            "no_picard_lefschetz_calculation": true,
+            "no_source_to_evaluation_morphism_inferred": true,
+            "no_vanishing_cycle_relation_constructed": true
+          },
+          "git_commit": "f7a9ef3bfbcd6850b1dc4c7e13e290c45ad20bc0",
+          "hodgecy_version": "1.0.0",
+          "terminology": "degree-8 block-scheme evaluation deficiency"
+        },
+        {
+          "block_ideal_hash": "3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98",
+          "certificate_type": "evaluation_relation_dimension",
+          "explicit_dual_matrix_constructed": false,
+          "firewall": {
+            "block_evaluation_deficiency_is_not_automatically_classical_defect": true,
+            "different_hilbert_functions_do_not_explain_source_smith_difference": true,
+            "equal_evaluation_deficiencies_do_not_imply_equal_block_schemes": true,
+            "equal_hilbert_functions_do_not_imply_isomorphic_schemes": true,
+            "evaluation_relation_dimension_is_not_source_kernel_rank": true,
+            "no_exceptional_curve_relation_constructed": true,
+            "no_hodge_atom_spectrum_constructed": true,
+            "no_integral_evaluation_lattice_fabricated": true,
+            "no_picard_lefschetz_calculation": true,
+            "no_source_to_evaluation_morphism_inferred": true,
+            "no_vanishing_cycle_relation_constructed": true
+          },
+          "git_commit": "f7a9ef3bfbcd6850b1dc4c7e13e290c45ad20bc0",
+          "hodgecy_version": "1.0.0",
+          "identity": "dim ker(E_8^T) = target_length - rank(E_8)",
+          "integral_evaluation_relation_complex": "UNKNOWN",
+          "relation_dimension": 7
+        },
+        {
+          "actual_classical_defect": null,
+          "actual_classical_defect_status": "unknown",
+          "block_ideal_hash": "3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98",
+          "certificate_type": "conditional_defect",
+          "condition": "only if the verified block scheme is identified with the full ordinary-node scheme under the HodgeCY defect hypotheses",
+          "conditional_classical_defect_value": 7,
+          "firewall": {
+            "block_evaluation_deficiency_is_not_automatically_classical_defect": true,
+            "different_hilbert_functions_do_not_explain_source_smith_difference": true,
+            "equal_evaluation_deficiencies_do_not_imply_equal_block_schemes": true,
+            "equal_hilbert_functions_do_not_imply_isomorphic_schemes": true,
+            "evaluation_relation_dimension_is_not_source_kernel_rank": true,
+            "no_exceptional_curve_relation_constructed": true,
+            "no_hodge_atom_spectrum_constructed": true,
+            "no_integral_evaluation_lattice_fabricated": true,
+            "no_picard_lefschetz_calculation": true,
+            "no_source_to_evaluation_morphism_inferred": true,
+            "no_vanishing_cycle_relation_constructed": true
+          },
+          "git_commit": "f7a9ef3bfbcd6850b1dc4c7e13e290c45ad20bc0",
+          "hodgecy_version": "1.0.0",
+          "prerequisites": {
+            "applicable_double_solid_model": true,
+            "certified_critical_degree_rule": true,
+            "complete_support": false,
+            "exact_evaluation_or_hilbert_computation": true,
+            "exact_node_ideal": false,
+            "finite_singular_scheme": true,
+            "ordinary_node_classification": false,
+            "reducedness": true
+          }
+        }
+      ],
+      "conditional_classical_defect_value": 7,
+      "critical_degree": {
+        "ambient_base": "P^3",
+        "ambient_dimension": 3,
+        "branch_degree": 8,
+        "certificate": {
+          "applicability_checks": {
+            "ambient_base": "P^3",
+            "ambient_dimension": 3,
+            "branch_degree_even": true,
+            "characteristic": 0,
+            "cover_degree": 2
+          },
+          "certificate_type": "critical_degree_rule",
+          "convention": "nodal_double_solid_clemens_cynk",
+          "rule": "for a double cover of P^3 branched over degree 2d, k_crit = 3d - 4",
+          "theorem_reference": "Clemens/Cynk nodal double-solid convention"
+        },
+        "characteristic": 0,
+        "convention": "nodal_double_solid_clemens_cynk",
+        "cover_degree": 2,
+        "critical_degree": 8,
+        "d": 4,
+        "evidence_status": "verified",
+        "source_dimension": 165
+      },
+      "evaluation_cokernel_dimension": 7,
+      "evaluation_kernel_dimension": 60,
+      "evaluation_rank": 105,
+      "evaluation_relation_dimension": 7,
+      "evaluation_source_dimension": 165,
+      "evaluation_target_length": 112,
+      "evidence_status": "verified",
+      "explicit_dual_relation_map_constructed": false,
+      "explicit_evaluation_matrix_constructed": false,
+      "explicit_point_evaluation": "NOT_REQUIRED",
+      "hilbert_table": {
+        "arrangement_id": "84a",
+        "backend": "sympy exact line quotient remainders+sympy.Matrix.rank",
+        "base_field": "QQ",
+        "block_scheme_hash": "3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98",
+        "certificate": {
+          "algorithm": "rank of S_d -> direct sum QQ[u]/(Q0|_L) degree-d block quotient components",
+          "backend": "sympy exact line quotient remainders+sympy.Matrix.rank",
+          "base_field": "QQ",
+          "block_geometry_reducedness_certificate": true,
+          "block_ideal_hash": "3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98",
+          "certificate_type": "block_hilbert_function",
+          "firewall": {
+            "block_evaluation_deficiency_is_not_automatically_classical_defect": true,
+            "different_hilbert_functions_do_not_explain_source_smith_difference": true,
+            "equal_evaluation_deficiencies_do_not_imply_equal_block_schemes": true,
+            "equal_hilbert_functions_do_not_imply_isomorphic_schemes": true,
+            "evaluation_relation_dimension_is_not_source_kernel_rank": true,
+            "no_exceptional_curve_relation_constructed": true,
+            "no_hodge_atom_spectrum_constructed": true,
+            "no_integral_evaluation_lattice_fabricated": true,
+            "no_picard_lefschetz_calculation": true,
+            "no_source_to_evaluation_morphism_inferred": true,
+            "no_vanishing_cycle_relation_constructed": true
+          },
+          "hodgecy_version": "1.0.0",
+          "scheme_degree": 112,
+          "sympy_version": "1.14.0"
+        },
+        "certified_stabilization_degree": null,
+        "evidence_status": "verified",
+        "groebner_cache_hash": "64831b04b3d7e649d838ccbc1deb6f352c24d1b990725c4e6ee9dca78a08a4a9",
+        "observed_constant_tail": null,
+        "values": [
+          {
+            "H_B_d": 1,
+            "degree": 0,
+            "dim_I_B_d": 0,
+            "dim_S_d": 1,
+            "evaluation_matrix_shape": [
+              28,
+              1
+            ],
+            "evaluation_rank": 1,
+            "evidence_status": "verified",
+            "matrix_hash": "01f3737172d75bd4a086ee2f86a85383abdbd719e53276061e8c851450cf4a25",
+            "method": "rank of exact direct-sum line quotient matrix over QQ",
+            "target_quotient_dimension": 28
+          },
+          {
+            "H_B_d": 4,
+            "degree": 1,
+            "dim_I_B_d": 0,
+            "dim_S_d": 4,
+            "evaluation_matrix_shape": [
+              56,
+              4
+            ],
+            "evaluation_rank": 4,
+            "evidence_status": "verified",
+            "matrix_hash": "3deac34b4c6e3f7d239be9051bdffbef46d6df8dede10f3191250919ff0785ee",
+            "method": "rank of exact direct-sum line quotient matrix over QQ",
+            "target_quotient_dimension": 56
+          },
+          {
+            "H_B_d": 10,
+            "degree": 2,
+            "dim_I_B_d": 0,
+            "dim_S_d": 10,
+            "evaluation_matrix_shape": [
+              84,
+              10
+            ],
+            "evaluation_rank": 10,
+            "evidence_status": "verified",
+            "matrix_hash": "8944b5727e84bd5913df7f186359899eeec8614faf3dfcb8505bacc5415fd965",
+            "method": "rank of exact direct-sum line quotient matrix over QQ",
+            "target_quotient_dimension": 84
+          },
+          {
+            "H_B_d": 20,
+            "degree": 3,
+            "dim_I_B_d": 0,
+            "dim_S_d": 20,
+            "evaluation_matrix_shape": [
+              112,
+              20
+            ],
+            "evaluation_rank": 20,
+            "evidence_status": "verified",
+            "matrix_hash": "59b905f10d26a3b56a0c83840c6697c6d02957220661830a6f308a0069b917f7",
+            "method": "rank of exact direct-sum line quotient matrix over QQ",
+            "target_quotient_dimension": 112
+          },
+          {
+            "H_B_d": 34,
+            "degree": 4,
+            "dim_I_B_d": 1,
+            "dim_S_d": 35,
+            "evaluation_matrix_shape": [
+              112,
+              35
+            ],
+            "evaluation_rank": 34,
+            "evidence_status": "verified",
+            "matrix_hash": "f8803dafa1e8cf7f7f26c8a93d67bcedc6da2fe627205933fcd4854cd7b8a34d",
+            "method": "rank of exact direct-sum line quotient matrix over QQ",
+            "target_quotient_dimension": 112
+          },
+          {
+            "H_B_d": 52,
+            "degree": 5,
+            "dim_I_B_d": 4,
+            "dim_S_d": 56,
+            "evaluation_matrix_shape": [
+              112,
+              56
+            ],
+            "evaluation_rank": 52,
+            "evidence_status": "verified",
+            "matrix_hash": "5cf161bdf7ce05a866a1a23ecb6a2c6bf67ac1b07e5daf1200e7310477aa6280",
+            "method": "rank of exact direct-sum line quotient matrix over QQ",
+            "target_quotient_dimension": 112
+          },
+          {
+            "H_B_d": 74,
+            "degree": 6,
+            "dim_I_B_d": 10,
+            "dim_S_d": 84,
+            "evaluation_matrix_shape": [
+              112,
+              84
+            ],
+            "evaluation_rank": 74,
+            "evidence_status": "verified",
+            "matrix_hash": "8f2a46fb68feef566c605f19ec1e253e33d404258dcdbdec276bd39216b353d4",
+            "method": "rank of exact direct-sum line quotient matrix over QQ",
+            "target_quotient_dimension": 112
+          },
+          {
+            "H_B_d": 92,
+            "degree": 7,
+            "dim_I_B_d": 28,
+            "dim_S_d": 120,
+            "evaluation_matrix_shape": [
+              112,
+              120
+            ],
+            "evaluation_rank": 92,
+            "evidence_status": "verified",
+            "matrix_hash": "b19ef15348c73bf3586812806285a47255559224bd07b7516219d2c872618876",
+            "method": "rank of exact direct-sum line quotient matrix over QQ",
+            "target_quotient_dimension": 112
+          },
+          {
+            "H_B_d": 105,
+            "degree": 8,
+            "dim_I_B_d": 60,
+            "dim_S_d": 165,
+            "evaluation_matrix_shape": [
+              112,
+              165
+            ],
+            "evaluation_rank": 105,
+            "evidence_status": "verified",
+            "matrix_hash": "6d9e2666748b37d3d1359c12bb3e7f487031068ef0452a8edf2296f149e2863a",
+            "method": "rank of exact direct-sum line quotient matrix over QQ",
+            "target_quotient_dimension": 112
+          }
+        ]
+      },
+      "integral_evaluation_relation_complex": "UNKNOWN",
+      "scheme_degree": 112,
+      "timings": {
+        "critical_degree_seconds": 5.079992115497589e-05,
+        "degree_8_evaluation_seconds": 0.0,
+        "hilbert_degree_0_seconds": 0.09039729996584356,
+        "hilbert_degree_1_seconds": 0.11064680002164096,
+        "hilbert_degree_2_seconds": 0.19765820004977286,
+        "hilbert_degree_3_seconds": 0.3536304000299424,
+        "hilbert_degree_4_seconds": 0.5765435999492183,
+        "hilbert_degree_5_seconds": 0.9622155999531969,
+        "hilbert_degree_6_seconds": 1.4801193000748754,
+        "hilbert_degree_7_seconds": 3.2994134000036865,
+        "hilbert_degree_8_seconds": 7.537806499982253,
+        "hilbert_table_seconds": 14.802135500009172,
+        "line_quotient_preparation_seconds": 0.19272069993894547,
+        "relation_analysis_seconds": 0.0,
+        "total_seconds": 14.802220899960957
+      }
+    }
+  }
+}

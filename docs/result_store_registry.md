@@ -1,6 +1,6 @@
 # Persistent Result Registry
 
-Blob 2 adds a SQLite-backed registry for immutable HodgeCY research results.
+the ResultStore layer adds a SQLite-backed registry for immutable HodgeCY research results.
 The registry stores provenance and retrieval metadata; it does not perform new
 mathematical calculations.
 
@@ -31,13 +31,13 @@ The registry stores:
   commit when available, input/parameter hashes, backend, coefficient ring, and
   status.
 - `InvariantRecord`: scalar or small JSON-compatible mathematical values with
-  Blob 1 `ResultKind` and `EvidenceStatus`.
+  the result-schema layer `ResultKind` and `EvidenceStatus`.
 - `CertificateRecord`: persistent evidence supporting a subject such as a
   future matrix rank, node verification, or source-to-node comparison.
 - `ArtifactRecord`: metadata for external files such as matrices, lattices, or
   forms. Large payloads are kept out of SQLite rows.
-- `SpectrumRecord`: persistence envelope for Blob 1 spectrum objects.
-- `ComparisonSetRecord`: named sets of two or more geometries for future Blob 3
+- `SpectrumRecord`: persistence envelope for the result-schema layer spectrum objects.
+- `ComparisonSetRecord`: named sets of two or more geometries for future the comparison-engine layer
   comparison logic.
 
 ## Immutability
@@ -59,7 +59,7 @@ The old run and its outputs remain inspectable.
 value is null.
 
 `EvidenceStatus.VERIFIED` can reference a concrete `CertificateRecord` through
-`certificate_id`. Blob 2 does not require certificates for every legacy
+`certificate_id`. the ResultStore layer does not require certificates for every legacy
 verified object, because older in-memory objects may not have persistent
 certificates yet. New persisted verified research results should carry a
 certificate whenever possible.
@@ -92,7 +92,7 @@ not replace the SQLite registry.
 
 ## Schema Versioning
 
-The SQLite schema uses `PRAGMA user_version`. Blob 2 creates schema version `1`.
+The SQLite schema uses `PRAGMA user_version`. the ResultStore layer creates schema version `1`.
 Opening a database with a future unsupported version fails with
 `ResultStoreSchemaVersionError`.
 
@@ -112,7 +112,7 @@ for spectra. These must agree. A stored `SourceAssemblySpectrum` is restored as
 `SourceAssemblySpectrum`, not as a `ConifoldAtomSpectrum` or
 `SmoothHodgeAtomSpectrum`. Invalid discriminator/type pairs fail loudly.
 
-Persistence is not a back door around the Blob 1 mathematical firewall.
+Persistence is not a back door around the the result-schema layer mathematical firewall.
 
 ## Synthetic Example
 
@@ -147,6 +147,6 @@ store.complete_run(run.run_id)
 rows = store.get_invariants(geometry_id="synthetic-A")
 ```
 
-Blob 2 does not implement comparison algorithms, singularity finding, node
+the ResultStore layer does not implement comparison algorithms, singularity finding, node
 relations, vanishing cycles, monodromy, Hodge atoms, or quantum products. It
 stores their future results without silently strengthening their meaning.

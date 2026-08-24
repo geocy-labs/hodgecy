@@ -70,7 +70,7 @@ source spectrum        -> conifold atom spectrum
 source spectrum        -> smooth Hodge-atom spectrum
 ```
 
-Blob 1 does not implement persistence, singularity finding, node ideals,
+the result-schema layer does not implement persistence, singularity finding, node ideals,
 Smith-normal-form algorithms, vanishing-cycle calculations, Picard-Lefschetz
 monodromy, quantum products, Euler operators, or actual smooth Hodge atoms.
 Those later calculations should attach their own result kind and evidence

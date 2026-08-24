@@ -1,6 +1,6 @@
 # Singular-Scheme and ODP Certification
 
-Blob 5 introduces the first reusable HodgeCY layer for actual node geometry.
+the singular-scheme layer introduces the first reusable HodgeCY layer for actual node geometry.
 It separates four claims that are often conflated in informal double-octic
 workflows.
 
@@ -96,7 +96,7 @@ branch classification and the total-space classification.
 
 ## Exact Arithmetic
 
-Verified certificates in Blob 5 use exact SymPy arithmetic over `QQ` for the
+Verified certificates in the singular-scheme layer use exact SymPy arithmetic over `QQ` for the
 supported in-repository backend. Approximate numerical roots are not promoted
 to `VERIFIED`.
 
@@ -113,7 +113,7 @@ If a model is represented by a family such as
 P1 ... P8 + epsilon Q^2
 ```
 
-Blob 5 records the exact specialization used, such as `epsilon = 1`.
+the singular-scheme layer records the exact specialization used, such as `epsilon = 1`.
 Verification at one fixed nonzero value is not promoted to a generic-parameter
 theorem.
 
@@ -123,7 +123,7 @@ For arrangements 84 and 84a, the repository contains fixed epsilon smoothing
 metadata and imported release facts that the saturated projective Jacobian
 scheme has dimension `0` and degree `112`.
 
-The current Blob 5 registry does not contain canonical exact support,
+The current the singular-scheme layer registry does not contain canonical exact support,
 reducedness, affine-chart Hessian, or double-cover total-space ODP certificates
 for all 112 points. Consequently, HodgeCY leaves support cardinality,
 reducedness, ODP count, double-cover ODP status, and global finite-reduced-ODP
@@ -134,7 +134,7 @@ supported singular-fiber models are supplied.
 
 ## Firewall
 
-Blob 5 does not compute:
+the singular-scheme layer does not compute:
 
 ```text
 node-relation ranks

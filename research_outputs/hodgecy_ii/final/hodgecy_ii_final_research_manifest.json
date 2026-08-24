@@ -1,11 +1,11 @@
 {
-  "asset_manifest_hash": "0d25004a7169340a348c0a6a172914e460d04d281d40d50452e7c4c59aad2434",
+  "asset_manifest_hash": "3eeae0bea8018a96a7db4c7932d24e6c4bfc14b3b553847b36cbe3aeaed4b70a",
   "branch": "research/hodgecy-ii-fidelity",
   "dependency_versions": {
     "pandas": "3.0.2",
     "sympy": "1.14.0"
   },
-  "git_commit": "b77de79815ad164e788fa290804bdb237a4b47c5",
+  "git_commit": "ccece82c305bfa86ae235bd1cadc3fba0da5e618",
   "known_limitations": [
     "Complete ordinary-node promotion for the chosen perturbations.",
     "Freeze/reproduce the final saturated Jacobian node ideals.",
@@ -19,18 +19,18 @@
   "package_version": "1.0.0",
   "primary_input_hashes": {
     "research_outputs/hodgecy_ii/complete_fidelity_pairs_and_sets.tsv": "0fcadb9c8b84d999e3eda2f99ae8bae94989c4a1a1db2eb3e1dbb6029dd7b976",
-    "research_outputs/hodgecy_ii/evaluation_blob13/hodgecy_ii_84_84a_evaluation_comparison.json": "c09119f95e1487b803e7da1dd45a13875a6bf2fe1411ac4b727efe0dab7ac399",
-    "research_outputs/hodgecy_ii/integral_lattice_blob8/hodgecy_ii_84_84a_source_lattice_comparison.json": "0382becfdeaff86161368dd3bdc0a2a59c33a136023ffff6cdacbe9fd831685a",
-    "research_outputs/hodgecy_ii/node_block_blob12/hodgecy_ii_node_block_certification.json": "319071bb03ab9710ae07aad6b44253c6ead5a193fd0779a947a8fd1d2ec3c9cc",
-    "research_outputs/hodgecy_ii/source_evaluation_blob14/hodgecy_ii_84_84a_source_evaluation_comparison.json": "f5b4a91dc278241892783d5f3ab4c5b53b275f31c23874ac4e1a277f6166407c"
+    "research_outputs/hodgecy_ii/final/theorem_evidence/block_evaluation/block_evaluation_comparison_84_84a.json": "63a038b3274073f7827c57b8ce21b4f4acf46818ec6ddebf7891337af837df4a",
+    "research_outputs/hodgecy_ii/final/theorem_evidence/block_geometry/block_geometry_certification_84_84a.json": "319071bb03ab9710ae07aad6b44253c6ead5a193fd0779a947a8fd1d2ec3c9cc",
+    "research_outputs/hodgecy_ii/final/theorem_evidence/source_block_comparison/source_block_evaluation_comparison_84_84a.json": "6d65a86e0feb423932adc0c4baf1e42cc5a90d08848fd2f35282f14668a0ac0a",
+    "research_outputs/hodgecy_ii/final/theorem_evidence/source_lattice/source_lattice_comparison_84_84a.json": "0382becfdeaff86161368dd3bdc0a2a59c33a136023ffff6cdacbe9fd831685a"
   },
   "primary_output_hashes": {
-    "research_outputs/hodgecy_ii/final/hodgecy_ii_final_results.json": "7487026222be1da45c3ed1484eb948378aa12835da82691318e179b3a401c24e",
-    "research_outputs/hodgecy_ii/manuscript_assets/manifest/hodgecy_ii_asset_manifest.json": "0d25004a7169340a348c0a6a172914e460d04d281d40d50452e7c4c59aad2434"
+    "research_outputs/hodgecy_ii/final/hodgecy_ii_final_results.json": "3b89a7b2d066e016ed5bb194bbc33e7a337e4dde47a623baf21285f6dcd41356",
+    "research_outputs/hodgecy_ii/manuscript_assets/manifest/hodgecy_ii_asset_manifest.json": "3eeae0bea8018a96a7db4c7932d24e6c4bfc14b3b553847b36cbe3aeaed4b70a"
   },
   "python_version": "3.12.10",
   "release_tag": null,
-  "result_summary_hash": "7487026222be1da45c3ed1484eb948378aa12835da82691318e179b3a401c24e",
+  "result_summary_hash": "3b89a7b2d066e016ed5bb194bbc33e7a337e4dde47a623baf21285f6dcd41356",
   "schema": "hodgecy_ii_final_computational_state.v1",
   "scope_version": "hodgecy_ii_scope.v1",
   "test_counts": {

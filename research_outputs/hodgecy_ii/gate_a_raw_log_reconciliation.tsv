@@ -1,4 +1,0 @@
-arrangement	artifact	claim	same_inputs	machine_readable	reconciliation	notes
-84,84a	data/raw/updated-files/COMPUTATION_LOG.md	ordinary-node and defect completion	PLAUSIBLE_Q0_EPSILON_MATCH	NO	LOG_ONLY_NOT_PROMOTION_READY	Prose claims are stronger than committed certificate fields.
-84,84a	data/raw/updated-files/hodgecy_v4_inserts.tex	verified 112-node theorem draft	PLAUSIBLE_Q0_EPSILON_MATCH	NO	LOG_ONLY_NOT_PROMOTION_READY	Manuscript theorem prose requires certificate-grade backing before status promotion.
-84,84a	data/processed/cas_certificates/reviewer_v4_claims.json	degree backed; reducedness/Hessian log-only	YES	YES	AGREES_WITH_BLOCKED_STATUS	This audit is the controlling reconciliation input for this checkpoint.

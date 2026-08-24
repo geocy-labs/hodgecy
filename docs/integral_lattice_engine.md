@@ -1,6 +1,6 @@
 # Integral Lattice Engine
 
-Blob 8 introduces a geometry-neutral exact integer linear algebra layer.
+the exact integral-lattice layer introduces a geometry-neutral exact integer linear algebra layer.
 
 ## Matrix Convention
 
@@ -28,7 +28,7 @@ im_Z(A)       subset Z^n
 coker_Z(A)    = Z^n / im_Z(A)
 ```
 
-Every public Blob 8 result uses this convention.
+Every public the exact integral-lattice layer result uses this convention.
 
 ## Exactness
 
@@ -44,7 +44,7 @@ The rational rank is computed exactly over `QQ`.
 rank_Q(A) + dim_Q ker(A_Q) = m
 ```
 
-Blob 8 records this rank-nullity check.
+the exact integral-lattice layer records this rank-nullity check.
 
 For prime `p`, the modular rank is computed over `F_p`.  The modulus must be
 prime.  Modular rank can drop at primes that see integral divisibility in the
@@ -66,7 +66,7 @@ environment, transformation matrices satisfying
 U A V = D
 ```
 
-with `U` and `V` unimodular.  Blob 8 verifies those identities when transforms
+with `U` and `V` unimodular.  the exact integral-lattice layer verifies those identities when transforms
 are returned.  If a backend does not expose transforms, invariant factors can
 still be verified while transform data remain unsupported.
 
@@ -115,7 +115,7 @@ The image lattice is an embedded lattice
 im_Z(A) subset Z^n.
 ```
 
-Blob 8 records a column Hermite-normal-form basis when supported.
+the exact integral-lattice layer records a column Hermite-normal-form basis when supported.
 
 The saturation is
 
@@ -135,7 +135,7 @@ rational span.
 
 ## Lattice Comparison
 
-Blob 8 distinguishes:
+the exact integral-lattice layer distinguishes:
 
 - equality of raw matrix presentations,
 - equality of embedded `Z`-lattices,
@@ -164,5 +164,5 @@ is not a node-relation matrix.  Equal Smith normal forms do not prove geometric
 complex isomorphism.  Equal rational rank does not imply equal integral
 structure.  Equal modular rank profiles do not imply equal lattices.
 
-Blob 8 computes no source-to-node map, no vanishing-cycle relation, no
+the exact integral-lattice layer computes no source-to-node map, no vanishing-cycle relation, no
 classical defect, and no Hodge atom.

@@ -22,7 +22,7 @@ def repo_root() -> Path:
 
 def test_blob12_block_ideal_loading_and_hash_verification() -> None:
     for arrangement_id, expected_hash in EXPECTED_BLOB12_BLOCK_HASHES.items():
-        scheme = load_blob12_block_scheme(repo_root() / "research_outputs" / "hodgecy_ii" / "node_block_blob12" / arrangement_id / "node_block_certificate.json")
+        scheme = load_blob12_block_scheme(repo_root() / "research_outputs" / "hodgecy_ii" / "final" / "theorem_evidence" / "block_geometry" / arrangement_id / "node_block_certificate.json")
 
         assert scheme.block_scheme_hash == expected_hash
         assert scheme.base_field == "QQ"
@@ -36,7 +36,7 @@ def test_blob12_block_ideal_loading_and_hash_verification() -> None:
 def test_degree_8_block_evaluation_for_84_and_84a() -> None:
     results = {}
     for arrangement_id in ("84", "84a"):
-        scheme = load_blob12_block_scheme(repo_root() / "research_outputs" / "hodgecy_ii" / "node_block_blob12" / arrangement_id / "node_block_certificate.json")
+        scheme = load_blob12_block_scheme(repo_root() / "research_outputs" / "hodgecy_ii" / "final" / "theorem_evidence" / "block_geometry" / arrangement_id / "node_block_certificate.json")
         result = compute_block_evaluation_result(scheme, degrees=range(0, 9))
         results[arrangement_id] = result
 
@@ -99,6 +99,8 @@ def test_equal_hilbert_function_does_not_imply_equal_scheme() -> None:
 
 
 def test_generated_blob13_assets_are_status_aware() -> None:
+    subprocess.run([sys.executable, "scripts/hodgecy_ii_final_freeze.py"], cwd=repo_root(), check=True)
+
     table = (repo_root() / "research_outputs" / "hodgecy_ii" / "manuscript_assets" / "tables" / "block_evaluation_comparison_84_84a.tsv").read_text(encoding="utf-8")
     validation = json.loads((repo_root() / "research_outputs" / "hodgecy_ii" / "manuscript_assets" / "data" / "validation_status_84_84a.json").read_text(encoding="utf-8"))
     scope = json.loads((repo_root() / "research_outputs" / "hodgecy_ii" / "manuscript_assets" / "manifest" / "hodgecy_ii_scope.json").read_text(encoding="utf-8"))
@@ -106,12 +108,12 @@ def test_generated_blob13_assets_are_status_aware() -> None:
     assert "block evaluation deficiency\t7\t7\tequal\texact block result" in table
     assert "verified classical defect\tUNKNOWN\tUNKNOWN\tequal\tnot promoted" in table
     assert {"arrangement": "84", "layer": "classical defect", "status": "UNKNOWN"} in validation
-    assert scope["required_geometric_outputs"]["blob_13"]["classical_defect"] == "UNKNOWN"
+    assert scope["required_geometric_outputs"]["block_evaluation"]["classical_defect"] == "UNKNOWN"
 
 
-def test_blob13_generator_regenerates_deterministic_core_values() -> None:
-    subprocess.run([sys.executable, "scripts/hodgecy_ii_block_evaluation_blob13.py"], cwd=repo_root(), check=True)
-    payload = json.loads((repo_root() / "research_outputs" / "hodgecy_ii" / "evaluation_blob13" / "hodgecy_ii_block_evaluation_blob13.json").read_text(encoding="utf-8"))
+def test_final_block_evaluation_evidence_preserves_core_values() -> None:
+    subprocess.run([sys.executable, "scripts/hodgecy_ii_final_freeze.py"], cwd=repo_root(), check=True)
+    payload = json.loads((repo_root() / "research_outputs" / "hodgecy_ii" / "final" / "theorem_evidence" / "block_evaluation" / "block_evaluation_comparison_84_84a.json").read_text(encoding="utf-8"))
 
     assert payload["results"]["84"]["H_B_8"] == 105
     assert payload["results"]["84a"]["H_B_8"] == 105

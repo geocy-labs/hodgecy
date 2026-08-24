@@ -53,7 +53,7 @@ claim a realized relation matrix unless a supported basis map is available.
 ## Integral Models
 
 Integral node-relation complexes are constructed only from a verified supplied
-integral model.  When such a model is present, HodgeCY uses the Blob 8 integer
+integral model.  When such a model is present, HodgeCY uses the the exact integral-lattice layer integer
 lattice engine to record rational rank, Smith normal form, torsion, saturation
 index, and the integer kernel.  Without that certificate, integral relation
 SNF and torsion remain `UNKNOWN`.
@@ -65,8 +65,8 @@ SNF and torsion remain `UNKNOWN`.
 - A source-assembly kernel is not a node-relation lattice.
 - Defect rank does not imply a vanishing-cycle relation rank.
 - Same rank does not imply same complex.
-- Blob 9 does not construct a source-to-node map.
-- Blob 9 does not construct conifold or smooth Hodge atoms.
+- the node-relation layer does not construct a source-to-node map.
+- the node-relation layer does not construct conifold or smooth Hodge atoms.
 
 ## HodgeCY II 84 / 84a Status
 

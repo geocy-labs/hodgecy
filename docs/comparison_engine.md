@@ -1,6 +1,6 @@
 # Generic Comparison Engine
 
-Blob 3 adds a geometry-agnostic comparison layer for persisted HodgeCY results.
+the comparison-engine layer adds a geometry-agnostic comparison layer for persisted HodgeCY results.
 It compares records that already exist in a `ResultStore`; it does not compute
 new invariants.
 
@@ -10,7 +10,7 @@ records are introduced. The comparison engine makes that hierarchy explicit.
 
 ## States
 
-The engine uses Blob 1 `ComparisonState`:
+The engine uses the result-schema layer `ComparisonState`:
 
 - `equal`: operands are comparable and equal under the declared comparison
   rule.
@@ -63,7 +63,7 @@ human-readable table.
 
 ## Set Comparison
 
-Comparison sets are loaded from Blob 2 `ComparisonSetRecord` objects:
+Comparison sets are loaded from the ResultStore layer `ComparisonSetRecord` objects:
 
 ```python
 results = engine.compare_set(
@@ -177,6 +177,6 @@ does not imply that source assembly data and node-relation data agree as
 mathematical objects. They remain different result kinds. Persistence and
 comparison both preserve that boundary.
 
-Blob 3 does not ingest cohorts, compute singularities, certify ODPs, compute
+the comparison-engine layer does not ingest cohorts, compute singularities, certify ODPs, compute
 node ideals, perform Smith normal form, build source-to-node maps, compute
 monodromy, or construct Hodge atoms. It compares existing persisted records.

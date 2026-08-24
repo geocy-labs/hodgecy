@@ -1,0 +1,1349 @@
+{
+  "block_evaluation_signatures": {
+    "84": {
+      "H_B_8": 105,
+      "arrangement_id": "84",
+      "block_ideal_hashes": [
+        "c0220d1e11d27f040f634fd95e95fade91ef548e954b42ecbb062b9a01ddd514",
+        "b7383097e7eff76ad9670703694e97debe1e044819b79fa6dc91bc5c02f6b42c",
+        "3cf3c84811f4290e6d38fcdcb8ee4f6817fe9a8a5c68269efb2bfcd74c8e0ca5",
+        "b2c4ffa5fc65febee76b09aa8b10fc1196749004b91b97f02247f5ae555b982f",
+        "3f956c00f29c963cb9cbf15c6ae033d411cae377a5790df86c5a7a87592a748b",
+        "aed29ecafc3e35a6c159c688dfdfd9e0b2d163f5df52f9cc1062596f64bc6a45",
+        "2d2009bcbfd0194e82c22b7de4bd85bbac70dcc764c5ae0c933ac61575bc8936",
+        "c3adbc6361238a272e6d440e2843e4724b3b96cd4df0a7ca492cc887cc72f4be",
+        "81aea44a6a6d82e932206b1ecb9f794aff475a42685ddf703522149f98dd53da",
+        "e4532f207922b8c7b08d26cf47c83a003f9a0348869caa2ba200b8440748616c",
+        "7537cb9370ef408264c2e99d7aae9bfb17f342a91cfb649e00629c1ea99f205f",
+        "8f91bea103eb4b77a341c2efa4f5e24200476a55162eb8ad6e287ce2e9b1abfc",
+        "41e1d17ba8f24b3e1093434953d014de112ba8a9595c45a40555c2b2802de838",
+        "5ca46d831eb667cbc7a6b72c4107db5113508956def5f2f5e88df2d256629fae",
+        "42c4db93d92fd5b83c09f50e389f3ce298df5a2c5133fa36a1612f12c3d90a75",
+        "e056d0f1cee4bff408307f707041ebfe08ef811a36b568c12ffcc2eaecce6c75",
+        "b2b2ac7159ee911cfb030845fee187f7e79b4d66fb7ad6cd1caf933379c34677",
+        "9c39454bf4def938598500858d531676d14378e9d7d12d82478e0cff3a3ddc75",
+        "35fce6ce8f524fc455b5b3c82f548ae71180ca9b2ae1c1e72fcc71a1069f0de1",
+        "91e89589aeb4a5de9d2d5467c4066736fadc15360f23510b0407be9b165ae366",
+        "0ef8060e9b84be630c1ac8623dc4c50758c1783480f455828b62e06cfb84ba4e",
+        "d706028dc2ac54d8f1e6d5b8c962196ae19c4813ec44233b1fc0bdcb3c98ca5b",
+        "ba3eedbbf546404c5dd2be761935a5aa660bab3c051784d12f254b2bf8b5cc55",
+        "8ed4ca57feca4d30133aecd24cca100037a5a80ba9f78e6b47c1845beb649cc7",
+        "515b0341d667c5811cb81480740bfa446aa1d0bae0a6e06e0bbb5f706cdb9148",
+        "350eacd8422a96838bc1c737e0a6faa53b2902fdcf747855e4743c58e6fce4d6",
+        "05a0087cf1767f59587dce9df1a87dbe3df52a34b9a734aa01f5a0d49fe7d6f9",
+        "96faef56597114b44f1c417f07f33f1d620e9a8d1c430eb1b4b588c59044df59"
+      ],
+      "block_index_hash": "c863c5ad733664ba12b0c8e0fc2d2411ddc9fca08152ff5a9d93668448907f10",
+      "block_scheme_hash": "428406a6d72603cea07594fbbeac4aacdd35ed7437a203a77751d7e16a6b5eb7",
+      "block_scheme_id": "block_geometry:84:428406a6d72603cea07594fbbeac4aacdd35ed7437a203a77751d7e16a6b5eb7",
+      "classical_defect_status": "UNKNOWN",
+      "conditional_classical_defect_value": 7,
+      "critical_degree": 8,
+      "evaluation_cokernel_dimension": 7,
+      "evaluation_kernel_dimension": 60,
+      "evaluation_rank": 105,
+      "evaluation_relation_dimension": 7,
+      "evaluation_result_id": "block_evaluation:84:428406a6d72603cea07594fbbeac4aacdd35ed7437a203a77751d7e16a6b5eb7:degree8",
+      "evaluation_source_dimension": 165,
+      "evaluation_target_length": 112,
+      "evidence_status": "verified",
+      "geometry_id": "hodgecy-ii-84",
+      "hilbert_profile": [
+        1,
+        4,
+        10,
+        20,
+        34,
+        52,
+        74,
+        92,
+        105
+      ],
+      "ordinary_node_status": "UNKNOWN",
+      "provenance": {
+        "block_evaluation_result": "research_outputs/hodgecy_ii/final/theorem_evidence/block_evaluation/block_evaluation_comparison_84_84a.json",
+        "block_scheme_certificate": "research_outputs/hodgecy_ii/final/theorem_evidence/block_geometry/84/node_block_certificate.json",
+        "certificate_types": [
+          "critical_degree_block_evaluation",
+          "block_evaluation_rank",
+          "block_evaluation_deficiency",
+          "evaluation_relation_dimension",
+          "conditional_defect"
+        ]
+      }
+    },
+    "84a": {
+      "H_B_8": 105,
+      "arrangement_id": "84a",
+      "block_ideal_hashes": [
+        "3062fe0ddb682002c9d180216169d7cc209c322dd041604b2da7728fd425681d",
+        "37af5bc584227d0bb9fc46e26c15e67796baf9684d4ba73f496b264a02a1f138",
+        "b4f3675a7c57b1ae5434a12a502473df2e4dbe7d443fdbc931a6c1574391afde",
+        "de704506a25f8f66940d73982d03f4e9e3c5475a7c1bc1b9f03eea77f63f46ad",
+        "61628bb2627ac11478a33a86efeeba06925ada58a40ea666046ec27e861eda9d",
+        "87e9262c2819759b1437648caafb85afdbb47bf1eadd9071a82295b8dc992328",
+        "98bd215f40cee28fab8a3a8d3c8c3209fe6ea5b52d2d31bdc985a0cc54f3f5c7",
+        "03fdc6214e5f4ec55184d741ac2d42d35eaa292515489619202b3dade311c40d",
+        "b6a3ee3fea80c66b7fcd1a6b8d0c2440b908c6998a97743cf84a56ce4104dd24",
+        "81b096d206c44c465fed6725b15e34c50597b45312d6a0c8786d7ed0080c0979",
+        "4987beb98378e668ad7a577158371327daababf905d262c2eb229d09953287e1",
+        "4f5c4915c063d70100d0bed5e21ef9bae7f7854252854d22ebc12fa4436be3c4",
+        "4f5b8b2b3ba35eb4d78e1b96ef4bd9109c16da9e54adb92b4e84a11f8ec47ba9",
+        "4beb8b3e6c4d8df190600aca833230f171e4719d11a07a5b257a6785b76da4de",
+        "142ad077e3f04635c1c3d6559dc490cd1771b07b5e4f19257dbef8d0eeaee4db",
+        "4ec59963c2c96dac93f90969e734ccde2854f7a10825a93df6e0db5a4383d438",
+        "d3554121a87f7ddbe869013873a8fb0c592471037affa547fdfd76aa333b302a",
+        "1ec3ea72bf6b193ba4debd5daca02c4f87cbe25382c4fa0d48a14d82a794029c",
+        "34948148c51299cd69d0de55d26b32d93d6c96452ffbaf5a266bc32ec0f27039",
+        "9f1457d99a4b3a11b962dfce3ba59b366221bdd7bfc3431214354bb0b8b5fdcf",
+        "5aa26eb51b913a14b1ca181278b501477e121e16c597de54ff377942bc6322ee",
+        "e4e92cf4de1b6865bc876b199ead57f5b992448f7759ef5be20d59c209bba15b",
+        "135ed2e9acc1b6ac864700a9a7ecc44c8e46368395cddf1cffaab1c54b18b6b4",
+        "306746c93c8323cd0f119a2252b4c38667775660e30d8469daa77dd7b97cc12f",
+        "8b6087892b04db53be26c98e69424e820647dce86c6d78eab56dae251828ebcb",
+        "4ab1cd699fde4077b406e0d0d25c0fd0b77a11f82916c61bad879d58ffb40eeb",
+        "769bcea7db2b7ce45a8c4109028c3abe03e0616e84261281c1aa9fdc695452e7",
+        "7c042f462494b4b0481a9f702f59ebc7bbb292906ecacc1ca012aa32963152e1"
+      ],
+      "block_index_hash": "ef65dd325a761224fc3e193b8a40c9f3dfbac5d3715572448d467d10b6bd8f97",
+      "block_scheme_hash": "3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98",
+      "block_scheme_id": "block_geometry:84a:3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98",
+      "classical_defect_status": "UNKNOWN",
+      "conditional_classical_defect_value": 7,
+      "critical_degree": 8,
+      "evaluation_cokernel_dimension": 7,
+      "evaluation_kernel_dimension": 60,
+      "evaluation_rank": 105,
+      "evaluation_relation_dimension": 7,
+      "evaluation_result_id": "block_evaluation:84a:3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98:degree8",
+      "evaluation_source_dimension": 165,
+      "evaluation_target_length": 112,
+      "evidence_status": "verified",
+      "geometry_id": "hodgecy-ii-84a",
+      "hilbert_profile": [
+        1,
+        4,
+        10,
+        20,
+        34,
+        52,
+        74,
+        92,
+        105
+      ],
+      "ordinary_node_status": "UNKNOWN",
+      "provenance": {
+        "block_evaluation_result": "research_outputs/hodgecy_ii/final/theorem_evidence/block_evaluation/block_evaluation_comparison_84_84a.json",
+        "block_scheme_certificate": "research_outputs/hodgecy_ii/final/theorem_evidence/block_geometry/84a/node_block_certificate.json",
+        "certificate_types": [
+          "critical_degree_block_evaluation",
+          "block_evaluation_rank",
+          "block_evaluation_deficiency",
+          "evaluation_relation_dimension",
+          "conditional_defect"
+        ]
+      }
+    }
+  },
+  "block_hilbert_comparison": {
+    "compared_degrees": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "evidence_status": "VERIFIED",
+    "first_difference": null,
+    "profile": [
+      1,
+      4,
+      10,
+      20,
+      34,
+      52,
+      74,
+      92,
+      105
+    ],
+    "source": "final block-evaluation comparison",
+    "state": "equal"
+  },
+  "block_scheme_ids": [
+    "block_geometry:84:428406a6d72603cea07594fbbeac4aacdd35ed7437a203a77751d7e16a6b5eb7",
+    "block_geometry:84a:3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98"
+  ],
+  "certificate_ids": [
+    "block_evaluation_does_not_determine_integral_source_type",
+    "conditional_defect_collapse_84_84a",
+    "source_relation_rank_2_vs_eval_relation_dim_7_feasibility_only"
+  ],
+  "classical_defect_comparison": {
+    "actual_classical_defect": {
+      "84": "UNKNOWN",
+      "84a": "UNKNOWN"
+    },
+    "conditional_value_if_block_scheme_is_full_ordinary_node_scheme": 7,
+    "ordinary_node_status": {
+      "84": "UNKNOWN",
+      "84a": "UNKNOWN"
+    },
+    "state": "unknown_actual_equal_conditional"
+  },
+  "comparison_id": "hodgecy_ii_84_84a_source_vs_block_evaluation",
+  "comparison_morphism_status": {
+    "block_index_correspondence_recorded": true,
+    "explicit_theorem_backed_data_available": false,
+    "reason": "No theorem-backed chain-level map from the source assembly complex to the degree-8 block-evaluation relation complex is supplied.",
+    "source_to_evaluation_chain_map": "unknown"
+  },
+  "conditional_classical_defect_result": {
+    "actual_classical_defect": {
+      "84": "UNKNOWN",
+      "84a": "UNKNOWN"
+    },
+    "conclusion": {
+      "84": 7,
+      "84a": 7
+    },
+    "condition": "if the verified block scheme is the full ordinary-node scheme under the HodgeCY defect hypotheses",
+    "result_id": "conditional_defect_collapse_84_84a",
+    "status": "CONDITIONAL_DEFECT_COLLAPSE"
+  },
+  "conditional_corollary_record": {
+    "condition": "ordinary-node/full-node-scheme promotion",
+    "conditional_corollary_id": "conditional_classical_defect_collapse_84_84a",
+    "statement": "Under the ordinary-node promotion gate, both classical defects equal 7.",
+    "status": "CONDITIONAL"
+  },
+  "critical_evaluation_comparison": {
+    "cokernel_dimension": 7,
+    "deficiency": 7,
+    "degree": 8,
+    "evidence_status": "VERIFIED",
+    "kernel_dimension": 60,
+    "rank": 105,
+    "source_dimension": 165,
+    "state": "equal",
+    "target_length": 112
+  },
+  "evaluation_relation_comparison": {
+    "evidence_status": "VERIFIED",
+    "relation_dimension": 7,
+    "relation_is_rank_summary_not_integral_lattice": true,
+    "state": "equal"
+  },
+  "evaluation_result_ids": [
+    "block_evaluation:84:428406a6d72603cea07594fbbeac4aacdd35ed7437a203a77751d7e16a6b5eb7:degree8",
+    "block_evaluation:84a:3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98:degree8"
+  ],
+  "evidence_status_table": [
+    {
+      "84": "VERIFIED",
+      "84a": "VERIFIED",
+      "claim_status": "VERIFIED",
+      "layer": "source assembly rational data"
+    },
+    {
+      "84": "VERIFIED",
+      "84a": "VERIFIED",
+      "claim_status": "VERIFIED",
+      "layer": "source assembly integral/SNF data"
+    },
+    {
+      "84": "VERIFIED",
+      "84a": "VERIFIED",
+      "claim_status": "VERIFIED",
+      "layer": "verified block scheme"
+    },
+    {
+      "84": "VERIFIED",
+      "84a": "VERIFIED",
+      "claim_status": "VERIFIED",
+      "layer": "block Hilbert profile through degree 8"
+    },
+    {
+      "84": "VERIFIED",
+      "84a": "VERIFIED",
+      "claim_status": "VERIFIED",
+      "layer": "degree-8 block evaluation"
+    },
+    {
+      "84": "CONDITIONAL",
+      "84a": "CONDITIONAL",
+      "claim_status": "CONDITIONAL",
+      "layer": "conditional classical defect"
+    },
+    {
+      "84": "UNKNOWN",
+      "84a": "UNKNOWN",
+      "claim_status": "UNKNOWN",
+      "layer": "ordinary-node promotion"
+    },
+    {
+      "84": "UNKNOWN",
+      "84a": "UNKNOWN",
+      "claim_status": "UNKNOWN",
+      "layer": "actual classical defect"
+    },
+    {
+      "84": "UNKNOWN",
+      "84a": "UNKNOWN",
+      "claim_status": "UNKNOWN",
+      "layer": "source-to-evaluation chain map"
+    },
+    {
+      "84": "UNKNOWN",
+      "84a": "UNKNOWN",
+      "claim_status": "UNKNOWN",
+      "layer": "integral evaluation lattice"
+    }
+  ],
+  "feasibility_2_to_7": {
+    "coefficient_ring": "QQ",
+    "conditional_statements": [],
+    "evidence_status": "computed",
+    "firewall": {
+      "equal_h1_dimensions_do_not_imply_h1_isomorphism": true,
+      "evaluation_relation_is_not_vanishing_cycle_relation": true,
+      "feasibility_is_not_existence": true,
+      "matching_dimensions_do_not_create_chain_map": true,
+      "matching_ranks_do_not_create_chain_map": true,
+      "matching_snf_does_not_create_chain_map": true,
+      "no_hodge_atom_constructed": true,
+      "nonzero_chain_image_does_not_imply_nonzero_homology_image": true,
+      "rational_comparison_does_not_imply_integral_comparison": true,
+      "shared_geometry_id_does_not_create_chain_map": true,
+      "shared_node_count_does_not_create_chain_map": true,
+      "source_to_evaluation_is_not_source_to_vanishing": true
+    },
+    "injective": "possible",
+    "isomorphism": "impossible",
+    "reason": "Necessary rank constraints only; feasibility is not existence.",
+    "source_h1_rank": 2,
+    "surjective": "impossible",
+    "target_h1_rank": 7
+  },
+  "firewall": {
+    "block_index_correspondence_is_not_chain_map": true,
+    "conditional_classical_defect_is_not_actual_classical_defect": true,
+    "different_integral_source_type_does_not_imply_different_block_evaluation": true,
+    "evaluation.block_evaluation_deficiency_is_not_automatically_classical_defect": true,
+    "evaluation.different_hilbert_functions_do_not_explain_source_smith_difference": true,
+    "evaluation.equal_evaluation_deficiencies_do_not_imply_equal_block_schemes": true,
+    "evaluation.equal_hilbert_functions_do_not_imply_isomorphic_schemes": true,
+    "evaluation.evaluation_relation_dimension_is_not_source_kernel_rank": true,
+    "evaluation.no_exceptional_curve_relation_constructed": true,
+    "evaluation.no_hodge_atom_spectrum_constructed": true,
+    "evaluation.no_integral_evaluation_lattice_fabricated": true,
+    "evaluation.no_picard_lefschetz_calculation": true,
+    "evaluation.no_source_to_evaluation_morphism_inferred": true,
+    "evaluation.no_vanishing_cycle_relation_constructed": true,
+    "no_integral_evaluation_lattice_constructed": true,
+    "no_source_to_evaluation_morphism_inferred": true,
+    "ordinary_node_gate_required_for_classical_defect": true,
+    "rank_feasibility_is_not_existence": true,
+    "same_block_evaluation_does_not_determine_integral_source_type": true,
+    "source_h1_rank_is_not_evaluation_relation_dimension": true,
+    "source_to_node.equal_h1_dimensions_do_not_imply_h1_isomorphism": true,
+    "source_to_node.evaluation_relation_is_not_vanishing_cycle_relation": true,
+    "source_to_node.feasibility_is_not_existence": true,
+    "source_to_node.matching_dimensions_do_not_create_chain_map": true,
+    "source_to_node.matching_ranks_do_not_create_chain_map": true,
+    "source_to_node.matching_snf_does_not_create_chain_map": true,
+    "source_to_node.no_hodge_atom_constructed": true,
+    "source_to_node.nonzero_chain_image_does_not_imply_nonzero_homology_image": true,
+    "source_to_node.rational_comparison_does_not_imply_integral_comparison": true,
+    "source_to_node.shared_geometry_id_does_not_create_chain_map": true,
+    "source_to_node.shared_node_count_does_not_create_chain_map": true,
+    "source_to_node.source_to_evaluation_is_not_source_to_vanishing": true
+  },
+  "geometry_evaluation_axis": {
+    "axis": "geometry/evaluation",
+    "conclusion": "exact verified block-evaluation profiles agree through the critical degree",
+    "evidence_status": "verified",
+    "first_separating_level": null,
+    "levels": [
+      "verified block scheme",
+      "Hilbert profile",
+      "degree-8 evaluation",
+      "evaluation relation dimension"
+    ],
+    "shared_levels": [
+      "Hilbert profile",
+      "degree-8 evaluation",
+      "evaluation relation dimension"
+    ]
+  },
+  "geometry_ids": [
+    "hodgecy-ii-84",
+    "hodgecy-ii-84a"
+  ],
+  "hodgecy_i_question_status": [
+    {
+      "question": "source assembly determines classical defect",
+      "reason": "No source-to-evaluation or source-to-node morphism is constructed.",
+      "status": "UNRESOLVED"
+    },
+    {
+      "question": "block evaluation less discriminating than integral source assembly",
+      "reason": "Block evaluation agrees for 84/84a while integral source type differs.",
+      "status": "SUPPORTED_EXACTLY_FOR_VERIFIED_BLOCK_SCHEMES"
+    },
+    {
+      "question": "classical defect less discriminating than source assembly",
+      "reason": "Both conditional defect values are 7; actual classical defect remains UNKNOWN.",
+      "status": "CONDITIONAL"
+    },
+    {
+      "question": "additional perturbation geometry essential",
+      "reason": "The final source-versus-block comparison performs no perturbation or vanishing-cycle construction.",
+      "status": "NOT_ESTABLISHED"
+    }
+  ],
+  "interpretation_class": "BLOCK_EVALUATION_COLLAPSE_WITH_INTEGRAL_SOURCE_SEPARATION",
+  "members": [
+    "84",
+    "84a"
+  ],
+  "non_determination_certificate": {
+    "certificate_id": "block_evaluation_does_not_determine_integral_source_type",
+    "claim": "Verified block Hilbert/evaluation data through the critical degree do not determine the integral source type.",
+    "evidence_status": "VERIFIED",
+    "nonclaims": [
+      "No reverse determinacy theorem is asserted.",
+      "No source-to-evaluation chain map is constructed."
+    ],
+    "support": [
+      "84 and 84a have equal verified block Hilbert profiles through degree 8.",
+      "84 and 84a have equal degree-8 evaluation rank, deficiency, and evaluation relation dimension.",
+      "84 and 84a have different verified integral source Smith types."
+    ],
+    "witnesses": [
+      "84",
+      "84a"
+    ]
+  },
+  "provenance": {
+    "block_evaluation_comparison": "research_outputs/hodgecy_ii/final/theorem_evidence/block_evaluation/block_evaluation_comparison_84_84a.json",
+    "block_geometry_certificates": [
+      "research_outputs/hodgecy_ii/final/theorem_evidence/block_geometry/84/node_block_certificate.json",
+      "research_outputs/hodgecy_ii/final/theorem_evidence/block_geometry/84a/node_block_certificate.json"
+    ],
+    "git_commit": "3081282b714d147a75da0934b0ad3b16c3b366fe",
+    "hodgecy_version": "1.0.0",
+    "source_lattice_comparison": "research_outputs/hodgecy_ii/final/theorem_evidence/source_lattice/source_lattice_comparison_84_84a.json"
+  },
+  "relation_dimension_comparison": {
+    "evaluation_relation_dimension": {
+      "84": 7,
+      "84a": 7
+    },
+    "no_identification_or_subspace_inference": true,
+    "source_H1_Q_rank": {
+      "84": 2,
+      "84a": 2
+    },
+    "state": "2-to-7-dimension-comparison-only"
+  },
+  "shared_coarse_data": {
+    "H_B_8": 105,
+    "block_hilbert_profile": [
+      1,
+      4,
+      10,
+      20,
+      34,
+      52,
+      74,
+      92,
+      105
+    ],
+    "critical_degree": 8,
+    "evaluation_rank": 105,
+    "evaluation_relation_dimension": 7,
+    "hodge_signature": {
+      "euler": 80,
+      "h11": 40,
+      "h12": 0
+    },
+    "local_inventory": {
+      "l3": 0,
+      "p3": 16,
+      "p4_0": 10,
+      "p4_1": 0,
+      "p5_0": 0,
+      "p5_1": 0,
+      "p5_2": 0
+    },
+    "source_H0_Q_rank": 0,
+    "source_H1_Q_rank": 2,
+    "source_matrix_shape": [
+      26,
+      28
+    ],
+    "source_rank_Q": 26
+  },
+  "source_axis": {
+    "axis": "source",
+    "conclusion": "same local/Hodge and rational source data; integral/SNF and equivariant source signatures differ",
+    "evidence_status": "verified",
+    "first_separating_level": "integral source",
+    "levels": [
+      "local/Hodge",
+      "rational source",
+      "integral source",
+      "equivariant source"
+    ],
+    "shared_levels": [
+      "local/Hodge",
+      "rational source"
+    ]
+  },
+  "source_block_index_correspondence": {
+    "84": {
+      "arrangement_id": "84",
+      "chain_map_claim": false,
+      "correspondence_hash": "c863c5ad733664ba12b0c8e0fc2d2411ddc9fca08152ff5a9d93668448907f10",
+      "correspondence_kind": "double_line_to_four_point_block",
+      "count": 28,
+      "entries": [
+        {
+          "degree": 4,
+          "planes": [
+            "p1",
+            "p2"
+          ],
+          "source_generator_id": "L01",
+          "status": "VERIFIED",
+          "target_block_id": "84:L01:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p1",
+            "p3"
+          ],
+          "source_generator_id": "L02",
+          "status": "VERIFIED",
+          "target_block_id": "84:L02:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p1",
+            "p4"
+          ],
+          "source_generator_id": "L03",
+          "status": "VERIFIED",
+          "target_block_id": "84:L03:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p1",
+            "p5"
+          ],
+          "source_generator_id": "L04",
+          "status": "VERIFIED",
+          "target_block_id": "84:L04:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p1",
+            "p6"
+          ],
+          "source_generator_id": "L05",
+          "status": "VERIFIED",
+          "target_block_id": "84:L05:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p1",
+            "p7"
+          ],
+          "source_generator_id": "L06",
+          "status": "VERIFIED",
+          "target_block_id": "84:L06:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p1",
+            "p8"
+          ],
+          "source_generator_id": "L07",
+          "status": "VERIFIED",
+          "target_block_id": "84:L07:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p2",
+            "p3"
+          ],
+          "source_generator_id": "L08",
+          "status": "VERIFIED",
+          "target_block_id": "84:L08:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p2",
+            "p4"
+          ],
+          "source_generator_id": "L09",
+          "status": "VERIFIED",
+          "target_block_id": "84:L09:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p2",
+            "p5"
+          ],
+          "source_generator_id": "L10",
+          "status": "VERIFIED",
+          "target_block_id": "84:L10:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p2",
+            "p6"
+          ],
+          "source_generator_id": "L11",
+          "status": "VERIFIED",
+          "target_block_id": "84:L11:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p2",
+            "p7"
+          ],
+          "source_generator_id": "L12",
+          "status": "VERIFIED",
+          "target_block_id": "84:L12:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p2",
+            "p8"
+          ],
+          "source_generator_id": "L13",
+          "status": "VERIFIED",
+          "target_block_id": "84:L13:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p3",
+            "p4"
+          ],
+          "source_generator_id": "L14",
+          "status": "VERIFIED",
+          "target_block_id": "84:L14:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p3",
+            "p5"
+          ],
+          "source_generator_id": "L15",
+          "status": "VERIFIED",
+          "target_block_id": "84:L15:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p3",
+            "p6"
+          ],
+          "source_generator_id": "L16",
+          "status": "VERIFIED",
+          "target_block_id": "84:L16:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p3",
+            "p7"
+          ],
+          "source_generator_id": "L17",
+          "status": "VERIFIED",
+          "target_block_id": "84:L17:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p3",
+            "p8"
+          ],
+          "source_generator_id": "L18",
+          "status": "VERIFIED",
+          "target_block_id": "84:L18:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p4",
+            "p5"
+          ],
+          "source_generator_id": "L19",
+          "status": "VERIFIED",
+          "target_block_id": "84:L19:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p4",
+            "p6"
+          ],
+          "source_generator_id": "L20",
+          "status": "VERIFIED",
+          "target_block_id": "84:L20:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p4",
+            "p7"
+          ],
+          "source_generator_id": "L21",
+          "status": "VERIFIED",
+          "target_block_id": "84:L21:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p4",
+            "p8"
+          ],
+          "source_generator_id": "L22",
+          "status": "VERIFIED",
+          "target_block_id": "84:L22:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p5",
+            "p6"
+          ],
+          "source_generator_id": "L23",
+          "status": "VERIFIED",
+          "target_block_id": "84:L23:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p5",
+            "p7"
+          ],
+          "source_generator_id": "L24",
+          "status": "VERIFIED",
+          "target_block_id": "84:L24:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p5",
+            "p8"
+          ],
+          "source_generator_id": "L25",
+          "status": "VERIFIED",
+          "target_block_id": "84:L25:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p6",
+            "p7"
+          ],
+          "source_generator_id": "L26",
+          "status": "VERIFIED",
+          "target_block_id": "84:L26:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p6",
+            "p8"
+          ],
+          "source_generator_id": "L27",
+          "status": "VERIFIED",
+          "target_block_id": "84:L27:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p7",
+            "p8"
+          ],
+          "source_generator_id": "L28",
+          "status": "VERIFIED",
+          "target_block_id": "84:L28:Q0"
+        }
+      ],
+      "source_generator_family": "double_line",
+      "status": "RECORDED_INDEX_CORRESPONDENCE_ONLY",
+      "target_block_family": "four_point_verified_block"
+    },
+    "84a": {
+      "arrangement_id": "84a",
+      "chain_map_claim": false,
+      "correspondence_hash": "ef65dd325a761224fc3e193b8a40c9f3dfbac5d3715572448d467d10b6bd8f97",
+      "correspondence_kind": "double_line_to_four_point_block",
+      "count": 28,
+      "entries": [
+        {
+          "degree": 4,
+          "planes": [
+            "p1",
+            "p2"
+          ],
+          "source_generator_id": "L01",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L01:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p1",
+            "p3"
+          ],
+          "source_generator_id": "L02",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L02:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p1",
+            "p4"
+          ],
+          "source_generator_id": "L03",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L03:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p1",
+            "p5"
+          ],
+          "source_generator_id": "L04",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L04:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p1",
+            "p6"
+          ],
+          "source_generator_id": "L05",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L05:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p1",
+            "p7"
+          ],
+          "source_generator_id": "L06",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L06:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p1",
+            "p8"
+          ],
+          "source_generator_id": "L07",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L07:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p2",
+            "p3"
+          ],
+          "source_generator_id": "L08",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L08:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p2",
+            "p4"
+          ],
+          "source_generator_id": "L09",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L09:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p2",
+            "p5"
+          ],
+          "source_generator_id": "L10",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L10:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p2",
+            "p6"
+          ],
+          "source_generator_id": "L11",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L11:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p2",
+            "p7"
+          ],
+          "source_generator_id": "L12",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L12:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p2",
+            "p8"
+          ],
+          "source_generator_id": "L13",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L13:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p3",
+            "p4"
+          ],
+          "source_generator_id": "L14",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L14:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p3",
+            "p5"
+          ],
+          "source_generator_id": "L15",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L15:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p3",
+            "p6"
+          ],
+          "source_generator_id": "L16",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L16:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p3",
+            "p7"
+          ],
+          "source_generator_id": "L17",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L17:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p3",
+            "p8"
+          ],
+          "source_generator_id": "L18",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L18:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p4",
+            "p5"
+          ],
+          "source_generator_id": "L19",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L19:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p4",
+            "p6"
+          ],
+          "source_generator_id": "L20",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L20:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p4",
+            "p7"
+          ],
+          "source_generator_id": "L21",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L21:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p4",
+            "p8"
+          ],
+          "source_generator_id": "L22",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L22:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p5",
+            "p6"
+          ],
+          "source_generator_id": "L23",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L23:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p5",
+            "p7"
+          ],
+          "source_generator_id": "L24",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L24:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p5",
+            "p8"
+          ],
+          "source_generator_id": "L25",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L25:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p6",
+            "p7"
+          ],
+          "source_generator_id": "L26",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L26:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p6",
+            "p8"
+          ],
+          "source_generator_id": "L27",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L27:Q0"
+        },
+        {
+          "degree": 4,
+          "planes": [
+            "p7",
+            "p8"
+          ],
+          "source_generator_id": "L28",
+          "status": "VERIFIED",
+          "target_block_id": "84a:L28:Q0"
+        }
+      ],
+      "source_generator_family": "double_line",
+      "status": "RECORDED_INDEX_CORRESPONDENCE_ONLY",
+      "target_block_family": "four_point_verified_block"
+    }
+  },
+  "source_integral_comparison": {
+    "84": {
+      "SNF": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        6,
+        12
+      ],
+      "rank_mod_2": 23,
+      "torsion_factors": [
+        2,
+        6,
+        12
+      ]
+    },
+    "84a": {
+      "SNF": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        4,
+        4,
+        4,
+        12
+      ],
+      "rank_mod_2": 21,
+      "torsion_factors": [
+        2,
+        4,
+        4,
+        4,
+        12
+      ]
+    },
+    "evidence_status": "VERIFIED",
+    "first_difference": "rank_mod_2",
+    "source": "final source-lattice comparison",
+    "state": "different"
+  },
+  "source_rational_comparison": {
+    "evidence_status": "VERIFIED",
+    "shared_data": {
+      "H0_Q_rank": 0,
+      "H1_Q_rank": 2,
+      "rank_Q": 26
+    },
+    "shared_type": "rational:9d168feab7fd7642ecf30d07dacb9d15e40c068b5c91076c9135e77bc9b74af3",
+    "source": "final source-lattice comparison",
+    "state": "equal"
+  },
+  "source_result_ids": [
+    "source_lattice:84:aadb98a0ea808384e93cccf56297067e3c1a275694a2193df3ecb0fbf4d1b97d",
+    "source_lattice:84a:3955adb4ddcd1305e4bf917959bf281f9beb728db0d3a109af52c5d7caacf862"
+  ],
+  "source_signatures": {
+    "84": {
+      "H0_Q_rank": 0,
+      "H1_Q_rank": 2,
+      "arrangement_id": "84",
+      "equivariant_type": "equivariant:a356b7214e1a3bfad56c34f6a7dd420794ae0334918bea5ff0bf8d6292eee697",
+      "evidence_status": "verified",
+      "geometry_id": "hodgecy-ii-84",
+      "group_order": 6,
+      "hodge_signature": {
+        "euler": 80,
+        "h11": 40,
+        "h12": 0
+      },
+      "integral_source_type": "integral:0f35cfa13ab162d82ff72b9eefe774ef9525849e3b621dab8bbf942c57f53985",
+      "local_inventory": {
+        "l3": 0,
+        "p3": 16,
+        "p4_0": 10,
+        "p4_1": 0,
+        "p5_0": 0,
+        "p5_1": 0,
+        "p5_2": 0
+      },
+      "matrix_shape": [
+        26,
+        28
+      ],
+      "provenance": {
+        "integral_source_comparison": "research_outputs/hodgecy_ii/final/theorem_evidence/source_lattice/source_lattice_comparison_84_84a.json",
+        "source_matrix_record_id": "inv_fe19a25461c4498994ddb7253864976b",
+        "source_values": "research_outputs/hodgecy_ii/manuscript_assets/data/hodgecy_i_source_regression.json"
+      },
+      "rank_Q": 26,
+      "rank_mod_2": 23,
+      "rational_source_type": "rational:9d168feab7fd7642ecf30d07dacb9d15e40c068b5c91076c9135e77bc9b74af3",
+      "smith_normal_form": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        6,
+        12
+      ],
+      "source_result_id": "source_lattice:84:aadb98a0ea808384e93cccf56297067e3c1a275694a2193df3ecb0fbf4d1b97d",
+      "source_run_id": "run_0ceb4043a82e421a854837c3566d3859",
+      "torsion_factors": [
+        2,
+        6,
+        12
+      ],
+      "torsion_order": 144,
+      "torsion_type": "source_torsion:8ebfa4c5f474a39df1d270ef175f263fc9271915ea61555292c8fe700900acbb"
+    },
+    "84a": {
+      "H0_Q_rank": 0,
+      "H1_Q_rank": 2,
+      "arrangement_id": "84a",
+      "equivariant_type": "equivariant:cec0bc22101ff26a383597a0d675a770fa765fb684bc11b28a56d13fa44082b1",
+      "evidence_status": "verified",
+      "geometry_id": "hodgecy-ii-84a",
+      "group_order": 24,
+      "hodge_signature": {
+        "euler": 80,
+        "h11": 40,
+        "h12": 0
+      },
+      "integral_source_type": "integral:6e71b52edeb7fb43a2d3c314484508c54ae48ffb13fe4d4236e29aabbd1f003c",
+      "local_inventory": {
+        "l3": 0,
+        "p3": 16,
+        "p4_0": 10,
+        "p4_1": 0,
+        "p5_0": 0,
+        "p5_1": 0,
+        "p5_2": 0
+      },
+      "matrix_shape": [
+        26,
+        28
+      ],
+      "provenance": {
+        "integral_source_comparison": "research_outputs/hodgecy_ii/final/theorem_evidence/source_lattice/source_lattice_comparison_84_84a.json",
+        "source_matrix_record_id": "inv_ae2684f972f54392af87115e777f2635",
+        "source_values": "research_outputs/hodgecy_ii/manuscript_assets/data/hodgecy_i_source_regression.json"
+      },
+      "rank_Q": 26,
+      "rank_mod_2": 21,
+      "rational_source_type": "rational:9d168feab7fd7642ecf30d07dacb9d15e40c068b5c91076c9135e77bc9b74af3",
+      "smith_normal_form": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        4,
+        4,
+        4,
+        12
+      ],
+      "source_result_id": "source_lattice:84a:3955adb4ddcd1305e4bf917959bf281f9beb728db0d3a109af52c5d7caacf862",
+      "source_run_id": "run_7f9e0c10eb5b42958892a14b2fbd81ea",
+      "torsion_factors": [
+        2,
+        4,
+        4,
+        4,
+        12
+      ],
+      "torsion_order": 1536,
+      "torsion_type": "source_torsion:6cb6c94502c8d4510ca20ba3e57deb11f8d49ebfab49ecb69df1f5972457fb5e"
+    }
+  },
+  "status": "EXACT_BLOCK_EVALUATION_COLLAPSE",
+  "theorem_candidate_record": {
+    "candidate_theorem_id": "candidate_block_evaluation_collapse_with_integral_source_separation",
+    "hypotheses": [
+      "final source-lattice records",
+      "final verified reduced block schemes",
+      "final block-evaluation certificate"
+    ],
+    "statement": "At the verified block-evaluation level, 84 and 84a collapse while their integral source types separate.",
+    "status": "CANDIDATE_THEOREM_RECORD"
+  }
+}

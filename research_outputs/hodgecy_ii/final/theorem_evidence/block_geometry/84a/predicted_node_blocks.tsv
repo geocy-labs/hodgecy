@@ -1,0 +1,29 @@
+block_id	line_id	planes	ideal_generators	parameter_polynomial	degree	reduced	status
+84a:L01:Q0	L01	('p1', 'p2')	('-t + x', 't + x', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	3*u**4 + 2	4	True	VERIFIED
+84a:L02:Q0	L02	('p1', 'p3')	('-t + x', '-t + y', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	8*u**4 + u**3 + 3	4	True	VERIFIED
+84a:L03:Q0	L03	('p1', 'p4')	('-t + x', 't + y', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	8*u**4 - u**3 + 3	4	True	VERIFIED
+84a:L04:Q0	L04	('p1', 'p5')	('-t + x', '-t + z', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	9*u**4 + u**3 + 2	4	True	VERIFIED
+84a:L05:Q0	L05	('p1', 'p6')	('-t + x', 't + z', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	9*u**4 - u**3 + 2	4	True	VERIFIED
+84a:L06:Q0	L06	('p1', 'p7')	('-t + x', '-t + x + y + z', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	6*u**4 - u**2 + 5	4	True	VERIFIED
+84a:L07:Q0	L07	('p1', 'p8')	('-t + x', '-3*t + x + y + z', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	38*u**4 - 62*u**3 + 47*u**2 - 16*u + 5	4	True	VERIFIED
+84a:L08:Q0	L08	('p2', 'p3')	('t + x', '-t + y', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	8*u**4 - u**3 + 3	4	True	VERIFIED
+84a:L09:Q0	L09	('p2', 'p4')	('t + x', 't + y', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	8*u**4 + u**3 + 3	4	True	VERIFIED
+84a:L10:Q0	L10	('p2', 'p5')	('t + x', '-t + z', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	9*u**4 - u**3 + 2	4	True	VERIFIED
+84a:L11:Q0	L11	('p2', 'p6')	('t + x', 't + z', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	9*u**4 + u**3 + 2	4	True	VERIFIED
+84a:L12:Q0	L12	('p2', 'p7')	('t + x', '-t + x + y + z', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	38*u**4 - 66*u**3 + 49*u**2 - 16*u + 5	4	True	VERIFIED
+84a:L13:Q0	L13	('p2', 'p8')	('t + x', '-3*t + x + y + z', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	518*u**4 - 516*u**3 + 193*u**2 - 32*u + 5	4	True	VERIFIED
+84a:L14:Q0	L14	('p3', 'p4')	('-t + y', 't + y', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	3*u**4 + 1	4	True	VERIFIED
+84a:L15:Q0	L15	('p3', 'p5')	('-t + y', '-t + z', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	10*u**4 + u**3 + 1	4	True	VERIFIED
+84a:L16:Q0	L16	('p3', 'p6')	('-t + y', 't + z', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	10*u**4 - u**3 + 1	4	True	VERIFIED
+84a:L17:Q0	L17	('p3', 'p7')	('-t + y', '-t + x + y + z', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	7*u**4 - u**2 + 4	4	True	VERIFIED
+84a:L18:Q0	L18	('p3', 'p8')	('-t + y', '-3*t + x + y + z', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	23*u**4 - 30*u**3 + 23*u**2 - 8*u + 4	4	True	VERIFIED
+84a:L19:Q0	L19	('p4', 'p5')	('t + y', '-t + z', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	10*u**4 - u**3 + 1	4	True	VERIFIED
+84a:L20:Q0	L20	('p4', 'p6')	('t + y', 't + z', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	10*u**4 + u**3 + 1	4	True	VERIFIED
+84a:L21:Q0	L21	('p4', 'p7')	('t + y', '-t + x + y + z', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	23*u**4 - 34*u**3 + 25*u**2 - 8*u + 4	4	True	VERIFIED
+84a:L22:Q0	L22	('p4', 'p8')	('t + y', '-3*t + x + y + z', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	263*u**4 - 260*u**3 + 97*u**2 - 16*u + 4	4	True	VERIFIED
+84a:L23:Q0	L23	('p5', 'p6')	('-t + z', 't + z', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	2*u**4 + 1	4	True	VERIFIED
+84a:L24:Q0	L24	('p5', 'p7')	('-t + z', '-t + x + y + z', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	8*u**4 - u**2 + 3	4	True	VERIFIED
+84a:L25:Q0	L25	('p5', 'p8')	('-t + z', '-3*t + x + y + z', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	24*u**4 - 30*u**3 + 23*u**2 - 8*u + 3	4	True	VERIFIED
+84a:L26:Q0	L26	('p6', 'p7')	('t + z', '-t + x + y + z', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	24*u**4 - 34*u**3 + 25*u**2 - 8*u + 3	4	True	VERIFIED
+84a:L27:Q0	L27	('p6', 'p8')	('t + z', '-3*t + x + y + z', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	264*u**4 - 260*u**3 + 97*u**2 - 16*u + 3	4	True	VERIFIED
+84a:L28:Q0	L28	('p7', 'p8')	('-t + x + y + z', '-3*t + x + y + z', 'x^4 + 2*y^4 + 3*z^4 + 5*t^4 + x*y*z*t')	4*u**4 + 4*u**3 + 6*u**2 + 4*u + 3	4	True	VERIFIED

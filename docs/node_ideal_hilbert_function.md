@@ -1,6 +1,6 @@
 # Node Ideals and Hilbert Functions
 
-Blob 6 introduces the finite projective-scheme ideal layer needed before
+the node-ideal/Hilbert layer introduces the finite projective-scheme ideal layer needed before
 classical defect computations.
 
 ## From Scheme to Hilbert Function
@@ -92,7 +92,7 @@ an affine chart choice.
 
 ## Groebner and Standard Monomials
 
-Blob 6 computes exact Groebner bases over `QQ` for supported ideals. The
+the node-ideal/Hilbert layer computes exact Groebner bases over `QQ` for supported ideals. The
 Hilbert function is then counted from the initial monomial ideal:
 
 ```text
@@ -136,7 +136,7 @@ study critical-degree defect.
 ## Reduced Versus Nonreduced
 
 A doubled point can have degree `2` and support cardinality `1`. Its eventual
-Hilbert value is `2`, but that does not imply reducedness. Blob 6 therefore
+Hilbert value is `2`, but that does not imply reducedness. the node-ideal/Hilbert layer therefore
 does not use Hilbert-degree consistency to promote reducedness claims.
 
 ## HodgeCY II Status
@@ -149,7 +149,7 @@ dimension = 0
 degree = 112
 ```
 
-It does not have a frozen exact homogeneous node/singular ideal. Blob 6
+It does not have a frozen exact homogeneous node/singular ideal. the node-ideal/Hilbert layer
 therefore records:
 
 ```text
@@ -162,9 +162,9 @@ It does not reconstruct an ideal from degree `112`.
 Arrangements 239, 240, and 241 likewise remain without exact supported node
 ideals in this blob.
 
-## Blob 7 Boundary
+## the classical-defect layer Boundary
 
-Blob 6 does not compute:
+the node-ideal/Hilbert layer does not compute:
 
 ```text
 critical-degree defect
@@ -176,5 +176,5 @@ Picard-Lefschetz monodromy
 Hodge atoms
 ```
 
-Blob 7 may use this Hilbert-function infrastructure to choose the relevant
+the classical-defect layer may use this Hilbert-function infrastructure to choose the relevant
 critical degree and compute the defect/evaluation map.

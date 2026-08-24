@@ -3,7 +3,7 @@
     {
       "bytes": 219,
       "path": "archive_checksums.json",
-      "sha256": "eb58fb097a660c32b1c597ad8f48e6baf7a9c663984b09eaf9441a13a39ee407"
+      "sha256": "4550b0404699ac0e1be4e5575f53ec5a8903612eee78d26f2965f5ed82885a1d"
     },
     {
       "bytes": 9827,
@@ -348,12 +348,12 @@
     {
       "bytes": 173,
       "path": "environment/git-commit.txt",
-      "sha256": "bba1e4604224dc9b80b647232de0cbd06da02cfe9dfa7acb39554d20bae089d2"
+      "sha256": "bea9b2508f4ffbbfdf4e3d4bef884f3a05688a51988fd85d79313ee65e2d3651"
     },
     {
-      "bytes": 126,
+      "bytes": 138,
       "path": "environment/git-describe.txt",
-      "sha256": "32c4a6cb13d079ae0f4b20555b064eab16ce1f0112509cefea1b06d5a79f2807"
+      "sha256": "32af88217e936cbac1d0c52239a76933b22836b29bbd212610ac19d6657b5f6d"
     },
     {
       "bytes": 144,
@@ -383,7 +383,7 @@
     {
       "bytes": 12705,
       "path": "manuscript_assets/paper__figures__fig_smoothing_bridge_schematic.pdf",
-      "sha256": "1a3441c0d11ca9aa070f5d75714e1f73bbf9d2f6493f2fc8eebf1c4050ba8081"
+      "sha256": "7e2ce2ccf74d3e1056549917dee119b64e7242608f22abe430d2a7c858af6f31"
     },
     {
       "bytes": 36437,
@@ -418,7 +418,7 @@
     {
       "bytes": 1117,
       "path": "RELEASE_NOTES.md",
-      "sha256": "2d230216e28c3549d8928636a01f4433658178ddc02a8023e77260736fb46359"
+      "sha256": "c1a1761256b22362b8af06a5a6363dbdd686365f6102086476a2b8ce963b0780"
     },
     {
       "bytes": 811,
@@ -431,9 +431,9 @@
       "sha256": "e7319955b91a6d70e7105963c95edc1633cfcae764ac42fd18307552be25fc50"
     },
     {
-      "bytes": 34503,
+      "bytes": 34841,
       "path": "scripts/build_v0_2_0_release.py",
-      "sha256": "669dcce9f345b552da9b7ffc1878141e56d12b9bddc56bff591204fa80cc406d"
+      "sha256": "728191cf4845c59163726edac93aa71375c31469e901999a44ab790f30fbc371"
     },
     {
       "bytes": 2528,
@@ -466,8 +466,8 @@
       "sha256": "40f5c98196df38984ccc97051fbe64c4e30d4d108638be8898b2a8f8034b8935"
     }
   ],
-  "generated_utc": "2026-07-18T14:07:28.921555+00:00",
-  "generation_source_commit": "c5bf38455f3ee4989efa2eeb02fcbac3bae3a0bb",
+  "generated_utc": "2026-08-24T19:54:37.963467+00:00",
+  "generation_source_commit": "ccece82c305bfa86ae235bd1cadc3fba0da5e618",
   "package_version": "0.2.0",
   "release_tag": "v0.2.0",
   "release_version": "v0.2.0",

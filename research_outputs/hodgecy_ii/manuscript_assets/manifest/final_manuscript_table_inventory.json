@@ -9,7 +9,7 @@
         "md",
         "tex"
       ],
-      "generator": "hodgecy_ii_final_freeze.py / prior blob generators",
+      "generator": "hodgecy_ii_final_freeze.py",
       "input_hashes": {
         "research_outputs/hodgecy_ii/manuscript_assets/tables/fidelity_census_summary.csv": "34bd6027f2f3e3c5566a72ed90f9982ff35a68d4f254646668a3ca5cc170adcb",
         "research_outputs/hodgecy_ii/manuscript_assets/tables/fidelity_census_summary.json": "bf4abfad58d4e0704031d5b1568566f4986e201c9ad4560b219b60322071e3a6",
@@ -25,7 +25,7 @@
         "research_outputs/hodgecy_ii/manuscript_assets/tables/fidelity_census_summary.md",
         "research_outputs/hodgecy_ii/manuscript_assets/tables/fidelity_census_summary.tex"
       ],
-      "status": "MANUSCRIPT_READY",
+      "status": "MAIN_TEXT",
       "table_id": "II.1",
       "title": "Fidelity census summary"
     },
@@ -37,7 +37,7 @@
         "md",
         "tex"
       ],
-      "generator": "hodgecy_ii_final_freeze.py / prior blob generators",
+      "generator": "hodgecy_ii_final_freeze.py",
       "input_hashes": {
         "research_outputs/hodgecy_ii/manuscript_assets/tables/representative_fidelity_controls.csv": "158b3019ad9919faa87a3ed48f1d2af1104d91a91b82b34f4733883376324f39",
         "research_outputs/hodgecy_ii/manuscript_assets/tables/representative_fidelity_controls.json": "4cfd037820a79df29770459a550d1a838273f53e1cb0d3ecad2dc7fc3cc8c05c",
@@ -53,7 +53,7 @@
         "research_outputs/hodgecy_ii/manuscript_assets/tables/representative_fidelity_controls.md",
         "research_outputs/hodgecy_ii/manuscript_assets/tables/representative_fidelity_controls.tex"
       ],
-      "status": "MANUSCRIPT_READY",
+      "status": "MAIN_TEXT",
       "table_id": "II.2",
       "title": "Representative fidelity controls"
     },
@@ -65,7 +65,7 @@
         "md",
         "tex"
       ],
-      "generator": "hodgecy_ii_final_freeze.py / prior blob generators",
+      "generator": "hodgecy_ii_final_freeze.py",
       "input_hashes": {
         "research_outputs/hodgecy_ii/manuscript_assets/tables/neighborhood_84_refinement.csv": "8449f7690f1c78ace435af1c64055142cf74437a02c345bd1930e85bda8f925a",
         "research_outputs/hodgecy_ii/manuscript_assets/tables/neighborhood_84_refinement.json": "db1c9e73a348d834e576bb1671ae265965bbfc787abd7603d72ebcf233a961bd",
@@ -81,7 +81,7 @@
         "research_outputs/hodgecy_ii/manuscript_assets/tables/neighborhood_84_refinement.md",
         "research_outputs/hodgecy_ii/manuscript_assets/tables/neighborhood_84_refinement.tex"
       ],
-      "status": "MANUSCRIPT_READY",
+      "status": "MAIN_TEXT",
       "table_id": "II.3",
       "title": "84-neighborhood refinement"
     },
@@ -93,7 +93,7 @@
         "md",
         "tex"
       ],
-      "generator": "hodgecy_ii_final_freeze.py / prior blob generators",
+      "generator": "hodgecy_ii_final_freeze.py",
       "input_hashes": {
         "research_outputs/hodgecy_ii/manuscript_assets/tables/node_certification_84_84a.csv": "7dfab2ac225d49c74a52ec993d3bcb81c55d818f7cb2b72ac0da2dfd3e38cebd",
         "research_outputs/hodgecy_ii/manuscript_assets/tables/node_certification_84_84a.json": "d1e75d2daa9eab09a6fd2a8a6e0d6d3cec0211965c59d988552178d03b7ef680",
@@ -109,7 +109,7 @@
         "research_outputs/hodgecy_ii/manuscript_assets/tables/node_certification_84_84a.md",
         "research_outputs/hodgecy_ii/manuscript_assets/tables/node_certification_84_84a.tex"
       ],
-      "status": "MANUSCRIPT_READY",
+      "status": "MAIN_TEXT",
       "table_id": "II.4",
       "title": "84/84a block/node certification status"
     },
@@ -121,7 +121,7 @@
         "md",
         "tex"
       ],
-      "generator": "hodgecy_ii_final_freeze.py / prior blob generators",
+      "generator": "hodgecy_ii_final_freeze.py",
       "input_hashes": {
         "research_outputs/hodgecy_ii/manuscript_assets/tables/block_evaluation_comparison_84_84a.csv": "c91b3202d76cb35dd74f4910facb68588427bdcd6f7bf9a9e38494359f31a65b",
         "research_outputs/hodgecy_ii/manuscript_assets/tables/block_evaluation_comparison_84_84a.json": "9fac18de35aa36b3a9e896c401a8a902fbaac34678c0a78a54354882991f539f",
@@ -137,7 +137,7 @@
         "research_outputs/hodgecy_ii/manuscript_assets/tables/block_evaluation_comparison_84_84a.md",
         "research_outputs/hodgecy_ii/manuscript_assets/tables/block_evaluation_comparison_84_84a.tex"
       ],
-      "status": "MANUSCRIPT_READY",
+      "status": "MAIN_TEXT",
       "table_id": "II.5",
       "title": "84/84a Hilbert/evaluation comparison"
     },
@@ -149,7 +149,7 @@
         "md",
         "tex"
       ],
-      "generator": "hodgecy_ii_final_freeze.py / prior blob generators",
+      "generator": "hodgecy_ii_final_freeze.py",
       "input_hashes": {
         "research_outputs/hodgecy_ii/manuscript_assets/tables/source_block_evaluation_comparison_84_84a.csv": "65f42553d8b1de26364642252693c620f55038fd57d20d2a440604cb329d071e",
         "research_outputs/hodgecy_ii/manuscript_assets/tables/source_block_evaluation_comparison_84_84a.json": "c24a21dde34d85e410a26960f2dfa4070b7fb562b60c28d1c3dbcb3ec85a638c",
@@ -165,7 +165,7 @@
         "research_outputs/hodgecy_ii/manuscript_assets/tables/source_block_evaluation_comparison_84_84a.md",
         "research_outputs/hodgecy_ii/manuscript_assets/tables/source_block_evaluation_comparison_84_84a.tex"
       ],
-      "status": "MANUSCRIPT_READY",
+      "status": "MAIN_TEXT",
       "table_id": "II.6",
       "title": "84/84a source versus block-evaluation comparison"
     },
@@ -177,13 +177,13 @@
         "md",
         "tex"
       ],
-      "generator": "hodgecy_ii_final_freeze.py / prior blob generators",
+      "generator": "hodgecy_ii_final_freeze.py",
       "input_hashes": {
-        "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.csv": "9c8d816aaaaea10bf0c03b786ad19a3c1c999730a70eaad7bebc33e801307404",
-        "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.json": "260ffea859ae1292eec7e1862284feedcabaf42829a817c0d9afd83fe9724789",
-        "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.md": "347f956a200a9bb03631fb5f253c310ee391f5aa84ca451994d4d4761ac92fc6",
-        "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.tex": "ee9f78fa60699d9b7d14d921a3a5a66187f7e50ba7e967c24454bedbe2c99f5e",
-        "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.tsv": "f50f73c479f62f0af28e38d5e84b7d180058f0e90db0f91286ca4594db2c7b11"
+        "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.csv": "f654c65e833fc88acb43561c40814f3cc7b55da58464ac6c677f1709037dbd72",
+        "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.json": "33ac56c90c8f80872810ce8cf58e664fe27da6f2edd86da9ff25c3b4e7ff0877",
+        "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.md": "a057bdc28a2a8980f9025de54e607a8d0c1ef152ee55e47d4abd6993161d0279",
+        "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.tex": "64d4bd7b87e689e853e53aa899bb0dd13278c93281329850cddc9f9e1cca0311",
+        "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.tsv": "a35ef7fb359da75676ef9a75b5d0a41a8b1302ae55060514fa730466d1454263"
       },
       "intended_manuscript_role": "Central VERIFIED/COMPUTED/CONDITIONAL/OPEN/NOT_CLAIMED table.",
       "source_records": [
@@ -193,7 +193,7 @@
         "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.md",
         "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.tex"
       ],
-      "status": "MANUSCRIPT_READY",
+      "status": "MAIN_TEXT",
       "table_id": "II.7",
       "title": "Final evidence/claim-status matrix"
     }

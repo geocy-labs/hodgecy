@@ -18,7 +18,7 @@
       "evidence": {
         "SNF_84": "(1^23,2,6,12)",
         "SNF_84a": "(1^21,2,4,4,4,12)",
-        "source": "Blob 8"
+        "source": "final source-lattice comparison"
       },
       "result_id": "B",
       "status": "VERIFIED",
@@ -40,7 +40,7 @@
         ],
         "H_B_8": 105,
         "epsilon_B": 7,
-        "source": "Blob 13"
+        "source": "final block-evaluation certificate"
       },
       "result_id": "C",
       "status": "VERIFIED",
@@ -51,7 +51,7 @@
       "evidence": {
         "different_integral_source_smith_type": true,
         "same_block_evaluation_signature": true,
-        "source": "Blob 14"
+        "source": "final source-versus-block comparison"
       },
       "nonclaims": [
         "No reverse global determinacy claim.",

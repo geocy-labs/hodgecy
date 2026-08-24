@@ -1,6 +1,6 @@
 # Classical Nodal Defect
 
-Blob 7 introduces the evaluation-map layer used for classical nodal defect
+the classical-defect layer introduces the evaluation-map layer used for classical nodal defect
 computations.  It deliberately separates three things:
 
 1. a theorem-derived critical degree,
@@ -33,13 +33,13 @@ The source dimension is
 N_k = h^0(P^3,O(k)) = binomial(k+3,3).
 ```
 
-Blob 6 computes the Hilbert function
+the node-ideal/Hilbert layer computes the Hilbert function
 
 ```text
 H_Sigma(k) = dim_k (S/I_Sigma)_k.
 ```
 
-For an exact homogeneous finite-scheme ideal, Blob 7 uses
+For an exact homogeneous finite-scheme ideal, the classical-defect layer uses
 
 ```text
 rank(ev_{Sigma,k}) = H_Sigma(k).
@@ -82,7 +82,7 @@ k_crit = 8
 N_8 = binomial(11,3) = 165.
 ```
 
-This rule is model-specific.  Blob 7 applies it only to the recorded nodal
+This rule is model-specific.  the classical-defect layer applies it only to the recorded nodal
 double-solid setting: characteristic zero, base `P^3`, cover degree `2`, and an
 even positive branch degree.  It is not automatically applied to arbitrary
 hypersurfaces, cyclic covers, weighted models, or higher-dimensional varieties.

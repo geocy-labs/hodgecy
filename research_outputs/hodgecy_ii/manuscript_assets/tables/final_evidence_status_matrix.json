@@ -30,12 +30,12 @@
     "status": "VERIFIED"
   },
   {
-    "basis": "Blob 12 reduced degree-112 block scheme.",
+    "basis": "final reduced degree-112 block scheme.",
     "statement": "84 verified block scheme",
     "status": "VERIFIED"
   },
   {
-    "basis": "Blob 12 reduced degree-112 block scheme.",
+    "basis": "final reduced degree-112 block scheme.",
     "statement": "84a verified block scheme",
     "status": "VERIFIED"
   },
@@ -50,7 +50,7 @@
     "status": "VERIFIED"
   },
   {
-    "basis": "Blob 12 containment certificate.",
+    "basis": "final containment certificate.",
     "statement": "block -> singular containment",
     "status": "VERIFIED"
   },

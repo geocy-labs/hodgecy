@@ -2,19 +2,19 @@
   "arrangement_id": "84a",
   "block_scheme": {
     "block_scheme_hash": "3aa8cec40c439677fe6774549169d4e5507afc02b10df102b475def647d93e98",
-    "path": "research_outputs/hodgecy_ii/node_block_blob12/84a/node_block_certificate.json"
+    "path": "research_outputs/hodgecy_ii/final/theorem_evidence/block_geometry/84a/node_block_certificate.json"
   },
   "evaluation_result": {
     "H_B_8": 105,
     "deficiency": 7,
-    "path": "research_outputs/hodgecy_ii/evaluation_blob13/84a/block_evaluation_result.json"
+    "path": "research_outputs/hodgecy_ii/final/theorem_evidence/block_evaluation/84a/block_evaluation_result.json"
   },
   "hilbert_table": {
-    "path": "research_outputs/hodgecy_ii/evaluation_blob13/84a/block_hilbert_function.tsv"
+    "path": "research_outputs/hodgecy_ii/final/theorem_evidence/block_evaluation/84a/block_hilbert_function.tsv"
   },
   "schema": "hodgecy_ii_theorem_evidence_member.v1",
   "source_lattice_comparison": {
-    "path": "research_outputs/hodgecy_ii/integral_lattice_blob8/hodgecy_ii_84_84a_source_lattice_comparison.json",
+    "path": "research_outputs/hodgecy_ii/final/theorem_evidence/source_lattice/source_lattice_comparison_84_84a.json",
     "sha256": "0382becfdeaff86161368dd3bdc0a2a59c33a136023ffff6cdacbe9fd831685a"
   },
   "source_signature": {

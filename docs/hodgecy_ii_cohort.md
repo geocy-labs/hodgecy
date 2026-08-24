@@ -1,6 +1,6 @@
 # HodgeCY II Cohort Baseline
 
-Blob 4 connects the generic result registry and comparison engine to the
+the source-cohort layer connects the generic result registry and comparison engine to the
 current HodgeCY II research cohort. It ingests existing source/coarse data only;
 it does not compute new singular schemes, node relations, defects, vanishing
 cycles, or Hodge atoms.
@@ -25,7 +25,7 @@ Current members:
 
 Arrangement `83` appears in current control-triple data, but the repository
 marks that representative as provisional and the fixed-equation batch excludes
-it. Blob 4 therefore records it as an excluded explicit record, not as a current
+it. the source-cohort layer therefore records it as an excluded explicit record, not as a current
 cohort member.
 
 ## Comparison Sets
@@ -53,7 +53,7 @@ The source/local inventory convention is preserved as:
 (p3, p4_0, p4_1, p5_0, p5_1, p5_2, l3)
 ```
 
-Blob 4 persists available source-level fields such as:
+the source-cohort layer persists available source-level fields such as:
 
 ```text
 local_inventory
@@ -92,7 +92,7 @@ Source ranks, kernels, Smith normal forms, and cokernel decompositions are
 source-level data. They are not node-relation matrices, vanishing-cycle
 relations, or geometric defects.
 
-Blob 4 records these later-stage quantities as unknown where useful:
+the source-cohort layer records these later-stage quantities as unknown where useful:
 
 ```text
 node_relation_rank
@@ -126,7 +126,7 @@ engine's default policy selects the latest completed non-superseded run.
 
 ## Reports
 
-When `report_dir` is supplied, Blob 4 writes:
+When `report_dir` is supplied, the source-cohort layer writes:
 
 ```text
 hodgecy_ii_84_pair_baseline.json
@@ -159,5 +159,5 @@ conifold Hodge atoms
 smooth Hodge atoms
 ```
 
-Blob 4 is therefore a source/coarse baseline, not a geometry or Hodge-atom
+the source-cohort layer is therefore a source/coarse baseline, not a geometry or Hodge-atom
 completion pass.

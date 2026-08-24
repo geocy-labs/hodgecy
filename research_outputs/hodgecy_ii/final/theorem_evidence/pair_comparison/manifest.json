@@ -1,6 +1,6 @@
 {
   "block_evaluation_comparison": {
-    "path": "research_outputs/hodgecy_ii/evaluation_blob13/hodgecy_ii_84_84a_evaluation_comparison.json"
+    "path": "research_outputs/hodgecy_ii/final/theorem_evidence/block_evaluation/block_evaluation_comparison_84_84a.json"
   },
   "members": [
     "84",
@@ -9,7 +9,7 @@
   "non_determination_certificate": "block_evaluation_does_not_determine_integral_source_type",
   "schema": "hodgecy_ii_theorem_evidence_pair.v1",
   "source_block_comparison": {
-    "path": "research_outputs/hodgecy_ii/source_evaluation_blob14/hodgecy_ii_84_84a_source_evaluation_comparison.json",
+    "path": "research_outputs/hodgecy_ii/final/theorem_evidence/source_block_comparison/source_block_evaluation_comparison_84_84a.json",
     "status": "EXACT_BLOCK_EVALUATION_COLLAPSE"
   }
 }

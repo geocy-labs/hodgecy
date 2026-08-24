@@ -1,6 +1,6 @@
 # Block-Scheme Evaluation
 
-Blob 13 computes exact degree-8 evaluation invariants for the verified
+the block-evaluation layer computes exact degree-8 evaluation invariants for the verified
 HodgeCY II block schemes of arrangements `84` and `84a`.
 
 The calculation chain is:
@@ -14,13 +14,13 @@ I_B
   -> dim ker(E_8^T)
 ```
 
-Here `B` is the reduced degree-112 block scheme certified in Blob 12.  The
+Here `B` is the reduced degree-112 block scheme certified in the verified block-geometry layer.  The
 global saturated node ideal is still not frozen, so the block scheme is used as
 an exact finite scheme in its own right.
 
 ## Exact Evaluation Route
 
-For each block `B_i = V(l_i,l_j,Q0)` on a double line, Blob 13 uses the exact
+For each block `B_i = V(l_i,l_j,Q0)` on a double line, the block-evaluation layer uses the exact
 line quotient:
 
 ```text
@@ -33,7 +33,7 @@ and computes the rank of
 S_d -> direct_sum_i (S/I_{B_i})_d
 ```
 
-over `QQ`.  Because Blob 12 certifies the blocks are reduced and pairwise
+over `QQ`.  Because the verified block-geometry layer certifies the blocks are reduced and pairwise
 disjoint, this rank is the Hilbert value `H_B(d)` of the verified block scheme.
 
 At the critical degree from the Clemens/Cynk nodal double-solid rule:
@@ -57,7 +57,7 @@ and the block-scheme evaluation deficiency is:
 epsilon_B = 112 - H_B(8).
 ```
 
-For `84` and `84a`, Blob 13 obtains:
+For `84` and `84a`, the block-evaluation layer obtains:
 
 ```text
 H_B(8) = 105
@@ -71,7 +71,7 @@ dim ker(E_8^T) = 7
 verified classical nodal defect unless the ordinary-node and final node-ideal
 prerequisites are also certified.
 
-Blob 13 therefore records:
+the block-evaluation layer therefore records:
 
 ```text
 conditional_classical_defect_value = 7

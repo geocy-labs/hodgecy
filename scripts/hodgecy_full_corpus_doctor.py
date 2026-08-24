@@ -13,7 +13,7 @@ from hodgecy.query import QuerySpec
 from hodgecy.research.full_corpus_context import EXPECTED_V1_COUNTS, FullCorpusContext
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-OUT_DIR = REPO_ROOT / "research_outputs" / "hodgecy_ii" / "infrastructure"
+OUT_DIR = REPO_ROOT / "research_outputs" / "hodgecy_ii" / "final" / "reproduction" / "full_corpus_doctor"
 DOCS_CENSUS = REPO_ROOT / "docs" / "corpus" / "current_dataset_census.tsv"
 DOCS_SUMMARY = REPO_ROOT / "docs" / "corpus" / "current_corpus_summary.json"
 

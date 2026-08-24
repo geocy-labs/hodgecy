@@ -25,6 +25,61 @@ from hodgecy.research.hodgecy_ii_fidelity_census import generate_hodgecy_ii_manu
 
 HODGECY_II_ROOT = REPO_ROOT / "research_outputs" / "hodgecy_ii"
 FINAL_ROOT = HODGECY_II_ROOT / "final"
+THEOREM_EVIDENCE_ROOT = FINAL_ROOT / "theorem_evidence"
+SOURCE_LATTICE_PATH = THEOREM_EVIDENCE_ROOT / "source_lattice" / "source_lattice_comparison_84_84a.json"
+BLOCK_GEOMETRY_PATH = THEOREM_EVIDENCE_ROOT / "block_geometry" / "block_geometry_certification_84_84a.json"
+BLOCK_EVALUATION_PATH = THEOREM_EVIDENCE_ROOT / "block_evaluation" / "block_evaluation_comparison_84_84a.json"
+SOURCE_BLOCK_COMPARISON_PATH = THEOREM_EVIDENCE_ROOT / "source_block_comparison" / "source_block_evaluation_comparison_84_84a.json"
+DEPRECATED_ARTIFACT_PREFIXES = (
+    "research_outputs/hodgecy_ii/baseline/",
+    "research_outputs/hodgecy_ii/defect_blob7/",
+    "research_outputs/hodgecy_ii/evaluation_blob13/",
+    "research_outputs/hodgecy_ii/integral_lattice_blob8/",
+    "research_outputs/hodgecy_ii/node_block_blob12/",
+    "research_outputs/hodgecy_ii/node_geometry_blob5/",
+    "research_outputs/hodgecy_ii/node_ideal_hilbert_blob6/",
+    "research_outputs/hodgecy_ii/node_relation_blob9/",
+    "research_outputs/hodgecy_ii/source_evaluation_blob14/",
+    "research_outputs/hodgecy_ii/source_to_node_blob10/",
+)
+CANONICAL_PATH_REPLACEMENTS = {
+    "research_outputs/hodgecy_ii/integral_lattice_blob8/hodgecy_ii_84_84a_source_lattice_comparison.json": "research_outputs/hodgecy_ii/final/theorem_evidence/source_lattice/source_lattice_comparison_84_84a.json",
+    "research_outputs/hodgecy_ii/node_block_blob12/hodgecy_ii_node_block_certification.json": "research_outputs/hodgecy_ii/final/theorem_evidence/block_geometry/block_geometry_certification_84_84a.json",
+    "research_outputs/hodgecy_ii/node_block_blob12/84/node_block_certificate.json": "research_outputs/hodgecy_ii/final/theorem_evidence/block_geometry/84/node_block_certificate.json",
+    "research_outputs/hodgecy_ii/node_block_blob12/84a/node_block_certificate.json": "research_outputs/hodgecy_ii/final/theorem_evidence/block_geometry/84a/node_block_certificate.json",
+    "research_outputs/hodgecy_ii/evaluation_blob13/hodgecy_ii_84_84a_evaluation_comparison.json": "research_outputs/hodgecy_ii/final/theorem_evidence/block_evaluation/block_evaluation_comparison_84_84a.json",
+    "research_outputs/hodgecy_ii/evaluation_blob13/84/block_evaluation_result.json": "research_outputs/hodgecy_ii/final/theorem_evidence/block_evaluation/84/block_evaluation_result.json",
+    "research_outputs/hodgecy_ii/evaluation_blob13/84a/block_evaluation_result.json": "research_outputs/hodgecy_ii/final/theorem_evidence/block_evaluation/84a/block_evaluation_result.json",
+    "research_outputs/hodgecy_ii/evaluation_blob13/84/block_hilbert_function.tsv": "research_outputs/hodgecy_ii/final/theorem_evidence/block_evaluation/84/block_hilbert_function.tsv",
+    "research_outputs/hodgecy_ii/evaluation_blob13/84a/block_hilbert_function.tsv": "research_outputs/hodgecy_ii/final/theorem_evidence/block_evaluation/84a/block_hilbert_function.tsv",
+    "research_outputs/hodgecy_ii/source_evaluation_blob14/hodgecy_ii_84_84a_source_evaluation_comparison.json": "research_outputs/hodgecy_ii/final/theorem_evidence/source_block_comparison/source_block_evaluation_comparison_84_84a.json",
+}
+CANONICAL_TEXT_REPLACEMENTS = {
+    "Blob 8 source lattice comparison": "final source-lattice comparison",
+    "Blob 8 verified source lattice records": "final source-lattice records",
+    "Blob 12 verified reduced block schemes": "final verified reduced block schemes",
+    "Blob 13 verified block evaluation": "final block-evaluation certificate",
+    "Blob 13 block evaluation comparison": "final block-evaluation comparison",
+    "Blob 14 performs no perturbation or vanishing-cycle construction.": "The final source-versus-block comparison performs no perturbation or vanishing-cycle construction.",
+    "Blob 11 computes no defect value.": "No verified classical defect value is promoted.",
+    "Blob 11 constructs no Hodge atom spectrum.": "No Hodge atom spectrum is constructed.",
+    "Blob 11 creates no node ideal.": "No final saturated node ideal certificate is claimed.",
+    "Blob 11 asserts no node relation or source-to-node morphism.": "No node relation or source-to-node morphism is asserted.",
+    "Blob 11 performs no ODP promotion.": "Ordinary-node promotion remains open.",
+    "blob8_torsion:": "source_torsion:",
+    "blob8:": "source_lattice:",
+    "blob12:": "block_geometry:",
+    "blob13:": "block_evaluation:",
+}
+CANONICAL_KEY_REPLACEMENTS = {
+    "blob8_source_lattice_comparison": "source_lattice_comparison",
+    "blob12_block_certificates": "block_geometry_certificates",
+    "blob12_certificate": "block_geometry_certificate",
+    "blob12_reducedness_certificate": "block_geometry_reducedness_certificate",
+    "blob13_block_scheme_hash": "block_evaluation_scheme_hash",
+    "blob13_evaluation_certificates": "block_evaluation_certificates",
+    "blob13_evaluation_comparison": "block_evaluation_comparison",
+}
 MANUSCRIPT_ROOT = HODGECY_II_ROOT / "manuscript_assets"
 TABLE_ROOT = MANUSCRIPT_ROOT / "tables"
 FIGURE_ROOT = MANUSCRIPT_ROOT / "figures"
@@ -123,6 +178,35 @@ def rel(path: Path) -> str:
     return path.relative_to(REPO_ROOT).as_posix()
 
 
+def canonicalize_evidence_payload(value: Any) -> Any:
+    if isinstance(value, dict):
+        return {canonicalize_evidence_key(key): canonicalize_evidence_payload(item) for key, item in value.items()}
+    if isinstance(value, list):
+        return [canonicalize_evidence_payload(item) for item in value]
+    if isinstance(value, str):
+        for old, new in CANONICAL_PATH_REPLACEMENTS.items():
+            value = value.replace(old, new)
+        for old, new in CANONICAL_TEXT_REPLACEMENTS.items():
+            value = value.replace(old, new)
+    return value
+
+
+def canonicalize_evidence_key(key: str) -> str:
+    for old, new in CANONICAL_KEY_REPLACEMENTS.items():
+        key = key.replace(old, new)
+    return key
+
+
+def normalize_canonical_evidence_files() -> list[Path]:
+    normalized = []
+    for path in THEOREM_EVIDENCE_ROOT.rglob("*.json"):
+        payload = read_json(path)
+        updated = canonicalize_evidence_payload(payload)
+        if updated != payload:
+            normalized.append(write_json(path, updated))
+    return normalized
+
+
 def git_output(*args: str) -> str | None:
     try:
         completed = subprocess.run(["git", *args], cwd=REPO_ROOT, check=True, capture_output=True, text=True, timeout=10)
@@ -138,10 +222,10 @@ def load_canonical() -> dict[str, Any]:
         "asset_manifest": read_json(MANIFEST_ROOT / "hodgecy_ii_asset_manifest.json"),
         "scope": read_json(MANIFEST_ROOT / "hodgecy_ii_scope.json"),
         "source_regression": read_json(DATA_ROOT / "hodgecy_i_source_regression.json"),
-        "node_block": read_json(HODGECY_II_ROOT / "node_block_blob12" / "hodgecy_ii_node_block_certification.json"),
-        "evaluation": read_json(HODGECY_II_ROOT / "evaluation_blob13" / "hodgecy_ii_84_84a_evaluation_comparison.json"),
-        "source_evaluation": read_json(HODGECY_II_ROOT / "source_evaluation_blob14" / "hodgecy_ii_84_84a_source_evaluation_comparison.json"),
-        "source_lattice": read_json(HODGECY_II_ROOT / "integral_lattice_blob8" / "hodgecy_ii_84_84a_source_lattice_comparison.json"),
+        "node_block": read_json(BLOCK_GEOMETRY_PATH),
+        "evaluation": read_json(BLOCK_EVALUATION_PATH),
+        "source_evaluation": read_json(SOURCE_BLOCK_COMPARISON_PATH),
+        "source_lattice": read_json(SOURCE_LATTICE_PATH),
     }
 
 
@@ -149,15 +233,15 @@ def question_statuses(data: dict[str, Any]) -> list[dict[str, Any]]:
     summary = data["census_summary"]
     return [
         {"question_id": "Q1", "question": "Are fidelity collapse/separation phenomena broader than 84 / 84a?", "status": "ANSWERED", "answer": "YES", "evidence": f"{summary['total_processed']} processed; {summary['nontrivial_pairs_sets']} nontrivial pairs/sets."},
-        {"question_id": "Q2", "question": "Do 84 / 84a remain equivalent at rational source level?", "status": "ANSWERED", "answer": "YES; rank_Q=26 and H1_Q rank=2 for both.", "evidence": "Blob 8 source lattice comparison."},
+        {"question_id": "Q2", "question": "Do 84 / 84a remain equivalent at rational source level?", "status": "ANSWERED", "answer": "YES; rank_Q=26 and H1_Q rank=2 for both.", "evidence": "final source-lattice comparison."},
         {"question_id": "Q3", "question": "Do 84 / 84a remain equivalent integrally at source level?", "status": "ANSWERED", "answer": "NO; Smith forms differ.", "evidence": "SNF(84)=(1^23,2,6,12); SNF(84a)=(1^21,2,4,4,4,12)."},
-        {"question_id": "Q4", "question": "Can the perturbation geometry be represented by exact finite reduced degree-112 block schemes?", "status": "ANSWERED", "answer": "YES for the verified block schemes.", "evidence": "Blob 12 node-block certificates."},
-        {"question_id": "Q5", "question": "Has complete ordinary-node promotion been achieved?", "status": "OPEN / PARTIALLY_ANSWERED", "answer": "NO; final saturated Jacobian/full promotion certificate remains incomplete.", "evidence": "Blob 12 blocker and Blob 13 validation statuses."},
-        {"question_id": "Q6", "question": "Do the two verified block schemes have different Hilbert profiles through critical degree?", "status": "ANSWERED", "answer": "NO; profiles agree through degree 8.", "evidence": "Blob 13 Hilbert tables."},
-        {"question_id": "Q7", "question": "Do their degree-8 block-evaluation deficiencies differ?", "status": "ANSWERED", "answer": "NO; both equal 7.", "evidence": "Blob 13 critical-degree evaluation."},
-        {"question_id": "Q8", "question": "Do the tested block-evaluation data determine integral source assembly type?", "status": "ANSWERED", "answer": "NO on the 84/84a witness pair.", "evidence": "Blob 14 non-determination certificate."},
-        {"question_id": "Q9", "question": "Are the classical nodal defects verified to equal 7?", "status": "CONDITIONAL / OPEN", "answer": "Only conditionally; do not promote.", "evidence": "Blob 13/14 conditional defect records."},
-        {"question_id": "Q10", "question": "Has a natural source-to-evaluation/node chain map been constructed?", "status": "OPEN", "answer": "NO; status remains UNKNOWN.", "evidence": "Blob 10 and Blob 14 firewall records."},
+        {"question_id": "Q4", "question": "Can the perturbation geometry be represented by exact finite reduced degree-112 block schemes?", "status": "ANSWERED", "answer": "YES for the verified block schemes.", "evidence": "final block-geometry certificates."},
+        {"question_id": "Q5", "question": "Has complete ordinary-node promotion been achieved?", "status": "OPEN / PARTIALLY_ANSWERED", "answer": "NO; final saturated Jacobian/full promotion certificate remains incomplete.", "evidence": "final block-geometry and block-evaluation validation statuses."},
+        {"question_id": "Q6", "question": "Do the two verified block schemes have different Hilbert profiles through critical degree?", "status": "ANSWERED", "answer": "NO; profiles agree through degree 8.", "evidence": "final block-Hilbert tables."},
+        {"question_id": "Q7", "question": "Do their degree-8 block-evaluation deficiencies differ?", "status": "ANSWERED", "answer": "NO; both equal 7.", "evidence": "final critical-degree block evaluation."},
+        {"question_id": "Q8", "question": "Do the tested block-evaluation data determine integral source assembly type?", "status": "ANSWERED", "answer": "NO on the 84/84a witness pair.", "evidence": "final source-versus-block non-determination certificate."},
+        {"question_id": "Q9", "question": "Are the classical nodal defects verified to equal 7?", "status": "CONDITIONAL / OPEN", "answer": "Only conditionally; do not promote.", "evidence": "final conditional-defect records."},
+        {"question_id": "Q10", "question": "Has a natural source-to-evaluation/node chain map been constructed?", "status": "OPEN", "answer": "NO; status remains UNKNOWN.", "evidence": "final comparison-firewall records."},
     ]
 
 
@@ -165,9 +249,9 @@ def theorem_candidates(data: dict[str, Any]) -> list[dict[str, Any]]:
     summary = data["census_summary"]
     return [
         {"result_id": "A", "title": "Fidelity census context", "status": "CONTEXT_READY", "claim": "The current HodgeCY fidelity census contains 456 processed records and 114 nontrivial pairs/sets.", "evidence": {"processed": summary["total_processed"], "nontrivial_sets": summary["nontrivial_pairs_sets"], "pairs": summary["pairs"], "triples": summary["triples"], "larger_sets": summary["larger_sets"]}},
-        {"result_id": "B", "title": "Integral source separation", "status": "VERIFIED", "claim": "84 and 84a share local, Hodge, and rational source data but have nonisomorphic integral source assembly complexes.", "evidence": {"SNF_84": "(1^23,2,6,12)", "SNF_84a": "(1^21,2,4,4,4,12)", "source": "Blob 8"}},
-        {"result_id": "C", "title": "Exact block-evaluation collapse", "status": "VERIFIED", "claim": "The verified reduced degree-112 block schemes have identical Hilbert functions through degree 8 and equal block-evaluation deficiency 7.", "evidence": {"H_B_0_8": [1, 4, 10, 20, 34, 52, 74, 92, 105], "H_B_8": 105, "epsilon_B": 7, "source": "Blob 13"}},
-        {"result_id": "D", "title": "Block evaluation does not determine integral source type", "status": "VERIFIED_ON_WITNESS_PAIR", "claim": "On 84/84a, exact block-Hilbert/evaluation data through degree 8 do not determine integral source assembly type.", "evidence": {"same_block_evaluation_signature": True, "different_integral_source_smith_type": True, "source": "Blob 14"}, "nonclaims": ["No reverse global determinacy claim.", "No source-to-evaluation chain map."]},
+        {"result_id": "B", "title": "Integral source separation", "status": "VERIFIED", "claim": "84 and 84a share local, Hodge, and rational source data but have nonisomorphic integral source assembly complexes.", "evidence": {"SNF_84": "(1^23,2,6,12)", "SNF_84a": "(1^21,2,4,4,4,12)", "source": "final source-lattice comparison"}},
+        {"result_id": "C", "title": "Exact block-evaluation collapse", "status": "VERIFIED", "claim": "The verified reduced degree-112 block schemes have identical Hilbert functions through degree 8 and equal block-evaluation deficiency 7.", "evidence": {"H_B_0_8": [1, 4, 10, 20, 34, 52, 74, 92, 105], "H_B_8": 105, "epsilon_B": 7, "source": "final block-evaluation certificate"}},
+        {"result_id": "D", "title": "Block evaluation does not determine integral source type", "status": "VERIFIED_ON_WITNESS_PAIR", "claim": "On 84/84a, exact block-Hilbert/evaluation data through degree 8 do not determine integral source assembly type.", "evidence": {"same_block_evaluation_signature": True, "different_integral_source_smith_type": True, "source": "final source-versus-block comparison"}, "nonclaims": ["No reverse global determinacy claim.", "No source-to-evaluation chain map."]},
     ]
 
 
@@ -226,11 +310,11 @@ def evidence_matrix_rows() -> list[dict[str, str]]:
         ("84/84a Hodge equality", "VERIFIED", "h11=40, h12=0, euler=80 for both."),
         ("84/84a rational source equality", "VERIFIED", "rank_Q=26, H1_Q=2, H0_Q=0 for both."),
         ("84/84a integral source inequality", "VERIFIED", "Smith forms and rank_mod_2 differ."),
-        ("84 verified block scheme", "VERIFIED", "Blob 12 reduced degree-112 block scheme."),
-        ("84a verified block scheme", "VERIFIED", "Blob 12 reduced degree-112 block scheme."),
+        ("84 verified block scheme", "VERIFIED", "final reduced degree-112 block scheme."),
+        ("84a verified block scheme", "VERIFIED", "final reduced degree-112 block scheme."),
         ("block scheme degree 112", "VERIFIED", "28 four-point blocks."),
         ("block reducedness", "VERIFIED", "Block-level reducedness certificate."),
-        ("block -> singular containment", "VERIFIED", "Blob 12 containment certificate."),
+        ("block -> singular containment", "VERIFIED", "final containment certificate."),
         ("full ordinary-node promotion", "OPEN", "Saturated Jacobian/full promotion gate incomplete."),
         ("frozen saturated node ideal", "OPEN", "No final saturated node ideal certificate."),
         ("Hilbert profile 0..8", "VERIFIED", "1,4,10,20,34,52,74,92,105 for both."),
@@ -260,7 +344,7 @@ def table_inventory() -> list[dict[str, Any]]:
     for table_id, title, stem, role in entries:
         formats = [suffix for suffix in ("tsv", "csv", "json", "md", "tex") if (TABLE_ROOT / f"{stem}.{suffix}").exists()]
         sources = [str((TABLE_ROOT / f"{stem}.{suffix}").relative_to(REPO_ROOT)).replace("\\", "/") for suffix in formats]
-        rows.append({"table_id": table_id, "title": title, "source_records": sources, "input_hashes": {source: file_sha256(REPO_ROOT / source) for source in sources}, "generator": "hodgecy_ii_final_freeze.py / prior blob generators", "status": "MANUSCRIPT_READY", "intended_manuscript_role": role, "formats": formats})
+        rows.append({"table_id": table_id, "title": title, "source_records": sources, "input_hashes": {source: file_sha256(REPO_ROOT / source) for source in sources}, "generator": "hodgecy_ii_final_freeze.py", "status": "MAIN_TEXT", "intended_manuscript_role": role, "formats": formats})
     return rows
 
 
@@ -278,7 +362,7 @@ def figure_inventory() -> list[dict[str, Any]]:
     for figure_id, title, svg, data_name, caption in entries:
         svg_path = FIGURE_ROOT / svg
         data_path = FIGURE_ROOT / data_name
-        rows.append({"figure_id": figure_id, "title": title, "status": "MANUSCRIPT_READY" if svg_path.exists() else "SUPPORTING_READY", "data_source": rel(data_path) if data_path.exists() else "", "input_hash": file_sha256(data_path) if data_path.exists() else "", "generator": "hodgecy_ii_final_freeze.py / prior blob generators", "caption_data": caption, "figure_path": rel(svg_path) if svg_path.exists() else ""})
+        rows.append({"figure_id": figure_id, "title": title, "status": "MAIN_TEXT" if svg_path.exists() and figure_id != "S.1" else "SUPPLEMENTARY", "data_source": rel(data_path) if data_path.exists() else "", "input_hash": file_sha256(data_path) if data_path.exists() else "", "generator": "hodgecy_ii_final_freeze.py", "caption_data": caption, "figure_path": rel(svg_path) if svg_path.exists() else ""})
     return rows
 
 
@@ -298,7 +382,7 @@ def final_result_summary(data: dict[str, Any], artifacts: dict[str, Any]) -> dic
     comparison = data["source_evaluation"]
     return {
         "schema": "hodgecy_ii_final_results.v1",
-        "scope": {"program": "HodgeCY II", "package_version": HODGECY_VERSION, "blob_sequence": ["11", "12", "13", "14", "15"], "no_hodgecy_iii_analysis_started": True},
+        "scope": {"program": "HodgeCY II", "package_version": HODGECY_VERSION, "evidence_bundle": "final/theorem_evidence", "no_hodgecy_iii_analysis_started": True},
         "population_context": {"processed": summary["total_processed"], "nontrivial_sets": summary["nontrivial_pairs_sets"], "pairs": summary["pairs"], "triples": summary["triples"], "larger_sets": summary["larger_sets"], "reconciliation": {"reproduced": 114, "changed": 0, "invalid": 0}},
         "primary_pair": ["84", "84a"],
         "source_results": {"84": source["84"], "84a": source["84a"], "rational_source_equal": True, "integral_source_equal": False},
@@ -385,17 +469,17 @@ def theorem_evidence_bundle(data: dict[str, Any]) -> list[Path]:
             "schema": "hodgecy_ii_theorem_evidence_member.v1",
             "arrangement_id": arrangement_id,
             "source_signature": source[arrangement_id],
-            "source_lattice_comparison": {"path": rel(HODGECY_II_ROOT / "integral_lattice_blob8" / "hodgecy_ii_84_84a_source_lattice_comparison.json"), "sha256": file_sha256(HODGECY_II_ROOT / "integral_lattice_blob8" / "hodgecy_ii_84_84a_source_lattice_comparison.json")},
-            "block_scheme": {"path": rel(HODGECY_II_ROOT / "node_block_blob12" / arrangement_id / "node_block_certificate.json"), "block_scheme_hash": evaluation[arrangement_id]["block_scheme_hash"]},
-            "hilbert_table": {"path": rel(HODGECY_II_ROOT / "evaluation_blob13" / arrangement_id / "block_hilbert_function.tsv")},
-            "evaluation_result": {"path": rel(HODGECY_II_ROOT / "evaluation_blob13" / arrangement_id / "block_evaluation_result.json"), "H_B_8": evaluation[arrangement_id]["H_B_8"], "deficiency": evaluation[arrangement_id]["block_evaluation_deficiency"]},
+            "source_lattice_comparison": {"path": rel(SOURCE_LATTICE_PATH), "sha256": file_sha256(SOURCE_LATTICE_PATH)},
+            "block_scheme": {"path": rel(THEOREM_EVIDENCE_ROOT / "block_geometry" / arrangement_id / "node_block_certificate.json"), "block_scheme_hash": evaluation[arrangement_id]["block_scheme_hash"]},
+            "hilbert_table": {"path": rel(THEOREM_EVIDENCE_ROOT / "block_evaluation" / arrangement_id / "block_hilbert_function.tsv")},
+            "evaluation_result": {"path": rel(THEOREM_EVIDENCE_ROOT / "block_evaluation" / arrangement_id / "block_evaluation_result.json"), "H_B_8": evaluation[arrangement_id]["H_B_8"], "deficiency": evaluation[arrangement_id]["block_evaluation_deficiency"]},
         }
         paths.append(write_json(FINAL_ROOT / "theorem_evidence" / arrangement_id / "manifest.json", manifest))
     pair = {
         "schema": "hodgecy_ii_theorem_evidence_pair.v1",
         "members": ["84", "84a"],
-        "source_block_comparison": {"path": rel(HODGECY_II_ROOT / "source_evaluation_blob14" / "hodgecy_ii_84_84a_source_evaluation_comparison.json"), "status": data["source_evaluation"]["status"]},
-        "block_evaluation_comparison": {"path": rel(HODGECY_II_ROOT / "evaluation_blob13" / "hodgecy_ii_84_84a_evaluation_comparison.json")},
+        "source_block_comparison": {"path": rel(SOURCE_BLOCK_COMPARISON_PATH), "status": data["source_evaluation"]["status"]},
+        "block_evaluation_comparison": {"path": rel(BLOCK_EVALUATION_PATH)},
         "non_determination_certificate": data["source_evaluation"]["non_determination_certificate"]["certificate_id"],
     }
     paths.append(write_json(FINAL_ROOT / "theorem_evidence" / "pair_comparison" / "manifest.json", pair))
@@ -433,10 +517,10 @@ def run_fresh_store_check() -> dict[str, Any]:
 def final_research_manifest(result_summary_path: Path, asset_manifest_path: Path, test_summary: dict[str, Any] | None = None) -> dict[str, Any]:
     primary_inputs = [
         HODGECY_II_ROOT / "complete_fidelity_pairs_and_sets.tsv",
-        HODGECY_II_ROOT / "integral_lattice_blob8" / "hodgecy_ii_84_84a_source_lattice_comparison.json",
-        HODGECY_II_ROOT / "node_block_blob12" / "hodgecy_ii_node_block_certification.json",
-        HODGECY_II_ROOT / "evaluation_blob13" / "hodgecy_ii_84_84a_evaluation_comparison.json",
-        HODGECY_II_ROOT / "source_evaluation_blob14" / "hodgecy_ii_84_84a_source_evaluation_comparison.json",
+        SOURCE_LATTICE_PATH,
+        BLOCK_GEOMETRY_PATH,
+        BLOCK_EVALUATION_PATH,
+        SOURCE_BLOCK_COMPARISON_PATH,
     ]
     return {
         "schema": "hodgecy_ii_final_computational_state.v1",
@@ -470,12 +554,53 @@ def dependency_versions() -> dict[str, str]:
 def update_scope_manifest() -> Path:
     path = MANIFEST_ROOT / "hodgecy_ii_scope.json"
     payload = read_json(path)
-    payload["required_geometric_outputs"]["blob_15"] = {
+    payload.pop("geometric_status_blob_13", None)
+    payload.pop("source_evaluation_status_blob_14", None)
+    payload["required_geometric_outputs"] = {
+        "source_fidelity_census": "COMPUTED",
+        "source_lattice_comparison": "VERIFIED",
+        "block_geometry": "VERIFIED",
+        "block_evaluation": {
+            "block_hilbert_function": "VERIFIED",
+            "critical_degree_block_evaluation": "VERIFIED",
+            "block_evaluation_deficiency": "VERIFIED",
+            "computed_range": [0, 8],
+            "classical_defect": "UNKNOWN",
+            "descriptive_case": "Case C - Hilbert collapse over computed range",
+        },
+        "source_vs_block_evaluation_comparison": "VERIFIED",
+        "claim_boundaries": {
+            "conditional_results": "SEPARATE",
+            "open_problems": "SEPARATE",
+            "hodgecy_iii_handoff": "EXPLICIT",
+            "classical_defect": "UNKNOWN",
+            "source_to_evaluation_chain_map": "UNKNOWN",
+        },
+    }
+    payload["nonclaims"].update(
+        {
+            "no_defect": "Exact degree-8 block-scheme evaluation deficiencies are computed for 84/84a, but verified classical defect remains UNKNOWN until ordinary-node prerequisites are satisfied.",
+            "no_hodge_atom": "No Hodge atom spectrum is constructed.",
+            "no_integral_evaluation_lattice": "No integral evaluation relation lattice is constructed.",
+            "no_node_ideal": "No final saturated node ideal certificate is claimed.",
+            "no_node_relations": "No node relation or source-to-node morphism is asserted.",
+            "no_odp_promotion": "Ordinary-node promotion remains open.",
+            "no_source_to_evaluation_morphism": "Only a double-line to four-point-block index correspondence is recorded; no theorem-backed source-to-evaluation chain map is constructed.",
+        }
+    )
+    if "summary" in payload and "mathematical_firewall" in payload["summary"]:
+        payload["summary"]["mathematical_firewall"].update(
+            {
+                "no_defect": "No verified classical defect value is promoted.",
+                "no_hodge_atom": "No Hodge atom spectrum is constructed.",
+                "no_node_ideal": "No final saturated node ideal certificate is claimed.",
+                "no_node_relations": "No node relation or source-to-node morphism is asserted.",
+                "no_odp_promotion": "Ordinary-node promotion remains open.",
+            }
+        )
+    payload["final_synthesis"] = {
         "final_question_status": "FROZEN",
         "theorem_candidates": "FROZEN",
-        "conditional_results": "SEPARATE",
-        "open_problems": "SEPARATE",
-        "hodgecy_iii_handoff": "EXPLICIT",
         "classical_defect": "UNKNOWN",
         "source_to_evaluation_chain_map": "UNKNOWN",
     }
@@ -486,12 +611,18 @@ def update_scope_manifest() -> Path:
 
 def update_asset_manifest(paths: Iterable[Path]) -> Path:
     path = MANIFEST_ROOT / "hodgecy_ii_asset_manifest.json"
-    payload = read_json(path)
+    payload = canonicalize_evidence_payload(read_json(path))
+    payload.pop("blob_13_block_evaluation", None)
+    payload.pop("blob_14_source_evaluation", None)
+    payload.pop("blob_15_final_freeze", None)
     artifacts = payload.setdefault("artifacts", {})
+    for artifact in list(artifacts):
+        if artifact.startswith(DEPRECATED_ARTIFACT_PREFIXES):
+            del artifacts[artifact]
     for artifact_path in paths:
         if artifact_path.exists():
-            artifacts[rel(artifact_path)] = {"sha256": file_sha256(artifact_path), "status": "BLOB15_FINAL"}
-    payload["blob_15_final_freeze"] = {
+            artifacts[rel(artifact_path)] = {"sha256": file_sha256(artifact_path), "status": "FINAL"}
+    payload["final_synthesis"] = {
         "final_results": "research_outputs/hodgecy_ii/final/hodgecy_ii_final_results.json",
         "question_status": "research_outputs/hodgecy_ii/final/hodgecy_ii_question_status.json",
         "theorem_evidence_bundle": "research_outputs/hodgecy_ii/final/theorem_evidence/manifest.json",
@@ -504,8 +635,9 @@ def update_asset_manifest(paths: Iterable[Path]) -> Path:
 
 
 def main() -> None:
+    normalized_evidence = normalize_canonical_evidence_files()
     data = load_canonical()
-    outputs: list[Path] = []
+    outputs: list[Path] = list(normalized_evidence)
 
     questions = question_statuses(data)
     candidates = theorem_candidates(data)
@@ -553,10 +685,10 @@ def main() -> None:
 
     scope_path = update_scope_manifest()
     outputs.append(scope_path)
-    final_manifest_path = write_json(FINAL_ROOT / "hodgecy_ii_final_artifact_manifest.json", {"schema": "hodgecy_ii_final_artifact_manifest.v1", "artifacts": {rel(path): {"sha256": file_sha256(path), "status": "BLOB15_FINAL"} for path in outputs if path.exists()}})
+    final_manifest_path = write_json(FINAL_ROOT / "hodgecy_ii_final_artifact_manifest.json", {"schema": "hodgecy_ii_final_artifact_manifest.v1", "artifacts": {rel(path): {"sha256": file_sha256(path), "status": "FINAL"} for path in outputs if path.exists()}})
     outputs.append(final_manifest_path)
     asset_manifest_path = update_asset_manifest(outputs)
-    print("HodgeCY II Blob 15 final freeze assets generated")
+    print("HodgeCY II final freeze assets generated")
     print(f"- final results: {rel(result_json)}")
     print(f"- final artifact manifest: {rel(final_manifest_path)}")
     print(f"- asset manifest: {rel(asset_manifest_path)}")

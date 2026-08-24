@@ -3,9 +3,9 @@
   "status": "PASS",
   "volatile_metadata_normalized": true,
   "watched_hashes": {
-    "research_outputs/hodgecy_ii/manuscript_assets/data/fidelity_census_summary.json": "6178ddab0d85935834a58e55ae9af2d2e099ccd95f678aabdc78943a0c81c29b",
+    "research_outputs/hodgecy_ii/manuscript_assets/data/fidelity_census_summary.json": "f827cf7506cb6fb84dbf165cdb00ad48eaff2c029e4cdaa0bd21064c5d117cc7",
     "research_outputs/hodgecy_ii/manuscript_assets/figures/final_result_hierarchy.svg": "0e6b8b30c150c75b643c79e0481ae4c5868f343f5be763b401dd02701b0c74d6",
-    "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.tsv": "f50f73c479f62f0af28e38d5e84b7d180058f0e90db0f91286ca4594db2c7b11",
+    "research_outputs/hodgecy_ii/manuscript_assets/tables/final_evidence_status_matrix.tsv": "a35ef7fb359da75676ef9a75b5d0a41a8b1302ae55060514fa730466d1454263",
     "research_outputs/hodgecy_ii/manuscript_assets/tables/source_block_evaluation_comparison_84_84a.tsv": "7a96c27a3f583dc6c250823b69a55d02aac0a532b80d77f7b2a5e8c0696581ad"
   }
 }

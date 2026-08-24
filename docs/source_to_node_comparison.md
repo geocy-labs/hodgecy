@@ -1,6 +1,6 @@
 # Source-to-Node Comparison Morphisms
 
-Blob 10 represents a source-to-node comparison as a certified chain map between
+the source-to-node comparison layer represents a source-to-node comparison as a certified chain map between
 two two-term complexes.  The source complex is
 
 ```text
@@ -13,7 +13,7 @@ and the node-relation complex is
 C_node: C1_node --d_node--> C0_node
 ```
 
-with a Blob 9 `RelationRealizationKind`, such as `evaluation_condition`,
+with a the node-relation layer `RelationRealizationKind`, such as `evaluation_condition`,
 `vanishing_cycle`, or `exceptional_curve`.
 
 ## The Chain Map

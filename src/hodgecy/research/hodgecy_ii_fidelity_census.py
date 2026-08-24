@@ -403,11 +403,11 @@ def mathematical_firewall() -> dict[str, str]:
         "projective_equivalence": "Equal source signatures do not prove projective equivalence.",
         "member_451": "451 retains its historical factor-normalization warning.",
         "members_452_453": "452/453 retain exact quadratic-field deferred status.",
-        "no_node_ideal": "Blob 11 creates no node ideal.",
-        "no_odp_promotion": "Blob 11 performs no ODP promotion.",
-        "no_defect": "Blob 11 computes no defect value.",
-        "no_node_relations": "Blob 11 asserts no node relation or source-to-node morphism.",
-        "no_hodge_atom": "Blob 11 constructs no Hodge atom spectrum.",
+        "no_node_ideal": "No final saturated node ideal certificate is claimed.",
+        "no_odp_promotion": "Ordinary-node promotion remains open.",
+        "no_defect": "No verified classical defect value is promoted.",
+        "no_node_relations": "No node relation or source-to-node morphism is asserted.",
+        "no_hodge_atom": "No Hodge atom spectrum is constructed.",
     }
 
 
@@ -500,7 +500,9 @@ def _load_source_assembly_records(root: Path) -> dict[str, dict[str, Any]]:
 
 
 def _load_staged_record_index(root: Path) -> dict[str, dict[str, Any]]:
-    path = root / "research_outputs" / "hodgecy_ii" / "ckc_authoritative_staging" / "ckc455_staged_records.jsonl"
+    path = root / "research_outputs" / "hodgecy_ii" / "final" / "source_records" / "ckc455_staged_records.jsonl"
+    if not path.exists():
+        path = root / "research_outputs" / "hodgecy_ii" / "ckc_authoritative_staging" / "ckc455_staged_records.jsonl"
     if not path.exists():
         return {}
     records = {}
@@ -809,8 +811,10 @@ def build_scope_manifest(summary: Mapping[str, Any], asset_manifest_path: str) -
             ],
         },
         "required_geometric_outputs": {
-            "blob_11": "none; scope freeze and source-fidelity census assets only",
-            "later_blobs": ["ordinary_node_verified", "defect_verified", "source/node comparison"],
+            "source_fidelity_census": "COMPUTED",
+            "ordinary_node_promotion": "OPEN",
+            "classical_defect": "UNKNOWN",
+            "source_to_node_comparison": "OPEN",
         },
         "nonclaims": mathematical_firewall(),
         "artifact_manifest": asset_manifest_path,

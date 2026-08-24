@@ -55,3 +55,18 @@ def test_reproduce_hodgecy_ii_top_level_command() -> None:
     assert manifest["package_version"] == "1.0.0"
     assert manifest["release_tag"] is None
     assert "research_outputs/hodgecy_ii/complete_fidelity_pairs_and_sets.tsv" in manifest["primary_input_hashes"]
+
+
+def test_final_manuscript_asset_inventory_is_publication_shaped() -> None:
+    table_inventory = _json(repo_root() / "research_outputs" / "hodgecy_ii" / "manuscript_assets" / "manifest" / "final_manuscript_table_inventory.json")["tables"]
+    figure_inventory = _json(repo_root() / "research_outputs" / "hodgecy_ii" / "manuscript_assets" / "manifest" / "final_manuscript_figure_inventory.json")["figures"]
+    asset_manifest = _json(repo_root() / "research_outputs" / "hodgecy_ii" / "manuscript_assets" / "manifest" / "hodgecy_ii_asset_manifest.json")
+
+    main_tables = [item for item in table_inventory if item["status"] == "MAIN_TEXT"]
+    main_figures = [item for item in figure_inventory if item["status"] == "MAIN_TEXT"]
+    assert 5 <= len(main_tables) <= 7
+    assert 5 <= len(main_figures) <= 6
+    assert all("tex" in item["formats"] for item in main_tables)
+    assert all(item["data_source"] and item["figure_path"] and item["caption_data"] for item in main_figures)
+    assert "final_synthesis" in asset_manifest
+    assert not any("_blob" in path or "blob" in path for path in asset_manifest["artifacts"])

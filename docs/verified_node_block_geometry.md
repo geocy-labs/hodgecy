@@ -1,6 +1,6 @@
 # Verified Node-Block Geometry
 
-Blob 12 adds a repo-native certificate layer for the predicted node blocks of
+the verified block-geometry layer adds a repo-native certificate layer for the predicted node blocks of
 the HodgeCY II arrangements `84` and `84a`.
 
 For each arrangement the frozen perturbation is
@@ -22,7 +22,7 @@ scheme is contained in the Jacobian singular scheme.
 
 ## Current Promotion Status
 
-The strongest repo-native Blob 12 status is:
+The strongest repo-native the verified block-geometry layer status is:
 
 ```text
 exact reduced disjoint degree-112 predicted block scheme with Jacobian containment
@@ -35,4 +35,4 @@ with the predicted block scheme.  Historical Singular output backs the
 degree-112 claim, but no exact CAS executable is available in the current
 environment to reconstruct and freeze the saturated ideal.
 
-Blob 12 does not compute defect, vanishing cycles, or source-to-node morphisms.
+the verified block-geometry layer does not compute defect, vanishing cycles, or source-to-node morphisms.

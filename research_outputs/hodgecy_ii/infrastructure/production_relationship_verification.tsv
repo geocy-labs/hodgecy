@@ -1,5 +1,0 @@
-table_name	table_kind	relationship_edges	schema_columns	minimal_query	status	notes
-current_corpus_relationships	relationship	175928	11	head(1):relationship_id	OK	rows=1;estimated=175928
-wave2_source_relationships	relationship	5523	11	head(1):relationship_id	OK	rows=1;estimated=5523
-wave3_source_relationships	normalized	78	11	head(1):relationship_id	OK	rows=1;estimated=78
-wave4_source_relationships	relationships	65714	8	head(1):relationship_id	OK	rows=1;estimated=65714

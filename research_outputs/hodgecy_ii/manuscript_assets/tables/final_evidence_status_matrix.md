@@ -6,11 +6,11 @@
 | 84/84a Hodge equality | VERIFIED | h11=40, h12=0, euler=80 for both. |
 | 84/84a rational source equality | VERIFIED | rank_Q=26, H1_Q=2, H0_Q=0 for both. |
 | 84/84a integral source inequality | VERIFIED | Smith forms and rank_mod_2 differ. |
-| 84 verified block scheme | VERIFIED | Blob 12 reduced degree-112 block scheme. |
-| 84a verified block scheme | VERIFIED | Blob 12 reduced degree-112 block scheme. |
+| 84 verified block scheme | VERIFIED | final reduced degree-112 block scheme. |
+| 84a verified block scheme | VERIFIED | final reduced degree-112 block scheme. |
 | block scheme degree 112 | VERIFIED | 28 four-point blocks. |
 | block reducedness | VERIFIED | Block-level reducedness certificate. |
-| block -> singular containment | VERIFIED | Blob 12 containment certificate. |
+| block -> singular containment | VERIFIED | final containment certificate. |
 | full ordinary-node promotion | OPEN | Saturated Jacobian/full promotion gate incomplete. |
 | frozen saturated node ideal | OPEN | No final saturated node ideal certificate. |
 | Hilbert profile 0..8 | VERIFIED | 1,4,10,20,34,52,74,92,105 for both. |

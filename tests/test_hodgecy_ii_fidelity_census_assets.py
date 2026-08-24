@@ -87,8 +87,8 @@ def test_reconciliation_preserves_validation_status_and_firewall() -> None:
     assert by_members["452 / 453"].historical.validation_status() == "MIXED_WITH_HISTORICAL_ONLY_MEMBERS"
     assert by_members["84 / 84a"].historical.validation_status() == "THEOREM_READY_SOURCE_CONTROL"
     assert "not theorem-level geometric validation" in firewall["census_membership"]
-    assert "creates no node ideal" in firewall["no_node_ideal"]
-    assert "constructs no Hodge atom" in firewall["no_hodge_atom"]
+    assert "No final saturated node ideal certificate is claimed" in firewall["no_node_ideal"]
+    assert "No Hodge atom spectrum is constructed" in firewall["no_hodge_atom"]
 
 
 def test_asset_generation_tables_figures_manifests_and_persistence() -> None:

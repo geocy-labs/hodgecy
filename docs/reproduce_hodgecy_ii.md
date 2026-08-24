@@ -10,16 +10,16 @@ claims.
 - Python `>=3.10`
 - Package dependencies from `pyproject.toml`: `pandas`, `sympy`
 - Development test dependency: `pytest`
-- Current branch model: `research/hodgecy-ii-fidelity`
+- Canonical branch after cleanup: `main`
 - Package version: `1.0.0`
 
 ## Required Inputs
 
 - `research_outputs/hodgecy_ii/complete_fidelity_pairs_and_sets.tsv`
-- `research_outputs/hodgecy_ii/integral_lattice_blob8/hodgecy_ii_84_84a_source_lattice_comparison.json`
-- `research_outputs/hodgecy_ii/node_block_blob12/hodgecy_ii_node_block_certification.json`
-- `research_outputs/hodgecy_ii/evaluation_blob13/hodgecy_ii_84_84a_evaluation_comparison.json`
-- `research_outputs/hodgecy_ii/source_evaluation_blob14/hodgecy_ii_84_84a_source_evaluation_comparison.json`
+- `research_outputs/hodgecy_ii/final/theorem_evidence/source_lattice/source_lattice_comparison_84_84a.json`
+- `research_outputs/hodgecy_ii/final/theorem_evidence/block_geometry/block_geometry_certification_84_84a.json`
+- `research_outputs/hodgecy_ii/final/theorem_evidence/block_evaluation/block_evaluation_comparison_84_84a.json`
+- `research_outputs/hodgecy_ii/final/theorem_evidence/source_block_comparison/source_block_evaluation_comparison_84_84a.json`
 
 ## Command
 
