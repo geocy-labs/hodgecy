@@ -28,6 +28,7 @@ HISTORICAL_TOTAL_PROCESSED = 456
 HISTORICAL_NONTRIVIAL_SET_COUNT = 114
 GENERATOR_VERSION = "hodgecy_ii_manuscript_assets.v1"
 NORMALIZED_GENERATED_AT = "normalized-deterministic-generation"
+NORMALIZED_GIT_COMMIT = "resolved-by-repository-history"
 
 HISTORICAL_CENSUS_SCHEMA = "hodgecy_ii_complete_fidelity_census_historical.v1"
 RECONCILED_CENSUS_SCHEMA = "hodgecy_ii_complete_fidelity_census_reconciled.v1"
@@ -924,7 +925,7 @@ def generate_hodgecy_ii_manuscript_assets(
         "generator_version": GENERATOR_VERSION,
         "generated_at": NORMALIZED_GENERATED_AT,
         "hodgecy_version": HODGECY_VERSION,
-        "git_commit": git_commit(root),
+        "git_commit": NORMALIZED_GIT_COMMIT,
         "input_hashes": input_hashes,
         "source_record_ids": sorted({member for record in records for member in record.members}, key=natural_member_key),
         "historical_census": summary,

@@ -1,11 +1,11 @@
 {
-  "asset_manifest_hash": "3eeae0bea8018a96a7db4c7932d24e6c4bfc14b3b553847b36cbe3aeaed4b70a",
-  "branch": "research/hodgecy-ii-fidelity",
+  "asset_manifest_hash": "70b2f3501cf069ae1221f650e09f085c4f228ff1ad1986561525258d10efa49f",
+  "branch": "main",
   "dependency_versions": {
     "pandas": "3.0.2",
     "sympy": "1.14.0"
   },
-  "git_commit": "ccece82c305bfa86ae235bd1cadc3fba0da5e618",
+  "git_commit": "resolved-by-repository-history",
   "known_limitations": [
     "Complete ordinary-node promotion for the chosen perturbations.",
     "Freeze/reproduce the final saturated Jacobian node ideals.",
@@ -18,7 +18,7 @@
   ],
   "package_version": "1.0.0",
   "primary_input_hashes": {
-    "research_outputs/hodgecy_ii/complete_fidelity_pairs_and_sets.tsv": "0fcadb9c8b84d999e3eda2f99ae8bae94989c4a1a1db2eb3e1dbb6029dd7b976",
+    "research_outputs/hodgecy_ii/complete_fidelity_pairs_and_sets.tsv": "b43085f490adf5ab9ef5d6f480ebedc789d1890f49ab53769bf031309b78e6db",
     "research_outputs/hodgecy_ii/final/theorem_evidence/block_evaluation/block_evaluation_comparison_84_84a.json": "63a038b3274073f7827c57b8ce21b4f4acf46818ec6ddebf7891337af837df4a",
     "research_outputs/hodgecy_ii/final/theorem_evidence/block_geometry/block_geometry_certification_84_84a.json": "319071bb03ab9710ae07aad6b44253c6ead5a193fd0779a947a8fd1d2ec3c9cc",
     "research_outputs/hodgecy_ii/final/theorem_evidence/source_block_comparison/source_block_evaluation_comparison_84_84a.json": "6d65a86e0feb423932adc0c4baf1e42cc5a90d08848fd2f35282f14668a0ac0a",
@@ -26,7 +26,7 @@
   },
   "primary_output_hashes": {
     "research_outputs/hodgecy_ii/final/hodgecy_ii_final_results.json": "3b89a7b2d066e016ed5bb194bbc33e7a337e4dde47a623baf21285f6dcd41356",
-    "research_outputs/hodgecy_ii/manuscript_assets/manifest/hodgecy_ii_asset_manifest.json": "3eeae0bea8018a96a7db4c7932d24e6c4bfc14b3b553847b36cbe3aeaed4b70a"
+    "research_outputs/hodgecy_ii/manuscript_assets/manifest/hodgecy_ii_asset_manifest.json": "70b2f3501cf069ae1221f650e09f085c4f228ff1ad1986561525258d10efa49f"
   },
   "python_version": "3.12.10",
   "release_tag": null,

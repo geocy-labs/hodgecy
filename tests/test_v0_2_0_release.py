@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import csv
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -21,9 +22,11 @@ def _matrix(arrangement_id: str) -> list[list[int]]:
         return [[int(value) for value in row] for row in csv.reader(handle)]
 
 
-def test_release_builder_and_verifier_run() -> None:
-    subprocess.run([sys.executable, "scripts/build_v0_2_0_release.py"], cwd=REPO_ROOT, check=True)
-    subprocess.run([sys.executable, "scripts/verify_v0_2_0_release.py"], cwd=REPO_ROOT, check=True)
+def test_release_builder_and_verifier_run(tmp_path: Path) -> None:
+    env = {**os.environ, "HODGECY_RELEASE_ROOT": str(tmp_path / "release")}
+
+    subprocess.run([sys.executable, "scripts/build_v0_2_0_release.py"], cwd=REPO_ROOT, env=env, check=True)
+    subprocess.run([sys.executable, "scripts/verify_v0_2_0_release.py"], cwd=REPO_ROOT, env=env, check=True)
 
 
 def test_theorem_values_for_release_targets() -> None:

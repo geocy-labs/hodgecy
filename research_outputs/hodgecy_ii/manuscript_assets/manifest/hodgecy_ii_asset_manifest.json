@@ -17,11 +17,11 @@
       "status": "FINAL"
     },
     "research_outputs/hodgecy_ii/final/hodgecy_ii_final_artifact_manifest.json": {
-      "sha256": "40767ba2f9bf69744caf4129068f515d1df3dafe0dd29572e7bfeb8cb99f839e",
+      "sha256": "44b852b5a976589690a12aea90b43b4d21b11a25001e7925eaf49a522f01feab",
       "status": "FINAL"
     },
     "research_outputs/hodgecy_ii/final/hodgecy_ii_final_research_manifest.json": {
-      "sha256": "c32239b3d55d26ff19cb5e0dbf5ecb12395c13cec281643c99de3db6c2010409",
+      "sha256": "23f70ba844bfaa1e1d86f4cc49316fa8bb123a74fe72ee5090a23d93a449a54c",
       "status": "FINAL"
     },
     "research_outputs/hodgecy_ii/final/hodgecy_ii_final_results.json": {
@@ -252,7 +252,7 @@
   },
   "generated_at": "normalized-deterministic-generation",
   "generator_version": "hodgecy_ii_manuscript_assets.v1",
-  "git_commit": "ccece82c305bfa86ae235bd1cadc3fba0da5e618",
+  "git_commit": "resolved-by-repository-history",
   "historical_census": {
     "counts_by_category": {
       "INTEGRAL COLLAPSE / EQUIVARIANT SEPARATION": 57,
@@ -321,7 +321,7 @@
   "hodgecy_version": "1.0.0",
   "input_hashes": {
     "research_outputs/hodgecy_ii/census/source_assembly_records.json": "ef205c306c1ec0e21be5b3e9cb465b3591866ab0325d9c0ac42ebe885c84e272",
-    "research_outputs/hodgecy_ii/complete_fidelity_pairs_and_sets.tsv": "0fcadb9c8b84d999e3eda2f99ae8bae94989c4a1a1db2eb3e1dbb6029dd7b976"
+    "research_outputs/hodgecy_ii/complete_fidelity_pairs_and_sets.tsv": "b43085f490adf5ab9ef5d6f480ebedc789d1890f49ab53769bf031309b78e6db"
   },
   "mathematical_firewall": {
     "census_membership": "Census membership is not theorem-level geometric validation.",

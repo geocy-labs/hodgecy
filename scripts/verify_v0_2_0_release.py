@@ -5,12 +5,14 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
+import os
 import sys
 from pathlib import Path
 from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-RELEASE_DIR = REPO_ROOT / "release" / "hodgecy-v0.2.0"
+RELEASE_ROOT = Path(os.environ.get("HODGECY_RELEASE_ROOT", REPO_ROOT / "release")).resolve()
+RELEASE_DIR = RELEASE_ROOT / "hodgecy-v0.2.0"
 TARGETS = ("84", "84a", "239", "240", "241")
 
 

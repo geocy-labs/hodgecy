@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-from datetime import datetime, timezone
 from pathlib import Path
 import re
 from typing import Any
@@ -11,6 +10,7 @@ from typing import Any
 SOURCE_REFERENCE = "Cynk--Kocel--Cynk 2026, Section 6.1"
 SOURCE_SECTION = "6.1"
 EXPECTED_RECORD_COUNT = 455
+NORMALIZED_EXTRACTION_TIMESTAMP = "normalized-deterministic-extraction"
 
 
 def extract_text_from_pdf(pdf_path: Path) -> str:
@@ -178,7 +178,7 @@ def build_ckc_equation_index(pdf_path: Path) -> dict[str, Any]:
         "total_expected_records": EXPECTED_RECORD_COUNT,
         "records_loaded": len(records),
         "missing_ids": missing_ids,
-        "extraction_timestamp": datetime.now(timezone.utc).isoformat(),
+        "extraction_timestamp": NORMALIZED_EXTRACTION_TIMESTAMP,
         "validation_status": "unvalidated",
         "parser_coverage_complete": len(records) == EXPECTED_RECORD_COUNT and not missing_ids,
         "full_validated_dataset_loaded": False,

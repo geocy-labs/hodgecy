@@ -525,8 +525,8 @@ def final_research_manifest(result_summary_path: Path, asset_manifest_path: Path
     return {
         "schema": "hodgecy_ii_final_computational_state.v1",
         "package_version": HODGECY_VERSION,
-        "git_commit": git_output("rev-parse", "HEAD"),
-        "branch": git_output("branch", "--show-current"),
+        "git_commit": "resolved-by-repository-history",
+        "branch": "main",
         "python_version": platform.python_version(),
         "dependency_versions": dependency_versions(),
         "test_counts": test_summary or {"baseline": "338 passed, 2 skipped"},
@@ -612,6 +612,7 @@ def update_scope_manifest() -> Path:
 def update_asset_manifest(paths: Iterable[Path]) -> Path:
     path = MANIFEST_ROOT / "hodgecy_ii_asset_manifest.json"
     payload = canonicalize_evidence_payload(read_json(path))
+    payload["git_commit"] = "resolved-by-repository-history"
     payload.pop("blob_13_block_evaluation", None)
     payload.pop("blob_14_source_evaluation", None)
     payload.pop("blob_15_final_freeze", None)
