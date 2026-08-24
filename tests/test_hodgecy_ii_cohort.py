@@ -5,6 +5,7 @@ import json
 from hodgecy.cohorts import (
     baseline_hodgecy_ii_comparison,
     hodgecy_ii_defect_blob7,
+    hodgecy_ii_integral_lattice_blob8,
     hodgecy_ii_node_geometry_blob5,
     hodgecy_ii_node_ideal_hilbert_blob6,
     ingest_hodgecy_ii_cohort,
@@ -256,4 +257,50 @@ def test_blob7_reports_84_84a_defect_comparison(tmp_path) -> None:
     assert "hodgecy_ii_84_84a_defect_comparison.md" in paths
     payload = json.loads((report_dir / "hodgecy_ii_defect_blob7.json").read_text(encoding="utf-8"))
     assert payload["summaries"]["84a"]["critical_degree"] == 8
+    assert "comparison_time" not in json.dumps(payload)
+
+
+def test_blob8_source_lattice_reproduces_84_84a_mod2_distinction(tmp_path) -> None:
+    store = make_store(tmp_path)
+    result = hodgecy_ii_integral_lattice_blob8(store)
+
+    assert result.summaries["84"]["matrix_shape"] == [26, 28]
+    assert result.summaries["84a"]["matrix_shape"] == [26, 28]
+    assert result.summaries["84"]["rank_Q"] == 26
+    assert result.summaries["84a"]["rank_Q"] == 26
+    assert result.summaries["84"]["rank_mod_2"] == 23
+    assert result.summaries["84a"]["rank_mod_2"] == 21
+    assert result.pair_84_source_lattice_first_difference.first_difference == "matrix_hash"
+
+    pair_states = {item.comparison_key: item.state for item in result.pair_84_source_lattice_report.invariant_results}
+    assert pair_states["rank_Q"] is ComparisonState.EQUAL
+    assert pair_states["rank_mod_2"] is ComparisonState.DIFFERENT
+    assert result.summaries["84"]["legacy_cross_check"]["rank_mod_2_matches_source_record"] is True
+
+
+def test_blob8_source_lattice_reproduces_239_240_241_rational_split(tmp_path) -> None:
+    store = make_store(tmp_path)
+    result = hodgecy_ii_integral_lattice_blob8(store)
+
+    assert result.summaries["239"]["rank_Q"] == 26
+    assert result.summaries["240"]["rank_Q"] == 26
+    assert result.summaries["241"]["rank_Q"] == 24
+    assert result.summaries["239"]["rank_mod_2"] == 21
+    assert result.summaries["240"]["rank_mod_2"] == 23
+    assert result.summaries["241"]["rank_mod_2"] == 24
+    assert result.set_239_241_source_lattice_first_difference.first_difference == "matrix_hash"
+    assert result.summaries["241"]["legacy_cross_check"]["rank_Q_matches_source_record"] is True
+
+
+def test_blob8_source_lattice_reports_are_written(tmp_path) -> None:
+    store = make_store(tmp_path)
+    report_dir = tmp_path / "blob8_reports"
+    result = hodgecy_ii_integral_lattice_blob8(store, report_dir=report_dir)
+
+    paths = {path.name for path in result.report_paths}
+    assert "hodgecy_ii_integral_lattice_blob8.json" in paths
+    assert "hodgecy_ii_84_84a_source_lattice_comparison.md" in paths
+    payload = json.loads((report_dir / "hodgecy_ii_integral_lattice_blob8.json").read_text(encoding="utf-8"))
+    assert payload["summaries"]["84"]["matrix_role"] == "source_assembly"
+    assert payload["summaries"]["84a"]["rank_mod_2"] == 21
     assert "comparison_time" not in json.dumps(payload)

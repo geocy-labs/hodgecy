@@ -5,9 +5,11 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from hodgecy.algebra import IntegerLinearMap, MatrixSemanticRole, persist_integer_linear_map_analysis
 from hodgecy.comparison import ComparisonEngine, FirstDifferenceResult, PairComparisonReport, RefinementResult, SetComparisonResult
 from hodgecy.core.results import EvidenceStatus, ResultKind
 from hodgecy.geometry import DefectConvention, CriticalDegreeResult, persist_classical_defect_result, resolve_critical_degree, unknown_classical_defect_result
+from hodgecy.equivariant.source_complex import source_complex_from_incidence
 from hodgecy.core.serialization import canonical_json, stable_sha256
 from hodgecy.storage import CalculationRun, ComparisonSetRecord, GeometryRecord, InvariantRecord, ResultStore
 from hodgecy.storage.errors import RecordNotFoundError
@@ -79,6 +81,21 @@ DEFECT_BLOB7_INVARIANTS = (
     "evaluation_cokernel_dimension",
     "evaluation_rank_deficiency",
     "classical_defect",
+)
+
+INTEGRAL_LATTICE_BLOB8_INVARIANTS = (
+    "matrix_shape",
+    "matrix_hash",
+    "rank_Q",
+    "rank_mod_2",
+    "rank_mod_3",
+    "kernel_dim_Q",
+    "cokernel_dim_Q",
+    "integral_kernel_rank",
+    "smith_normal_form",
+    "integral_cokernel_decomposition",
+    "cokernel_structure",
+    "saturation_index",
 )
 
 PAIR_ORDER = HODGE_INVARIANTS + SOURCE_INVARIANTS + tuple(name for name, _ in UNKNOWN_LATER_INVARIANTS)
@@ -201,6 +218,28 @@ class HodgeCYIIDefectBlob7Result:
             "summaries": self.summaries,
             "pair_84_defect_report": self.pair_84_defect_report.to_dict(),
             "pair_84_defect_first_difference": self.pair_84_defect_first_difference.to_dict(),
+            "report_paths": [path.as_posix() for path in self.report_paths],
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class HodgeCYIIIntegralLatticeBlob8Result:
+    ingest: HodgeCYIICohortIngestResult
+    runs: tuple[CalculationRun, ...]
+    summaries: dict[str, dict[str, Any]]
+    pair_84_source_lattice_report: PairComparisonReport
+    pair_84_source_lattice_first_difference: FirstDifferenceResult
+    set_239_241_source_lattice_first_difference: FirstDifferenceResult
+    report_paths: tuple[Path, ...] = ()
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "ingest": self.ingest.to_dict(),
+            "runs": [run.to_dict() for run in self.runs],
+            "summaries": self.summaries,
+            "pair_84_source_lattice_report": self.pair_84_source_lattice_report.to_dict(),
+            "pair_84_source_lattice_first_difference": self.pair_84_source_lattice_first_difference.to_dict(),
+            "set_239_241_source_lattice_first_difference": self.set_239_241_source_lattice_first_difference.to_dict(),
             "report_paths": [path.as_posix() for path in self.report_paths],
         }
 
@@ -521,6 +560,84 @@ def hodgecy_ii_defect_blob7(
         summaries=summaries,
         pair_84_defect_report=pair_report,
         pair_84_defect_first_difference=pair_first,
+        report_paths=paths,
+    )
+
+
+def hodgecy_ii_integral_lattice_blob8(
+    store: ResultStore,
+    *,
+    manifest_path: str | Path | None = None,
+    root: str | Path | None = None,
+    report_dir: str | Path | None = None,
+) -> HodgeCYIIIntegralLatticeBlob8Result:
+    """Cross-check HodgeCY II source gluing matrices with the Blob 8 engine."""
+
+    root_path = Path(root) if root is not None else repo_root()
+    ingest = ingest_hodgecy_ii_cohort(store, manifest_path=manifest_path, root=root_path)
+    manifest = ingest.manifest
+    arrangement_to_geometry = {member["arrangement_id"]: member["geometry_id"] for member in manifest["members"]}
+    runs: list[CalculationRun] = []
+    summaries: dict[str, dict[str, Any]] = {}
+
+    for member in manifest["members"]:
+        arrangement_id = member["arrangement_id"]
+        source_record, source_path = _source_lattice_record(root_path, arrangement_id)
+        source_complex = source_complex_from_incidence(
+            source_record["incidence_table"],
+            arrangement_id=arrangement_id,
+            linear_forms=source_record.get("linear_forms"),
+            source_provenance={"source_path": source_path.relative_to(root_path).as_posix(), "blob": 8},
+            rank_primes=(2, 3),
+        )
+        linear_map = IntegerLinearMap(
+            source_complex.matrix_entries,
+            semantic_role=MatrixSemanticRole.SOURCE_ASSEMBLY,
+            provenance=f"source gluing matrix rebuilt from {source_path.relative_to(root_path).as_posix()}",
+        )
+        run = store.begin_run(
+            geometry_id=member["geometry_id"],
+            calculation_type="hodgecy_ii_integral_lattice_blob8",
+            input_metadata={
+                "blob": 8,
+                "source_path": source_path.relative_to(root_path).as_posix(),
+                "source_sha256": stable_sha256(source_record),
+                "matrix_hash": linear_map.matrix_hash,
+            },
+            parameters={"scope": "source_assembly_integer_lattice_cross_check", "rank_primes": [2, 3], "no_node_relation_or_hodge_atom": True},
+            backend="hodgecy.cohorts.hodgecy_ii + hodgecy.algebra.integer_lattices",
+            coefficient_ring="ZZ",
+            environment_metadata={"manifest_path": str(manifest_path or MANIFEST_RELATIVE_PATH)},
+            notes="Blob 8 SOURCE_ASSEMBLY lattice checkpoint; no node-relation or source-to-node interpretation.",
+        )
+        persist_integer_linear_map_analysis(
+            store,
+            run_id=run.run_id,
+            linear_map=linear_map,
+            result_kind=ResultKind.SOURCE_ASSEMBLY,
+            modular_primes=(2, 3),
+        )
+        runs.append(store.complete_run(run.run_id))
+        summaries[arrangement_id] = _integral_lattice_summary(member, linear_map, source_complex, source_record, source_path, root_path)
+
+    engine = ComparisonEngine(store)
+    pair_members = (arrangement_to_geometry["84"], arrangement_to_geometry["84a"])
+    set_members = tuple(arrangement_to_geometry[item] for item in ("239", "240", "241"))
+    pair_report = engine.compare_pair(pair_members[0], pair_members[1], invariants=INTEGRAL_LATTICE_BLOB8_INVARIANTS)
+    pair_first = engine.first_difference(pair_members, INTEGRAL_LATTICE_BLOB8_INVARIANTS)
+    set_first = engine.first_difference(set_members, INTEGRAL_LATTICE_BLOB8_INVARIANTS)
+
+    paths: tuple[Path, ...] = ()
+    if report_dir is not None:
+        paths = _write_integral_lattice_blob8_reports(Path(report_dir), summaries=summaries, pair_report=pair_report, pair_first=pair_first, set_first=set_first)
+
+    return HodgeCYIIIntegralLatticeBlob8Result(
+        ingest=ingest,
+        runs=tuple(runs),
+        summaries=summaries,
+        pair_84_source_lattice_report=pair_report,
+        pair_84_source_lattice_first_difference=pair_first,
+        set_239_241_source_lattice_first_difference=set_first,
         report_paths=paths,
     )
 
@@ -911,6 +1028,67 @@ def _defect_summary(
     }
 
 
+def _source_lattice_record(root_path: Path, arrangement_id: str) -> tuple[dict[str, Any], Path]:
+    if arrangement_id in {"84", "84a"}:
+        path = root_path / "data" / "processed" / "equivariant_spectra" / f"hodgecy_equivariant_spectrum_{arrangement_id}.json"
+        return json.loads(path.read_text(encoding="utf-8")), path
+    path = root_path / "data" / "processed" / "equivariant_spectra" / "ckc_fixed_rational_batch" / "ckc_fixed_rational_spectra.json"
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    for item in payload["spectra"]:
+        if str(item["arrangement_id"]) == arrangement_id:
+            return item, path
+    raise KeyError(f"No source lattice record found for arrangement {arrangement_id}")
+
+
+def _integral_lattice_summary(
+    member: dict[str, Any],
+    linear_map: IntegerLinearMap,
+    source_complex,
+    source_record: dict[str, Any],
+    source_path: Path,
+    root_path: Path,
+) -> dict[str, Any]:
+    from hodgecy.algebra import image_lattice, modular_rank, rational_rank, smith_normal_form_data
+
+    rank = rational_rank(linear_map)
+    rank2 = modular_rank(linear_map, 2)
+    rank3 = modular_rank(linear_map, 3)
+    snf = smith_normal_form_data(linear_map)
+    image = image_lattice(linear_map)
+    return {
+        "arrangement_id": member["arrangement_id"],
+        "geometry_id": member["geometry_id"],
+        "matrix_available": True,
+        "matrix_role": linear_map.semantic_role,
+        "matrix_shape": list(linear_map.shape),
+        "matrix_hash": linear_map.matrix_hash,
+        "source_path": source_path.relative_to(root_path).as_posix(),
+        "rank_Q": rank.rank,
+        "rank_mod_2": rank2.rank,
+        "rank_mod_3": rank3.rank,
+        "kernel_dim_Q": rank.nullity,
+        "cokernel_dim_Q": linear_map.codomain_rank - rank.rank,
+        "smith_normal_form": list(snf.diagonal_invariant_factors),
+        "cokernel_free_rank": snf.cokernel.free_rank,
+        "torsion_factors": list(snf.cokernel.torsion_invariant_factors),
+        "torsion_order": snf.cokernel.torsion_order,
+        "torsion_primes": list(snf.cokernel.torsion_primes),
+        "saturation_index": image.saturation.index,
+        "legacy_cross_check": {
+            "rank_Q_matches_source_record": source_record.get("rank_Q") == rank.rank,
+            "rank_mod_2_matches_source_record": source_record.get("rank_F2", source_record.get("rank_mod_2")) == rank2.rank,
+            "smith_normal_form_matches_source_record": source_record.get("smith_normal_form") == list(snf.diagonal_invariant_factors),
+            "source_complex_matrix_shape": source_complex.algebra["gluing_matrix_shape"],
+        },
+        "firewall": {
+            "source_assembly_matrix_is_not_node_relation_matrix": True,
+            "source_kernel_is_not_vanishing_cycle_relation_lattice": True,
+            "no_source_to_node_map_computed": True,
+            "no_hodge_atom_computed": True,
+        },
+    }
+
+
 def _ensure_comparison_set(store: ResultStore, item: dict[str, Any], arrangement_to_geometry: dict[str, str]) -> ComparisonSetRecord:
     comparison_set_id = item["comparison_set_id"]
     try:
@@ -1053,6 +1231,34 @@ def _write_defect_blob7_reports(
     paths[1].write_text(_defect_blob7_markdown(summaries), encoding="utf-8")
     paths[2].write_text(_deterministic_json({"pair_84_defect_report": pair_report.to_dict(), "pair_84_defect_first_difference": pair_first.to_dict()}) + "\n", encoding="utf-8")
     paths[3].write_text(_defect_pair_markdown(pair_report, pair_first), encoding="utf-8")
+    return paths
+
+
+def _write_integral_lattice_blob8_reports(
+    report_dir: Path,
+    *,
+    summaries: dict[str, dict[str, Any]],
+    pair_report: PairComparisonReport,
+    pair_first: FirstDifferenceResult,
+    set_first: FirstDifferenceResult,
+) -> tuple[Path, ...]:
+    report_dir.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "summaries": summaries,
+        "pair_84_source_lattice_report": pair_report.to_dict(),
+        "pair_84_source_lattice_first_difference": pair_first.to_dict(),
+        "set_239_241_source_lattice_first_difference": set_first.to_dict(),
+    }
+    paths = (
+        report_dir / "hodgecy_ii_integral_lattice_blob8.json",
+        report_dir / "hodgecy_ii_integral_lattice_blob8.md",
+        report_dir / "hodgecy_ii_84_84a_source_lattice_comparison.json",
+        report_dir / "hodgecy_ii_84_84a_source_lattice_comparison.md",
+    )
+    paths[0].write_text(_deterministic_json(payload) + "\n", encoding="utf-8")
+    paths[1].write_text(_integral_lattice_blob8_markdown(summaries, set_first), encoding="utf-8")
+    paths[2].write_text(_deterministic_json({"pair_84_source_lattice_report": pair_report.to_dict(), "pair_84_source_lattice_first_difference": pair_first.to_dict()}) + "\n", encoding="utf-8")
+    paths[3].write_text(_source_lattice_pair_markdown(pair_report, pair_first), encoding="utf-8")
     return paths
 
 
@@ -1215,6 +1421,47 @@ def _defect_pair_markdown(report: PairComparisonReport, first: FirstDifferenceRe
         right = result.operands[1].value if len(result.operands) > 1 else None
         lines.append(f"| {result.comparison_key} | `{left}` | `{right}` | {result.state.value} |")
     lines.extend(["", f"First defect-level distinction: {first.first_difference or first.state.value}", ""])
+    return "\n".join(lines)
+
+
+def _integral_lattice_blob8_markdown(summaries: dict[str, dict[str, Any]], set_first: FirstDifferenceResult) -> str:
+    lines = ["# HodgeCY II Integral Lattice - Blob 8", ""]
+    lines.append("| Geometry | Role | Shape | Matrix Hash | rank_Q | rank_mod_2 | rank_mod_3 | SNF | Torsion | Sat Index |")
+    lines.append("| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |")
+    for arrangement_id in sorted(summaries):
+        item = summaries[arrangement_id]
+        shape = "x".join(str(value) for value in item["matrix_shape"])
+        snf = ",".join(str(value) for value in item["smith_normal_form"])
+        torsion = ",".join(str(value) for value in item["torsion_factors"]) or "none"
+        lines.append(
+            f"| {arrangement_id} | {item['matrix_role']} | {shape} | `{item['matrix_hash'][:16]}` | "
+            f"{item['rank_Q']} | {item['rank_mod_2']} | {item['rank_mod_3']} | `{snf}` | `{torsion}` | {item['saturation_index']} |"
+        )
+    lines.extend(
+        [
+            "",
+            f"239/240/241 first source-lattice split: {set_first.first_difference or set_first.state.value}",
+            "",
+            "## Firewall",
+            "- These are SOURCE_ASSEMBLY gluing matrices only.",
+            "- A source assembly matrix is not a node-relation matrix.",
+            "- Equal SNF does not prove geometric complex isomorphism.",
+            "- Equal rational rank does not imply equal integral structure.",
+            "- Source kernels are not vanishing-cycle relation lattices.",
+            "- No source-to-node map or Hodge atom is computed.",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def _source_lattice_pair_markdown(report: PairComparisonReport, first: FirstDifferenceResult) -> str:
+    lines = ["# HodgeCY II Source Lattice Comparison - 84 vs 84a", "", "| Invariant | 84 | 84a | State |", "| --- | --- | --- | --- |"]
+    for result in report.invariant_results:
+        left = result.operands[0].value if result.operands else None
+        right = result.operands[1].value if len(result.operands) > 1 else None
+        lines.append(f"| {result.comparison_key} | `{left}` | `{right}` | {result.state.value} |")
+    lines.extend(["", f"First source-lattice distinction: {first.first_difference or first.state.value}", ""])
     return "\n".join(lines)
 
 
