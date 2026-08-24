@@ -1,0 +1,55 @@
+{
+  "schema": "hodgecy_ii_star_configuration_audit.v1",
+  "status": "AUDITED",
+  "audit_date": "2026-08-24",
+  "verified_hodgecy_hypotheses": {
+    "arrangements": [
+      "84",
+      "84a"
+    ],
+    "pair_count": 28,
+    "pairwise_rank": 2,
+    "triple_count": 56,
+    "triple_rank_distribution": {
+      "3": 56
+    },
+    "no_three_planes_contain_a_line": true,
+    "higher_order_point_concurrences_allowed": true
+  },
+  "geramita_harbourne_migliore": {
+    "reference": "Geramita, Harbourne, and Migliore, Star configurations in P^n, Journal of Algebra 376 (2013), 279-299.",
+    "doi": "10.1016/j.jalgebra.2012.11.034",
+    "arxiv": "1203.5685",
+    "definition_2_1": "Defines star configurations for hyperplanes meeting properly.",
+    "proposition_2_6": "Basic-double-link construction used as the applicable proof mechanism.",
+    "proposition_2_9": "ACM, h-vector, degree, and generator-degree statement under the proper-meeting hypothesis.",
+    "hypothesis_match": "PARTIAL",
+    "mismatch": "The full proper-meeting hypothesis is stronger than the verified 84/84a hypotheses because proper meeting excludes higher-order point concurrences that the arrangements allow.",
+    "use_in_hodgecy_ii": "Context plus basic-double-link framework; Proposition 2.9 is not used as a black-box theorem for 84/84a."
+  },
+  "direct_line_skeleton_proof": {
+    "status": "PROVED",
+    "hypotheses_used": [
+      "distinct linear forms",
+      "all pairs independent",
+      "all triples rank 3, equivalently no three planes contain a line"
+    ],
+    "identity": "(F/L_1,...,F/L_8)=intersection_{i<j}(L_i,L_j)",
+    "method": "Induction by basic double link: J_s=L_s J_{s-1}+(prod_{i<s}L_i).",
+    "four_or_more_planes_at_a_point_issue": "No obstruction for this codimension-two line-skeleton proof; such point concurrences are allowed because the induction only requires the new plane to contain no old line component.",
+    "saturation_reducedness_unmixedness": "The direct identity expresses the ideal as an intersection of distinct line primes; the Hilbert-Burch resolution also gives a perfect height-two ideal."
+  },
+  "hilbert_burch_references": [
+    {
+      "reference": "Burch, On ideals of finite homological dimension in local rings",
+      "doi": "10.1017/S0305004100043620"
+    },
+    {
+      "reference": "Bruns-Herzog, Cohen-Macaulay Rings, Theorem 1.4.17"
+    },
+    {
+      "reference": "Eisenbud, Commutative Algebra with a View Toward Algebraic Geometry, Theorem 20.15"
+    }
+  ],
+  "conclusion": "84 and 84a satisfy every hypothesis used in the manuscript theorem. They do not satisfy the stronger full proper-meeting hypothesis, so the proof package uses the direct basic-double-link/Hilbert-Burch argument."
+}
