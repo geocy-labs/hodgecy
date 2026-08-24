@@ -7,6 +7,7 @@ from typing import Any
 
 from hodgecy.comparison import ComparisonEngine, FirstDifferenceResult, PairComparisonReport, RefinementResult, SetComparisonResult
 from hodgecy.core.results import EvidenceStatus, ResultKind
+from hodgecy.geometry import DefectConvention, CriticalDegreeResult, persist_classical_defect_result, resolve_critical_degree, unknown_classical_defect_result
 from hodgecy.core.serialization import canonical_json, stable_sha256
 from hodgecy.storage import CalculationRun, ComparisonSetRecord, GeometryRecord, InvariantRecord, ResultStore
 from hodgecy.storage.errors import RecordNotFoundError
@@ -67,6 +68,17 @@ NODE_IDEAL_HILBERT_INVARIANTS = (
     "hilbert_stabilization_degree",
     "hilbert_polynomial",
     "hilbert_computation_status",
+)
+
+DEFECT_BLOB7_INVARIANTS = (
+    "critical_degree",
+    "evaluation_source_dimension",
+    "evaluation_target_length",
+    "evaluation_rank",
+    "evaluation_kernel_dimension",
+    "evaluation_cokernel_dimension",
+    "evaluation_rank_deficiency",
+    "classical_defect",
 )
 
 PAIR_ORDER = HODGE_INVARIANTS + SOURCE_INVARIANTS + tuple(name for name, _ in UNKNOWN_LATER_INVARIANTS)
@@ -169,6 +181,26 @@ class HodgeCYIINodeIdealHilbertResult:
             "summaries": self.summaries,
             "pair_84_hilbert_report": self.pair_84_hilbert_report.to_dict(),
             "pair_84_hilbert_first_difference": self.pair_84_hilbert_first_difference.to_dict(),
+            "report_paths": [path.as_posix() for path in self.report_paths],
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class HodgeCYIIDefectBlob7Result:
+    ingest: HodgeCYIICohortIngestResult
+    runs: tuple[CalculationRun, ...]
+    summaries: dict[str, dict[str, Any]]
+    pair_84_defect_report: PairComparisonReport
+    pair_84_defect_first_difference: FirstDifferenceResult
+    report_paths: tuple[Path, ...] = ()
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "ingest": self.ingest.to_dict(),
+            "runs": [run.to_dict() for run in self.runs],
+            "summaries": self.summaries,
+            "pair_84_defect_report": self.pair_84_defect_report.to_dict(),
+            "pair_84_defect_first_difference": self.pair_84_defect_first_difference.to_dict(),
             "report_paths": [path.as_posix() for path in self.report_paths],
         }
 
@@ -421,6 +453,74 @@ def hodgecy_ii_node_ideal_hilbert_blob6(
         summaries=summaries,
         pair_84_hilbert_report=pair_report,
         pair_84_hilbert_first_difference=pair_first,
+        report_paths=paths,
+    )
+
+
+def hodgecy_ii_defect_blob7(
+    store: ResultStore,
+    *,
+    manifest_path: str | Path | None = None,
+    root: str | Path | None = None,
+    report_dir: str | Path | None = None,
+) -> HodgeCYIIDefectBlob7Result:
+    """Persist the Blob 7 critical-degree/defect checkpoint for HodgeCY II."""
+
+    root_path = Path(root) if root is not None else repo_root()
+    ingest = ingest_hodgecy_ii_cohort(store, manifest_path=manifest_path, root=root_path)
+    manifest = ingest.manifest
+    arrangement_to_geometry = {member["arrangement_id"]: member["geometry_id"] for member in manifest["members"]}
+    runs: list[CalculationRun] = []
+    summaries: dict[str, dict[str, Any]] = {}
+
+    for member in manifest["members"]:
+        arrangement_id = member["arrangement_id"]
+        summary_path = root_path / member["summary_path"]
+        summary = json.loads(summary_path.read_text(encoding="utf-8"))
+        critical = _hodgecy_ii_critical_degree(member, summary)
+        gap = _defect_gap(member, critical)
+        defect_result = unknown_classical_defect_result(
+            geometry_id=member["geometry_id"],
+            critical_degree=critical,
+            scheme_length=None,
+            reason=gap,
+            prerequisites=_hodgecy_ii_defect_prerequisites(critical),
+        )
+        input_metadata = {
+            "blob": 7,
+            "summary_path": member["summary_path"],
+            "summary_sha256": stable_sha256(summary),
+            "blob6_report": "research_outputs/hodgecy_ii/node_ideal_hilbert_blob6/hodgecy_ii_node_ideal_hilbert_blob6.json",
+        }
+        run = store.begin_run(
+            geometry_id=member["geometry_id"],
+            calculation_type="hodgecy_ii_defect_blob7",
+            input_metadata=input_metadata,
+            parameters={"scope": "critical_degree_and_defect_checkpoint", "no_node_relations_or_hodge_atoms": True},
+            backend="hodgecy.cohorts.hodgecy_ii + hodgecy.geometry.defects",
+            coefficient_ring="QQ/unknown-node-ideal",
+            environment_metadata={"manifest_path": str(manifest_path or MANIFEST_RELATIVE_PATH)},
+            notes="Blob 7 checkpoint; critical degree may be theorem-derived, but defect remains UNKNOWN without exact node ideal/evaluation.",
+        )
+        persist_classical_defect_result(store, run_id=run.run_id, critical_degree=critical, defect_result=defect_result)
+        runs.append(store.complete_run(run.run_id))
+        summaries[arrangement_id] = _defect_summary(member, summary, critical, defect_result, gap)
+
+    engine = ComparisonEngine(store)
+    pair_members = (arrangement_to_geometry["84"], arrangement_to_geometry["84a"])
+    pair_report = engine.compare_pair(pair_members[0], pair_members[1], invariants=DEFECT_BLOB7_INVARIANTS)
+    pair_first = engine.first_difference(pair_members, DEFECT_BLOB7_INVARIANTS)
+
+    paths: tuple[Path, ...] = ()
+    if report_dir is not None:
+        paths = _write_defect_blob7_reports(Path(report_dir), summaries=summaries, pair_report=pair_report, pair_first=pair_first)
+
+    return HodgeCYIIDefectBlob7Result(
+        ingest=ingest,
+        runs=tuple(runs),
+        summaries=summaries,
+        pair_84_defect_report=pair_report,
+        pair_84_defect_first_difference=pair_first,
         report_paths=paths,
     )
 
@@ -746,6 +846,71 @@ def _node_ideal_gap(arrangement_id: str) -> str:
     return "No exact supported node/singular-scheme ideal is documented for this cohort member."
 
 
+def _hodgecy_ii_critical_degree(member: dict[str, Any], summary: dict[str, Any]) -> CriticalDegreeResult | None:
+    if member["arrangement_id"] in {"84", "84a"} and summary.get("quartic_perturbation"):
+        return resolve_critical_degree(DefectConvention.NODAL_DOUBLE_SOLID_CLEMENS_CYNK, branch_degree=8)
+    return None
+
+
+def _hodgecy_ii_defect_prerequisites(critical: CriticalDegreeResult | None) -> dict[str, bool]:
+    return {
+        "finite_singular_scheme": False,
+        "complete_support": False,
+        "reducedness": False,
+        "ordinary_node_classification": False,
+        "exact_node_ideal": False,
+        "applicable_double_solid_model": critical is not None,
+        "certified_critical_degree_rule": critical is not None,
+        "exact_evaluation_or_hilbert_computation": False,
+    }
+
+
+def _defect_gap(member: dict[str, Any], critical: CriticalDegreeResult | None) -> str:
+    if critical is None:
+        return "No applicable exact double-solid defect model is documented for this cohort member."
+    return (
+        "The standard nodal double-solid critical-degree rule gives k_crit=8 for the double-octic model, "
+        "but the exact node ideal, complete reduced ODP scheme, and H_Sigma(8) are not certified."
+    )
+
+
+def _defect_summary(
+    member: dict[str, Any],
+    summary: dict[str, Any],
+    critical: CriticalDegreeResult | None,
+    defect_result,
+    gap: str,
+) -> dict[str, Any]:
+    perturbation = summary.get("quartic_perturbation") or {}
+    return {
+        "arrangement_id": member["arrangement_id"],
+        "geometry_id": member["geometry_id"],
+        "model": None if critical is None else "nodal double solid / double cover of P^3",
+        "branch_degree": None if critical is None else critical.branch_degree,
+        "critical_degree_rule": None if critical is None else critical.convention.value,
+        "critical_degree": None if critical is None else critical.critical_degree,
+        "N_k": None if critical is None else critical.source_dimension,
+        "node_scheme_status": {
+            "imported_singular_scheme_dimension": perturbation.get("saturated_jacobian_scheme_dimension"),
+            "imported_singular_scheme_degree": perturbation.get("saturated_jacobian_scheme_degree"),
+            "complete_support": None,
+            "reduced": None,
+            "ordinary_nodes": None,
+        },
+        "exact_node_ideal_available": False,
+        "H_Sigma_kcrit": None,
+        "evaluation_rank": None,
+        "evaluation_kernel_dimension": None,
+        "evaluation_cokernel_dimension": None,
+        "classical_defect": None,
+        "certificate_status": defect_result.evidence_status.value,
+        "reason": gap,
+        "pending_template": None
+        if critical is None
+        else "If a verified reduced 112-node ideal becomes available, delta = 112 - H_Sigma(8) = 112 - rank(ev_{Sigma,8}).",
+    }
+
+
 def _ensure_comparison_set(store: ResultStore, item: dict[str, Any], arrangement_to_geometry: dict[str, str]) -> ComparisonSetRecord:
     comparison_set_id = item["comparison_set_id"]
     try:
@@ -865,6 +1030,32 @@ def _write_node_ideal_hilbert_reports(
     return paths
 
 
+def _write_defect_blob7_reports(
+    report_dir: Path,
+    *,
+    summaries: dict[str, dict[str, Any]],
+    pair_report: PairComparisonReport,
+    pair_first: FirstDifferenceResult,
+) -> tuple[Path, ...]:
+    report_dir.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "summaries": summaries,
+        "pair_84_defect_report": pair_report.to_dict(),
+        "pair_84_defect_first_difference": pair_first.to_dict(),
+    }
+    paths = (
+        report_dir / "hodgecy_ii_defect_blob7.json",
+        report_dir / "hodgecy_ii_defect_blob7.md",
+        report_dir / "hodgecy_ii_84_84a_defect_comparison.json",
+        report_dir / "hodgecy_ii_84_84a_defect_comparison.md",
+    )
+    paths[0].write_text(_deterministic_json(payload) + "\n", encoding="utf-8")
+    paths[1].write_text(_defect_blob7_markdown(summaries), encoding="utf-8")
+    paths[2].write_text(_deterministic_json({"pair_84_defect_report": pair_report.to_dict(), "pair_84_defect_first_difference": pair_first.to_dict()}) + "\n", encoding="utf-8")
+    paths[3].write_text(_defect_pair_markdown(pair_report, pair_first), encoding="utf-8")
+    return paths
+
+
 def _deterministic_json(payload: dict[str, Any]) -> str:
     return canonical_json(_strip_comparison_times(payload))
 
@@ -969,6 +1160,61 @@ def _hilbert_pair_markdown(report: PairComparisonReport, first: FirstDifferenceR
         right = result.operands[1].value if len(result.operands) > 1 else None
         lines.append(f"| {result.comparison_key} | `{left}` | `{right}` | {result.state.value} |")
     lines.extend(["", f"First Hilbert distinction: {first.first_difference or first.state.value}", ""])
+    return "\n".join(lines)
+
+
+def _defect_blob7_markdown(summaries: dict[str, dict[str, Any]]) -> str:
+    lines = ["# HodgeCY II Critical-Degree Defect - Blob 7", ""]
+    for arrangement_id in sorted(summaries):
+        item = summaries[arrangement_id]
+        node_status = item["node_scheme_status"]
+        lines.extend(
+            [
+                f"## {arrangement_id}",
+                f"- geometry_id: `{item['geometry_id']}`",
+                f"- model: `{item['model']}`",
+                f"- branch degree: `{item['branch_degree']}`",
+                f"- critical-degree rule: `{item['critical_degree_rule']}`",
+                f"- critical degree: `{item['critical_degree']}`",
+                f"- N_k: `{item['N_k']}`",
+                f"- imported singular scheme dimension: `{node_status['imported_singular_scheme_dimension']}`",
+                f"- imported singular scheme degree: `{node_status['imported_singular_scheme_degree']}`",
+                f"- complete support: `{node_status['complete_support']}`",
+                f"- reduced: `{node_status['reduced']}`",
+                f"- ordinary nodes: `{node_status['ordinary_nodes']}`",
+                f"- exact node ideal available: `{item['exact_node_ideal_available']}`",
+                f"- H_Sigma(kcrit): `{item['H_Sigma_kcrit']}`",
+                f"- evaluation rank: `{item['evaluation_rank']}`",
+                f"- defect: `{item['classical_defect']}`",
+                f"- certificate status: `{item['certificate_status']}`",
+                f"- reason: {item['reason']}",
+            ]
+        )
+        if item["pending_template"] is not None:
+            lines.append(f"- pending template: {item['pending_template']}")
+        lines.append("")
+    lines.extend(
+        [
+            "## Firewall",
+            "- Critical degree known is not defect known.",
+            "- Scheme degree 112 is not evaluation rank.",
+            "- Evaluation rank and kernel are not source-assembly rank or kernel.",
+            "- Classical defect is not a node-relation lattice rank.",
+            "- Equal defects do not imply equal node schemes or equal source assemblies.",
+            "- No vanishing-cycle relation or Hodge atom is constructed.",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def _defect_pair_markdown(report: PairComparisonReport, first: FirstDifferenceResult) -> str:
+    lines = ["# HodgeCY II Defect Comparison - 84 vs 84a", "", "| Invariant | 84 | 84a | State |", "| --- | --- | --- | --- |"]
+    for result in report.invariant_results:
+        left = result.operands[0].value if result.operands else None
+        right = result.operands[1].value if len(result.operands) > 1 else None
+        lines.append(f"| {result.comparison_key} | `{left}` | `{right}` | {result.state.value} |")
+    lines.extend(["", f"First defect-level distinction: {first.first_difference or first.state.value}", ""])
     return "\n".join(lines)
 
 

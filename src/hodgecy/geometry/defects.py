@@ -444,7 +444,7 @@ def persist_classical_defect_result(
         ("evaluation_kernel_dimension", None if defect_result.source_dimension is None or defect_result.evaluation_rank is None else defect_result.source_dimension - defect_result.evaluation_rank, EvidenceStatus.UNKNOWN if defect_result.evaluation_rank is None else defect_result.evidence_status, "kernel of the projective evaluation map; not a source-assembly kernel"),
         ("evaluation_cokernel_dimension", defect_result.cokernel_dimension, EvidenceStatus.UNKNOWN if defect_result.cokernel_dimension is None else defect_result.evidence_status, "algebraic evaluation cokernel dimension"),
         ("evaluation_rank_deficiency", defect_result.rank_deficiency, EvidenceStatus.UNKNOWN if defect_result.rank_deficiency is None else defect_result.evidence_status, "min(N_k,length)-rank; separate from cokernel if N_k < length"),
-        ("classical_defect", defect_result.classical_defect, defect_result.evidence_status if defect_result.classical_defect is not None else EvidenceStatus.UNKNOWN, "classical nodal defect only after prerequisite certification"),
+        ("classical_defect", defect_result.classical_defect, defect_result.evidence_status if defect_result.classical_defect is not None else EvidenceStatus.UNKNOWN, "classical nodal defect only after prerequisite certification, including exact node ideal and exact evaluation/Hilbert data"),
     ):
         invariants.append(
             store.record_invariant(

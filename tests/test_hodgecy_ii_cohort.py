@@ -4,6 +4,7 @@ import json
 
 from hodgecy.cohorts import (
     baseline_hodgecy_ii_comparison,
+    hodgecy_ii_defect_blob7,
     hodgecy_ii_node_geometry_blob5,
     hodgecy_ii_node_ideal_hilbert_blob6,
     ingest_hodgecy_ii_cohort,
@@ -197,4 +198,62 @@ def test_blob6_reports_unknown_84_84a_hilbert_comparison(tmp_path) -> None:
     assert "hodgecy_ii_84_84a_hilbert_comparison.md" in paths
     payload = json.loads((report_dir / "hodgecy_ii_node_ideal_hilbert_blob6.json").read_text(encoding="utf-8"))
     assert payload["summaries"]["84"]["exact_node_or_singular_ideal_available"] is False
+    assert "comparison_time" not in json.dumps(payload)
+
+
+def test_blob7_resolves_84_84a_critical_degree_but_keeps_defect_unknown(tmp_path) -> None:
+    store = make_store(tmp_path)
+    result = hodgecy_ii_defect_blob7(store)
+    blob7_run_ids = {run.run_id for run in store.get_runs(geometry_id="hodgecy-ii-84", calculation_type="hodgecy_ii_defect_blob7")}
+    by_name = {
+        item.invariant_name: item
+        for item in store.get_invariants(geometry_id="hodgecy-ii-84", result_kind=ResultKind.NODE_GEOMETRY)
+        if item.run_id in blob7_run_ids
+    }
+
+    assert result.summaries["84"]["branch_degree"] == 8
+    assert result.summaries["84"]["critical_degree"] == 8
+    assert result.summaries["84"]["N_k"] == 165
+    assert by_name["critical_degree"].value == 8
+    assert by_name["critical_degree"].evidence_status is EvidenceStatus.VERIFIED
+    assert by_name["evaluation_source_dimension"].value == 165
+    assert by_name["evaluation_rank"].value is None
+    assert by_name["evaluation_rank"].evidence_status is EvidenceStatus.UNKNOWN
+    assert by_name["classical_defect"].value is None
+    assert by_name["classical_defect"].evidence_status is EvidenceStatus.UNKNOWN
+    assert "exact node ideal" in (by_name["classical_defect"].notes or "")
+
+
+def test_blob7_does_not_assign_double_solid_defect_to_239_240_241(tmp_path) -> None:
+    store = make_store(tmp_path)
+    result = hodgecy_ii_defect_blob7(store)
+    blob7_run_ids = {run.run_id for run in store.get_runs(geometry_id="hodgecy-ii-239", calculation_type="hodgecy_ii_defect_blob7")}
+    by_name = {
+        item.invariant_name: item
+        for item in store.get_invariants(geometry_id="hodgecy-ii-239", result_kind=ResultKind.NODE_GEOMETRY)
+        if item.run_id in blob7_run_ids
+    }
+
+    assert result.summaries["239"]["critical_degree"] is None
+    assert by_name["critical_degree"].value is None
+    assert by_name["critical_degree"].evidence_status is EvidenceStatus.UNKNOWN
+    assert by_name["classical_defect"].value is None
+    assert "No applicable exact double-solid defect model" in result.summaries["239"]["reason"]
+
+
+def test_blob7_reports_84_84a_defect_comparison(tmp_path) -> None:
+    store = make_store(tmp_path)
+    report_dir = tmp_path / "defect_reports"
+    result = hodgecy_ii_defect_blob7(store, report_dir=report_dir)
+
+    pair_states = {item.comparison_key: item.state for item in result.pair_84_defect_report.invariant_results}
+    assert pair_states["critical_degree"] is ComparisonState.EQUAL
+    assert pair_states["evaluation_rank"] is ComparisonState.UNKNOWN
+    assert pair_states["classical_defect"] is ComparisonState.UNKNOWN
+    assert result.pair_84_defect_first_difference.state is ComparisonState.UNKNOWN
+    paths = {path.name for path in result.report_paths}
+    assert "hodgecy_ii_defect_blob7.json" in paths
+    assert "hodgecy_ii_84_84a_defect_comparison.md" in paths
+    payload = json.loads((report_dir / "hodgecy_ii_defect_blob7.json").read_text(encoding="utf-8"))
+    assert payload["summaries"]["84a"]["critical_degree"] == 8
     assert "comparison_time" not in json.dumps(payload)
