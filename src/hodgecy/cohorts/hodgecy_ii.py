@@ -11,7 +11,7 @@ from hodgecy.core.results import EvidenceStatus, ResultKind
 from hodgecy.geometry import DefectConvention, CriticalDegreeResult, persist_classical_defect_result, resolve_critical_degree, unknown_classical_defect_result
 from hodgecy.equivariant.source_complex import source_complex_from_incidence
 from hodgecy.core.serialization import canonical_json, stable_sha256
-from hodgecy.relations import RelationRealizationKind, node_relation_firewall
+from hodgecy.relations import RelationRealizationKind, conditional_defect_feasibility_for_source_h1, node_relation_firewall, source_to_node_firewall
 from hodgecy.storage import CalculationRun, ComparisonSetRecord, GeometryRecord, InvariantRecord, ResultStore
 from hodgecy.storage.errors import RecordNotFoundError
 
@@ -117,6 +117,23 @@ NODE_RELATION_BLOB9_INVARIANTS = (
     "vanishing_cycle_relation_complex",
     "exceptional_curve_relation_complex",
     "source_to_node_map_status",
+)
+
+SOURCE_TO_NODE_BLOB10_INVARIANTS = (
+    "source_d_shape",
+    "source_rank_Q",
+    "source_H1_rank_Q",
+    "source_H0_rank_Q",
+    "source_H0_Z_torsion",
+    "expected_node_count",
+    "critical_degree",
+    "expected_evaluation_matrix_shape",
+    "expected_relation_map_shape",
+    "node_evaluation_H1_rank",
+    "source_to_evaluation_chain_map",
+    "source_to_vanishing_chain_map",
+    "source_to_exceptional_chain_map",
+    "conditional_defect_feasibility",
 )
 
 PAIR_ORDER = HODGE_INVARIANTS + SOURCE_INVARIANTS + tuple(name for name, _ in UNKNOWN_LATER_INVARIANTS)
@@ -281,6 +298,26 @@ class HodgeCYIINodeRelationBlob9Result:
             "summaries": self.summaries,
             "pair_84_node_relation_report": self.pair_84_node_relation_report.to_dict(),
             "pair_84_node_relation_first_difference": self.pair_84_node_relation_first_difference.to_dict(),
+            "report_paths": [path.as_posix() for path in self.report_paths],
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class HodgeCYIISourceToNodeBlob10Result:
+    ingest: HodgeCYIICohortIngestResult
+    runs: tuple[CalculationRun, ...]
+    summaries: dict[str, dict[str, Any]]
+    pair_84_source_to_node_report: PairComparisonReport
+    pair_84_source_to_node_first_difference: FirstDifferenceResult
+    report_paths: tuple[Path, ...] = ()
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "ingest": self.ingest.to_dict(),
+            "runs": [run.to_dict() for run in self.runs],
+            "summaries": self.summaries,
+            "pair_84_source_to_node_report": self.pair_84_source_to_node_report.to_dict(),
+            "pair_84_source_to_node_first_difference": self.pair_84_source_to_node_first_difference.to_dict(),
             "report_paths": [path.as_posix() for path in self.report_paths],
         }
 
@@ -741,6 +778,82 @@ def hodgecy_ii_node_relation_blob9(
         summaries=summaries,
         pair_84_node_relation_report=pair_report,
         pair_84_node_relation_first_difference=pair_first,
+        report_paths=paths,
+    )
+
+
+def hodgecy_ii_source_to_node_blob10(
+    store: ResultStore,
+    *,
+    manifest_path: str | Path | None = None,
+    root: str | Path | None = None,
+    report_dir: str | Path | None = None,
+) -> HodgeCYIISourceToNodeBlob10Result:
+    """Record the Blob 10 source-to-node comparison checkpoint."""
+
+    root_path = Path(root) if root is not None else repo_root()
+    ingest = ingest_hodgecy_ii_cohort(store, manifest_path=manifest_path, root=root_path)
+    manifest = ingest.manifest
+    arrangement_to_geometry = {member["arrangement_id"]: member["geometry_id"] for member in manifest["members"]}
+    runs: list[CalculationRun] = []
+    summaries: dict[str, dict[str, Any]] = {}
+
+    for member in manifest["members"]:
+        arrangement_id = member["arrangement_id"]
+        summary_path = root_path / member["summary_path"]
+        theorem_summary = json.loads(summary_path.read_text(encoding="utf-8"))
+        critical = _hodgecy_ii_critical_degree(member, theorem_summary)
+        source_record, source_path = _source_lattice_record(root_path, arrangement_id)
+        source_complex = source_complex_from_incidence(
+            source_record["incidence_table"],
+            arrangement_id=arrangement_id,
+            linear_forms=source_record.get("linear_forms"),
+            source_provenance={"source_path": source_path.relative_to(root_path).as_posix(), "blob": 10},
+            rank_primes=(2, 3),
+        )
+        linear_map = IntegerLinearMap(
+            source_complex.matrix_entries,
+            semantic_role=MatrixSemanticRole.SOURCE_ASSEMBLY,
+            provenance=f"source matrix for Blob 10 from {source_path.relative_to(root_path).as_posix()}",
+        )
+        comparison_summary = _source_to_node_summary(member, theorem_summary, critical, linear_map)
+        run = store.begin_run(
+            geometry_id=member["geometry_id"],
+            calculation_type="hodgecy_ii_source_to_node_blob10",
+            input_metadata={
+                "blob": 10,
+                "summary_path": member["summary_path"],
+                "summary_sha256": stable_sha256(theorem_summary),
+                "source_path": source_path.relative_to(root_path).as_posix(),
+                "source_sha256": stable_sha256(source_record),
+            },
+            parameters={"scope": "source_to_node_comparison_checkpoint", "no_source_to_node_map_inference": True},
+            backend="hodgecy.cohorts.hodgecy_ii + hodgecy.relations.source_to_node",
+            coefficient_ring="QQ/ZZ-unknown-target",
+            environment_metadata={"manifest_path": str(manifest_path or MANIFEST_RELATIVE_PATH)},
+            notes="Blob 10 checkpoint; source ranks are computed, but comparison morphisms remain UNKNOWN without explicit chain maps.",
+        )
+        certificate = _record_blob10_source_to_node_certificate(store, run.run_id, member, comparison_summary)
+        for record in _source_to_node_records(run.run_id, member, comparison_summary, certificate.certificate_id):
+            store.record_invariant(**record)
+        runs.append(store.complete_run(run.run_id))
+        summaries[arrangement_id] = comparison_summary
+
+    engine = ComparisonEngine(store)
+    pair_members = (arrangement_to_geometry["84"], arrangement_to_geometry["84a"])
+    pair_report = engine.compare_pair(pair_members[0], pair_members[1], invariants=SOURCE_TO_NODE_BLOB10_INVARIANTS)
+    pair_first = engine.first_difference(pair_members, SOURCE_TO_NODE_BLOB10_INVARIANTS)
+
+    paths: tuple[Path, ...] = ()
+    if report_dir is not None:
+        paths = _write_source_to_node_blob10_reports(Path(report_dir), summaries=summaries, pair_report=pair_report, pair_first=pair_first)
+
+    return HodgeCYIISourceToNodeBlob10Result(
+        ingest=ingest,
+        runs=tuple(runs),
+        summaries=summaries,
+        pair_84_source_to_node_report=pair_report,
+        pair_84_source_to_node_first_difference=pair_first,
         report_paths=paths,
     )
 
@@ -1262,6 +1375,120 @@ def _node_relation_summary(member: dict[str, Any], summary: dict[str, Any], crit
     }
 
 
+def _record_blob10_source_to_node_certificate(store: ResultStore, run_id: str, member: dict[str, Any], summary: dict[str, Any]):
+    evidence = {
+        "arrangement_id": member["arrangement_id"],
+        "geometry_id": member["geometry_id"],
+        "source_to_node_summary": summary,
+        "firewall": source_to_node_firewall(),
+        "unknown_status_basis": {
+            "source_to_evaluation_chain_map": "no exact node evaluation complex and no F1/F0 chain map are available",
+            "source_to_vanishing_chain_map": "no vanishing-cycle complex and no F1/F0 chain map are available",
+            "source_to_exceptional_chain_map": "no exceptional-curve complex and no F1/F0 chain map are available",
+        },
+    }
+    return store.record_certificate(
+        certificate_type="hodgecy_ii_blob10_source_to_node_checkpoint",
+        subject_type="geometry",
+        subject_id=member["geometry_id"],
+        method="Blob 10 source-to-node comparison status audit",
+        evidence=evidence,
+        generated_by_run_id=run_id,
+        notes="Source facts and rank feasibility are not existence statements for a source-to-node chain map.",
+    )
+
+
+def _source_to_node_records(run_id: str, member: dict[str, Any], summary: dict[str, Any], certificate_id: str) -> list[dict[str, Any]]:
+    provenance = f"Blob 10 source-to-node checkpoint from {member['summary_path']}"
+    source_values = {
+        "source_d_shape": (summary["source_complex"]["d_src_shape"], EvidenceStatus.VERIFIED, "shape [C0_src,C1_src] for d_src:C1_src->C0_src"),
+        "source_rank_Q": (summary["source_complex"]["rank_Q"], EvidenceStatus.VERIFIED, "exact rational rank of d_src"),
+        "source_H1_rank_Q": (summary["source_complex"]["H1_rank_Q"], EvidenceStatus.VERIFIED, "dim_Q ker(d_src)"),
+        "source_H0_rank_Q": (summary["source_complex"]["H0_rank_Q"], EvidenceStatus.VERIFIED, "dim_Q coker(d_src)"),
+        "source_H0_Z_torsion": (summary["source_complex"]["H0_Z_torsion"], EvidenceStatus.VERIFIED, "integral source cokernel torsion from Smith normal form"),
+    }
+    node_values = {
+        "expected_node_count": (summary["node_complex"]["expected_node_count"], EvidenceStatus.IMPORTED if summary["node_complex"]["expected_node_count"] is not None else EvidenceStatus.UNKNOWN, "expected target node count only"),
+        "critical_degree": (summary["node_complex"]["critical_degree"], EvidenceStatus.VERIFIED if summary["node_complex"]["critical_degree"] is not None else EvidenceStatus.UNKNOWN, "critical degree metadata"),
+        "expected_evaluation_matrix_shape": (summary["node_complex"]["expected_evaluation_matrix_shape"], EvidenceStatus.COMPUTED if summary["node_complex"]["expected_evaluation_matrix_shape"] is not None else EvidenceStatus.UNKNOWN, "expected E_k shape only"),
+        "expected_relation_map_shape": (summary["node_complex"]["expected_relation_map_shape"], EvidenceStatus.COMPUTED if summary["node_complex"]["expected_relation_map_shape"] is not None else EvidenceStatus.UNKNOWN, "expected rho=E_k^T shape only"),
+        "node_evaluation_H1_rank": (None, EvidenceStatus.UNKNOWN, "actual evaluation relation H1 is UNKNOWN without E_k/rho"),
+    }
+    comparison_values = {
+        "source_to_evaluation_chain_map": (None, EvidenceStatus.UNKNOWN, "no explicit F1/F0 chain map to evaluation relation is supplied"),
+        "source_to_vanishing_chain_map": (None, EvidenceStatus.UNKNOWN, "no vanishing-cycle target or chain map is supplied"),
+        "source_to_exceptional_chain_map": (None, EvidenceStatus.UNKNOWN, "no exceptional-curve target or chain map is supplied"),
+        "conditional_defect_feasibility": (summary["comparison_morphism"]["conditional_defect_feasibility"], EvidenceStatus.COMPUTED, "rank-only conditions; feasibility is not existence"),
+    }
+    records = []
+    for result_kind, values in ((ResultKind.SOURCE_ASSEMBLY, source_values), (ResultKind.NODE_RELATION, node_values | comparison_values)):
+        for name, (value, status, notes) in values.items():
+            records.append(
+                {
+                    "run_id": run_id,
+                    "name": name,
+                    "value": value,
+                    "result_kind": result_kind,
+                    "evidence_status": status,
+                    "method": "hodgecy_ii_blob10_source_to_node_checkpoint",
+                    "provenance": provenance,
+                    "certificate_id": certificate_id,
+                    "notes": notes,
+                }
+            )
+    return records
+
+
+def _source_to_node_summary(
+    member: dict[str, Any],
+    theorem_summary: dict[str, Any],
+    critical: CriticalDegreeResult | None,
+    linear_map: IntegerLinearMap,
+) -> dict[str, Any]:
+    from hodgecy.algebra import rational_rank, smith_normal_form_data
+
+    arrangement_id = member["arrangement_id"]
+    rank = rational_rank(linear_map)
+    snf = smith_normal_form_data(linear_map)
+    perturbation = theorem_summary.get("quartic_perturbation") or {}
+    expected_node_count = perturbation.get("saturated_jacobian_scheme_degree") if arrangement_id in {"84", "84a"} else None
+    n_source_eval = None if critical is None else critical.source_dimension
+    h1_rank = linear_map.domain_rank - rank.rank
+    h0_rank = linear_map.codomain_rank - rank.rank
+    conditional = list(conditional_defect_feasibility_for_source_h1(h1_rank)) if arrangement_id in {"84", "84a"} else []
+    return {
+        "arrangement_id": arrangement_id,
+        "geometry_id": member["geometry_id"],
+        "source_complex": {
+            "d_src_shape": list(linear_map.shape),
+            "rank_Q": rank.rank,
+            "H1_rank_Q": h1_rank,
+            "H0_rank_Q": h0_rank,
+            "H0_Z_torsion": list(snf.cokernel.torsion_invariant_factors),
+            "H0_Z_cokernel": snf.cokernel.to_dict(),
+            "interpretation": "SOURCE_ASSEMBLY two-term complex C1_src -> C0_src",
+        },
+        "node_complex": {
+            "expected_node_count": expected_node_count,
+            "critical_degree": None if critical is None else critical.critical_degree,
+            "expected_evaluation_matrix_shape": None if expected_node_count is None or n_source_eval is None else [expected_node_count, n_source_eval],
+            "expected_relation_map_shape": None if expected_node_count is None or n_source_eval is None else [n_source_eval, expected_node_count],
+            "actual_E_k": None,
+            "defect": None,
+            "H1_C_eval": None,
+            "status": "UNKNOWN",
+        },
+        "comparison_morphism": {
+            "source_to_evaluation_chain_map": "UNKNOWN",
+            "source_to_vanishing_chain_map": "UNKNOWN",
+            "source_to_exceptional_chain_map": "UNKNOWN",
+            "source_to_evaluation_reason": "no explicit chain map F1/F0 and no exact node relation complex",
+            "conditional_defect_feasibility": conditional,
+        },
+        "firewall": source_to_node_firewall(),
+    }
+
+
 def _source_lattice_record(root_path: Path, arrangement_id: str) -> tuple[dict[str, Any], Path]:
     if arrangement_id in {"84", "84a"}:
         path = root_path / "data" / "processed" / "equivariant_spectra" / f"hodgecy_equivariant_spectrum_{arrangement_id}.json"
@@ -1522,6 +1749,32 @@ def _write_node_relation_blob9_reports(
     return paths
 
 
+def _write_source_to_node_blob10_reports(
+    report_dir: Path,
+    *,
+    summaries: dict[str, dict[str, Any]],
+    pair_report: PairComparisonReport,
+    pair_first: FirstDifferenceResult,
+) -> tuple[Path, ...]:
+    report_dir.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "summaries": summaries,
+        "pair_84_source_to_node_report": pair_report.to_dict(),
+        "pair_84_source_to_node_first_difference": pair_first.to_dict(),
+    }
+    paths = (
+        report_dir / "hodgecy_ii_source_to_node_blob10.json",
+        report_dir / "hodgecy_ii_source_to_node_blob10.md",
+        report_dir / "hodgecy_ii_84_84a_source_to_node_status.json",
+        report_dir / "hodgecy_ii_84_84a_source_to_node_status.md",
+    )
+    paths[0].write_text(_deterministic_json(payload) + "\n", encoding="utf-8")
+    paths[1].write_text(_source_to_node_blob10_markdown(summaries), encoding="utf-8")
+    paths[2].write_text(_deterministic_json({"pair_84_source_to_node_report": pair_report.to_dict(), "pair_84_source_to_node_first_difference": pair_first.to_dict()}) + "\n", encoding="utf-8")
+    paths[3].write_text(_source_to_node_pair_markdown(pair_report, pair_first), encoding="utf-8")
+    return paths
+
+
 def _deterministic_json(payload: dict[str, Any]) -> str:
     return canonical_json(_strip_comparison_times(payload))
 
@@ -1772,6 +2025,61 @@ def _node_relation_pair_markdown(report: PairComparisonReport, first: FirstDiffe
         right = result.operands[1].value if len(result.operands) > 1 else None
         lines.append(f"| {result.comparison_key} | `{left}` | `{right}` | {result.state.value} |")
     lines.extend(["", f"First node-relation distinction: {first.first_difference or first.state.value}", ""])
+    return "\n".join(lines)
+
+
+def _source_to_node_blob10_markdown(summaries: dict[str, dict[str, Any]]) -> str:
+    lines = ["# HodgeCY II Source-to-Node Comparison - Blob 10", ""]
+    lines.extend(["## Source Complex", "", "| Geometry | d_src Shape | rank_Q | H1_Q | H0_Q | H0_Z torsion |", "| --- | --- | --- | --- | --- | --- |"])
+    for arrangement_id in sorted(summaries):
+        source = summaries[arrangement_id]["source_complex"]
+        torsion = ",".join(str(value) for value in source["H0_Z_torsion"]) or "none"
+        lines.append(
+            f"| {arrangement_id} | `{source['d_src_shape']}` | `{source['rank_Q']}` | "
+            f"`{source['H1_rank_Q']}` | `{source['H0_rank_Q']}` | `{torsion}` |"
+        )
+    lines.extend(["", "## Node Complex", "", "| Geometry | Expected Nodes | kcrit | E_k Shape | rho Shape | H1(C_eval) |", "| --- | --- | --- | --- | --- | --- |"])
+    for arrangement_id in sorted(summaries):
+        node = summaries[arrangement_id]["node_complex"]
+        lines.append(
+            f"| {arrangement_id} | `{node['expected_node_count']}` | `{node['critical_degree']}` | "
+            f"`{node['expected_evaluation_matrix_shape']}` | `{node['expected_relation_map_shape']}` | `UNKNOWN` |"
+        )
+    lines.extend(["", "## Comparison Morphism", "", "| Geometry | Source -> Eval | Source -> Vanishing | Source -> Exceptional |", "| --- | --- | --- | --- |"])
+    for arrangement_id in sorted(summaries):
+        comparison = summaries[arrangement_id]["comparison_morphism"]
+        lines.append(
+            f"| {arrangement_id} | `{comparison['source_to_evaluation_chain_map']}` | "
+            f"`{comparison['source_to_vanishing_chain_map']}` | `{comparison['source_to_exceptional_chain_map']}` |"
+        )
+    lines.extend(
+        [
+            "",
+            "## 84 / 84a Conditional Rank Constraints",
+            "- source H1_Q rank is `2` for both 84 and 84a.",
+            "- if defect = 0, any induced H1 map to the evaluation relation is zero.",
+            "- if defect = 1, injective H1 comparison is impossible.",
+            "- if defect >= 2, injectivity is dimensionally possible but not established.",
+            "",
+            "## Firewall",
+            "- Matching dimensions, ranks, SNF, geometry IDs, or node counts do not create a chain map.",
+            "- A source-to-evaluation map is not a source-to-vanishing map.",
+            "- Rational comparison does not imply integral comparison.",
+            "- Feasibility is not existence.",
+            "- No Hodge atom is constructed.",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def _source_to_node_pair_markdown(report: PairComparisonReport, first: FirstDifferenceResult) -> str:
+    lines = ["# HodgeCY II Source-to-Node Status - 84 vs 84a", "", "| Invariant | 84 | 84a | State |", "| --- | --- | --- | --- |"]
+    for result in report.invariant_results:
+        left = result.operands[0].value if result.operands else None
+        right = result.operands[1].value if len(result.operands) > 1 else None
+        lines.append(f"| {result.comparison_key} | `{left}` | `{right}` | {result.state.value} |")
+    lines.extend(["", f"First source-to-node status distinction: {first.first_difference or first.state.value}", ""])
     return "\n".join(lines)
 
 

@@ -9,6 +9,7 @@ from hodgecy.cohorts import (
     hodgecy_ii_node_geometry_blob5,
     hodgecy_ii_node_ideal_hilbert_blob6,
     hodgecy_ii_node_relation_blob9,
+    hodgecy_ii_source_to_node_blob10,
     ingest_hodgecy_ii_cohort,
     load_hodgecy_ii_manifest,
 )
@@ -361,4 +362,64 @@ def test_blob9_reports_84_84a_relation_status(tmp_path) -> None:
     assert "hodgecy_ii_84_84a_relation_status.md" in paths
     payload = json.loads((report_dir / "hodgecy_ii_node_relation_blob9.json").read_text(encoding="utf-8"))
     assert payload["summaries"]["84a"]["expected_relation_map_shape"] == [165, 112]
+    assert "comparison_time" not in json.dumps(payload)
+
+
+def test_blob10_records_84_source_h1_and_unknown_comparison_maps(tmp_path) -> None:
+    store = make_store(tmp_path)
+    result = hodgecy_ii_source_to_node_blob10(store)
+    blob10_run_ids = {run.run_id for run in store.get_runs(geometry_id="hodgecy-ii-84", calculation_type="hodgecy_ii_source_to_node_blob10")}
+    source_by_name = {
+        item.invariant_name: item
+        for item in store.get_invariants(geometry_id="hodgecy-ii-84", result_kind=ResultKind.SOURCE_ASSEMBLY)
+        if item.run_id in blob10_run_ids
+    }
+    node_by_name = {
+        item.invariant_name: item
+        for item in store.get_invariants(geometry_id="hodgecy-ii-84", result_kind=ResultKind.NODE_RELATION)
+        if item.run_id in blob10_run_ids
+    }
+
+    assert result.summaries["84"]["source_complex"]["d_src_shape"] == [26, 28]
+    assert result.summaries["84"]["source_complex"]["H1_rank_Q"] == 2
+    assert result.summaries["84"]["source_complex"]["H0_rank_Q"] == 0
+    assert result.summaries["84"]["source_complex"]["H0_Z_torsion"] == [2, 6, 12]
+    assert source_by_name["source_H1_rank_Q"].value == 2
+    assert node_by_name["node_evaluation_H1_rank"].value is None
+    assert node_by_name["source_to_evaluation_chain_map"].evidence_status is EvidenceStatus.UNKNOWN
+    assert node_by_name["conditional_defect_feasibility"].value[1]["condition"] == "defect = 1"
+    assert node_by_name["conditional_defect_feasibility"].value[1]["injective"] is False
+
+
+def test_blob10_preserves_84a_integral_source_h0_torsion_distinction(tmp_path) -> None:
+    store = make_store(tmp_path)
+    result = hodgecy_ii_source_to_node_blob10(store)
+
+    assert result.summaries["84"]["source_complex"]["H0_Z_torsion"] == [2, 6, 12]
+    assert result.summaries["84a"]["source_complex"]["H0_Z_torsion"] == [2, 4, 4, 4, 12]
+    assert result.pair_84_source_to_node_first_difference.first_difference == "source_H0_Z_torsion"
+
+
+def test_blob10_reports_239_240_241_source_h1_ranks_without_node_maps(tmp_path) -> None:
+    store = make_store(tmp_path)
+    result = hodgecy_ii_source_to_node_blob10(store)
+
+    assert result.summaries["239"]["source_complex"]["H1_rank_Q"] == 2
+    assert result.summaries["240"]["source_complex"]["H1_rank_Q"] == 2
+    assert result.summaries["241"]["source_complex"]["H1_rank_Q"] == 4
+    assert result.summaries["239"]["node_complex"]["status"] == "UNKNOWN"
+    assert result.summaries["241"]["comparison_morphism"]["source_to_vanishing_chain_map"] == "UNKNOWN"
+
+
+def test_blob10_writes_source_to_node_reports(tmp_path) -> None:
+    store = make_store(tmp_path)
+    report_dir = tmp_path / "source_to_node_reports"
+    result = hodgecy_ii_source_to_node_blob10(store, report_dir=report_dir)
+
+    paths = {path.name for path in result.report_paths}
+    assert "hodgecy_ii_source_to_node_blob10.json" in paths
+    assert "hodgecy_ii_84_84a_source_to_node_status.md" in paths
+    payload = json.loads((report_dir / "hodgecy_ii_source_to_node_blob10.json").read_text(encoding="utf-8"))
+    assert payload["summaries"]["84"]["comparison_morphism"]["source_to_evaluation_chain_map"] == "UNKNOWN"
+    assert payload["summaries"]["84a"]["node_complex"]["expected_relation_map_shape"] == [165, 112]
     assert "comparison_time" not in json.dumps(payload)
