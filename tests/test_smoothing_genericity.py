@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -28,10 +29,18 @@ def test_smoothing_genericity_checks_pass_for_84_and_84a() -> None:
         assert record.ordinary_nodes is None
 
 
-def test_smoothing_verification_script_writes_expected_outputs() -> None:
-    subprocess.run([sys.executable, "scripts/verify_smoothing_bridge_84_84a.py", "--force"], cwd=repo_root(), check=True)
+def test_smoothing_verification_script_writes_expected_outputs(tmp_path: Path) -> None:
+    processed_root = tmp_path / "data" / "processed"
+    env = {**os.environ, "HODGECY_PAPER_ASSET_ROOT": str(tmp_path)}
+
+    subprocess.run(
+        [sys.executable, "scripts/verify_smoothing_bridge_84_84a.py", "--force", "--out-dir", str(processed_root)],
+        cwd=repo_root(),
+        env=env,
+        check=True,
+    )
     for arrangement_id in ("84", "84a"):
-        path = repo_root() / "data" / "processed" / f"smoothing_verification_{arrangement_id}.json"
+        path = processed_root / f"smoothing_verification_{arrangement_id}.json"
         assert path.exists()
         payload = json.loads(path.read_text(encoding="utf-8"))
         assert payload["arrangement"] == arrangement_id
@@ -41,4 +50,4 @@ def test_smoothing_verification_script_writes_expected_outputs() -> None:
         assert payload["expected_node_count"] == 112
         assert payload["verification_status"] in ALLOWED_VERIFICATION_STATUSES
         assert payload["verification_status"] == "degree112_certified"
-    assert (repo_root() / "data" / "processed" / "smoothing_verification_summary.csv").exists()
+    assert (processed_root / "smoothing_verification_summary.csv").exists()

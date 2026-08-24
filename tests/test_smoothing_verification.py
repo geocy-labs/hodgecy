@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -12,10 +13,18 @@ def repo_root() -> Path:
     return Path(__file__).resolve().parents[1]
 
 
-def test_verification_json_schema_fields_exist() -> None:
-    subprocess.run([sys.executable, "scripts/verify_smoothing_bridge_84_84a.py", "--force"], cwd=repo_root(), check=True)
+def test_verification_json_schema_fields_exist(tmp_path: Path) -> None:
+    processed_root = tmp_path / "data" / "processed"
+    env = {**os.environ, "HODGECY_PAPER_ASSET_ROOT": str(tmp_path)}
+
+    subprocess.run(
+        [sys.executable, "scripts/verify_smoothing_bridge_84_84a.py", "--force", "--out-dir", str(processed_root)],
+        cwd=repo_root(),
+        env=env,
+        check=True,
+    )
     for arrangement_id in ("84", "84a"):
-        path = repo_root() / "data" / "processed" / f"smoothing_verification_{arrangement_id}.json"
+        path = processed_root / f"smoothing_verification_{arrangement_id}.json"
         assert path.exists()
         payload = json.loads(path.read_text(encoding="utf-8"))
         assert payload["arrangement"] == arrangement_id
