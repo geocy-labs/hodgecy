@@ -192,7 +192,7 @@ def plot_concurrency_graphs_84_84a() -> None:
             encoding="utf-8",
         )
 
-    pd.DataFrame(certificate_rows).to_csv(root / "data" / "processed" / "p4_collinearity_certificate.csv", index=False)
+    pd.DataFrame(certificate_rows).to_csv(paths["processed"] / "p4_collinearity_certificate.csv", index=False)
 
 
 def plot_hodgecy_pipeline() -> None:

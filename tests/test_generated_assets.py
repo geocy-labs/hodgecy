@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -12,10 +13,13 @@ def repo_root() -> Path:
     return Path(__file__).resolve().parents[1]
 
 
-def test_generated_assets_include_partial_verification_and_p4_figures() -> None:
-    subprocess.run([sys.executable, "scripts/generate_paper_assets.py"], cwd=repo_root(), check=True)
+def test_generated_assets_include_partial_verification_and_p4_figures(tmp_path: Path) -> None:
+    asset_root = tmp_path / "paper_assets"
+    env = {**os.environ, "HODGECY_PAPER_ASSET_ROOT": str(asset_root)}
 
-    smoothing = pd.read_csv(repo_root() / "paper" / "tables" / "table_smoothing_bridge_profiles.csv", dtype={"source_arrangement": str})
+    subprocess.run([sys.executable, "scripts/generate_paper_assets.py"], cwd=repo_root(), env=env, check=True)
+
+    smoothing = pd.read_csv(asset_root / "paper" / "tables" / "table_smoothing_bridge_profiles.csv", dtype={"source_arrangement": str})
     assert set(smoothing["verification_status"]) == {"degree112_certified"}
     assert set(smoothing["expected_node_count_status"]) == {"degree112_certified"}
     assert "Predicted points per line" in smoothing.columns
@@ -26,7 +30,7 @@ def test_generated_assets_include_partial_verification_and_p4_figures() -> None:
         for note in smoothing["notes"]
     )
 
-    smoothing_tex = (repo_root() / "paper" / "tables" / "table_smoothing_bridge_profiles.tex").read_text(encoding="utf-8")
+    smoothing_tex = (asset_root / "paper" / "tables" / "table_smoothing_bridge_profiles.tex").read_text(encoding="utf-8")
     assert "Predicted points per line" in smoothing_tex
     assert "degree112_certified" in smoothing_tex
     assert "verified 112-node conifold" not in smoothing_tex
@@ -36,12 +40,12 @@ def test_generated_assets_include_partial_verification_and_p4_figures() -> None:
     assert "defect_verified" not in smoothing_tex
 
     for suffix in ("png", "pdf"):
-        assert (repo_root() / "paper" / "figures" / f"fig_concurrency_graph_84.{suffix}").exists()
-        assert (repo_root() / "paper" / "figures" / f"fig_concurrency_graph_84a.{suffix}").exists()
-    assert (repo_root() / "paper" / "tables" / "table_p4_collinearity_certificate.tex").exists()
+        assert (asset_root / "paper" / "figures" / f"fig_concurrency_graph_84.{suffix}").exists()
+        assert (asset_root / "paper" / "figures" / f"fig_concurrency_graph_84a.{suffix}").exists()
+    assert (asset_root / "paper" / "tables" / "table_p4_collinearity_certificate.tex").exists()
 
     schematic_meta = json.loads(
-        (repo_root() / "data" / "processed" / "paper_figures" / "fig_smoothing_bridge_schematic_metadata.json").read_text(encoding="utf-8")
+        (asset_root / "data" / "processed" / "paper_figures" / "fig_smoothing_bridge_schematic_metadata.json").read_text(encoding="utf-8")
     )
     assert schematic_meta["status"] == "degree112_certified"
     assert schematic_meta["boxes"] == [
@@ -58,10 +62,10 @@ def test_generated_assets_include_partial_verification_and_p4_figures() -> None:
     assert "verified 112-node conifold" not in json.dumps(schematic_meta)
 
     graph84_meta = json.loads(
-        (repo_root() / "data" / "processed" / "paper_figures" / "fig_concurrency_graph_84_metadata.json").read_text(encoding="utf-8")
+        (asset_root / "data" / "processed" / "paper_figures" / "fig_concurrency_graph_84_metadata.json").read_text(encoding="utf-8")
     )
     graph84a_meta = json.loads(
-        (repo_root() / "data" / "processed" / "paper_figures" / "fig_concurrency_graph_84a_metadata.json").read_text(encoding="utf-8")
+        (asset_root / "data" / "processed" / "paper_figures" / "fig_concurrency_graph_84a_metadata.json").read_text(encoding="utf-8")
     )
     assert graph84_meta["title"] == "Arrangement 84 p4-collinearity graph"
     assert graph84a_meta["title"] == "Arrangement 84a p4-collinearity graph"

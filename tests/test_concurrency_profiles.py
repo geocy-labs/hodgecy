@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -24,9 +25,12 @@ def test_p4_collinearity_graph_invariants_match_expected_profiles() -> None:
     assert sorted((degree for _, degree in graph_84a.degree()), reverse=True) == [9, 9, 9, 9, 8, 8, 8, 8, 8, 8]
 
 
-def test_generate_paper_assets_writes_p4_certificate() -> None:
-    subprocess.run([sys.executable, "scripts/generate_paper_assets.py"], cwd=repo_root(), check=True)
-    path = repo_root() / "data" / "processed" / "p4_collinearity_certificate.csv"
+def test_generate_paper_assets_writes_p4_certificate(tmp_path: Path) -> None:
+    asset_root = tmp_path / "paper_assets"
+    env = {**os.environ, "HODGECY_PAPER_ASSET_ROOT": str(asset_root)}
+
+    subprocess.run([sys.executable, "scripts/generate_paper_assets.py"], cwd=repo_root(), env=env, check=True)
+    path = asset_root / "data" / "processed" / "p4_collinearity_certificate.csv"
     assert path.exists()
     frame = pd.read_csv(path)
     assert len(frame) == 20

@@ -30,7 +30,7 @@ from hodgecy.smoothing import write_reviewer_v4_audit  # noqa: E402
 
 
 def main() -> None:
-    ensure_output_dirs()
+    paths = ensure_output_dirs()
     generated = []
 
     write_default_verification_outputs(REPO_ROOT)
@@ -65,7 +65,7 @@ def main() -> None:
     print("Generated paper assets:")
     for item in generated:
         print(f"- {item}")
-    skipped_path = REPO_ROOT / "data" / "processed" / "paper_figures" / "concurrency_graphs_skipped.json"
+    skipped_path = paths["processed_figures"] / "concurrency_graphs_skipped.json"
     if skipped_path.exists():
         print(f"- concurrency graph plot skipped: {json.loads(skipped_path.read_text(encoding='utf-8'))['reason']}")
 

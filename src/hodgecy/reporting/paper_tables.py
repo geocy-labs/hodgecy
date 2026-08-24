@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 
 import pandas as pd
@@ -18,8 +19,9 @@ def _repo_root() -> Path:
 
 
 def ensure_output_dirs() -> dict[str, Path]:
-    root = _repo_root()
+    root = Path(os.environ.get("HODGECY_PAPER_ASSET_ROOT", _repo_root())).resolve()
     paths = {
+        "processed": root / "data" / "processed",
         "paper_tables": root / "paper" / "tables",
         "paper_figures": root / "paper" / "figures",
         "processed_tables": root / "data" / "processed" / "paper_tables",
