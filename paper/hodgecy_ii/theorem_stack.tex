@@ -1,0 +1,128 @@
+\begin{theorem}[Source-fidelity census]\label{thm:source-fidelity-census}
+For the frozen HodgeCY v1.0.0 double-octic cohort, the HodgeCY II source
+census processes \(456\) presentations and records \(114\) nontrivial
+source-level pairs or larger sets.  These decompose as \(57\) pairs,
+\(13\) triples, and \(44\) larger sets.
+\end{theorem}
+
+\begin{proof}[Evidence]
+This is a frozen computational census statement.  The reproducible evidence is
+the final HodgeCY II synthesis bundle and the deterministic reproduction script
+`scripts/reproduce_hodgecy_ii.py`.
+\end{proof}
+
+\begin{proposition}[The \(84/84a\) source witness]\label{prop:source-witness-84-84a}
+The presentations \(84\) and \(84a\) have the same local inventory, the same
+Hodge data \((h^{1,1},h^{1,2})=(40,0)\), and the same rational source rank
+\(26\).  They are separated by integral source type:
+\[
+  {\rm SNF}(84)=(1^{23},2,6,12),
+  \qquad
+  {\rm SNF}(84a)=(1^{21},2,4,4,4,12).
+\]
+\end{proposition}
+
+\begin{proof}[Evidence]
+This is the source-lattice comparison certified in the HodgeCY II final
+evidence bundle.  The proposition is a statement about the verified source
+assembly records only.
+\end{proof}
+
+\begin{theorem}[Eight-plane line skeleton]\label{thm:line-skeleton}
+Let \(S=k[x_0,x_1,x_2,x_3]\), and let
+\(L_1,\ldots,L_8\in S_1\) be distinct linear forms such that every pair has
+rank \(2\) and every triple has rank \(3\).  Equivalently, no three
+corresponding planes contain a common line.  If \(F=\prod_i L_i\) and
+\[
+  I_C=(F/L_1,\ldots,F/L_8),
+\]
+then
+\[
+  I_C=\bigcap_{1\le i<j\le 8}(L_i,L_j).
+\]
+Thus \(I_C\) is the saturated reduced ideal of the union of the \(28\)
+pairwise intersection lines, and it has Hilbert--Burch resolution
+\[
+0\longrightarrow S(-8)^7\longrightarrow S(-7)^8
+\longrightarrow I_C\longrightarrow 0 .
+\]
+Four-plane, or higher, point concurrences are allowed: the argument only uses
+the codimension-two condition that no three planes contain a common line.
+\end{theorem}
+
+\begin{proof}[Proof source]
+Use the self-contained induction in
+`research_outputs/hodgecy_ii/final/hodgecy_ii_hilbert_burch_theorem.tex`.
+For the manuscript body, reproduce that proof rather than replacing it by an
+appeal to the full star-configuration theorem of
+Geramita--Harbourne--Migliore~\cite{GeramitaHarbourneMigliore2013}.
+\end{proof}
+
+\begin{proposition}[Regular quartic block section and mapping cone]\label{prop:quartic-block-section}
+For the verified HodgeCY II arrangements \(84\) and \(84a\), the frozen quartic
+block section is regular on the eight-plane line skeleton.  If \(I_B=I_C+(Q)\),
+then multiplication by \(Q\) gives an exact sequence
+\[
+0\longrightarrow (S/I_C)(-4)\longrightarrow S/I_C
+\longrightarrow S/I_B\longrightarrow 0,
+\]
+and \(S/I_B\) has mapping-cone resolution
+\[
+0
+\longrightarrow S(-12)^7
+\longrightarrow S(-11)^8 \oplus S(-8)^7
+\longrightarrow S(-7)^8 \oplus S(-4)
+\longrightarrow S
+\longrightarrow S/I_B
+\longrightarrow 0 .
+\]
+\end{proposition}
+
+\begin{proof}[Proof source]
+This is the regular quartic block-section theorem and mapping-cone corollary
+in the final Hilbert--Burch theorem asset.  The verifier checks nonzero
+squarefree restriction of \(Q\) on all \(28\) associated line primes for both
+frozen arrangements.
+\end{proof}
+
+\begin{corollary}[Verified block Hilbert series]\label{cor:block-hilbert-series}
+For the verified HodgeCY II block schemes attached to \(84\) and \(84a\),
+\[
+  {\rm Hilb}_{S/I_B}(t)=
+  \frac{(1-t^4)(1-8t^7+7t^8)}{(1-t)^4}.
+\]
+Consequently
+\[
+H_B(d)=1,4,10,20,34,52,74,92,105,112,112,\ldots,
+\]
+with stabilization at degree \(9\).
+\end{corollary}
+
+\begin{proof}[Proof source]
+This follows from the verified regular quartic block section and the mapping
+cone argument in the final Hilbert--Burch theorem asset.
+\end{proof}
+
+\begin{corollary}[Degree-eight block-evaluation deficiency]\label{cor:block-deficiency}
+For the verified HodgeCY II block schemes attached to \(84\) and \(84a\),
+\[
+  h^1({\bf P}^3,\mathcal I_B(8))=7.
+\]
+Equivalently, the degree-eight block-evaluation cokernel has dimension \(7\).
+This is a block-scheme deficiency statement only.
+\end{corollary}
+
+\begin{proposition}[Source versus block-evaluation non-determination]\label{prop:source-block-nondetermination}
+On the witness pair \(84/84a\), the verified degree-eight block-evaluation data
+do not determine the integral source-assembly type.  The source layer splits by
+Smith type, while the verified block Hilbert/evaluation data agree through
+degree \(8\).
+\end{proposition}
+
+\begin{proof}[Evidence]
+Combine Proposition~\ref{prop:source-witness-84-84a} with
+Corollaries~\ref{cor:block-hilbert-series} and~\ref{cor:block-deficiency}.
+This does not assert a reverse implication, a canonical source-to-evaluation
+map, an integral evaluation lattice, an LMHS identification, or a classical
+nodal-defect theorem.
+\end{proof}
