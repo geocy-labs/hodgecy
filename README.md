@@ -20,10 +20,13 @@ HodgeCY separates the following layers.
   profiles, Hodge table links, rational/modular/integral source assembly, Smith
   normal forms, torsion, and symmetry signatures.
 - Node geometry layer: singular-scheme infrastructure, Hilbert functions,
-  ordinary-double-point checks, and node-block certificates where explicit
-  geometric input is available.
+  ordinary-double-point checks, node-block certificates where explicit
+  geometric input is available, and verified block-scheme Hilbert/evaluation
+  theorems where the required hypotheses have been certified.
 - Relation layer: abstract node-relation complexes and source-to-node
   comparison framework, with feasibility states separated from theorem claims.
+  Block-evaluation relations are not identified with node, vanishing-cycle,
+  LMHS, or Hodge-atom relations.
 - Future Hodge-atom layers: vanishing-cycle, LMHS, extension, and atom-level
   structures. These are not inferred merely from source-fidelity census
   membership.
@@ -49,8 +52,11 @@ Implemented generic infrastructure includes:
 
 Completed theorem-bearing calculations are narrower. HodgeCY I provides the
 tracked double-octic source and smoothing assets for the principal `84 / 84a`
-pair. Broader population-level source-fidelity census rows are context unless a
-separate validation status says otherwise.
+pair, including the original source-fidelity witness. HodgeCY II extends that
+witness into exact block geometry and proves a structural Hilbert--Burch
+explanation for the common block Hilbert/evaluation profile. Broader
+population-level source-fidelity census rows are context unless a separate
+validation status says otherwise.
 
 ## Quick Start
 
@@ -67,6 +73,12 @@ Generate the HodgeCY II manuscript-facing census assets:
 python scripts/generate_hodgecy_ii_manuscript_assets.py
 ```
 
+Verify the structural HodgeCY II Hilbert--Burch/block theorem:
+
+```bash
+python scripts/verify_hodgecy_ii_hilbert_burch.py
+```
+
 Reproduce the final HodgeCY II synthesis package:
 
 ```bash
@@ -78,6 +90,10 @@ The generated scope and asset manifests are:
 - [HodgeCY II scope](research_outputs/hodgecy_ii/manuscript_assets/manifest/hodgecy_ii_scope.json)
 - [HodgeCY II asset manifest](research_outputs/hodgecy_ii/manuscript_assets/manifest/hodgecy_ii_asset_manifest.json)
 - [HodgeCY II final results](research_outputs/hodgecy_ii/final/hodgecy_ii_final_results.json)
+- [HodgeCY II Hilbert--Burch theorem](research_outputs/hodgecy_ii/final/hodgecy_ii_hilbert_burch_theorem.tex)
+- [HodgeCY II related-work review](research_outputs/hodgecy_ii/final/hodgecy_ii_literature_review.md)
+- [HodgeCY II related-work BibTeX](research_outputs/hodgecy_ii/final/hodgecy_ii_related_work.bib)
+- [Hilbert--Burch theorem evidence](research_outputs/hodgecy_ii/final/theorem_evidence/hilbert_burch_block_theorem.json)
 
 For external production data, configure a data root:
 
@@ -98,26 +114,64 @@ context:
 
 - total double-octic presentations processed: `456`;
 - historical nontrivial fidelity pairs/sets: `114`;
+- pairs/triples/larger sets: `57 / 13 / 44`;
 - primary deep geometric laboratory: `84 / 84a`.
 
 The census shows that source-fidelity collapse and separation recur beyond the
 principal pair. HodgeCY II does not geometrically analyze all 114 sets; that
 full population classification is deferred to HodgeCY III.
 
-For `84` and `84a`, HodgeCY now computes exact Hilbert and critical-degree
-evaluation invariants of the verified reduced 112-point block schemes. Full
-classical-defect promotion remains conditional on the ordinary-node certificate
-gate.
+For `84` and `84a`, the primary witness has the same local inventory, the same
+Hodge signature, and the same rational source type, but different verified
+integral source Smith types:
 
-The current `84 / 84a` comparison also records a source-vs-block-evaluation
-collapse: their verified block Hilbert/evaluation profiles agree through
-degree `8`, while their verified integral source Smith types differ. This is a
-non-determination certificate at the verified block-scheme level only; no
-source-to-evaluation chain map or integral evaluation lattice is inferred.
+- `84`: `(1^23,2,6,12)`;
+- `84a`: `(1^21,2,4,4,4,12)`.
 
-The final HodgeCY II synthesis freezes question statuses, theorem candidates,
-conditional results, open problems, manuscript table/figure inventories, and a
-HodgeCY III handoff under [research_outputs/hodgecy_ii/final](research_outputs/hodgecy_ii/final).
+HodgeCY II then follows this witness into exact block geometry. For the
+verified eight-plane block construction, the line skeleton has resolution
+
+```text
+0 -> S(-8)^7 -> S(-7)^8 -> I_C -> 0
+```
+
+and the frozen quartic is regular on the verified line skeleton. The resulting
+block scheme has Hilbert series
+
+```text
+Hilb_{S/I_B}(t) = (1-t^4)(1-8t^7+7t^8)/(1-t)^4
+```
+
+and Hilbert function
+
+```text
+1,4,10,20,34,52,74,92,105,112,112,...
+```
+
+stabilizing at degree `9`. In particular, `H_B(8)=105`,
+`h^1(P^3,I_B(8))=7`, and the degree-8 block-evaluation deficiency is `7` for
+the verified block scheme.
+
+The central HodgeCY II phenomenon is therefore non-monotone across fidelity
+layers: integral source separation, followed by structurally forced
+block-evaluation collapse. The verified degree-8 block-evaluation data do not
+determine the integral source-assembly type on the witness pair `84 / 84a`.
+The reverse implication is not claimed.
+
+This remains a theorem about the verified block scheme. It is not an
+unconditional classical defect calculation. Ordinary-node promotion, equality
+with the full saturated Jacobian/full singular scheme, the actual classical
+nodal defect, a source-to-evaluation morphism, an integral evaluation lattice,
+and LMHS/MHM/Hodge-atom interpretations remain open or not claimed as
+appropriate.
+
+The final HodgeCY II synthesis freezes question statuses, theorem/evidence
+records, conditional results, open problems, manuscript table/figure
+inventories, and a HodgeCY III handoff under
+[research_outputs/hodgecy_ii/final](research_outputs/hodgecy_ii/final).
+
+The source-checked HodgeCY II related-work review is available at
+[research_outputs/hodgecy_ii/final/hodgecy_ii_literature_review.md](research_outputs/hodgecy_ii/final/hodgecy_ii_literature_review.md).
 
 Representative controls include `61 / 451`, `84 / 84a`, `452 / 453`,
 `84 / 240`, `84a / 239`, and `239 / 240 / 241`. The generated tables preserve
@@ -129,7 +183,10 @@ quadratic-field status for `452 / 453`.
 Persistent outputs record HodgeCY version, git commit, input hashes, source
 record IDs, generator version, and validation/provenance status. Generated
 manuscript assets are rebuilt from the historical census TSV and current v1.0
-structured source records.
+structured source records. The structural Hilbert--Burch theorem has a
+dedicated verifier and theorem-evidence bundle, and the final reproduction
+workflow checks deterministic manuscript assets and unsupported-promotion
+status.
 
 Local SQLite result stores, caches, and transient CAS artifacts are not
 committed. Versioned artifacts are JSON/TSV/CSV/Markdown/LaTeX/SVG files with
@@ -168,13 +225,15 @@ Start with the documentation index:
 
 ## Roadmap
 
-- Promote the `84 / 84a` deep geometric chain through ordinary-node, defect,
-  source-to-node, and Hodge-atom layers only when the required certificates are
-  present.
-- Keep the complete 114-set source-fidelity census available as HodgeCY II
-  population context.
+- Preserve and publish the completed HodgeCY II source-vs-block theorem.
+- Promote ordinary-node, full singular-scheme, and classical-defect layers only
+  when independently certified.
+- Keep source-to-evaluation morphisms and integral evaluation-lattice
+  comparisons open until constructed.
 - Reserve full theorem-level population stratification and broader new mining
   for HodgeCY III.
+- Treat future LMHS/MHM/Hodge-atom comparison as a separate theoretical bridge,
+  not an inferred result.
 
 ## Licensing And Citation
 
