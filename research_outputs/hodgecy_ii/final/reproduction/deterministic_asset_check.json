@@ -3,7 +3,7 @@
   "status": "PASS",
   "volatile_metadata_normalized": true,
   "watched_hashes": {
-    "research_outputs/hodgecy_ii/final/hodgecy_ii_hilbert_burch_theorem.tex": "a6eb94f99b996871aad5f3f8f4162462e891a833040aa87bb5628e5ea027c65f",
+    "research_outputs/hodgecy_ii/final/hodgecy_ii_hilbert_burch_theorem.tex": "1959b8f7e43a9c5fd331c349198acc8d92c84640a8e448e62633551073ecef07",
     "research_outputs/hodgecy_ii/final/hodgecy_ii_literature_review.json": "562dba4390a58aad426314367cfc0f688a36649a7e08304c83dd8bde6368898e",
     "research_outputs/hodgecy_ii/final/hodgecy_ii_related_work.bib": "612a3a7cd8f3a3c8084e3f59dc7d4a259f289c9e0efa7ae647ab6fbab6765ad4",
     "research_outputs/hodgecy_ii/final/hodgecy_ii_star_configuration_audit.json": "5754a343856c4b1d20cc401f28e33e42760681e555c3a4bd2da24e81082d3b9e",

@@ -51,8 +51,8 @@ it contains \(L_i\).  Hence
   I_C\subseteq \bigcap_{i<j}(L_i,L_j).
 \]
 
-For the reverse inclusion and saturation, use the codimension-two
-basic-double-link induction.  For \(s\ge 2\), let
+For the reverse inclusion and saturation, use a self-contained
+codimension-two induction.  For \(s\ge 2\), let
 \[
   J_s=\bigcap_{1\le i<j\le s}(L_i,L_j),
   \qquad
@@ -62,11 +62,48 @@ The case \(s=2\) is \(J_2=(L_1,L_2)\).  Assume
 \[
   J_{s-1}=(P_{s-1}/L_1,\ldots,P_{s-1}/L_{s-1}).
 \]
-Since no three planes contain a line, the plane \(L_s=0\) contains no
-line component of the old codimension-two skeleton.  The elementary
-basic-double-link exact sequence, equivalently Proposition 2.6 of
-Geramita--Harbourne--Migliore applied in this codimension-two
-situation, gives
+Set
+\[
+  K_s=\bigcap_{i<s}(L_i,L_s).
+\]
+We first compute \(K_s\).  Modulo \(L_s\), the forms
+\(\overline L_1,\ldots,\overline L_{s-1}\) are pairwise
+non-associated: if \(\overline L_i\) and \(\overline L_j\) were
+proportional, then \(L_i,L_j,L_s\) would have rank at most \(2\),
+contrary to the triple-rank hypothesis.  Hence, in the UFD
+\(S/(L_s)\),
+\[
+  \bigcap_{i<s}(\overline L_i)
+  =
+  \left(\prod_{i<s}\overline L_i\right).
+\]
+Lifting back to \(S\) gives the explicit identity
+\[
+  K_s
+  =
+  \bigcap_{i<s}(L_i,L_s)
+  =
+  (L_s,P_{s-1}).
+\]
+By separating the old pairs from the new pairs involving \(L_s\), we
+also have
+\[
+  J_s=J_{s-1}\cap K_s.
+\]
+Now \(P_{s-1}\in J_{s-1}\), since every old pair ideal
+\((L_i,L_j)\) contains the product \(P_{s-1}\).  Also \(L_s\) is a
+non-zero-divisor on \(S/J_{s-1}\): by the induction hypothesis
+\(J_{s-1}\) is the intersection of the old distinct line primes, and
+the condition that no three planes contain a line says that the plane
+\(L_s=0\) contains none of those old line components.  Therefore
+\[
+  J_{s-1}\cap(L_s,P_{s-1})=L_sJ_{s-1}+(P_{s-1}).
+\]
+Indeed, if \(f\in J_{s-1}\cap(L_s,P_{s-1})\), write
+\(f=L_sg+P_{s-1}h\).  Since \(P_{s-1}\in J_{s-1}\), we have
+\(L_sg\in J_{s-1}\); the non-zero-divisor property forces
+\(g\in J_{s-1}\), so \(f\in L_sJ_{s-1}+(P_{s-1})\).  The opposite
+inclusion is immediate.  Combining the displayed identities gives
 \[
   J_s=L_sJ_{s-1}+(P_{s-1}).
 \]
@@ -78,7 +115,9 @@ Substituting the induction hypothesis yields
 \]
 Taking \(s=8\) proves the displayed ideal identity.  The right-hand
 side is an intersection of distinct line primes, so it is saturated and
-reduced.
+reduced.  Four-plane, or higher, point concurrences do not enter this
+codimension-two argument: the proof only uses that no three planes
+contain a common line.
 
 It remains to record the resolution.  The maximal minors of the
 displayed \(8\times 7\) matrix \(M\), up to the usual alternating
@@ -247,4 +286,3 @@ assert a reverse implication, a canonical source-to-evaluation map, an
 integral evaluation lattice, an LMHS identification, or a classical
 defect promotion.
 \end{proof}
-

@@ -19,7 +19,7 @@
   "package_version": "1.0.0",
   "primary_input_hashes": {
     "research_outputs/hodgecy_ii/complete_fidelity_pairs_and_sets.tsv": "b43085f490adf5ab9ef5d6f480ebedc789d1890f49ab53769bf031309b78e6db",
-    "research_outputs/hodgecy_ii/final/hodgecy_ii_hilbert_burch_theorem.tex": "a6eb94f99b996871aad5f3f8f4162462e891a833040aa87bb5628e5ea027c65f",
+    "research_outputs/hodgecy_ii/final/hodgecy_ii_hilbert_burch_theorem.tex": "1959b8f7e43a9c5fd331c349198acc8d92c84640a8e448e62633551073ecef07",
     "research_outputs/hodgecy_ii/final/hodgecy_ii_literature_review.json": "562dba4390a58aad426314367cfc0f688a36649a7e08304c83dd8bde6368898e",
     "research_outputs/hodgecy_ii/final/hodgecy_ii_literature_review.md": "cfa7f70bd2a6553c6595a023bcbf8e5dceefb21630c4403565cff2d6c0996e3f",
     "research_outputs/hodgecy_ii/final/hodgecy_ii_related_work.bib": "612a3a7cd8f3a3c8084e3f59dc7d4a259f289c9e0efa7ae647ab6fbab6765ad4",
@@ -32,14 +32,14 @@
     "research_outputs/hodgecy_ii/final/theorem_evidence/source_lattice/source_lattice_comparison_84_84a.json": "0382becfdeaff86161368dd3bdc0a2a59c33a136023ffff6cdacbe9fd831685a"
   },
   "primary_output_hashes": {
-    "research_outputs/hodgecy_ii/final/hodgecy_ii_final_results.json": "0c94d1e944b95f126fb070fa31082b307e62a373ed6bf4bcdad6229f4bc90327"
+    "research_outputs/hodgecy_ii/final/hodgecy_ii_final_results.json": "51b2ea40a874cd601a26452595dba20e083c775e56ab5e93430876f54d93f1df"
   },
   "primary_output_references": {
     "research_outputs/hodgecy_ii/manuscript_assets/manifest/hodgecy_ii_asset_manifest.json": "referenced without hash to avoid a circular manifest dependency"
   },
   "python_version": "3.12.10",
   "release_tag": null,
-  "result_summary_hash": "0c94d1e944b95f126fb070fa31082b307e62a373ed6bf4bcdad6229f4bc90327",
+  "result_summary_hash": "51b2ea40a874cd601a26452595dba20e083c775e56ab5e93430876f54d93f1df",
   "schema": "hodgecy_ii_final_computational_state.v1",
   "scope_version": "hodgecy_ii_scope.v1",
   "test_counts": {

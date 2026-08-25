@@ -17,15 +17,15 @@
       "status": "FINAL"
     },
     "research_outputs/hodgecy_ii/final/hodgecy_ii_final_artifact_manifest.json": {
-      "sha256": "5370afbeaa01f685638012d76c28ce34bf9b8526b28e264ad453d5cd6e1e54d6",
+      "sha256": "aeeaee44901d042d75dbb68ff32696a0b35a22762a40e5033847f18136478c3f",
       "status": "FINAL"
     },
     "research_outputs/hodgecy_ii/final/hodgecy_ii_final_research_manifest.json": {
-      "sha256": "24ef75271950082a68cc6c3dcd29acd0e5f250368caf87f41092382d9d0cccef",
+      "sha256": "3dd80eeafb9aac07ef7c5bd8c10500a8b47734709234f7113b50ff8276161363",
       "status": "FINAL"
     },
     "research_outputs/hodgecy_ii/final/hodgecy_ii_final_results.json": {
-      "sha256": "0c94d1e944b95f126fb070fa31082b307e62a373ed6bf4bcdad6229f4bc90327",
+      "sha256": "51b2ea40a874cd601a26452595dba20e083c775e56ab5e93430876f54d93f1df",
       "status": "FINAL"
     },
     "research_outputs/hodgecy_ii/final/hodgecy_ii_final_results.md": {
@@ -33,7 +33,7 @@
       "status": "FINAL"
     },
     "research_outputs/hodgecy_ii/final/hodgecy_ii_hilbert_burch_theorem.tex": {
-      "sha256": "a6eb94f99b996871aad5f3f8f4162462e891a833040aa87bb5628e5ea027c65f",
+      "sha256": "1959b8f7e43a9c5fd331c349198acc8d92c84640a8e448e62633551073ecef07",
       "status": "FINAL"
     },
     "research_outputs/hodgecy_ii/final/hodgecy_ii_literature_review.json": {
@@ -89,7 +89,7 @@
       "status": "FINAL"
     },
     "research_outputs/hodgecy_ii/final/reproduction/deterministic_asset_check.json": {
-      "sha256": "996e01e178ffa8530a9288397b1c3acd6263e70d6f95456f49e60166dfe4e6a0",
+      "sha256": "ea1a4cc503a68d7fe559e845b31ac6159aea372ece63f0e2bdfd842f65bbcc07",
       "status": "FINAL"
     },
     "research_outputs/hodgecy_ii/final/reproduction/fresh_store_reproduction.json": {
