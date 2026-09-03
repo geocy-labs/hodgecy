@@ -8,6 +8,18 @@ from typing import Any
 from .models import CertificatePurpose
 from .verify import CertificateVerificationIssue, sha256_file
 
+_LEGACY_TEXT_SUFFIXES = {
+    ".csv",
+    ".json",
+    ".md",
+    ".py",
+    ".sh",
+    ".tex",
+    ".txt",
+    ".yml",
+    ".yaml",
+}
+
 
 @dataclass(frozen=True, slots=True)
 class LegacyReleaseCertificateSummary:
@@ -60,7 +72,17 @@ def verify_legacy_release_checksums(release_dir: str | Path) -> tuple[Certificat
         if not path.exists():
             issues.append(CertificateVerificationIssue("missing_legacy_payload", "historical release payload is missing", rel))
             continue
-        actual = sha256_file(path)
+        actual = _legacy_release_sha256(path)
         if actual != row.get("sha256"):
             issues.append(CertificateVerificationIssue("legacy_checksum_mismatch", "historical release checksum mismatch", rel))
     return tuple(issues)
+
+
+def _legacy_release_sha256(path: Path) -> str:
+    """Return a checkout-stable checksum for legacy release text payloads."""
+    if path.suffix.lower() not in _LEGACY_TEXT_SUFFIXES:
+        return sha256_file(path)
+    import hashlib
+
+    data = path.read_bytes().replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+    return hashlib.sha256(data).hexdigest()

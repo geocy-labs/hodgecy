@@ -1,3 +1,3 @@
 release_tag: v0.2.0
-generation_source_describe: v1.0.0-44-gccece82-dirty
+generation_source_describe: v1.0.0-66-g961cf06-dirty
 tag_target_describe: resolve from the checked-out release tag

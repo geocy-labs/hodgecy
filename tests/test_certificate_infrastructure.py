@@ -181,3 +181,19 @@ def test_legacy_v0_2_0_release_compatibility_reader_does_not_mutate_release() ->
     assert summary.file_count > 0
     assert row["purpose"] == "legacy_theorem_result"
     assert before == after
+
+
+def test_legacy_v0_2_0_release_reader_accepts_lf_checkout_copy(tmp_path) -> None:
+    import shutil
+
+    copied = tmp_path / "hodgecy-v0.2.0"
+    shutil.copytree(RELEASE_DIR, copied)
+    text_suffixes = {".csv", ".json", ".md", ".py", ".sh", ".tex", ".txt", ".yml", ".yaml"}
+    for path in copied.rglob("*"):
+        if path.is_file() and path.suffix.lower() in text_suffixes:
+            path.write_bytes(path.read_bytes().replace(b"\r\n", b"\n").replace(b"\r", b"\n"))
+
+    issues = verify_legacy_release_checksums(copied)
+
+    assert all(issue.code in {"legacy_checksum_mismatch", "missing_legacy_payload"} for issue in issues)
+    assert not any("theorem_summary.json" in (issue.path or "") for issue in issues)

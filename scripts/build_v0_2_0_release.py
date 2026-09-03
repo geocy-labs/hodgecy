@@ -63,6 +63,7 @@ RELEASE_DIR = RELEASE_ROOT / RELEASE_NAME
 ARCHIVE_PATH = RELEASE_ROOT / f"{RELEASE_NAME}-theorem-certificates.zip"
 SOURCE_ARCHIVE_PATH = RELEASE_ROOT / f"{RELEASE_NAME}-source.zip"
 TAG_TARGET_NOTE = "Resolve the tagged release commit with: git rev-parse v0.2.0^{}"
+TEXT_CHECKSUM_SUFFIXES = {".csv", ".json", ".md", ".py", ".sh", ".tex", ".txt", ".yml", ".yaml"}
 
 EXPECTED: dict[str, dict[str, Any]] = {
     "239": {
@@ -150,6 +151,13 @@ def _json_default(value: Any) -> Any:
 def _write_json(path: Path, payload: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True, default=_json_default) + "\n", encoding="utf-8")
+
+
+def _normalized_release_bytes(path: Path) -> bytes:
+    data = path.read_bytes()
+    if path.suffix.lower() in TEXT_CHECKSUM_SUFFIXES:
+        return data.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+    return data
 
 
 def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
@@ -749,8 +757,16 @@ def _manifest_and_checksums() -> None:
         if not path.is_file() or path.name in {"MANIFEST.json", "SHA256SUMS"}:
             continue
         rel = path.relative_to(RELEASE_DIR).as_posix()
-        digest = hashlib.sha256(path.read_bytes()).hexdigest()
-        files.append({"path": rel, "sha256": digest, "bytes": path.stat().st_size})
+        checksum_bytes = _normalized_release_bytes(path)
+        digest = hashlib.sha256(checksum_bytes).hexdigest()
+        files.append(
+            {
+                "path": rel,
+                "sha256": digest,
+                "bytes": len(checksum_bytes),
+                "checksum_newline_policy": "lf_normalized" if path.suffix.lower() in TEXT_CHECKSUM_SUFFIXES else "raw",
+            }
+        )
     manifest = {
         "release_version": RELEASE_VERSION,
         "package_version": PACKAGE_VERSION,

@@ -58,10 +58,12 @@ TARGETS = ("84", "84a", "239", "240", "241")
 RELEASE_VERSION = "v0.2.0"
 PACKAGE_VERSION = "0.2.0"
 RELEASE_NAME = f"hodgecy-{RELEASE_VERSION}"
-RELEASE_DIR = REPO_ROOT / "release" / RELEASE_NAME
-ARCHIVE_PATH = REPO_ROOT / "release" / f"{RELEASE_NAME}-theorem-certificates.zip"
-SOURCE_ARCHIVE_PATH = REPO_ROOT / "release" / f"{RELEASE_NAME}-source.zip"
+RELEASE_ROOT = Path(os.environ.get("HODGECY_RELEASE_ROOT", REPO_ROOT / "release")).resolve()
+RELEASE_DIR = RELEASE_ROOT / RELEASE_NAME
+ARCHIVE_PATH = RELEASE_ROOT / f"{RELEASE_NAME}-theorem-certificates.zip"
+SOURCE_ARCHIVE_PATH = RELEASE_ROOT / f"{RELEASE_NAME}-source.zip"
 TAG_TARGET_NOTE = "Resolve the tagged release commit with: git rev-parse v0.2.0^{}"
+TEXT_CHECKSUM_SUFFIXES = {".csv", ".json", ".md", ".py", ".sh", ".tex", ".txt", ".yml", ".yaml"}
 
 EXPECTED: dict[str, dict[str, Any]] = {
     "239": {
@@ -151,6 +153,13 @@ def _write_json(path: Path, payload: Any) -> None:
     path.write_text(json.dumps(payload, indent=2, sort_keys=True, default=_json_default) + "\n", encoding="utf-8")
 
 
+def _normalized_release_bytes(path: Path) -> bytes:
+    data = path.read_bytes()
+    if path.suffix.lower() in TEXT_CHECKSUM_SUFFIXES:
+        return data.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+    return data
+
+
 def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     if not rows:
@@ -184,7 +193,7 @@ def _current_package_version() -> str:
 
 
 def _legacy_top_level_metadata_enabled() -> bool:
-    return _current_package_version() == PACKAGE_VERSION
+    return RELEASE_ROOT == (REPO_ROOT / "release").resolve() and _current_package_version() == PACKAGE_VERSION
 
 
 def _control_records() -> dict[str, dict[str, Any]]:
@@ -748,8 +757,16 @@ def _manifest_and_checksums() -> None:
         if not path.is_file() or path.name in {"MANIFEST.json", "SHA256SUMS"}:
             continue
         rel = path.relative_to(RELEASE_DIR).as_posix()
-        digest = hashlib.sha256(path.read_bytes()).hexdigest()
-        files.append({"path": rel, "sha256": digest, "bytes": path.stat().st_size})
+        checksum_bytes = _normalized_release_bytes(path)
+        digest = hashlib.sha256(checksum_bytes).hexdigest()
+        files.append(
+            {
+                "path": rel,
+                "sha256": digest,
+                "bytes": len(checksum_bytes),
+                "checksum_newline_policy": "lf_normalized" if path.suffix.lower() in TEXT_CHECKSUM_SUFFIXES else "raw",
+            }
+        )
     manifest = {
         "release_version": RELEASE_VERSION,
         "package_version": PACKAGE_VERSION,
@@ -781,6 +798,13 @@ def _make_archives() -> dict[str, str]:
     }
 
 
+def _display_path(path: Path) -> str:
+    try:
+        return str(path.relative_to(REPO_ROOT))
+    except ValueError:
+        return str(path)
+
+
 def main() -> None:
     _load_version()
     if RELEASE_DIR.exists():
@@ -801,9 +825,9 @@ def main() -> None:
     _write_json(RELEASE_DIR / "archive_checksums.json", archive_checksums)
     _manifest_and_checksums()
     print(f"Built {RELEASE_NAME}")
-    print(f"Release directory: {RELEASE_DIR.relative_to(REPO_ROOT)}")
-    print(f"Archive: {ARCHIVE_PATH.relative_to(REPO_ROOT)}")
-    print(f"Source archive: {SOURCE_ARCHIVE_PATH.relative_to(REPO_ROOT)}")
+    print(f"Release directory: {_display_path(RELEASE_DIR)}")
+    print(f"Archive: {_display_path(ARCHIVE_PATH)}")
+    print(f"Source archive: {_display_path(SOURCE_ARCHIVE_PATH)}")
 
 
 if __name__ == "__main__":

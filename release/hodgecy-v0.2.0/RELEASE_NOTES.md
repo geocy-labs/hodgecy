@@ -1,8 +1,8 @@
 # HodgeCY v0.2.0
 
-Release date: 2026-08-24
+Release date: 2026-09-03
 
-Generation source commit recorded during preparation: `ccece82c305bfa86ae235bd1cadc3fba0da5e618`
+Generation source commit recorded during preparation: `961cf066c553d82028a073be7c3f1b8388a0f1f6`
 
 Tagged release commit: resolve with `git rev-parse v0.2.0^{}` after
 checking out the published tag.

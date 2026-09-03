@@ -14,6 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 RELEASE_ROOT = Path(os.environ.get("HODGECY_RELEASE_ROOT", REPO_ROOT / "release")).resolve()
 RELEASE_DIR = RELEASE_ROOT / "hodgecy-v0.2.0"
 TARGETS = ("84", "84a", "239", "240", "241")
+TEXT_CHECKSUM_SUFFIXES = {".csv", ".json", ".md", ".py", ".sh", ".tex", ".txt", ".yml", ".yaml"}
 
 
 def _load(path: Path) -> Any:
@@ -23,6 +24,13 @@ def _load(path: Path) -> Any:
 def _matrix(path: Path) -> list[list[int]]:
     with path.open(newline="", encoding="utf-8") as handle:
         return [[int(value) for value in row] for row in csv.reader(handle)]
+
+
+def _checksum_bytes(path: Path) -> bytes:
+    data = path.read_bytes()
+    if path.suffix.lower() in TEXT_CHECKSUM_SUFFIXES:
+        return data.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+    return data
 
 
 def _snf_rank_mod(snf: list[int], p: int) -> int:
@@ -39,11 +47,13 @@ def _reconstruct_from_supports(rows: int, cols: int, supports: list[dict[str, An
 
 
 def _verify_checksums() -> None:
-    for line in (RELEASE_DIR / "SHA256SUMS").read_text(encoding="utf-8").splitlines():
-        if not line.strip():
-            continue
-        expected, rel = line.split("  ", 1)
-        actual = hashlib.sha256((RELEASE_DIR / rel).read_bytes()).hexdigest()
+    for row in _load(RELEASE_DIR / "MANIFEST.json").get("files", []):
+        rel = str(row["path"])
+        expected = str(row["sha256"])
+        checksum_bytes = _checksum_bytes(RELEASE_DIR / rel)
+        if "bytes" in row and len(checksum_bytes) != int(row["bytes"]):
+            raise AssertionError(f"Size mismatch for {rel}")
+        actual = hashlib.sha256(checksum_bytes).hexdigest()
         if actual != expected:
             raise AssertionError(f"Checksum mismatch for {rel}")
 
